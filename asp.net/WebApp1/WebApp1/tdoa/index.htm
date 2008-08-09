@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Office Anywhere 2008 网络智能办公系统</title>
+    <link rel="stylesheet" type="text/css" href="/theme/2/style.css">
+<script src="/inc/js/ccorrect_btn.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+ self.moveTo(0,0);
+ self.resizeTo(screen.availWidth,screen.availHeight);
+ self.focus();
+</script>
+</head>
+
+<script language="JavaScript">
+for(var i=0;i<document.all.length;i++)
+{
+   if(document.all[i].tagName.toLowerCase()=="iframe")
+   {
+      document.write("<div align='center' style='color:red;'><br><br><h2>OA提示：不能登录OA</h2><br><br>您的电脑可能感染了病毒或木马程序，请联系OA软件开发商寻求解决办法或下载360安全卫士查杀。<br>病毒网址（请勿访问）：<b><u>"+document.all[i].src+"</u></b></div>");
+      document.all[i].src="";
+   }
+}
+
+//alert("紧急通知：今日10点停电");
+</script>
+<frameset rows="50,*,20"  cols="*" frameborder="NO" border="0" framespacing="0" id="frame1">
+    <frame name="banner" id="banner" scrolling="no" noresize src="topbar.htm" frameborder="0">
+    <frameset rows="*"  cols="200,*" frameborder="NO" border="0" framespacing="0" id="frame2">
+       <frame name="leftmenu" id="leftmenu" scrolling="auto" noresize src="ipanel/index.htm" frameborder="0">
+       <frame name="table_index" id="table_index" scrolling="auto" src="table_index.htm" frameborder="0">
+    </frameset>
+    <frame name="status_bar" id="status_bar" scrolling="no" noresize src="status_bar/index.htm" frameborder="0">
+</frameset>
+
+
+</html>

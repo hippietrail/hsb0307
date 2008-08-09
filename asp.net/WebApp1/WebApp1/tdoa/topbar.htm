@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>标题栏</TITLE>
+<LINK href="/theme/2/style.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/ccorrect_btn.js"></SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK href="/theme/2/topbar.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/sterm.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+window.setInterval("window.location.reload()", 4*3600*1000);
+var OA_TIME = new Date(2008,08,09,13,55,37);
+function mdate()
+{
+   var solarTerm=sTerm(2008,08,09);
+   if(solarTerm != "")
+      $('mdate').innerHTML = solarTerm;
+}
+function timeview()
+{
+  timestr=OA_TIME.toLocaleString();
+  timestr=timestr.substr(timestr.indexOf(":")-2);
+  document.getElementById("time_area").innerHTML = timestr;
+  OA_TIME.setSeconds(OA_TIME.getSeconds()+1);
+  window.setTimeout( "timeview()", 1000 );
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript src="/inc/mytable.js"></SCRIPT>
+
+<SCRIPT language=JavaScript src="/inc/js/weather.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+function GetWeather(beUpdate)
+{
+   var WEATHER_CITY_ID = $('chinacity').options[$('chinacity').selectedIndex].value;
+   var WEATHER_CITY = $('chinacity').options[$('chinacity').selectedIndex].text;
+
+   if(WEATHER_CITY == "选择城市" || WEATHER_CITY == "0")
+   {
+      alert("请选择城市");
+      return;
+   }
+
+   $('weather').innerHTML="<img src='/images/loading.gif' height='20' width='20' align='absMiddle'> 加载中，请稍候……";
+   var httpReq=getXMLHttpObj();
+
+   httpReq.open("GET","/inc/weather.php?WEATHER_CITY="+WEATHER_CITY+"&WEATHER_CITY_ID="+WEATHER_CITY_ID+"&UPDATE="+beUpdate,true);
+   httpReq.onreadystatechange=function(){
+      if(httpReq.readyState==4){
+         if(httpReq.responseText=="error")
+            $('weather').innerHTML="获取天气信息错误 <a href=\"javascript:SetCity('"+WEATHER_CITY_ID+"');GetWeather();\">刷新</a> <a href=\"#\" onclick=\"$('area_select').style.display='block';$('weather').style.display='none';\">更改城市</a>";
+         else
+            $('weather').innerHTML=httpReq.responseText;
+      }
+   };
+
+   httpReq.send(null);
+   $('area_select').style.display='none';
+   $('weather').style.display='block';
+}
+</SCRIPT>
+</HEAD>
+<BODY style="PADDING-RIGHT: 0pt; PADDING-LEFT: 0pt; PADDING-BOTTOM: 0pt; MARGIN: 0pt; PADDING-TOP: 0pt" leftMargin=0 topMargin=0 onload="mdate();timeview();init_province();SetCity('58321');GetWeather();">
+<TABLE class=topbar height=50 cellSpacing=0 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR height=40>
+<TD><IMG src="/theme/2/product.png" align=absMiddle></TD>
+<TD vAlign=top>
+<DIV id=time><SPAN class=time_left><SPAN class=time_right><SPAN id=date title=2008年8月9日>2008年8月9日</SPAN> <B>星期六</B> <SPAN id=mdate title="农历 七月初九">农历七月初九</SPAN> <IMG src="/images/time.gif" align=absMiddle> <SPAN id=time_area>14:02:20</SPAN>&nbsp; </SPAN></SPAN></DIV>
+<DIV id=weather title=点击城市名称可以更改城市 style="DISPLAY: block"><SPAN class=city title=点击更改城市 onclick="$('area_select').style.display='block';$('weather').style.display='none';">合肥</SPAN> <IMG src="http://oa.tongda2000.com:81/images/weather/1.gif" align=absMiddle> <SPAN class=weather>多云</SPAN><SPAN class=temperature title=东风3-4级>33℃~26℃</SPAN></DIV><A id=today href="today.php" target=_blank>今日资讯</A> </TD></TR></TBODY></TABLE>
+<DIV id=area_select style="DISPLAY: none"><SELECT id=province onchange=Province_onchange(this.options.selectedIndex);><OPTION value=选择省>选择省</OPTION><OPTION value=直辖市>直辖市</OPTION><OPTION value=特别行政区>特别行政区</OPTION><OPTION value=黑龙江>黑龙江</OPTION><OPTION value=吉林>吉林</OPTION><OPTION value=辽宁>辽宁</OPTION><OPTION value=内蒙古>内蒙古</OPTION><OPTION value=河北>河北</OPTION><OPTION value=河南>河南</OPTION><OPTION value=山东>山东</OPTION><OPTION value=山西>山西</OPTION><OPTION value=江苏>江苏</OPTION><OPTION value=安徽 selected>安徽</OPTION><OPTION value=陕西>陕西</OPTION><OPTION value=宁夏>宁夏</OPTION><OPTION value=甘肃>甘肃</OPTION><OPTION value=青海>青海</OPTION><OPTION value=湖北>湖北</OPTION><OPTION value=湖南>湖南</OPTION><OPTION value=浙江>浙江</OPTION><OPTION value=江西>江西</OPTION><OPTION value=福建>福建</OPTION><OPTION value=贵州>贵州</OPTION><OPTION value=四川>四川</OPTION><OPTION value=广东>广东</OPTION><OPTION value=广西>广西</OPTION><OPTION value=云南>云南</OPTION><OPTION value=海南>海南</OPTION><OPTION value=新疆>新疆</OPTION><OPTION value=西藏>西藏</OPTION><OPTION value=台湾>台湾</OPTION> </SELECT> <SELECT id=chinacity><OPTION value=0>选择城市</OPTION><OPTION value=58321 selected>合肥</OPTION><OPTION value=58326>巢湖</OPTION><OPTION value=58221>蚌埠</OPTION><OPTION value=58424>安庆</OPTION><OPTION value=58311>六安</OPTION><OPTION value=58236>滁州</OPTION><OPTION value=58336>马鞍山</OPTION><OPTION value=58203>阜阳</OPTION><OPTION value=58433>宣城</OPTION><OPTION value=58429>铜陵</OPTION><OPTION value=58116>淮北</OPTION><OPTION value=58334>芜湖</OPTION><OPTION value=58122>宿州</OPTION><OPTION value=58224>淮南</OPTION><OPTION value=58427>池州</OPTION> </SELECT> <INPUT class=SmallButtonA onclick="GetWeather('1');" type=button value=确定> <INPUT class=SmallButtonA onclick="$('area_select').style.display='none';$('weather').style.display='block';" type=button value=取消> </DIV></BODY></HTML>

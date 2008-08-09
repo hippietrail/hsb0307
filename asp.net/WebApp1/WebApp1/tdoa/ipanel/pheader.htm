@@ -1,0 +1,78 @@
+﻿<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>登录信息</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK href="/theme/2/style.css" type=text/css rel=stylesheet><LINK href="/theme/2/pheader.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/utility.js"></SCRIPT>
+
+<SCRIPT src="/inc/mytable.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+var on_status=1;
+function set_status(status)
+{
+	//on_status++;
+	if(status>3)
+	   status=1;
+	on_status=status;
+
+	var obj=$("on_status_desc");
+	obj.innerHTML=$("on_status_"+on_status).innerHTML;
+	obj.className="on_status_"+on_status;
+	update_status();
+}
+function show_status(a)
+{
+   var pos=fetchOffset(a);
+   $("on_status_ul").style.display='block';
+   $("on_status_ul").style.width=a.offsetWidth+5;
+   $("on_status_ul").style.left=pos['left']-5;
+   $("on_status_ul").style.top=pos['top']+a.offsetHeight;
+}
+function hide_status()
+{
+   $("on_status_ul").style.display='none';
+}
+function update_status()
+{
+	var xmlHttpObj=getXMLHttpObj();
+	xmlHttpObj.open("GET","pheader.php?ON_STATUS_SET="+on_status,true);
+	xmlHttpObj.send(null)
+}
+
+var interval=null,key="";
+var KWORD;
+function CheckSend()
+{
+	KWORD=$("kword");
+	if(KWORD.value=="OA搜索...")
+	   KWORD.value="";
+  if(KWORD.value=="" && $('search_icon').src.indexOf("/images/quicksearch.gif")==-1)
+	{
+	   $('search_icon').src="/images/quicksearch.gif";
+	}
+	if(key!=KWORD.value && KWORD.value!="")
+	{
+     key=KWORD.value;
+	   parent.view_menu(4);
+	   parent.ilook.ilook(KWORD.value);
+	   if($('search_icon').src.indexOf("/images/quicksearch.gif")>=0)
+	   {
+	   	   $('search_icon').src="/images/closesearch.gif";
+	   	   $('search_icon').title="清除关键字";
+	   	   $('search_icon').onclick=function(){KWORD.value='OA搜索...';$('search_icon').src="/images/quicksearch.gif";$('search_icon').title="";$('search_icon').onclick=null;};
+	   }
+  }
+}
+</SCRIPT>
+</HEAD>
+<BODY onload=parent.init_menu()>
+<DIV class=small id=on_status><SPAN title="姓名：陈然&#10;部门：系统处&#10;角色：职员&#10;在线：20008小时45分" onclick="alert('姓名：陈然\n部门：系统处\n角色：职员\n在线：20008小时45分')"><IMG height=18 src="/images/avatar/41.gif" width=18 align=absMiddle> 陈然</SPAN> <SPAN id=on_status_span onmouseover=show_status(this); title="姓名：陈然&#10;部门：系统处&#10;角色：职员&#10;在线：20008小时45分" onmouseout=hide_status();><SPAN class=on_status_1 id=on_status_desc>联机 </SPAN><FONT face=webdings>6</FONT> 
+<UL id=on_status_ul>
+<LI><A id=on_status_1 title="" href="javascript:set_status(1);">联机</A> 
+<LI><A id=on_status_2 title="" href="javascript:set_status(2);">忙碌</A> 
+<LI><A id=on_status_3 title="" href="javascript:set_status(3);">离开</A> </LI></UL></SPAN></DIV>
+<DIV id=tabs>
+<DIV id=search><!--form style="margin:0" name="myform" method="post"--><INPUT class=SmallInput id=kword onblur="clearInterval(interval);if(KWORD.value=='')KWORD.value='OA搜索...';" onfocus=interval=setInterval(CheckSend,100); value=OA搜索... name=kword><IMG id=search_icon style="CURSOR: pointer" src="/images/quicksearch.gif" align=absMiddle> <!--/form--></DIV>
+<UL id=nav_menu>
+<LI><A class=active id=menu_1 title=导航菜单 href="javascript:parent.view_menu(1);"><SPAN>导航</SPAN></A> 
+<LI><A id=menu_2 title=显组织机构及人员 href="javascript:parent.view_menu(2);"><SPAN>组织</SPAN></A> 
+<LI><A id=menu_3 title=短信箱 href="javascript:parent.view_menu(3);"><SPAN>短信</SPAN></A> 
+<LI><A id=menu_4 title=信息搜索 href="javascript:parent.view_menu(4);"><SPAN>搜索</SPAN></A> </LI></UL></DIV></BODY></HTML>
