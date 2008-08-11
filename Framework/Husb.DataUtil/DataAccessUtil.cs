@@ -244,7 +244,7 @@ namespace Husb.DataUtil
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <param name="cacheManager"></param>
-        public static void InsertCache(string key, object value, CacheManager cacheManager)
+        public static void InsertCache(string key, object value, ICacheManager cacheManager)
         {
             //CacheItemDependency cacheItemDependencyExpiry = new CacheItemDependency(GetCacheKey(key));
             //AbsoluteTime absoluteTimeExpiry = new AbsoluteTime(new TimeSpan(0, 0, minutes, seconds, 0));
@@ -263,7 +263,7 @@ namespace Husb.DataUtil
         /// <param name="minutes"></param>
         /// <param name="seconds"></param>
         /// <param name="cacheManager"></param>
-        public static void InsertCache(string key, object value, bool enableTimeExpiry, int hours, int minutes, int seconds, CacheManager cacheManager)
+        public static void InsertCache(string key, object value, bool enableTimeExpiry, int hours, int minutes, int seconds, ICacheManager cacheManager)
         {
             // 这里取key中"_"之前的部分作为CacheItem的key，实际使用时，key中"_"之前的部分一般为表名
             // 这里一定要保证GetCacheKey(key)的返回值与key不能相同。
