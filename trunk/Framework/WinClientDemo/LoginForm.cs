@@ -13,6 +13,8 @@ namespace WinClientDemo
 {
     public partial class LoginForm : Form
     {
+        int count = 0;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -50,7 +52,7 @@ namespace WinClientDemo
             {
                 MembershipUserEx user = membershipProvider.GetUser(username, true) as MembershipUserEx;
 
-                ClientContext.CreatePrincipal(username, ownerId);
+                ClientContext.CreatePrincipal(username);
                 ClientContext.UserId = user.UserId;
             }
             else

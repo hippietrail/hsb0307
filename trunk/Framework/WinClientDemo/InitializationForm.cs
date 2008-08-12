@@ -12,6 +12,11 @@ using DepartmentRow = WinClientDemo.Data.Departments.DepartmentRow;
 using WinClientDemo.Data;
 using Husb.Security;
 using System.Web.Security;
+using WinClientDemo.BusinessActions;
+using Microsoft.Practices.EnterpriseLibrary.Security;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Security.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Security.Database;
 
 namespace WinClientDemo
 {
@@ -77,7 +82,7 @@ namespace WinClientDemo
                 department.Id = departmentId;
 
                 department.IsActive = true;
-                department.IsAdvertising = false;
+                //department.IsAdvertising = false;
                 department.IsDeleted = false;
                 department.CreatedBy = userId;
                 department.CreatedTime = DateTime.Now;
@@ -94,7 +99,7 @@ namespace WinClientDemo
                 //department.Category = //comboBox1.SelectedIndex == 0 ? null : (comboBox1.SelectedIndex + 1).ToString();
                 department.DepartmentNumber = departmentNumberTextBox.Text;
                 department.QueryNumber = queryNumberTextBox.Text;
-                department.IsAdvertising = isAdvertisingCheckBox.Checked;
+                //department.IsAdvertising = isAdvertisingCheckBox.Checked;
 
                 dsDepartment.Department.Rows.Add(department);
 
@@ -111,14 +116,14 @@ namespace WinClientDemo
             string role = txtRoleName.Text;
 
             // 添加系统管理员角色
-            if (!roleProvider.RoleExists(role, departmentId))
+            if (!roleProvider.RoleExists(role))
             {
-                roleProvider.CreateRole(role, departmentId);
+                roleProvider.CreateRole(role);
             }
             else
             {
-                roleProvider.DeleteRole(role, false, departmentId);
-                roleProvider.CreateRole(role, departmentId);
+                roleProvider.DeleteRole(role, false);
+                roleProvider.CreateRole(role);
             }
             string user = txtUser.Text;
             // 创建管理员用户
@@ -139,11 +144,22 @@ namespace WinClientDemo
             //Roles.AddUserToRole(UserEditLayout1.UserName, 
 
             //将管理员添加到管理员角色
-            roleProvider.AddUsersToRoles(new string[] { user }, new string[] { role }, departmentId);
+            roleProvider.AddUsersToRoles(new string[] { user }, new string[] { role });
 
             // 添加操作权限：是系统管理员
-            AuthorizationProviderDbRuleProvider ruleProvider = new AuthorizationProviderDbRuleProvider(null);
-            ruleProvider.InsertRule(Guid.NewGuid(), SystemOperation.IsSystemAdministrator, SystemOperation.IsSystemAdministrator, 0, "R:" + role, departmentId);
+
+            IConfigurationSource configurationSource = ConfigurationSourceFactory.Create();
+            SecurityConfigurationView view = new SecurityConfigurationView(configurationSource);
+            DbAuthorizationRuleProviderData ruleProviderData = view.GetAuthorizationProviderData(view.GetDefaultAuthorizationProviderName()) as DbAuthorizationRuleProviderData;
+
+            string database = null;
+            if (ruleProviderData != null)
+            {
+                database = ruleProviderData.Database;
+            }
+
+            AuthorizationProviderDatabaseProvider ruleProvider = new AuthorizationProviderDatabaseProvider(database);
+            ruleProvider.InsertRule(Guid.NewGuid(), SystemOperation.IsSystemAdministrator, SystemOperation.IsSystemAdministrator, 0, "R:" + role);
 
             // 添加系统默认配置名
             //ConfigurationInfo c = new ConfigurationInfo();
