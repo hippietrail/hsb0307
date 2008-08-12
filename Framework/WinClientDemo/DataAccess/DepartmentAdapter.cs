@@ -12,6 +12,7 @@ using WinClientDemo.Data;
 using DepartmentTable = WinClientDemo.Data.Departments.DepartmentDataTable;
 using DepartmentRow = WinClientDemo.Data.Departments.DepartmentRow;
 using Husb.DataUtil;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 
 namespace WinClientDemo.DataAccess
 {
@@ -56,7 +57,6 @@ namespace WinClientDemo.DataAccess
             db.AddInParameter(cmd, "Description", DbType.String, "Description", DataRowVersion.Current);
         }
 
-        
 
         public void GetDapartmentDataSet()
         {
@@ -69,16 +69,102 @@ namespace WinClientDemo.DataAccess
         /// <returns></returns>
         public DepartmentTable GetTopDepartment()
         {
-            return GetTable("Admin.Departments_SelectTopDepartment", new List<DatabaseParameter>(), true);
+            DepartmentTable d = GetAll();
+            DataView dv = d.DefaultView;
+            dv.RowFilter = "ParentId IS NULL";
+
+            DepartmentTable t = new DepartmentTable();
+            foreach (DataRowView rowView in dv)
+            {
+                t.ImportRow(rowView.Row);
+            }
+
+            return t;
+
+            //return GetTable("Admin.Departments_SelectTopDepartment", new List<DatabaseParameter>(), true);
         }
 
+        ///// <summary>
+        ///// 得到所有广告公司
+        ///// </summary>
+        ///// <returns></returns>
+        //public DepartmentTable GetCompany()
+        //{
+        //    return GetTable("Admin.Departments_SelectAdvertingCompany", new List<DatabaseParameter>(), true);
+        //}
+
         /// <summary>
-        /// 得到所有广告公司
+        /// 获取指定部门的所有子级部门，不是直接子部门，是递归得到的所有下级部门
         /// </summary>
+        /// <param name="id">指定部门的id</param>
+        /// <param name="includeSelf">返回结果中是否包含当前部门</param>
         /// <returns></returns>
-        public DepartmentTable GetCompany()
+        public DepartmentTable GetChildrenDepartment(Guid? id, bool includeSelf)
         {
-            return GetTable("Admin.Departments_SelectAdvertingCompany", new List<DatabaseParameter>(), true);
+            ICacheManager cacheManager = CacheFactory.GetCacheManager();
+            string key = "Admin.Departments_DepartmentsTree";
+            DepartmentTable departments = cacheManager.GetData(key) as DepartmentTable;
+            if (departments != null)
+            {
+                return departments;
+            }
+
+            DepartmentTable dt = GetAll();
+            DepartmentTable s = new DepartmentTable();
+            if (dt.Rows.Count == 0) return s;
+            DataView dv = dt.DefaultView;
+
+            dv.RowFilter = " Id = '" + id.ToString() + "'";
+            //dv.RowFilter = id == null ? "ParentId IS NULL" : " Id = '" + id.ToString() + "'";
+            if (includeSelf)
+            {
+                s.ImportRow(dv[0].Row);
+            }
+
+            if (((DepartmentRow)dv[0].Row).IsParentIdNull())
+            {
+                dv.RowFilter = " ParentId IS NULL ";
+            }
+            else
+            {
+                dv.RowFilter = " ParentId = '" + id.ToString() + "'";
+            }
+
+            foreach (DataRowView r in dv)
+            {
+                //TestDataSet.DepartmentsRow row = s.NewDepartmentsRow();
+                if (!((DepartmentRow)dv[0].Row).IsParentIdNull())
+                {
+                    s.ImportRow(r.Row);
+                }
+                AddDepartmentRow(dt, s, ((DepartmentRow)r.Row).Id);
+            }
+
+            if (s.Rows.Count > 0)
+            {
+                DataAccessUtil.InsertCache(key, s, cacheManager);
+            }
+
+            return s;
+
+        }
+        /// <summary>
+        /// 在部门表中插入当前部门的部门
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="s"></param>
+        /// <param name="id"></param>
+        private void AddDepartmentRow(DepartmentTable dt, DepartmentTable s, Guid id)
+        {
+            foreach (DepartmentRow row in dt.Rows)
+            {
+                if (!row.IsParentIdNull() && row.ParentId == id)
+                {
+                    s.ImportRow(row);
+
+                    AddDepartmentRow(dt, s, row.Id);
+                }
+            }
         }
     }
 }

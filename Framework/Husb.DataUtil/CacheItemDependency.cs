@@ -44,17 +44,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.Caching.Expirations
             {
                 if (cacheManager.Contains(cacheKey))
                 {
+                    object o = cacheManager.GetData(cacheKey);
+                    if (o != null)
+                    {
+                        this.lastCount = (int)o;
+                    }
+
                     lastCount = (int)cacheManager.GetData(cacheKey);
-                    //if (lastCount < Int32.MaxValue)
-                    //{
-                    //    lastCount++;
-                    //}
-                    //else
-                    //{
-                    //    lastCount = Int32.MinValue;
-                    //}
-                    //cacheManager.Add(cacheKey, lastCount);
-                    ////cacheManager.Add(cacheKey, cacheValue, CacheItemPriority.Normal, null, new ICacheItemExpiration[] { expiry });
                 }
                 else
                 {

@@ -34,20 +34,21 @@ namespace WinClientDemo
         /// </summary>
         /// <param name="username"></param>
         /// <param name="ownerId"></param>
-        public static void CreatePrincipal(string username, Guid ownerId)
+        public static void CreatePrincipal(string username)
         {
             // 先得到Identity
             identity = new GenericIdentity(username, Membership.Provider.Name);
 
             // 获取当前用户的角色列表，也就是当前用户属于哪些角色
             GenericRoleProvider roleProvider = Roles.Provider as GenericRoleProvider;
-            List<RoleInfo> roleList = roleProvider.GetRolesForUser(username, ownerId);
+            //List<RoleInfo> roleList = roleProvider.GetRoleListForUser(username);
 
-            String[] roles = new String[roleList.Count];
-            for (int i = 0; i < roleList.Count; i++)
-            {
-                roles[i] = roleList[i].RoleName;
-            }
+            //String[] roles = new String[roleList.Count];
+            //for (int i = 0; i < roleList.Count; i++)
+            //{
+            //    roles[i] = roleList[i].RoleName;
+            //}
+            String[] roles = roleProvider.GetRolesForUser(username);
 
             // 根据前面得到的Identity 和 角色列表 创建Principal
             principal = new GenericPrincipal(identity, roles);
