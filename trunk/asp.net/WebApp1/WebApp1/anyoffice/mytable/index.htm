@@ -1,0 +1,642 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+	<head>
+		<title>我的办公桌</title>
+		<script src="mytable.js"></script>
+		<script language="javascript">
+		var AJAX_INTERVAL = 60000;
+		var AJAX_ENABLE = true;
+		var CODE_IDSTR = ",";
+		var MUSTVIEW = "";
+		
+		function mytalbeRest()
+		{
+			msg='确认恢复桌面缺省设置么？';
+			if(window.confirm(msg))
+			{
+				URL="rest.aspx";
+				window.location=URL;
+			}
+		}
+		</script>
+	</head>
+	<body class="bodycolor" topmargin="5" leftmargin="5">
+		<form name="Form1" method="post" action="index.aspx" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTcwMTI3MzMzOGRkhwtPM32hZ9T5WSD1xthtIlLmkFQ=" />
+</div>
+
+
+<script type="text/javascript" src="/ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/AnyOffice.general.mytable.AjaxMethods,App_Code.ashx"></script>
+
+			<table width="100%" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td id="col_l" style="width:55%" valign="top">
+						
+<script>
+function open_notify(notify_id)
+{
+ URL="/general/notify/show/read_notify.aspx?notify_id="+notify_id;
+ myleft=(screen.availWidth-500)/2;
+ window.open(URL,"read_notify","height=400,width=550,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left="+myleft+",resizable=yes");
+}
+</script>
+<div id="module_1"  style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_1_head" class="TableHeader" width="70%">&nbsp;公告通知 </td>
+      <td id="module_1_more" align="right"> <div id="module_1_op" style="float:right;display:none;"><a href="/general/notify/show/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_1_url" href="#" onclick="_del('1');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div></td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/notify.jpg) no-repeat bottom right"> 
+      <td height="60" colspan="2"> <div id="divNotify"> <font color=red>【软件公告】在线试用未开放全部功能，请到<a href=http://www.anyoffice.net/download.htm target=_blank>下载中心</a>下载安装进行试用！</font><br>
+          
+          <!--·暂无公告通知-->
+        </div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+CODE_IDSTR += "1,";
+var timer_notify = null;
+var str_notify = "";
+function GetNotify()
+{	
+	if(timer_notify != null)
+		window.clearTimeout(timer_notify);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetNotify(CallBack_GetNotify);
+	timer_notify=setTimeout("GetNotify()",AJAX_INTERVAL*10);
+}
+function CallBack_GetNotify(res)
+{	
+	if (res.error != null)
+		return;
+					
+	if(str_notify != res.value)
+		document.getElementById('divNotify').innerHTML = res.value;		
+	str_notify = res.value;	
+}
+//GetNotify();
+</SCRIPT>
+
+<script>
+function open_news(news_id)
+{
+ URL="/general/news/show/read_news.aspx?news_id="+news_id;
+ myleft=(screen.availWidth-500)/2;
+ window.open(URL,"read_news","height=400,width=550,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left="+myleft+",resizable=yes");
+}
+
+function re_news(news_id)
+{
+ URL="/general/news/show/re_news.aspx?news_id="+news_id;
+ myleft=(screen.availWidth-500)/2;
+ window.open(URL,"read_news","height=400,width=550,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left="+myleft+",resizable=yes");
+}
+</script>
+<div id="module_2"  style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_2_head" class="TableHeader" width="70%">&nbsp;新闻 </td>
+      <td id="module_2_more" align="right"> <div id="module_2_op" style="float:right;display:none;"><a href="/general/news/show/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_2_url" href="#" onclick="_del('2');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+      </td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/news.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60"> <div id="divNews"> 
+          
+          ·暂无新闻
+        </div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+CODE_IDSTR += "14,";
+var timer_news = null;
+var str_news = "";
+function GetNews()
+{	
+	if(timer_news != null)
+		window.clearTimeout(timer_news);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetNews(CallBack_GetNews);
+	timer_news=setTimeout("GetNews()",AJAX_INTERVAL*10);
+}
+function CallBack_GetNews(res)
+{	
+	if (res.error != null)  
+		return;	
+	if(str_news != res.value)	
+		document.getElementById('divNews').innerHTML = res.value;
+	str_news = res.value;
+}
+GetNews();
+</SCRIPT>
+
+<div id="module_4" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_4_head" class="TableHeader" width="70%">&nbsp;待办事宜 </td>
+      <td id="module_4_more" align="right"> <div id="module_4_op" style="float:right;display:none;"><a href="/general/workflow/list/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_4_url" href="#" onclick="_del('4');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+       </td>
+    </TR>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/workflow.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60"> <div id="divAttend"></div>
+        <div id="divWork"> 
+          工作流： 
+              <IMG alt='已接收' src='/images/email_open.gif' align='absMiddle'>
+              <a href="/general/workflow/list/flow_input.aspx?run_id=262&prcs_id=2"> 
+              请款(借支)申请
+              - 
+              请款(借支)申请(2008-8-13 15:02:56)
+              </a> <br>
+            工作流： 
+              <IMG alt='已接收' src='/images/email_open.gif' align='absMiddle'>
+              <a href="/general/workflow/list/flow_input.aspx?run_id=260&prcs_id=1"> 
+              发文
+              - 
+              发文(2008-8-13 15:01:02)
+              </a> <br>
+            工作流： 
+              <IMG alt='已接收' src='/images/email_open.gif' align='absMiddle'>
+              <a href="/general/workflow/list/flow_input.aspx?run_id=259&prcs_id=1"> 
+              发文
+              - 
+              发文(2008-8-13 14:57:51)
+              </a> <br>
+            工作流： 
+              <IMG alt='已接收' src='/images/email_open.gif' align='absMiddle'>
+              <a href="/general/workflow/list/flow_input.aspx?run_id=258&prcs_id=3"> 
+              发文
+              - 
+              发文(2008-8-13 14:26:59)
+              </a> <br>
+            
+          
+        </div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+var timer_attend = null;
+function Attend()
+{	
+	if(timer_attend != null)
+		window.clearTimeout(timer_attend);
+		
+	AnyOffice.general.mytable.AjaxMethods.Attend(CallBack_Attend);
+	timer_attend=setTimeout("Attend()",AJAX_INTERVAL*1);
+}
+function CallBack_Attend(res)
+{
+	//alert(res.value);
+	if (res.error != null)  
+		return;
+	
+	if(res.value != "")
+	{
+		document.getElementById('divAttend').style.display='';
+		document.getElementById('divAttend').innerHTML = res.value;
+	}
+	else
+	{
+		document.getElementById('divAttend').style.display='none';
+		document.getElementById('divAttend').innerHTML = "";
+	}
+		
+}
+Attend();
+
+CODE_IDSTR += "7,";
+var timer_work = null;
+function GetWork()
+{	
+	if(timer_work != null)
+		window.clearTimeout(timer_work);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetWork(CallBack_GetWork);
+	timer_work=setTimeout("GetWork()",AJAX_INTERVAL*5);
+}
+function CallBack_GetWork(res)
+{	
+	if (res.error != null)  
+		return;	
+	document.getElementById('divWork').innerHTML = res.value;
+}
+GetWork();
+</SCRIPT>
+
+
+<script language="JavaScript">                             
+function open_workplan(plan_id)
+{
+	URL="/general/work_plan/read_workplan.aspx?plan_id="+plan_id;
+	myleft=(screen.availWidth-600)/2;
+	window.open(URL,"read_notify","height=450,width=600,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left="+myleft+",resizable=yes");
+}                                                   
+</script>
+<div id="module_9" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_9_head" class="TableHeader" width="70%">&nbsp;今日计划 </td>
+      <td id="module_9_more" align="right"> <div id="module_9_op" style="float:right;display:none;"><a href="/general/work_plan/show/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_9_url" href="#" onclick="_del('9');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+        </td>
+    </tr>
+    <tr class="TableData" style="BACKGROUND:url(/images/water/work_plan.jpg) #ffffff no-repeat right bottom"> 
+      <td colspan="2" height="60"> <div id="divWorkplan"> 
+          
+          ·暂无计划
+        </div></td>
+    </tr>
+  </table>
+  <SCRIPT language="javascript">
+CODE_IDSTR += "12,";
+var timer_workplan = null;
+var str_workplan = "";
+function GetWorkplan()
+{	
+	if(timer_workplan != null)
+		window.clearTimeout(timer_workplan);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetWorkplan(CallBack_GetWorkplan);
+	timer_workplan=setTimeout("GetWorkplan()",AJAX_INTERVAL*10);
+}
+function CallBack_GetWorkplan(res)
+{	
+	if (res.error != null)  
+		return;	
+	if(str_workplan != res.value)	
+		document.getElementById('divWorkplan').innerHTML = res.value;
+	str_workplan = res.value;
+}
+GetWorkplan();
+</SCRIPT>
+</div>
+
+<div id="module_13" style="PADDING-BOTTOM: 10px;POSITION: relative"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_13_head" class="TableHeader" width="70%">&nbsp;网络硬盘 </td>
+      <td id="module_13_more" align="right"> <div id="module_13_op" style="DISPLAY:none;FLOAT:right"><a href="/general/netdisk/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_13_url" href="#" onclick="_del('13');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+     </td>
+    </tr>
+    <tr class="TableData" style="BACKGROUND:url(/images/water/netdisk.jpg) #ffffff no-repeat right bottom"> 
+      <td colspan="2" height="60">  ·<a href=/general/netdisk/access.aspx?disk_id=1> 
+            思道OA资料
+            </a> <br>
+           ·<a href=/general/netdisk/access.aspx?disk_id=2> 
+            软件下载
+            </a> <br>
+            
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="module_11" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_11_head" class="TableHeader" width="70%">&nbsp;外出人员 </td>
+      <td id="module_11_more" align="right"> <div id="module_11_op" style="float:right;display:none;"><a id="module_11_url" href="#" onclick="_del('11');"><img border="0" src="/images/x.gif" alt="不显示该模块"></a></div></td>
+    </tr>
+    <tr class="TableData" style="#ffffff no-repeat right bottom"> 
+      <td colspan="2" height="60"> <div id="divOut"></div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+var timer_out = null;
+var str_out = "";
+function Out()
+{	
+	if(timer_out != null)
+		window.clearTimeout(timer_out);
+		
+	AnyOffice.general.mytable.AjaxMethods.Out(CallBack_Out);
+	timer_out=setTimeout("Out()",AJAX_INTERVAL/2);
+}
+function CallBack_Out(res)
+{
+	//alert(res.value);
+	if (res.error != null)  
+		return;
+	
+	if(str_out != res.value)
+		document.getElementById('divOut').innerHTML = res.value;		
+	str_out = res.value;
+}
+Out();
+</SCRIPT>
+
+<div id="module_8" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_8_head" class="TableHeader" width="70%">&nbsp;在线排行榜 </td>
+      <td id="module_8_more" align="right"> <div id="module_8_op" style="float:right;display:none;"><a id="module_8_url" href="#" onclick="_del('8');"><img border="0" src="/images/x.gif" alt="不显示该模块"></a></div>
+       </td>
+    </tr>
+    <tr class="TableData" style="BACKGROUND:#ffffff"> 
+      <td colspan="2" height="40">  <u title="市场部 在线时长：1386小时30分" style="cursor:hand"> 
+            肖鹏</u>&nbsp; <u title="市场部 在线时长：155小时59分" style="cursor:hand"> 
+            张宇</u>&nbsp; <u title="研发中心 在线时长：3小时14分" style="cursor:hand"> 
+            李总</u>&nbsp; 	
+      </td>
+    </tr>
+  </table>
+</div>
+
+						
+						<br />
+					</td>
+					<td>&nbsp;</td>
+					<td id="col_r" style="width:55%" align="center" valign="top">
+						
+<script>
+function my_note(CAL_ID)
+{
+  my_left=document.body.scrollLeft+event.clientX-event.offsetX-50;
+  my_top=document.body.scrollTop+event.clientY-event.offsetY+150;
+  window.open("/general/calendar/manage/note.aspx?cal_id="+CAL_ID,"note_win"+CAL_ID,"height=200,width=250,status=0,toolbar=no,menubar=no,location=no,scrollbars=auto,top="+ my_top +",left="+ my_left +",resizable=no");
+}
+</script>
+<div id="module_3" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_3_head" class="TableHeader" width="70%">&nbsp;日程安排 </td>
+      <td id="module_3_more" align="right"> <div id="module_3_op" style="float:right;display:none;"><a href="/general/calendar/manage/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_3_url" href="#" onclick="_del('3');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+        </td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/calendar.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60">  ·暂无日程安排 
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="module_5"  style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_5_head" class="TableHeader" width="70%">&nbsp;内部邮件 </td>
+      <td id="module_5_more" align="right"> <div id="module_5_op" style="float:right;display:none;"><a href="/general/email/new.aspx">撰写</a>&nbsp;&nbsp;<a id="module_5_url" href="#" onclick="_del('5');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+       </td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/email.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60"> <div id="divEmail"> 
+          
+          ·暂无内部邮件
+        </div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+CODE_IDSTR += "2,";
+var timer_email = null;
+var str_email = "";
+function GetEmail()
+{	
+	if(timer_email != null)
+		window.clearTimeout(timer_email);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetEmail(CallBack_GetEmail);
+	timer_email=setTimeout("GetEmail()",AJAX_INTERVAL*5);
+}
+function CallBack_GetEmail(res)
+{	
+	if (res.error != null)  
+		return;	
+	if(str_email != res.value)	
+		document.getElementById('divEmail').innerHTML = res.value;
+	str_email = res.value;
+}
+GetEmail();
+</SCRIPT>
+
+<script>
+function _setNote(note)
+{
+	AnyOffice.general.mytable.AjaxMethods.SetNote(note);
+}
+</script>
+<div id="module_12" style="PADDING-BOTTOM: 10px;POSITION: relative"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_12_head" class="TableHeader" width="70%">&nbsp;便签 </td>
+      <td id="module_12_more" align="right"> <div id="module_12_op" style="DISPLAY:none;FLOAT:right"><a id="module_12_url" href="#" onclick="_del('12');"><img border="0" src="/images/x.gif" alt="不显示该模块"></a></div>
+        </td>
+    </tr>
+    <tr class="TableData"> 
+      <td colspan="2"> <textarea name="ctl09$txtNote" id="ctl09_txtNote" style="PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;OVERFLOW:visible;WIDTH:100%;BORDER-TOP-STYLE:none;PADDING-TOP:5px;BORDER-RIGHT-STYLE:none;BORDER-LEFT-STYLE:none;HEIGHT:60px;BACKGROUND-COLOR:#ffffcc;BORDER-BOTTOM-STYLE:none" onblur="_setNote(this.value);" onmouseout="_setNote(this.value);">热线电话：010-51651196</textarea> </td>
+    </tr>
+  </table>
+</div>
+
+<div id="module_6" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_6_head" class="TableHeader" width="70%">&nbsp;常用网址 </td>
+      <td id="module_6_more" align="right"> <div id="module_6_op" style="float:right;display:none;"><a href="/general/ipanel/url.aspx">全部</a>&nbsp;&nbsp;<a id="module_6_url" href="#" onclick="_del('6');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+        </td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/url.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60"> <table width="100%" border="0" class="small" >
+          <tr> 
+            <td width="50%" valign="top">  <b>公共网址</b><br>
+                 ·<a href="http://www.anyoffice.net" target="_blank"> 
+                  思道科技
+                  </a><br>
+                  </td>
+            <td width="50%" valign="top">  <b>个人网址</b> <br>
+                 </td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</div>
+
+
+
+<script>
+function open_vote(vote_id)
+{
+ URL="/general/vote/show/read_vote.aspx?vote_id="+vote_id;
+ myleft=(screen.availWidth-500)/2;
+ window.open(URL,"read_vote","height=300,width=400,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left="+myleft+",resizable=yes");
+}
+</script>
+<div id="module_7" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_7_head" class="TableHeader" width="70%">&nbsp;投票 </td>
+      <td id="module_7_more" align="right"> <div id="module_7_op" style="float:right;display:none;"><a href="/general/vote/show/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_7_url" href="#" onclick="_del('7');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div></td>
+    </tr>
+    <tr class="TableData"  style="background:#FFFFFF url(/images/water/vote.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60"> <div id="divVote"> 
+          
+          ·暂无投票
+        </div></td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language="javascript">
+CODE_IDSTR += "11,";
+var timer_vote = null;
+var str_vote = "";
+function GetVote()
+{	
+	if(timer_vote != null)
+		window.clearTimeout(timer_vote);
+		
+	AnyOffice.general.mytable.AjaxMethods.GetVote(CallBack_GetVote);
+	timer_vote=setTimeout("GetVote()",AJAX_INTERVAL*10);
+}
+function CallBack_GetVote(res)
+{	
+	if (res.error != null)
+		return;
+					
+	if(str_vote != res.value)
+		document.getElementById('divVote').innerHTML = res.value;		
+	str_vote = res.value;	
+}
+//GetVote();
+</SCRIPT>
+
+<script>
+function addressQuery()
+{
+	var url = "/general/address/public/query.aspx?query=get";
+	if(document.getElementById("sltGroupId_").value != "")
+		url += "&group_id=" + document.getElementById("sltGroupId_").value;
+		
+	if(document.getElementById("txtName_").value != "")
+		url += "&name=" + escape(document.getElementById("txtName_").value);	
+		
+	if(document.getElementById("txtDeptName_").value != "")
+		url += "&dept_name=" + escape(document.getElementById("txtDeptName_").value);
+		
+	if(document.getElementById("sltSex_").value != "")
+	url += "&sex=" + escape(document.getElementById("sltSex_").value);
+	
+	window.location = url;		
+}
+</script>
+<div id="module_14" style="PADDING-BOTTOM: 10px;POSITION: relative"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_14_head" class="TableHeader" width="70%">&nbsp;公共通讯录查询</td>
+      <td id="module_14_more" align="right"> <div id="module_14_op" style="DISPLAY:none;FLOAT:right"><a href="/general/address/public/index.aspx">详情</a>&nbsp;&nbsp;<a id="module_14_url" href="#" onclick="_del('14');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div></td>
+    </tr>
+    <tr style="BACKGROUND:url(/images/water/address.jpg) #ffffff no-repeat right bottom"> 
+      <td colspan="2" height="50"> 分组： 
+        <select name="ddlGroupId" id="sltGroupId_" class="SmallSelect"><option value="all">所有</option><option value="0">默认</option></select> <br>
+        姓名： 
+        <input type="text" name="txtName_" class="SmallInput" size="20" maxlength="25"> 
+        <br>
+        单位： 
+        <input type="text" name="txtDeptName_" size="20" class="SmallInput"> <br>
+        性别： 
+        <select name="sltSex_" class="SmallSelect">
+          <option selected value="all">所有</option>
+          <option value="True">男</option>
+          <option value="False">女</option>
+        </select> &nbsp; <input type="button" onclick="addressQuery();" value="查询" class="SmallButton" title="模糊查询"	name="button"> 
+      </td>
+    </tr>
+  </table>
+</div>
+
+<script>
+function userQuery()
+{
+	var url = "/general/ipanel/query.aspx?query=get";
+	
+	if(document.getElementById("sltDeptId__").value != "")
+		url += "&dept_id=" + document.getElementById("sltDeptId__").value;
+		
+	if(document.getElementById("txtUserName__").value != "")
+		url += "&username=" + escape(document.getElementById("txtUserName__").value);
+		
+	if(document.getElementById("sltSex__").value != "")
+	url += "&sex=" + escape(document.getElementById("sltSex__").value);
+	
+	window.location = url;		
+}
+</script>
+<div id="module_15" style="PADDING-BOTTOM: 10px;POSITION: relative"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_15_head" class="TableHeader" width="70%">&nbsp;员工查询</td>
+      <td id="module_15_more" align="right"> <div id="module_15_op" style="DISPLAY:none;FLOAT:right"><a href="/general/info/user/index.aspx">详情</a>&nbsp;&nbsp;<a id="module_15_url" href="#" onclick="_del('15');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div>
+        </td>
+    </tr>
+    <tr style="BACKGROUND:url(/images/water/user_query.jpg) #ffffff no-repeat right bottom"> 
+      <td colspan="2" height="50"> 姓名： 
+        <input type="text" name="txtUserName__" class="SmallInput" size="20" maxlength="25"> 
+        <br>
+        部门： 
+        <select name="sltDeptId__" id="sltDeptId__" class="SmallSelect"><option value="ALL">所有</option><option value="1">|─研发中心</option><option value="2">|─市场部</option><option value="3">|─客服部</option></select> <br>
+        性别： 
+        <select name="sltSex__" class="SmallSelect">
+          <option selected value="all">所有</option>
+          <option value="True">男</option>
+          <option value="False">女</option>
+        </select> &nbsp; <input type="button" onclick="userQuery();" value="查询" class="SmallButton" title="模糊查询"
+					name="button"> </td>
+    </tr>
+  </table>
+</div>
+
+<div id="module_16" style="position: relative;padding-bottom:10px;"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_16_head" class="TableHeader" width="70%">&nbsp;内部论坛 </td>
+      <td id="module_16_more" align="right"> <div id="module_16_op" style="float:right;display:none;"><a href="/general/bbs/index.aspx">全部</a>&nbsp;&nbsp;<a id="module_16_url" href="#" onclick="_del('16');"><img src="/images/x.gif" alt="不显示该模块" border="0" align="absbottom"></a></div></td>
+    </tr>
+    <tr class="TableData" style="background:#FFFFFF url(/images/water/bbs.jpg) no-repeat bottom right"> 
+      <td colspan="2" height="60">  ·暂无发帖 
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="module_10" style="PADDING-BOTTOM: 10px;POSITION: relative"> 
+  <table class="TableBlock" width="100%" cellspacing="0" cellpadding="2">
+    <tr class="TableControl"> 
+      <td id="module_10_head" class="TableHeader" width="70%">&nbsp;天气预报 </td>
+      <td id="module_10_more" align="right"> <div id="module_10_op" style="float:right;display:none;"><a id="module_10_url" href="#" onclick="_del('10');"><img border="0" src="/images/x.gif" alt="不显示该模块"></a></div>
+        </td>
+    </tr>
+    <tr class="TableData"> 
+      <td colspan=2> ·<a href="http://www.cma.gov.cn/tqyb/weatherframe/54511/1.html" target="weatherframe">中央气象局</a> 
+        ·<a href="http://www.nmc.gov.cn/homeframe.html" target="weatherframe">中央气象台</a> 
+        ·<a href="http://panel.qq.com/hd/weather.shtml" target="weatherframe">QQ气象站</a> 
+        <br> <iframe name="weatherframe" frameborder=no width=100% height=250 src="http://www.cma.gov.cn/tqyb/weatherframe/54511/1.html"></iframe> 
+      </td>
+    </tr>
+  </table>
+</div>
+
+						<div align=right><a href="javascript:mytalbeRest();" style="font-size:12px">缺省桌面</a></div>
+						<br />						
+					</td>
+				</tr>
+			</table>			
+		
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgKXvvyDCQLSlfOmBDxVHvd6L9lfJDFA2LtUK4xz4Rk5" />
+</div></form>
+<script type="text/javascript">
+<!--
+_upc();
+//-->
+</script>
+</body>
+</html>

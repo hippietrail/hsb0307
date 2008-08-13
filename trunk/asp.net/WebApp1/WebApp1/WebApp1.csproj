@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D8078850-72EB-4378-A1BC-970982D6DF7F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -53,6 +53,41 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="anyoffice\about.htm" />
+    <Content Include="anyoffice\callleftmenu.htm" />
+    <Content Include="anyoffice\index.htm" />
+    <Content Include="anyoffice\ipanel\images\127-1.bmp" />
+    <Content Include="anyoffice\ipanel\images\127-2.bmp" />
+    <Content Include="anyoffice\ipanel\images\127-3.bmp" />
+    <Content Include="anyoffice\ipanel\images\bg_01.gif" />
+    <Content Include="anyoffice\ipanel\images\blank.gif" />
+    <Content Include="anyoffice\ipanel\images\mb_01.gif" />
+    <Content Include="anyoffice\ipanel\images\rtxaway.GIF" />
+    <Content Include="anyoffice\ipanel\images\rtxgrp.GIF" />
+    <Content Include="anyoffice\ipanel\images\rtxhdr.GIF" />
+    <Content Include="anyoffice\ipanel\images\rtxoff.GIF" />
+    <Content Include="anyoffice\ipanel\images\rtxon.GIF" />
+    <Content Include="anyoffice\ipanel\index.htm" />
+    <Content Include="anyoffice\ipanel\menu_outlook.htm" />
+    <Content Include="anyoffice\ipanel\menu_outlook_menu.htm" />
+    <Content Include="anyoffice\ipanel\menu_top.htm" />
+    <Content Include="anyoffice\ipanel\smsbox.htm" />
+    <Content Include="anyoffice\ipanel\user_all.htm" />
+    <Content Include="anyoffice\ipanel\user_rtx_online.htm" />
+    <Content Include="anyoffice\login_info.htm" />
+    <Content Include="anyoffice\mytable\index.htm" />
+    <Content Include="anyoffice\person_info\index.htm" />
+    <Content Include="anyoffice\status_bar\index.htm" />
+    <Content Include="anyoffice\table_index.htm" />
+    <Content Include="anyoffice\topbar.htm" />
+    <Content Include="aspnet_client\mytreeview\blank-node.gif" />
+    <Content Include="aspnet_client\mytreeview\closed-node.gif" />
+    <Content Include="aspnet_client\mytreeview\edge-node.gif" />
+    <Content Include="aspnet_client\mytreeview\end-closed-node.gif" />
+    <Content Include="aspnet_client\mytreeview\end-node.gif" />
+    <Content Include="aspnet_client\mytreeview\end-open-node.gif" />
+    <Content Include="aspnet_client\mytreeview\node.gif" />
+    <Content Include="aspnet_client\mytreeview\open-node.gif" />
     <Content Include="Default.aspx" />
     <Content Include="FrameDemo\CenterContent.htm" />
     <Content Include="FrameDemo\Footer.htm" />
@@ -295,12 +330,14 @@
     <Content Include="images\menu\chatroom.gif" />
     <Content Include="images\menu\clock.gif" />
     <Content Include="images\menu\comm.gif" />
+    <Content Include="images\menu\comm2.gif" />
     <Content Include="images\menu\contact.gif" />
     <Content Include="images\menu\contact1.gif" />
     <Content Include="images\menu\contract.gif" />
     <Content Include="images\menu\customer.gif" />
     <Content Include="images\menu\diary.gif" />
     <Content Include="images\menu\email.gif" />
+    <Content Include="images\menu\email2.gif" />
     <Content Include="images\menu\erp.gif" />
     <Content Include="images\menu\exit.gif" />
     <Content Include="images\menu\file_folder.gif" />
@@ -308,15 +345,19 @@
     <Content Include="images\menu\help.gif" />
     <Content Include="images\menu\histroy.gif" />
     <Content Include="images\menu\hrms.gif" />
+    <Content Include="images\menu\icon2.gif" />
     <Content Include="images\menu\inbox.gif" />
     <Content Include="images\menu\info.gif" />
     <Content Include="images\menu\infofind.gif" />
     <Content Include="images\menu\info_query.gif" />
+    <Content Include="images\menu\knowledge.gif" />
     <Content Include="images\menu\linkman.gif" />
     <Content Include="images\menu\meeting.gif" />
     <Content Include="images\menu\menu_url.gif" />
+    <Content Include="images\menu\mobile.gif" />
     <Content Include="images\menu\mobile_sms.gif" />
     <Content Include="images\menu\mytable.gif" />
+    <Content Include="images\menu\mytable2.gif" />
     <Content Include="images\menu\netchat.gif" />
     <Content Include="images\menu\netdisk.gif" />
     <Content Include="images\menu\netmeeting.gif" />
@@ -331,10 +372,13 @@
     <Content Include="images\menu\picture.gif" />
     <Content Include="images\menu\product.gif" />
     <Content Include="images\menu\query.gif" />
+    <Content Include="images\menu\report.gif" />
+    <Content Include="images\menu\rms.gif" />
     <Content Include="images\menu\roll_manage.gif" />
     <Content Include="images\menu\salary.gif" />
     <Content Include="images\menu\sale_manage.gif" />
     <Content Include="images\menu\score.gif" />
+    <Content Include="images\menu\shipin.gif" />
     <Content Include="images\menu\shortcut.gif" />
     <Content Include="images\menu\sms.gif" />
     <Content Include="images\menu\source.gif" />
@@ -448,6 +492,7 @@
     <Content Include="images\sys_config.gif" />
     <Content Include="images\table_bg.gif" />
     <Content Include="images\table_left.gif" />
+    <Content Include="images\theme.gif" />
     <Content Include="images\time.gif" />
     <Content Include="images\tongda.ico" />
     <Content Include="images\topmenubg1.gif" />
@@ -599,7 +644,25 @@
     <Content Include="tdoa\status_bar\index.htm" />
     <Content Include="tdoa\table_index.htm" />
     <Content Include="tdoa\topbar.htm" />
-    <Content Include="tdoa\topbar1.htm" />
+    <Content Include="theme\1\bg.gif" />
+    <Content Include="theme\1\bg_input_text_hover.png" />
+    <Content Include="theme\1\bg_middle1_main.gif" />
+    <Content Include="theme\1\bg_nav_column_dark.gif" />
+    <Content Include="theme\1\bg_nav_column_light.gif" />
+    <Content Include="theme\1\bg_nav_tool.gif" />
+    <Content Include="theme\1\big_button_back.gif" />
+    <Content Include="theme\1\col.gif" />
+    <Content Include="theme\1\col.jpg" />
+    <Content Include="theme\1\headerbg.gif" />
+    <Content Include="theme\1\menu.css" />
+    <Content Include="theme\1\menu_top_active.gif" />
+    <Content Include="theme\1\menu_top_bg.gif" />
+    <Content Include="theme\1\panel_bg.gif" />
+    <Content Include="theme\1\small_button_back.gif" />
+    <Content Include="theme\1\statusbar.gif" />
+    <Content Include="theme\1\style.css" />
+    <Content Include="theme\1\timebar.gif" />
+    <Content Include="theme\1\topbar.gif" />
     <Content Include="theme\2\ad.png" />
     <Content Include="theme\2\ad1.png" />
     <Content Include="theme\2\ag.gif" />
@@ -722,6 +785,9 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

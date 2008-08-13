@@ -1,0 +1,58 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<HTML>
+	<HEAD>
+		<title>在线用户</title>
+		<SCRIPT LANGUAGE="JavaScript">
+		var menu_flag=0;			
+		function clickMenu(ID)
+		{
+			targetelement=document.getElementById(ID);
+			if (targetelement.style.display=='none')
+					targetelement.style.display='';
+			else
+					targetelement.style.display='none';
+		}
+		function list_expand()
+		{
+			var trElements = document.all.tags("table");		
+			for(i = 0; i < trElements.length; ++i)
+			{
+				if(trElements[i].id.indexOf('trdept_')>-1)
+				{
+					if (menu_flag==1)					
+					 	trElements[i].style.display='';
+					else
+						trElements[i].style.display='none';						
+				}				
+			}
+			
+			var expand_text=document.getElementById("expand_text");
+			if (menu_flag==1)
+			{
+			 expand_text.innerHTML="全部收缩";
+			}
+			else
+			{
+			 expand_text.innerHTML="全部展开";
+			}
+			menu_flag=1-menu_flag;
+		}
+		window.setTimeout('this.location.reload();',60000*3);
+		</SCRIPT>
+		<script type="text/javascript" src="js/browinfo.js"></script>
+		<script type="text/javascript" src="js/rtxint.js"></script>
+	</HEAD>
+	<body class="panel" topmargin="0" leftmargin="0">
+		<form name="Form1" method="post" action="user_rtx_online.aspx" id="Form1">
+
+
+			<table class=TableBlock width=100% class=small><tr class=TableHeader onclick='list_expand()' style=cursor:hand><td align=center id='expand_text'>全部收缩</td></tr><tr class=TableHeader onclick=clickMenu('trdept_2') style=cursor:hand><td align=center>市场部</td></tr></table><table class=TableBlock width=100% id='trdept_2' class=small><tr class=TableData align=center><td align=center width=40><img title=联机 src=/images/on_status1.gif align=absmiddle>&nbsp;<img height=16 src=images/rtxoff.gif width=16 onload=RAP('xp') align=absBottom showOffline></td><td align=center><a href=javascript:parent.openURL('/general/ipanel/user_info.aspx?user_id=xp')>肖鹏</a></td><td align=center width=60><a href=javascript:parent.send_sms('xp','肖鹏')>消息</a>&nbsp;<a href=javascript:parent.send_email('xp','肖鹏')>邮件</a></td></tr><tr class=TableData align=center><td align=center width=40><img title=联机 src=/images/on_status1.gif align=absmiddle>&nbsp;<img height=16 src=images/rtxoff.gif width=16 onload=RAP('zy') align=absBottom showOffline></td><td align=center><a href=javascript:parent.openURL('/general/ipanel/user_info.aspx?user_id=zy')>张宇</a></td><td align=center width=60><a href=javascript:parent.send_sms('zy','张宇')>消息</a>&nbsp;<a href=javascript:parent.send_email('zy','张宇')>邮件</a></td></tr></table>
+		</form>
+	</body>
+</HTML>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+	<script language="JavaScript">
+        var OA_TIME = new Date(2008,8,13,14,48,25);
+        function mdate()
+        {
+           var solarTerm=sTerm(2008,8,13);
+           if(solarTerm != "")
+              $('mdate').innerHTML = solarTerm;
+        }
+        function timeview()
+        {
+          timestr=OA_TIME.toLocaleString();
+          timestr=timestr.substr(timestr.indexOf(":")-2);
+          document.getElementById("time_area").innerHTML = timestr;
+          OA_TIME.setSeconds(OA_TIME.getSeconds()+1);
+          window.setTimeout( "timeview()", 1000 );
+        }
+
+        function re_login()
+        {
+        msg="您好，肖鹏\n您正在使用AnyOffice.Net协同办公系统\n确认要注销么？";
+          if(window.confirm(msg))
+           parent.location="../relogin.aspx";
+        }
+        if (window.Event)
+          document.captureEvents(Event.MOUSEUP);
+
+        function nocontextmenu()
+        {
+         event.cancelBubble = true
+         event.returnValue = false;
+
+         return false;
+        }
+
+        function norightclick(e)
+        {
+         if (window.Event)
+         {
+          if (e.which == 2 || e.which == 3)
+           return false;
+         }
+         else
+          if (event.button == 2 || event.button == 3)
+          {
+           event.cancelBubble = true
+           event.returnValue = true;
+           return true;
+          }
+
+        }
+
+        document.oncontextmenu = nocontextmenu;  // for IE5+
+        document.onmousedown = norightclick;  // for all others
+
+        function show_kalendar()
+		{
+			var url="/general/info/kalendar/index.aspx";
+			var mwidth = "650";
+			var mheight = "450";			
+			var loc_x=parseInt((window.screen.width - mwidth)/2);
+			var loc_y=parseInt((window.screen.height - mwidth)/2); 
+			if(window.navigator.appName.toLowerCase().indexOf("netscape") > -1)
+				window.open(url,"kalendar","left=" + loc_x + "px,top=" + loc_y + "px,width=" + mwidth + "px,height=" + mheight + "px,resizable=no,scrollbars=yes,status=0");
+			else
+				window.showModalDialog(url,self,"edge:raised;scroll:1;status:0;help:0;resizable:1;dialogWidth:"+mwidth+"px;dialogHeight:"+mheight+"px;dialogTop:"+loc_y+"px;dialogLeft:"+loc_x+"px");			
+		}
+	</script>
+</head>
+<body class="bodycolor" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" onLoad="timeview();">
+		<table width="100%" height="50" border="0" cellspacing="0" cellpadding="0">
+			<tr class="topbar1">
+    <td> 
+      <div class="toptitle">						
+						AnyOffice.Net协同办公系统 2008
+      </div>
+				</td>				
+				
+    <td width="300" align="center" class="topbar2"> 
+      <table width="100%" border="0">
+        <tr>
+          <td align="center">
+            <a href="#" onClick="show_kalendar();" title="点击弹出万年历"><span class="topnav"><strong>
+            2008年8月13日 星期三</strong></span></a>			
+			<img src="/images/time.gif" align="absmiddle">
+			<strong><span id="time_area" class="topnav"></span></strong>
+            </td>
+        </tr>
+        <tr>
+          <td align="center"> <a href="mytable/index.htm" target="main" title="首页"><img src="/images/menu/mytable.gif" border="0" align="absbottom">&nbsp;<font class="topnav">首页</font></a> 
+            &nbsp;<a href="person_info/index.htm" target="main" title="控制面板"><img src="/images/theme.gif" width="16" height="16" border="0" align="absbottom">&nbsp;<font class="topnav">控制面板</font></a> 
+            &nbsp;<a href="#" onclick="re_login();" title="注销"><img src="/images/login.gif" width="16" height="16" border="0" align="absbottom">&nbsp;<font class="topnav">注销</font></a> 
+          </td>
+        </tr>
+      </table>
+    </td>
+			</tr>
+		</table>
+	</body>
+</html>

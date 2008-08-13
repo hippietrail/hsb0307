@@ -1,0 +1,149 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+</head>
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" onLoad="initNav();">
+<table name="tableNavArea" id="tableNavArea" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 
+          <td width="100%" valign="top">
+			<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td height="100%" valign="top" bgcolor="#FFFFFF" class="navFrame">
+				<iframe border=1 marginWidth=0 marginHeight=0 frameBorder=0 name=frameColumnNav id=frameColumnNav src="" style="width:100%;height:100%" scrolling="auto"></iframe> 
+                </td>
+              </tr>
+              <tr> 
+                <td height="5px" valign="bottom" class="navMain" align=center style="cursor:hand" onclick="changeNav();"><img src="/theme/bg_middle1_button.gif" height="5px"></td>
+              </tr>
+              <tr name=navMenu id=navMenu> 
+				<td height="0px" valign="bottom" bgcolor="#FFFFFF"  class="navMenu">
+					<div name=divNav id=divNav style="display:">
+					
+		<div title="个人办公" id="_div_01" class="nav_column_dark" onmouseover="_onmouseover('01')" onmouseout="_onmouseout('01')" onclick="checkNav('01')" <span style=""><img src="/images/menu/mytable2.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">个人办公</span></div>
+	
+		<div title="工 作 流" id="_div_02" class="nav_column_dark" onmouseover="_onmouseover('02')" onmouseout="_onmouseout('02')" onclick="checkNav('02')" <span style=""><img src="/images/menu/workflow.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">工 作 流</span></div>
+	
+		<div title="公共事务" id="_div_03" class="nav_column_dark" onmouseover="_onmouseover('03')" onmouseout="_onmouseout('03')" onclick="checkNav('03')" <span style=""><img src="/images/menu/erp.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">公共事务</span></div>
+	
+		<div title="档案中心" id="_div_04" class="nav_column_dark" onmouseover="_onmouseover('04')" onmouseout="_onmouseout('04')" onclick="checkNav('04')" <span style=""><img src="/images/menu/rms.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">档案中心</span></div>
+	
+		<div title="文档共享" id="_div_05" class="nav_column_dark" onmouseover="_onmouseover('05')" onmouseout="_onmouseout('05')" onclick="checkNav('05')" <span style=""><img src="/images/menu/knowledge.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">文档共享</span></div>
+	
+		<div title="信息交流" id="_div_09" class="nav_column_dark" onmouseover="_onmouseover('09')" onmouseout="_onmouseout('09')" onclick="checkNav('09')" <span style=""><img src="/images/menu/comm2.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">信息交流</span></div>
+	
+		<div title="辅助办公" id="_div_30" class="nav_column_dark" onmouseover="_onmouseover('30')" onmouseout="_onmouseout('30')" onclick="checkNav('30')" <span style=""><img src="/images/menu/info_query.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">辅助办公</span></div>
+	</div>
+<div name=divNavIndex id=divNavIndex style="display:none;" class="navIndex">
+<img title="个人办公" src="/images/menu/mytable2.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('01')">
+	<img title="工 作 流" src="/images/menu/workflow.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('02')">
+	<img title="公共事务" src="/images/menu/erp.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('03')">
+	<img title="档案中心" src="/images/menu/rms.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('04')">
+	<img title="文档共享" src="/images/menu/knowledge.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('05')">
+	<img title="信息交流" src="/images/menu/comm2.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('09')">
+	<img title="辅助办公" src="/images/menu/info_query.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('30')">
+	</div></td>
+              </tr>
+            </table>
+			</td>
+        </tr>
+        <tr> 
+          <td height="20" style="height:20px" valign="bottom"> 
+            <table width="60%" border="0" align="center" cellpadding="0" cellspacing="1">
+              <tr>
+                <td width="50%" align="center"> 
+                  <table border="0" cellpadding="0" cellspacing="0" class="navTool">
+                    <tr align="center"> 
+                      <td onclick="changeNav();"><a name="title1" id="title1" href='#'> 
+                        最小化
+                        </a></td>
+                    </tr>
+                  </table></td>
+                <td width="50%" align="center"> 
+                  <table  name="" id="" border="0" cellpadding="0" cellspacing="1" class="navTool">
+                    <tr> 
+                      <td align="center" name='tTitle1'><a name='tTitle2' href="/general/person_info/index.aspx" target="main">设 置</a></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+</body>
+</html>
+<script language="JavaScript">
+<!--
+var checkedNavID = "01";
+var changeNavType = 1; //显示方式 //1 //0 NavIndex
+
+function _onmouseover(id)
+{
+	if(checkedNavID == id) return;
+
+	var e = eval("document.getElementById('_div_"+ id + "')");
+	e.className="nav_column_light";
+}
+
+function _onmouseout(id)
+{
+	if(checkedNavID == id) return;
+
+	var e = eval("document.getElementById('_div_"+ id + "')");
+	e.className="nav_column_dark";
+}
+
+function checkNav(id)
+{
+	var e = eval("document.getElementById('_div_"+ checkedNavID + "')");
+	e.className="nav_column_dark";
+
+	checkedNavID = id;
+	var e = eval("document.getElementById('_div_"+ id + "')");
+	e.className="nav_column_light";
+
+	document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + id;
+}
+
+function changeNav()
+{
+	if(changeNavType == 0)
+	{
+		document.getElementById("divNav").style.display = "none";
+		document.getElementById("divNavIndex").style.display = "";
+
+		changeNavType = 1;
+		document.getElementById("title1").innerHTML = '菜 单';
+	}
+	else
+	{
+		document.getElementById("divNavIndex").style.display = "none";
+		document.getElementById("divNav").style.display = "";
+		changeNavType = 0;
+		document.getElementById("title1").innerHTML = '最小化';
+	}
+}
+
+function initNav()
+{
+	var e = eval("document.getElementById('_div_"+ checkedNavID + "')");
+	e.className="nav_column_light";
+	changeNav();
+	
+	document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + checkedNavID;
+}
+//-->
+</script>

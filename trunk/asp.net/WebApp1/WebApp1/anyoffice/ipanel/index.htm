@@ -1,0 +1,97 @@
+﻿<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<script>
+var menu_id=1;
+var menu_class = "menu_top_comon";
+
+function setPointer(element,over_flag,menu_id_over)
+{
+  if(menu_id!=menu_id_over)
+  {
+     if(over_flag==1)
+	 {
+     	element.className="menu_top_active";		
+	}
+     else
+	 {
+       	element.className="menu_top_comon";
+	}
+  }
+}
+
+var init_flag=0;
+function init_menu()
+{
+  //init_flag++;
+ 
+     view_menu(1);
+}
+
+function view_menu(id)
+{
+  //if(init_flag!=2)
+     //return;
+  
+  menu_id=id;
+  for(i=1;i<=4;i++)
+  {
+     menu_i="menu_"+i;
+     if(i==id)	 
+       	menu_class = "menu_top_active";	
+     else	 
+	menu_class = "menu_top_comon";
+     menu_top.document.getElementById(menu_i).className= menu_class;
+  }
+
+   if(id==1)
+  {
+     menu_page.location="about:blank";
+     document.getElementById("frame1").rows="23,*,0,22";
+  }
+  else if(id==2)
+  {
+     menu_page.location="user_rtx_online.htm";
+     document.getElementById("frame1").rows="23,0,*,22";
+  }
+  else if(id==3)
+  {
+     menu_page.location="smsbox.htm";
+     document.getElementById("frame1").rows="23,0,*,22";    
+  }
+  else if(id==4)
+  {
+     menu_page.location="user_all.htm";
+     document.getElementById("frame1").rows="23,0,*,22";	
+  }
+}
+
+//-------- 打开网址 -------
+function openURL(URL)
+{
+    parent.table_index.main.location=URL;
+}
+//发送消息
+function send_sms(to_id,to_name)
+{
+   mytop=screen.availHeight-190;
+   myleft=0;
+   window.open("/general/status_bar/sms_back.htm?to_id="+to_id+"&to_name="+to_name,"send_sms","height=150,width=350,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=yes");
+}
+//发送邮件
+function send_email(to_id,to_name)
+{
+   parent.table_index.main.location="/general/email/new.htm?to_id="+to_id+"&to_name="+to_name;
+}
+
+</script>
+</head>
+<frameset id="frame1" name="frame1" rows="23,*,0,22"  cols="*" frameborder="NO" border="0" framespacing="0">
+    <frame id="menu_top" name="menu_top" scrolling="no" noresize src="menu_top.htm" frameborder="0" />
+    <frame id="menu_main" name="menu_main" scrolling="no" noresize src="menu_outlook.htm" frameborder="0" />
+    <frame id="menu_page" name="menu_page" scrolling="auto" noresize src="" frameborder="0" />
+    <frame id="menu_bottom" name="menu_bottom" scrolling="no" noresize src="../status_bar/index.htm" frameborder="0" />  
+</frameset>
+<noframes></noframes>
+</html>
