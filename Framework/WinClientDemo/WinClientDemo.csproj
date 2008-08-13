@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Program Files\Microsoft Enterprise Library 4.0 - May 2008\src\Blocks\Configuration\Src\Console\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files\Microsoft Enterprise Library 4.0 - May 2008\src\Blocks\Configuration\Src\Console\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -54,6 +58,9 @@
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -70,6 +77,7 @@
     <Compile Include="BusinessActions\Department.cs" />
     <Compile Include="ClientContext.cs" />
     <Compile Include="DataAccess\DepartmentAdapter.cs" />
+    <Compile Include="Data\DataType.cs" />
     <Compile Include="Data\Departments.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +170,10 @@
     <ProjectReference Include="..\Husb.Security\Husb.Security.csproj">
       <Project>{C6CA0079-19BD-45DC-A519-2C51AE3F0B73}</Project>
       <Name>Husb.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Husb.Util\Husb.Util.csproj">
+      <Project>{C7C06364-4776-4657-B990-9A2E920C90FC}</Project>
+      <Name>Husb.Util</Name>
     </ProjectReference>
     <ProjectReference Include="..\Husb.WinFormControls\Husb.WinFormControls.csproj">
       <Project>{A7C1B203-246E-4340-8E05-D68FC7039548}</Project>

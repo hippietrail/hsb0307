@@ -17,6 +17,7 @@ using Microsoft.Practices.EnterpriseLibrary.Security;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Security.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Security.Database;
+using Husb.Util;
 
 namespace WinClientDemo
 {
@@ -150,12 +151,14 @@ namespace WinClientDemo
 
             IConfigurationSource configurationSource = ConfigurationSourceFactory.Create();
             SecurityConfigurationView view = new SecurityConfigurationView(configurationSource);
-            DbAuthorizationRuleProviderData ruleProviderData = view.GetAuthorizationProviderData(view.GetDefaultAuthorizationProviderName()) as DbAuthorizationRuleProviderData;
+            //DbAuthorizationRuleProviderData ruleProviderData = view.GetAuthorizationProviderData(view.GetDefaultAuthorizationProviderName()) as DbAuthorizationRuleProviderData;
+            CustomAuthorizationProviderData ruleProviderData = view.GetAuthorizationProviderData(view.GetDefaultAuthorizationProviderName()) as CustomAuthorizationProviderData;
 
             string database = null;
             if (ruleProviderData != null)
             {
-                database = ruleProviderData.Database;
+                database = ruleProviderData.Attributes["database"];
+                // database = ruleProviderData.Database;
             }
 
             AuthorizationProviderDatabaseProvider ruleProvider = new AuthorizationProviderDatabaseProvider(database);
@@ -176,6 +179,10 @@ namespace WinClientDemo
 
         private void InitializationForm_Load(object sender, EventArgs e)
         {
+            comboBox1.DataSource = EnumUtil.ToList(typeof(DepartmentType));
+            comboBox1.DisplayMember = "Value";
+            comboBox1.ValueMember = "Key";
+
             pnlDepartment.Dock = DockStyle.Fill;
             pnlRole.Dock = DockStyle.Fill;
             pnlUser.Dock = DockStyle.Fill;

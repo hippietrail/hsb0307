@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             categoryLabel = new System.Windows.Forms.Label();
             departmentNumberLabel = new System.Windows.Forms.Label();
@@ -66,8 +67,45 @@
             this.pnlUser.SuspendLayout();
             this.SuspendLayout();
             // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(20, 14);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(53, 12);
+            nameLabel.TabIndex = 69;
+            nameLabel.Text = "部门名称";
+            // 
+            // categoryLabel
+            // 
+            categoryLabel.AutoSize = true;
+            categoryLabel.Location = new System.Drawing.Point(20, 40);
+            categoryLabel.Name = "categoryLabel";
+            categoryLabel.Size = new System.Drawing.Size(53, 12);
+            categoryLabel.TabIndex = 71;
+            categoryLabel.Text = "部门类别";
+            // 
+            // departmentNumberLabel
+            // 
+            departmentNumberLabel.AutoSize = true;
+            departmentNumberLabel.Location = new System.Drawing.Point(20, 67);
+            departmentNumberLabel.Name = "departmentNumberLabel";
+            departmentNumberLabel.Size = new System.Drawing.Size(53, 12);
+            departmentNumberLabel.TabIndex = 72;
+            departmentNumberLabel.Text = "部门编号";
+            // 
+            // queryNumberLabel
+            // 
+            queryNumberLabel.AutoSize = true;
+            queryNumberLabel.Location = new System.Drawing.Point(20, 94);
+            queryNumberLabel.Name = "queryNumberLabel";
+            queryNumberLabel.Size = new System.Drawing.Size(53, 12);
+            queryNumberLabel.TabIndex = 74;
+            queryNumberLabel.Text = "速查代号";
+            // 
             // pnlDepartment
             // 
+            this.pnlDepartment.Controls.Add(this.label6);
             this.pnlDepartment.Controls.Add(this.comboBox1);
             this.pnlDepartment.Controls.Add(this.btnCancel);
             this.pnlDepartment.Controls.Add(this.btnGotoRole);
@@ -112,15 +150,6 @@
             this.btnGotoRole.UseVisualStyleBackColor = true;
             this.btnGotoRole.Click += new System.EventHandler(this.btnGotoRole_Click);
             // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(20, 14);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(53, 12);
-            nameLabel.TabIndex = 69;
-            nameLabel.Text = "部门名称";
-            // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(96, 11);
@@ -128,39 +157,12 @@
             this.nameTextBox.Size = new System.Drawing.Size(200, 21);
             this.nameTextBox.TabIndex = 70;
             // 
-            // categoryLabel
-            // 
-            categoryLabel.AutoSize = true;
-            categoryLabel.Location = new System.Drawing.Point(20, 40);
-            categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new System.Drawing.Size(53, 12);
-            categoryLabel.TabIndex = 71;
-            categoryLabel.Text = "部门类别";
-            // 
-            // departmentNumberLabel
-            // 
-            departmentNumberLabel.AutoSize = true;
-            departmentNumberLabel.Location = new System.Drawing.Point(20, 67);
-            departmentNumberLabel.Name = "departmentNumberLabel";
-            departmentNumberLabel.Size = new System.Drawing.Size(53, 12);
-            departmentNumberLabel.TabIndex = 72;
-            departmentNumberLabel.Text = "部门编号";
-            // 
             // departmentNumberTextBox
             // 
             this.departmentNumberTextBox.Location = new System.Drawing.Point(96, 64);
             this.departmentNumberTextBox.Name = "departmentNumberTextBox";
             this.departmentNumberTextBox.Size = new System.Drawing.Size(200, 21);
             this.departmentNumberTextBox.TabIndex = 73;
-            // 
-            // queryNumberLabel
-            // 
-            queryNumberLabel.AutoSize = true;
-            queryNumberLabel.Location = new System.Drawing.Point(20, 94);
-            queryNumberLabel.Name = "queryNumberLabel";
-            queryNumberLabel.Size = new System.Drawing.Size(53, 12);
-            queryNumberLabel.TabIndex = 74;
-            queryNumberLabel.Text = "速查代号";
             // 
             // queryNumberTextBox
             // 
@@ -341,14 +343,24 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "管理员";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(34, 202);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(293, 12);
+            this.label6.TabIndex = 81;
+            this.label6.Text = "系统检测到需要进行一些初始化设置，请按提示操作。";
+            // 
             // InitializationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 223);
+            this.Controls.Add(this.pnlDepartment);
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.pnlRole);
-            this.Controls.Add(this.pnlDepartment);
             this.Name = "InitializationForm";
             this.Text = "InitializationForm";
             this.Load += new System.EventHandler(this.InitializationForm_Load);
@@ -389,5 +401,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
     }
 }
