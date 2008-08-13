@@ -80,7 +80,7 @@ namespace WinClientDemo
         {
             if (!ContainChild("Form1"))
             {
-                OpenForm(new Form1());
+                OpenForm(new LoginForm());
             }
         }
 
