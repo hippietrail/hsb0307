@@ -1,0 +1,73 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<html>
+<head>
+<title>控制左菜单显隐</title>
+<script language="JavaScript">
+
+var LEFT_MENU_VIEW=0;
+
+function leftmenu_open()
+{
+   LEFT_MENU_VIEW=0;
+   leftmenu_ctrl();
+}
+
+function leftmenu_ctrl()
+{
+   if(LEFT_MENU_VIEW==0)
+   {
+	  parent.document.getElementById("frame2").cols="200,1,*";		
+      LEFT_MENU_VIEW=1;
+      document.getElementById("myarrow").src="";	 
+      document.getElementById("myarrow").src="/images/menu/arrow_l.gif";
+	  document.getElementById("tblArrow").style.display="none";
+   }
+   else
+   {
+	parent.document.getElementById("frame2").cols="0,8,*";
+	LEFT_MENU_VIEW=0;
+	document.getElementById("myarrow").src="/images/menu/arrow_r.gif";
+	document.getElementById("tblArrow").style.display="";
+   }
+}
+
+function setPointer(theRow, thePointerColor)
+{
+    if (typeof(theRow.style) == 'undefined' || typeof(theRow.cells) == 'undefined')
+    {
+        return false;
+    }
+
+    var row_cells_cnt=theRow.cells.length;
+    for (var c = 0; c < row_cells_cnt; c++)
+    {
+        theRow.cells[c].bgColor = thePointerColor;
+    }
+
+    return true;
+}
+
+</script>
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" onload="leftmenu_open();">
+ <TABLE cellspacing="0" width="100%" height="100%" cellpadding="0" align="center" class="col" border="0">
+   <TR>
+     <TD>
+      	<TABLE id="tblArrow"  style="display:none"cellspacing="0" width="100%" height="50" bgcolor="#EEEEEE" border="1" bordercolorlight="#000000" bordercolordark="#FFFFFF" cellpadding="0">
+         <TR onclick="leftmenu_ctrl();" onmouseover="setPointer(this, '#D3E5FF')" onmouseout="setPointer(this, '#EEEEEE')" title="展开左侧菜单">
+           <TD style="cursor: pointer; cursor: hand;"><img id="myarrow" src="/images/menu/arrow_l.gif"></TD>
+           </TR>
+         </TABLE>
+     </TD>
+   </TR>
+ </TABLE>
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<HTML>
+	<HEAD>
+		<title>登录信息</title>
+		<script LANGUAGE="JavaScript">		
+		function change_state()
+		{
+			if(document.getElementById("sltState").style.display=="none")
+				document.getElementById("sltState").style.display="";
+			else
+				document.getElementById("sltState").style.display="none";
+		}
+
+		function ChangeState()
+		{
+			AnyOffice.general.ipanel.AjaxMethods.ChangeState(document.getElementById("sltState").value, CallBack_ChangeState);			
+		}
+		
+		function CallBack_ChangeState(res)
+		{
+			//if(res.error != null)  
+			//	return;
+			
+			document.getElementById("sltState").style.display="none";
+			document.getElementById("img_state").src = "/images/on_status" + document.getElementById("sltState").value + ".gif";
+			document.getElementById("text_state").innerHTML = document.getElementById("sltState").options[document.getElementById("sltState").selectedIndex].text;
+		}
+		
+		function show_about()
+		{
+			var url="about.htm";
+			var mwidth = "436";
+			var mheight = "250";			
+			var loc_x=parseInt((window.screen.width - mwidth)/2);
+			var loc_y=parseInt((window.screen.height - mwidth)/2); 
+			if(window.navigator.appName.toLowerCase().indexOf("netscape") > -1)
+				window.open(url,"about","left=" + loc_x + "px,top=" + loc_y + "px,width=" + mwidth + "px,height=" + mheight + "px,resizable=no,scrollbars=yes,status=0");
+			else
+				window.showModalDialog(url,self,"edge:raised;scroll:1;status:0;help:0;resizable:1;dialogWidth:"+mwidth+"px;dialogHeight:"+mheight+"px;dialogTop:"+loc_y+"px;dialogLeft:"+loc_x+"px");			
+		}
+		</script>
+	</HEAD>
+	<body class="timebar" topmargin="0" leftmargin="0" rightmargin="0">
+		<form name="Form1" method="post" action="login_info.aspx" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTU4MTIyNjk1D2QWAgIBD2QWCGYPDxYCHgRUZXh0BQnluILlnLrpg6hkZAIBDw8WAh8ABQnmgLvnu4/nkIZkZAICDw8WAh4ISW1hZ2VVcmwFFC9pbWFnZXMvYXZhdGFyLzMuZ2lmZGQCAw8PFgIfAAUG6IKW6bmPZGRkdM1sJBGwRt79GJscAhMeApv5rXo=" />
+</div>
+
+
+<script type="text/javascript" src="/ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/AnyOffice.general.ipanel.AjaxMethods,App_Code.ashx"></script>
+	
+		<table border="0" cellspacing="0" cellpadding="1" class="small" width="100%">
+			<tr>
+				<td>
+					<b>
+					<img src="/images/dot3.gif" align="absMiddle">
+					&nbsp;<IMG alt="" src="/images/hello.gif" align="absMiddle">
+					<span id="lblDeptName">市场部</span>&nbsp;<IMG alt="" src="/images/arrow.gif" align="absMiddle">
+					
+					<img id="imgAvatar" src="/images/avatar/3.gif" align="absmiddle" style="border-width:0px;" />
+					<span id="lblUserName">肖鹏</span>&nbsp;
+					<span style="cursor:pointer;cursor:hand" onclick="change_state();">
+						<img id="img_state" src="/images/on_status1.gif" align="absmiddle">
+						<span id="text_state">联机</span>
+					</span>
+					<select class="SmallSelect" id="sltState" name="sltState" onchange="ChangeState();" style="display:none">
+						<option value="1"  selected>联机</option>
+						<option value="2" >忙碌</option>
+						<option value="3" >离开</option>
+					</select>
+					</b>
+				</td>
+				<td align="right">&nbsp;				
+				    
+					&nbsp;&nbsp;
+					&nbsp;&nbsp;<a target="_blank" href="http://www.anyoffice.net" >思道网站</a>&nbsp;&nbsp;<a href="javascript:show_about();" >关于</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>			
+		</table>
+		</form>
+	</body>
+</HTML>

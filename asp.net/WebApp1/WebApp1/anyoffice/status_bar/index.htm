@@ -1,0 +1,96 @@
+﻿<!--
+	软件名称：AnyOffice.Net协同办公系统
+	软件版本：4.1.0618
+	软件版权：思道科技,保留所有权利
+	官方网站：http://www.anyoffice.net
+-->
+<link rel="stylesheet" type="text/css" href="/theme/1/style.css">
+<HTML>
+	<HEAD>
+		<title>状态</title>
+				
+		<script language="javascript">		
+		var AJAX_INTERVAL = 60000;	
+		var timer_sms = null;
+		function GetSms()
+		{	
+			if(timer_sms != null)
+				window.clearTimeout(timer_sms);
+				
+			AnyOffice.general.status_bar.AjaxMethods.GetSms(CallBack_GetSms);
+			timer_sms=setTimeout("GetSms()",AJAX_INTERVAL);
+		}
+
+		function CallBack_GetSms(res)
+		{	
+			if (res.error != null)  
+				return;	
+						
+			var returnValue = res.value.split("-");
+			document.getElementById("user_num").innerHTML=returnValue[1];
+			var smsNums = parseInt(returnValue[0]);
+						
+			if(smsNums > 0)
+			{
+				if(2 != 0)
+					document.getElementById("new_sms").innerHTML="<OBJECT classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codeBase='/module/swflash.cab#version=6,0,0,0' height='0' id='sms_sound' width='0'><PARAM NAME='movie' VALUE='/callsound/2.swf'><PARAM NAME='quality' VALUE='high'><embed src='/callsound/2.swf' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='0' height='0'></embed></OBJECT><a href='#' onclick='javascript:show_sms();'  title='点击查看消息'><img src='/images/sms1.gif'border=0 height=10> <font class='status_sms'>消息</font></a>";
+				else
+					document.getElementById("new_sms").innerHTML="<a href='#' onclick='javascript:show_sms();'  title='点击查看消息'><img src='/images/sms1.gif'border=0 height=10> <font class='status_sms'>消息</font></a>";
+				if(true == true)			
+					show_sms();		
+			}
+			else
+				document.getElementById("new_sms").innerHTML="";
+		}		
+		
+		var popSms;
+		function show_sms()
+		{
+			mytop=screen.availHeight-190;
+			myleft=0;
+			if(popSms == null || popSms.closed)
+				popSms = window.open("sms_show.aspx","auto_call_show","height=150,width=350,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=no");			   						
+		}
+
+		function show_online()
+		{
+			parent.view_menu(2);
+		}		
+		
+		function show_about()
+		{
+			var url="../about.htm";
+			var mwidth = "436";
+			var mheight = "230";			
+			var loc_x=parseInt((window.screen.width - mwidth)/2);
+			var loc_y=parseInt((window.screen.height - mwidth)/2); 
+			if(window.navigator.appName.toLowerCase().indexOf("netscape") > -1)
+				window.open(url,"about","left=" + loc_x + "px,top=" + loc_y + "px,width=" + mwidth + "px,height=" + mheight + "px,resizable=no,scrollbars=yes,status=0");
+			else
+				window.showModalDialog(url,self,"edge:raised;scroll:1;status:0;help:0;resizable:1;dialogWidth:"+mwidth+"px;dialogHeight:"+mheight+"px;dialogTop:"+loc_y+"px;dialogLeft:"+loc_x+"px");			
+		}
+		</script>
+	</HEAD>
+	<body class="statusbar" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" onload="GetSms();">		
+		<table border="0" width="100%" cellspacing="0" cellpadding="0">
+			<tr class="small" height="20">
+				<td align="center" width="100"><a href='#' onclick='javascript:show_online();' ><font class="status_online">在线：<span id="user_num"></span>人</font></a></td>
+				<td align="center" width="80"><span id="new_sms"></span></td>
+                                <td width="10"></td>
+				<td width="10" align="center" title="隐藏左侧菜单" onclick="parent.parent.callleftmenu.leftmenu_ctrl();" style="cursor: pointer; cursor: hand;"><img src="/images/menu/arrow_l.gif" border="0"></td>
+			</tr>
+		</table>
+		<form name="Form1" method="post" action="index.aspx" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjE3MzE1MzI3ZGS6QJcygmA37YpYpJ5B36HymrQQYg==" />
+</div>
+
+
+<script type="text/javascript" src="/ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/AnyOffice.general.status_bar.AjaxMethods,App_Code.ashx"></script>
+
+		</form>
+	</body>
+</HTML>
