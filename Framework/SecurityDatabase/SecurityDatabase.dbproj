@@ -51,35 +51,35 @@
     <RootNamespace>SecurityDatabase</RootNamespace>
     <FileGroups>
       <FileGroupDefinitionCollection Version="1" xmlns="">
-  <FileGroups>
-    <FileGroupDefinition Name="PRIMARY" UpdatabilityOption="ReadWrite" IsDefault="True" CreationSucceed="False">
-      <Files>
-        <DatabaseFileDefinition LogicalName="PrimaryFileName" FileType="Primary">
-          <PhysicalName>%24(PrimaryFilePhysicalName)</PhysicalName>
-          <Size Number="3" SizeType="MB" />
-          <MaxSize Number="3" SizeType="MB" />
-          <FileGrowth Number="1" SizeType="MB" />
-          <EnableAutoGrowth>True</EnableAutoGrowth>
-          <UseDefaultMinSizeOnServer>True</UseDefaultMinSizeOnServer>
-          <UseDefaultAutoGrowthOnServer>True</UseDefaultAutoGrowthOnServer>
-          <Offline>False</Offline>
-        </DatabaseFileDefinition>
-      </Files>
-    </FileGroupDefinition>
-  </FileGroups>
-  <LogFiles>
-    <DatabaseFileDefinition LogicalName="PrimaryLogFileName" FileType="PrimaryLog">
-      <PhysicalName>%24(PrimaryLogFilePhysicalName)</PhysicalName>
-      <Size Number="3" SizeType="MB" />
-      <MaxSize Number="3" SizeType="MB" />
-      <FileGrowth Number="1" SizeType="MB" />
-      <EnableAutoGrowth>True</EnableAutoGrowth>
-      <UseDefaultMinSizeOnServer>True</UseDefaultMinSizeOnServer>
-      <UseDefaultAutoGrowthOnServer>True</UseDefaultAutoGrowthOnServer>
-      <Offline>False</Offline>
-    </DatabaseFileDefinition>
-  </LogFiles>
-</FileGroupDefinitionCollection>
+        <FileGroups>
+          <FileGroupDefinition Name="PRIMARY" UpdatabilityOption="ReadWrite" IsDefault="True" CreationSucceed="False">
+            <Files>
+              <DatabaseFileDefinition LogicalName="PrimaryFileName" FileType="Primary">
+                <PhysicalName>%24(PrimaryFilePhysicalName)</PhysicalName>
+                <Size Number="3" SizeType="MB" />
+                <MaxSize Number="3" SizeType="MB" />
+                <FileGrowth Number="1" SizeType="MB" />
+                <EnableAutoGrowth>True</EnableAutoGrowth>
+                <UseDefaultMinSizeOnServer>True</UseDefaultMinSizeOnServer>
+                <UseDefaultAutoGrowthOnServer>True</UseDefaultAutoGrowthOnServer>
+                <Offline>False</Offline>
+              </DatabaseFileDefinition>
+            </Files>
+          </FileGroupDefinition>
+        </FileGroups>
+        <LogFiles>
+          <DatabaseFileDefinition LogicalName="PrimaryLogFileName" FileType="PrimaryLog">
+            <PhysicalName>%24(PrimaryLogFilePhysicalName)</PhysicalName>
+            <Size Number="3" SizeType="MB" />
+            <MaxSize Number="3" SizeType="MB" />
+            <FileGrowth Number="1" SizeType="MB" />
+            <EnableAutoGrowth>True</EnableAutoGrowth>
+            <UseDefaultMinSizeOnServer>True</UseDefaultMinSizeOnServer>
+            <UseDefaultAutoGrowthOnServer>True</UseDefaultAutoGrowthOnServer>
+            <Offline>False</Offline>
+          </DatabaseFileDefinition>
+        </LogFiles>
+      </FileGroupDefinitionCollection>
     </FileGroups>
     <PreviousProjectVersion>2</PreviousProjectVersion>
   </PropertyGroup>
@@ -164,6 +164,9 @@
       <SubType>Code</SubType>
     </PostDeploy>
     <NotInBuild Include="Baseline.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data Generation Plans\SchemaVersions.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
     <NotInBuild Include="Scripts\Post-Deployment\DatabaseObjectOptions.sql">
