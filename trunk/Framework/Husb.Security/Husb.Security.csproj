@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C6CA0079-19BD-45DC-A519-2C51AE3F0B73}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Demo2.sql" />
+    <None Include="SecurityDemo.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
