@@ -30,16 +30,7 @@ namespace WinClientDemo
 
         private void InitializeOutlookBar()
         {
-            //OutlookBar outlookBar = new OutlookBar();
-            //outlookBar.Location = new Point(0, 0);
-            //outlookBar.Size = new Size(150, this.ClientSize.Height);
-            //outlookBar.BorderStyle = BorderStyle.FixedSingle;
-            //Controls.Add(outlookBar);
-            //outlookBar.Initialize();
-
-
             this.outlookBar.Initialize();
-
 
             IconPanel iconPanel1 = new IconPanel();
             IconPanel iconPanel2 = new IconPanel();
@@ -53,10 +44,10 @@ namespace WinClientDemo
             //iconPanel1.AddIcon("Contacts", Image.FromFile("img3.ico"), new EventHandler(PanelEvent));
             //iconPanel1.AddIcon("Tasks", Image.FromFile("img4.ico"), new EventHandler(PanelEvent));
 
-            iconPanel1.AddIcon("Outlook Today", null, null);
-            iconPanel1.AddIcon("Calendar", null, null);
-            iconPanel1.AddIcon("Contacts", null, null);
-            iconPanel1.AddIcon("Tasks", null, null);
+            iconPanel1.AddIcon("Outlook Today", null, new EventHandler(PanelEvent));
+            iconPanel1.AddIcon("Calendar", null, new EventHandler(PanelEvent));
+            iconPanel1.AddIcon("Contacts", null, new EventHandler(PanelEvent));
+            iconPanel1.AddIcon("Tasks", null, new EventHandler(PanelEvent));
 
             //outlookBar.SelectBand(0);
         }
@@ -114,6 +105,7 @@ namespace WinClientDemo
             ResizeRedraw = true;
 
             // get the user's credentials
+            
             Login();
 
             if (ClientContext.User != null && ClientContext.User.Identity.Name.Length > 0)
@@ -155,5 +147,18 @@ namespace WinClientDemo
             login.ShowDialog();
             login.Close();
         }
+
+        public void PanelEvent(object sender, EventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            PanelIcon panelIcon = ctrl.Tag as PanelIcon;
+            //MessageBox.Show("#" + panelIcon.Index.ToString(), "Panel Event");
+
+            DepartmentTable dt1 = Department.GetDepartmentTree();
+            DepartmentTable dt2 = Department.GetAll();
+
+        }
+
+
     }
 }

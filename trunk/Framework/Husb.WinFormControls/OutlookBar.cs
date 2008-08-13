@@ -428,14 +428,7 @@ namespace Husb.WinFormControls
 
                 //Assembly assembly = Assembly.GetAssembly(typeof(Form));
                 //Bitmap bitmap1 = new Bitmap(assembly.GetManifestResourceStream("System.Windows.Forms.cut.bmp"));
-                //Bitmap bitmap2 = new Bitmap(assembly.GetManifestResourceStream("System.Windows.Forms.copy.bmp"));
-                //Bitmap bitmap3 = new Bitmap(assembly.GetManifestResourceStream("System.Windows.Forms.paste.bmp"));
-                //Bitmap bitmap4 = new Bitmap(assembly.GetManifestResourceStream("System.Windows.Forms.delete.bmp"));
                 //bitmap1.MakeTransparent(Color.Fuchsia);
-                //bitmap2.MakeTransparent(Color.Fuchsia);
-                //bitmap3.MakeTransparent(Color.Fuchsia);
-                //bitmap4.MakeTransparent(Color.Fuchsia);
-
             }
             int index = Controls.Count / 2;	// two entries per icon
             PanelIcon panelIcon = new PanelIcon(this, image, index, onClickEvent);

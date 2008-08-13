@@ -788,8 +788,6 @@ namespace Husb.WinFormControls
                 throw new Exception("The Collapsible Splitter control cannot have the Filled or None Dockstyle property");
             }
 
-
-
             // dispose the Graphics object
             g.Dispose();
         }

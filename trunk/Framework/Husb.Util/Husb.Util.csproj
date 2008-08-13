@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C7C06364-4776-4657-B990-9A2E920C90FC}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -46,6 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonUtil.cs" />
+    <Compile Include="EnumUtil.cs" />
+    <Compile Include="Enum\DbEnumerableData.cs" />
+    <Compile Include="Enum\EnumerableData.cs" />
+    <Compile Include="Enum\EnumerableDataFactory.cs" />
+    <Compile Include="Enum\EnumItemAttribute.cs" />
+    <Compile Include="Enum\EnumType.cs" />
+    <Compile Include="Enum\IEnumerableData.cs" />
+    <Compile Include="Enum\ResEnumerableData.cs" />
+    <Compile Include="Enum\XmlEnumerableData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinUtil.cs" />
   </ItemGroup>
