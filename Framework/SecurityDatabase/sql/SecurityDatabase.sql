@@ -24,7 +24,7 @@ BEGIN
     IF ((SELECT CAST(value AS nvarchar(128))
 	    FROM 
 		    [$(DatabaseName)]..fn_listextendedproperty('microsoft_database_tools_deploystamp', null, null, null, null, null, null )) 
-	    = CAST(N'3163bec0-9dd8-4c67-9c44-2312ffd3b89a' AS nvarchar(128)))
+	    = CAST(N'c00e1b0d-88a6-4222-957e-9e53583bc2e9' AS nvarchar(128)))
     BEGIN
 	    RAISERROR(N'由于脚本已经部署到目标服务器，因此跳过了部署。', 16 ,100) WITH NOWAIT
 	    RETURN
@@ -33,18 +33,65 @@ END
 GO
 
 
+:on error resume
+     
 :on error exit
 
-CREATE DATABASE [$(DatabaseName)] ON ( NAME = N'PrimaryFileName', FILENAME = N'$(PrimaryFilePhysicalName)') LOG ON ( NAME = N'PrimaryLogFileName', FILENAME = N'$(PrimaryLogFilePhysicalName)') COLLATE SQL_Latin1_General_CP1_CS_AS 
+IF (@@servername != 'HG-EIP\SQLEXPRESS')
+BEGIN
+    RAISERROR(N'生成脚本中的服务器名称 %s 与目标服务器的名称 %s 不匹配。请验证数据库项目设置是否正确以及生成脚本是否是最新的。', 16, 127,N'HG-EIP\SQLEXPRESS',@@servername) WITH NOWAIT
+    RETURN
+END
+GO
 
+
+DECLARE @sqlver as INT;
+SET @sqlver = cast(((@@microsoftversion / 0x1000000) * 10) as int);
+IF (@sqlver != 90)
+BEGIN
+    RAISERROR(N'生成脚本中的 SQL Server 版本 %i 与目标服务器上的版本 %i 不匹配。请验证数据库项目设置是否正确以及生成脚本是否是最新的。', 16, 127,90,@sqlver) WITH NOWAIT;
+    RETURN;
+END
+GO
+
+
+IF NOT EXISTS (SELECT 1 FROM [master].[dbo].[sysdatabases] WHERE [name] = N'SecurityDatabase')
+BEGIN
+    RAISERROR(N'不能将此更新脚本部署到目标 HG-EIP\SQLEXPRESS。此服务器上没有为此脚本生成的数据库 SecurityDatabase。', 16, 127) WITH NOWAIT
+    RETURN
+END
+GO
+
+
+IF (N'$(DatabaseName)' ! = N'SecurityDatabase')
+BEGIN
+    RAISERROR(N'生成脚本中的数据库名称 %s 与目标数据库的名称 %s 不匹配。请验证数据库项目设置是否正确以及生成脚本是否是最新的。', 16, 127,N'$(DatabaseName)',N'SecurityDatabase') WITH NOWAIT;
+    RETURN
+END
+GO
+
+
+DECLARE @dbcompatlvl as int;
+SELECT  @dbcompatlvl = cmptlevel
+FROM    [master].[dbo].[sysdatabases]
+WHERE   [name] = N'$(DatabaseName)';
+IF (ISNULL(@dbcompatlvl, 0) != 90)
+BEGIN
+    RAISERROR(N'生成脚本的数据库兼容级别 %i 与目标数据库的兼容级别 %i 不匹配。请验证数据库项目设置是否正确以及生成脚本是否是最新的。', 16, 127, 90, @dbcompatlvl) WITH NOWAIT;
+    RETURN;
+END
+GO
+
+
+IF CAST(DATABASEPROPERTY(N'$(DatabaseName)','IsReadOnly') as bit) = 1
+BEGIN
+    RAISERROR(N'由于生成此脚本的数据库 %s 已设置为 READ_ONLY，因此您不能部署此更新脚本。', 16, 127, N'$(DatabaseName)') WITH NOWAIT
+    RETURN
+END
 GO
 
 :on error resume
      
-EXEC sp_dbcmptlevel N'$(DatabaseName)', 90
-
-GO
-
 IF EXISTS (SELECT 1 FROM [sys].[databases] WHERE [name] = N'$(DatabaseName)') 
     ALTER DATABASE [$(DatabaseName)] SET  
 	ALLOW_SNAPSHOT_ISOLATION OFF
@@ -139,6 +186,6 @@ IF ((SELECT COUNT(*)
 BEGIN
 	EXEC [dbo].sp_dropextendedproperty 'microsoft_database_tools_deploystamp'
 END
-EXEC [dbo].sp_addextendedproperty 'microsoft_database_tools_deploystamp', N'3163bec0-9dd8-4c67-9c44-2312ffd3b89a'
+EXEC [dbo].sp_addextendedproperty 'microsoft_database_tools_deploystamp', N'c00e1b0d-88a6-4222-957e-9e53583bc2e9'
 GO
 
