@@ -88,12 +88,13 @@ function GetWeather(beUpdate)
 </TD></TR>
 </tbody>
 </table>
+
 <div id=area_select style="DISPLAY: none">
 <SELECT id=province onchange=Province_onchange(this.options.selectedIndex);>
 <OPTION value=选择省>选择省</OPTION><OPTION value=直辖市>直辖市</OPTION><OPTION value=特别行政区>特别行政区</OPTION><OPTION value=黑龙江>黑龙江</OPTION><OPTION value=吉林>吉林</OPTION><OPTION value=辽宁>辽宁</OPTION><OPTION value=内蒙古>内蒙古</OPTION><OPTION value=河北>河北</OPTION><OPTION value=河南>河南</OPTION><OPTION value=山东>山东</OPTION><OPTION value=山西>山西</OPTION><OPTION value=江苏>江苏</OPTION><OPTION value=安徽 selected>安徽</OPTION><OPTION value=陕西>陕西</OPTION><OPTION value=宁夏>宁夏</OPTION><OPTION value=甘肃>甘肃</OPTION><OPTION value=青海>青海</OPTION><OPTION value=湖北>湖北</OPTION><OPTION value=湖南>湖南</OPTION><OPTION value=浙江>浙江</OPTION><OPTION value=江西>江西</OPTION><OPTION value=福建>福建</OPTION><OPTION value=贵州>贵州</OPTION><OPTION value=四川>四川</OPTION><OPTION value=广东>广东</OPTION><OPTION value=广西>广西</OPTION><OPTION value=云南>云南</OPTION><OPTION value=海南>海南</OPTION><OPTION value=新疆>新疆</OPTION><OPTION value=西藏>西藏</OPTION><OPTION value=台湾>台湾</OPTION> </SELECT> <SELECT id=chinacity><OPTION value=0>选择城市</OPTION><OPTION value=58321 selected>合肥</OPTION><OPTION value=58326>巢湖</OPTION><OPTION value=58221>蚌埠</OPTION><OPTION value=58424>安庆</OPTION><OPTION value=58311>六安</OPTION><OPTION value=58236>滁州</OPTION><OPTION value=58336>马鞍山</OPTION><OPTION value=58203>阜阳</OPTION><OPTION value=58433>宣城</OPTION><OPTION value=58429>铜陵</OPTION><OPTION value=58116>淮北</OPTION><OPTION value=58334>芜湖</OPTION><OPTION value=58122>宿州</OPTION><OPTION value=58224>淮南</OPTION><OPTION value=58427>池州</OPTION> 
 </SELECT> 
-<INPUT class=SmallButtonA onclick="GetWeather('1');" type=button value=确定> 
-<INPUT class=SmallButtonA onclick="$('area_select').style.display='none';$('weather').style.display='block';" type=button value=取消> 
+<INPUT class="SmallButtonA" onclick="GetWeather('1');" type=button value="确定"> 
+<INPUT class="SmallButtonA" onclick="$('area_select').style.display='none';$('weather').style.display='block';" type="button" value="取消"> 
 </div>
 </body>
 </html>

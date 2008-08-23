@@ -45,6 +45,9 @@
 		<div title="信息交流" id="_div_09" class="nav_column_dark" onmouseover="_onmouseover('09')" onmouseout="_onmouseout('09')" onclick="checkNav('09')" <span style=""><img src="/images/menu/comm2.gif" align=absmiddle height=16 width=16></span>
 		<span style="height:100%;padding-left:5px;padding-top:5px;">信息交流</span></div>
 	
+		<div title="系统管理" id="_div_20" class="nav_column_dark" onmouseover="_onmouseover('20')" onmouseout="_onmouseout('20')" onclick="checkNav('20')" <span style=""><img src="/images/menu/sys.gif" align=absmiddle height=16 width=16></span>
+		<span style="height:100%;padding-left:5px;padding-top:5px;">系统管理</span></div>
+	
 		<div title="辅助办公" id="_div_30" class="nav_column_dark" onmouseover="_onmouseover('30')" onmouseout="_onmouseout('30')" onclick="checkNav('30')" <span style=""><img src="/images/menu/info_query.gif" align=absmiddle height=16 width=16></span>
 		<span style="height:100%;padding-left:5px;padding-top:5px;">辅助办公</span></div>
 	</div>
@@ -55,6 +58,7 @@
 	<img title="档案中心" src="/images/menu/rms.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('04')">
 	<img title="文档共享" src="/images/menu/knowledge.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('05')">
 	<img title="信息交流" src="/images/menu/comm2.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('09')">
+	<img title="系统管理" src="/images/menu/sys.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('20')">
 	<img title="辅助办公" src="/images/menu/info_query.gif" align=absmiddle height=16 width=16 style="cursor:pointer;cursor:hand;" onclick="checkNav('30')">
 	</div></td>
               </tr>
@@ -87,63 +91,56 @@
 </html>
 <script language="JavaScript">
 <!--
-var checkedNavID = "01";
-var changeNavType = 1; //显示方式 //1 //0 NavIndex
+    var checkedNavID = "01";
+    var changeNavType = 1; //显示方式 //1 //0 NavIndex
 
-function _onmouseover(id)
-{
-	if(checkedNavID == id) return;
+    function _onmouseover(id) {
+        if (checkedNavID == id) return;
 
-	var e = eval("document.getElementById('_div_"+ id + "')");
-	e.className="nav_column_light";
-}
+        var e = eval("document.getElementById('_div_" + id + "')");
+        e.className = "nav_column_light";
+    }
 
-function _onmouseout(id)
-{
-	if(checkedNavID == id) return;
+    function _onmouseout(id) {
+        if (checkedNavID == id) return;
 
-	var e = eval("document.getElementById('_div_"+ id + "')");
-	e.className="nav_column_dark";
-}
+        var e = eval("document.getElementById('_div_" + id + "')");
+        e.className = "nav_column_dark";
+    }
 
-function checkNav(id)
-{
-	var e = eval("document.getElementById('_div_"+ checkedNavID + "')");
-	e.className="nav_column_dark";
+    function checkNav(id) {
+        var e = eval("document.getElementById('_div_" + checkedNavID + "')");
+        e.className = "nav_column_dark";
 
-	checkedNavID = id;
-	var e = eval("document.getElementById('_div_"+ id + "')");
-	e.className="nav_column_light";
+        checkedNavID = id;
+        var e = eval("document.getElementById('_div_" + id + "')");
+        e.className = "nav_column_light";
 
-	document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + id;
-}
+        document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + id;
+    }
 
-function changeNav()
-{
-	if(changeNavType == 0)
-	{
-		document.getElementById("divNav").style.display = "none";
-		document.getElementById("divNavIndex").style.display = "";
+    function changeNav() {
+        if (changeNavType == 0) {
+            document.getElementById("divNav").style.display = "none";
+            document.getElementById("divNavIndex").style.display = "";
 
-		changeNavType = 1;
-		document.getElementById("title1").innerHTML = '菜 单';
-	}
-	else
-	{
-		document.getElementById("divNavIndex").style.display = "none";
-		document.getElementById("divNav").style.display = "";
-		changeNavType = 0;
-		document.getElementById("title1").innerHTML = '最小化';
-	}
-}
+            changeNavType = 1;
+            document.getElementById("title1").innerHTML = '菜 单';
+        }
+        else {
+            document.getElementById("divNavIndex").style.display = "none";
+            document.getElementById("divNav").style.display = "";
+            changeNavType = 0;
+            document.getElementById("title1").innerHTML = '最小化';
+        }
+    }
 
-function initNav()
-{
-	var e = eval("document.getElementById('_div_"+ checkedNavID + "')");
-	e.className="nav_column_light";
-	changeNav();
-	
-	document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + checkedNavID;
-}
+    function initNav() {
+        var e = eval("document.getElementById('_div_" + checkedNavID + "')");
+        e.className = "nav_column_light";
+        changeNav();
+
+        document.getElementById("frameColumnNav").src = "menu_outlook_menu.htm?menu_id=" + checkedNavID;
+    }
 //-->
 </script>
