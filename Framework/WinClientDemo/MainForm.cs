@@ -157,6 +157,11 @@ namespace WinClientDemo
             DepartmentTable dt1 = Department.GetDepartmentTree();
             DepartmentTable dt2 = Department.GetAll();
 
+            
+
+            DemoForm frm = new DemoForm();
+            frm.Show();
+
         }
 
 
