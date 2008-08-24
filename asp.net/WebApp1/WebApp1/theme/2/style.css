@@ -31,6 +31,7 @@ table{border-collapse:collapse;}
 .big3   { font-size: 12pt;COLOR: #124164;FONT-WEIGHT: bold;}
 .big4   { COLOR: #FF0000;}
 .verybig{ font-size: 24pt}
+
 <!--
 input.SmallButton, input.ArrowButton {FONT-SIZE: 9pt;height: 20px; text-decoration: none; vertical-align: middle; border: 1px solid #6E91C7; background: #F4FBE1 url('button_bg.gif');}
 input.SmallButton:hover, input.ArrowButton:hover {FONT-SIZE: 9pt;color: #395500; background: #F4FADF url('bg_input_btn_hover.png'); border: 1px solid #80AA00; border-top: 1px solid #99CC00; border-left: 1px solid #99CC00;}
