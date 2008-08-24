@@ -1,0 +1,100 @@
+﻿<HTML><HEAD><TITLE></TITLE><LINK href="/theme/2/style.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/ccorrect_btn.js"></SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK href="/theme/2/ilook.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/mytable.js"></SCRIPT>
+
+<SCRIPT>
+var area="1",keyword="";
+function c(id)
+{
+  var module=$('module_'+id);
+  if(module.style.display=="none" || module.style.display=="")
+  {
+     $('module_'+area).style.display='none';
+     $('link_'+area).className="";
+     area=id;
+     module.style.display='block';
+     $('link_'+id).className="active";
+     if(module.innerHTML=="")
+        ilook();
+  }
+  else
+  {
+     module.style.display="none";
+     $('link_'+id).className="";
+  }
+}
+function ilook(key)
+{
+	$('module_'+area).style.display='block';
+	$('link_'+area).className="active";
+	$('module_'+area).innerHTML="<img src='/images/loading.gif' height='20' width='20' align='absMiddle'> 加载中，请稍候……";
+
+	if(key) keyword=key;
+	if(!keyword)
+	{
+	   $('module_'+area).innerHTML="<div class=\"blank\">请输入关键词进行搜索</div>";
+	   return;
+	}
+	var req=getXMLHttpObj();
+	req.open("GET","search.php?AREA="+area+"&KWORD="+keyword,true);
+	req.onreadystatechange=function(){if(req.readyState==4)$("module_"+area).innerHTML=req.responseText;};
+	req.send(null)
+}
+function open_user(USER_ID)
+{
+ URL="/general/ipanel/user/user_info.php?USER_ID="+USER_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+function open_email(EMAIL_ID,BOX_ID)
+{
+ URL="/general/email/inbox/read_email/read_email.php?BOX_ID="+BOX_ID + "&EMAIL_ID="+EMAIL_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+function open_notify(NOTIFY_ID)
+{
+ URL="/general/notify/show/read_notify.php?NOTIFY_ID="+NOTIFY_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+function open_address(ADD_ID,FLAG)
+{
+ if(FLAG==1) URL="/general/address/private/address/add_detail.php?ADD_ID="+ADD_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ else URL="/general/address/public/address/add_detail.php?ADD_ID="+ADD_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+function open_file(CONTENT_ID,SORT_ID)
+{
+ URL="/general/file_folder/read.php?CONTENT_ID=" + CONTENT_ID + "&SORT_ID=" + SORT_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+function form_view(RUN_ID,FLOW_ID)
+{
+  URL="/general/workflow/list/print?RUN_ID="+RUN_ID+"&FLOW_ID="+FLOW_ID + "&SEARCH_CENTER_FLAG=" + 1;
+  parent.openURL(URL,1);
+}
+function open_customer(CUSTOMER_ID)
+{
+ URL="/general/sale_manage/crm/query/customer/showdetail.php?CUSTOMER_ID=" + CUSTOMER_ID + "&SEARCH_CENTER_FLAG=" + 1;
+ parent.openURL(URL,1);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV id=body>
+<UL>
+<LI class=L1><A id=link_1 href="javascript:c('1');"><SPAN>用户</SPAN></A> 
+<DIV class=moduleContainer id=module_1></DIV>
+<LI class=L1><A id=link_2 href="javascript:c('2');"><SPAN>内部邮件(收件箱)</SPAN></A> 
+<DIV class=moduleContainer id=module_2></DIV>
+<LI class=L1><A id=link_3 href="javascript:c('3');"><SPAN>公告通知</SPAN></A> 
+<DIV class=moduleContainer id=module_3></DIV>
+<LI class=L1><A id=link_4 href="javascript:c('4');"><SPAN>通讯簿</SPAN></A> 
+<DIV class=moduleContainer id=module_4></DIV>
+<LI class=L1><A id=link_5 href="javascript:c('5');"><SPAN>文件柜</SPAN></A> 
+<DIV class=moduleContainer id=module_5></DIV>
+<LI class=L1><A id=link_6 href="javascript:c('6');"><SPAN>工作流</SPAN></A> 
+<DIV class=moduleContainer id=module_6></DIV>
+<LI class=L1><A id=link_7 href="javascript:c('7');"><SPAN>客户信息</SPAN></A> 
+<DIV class=moduleContainer id=module_7></DIV></LI></UL></DIV>
+<DIV id=bottom></DIV></BODY></HTML>

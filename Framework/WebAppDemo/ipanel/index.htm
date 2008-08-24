@@ -1,0 +1,117 @@
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="/theme/2/style.css">
+<script src="/inc/mytable.js"></script>
+<script src="/inc/js/ccorrect_btn.js"></script>
+<script src="/inc/js/today.js"></script>
+<script>
+var menu_id=1;
+
+function init_menu()
+{
+   view_menu(1);
+}
+
+function view_menu(id)
+{
+  if(id==1)
+  {
+     frame1.rows="82,*,0,0"; //header,menu,load_page,ilook
+     load_page.location="about:blank";
+  }
+  else if(id==2)
+  {
+     load_page.location="user/index.htm?ISPIRIT=";
+     frame1.rows="82,0,*,0";
+  }
+  else if(id==3)
+  {
+     load_page.location="smsbox/index.htm?ISPIRIT=&I_VER=";
+     frame1.rows="82,0,*,0";
+  }
+  else if(id==4)
+  {
+     frame1.rows="82,0,0,*";
+     load_page.location="about:blank";
+  }
+  pheader.$('menu_'+menu_id).className="";
+  pheader.$('menu_'+id).className="active";
+  menu_id=id;
+
+}
+
+var xmlHttpObj=getXMLHttpObj();
+var theURL="../ipanel/user/user_count.php";
+
+var count_first_run=0;
+
+function online_count()
+{
+  if(count_first_run==0)
+  {
+     count_first_run=1;
+     online_count1();
+  }
+  else
+ 	   return;
+}
+
+function online_count1()
+{
+  xmlHttpObj.open("GET",theURL,true);
+  var responseText="";
+  xmlHttpObj.onreadystatechange=function()
+	{
+		if(xmlHttpObj.readyState==4 && xmlHttpObj.status==200)
+		{
+			responseText=xmlHttpObj.responseText;
+			if(parent.parent.status_bar.document.getElementById("user_count1"))
+			   parent.parent.status_bar.document.getElementById("user_count1").value=responseText;
+		}
+	}
+  xmlHttpObj.send(null)
+  setTimeout("online_count1()",120000);
+}
+setTimeout("online_count()",1000);
+function openURL(URL,open_window)
+{
+   if(!open_window)
+   {
+       parent.table_index.main.location=URL;
+   }
+   else
+   {
+      mytop=(screen.availHeight-500)/2-30;
+      myleft=(screen.availWidth-780)/2;
+      window.open(URL,"","height=548,width=780,status=0,toolbar=no,menubar=yes,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=yes");
+   }
+}
+
+function send_sms(TO_ID,TO_NAME)
+{
+   mytop=screen.availHeight-225;
+   myleft=0;
+   window.open("/general/status_bar/sms_back.php?TO_ID="+TO_ID+"&TO_NAME="+unescape(TO_NAME),"","height=185,width=370,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=yes");
+}
+
+function send_email(TO_ID,TO_NAME)
+{
+   URL="/general/email/new?TO_ID="+TO_ID+"&TO_NAME="+unescape(TO_NAME);
+   openURL(URL,1);
+}
+
+</script>
+
+
+</head>
+
+<frameset rows="82,*,0,0"  cols="*" frameborder="no" border="0" framespacing="0" id="frame1">
+	<frame name="pheader" scrolling="no" noresize src="pheader.htm?ISPIRIT=" frameborder="0">
+    <frame name="menu" scrolling="auto" noresize src="menu.aspx?ISPIRIT=" frameborder="0">
+    <frame name="load_page" scrolling="auto" noresize src="" frameborder="0">
+    <frame name="ilook" scrolling="auto" noresize src="ilook/index.htm?ISPIRIT=" frameborder="0">
+</frameset>

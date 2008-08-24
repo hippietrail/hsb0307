@@ -1,0 +1,140 @@
+<HTML><HEAD><TITLE>状态栏</TITLE><LINK href="/theme/2/style.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/ccorrect_btn.js"></SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK href="/theme/2/status_bar.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/mytable.js"></SCRIPT>
+<script src="/inc/js/today.js"></script>
+<SCRIPT src="/inc/marquee.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+function killErrors()
+{
+  return true;
+}
+window.onerror = killErrors;
+
+var ctroltime;
+
+function MyLoad()
+{
+  setTimeout("email_mon()",11000);
+  ctroltime=setTimeout("sms_mon()",3000);
+}
+
+var xmlHttpObj=getXMLHttpObj();
+function email_mon()
+{
+  var theURL="email_mon.php";
+  xmlHttpObj.open("GET",theURL,true);
+  var responseText="";
+  xmlHttpObj.onreadystatechange=function()
+  {
+    if(xmlHttpObj.readyState==4)
+    {
+      responseText=xmlHttpObj.responseText;
+      if(responseText=="1")
+         document.getElementById("new_letter").innerHTML="<a href='#' onclick='javascript:show_email();' title='点击查看邮件'>新邮件</a>";
+      else
+      	 document.getElementById("new_letter").innerHTML="";
+    }
+  }
+  xmlHttpObj.send(null)
+  setTimeout("email_mon()",900000);
+}
+
+function sms_mon()
+{
+  var theURL="sms_mon.php?CHECK_SMS=1";
+  xmlHttpObj.open("GET",theURL,true);
+  var responseText="";
+  xmlHttpObj.onreadystatechange=function()
+  {
+    if(xmlHttpObj.readyState==4)
+    {
+      responseText=xmlHttpObj.responseText;
+      if(responseText=="S")
+      {
+         document.getElementById("new_sms").innerHTML="<a href='#' onclick='javascript:show_sms();' title='点击查看短信'><img src='/images/sms1.gif'border=0 height=10> 短信</a>";
+       show_sms();
+      }
+      else
+      	 document.getElementById("new_sms").innerHTML="";
+    }
+  }
+  xmlHttpObj.send(null)
+  ctroltime=setTimeout("sms_mon()",30000);
+}
+
+function show_sms()
+{
+   clearTimeout(ctroltime);
+   ctroltime=window.setTimeout('sms_mon()',40000);
+
+   mytop=screen.availHeight-200;
+   myleft=0;
+   window.open("sms_show.php","","height=160,width=370,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=yes");
+}
+
+function show_email()
+{
+   document.getElementById("new_letter").innerHTML="";
+   parent.table_index.main.location="/general/email/";
+}
+
+function show_online()
+{
+   parent.leftmenu.view_menu(2);
+}
+
+function main_refresh()
+{
+   parent.table_index.main.location.reload();
+}
+
+menu_flag=0;
+var STATUS_BAR_MENU;
+
+function show_menu()
+{
+   mytop=screen.availHeight-480;
+   myleft=screen.availWidth-260;
+   if(menu_flag==0)
+       STATUS_BAR_MENU=window.open("/general/ipanel/menu.php?OA_SUB_WINDOW=1","STATUS_BAR_MENUchr","height=400,width=200,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top="+mytop+",left="+myleft+",resizable=no");
+
+   STATUS_BAR_MENU.focus();
+}
+
+function MyUnload()
+{
+   if(menu_flag==1)
+   {
+     STATUS_BAR_MENU.focus();
+     STATUS_BAR_MENU.MAIN_CLOSE=1;
+     STATUS_BAR_MENU.close();
+   }
+}
+</SCRIPT>
+</HEAD>
+<BODY class="statusbar" leftMargin="0" topMargin="0"  onload=MyLoad(); onunload=MyUnload(); marginheight="0" marginwidth="0">
+<TABLE class=small cellSpacing=1 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR valign=top>
+<TD align=middle width=90><A onclick=javascript:show_online(); href="#" style="font-weight:bold;">共<INPUT id=user_count1 value=2>人在线 </A></TD>
+<TD align=middle width=80>&nbsp; <SPAN id=new_sms></SPAN></TD>
+<TD style="FONT-WEIGHT: bold" align=middle>
+<SCRIPT language=JavaScript>
+        new marquee('status_text');
+        status_text.setDelay(60*1000);
+        status_text.init(new Array("Office Anywhere 2008","创新技术引领潮流","打造国产OA第一品牌","体验科技关怀 共创美好未来"));
+      </SCRIPT>
+
+<DIV id=status_text style="OVERFLOW: hidden; HEIGHT: 18px">
+<DIV style="OVERFLOW: hidden; HEIGHT: 18px">Office Anywhere 2008</DIV></DIV></TD>
+<TD align=middle width=80>&nbsp; <SPAN id=new_letter></SPAN></TD>
+<TD align=middle width=75>&nbsp; <A href="javascript:show_menu();" style="font-weight:bold;">新窗口</A> </TD></TR></TBODY></TABLE>
+<SCRIPT>
+//window.setTimeout('this.location.reload();',3600000);
+parent.leftmenu.online_count();
+</SCRIPT>
+</BODY></HTML>
+
