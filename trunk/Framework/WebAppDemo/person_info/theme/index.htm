@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>界面主题</TITLE>
+<LINK href="/theme/2/style.css" type=text/css rel=stylesheet>
+<SCRIPT src="/inc/js/ccorrect_btn.js"></SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<SCRIPT language=JavaScript src="/inc/js/weather.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+function CheckForm()
+{
+   if(document.form1.SHOW_WEATHER && document.form1.WEATHER_CITY && document.form1.SHOW_WEATHER.checked && document.form1.WEATHER_CITY.value.length!=5)
+   {
+      alert("请选择城市");
+      return false;
+   }
+   return true;
+}
+function select_sound()
+{
+	sound=document.form1.CALL_SOUND.value;
+	if(sound!="0")
+	{
+	   str="<object  classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='/inc/swflash.cab' width='0' height='0'><param name='movie' value='/wav/"+sound+".swf'><param name=quality value=high><embed src='/wav/"+sound+".swf' width='0' height='0' quality='autohigh' wmode='opaque' type='application/x-shockwave-flash' plugspace='http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash'></embed></object>"
+	   document.getElementById("sms_sound").innerHTML=str;
+	}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY class=bodycolor topMargin=5 onload="init_province();SetCity('58321');">
+<TABLE class=small cellSpacing=0 cellPadding=3 width="90%" border=0>
+<TBODY>
+<TR>
+<TD class=Big><IMG height=20 src="/images/menu/theme.gif" width=22 align=absMiddle><SPAN class=big3> 界面主题</SPAN><BR></TD></TR></TBODY></TABLE>
+<TABLE class=TableBlock width=600 align=center>
+<FORM name=form1 onsubmit="return CheckForm();" action=update.php method=post encType=multipart/form-data>
+<TBODY>
+<TR>
+<TD class=TableHeader colSpan=2>界面主题与菜单</TD></TD></TR>
+<TR height=60>
+<TD class=TableData noWrap width="20%"><B>界面主题：</B></TD>
+<TD class=TableData><SELECT class=SmallSelect name=THEME> <OPTION value=1>默认主题</OPTION> <OPTION value=2 selected>清新怡然</OPTION></SELECT> </TD></TR>
+<TR>
+<TD class=TableData noWrap width="20%"><B>菜单图标：</B></TD>
+<TD class=TableData><FONT color=gray>提示：选择不显示图标或单一图标会加速慢速网络时的登录速度</FONT><BR><INPUT id=MENU_IMAGE0 type=radio value=0 name=MENU_IMAGE><LABEL style="CURSOR: hand" for=MENU_IMAGE0>每个菜单使用不同图标</LABEL> <INPUT id=MENU_IMAGE1 type=radio value=1 name=MENU_IMAGE><LABEL style="CURSOR: hand" for=MENU_IMAGE1>不显示菜单图标</LABEL> <INPUT type=radio CHECKED value=2.gif name=MENU_IMAGE><IMG src="/images/m/2.gif" align=absMiddle>&nbsp; <INPUT type=radio value=3.gif name=MENU_IMAGE><IMG src="/images/m/3.gif" align=absMiddle>&nbsp; <INPUT type=radio value=4.gif name=MENU_IMAGE><IMG src="/images/m/4.gif" align=absMiddle>&nbsp; <INPUT type=radio value=dot.gif name=MENU_IMAGE><IMG src="/images/m/dot.gif" align=absMiddle>&nbsp; </TD></TR>
+<TR>
+<TD class=TableHeader colSpan=2>登录选项</TD></TD></TR>
+<TR>
+<TD class=TableData noWrap>登录模式：</TD>
+<TD class=TableData><SELECT class=SmallSelect name=MENU_TYPE> <OPTION value=1>在本窗口打开OA</OPTION> <OPTION value=2 selected>在新窗口打开OA，显示工具栏</OPTION> <OPTION value=3>在新窗口打开OA，无工具栏</OPTION></SELECT> 重新登录后生效 </TD></TR>
+<TR>
+<TD class=TableData noWrap>登录后显示的左侧面板：</TD>
+<TD class=TableData><SELECT class=SmallSelect name=PANEL> <OPTION value=1 selected>导航</OPTION> <OPTION value=2>组织</OPTION> <OPTION value=3>短信</OPTION> <OPTION value=4>搜索</OPTION></SELECT> </TD></TR>
+<TR>
+<TD class=TableHeader colSpan=2>内部短信设置</TD></TD></TR>
+<TR>
+<TD class=TableData noWrap>短信提醒窗口弹出方式：</TD>
+<TD class=TableData><SELECT class=SmallSelect name=SMS_ON> <OPTION value=1 selected>自动</OPTION> <OPTION value=0>手动</OPTION></SELECT> </TD></TR>
+<TR>
+<TD class=TableData noWrap>短信提示音：</TD>
+<TD class=TableData><SELECT class=SmallSelect onchange=select_sound() name=CALL_SOUND> <OPTION value=1>语音1</OPTION> <OPTION value=8>语音2</OPTION> <OPTION value=2>激光</OPTION> <OPTION value=3>水滴</OPTION> <OPTION value=4>手机</OPTION> <OPTION value=5>电话</OPTION> <OPTION value=6>鸡叫</OPTION> <OPTION value=7>OICQ</OPTION> <OPTION value=0 selected>无</OPTION></SELECT> 
+<DIV id=sms_sound align=right></DIV></TD></TR>
+<TR>
+<TD class=TableHeader colSpan=2>天气预报</TD></TR>
+<TR>
+<TD class=TableData noWrap>是否显示：</TD>
+<TD class=TableData noWrap><INPUT id=SHOW_WEATHER onclick="if(this.checked) $('area_select').style.display='block';else $('area_select').style.display='none';" type=checkbox CHECKED name=SHOW_WEATHER> <LABEL for=SHOW_WEATHER>显示天气预报</LABEL> </TD></TR>
+<TR id=area_select>
+<TD class=TableData noWrap>默认城市：</TD>
+<TD class=TableData noWrap><SELECT id=province onchange=Province_onchange(this.options.selectedIndex); name=PROVINCE><OPTION value=选择省>选择省</OPTION><OPTION value=直辖市>直辖市</OPTION><OPTION value=特别行政区>特别行政区</OPTION><OPTION value=黑龙江>黑龙江</OPTION><OPTION value=吉林>吉林</OPTION><OPTION value=辽宁>辽宁</OPTION><OPTION value=内蒙古>内蒙古</OPTION><OPTION value=河北>河北</OPTION><OPTION value=河南>河南</OPTION><OPTION value=山东>山东</OPTION><OPTION value=山西>山西</OPTION><OPTION value=江苏>江苏</OPTION><OPTION value=安徽 selected>安徽</OPTION><OPTION value=陕西>陕西</OPTION><OPTION value=宁夏>宁夏</OPTION><OPTION value=甘肃>甘肃</OPTION><OPTION value=青海>青海</OPTION><OPTION value=湖北>湖北</OPTION><OPTION value=湖南>湖南</OPTION><OPTION value=浙江>浙江</OPTION><OPTION value=江西>江西</OPTION><OPTION value=福建>福建</OPTION><OPTION value=贵州>贵州</OPTION><OPTION value=四川>四川</OPTION><OPTION value=广东>广东</OPTION><OPTION value=广西>广西</OPTION><OPTION value=云南>云南</OPTION><OPTION value=海南>海南</OPTION><OPTION value=新疆>新疆</OPTION><OPTION value=西藏>西藏</OPTION><OPTION value=台湾>台湾</OPTION> </SELECT> <SELECT id=chinacity name=WEATHER_CITY><OPTION value=0>选择城市</OPTION><OPTION value=58321 selected>合肥</OPTION><OPTION value=58326>巢湖</OPTION><OPTION value=58221>蚌埠</OPTION><OPTION value=58424>安庆</OPTION><OPTION value=58311>六安</OPTION><OPTION value=58236>滁州</OPTION><OPTION value=58336>马鞍山</OPTION><OPTION value=58203>阜阳</OPTION><OPTION value=58433>宣城</OPTION><OPTION value=58429>铜陵</OPTION><OPTION value=58116>淮北</OPTION><OPTION value=58334>芜湖</OPTION><OPTION value=58122>宿州</OPTION><OPTION value=58224>淮南</OPTION><OPTION value=58427>池州</OPTION> </SELECT> </TD></TR>
+<TR class=TableControl align=middle>
+<TD noWrap colSpan=2><INPUT class=BigButtonC type=submit value=保存设置并应用>&nbsp;&nbsp; </TD></TR></TBODY></TABLE>
+</FORM>
+<BR>
+</BODY>
+</HTML>
