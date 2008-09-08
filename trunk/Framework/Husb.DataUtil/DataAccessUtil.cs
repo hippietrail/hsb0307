@@ -164,16 +164,21 @@ namespace Husb.DataUtil
             db.AddInParameter(cmd, "Id", DbType.Guid, "Id", DataRowVersion.Current);
         }
 
-        public static void PopulateIdParamters(Microsoft.Practices.EnterpriseLibrary.Data.Database db, DbCommand cmd, bool isString)
+        public static void PopulateIdParamters(Microsoft.Practices.EnterpriseLibrary.Data.Database db, DbCommand cmd, string fieldName, bool isString)
         {
             if (isString)
             {
-                db.AddInParameter(cmd, "Id", DbType.String, "Id", DataRowVersion.Current);
+                db.AddInParameter(cmd, fieldName, DbType.String, fieldName, DataRowVersion.Current);
             }
             else
             {
-                db.AddInParameter(cmd, "Id", DbType.Guid, "Id", DataRowVersion.Current);
+                db.AddInParameter(cmd, fieldName, DbType.Guid, fieldName, DataRowVersion.Current);
             }
+        }
+
+        public static void PopulateIdParamters(Microsoft.Practices.EnterpriseLibrary.Data.Database db, DbCommand cmd, bool isString)
+        {
+            PopulateIdParamters(db, cmd, "Id", isString);
         }
 
         public static void PopulateIntParamters(Microsoft.Practices.EnterpriseLibrary.Data.Database db, DbCommand cmd, string fieldName)
