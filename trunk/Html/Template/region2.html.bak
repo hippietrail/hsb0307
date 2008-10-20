@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <LINK href="skin0.css" type=text/css rel=stylesheet>
+  <LINK href="comm.css" type=text/css rel=stylesheet>
+
+  <STYLE type=text/css>
+.toolbg {height:34px;*height:32px;}
+.input_wd {width:100%;padding:2px 2px 0 2px;}
+textarea	{width:100%;padding:2px;font:normal 14px Verdana}
+.rev {overflow:visible;word-break:break-all;}
+.addr		{border:1px solid #718da6;}
+.pd			{padding:4px 10px 5px 0;min-width:552px;}
+.pd1		{width:100%;min-width:695px;}
+.subtitle {padding-left:20px;padding-top:6px;vertical-align:top;}
+.input_title {margin:0 0 6px 68px;}
+.content_title {padding:0 0 5px 12px;}
+.upload		{display:none}
+#AttList .bd_upload {border-width:0;*border-width:1px;}
+</STYLE>
+
+ 
+ </head>
+
+ <body>
+ <div style="margin:20px;"></div>
+<DIV id=AttList style="MARGIN-TOP: -4px; MARGIN-BOTTOM: 4px; MARGIN-RIGHT: 20px">
+<DIV class=input_title id=editor_bgmusic_container style="DISPLAY: none; MARGIN-BOTTOM: 0px; PADDING-TOP: 5px"></DIV>
+<TABLE style="CLEAR: none" cellSpacing=0 cellPadding=0 border=0>
+<TBODY>
+<TR>
+<TD style="WIDTH: 69px" noWrap width="1%"></TD>
+<TD class="bd_upload content_title attbg" style="PADDING-RIGHT: 8px; PADDING-LEFT: 6px; PADDING-BOTTOM: 4px; WIDTH: 99%; PADDING-TOP: 8px; FONT-FAMILY: Tahoma" vAlign=top>
+	<DIV id=exist_file></DIV>
+
+	<DIV id=filecell style="MARGIN-BOTTOM: 4px">
+		<DIV class=attsep id=DUploader0>
+			<INPUT class=ico_att style="MARGIN: 0px 3px 2px 0px" type=button><INPUT class="file upload" id=Uploader0 type=file onchange="AfterAddFile('Uploader0')" value=E:\Data\Search\Token\test\北京经济适用房.txt name=Uploader0><SPAN id=SUploader0>北京经济适用房.txt</SPAN>&nbsp;<SPAN id=SIZEUploader0></SPAN>&nbsp; <A onclick="DelUploader('Uploader0')">删除</A> 
+		</DIV>
+
+		<DIV class=attsep id=DUploader1>
+			<INPUT class=ico_att style="MARGIN: 0px 3px 2px 0px" type=button><INPUT class="file upload" id=Uploader1 type=file onchange='AfterAddFile("Uploader1")' value="E:\Data\Search\Token\test\长安奔奔运动版上市 售4.39万-5.09万.txt" name=Uploader1><SPAN id=SUploader1>长安奔奔运动版上市 售4.39万-5.09万.txt</SPAN>&nbsp;<SPAN id=SIZEUploader1></SPAN><SPAN>&nbsp;&nbsp;</SPAN><A onclick="DelUploader('Uploader1')">删除</A>
+		</DIV>
+		<DIV class=attsep id=DUploader2>
+			<INPUT class=ico_att style="MARGIN: 0px 3px 2px 0px" type=button><INPUT class="file upload" id=Uploader2 type=file onchange='AfterAddFile("Uploader2")' value=E:\Data\Search\Token\test\35号投手温家宝在日发再现融冰之旅.txt name=Uploader2><SPAN id=SUploader2>35号投手温家宝在日发再现融冰之旅.txt</SPAN>&nbsp;<SPAN id=SIZEUploader2></SPAN><SPAN>&nbsp;&nbsp;</SPAN><A onclick="DelUploader('Uploader2')">删除</A>
+		</DIV>
+		<DIV class=attsep id=DUploader3 style="DISPLAY: none">
+			<INPUT class=ico_att style="MARGIN: 0px 3px 2px 0px" type=button><INPUT class="file upload" id=Uploader3 type=file onchange='AfterAddFile("Uploader3")' name=Uploader3><SPAN id=SUploader3></SPAN>&nbsp;<SPAN id=SIZEUploader3></SPAN><SPAN>&nbsp;&nbsp;</SPAN><A onclick="DelUploader('Uploader3')">删除</A>
+		</DIV>
+	</DIV>
+
+	<DIV id=BigAttach></DIV>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+</DIV>
+
+
+
+ </body>
+</html>
