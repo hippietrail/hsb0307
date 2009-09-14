@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://192.168.1.50/sysImages/css/rss.css"?>
+<rss version="2.0">
+<channel>
+<title>新闻中心</title>
+<link>http://192.168.1.50/html/xwzx/index.html</link>
+<description>RSS订阅_by dotNETCMS for Foosun Inc.</description>
+<item id="1">
+<title><![CDATA[adsdsaddsadasds]]></title>
+<link>http:/192.168.1.50/html/14296.shtml</link>
+<description><![CDATA[dfasdsadsaddddddddsadasd]]></description>
+<pubDate>2008-6-24 11:02:17</pubDate>
+</item>
+</channel>
+</rss>

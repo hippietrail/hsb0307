@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://192.168.1.50/sysImages/css/rss.css"?>
+<rss version="2.0">
+<channel>
+<title>国内新闻</title>
+<link>http://192.168.1.50/html/gnxw/index.html</link>
+<description>RSS订阅_by dotNETCMS for Foosun Inc.</description>
+<item id="1">
+<title><![CDATA[最新的测试新闻]]></title>
+<link>http:/192.168.1.50/html/14254.html</link>
+<description><![CDATA[最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新的测试新闻最新...]]></description>
+<pubDate>2008-6-23 10:14:47</pubDate>
+</item>
+<item id="2">
+<title><![CDATA[tttttttttttt]]></title>
+<link>http:/192.168.1.50/html/14125.html</link>
+<description><![CDATA[ttttttttttttttttttt<item id="3">
+<title><![CDATA[dddddddddddddddddddd]]></title>
+<link>http:/192.168.1.50/html/14124.html</link>
+<description><![CDATA[ddddddddddddddddddd<item id="4">
+<title><![CDATA[dddddddddddd]]></title>
+<link>http:/192.168.1.50/html/constr-75308.html</link>
+<description><![CDATA[]]></description>
+<pubDate>2008-5-24 11:28:21</pubDate>
+</item>
+</channel>
+</rss>

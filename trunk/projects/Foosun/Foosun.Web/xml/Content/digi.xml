@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://192.168.1.50/sysImages/css/rss.css"?>
+<rss version="2.0">
+<channel>
+<title>数码新闻</title>
+<link>http://192.168.1.50/html/savafor/{@day}{@year02}{@month}/{@month}{@day}{@year02}</link>
+<description>RSS订阅_by dotNETCMS for Foosun Inc.</description>
+<item id="1">
+<title><![CDATA[支持外置eSATA 顶星T-G31GM掀起新存储时代 ]]></title>
+<link>http:/192.168.1.50/html/savafor/{@day}{@year02}{@month}/1117958-3855.html</link>
+<description><![CDATA[新芯片的上市带来新的选择顶星主板已经在全国各地市场火热上市，以细致的设计，稳定的性能，稳占市场。板载外置eSTAT接口，更高传输速率，更新硬盘模式，等你来体验。小熊在线顶星T-G31GM主板采用蔚蓝色PCBm结]]></description>
+<pubDate>2007-12-6 13:08:01</pubDate>
+</item>
+</channel>
+</rss>
