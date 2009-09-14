@@ -95,18 +95,19 @@ namespace Foosun.Web.manageXXBN.news
                             if (System.IO.File.Exists(todayPath + news.Attachment))
                             {
                                 //System.IO.File.Move(srcPath + news.Attachment, todayPath + news.Attachment); // todayPath + news.Attachment.Remove(news.Attachment.LastIndexOf('\\'))
-                                if ((System.IO.File.GetAttributes(srcPath + news.Attachment) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                                {
-                                    try
-                                    {
-                                        System.IO.File.SetAttributes(srcPath + news.Attachment, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                                    }
-                                    catch (UnauthorizedAccessException ex)
-                                    {
-                                        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                                    }
-                                }
-                                System.IO.File.Delete(srcPath + news.Attachment);
+                                //if ((System.IO.File.GetAttributes(srcPath + news.Attachment) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
+                                //{
+                                //    try
+                                //    {
+                                //        System.IO.File.SetAttributes(srcPath + news.Attachment, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
+                                //    }
+                                //    catch (UnauthorizedAccessException ex)
+                                //    {
+                                //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
+                                //    }
+                                //}
+                                //System.IO.File.Delete(srcPath + news.Attachment);
+                                DeleteFile(srcPath + news.Attachment);
                             }
                             else
                             {
@@ -130,7 +131,8 @@ namespace Foosun.Web.manageXXBN.news
                     Foosun.Publish.General.publishSingleNews(uc.NewsID, uc.ClassID, false);
 
                     // 删除已经用过的文件
-                    System.IO.File.Delete(f);
+                    //System.IO.File.Delete(f);
+                    DeleteFile(f);
                     if(System.IO.Directory.GetFileSystemEntries(f.Remove(f.LastIndexOf('\\'))).Length == 0)
                     {
                         System.IO.Directory.Delete(f.Remove(f.LastIndexOf('/')));
@@ -806,6 +808,34 @@ namespace Foosun.Web.manageXXBN.news
             }
             return content;
         }
+
+        public static void DeleteFile(string file)
+        {
+            if (System.IO.File.Exists(file))
+            {
+                //System.IO.File.Move(srcPath + news.Attachment, todayPath + news.Attachment); // todayPath + news.Attachment.Remove(news.Attachment.LastIndexOf('\\'))
+
+                if ((System.IO.File.GetAttributes(file) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
+                {
+                    try
+                    {
+                        System.IO.File.SetAttributes(file, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
+                    }
+                    catch (UnauthorizedAccessException ex)
+                    {
+                        throw new UnauthorizedAccessException("您没有权限删除文件：" + file + ex.Message, ex.InnerException);
+                    }
+                }
+
+                System.IO.File.Delete(file);
+            }
+            else
+            {
+                throw new Exception("文件：" + file + " 不存在！");
+                //System.IO.File.Move(srcPath + news.Attachment, todayPath + news.Attachment.Replace(" ", "")); // todayPath + news.Attachment.Remove(news.Attachment.LastIndexOf('\\'))
+            }
+        }
+
 
     }
 
