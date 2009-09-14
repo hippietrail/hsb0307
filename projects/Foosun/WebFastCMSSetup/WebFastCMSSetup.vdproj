@@ -7,10 +7,10 @@
 "LanguageId" = "3:2052"
 "CodePage" = "3:936"
 "UILanguageId" = "3:2052"
-"SccProjectName" = "8:\"$/WebFastV1.0(new)/dotNETCMS.root/dotNETCMS_1\", IOFAAAAA"
-"SccLocalPath" = "8:.."
+"SccProjectName" = "8:"
+"SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
-"SccProvider" = "8:MSSCCI:Microsoft Visual SourceSafe"
+"SccProvider" = "8:"
     "Hierarchy"
     {
         "Entry"
@@ -912,7 +912,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_275829C82C2E4F93B13082B117ED9841"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:欢迎使用"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -960,7 +960,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_8415BC042D22468DBE66E641551FA938"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:安装地址"
+                    "DisplayName" = "8:Installation Address"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWebFolderDlg.wid"
@@ -982,7 +982,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C46AE22BBA194D03824F081ACC6C6A93"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:确认安装"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -1019,7 +1019,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_72BD925FFDF8426391732BAA5EAE2D45"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:已完成"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -1050,7 +1050,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_52CCBAB1E42B42838456D7231C4588CF"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:已完成"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -1094,7 +1094,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D12CB0FD38194AF6919AE89B44DE213C"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:进度"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -1138,7 +1138,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3D2B4000A2E941A4A10C8C1CB120669F"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:进度"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -1182,7 +1182,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_21F3D1ADFE0144C0857B38C56752CB16"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:欢迎使用"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -1230,7 +1230,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B2CBC107AB1146FAAB499BB6A67F8E1D"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:确认安装"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -1252,7 +1252,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_DFDFCFC76CB34F1C8ECA98A6B72B21E6"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:安装地址"
+                    "DisplayName" = "8:Installation Address"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWebFolderDlg.wid"

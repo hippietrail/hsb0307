@@ -3288,5 +3288,30 @@ namespace Foosun.AccessDAL
         }
 
         #endregion
+
+        #region IContentManage Members
+
+
+        public DataTable GetAllClass()
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+
+        public void InsertColumnMap(SiteColumnMapInfo c)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+
+        public DataTable GetAllColumnMap()
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+
+        public void DeleteColumnMap(string cpsnColumnId, string media)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+
+        #endregion
     }
 }
