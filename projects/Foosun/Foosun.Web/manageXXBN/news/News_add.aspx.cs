@@ -1692,6 +1692,7 @@ public partial class News_add : Foosun.Web.UI.ManagePage
             {
                 if (attachmentFile.Value.Length > 0)
                 {
+
                     if ((System.IO.File.GetAttributes(attachmentFile.Value) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
                     {
                         try
