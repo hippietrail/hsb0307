@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<columns>
+  <media name="新浪网">
+    <column id="013c77862d7544ba8e92a4d1c77b5705">文化生活</column>
+    <column id="0e3e63348f4d420da48c69737f98d4c0">科技动态</column>
+    <column id="134c1be9420e459d985fe8deb6560692">民族宗教</column>
+    <column id="18e288cc9acf41a693145a8a27bf3acf">贝叶文化</column>
+    <column id="4080acdfb9c041848153a41a2fee7650">农业之窗</column>
+    <column id="5b4fcece04fe4f02ab7d81346724e050">要闻报道</column>
+    <column id="8dceca169bb34b9a89403535f48530e9">社会新闻</column>
+    <column id="910e6ad619224733a4f5793c2f3c9ae2">傣乡资讯</column>
+    <column id="ab36f5f5bcc84e29af0183b5beb2ddd1">东盟瞭望</column>
+    <column id="b3f126ba677f48e3a07897342f625cb3">旅游资讯</column>
+    <column id="d699ba0dcd764554b6b88c32d0ce2ea0">社会论坛</column>
+    <column id="edea9fcf28624e65815d3e174fa0995c">生活常识</column>
+  </media>
+</columns>

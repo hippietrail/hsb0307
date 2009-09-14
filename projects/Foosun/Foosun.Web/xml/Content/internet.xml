@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://192.168.1.50/sysImages/css/rss.css"?>
+<rss version="2.0">
+<channel>
+<title>互联网</title>
+<link>http://192.168.1.50/html/savafor/{@day}{@year02}{@month}/{@month}{@day}{@year02}</link>
+<description>RSS订阅_by dotNETCMS for Foosun Inc.</description>
+<item id="1">
+<title><![CDATA[哈哈圣依写真沙漠迷情1]]></title>
+<link>http:/192.168.1.50/html/savafor/{@day}{@year02}{@month}/19168-LKGU_1.html</link>
+<description><![CDATA[&nbsp;
+明年主持节目还]]></description>
+<pubDate>2007-12-6 13:08:01</pubDate>
+</item>
+</channel>
+</rss>

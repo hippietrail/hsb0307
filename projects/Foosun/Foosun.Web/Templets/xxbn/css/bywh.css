@@ -1,0 +1,95 @@
+﻿body
+{
+	margin:0px; padding:0px; font-size:12px; background: url(../Images/index_bg.gif) #deebf3 repeat-x ;	
+}
+.wrap
+{
+	width:960px;  MARGIN: 0px auto ; background: #ffffff;
+}
+a:link {
+	 COLOR:#fff; FONT-FAMILY: Arial; text-decoration:underline;
+}
+a:visited {
+	 COLOR: #666666; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a:active {
+	 FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a:hover {
+	COLOR:Red;TEXT-DECORATION: none
+}
+.word
+{
+	 BORDER: #74accf 1px solid; margin:3px; width:946px; background: #deebf3; height:27px; line-height:27px; padding:0px 3px;COLOR: #116fad;
+}
+.word span
+{
+    float:right; height:27px; width:150px; text-align:right;  margin-right:3px;
+}
+.top 
+{
+	 width:960px; margin:0px auto;BACKGROUND: #397dad; height:100px; }
+.logo 
+{
+     float:left; height:100px;}
+.logo img
+{
+   border-style:none;	}
+.banner 
+{
+   float:left;	 width:750px; height:100px; text-align:center;}
+   
+.banner img { border-style:none ; margin-top:6px;}
+
+.menu
+{
+	 width:960px; margin:0px auto;BACKGROUND: url(../Images/menu_bg.gif) repeat-x;HEIGHT: 32px; COLOR: #fff;FONT-SIZE: 14px;}
+	 
+.menu ul { margin:0px; height:32px; }
+
+.menu ul li { float:left ; height:32px; width:120px; text-align:center; line-height:32px; list-style-type:none ; }
+
+.menu ul li a
+{
+	COLOR: #fff;FONT-SIZE: 14px; text-decoration:none; font-weight:bold;}
+	
+*HTML .subnav {
+	MARGIN: 0px 10px 0px -10px
+}
+.subnav 
+{
+		BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) no-repeat 0px -180px; LEFT: 0px; FLOAT: left; LINE-HEIGHT: 27px; WHITE-SPACE: nowrap; POSITION: absolute; TOP: 35px; HEIGHT: 27px
+}
+.subnav P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) no-repeat 100% -234px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.subnav P SPAN {
+	DISPLAY: block; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) repeat-x 0px -207px
+}
+.subnav P.pointer {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) repeat-x 0px -261px; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 20px; WIDTH: 11px; TEXT-INDENT: -999em; PADDING-TOP: 0px; POSITION: absolute; TOP: -4px; HEIGHT: 5px
+}
+.subnav A {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.disable {
+	DISPLAY: none
+}
+#subnav1 {
+	LEFT: 60px
+}
+#subnav1 .pointer {
+	LEFT: 100px
+}
+#subnav1 {
+	min-width: 110px
+}
+
+	
+
+
+
+
+
+   
+

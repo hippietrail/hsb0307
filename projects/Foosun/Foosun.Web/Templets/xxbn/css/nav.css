@@ -1,0 +1,156 @@
+
+A.navbar:link {
+	COLOR: #333333
+}
+
+.menu {
+ 	  MARGIN: 0px auto; WIDTH: 960px;
+	
+}
+.menu_border
+{
+   margin:0px; padding:0px;  BACKGROUND: url(/Templets/xxbn/Images/menu_bg_border.gif) repeat-x 0px 0px; MARGIN: 0px  auto; WIDTH: 960px; height:6px;  overflow:hidden;
+	}
+.menu ul { margin:0px; padding:0px; width:960px;}
+
+.menu ul  LI {
+	 FLOAT: left; WIDTH: 320px;  HEIGHT: 32px; BACKGROUND: url(/Templets/xxbn/Images/listPre.gif) no-repeat 10px 5px; list-style-type:none; line-height:32px;}
+	 
+.menu ul LI A
+{
+    margin-left:35px; padding:0px;FONT-SIZE: 20px;FONT-WEIGHT: bold;TEXT-DECORATION: none ; color:red;
+	}
+	
+.menu ul LI A:hover {
+	  TEXT-DECORATION: underline; color:Blue;
+}
+
+.subnav P {
+	MARGIN: 0px
+}
+.subnav {
+	BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) no-repeat 0px -180px; LEFT: 0px; FLOAT: left; LINE-HEIGHT: 27px; WHITE-SPACE: nowrap; POSITION: absolute; TOP: 35px; HEIGHT: 27px
+}
+ HTML .subnav {
+	MARGIN: 0px 10px 0px -10px
+}
+.subnav P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) no-repeat 100% -234px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.subnav P SPAN {
+	DISPLAY: block; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) repeat-x 0px -207px
+}
+.subnav P.pointer {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/xxbn/Images/nav_bg.png) repeat-x 0px -261px; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 20px; WIDTH: 11px; TEXT-INDENT: -999em; PADDING-TOP: 0px; POSITION: absolute; TOP: -4px; HEIGHT: 5px
+}
+.subnav A {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UNKNOWN {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.wrap .menu LI .subnav {
+	COLOR: #235e99
+}
+.wrap .menu LI .subnav A:link {
+	COLOR: #235e99
+}
+.wrap .menu LI .subnav A:visited {
+	COLOR: #235e99
+}
+.wrap .menu LI .subnav A:hover {
+	COLOR: #235e99
+}
+.wrap .menu LI .subnav A:active {
+	COLOR: #235e99
+}
+.wrap .menu LI .subnav A:hover {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-BOTTOM: 2px solid
+}
+.wrap .menu LI .subnav A:active {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-BOTTOM: 2px solid
+}
+#subnav1 {
+	LEFT: 60px
+}
+#subnav2 {
+	LEFT: 160px
+}
+#subnav3 {
+	LEFT: 260px
+}
+#subnav4 {
+	LEFT: 350px
+}
+#subnav5 {
+	LEFT: 410px
+}
+#subnav6 {
+	left: 380px
+}
+#subnav7 {
+	LEFT: 650px
+}
+#subnav8 {
+	LEFT: 710px
+}
+#subnav9 {
+	LEFT: 310px
+}
+#subnav1 .pointer {
+	LEFT: 100px
+}
+#subnav2 .pointer {
+	LEFT: 125px
+}
+#subnav3 .pointer {
+	LEFT: 140px
+}
+#subnav4 .pointer {
+	LEFT: 170px
+}
+#subnav5 .pointer {
+	LEFT: 230px
+}
+#subnav6 .pointer {
+	LEFT: 400px
+}
+#subnav7 .pointer {
+	LEFT: 250px
+}
+#subnav8 .pointer {
+	LEFT: 180px
+}
+#subnav9 .pointer {
+	LEFT: 180px
+}
+#subnav1 {
+	min-width: 110px
+}
+#subnav2 {
+	min-width: 110px
+}
+#subnav3 {
+	min-width: 110px
+}
+#subnav4 {
+	min-width: 110px
+}
+#subnav5 {
+	min-width: 110px
+}
+#subnav6 {
+	min-width: 110px
+}
+#subnav7 {
+	min-width: 110px
+}
+#subnav8 {
+	min-width: 110px
+}
+#subnav9 {
+	min-width: 110px
+}
+.disable {
+	DISPLAY: none
+}

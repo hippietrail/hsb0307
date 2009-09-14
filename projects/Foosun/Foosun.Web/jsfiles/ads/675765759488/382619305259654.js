@@ -1,0 +1,1 @@
+window.open('/jsfiles/ads/pic.aspx?adsID=382619305259654','','width=800,height=600,scrollbars=1');
