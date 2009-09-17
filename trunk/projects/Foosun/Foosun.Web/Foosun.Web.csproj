@@ -3616,41 +3616,6 @@
     <Content Include="api\dz\ADAPT.config" />
     <Content Include="api\api.aspx" />
     <Content Include="baidu.xml" />
-    <Content Include="bin\Ajax.dll" />
-    <Content Include="bin\CBMD5.dll" />
-    <Content Include="bin\Foosun.AccessDAL.dll" />
-    <Content Include="bin\Foosun.AccessDAL.pdb" />
-    <Content Include="bin\Foosun.CMS.dll" />
-    <Content Include="bin\Foosun.CMS.pdb" />
-    <Content Include="bin\Foosun.Common.dll" />
-    <Content Include="bin\Foosun.Common.pdb" />
-    <Content Include="bin\Foosun.Config.dll" />
-    <Content Include="bin\Foosun.Config.pdb" />
-    <Content Include="bin\Foosun.Control.dll" />
-    <Content Include="bin\Foosun.Control.pdb" />
-    <Content Include="bin\Foosun.DALFactory.dll" />
-    <Content Include="bin\Foosun.DALFactory.pdb" />
-    <Content Include="bin\Foosun.DALProfile.dll" />
-    <Content Include="bin\Foosun.DALProfile.pdb" />
-    <Content Include="bin\Foosun.Global.dll" />
-    <Content Include="bin\Foosun.Global.pdb" />
-    <Content Include="bin\Foosun.Install.dll" />
-    <Content Include="bin\Foosun.Install.pdb" />
-    <Content Include="bin\Foosun.Model.dll" />
-    <Content Include="bin\Foosun.Model.pdb" />
-    <Content Include="bin\Foosun.PlugIn.dll" />
-    <Content Include="bin\Foosun.PlugIn.pdb" />
-    <Content Include="bin\Foosun.Publish.dll" />
-    <Content Include="bin\Foosun.Publish.pdb" />
-    <Content Include="bin\Foosun.SQLServerDAL.dll" />
-    <Content Include="bin\Foosun.SQLServerDAL.pdb" />
-    <Content Include="bin\Foosun.Web.dll" />
-    <Content Include="bin\Foosun.Web.pdb" />
-    <Content Include="bin\Foosun.Web.UI.dll" />
-    <Content Include="bin\Foosun.Web.UI.pdb" />
-    <Content Include="bin\Intelligencia.UrlRewriter.dll" />
-    <Content Include="bin\Interop.ADODB.dll" />
-    <Content Include="bin\Interop.JRO.dll" />
     <Content Include="configuration\config\api.config" />
     <Content Include="configuration\js\getcalendar.js" />
     <Content Include="configuration\js\jquery.bgiframe.js" />
@@ -4028,16 +3993,6 @@
     <Content Include="Templets\xxbn\xml\bcastr.xml" />
     <Content Include="Templets\xxbn\xml\bcastr01.xml" />
     <Content Include="Templets\xxbn\xml\fcommon7.html" />
-    <Content Include="Templets\xxbn\xml\images\01.jpg" />
-    <Content Include="Templets\xxbn\xml\images\02.jpg" />
-    <Content Include="Templets\xxbn\xml\images\03.jpg" />
-    <Content Include="Templets\xxbn\xml\images\04.jpg" />
-    <Content Include="Templets\xxbn\xml\images\05.jpg" />
-    <Content Include="Templets\xxbn\xml\images\06.jpg" />
-    <Content Include="Templets\xxbn\xml\images\07.jpg" />
-    <Content Include="Templets\xxbn\xml\images\08.jpg" />
-    <Content Include="Templets\xxbn\xml\images\09.jpg" />
-    <Content Include="Templets\xxbn\xml\images\10.jpg" />
     <Content Include="Templets\xxbn\xml\readme.txt" />
     <Content Include="Templets\xxbn\dw_index.htm" />
     <Content Include="test\test5.aspx" />
@@ -4606,7 +4561,9 @@
     <Content Include="xml\sys\sysLabel.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="database\backup\" />
+    <Content Include="database\backup\dotNETCMS.bak" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
     <Folder Include="editor\editor\plugins\" />
     <Folder Include="editor\language\danish\" />
@@ -4673,6 +4630,7 @@
     <Folder Include="Properties\" />
     <Folder Include="Templets\channel\" />
     <Folder Include="Templets\siteTemplets\" />
+    <Folder Include="Templets\xxbn\xml\images\" />
     <Folder Include="userfiles\157837278517\" />
     <Folder Include="userfiles\discuss\" />
     <Folder Include="xml\channel\" />
