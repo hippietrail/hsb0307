@@ -57,6 +57,14 @@
             </tr>
             <tr>
                 <td class="TR_BG_list" style="width: 100px; text-align: right;">
+                    标题对照
+                </td>
+                <td class="TR_BG_list">
+                    <asp:TextBox ID="TCnameRefer" Width="300" CssClass="form SpecialFontFamily" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="TR_BG_list" style="width: 100px; text-align: right;">
                     父栏目
                 </td>
                 <td class="TR_BG_list">

@@ -68,6 +68,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     this.TCname.Text = dt.Rows[0]["ClassCName"].ToString();
+                    this.TCnameRefer.Text = dt.Rows[0]["ClassCNameRefer"].ToString();
                     if (dt.Rows[0]["NaviShowtf"].ToString() == "1")
                     {
                         this.NaviShowtf.Checked = true;
@@ -156,6 +157,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
                 ClassID = Foosun.Common.Rand.Number(12);
             }
             string ClassCName = this.TCname.Text;
+            string classCNameRefer=this.TCnameRefer.Text;
             string ClassEName = Foosun.Common.Rand.Str_char(10).ToLower();
             string ParentId = this.TParentId.Text;
             if (ParentId.Trim() != "0")
@@ -254,6 +256,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
             Foosun.Model.PageContent uc = new Foosun.Model.PageContent();
             uc.ClassID = ClassID;
             uc.ClassCName = ClassCName;
+            uc.ClassCNameRefer = classCNameRefer;
             uc.ClassEName = ClassEName;
             uc.ParentID = ParentId;
             uc.IsURL = 0;
