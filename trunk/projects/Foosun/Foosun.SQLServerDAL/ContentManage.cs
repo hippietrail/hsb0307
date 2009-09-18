@@ -1565,7 +1565,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="uc"></param>
         public void updatePage(Foosun.Model.PageContent uc)
         {
-            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,ClassTemplet=@ClassTemplet,SavePath=@SavePath,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,isPage=@isPage,PageContent=@Content,InHitoryDay=0,ContentPicTF=0,Checkint=0,ModelID='0' where ClassID='" + uc.ClassID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ClassCNameRefer=@ClassCNameRefer,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,ClassTemplet=@ClassTemplet,SavePath=@SavePath,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,isPage=@isPage,PageContent=@Content,InHitoryDay=0,ContentPicTF=0,Checkint=0,ModelID='0' where ClassID='" + uc.ClassID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
 
             SqlParameter[] parm = insertPageContentParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
@@ -1578,7 +1578,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         private SqlParameter[] insertPageContentParameters(Foosun.Model.PageContent uc)
         {
-            SqlParameter[] param = new SqlParameter[19];
+            SqlParameter[] param = new SqlParameter[20];
             param[0] = new SqlParameter("@ClassID", SqlDbType.NVarChar, 12);
             param[0].Value = uc.ClassID;
             param[1] = new SqlParameter("@ClassCName", SqlDbType.NVarChar, 50);
@@ -1617,6 +1617,8 @@ namespace Foosun.SQLServerDAL
             param[17].Value = uc.CreatTime;
             param[18] = new SqlParameter("@isPage", SqlDbType.TinyInt, 1);
             param[18].Value = uc.isPage;
+            param[19] = new SqlParameter("@ClassCNameRefer", SqlDbType.NVarChar, 50);
+            param[19].Value = uc.ClassCNameRefer;
             
             return param;
         }
