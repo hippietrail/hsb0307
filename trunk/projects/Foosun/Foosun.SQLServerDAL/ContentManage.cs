@@ -1552,9 +1552,9 @@ namespace Foosun.SQLServerDAL
         public void insertPage(Foosun.Model.PageContent uc)
         {
             string Sql = "insert into " + Pre + "News_Class(";
-            Sql += "ClassID,ClassCName,ClassEName,ParentID,IsURL,OrderID,NaviShowtf,MetaKeywords,MetaDescript,SiteID,isLock,isRecyle,ClassTemplet,SavePath,isDelPoint,Gpoint,iPoint,GroupNumber,CreatTime,isPage,PageContent,InHitoryDay,ContentPicTF,Checkint,ModelID,isunHTML,DataLib";
+            Sql += "ClassID,ClassCName,ClassCNameRefer,ClassEName,ParentID,IsURL,OrderID,NaviShowtf,MetaKeywords,MetaDescript,SiteID,isLock,isRecyle,ClassTemplet,SavePath,isDelPoint,Gpoint,iPoint,GroupNumber,CreatTime,isPage,PageContent,InHitoryDay,ContentPicTF,Checkint,ModelID,isunHTML,DataLib";
             Sql += ") values (";
-            Sql += "@ClassID,@ClassCName,@ClassEName,@ParentID,@IsURL,@OrderID,@NaviShowtf,@MetaKeywords,@MetaDescript,@SiteID,0,0,@ClassTemplet,@SavePath,@isDelPoint,@Gpoint,@iPoint,@GroupNumber,@CreatTime,@isPage,@Content,0,0,0,'0',0,'" + Pre + "news')";
+            Sql += "@ClassID,@ClassCName,@ClassCNameRefer,@ClassEName,@ParentID,@IsURL,@OrderID,@NaviShowtf,@MetaKeywords,@MetaDescript,@SiteID,0,0,@ClassTemplet,@SavePath,@isDelPoint,@Gpoint,@iPoint,@GroupNumber,@CreatTime,@isPage,@Content,0,0,0,'0',0,'" + Pre + "news')";
             SqlParameter[] parm = insertPageContentParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
