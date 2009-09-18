@@ -57,6 +57,7 @@ namespace Foosun.Model
         public int Id;
         public string ClassID;
         public string ClassCName;
+        public string ClassCNameRefer;
         public string ClassEName;
         public string ParentID;
         public int IsURL;
