@@ -207,7 +207,7 @@ jQuery(document).ready(
                             <asp:RadioButton ID="specialselect" runat="server" GroupName="special" onclick="showSpecial1(this)"
                                 Text="选择专题" Visible="false" />
                                 <br />
-                            <asp:ListBox ID="DivSpecial" runat="server" Rows="30" SelectionMode="Multiple" Width="50%" style="color: steelblue">
+                            <asp:ListBox ID="DivSpecial" runat="server" Rows="30" SelectionMode="Multiple" Width="50%" style="color: steelblue" CssClass="SpecialFontFamily">
                             </asp:ListBox>
                             <label id="div_special" style="display: none">
                             </label>
@@ -223,7 +223,7 @@ jQuery(document).ready(
                         <td class="navi_link" colspan="2" style="text-align: left">
                             <asp:RadioButton ID="RadioButton1_singleness" runat="server" GroupName="singleness" Text="发布所有单页" />
                                 <br />
-                            <asp:ListBox ID="ListBox_singleness" runat="server" Rows="30" SelectionMode="Multiple" Width="50%" style="color: steelblue">
+                            <asp:ListBox ID="ListBox_singleness" runat="server" Rows="30" SelectionMode="Multiple" Width="50%" style="color: steelblue" CssClass="SpecialFontFamily">
                             </asp:ListBox>
                             <label id="Label1" style="display: none">
                             </label>
