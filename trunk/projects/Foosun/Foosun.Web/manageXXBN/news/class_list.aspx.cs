@@ -236,7 +236,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                 //取出子类
                 if (dt.Rows[k]["isPage"].ToString() == "1")
                 {
-                    dt.Rows[k]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassID"])) + "&Action=Edit\" class=\"list_link\" title=\"点击修改单页面\">" + dt.Rows[k]["ClassCName"] + "</a>";
+                    dt.Rows[k]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassID"])) + "&Action=Edit\" class=\"list_link SpecialFontFamily\" title=\"点击修改单页面" + "&#13;中文名：" + dt.Rows[k]["ClassCNameRefer"].ToString() + "\">" + dt.Rows[k]["ClassCName"] + "</a>";
                 }
                 else
                 {
