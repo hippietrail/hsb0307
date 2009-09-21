@@ -24,11 +24,8 @@ namespace Foosun.Web.manageXXBN.news
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class BatchAddNewsHandler : IHttpHandler
     {
-
-
         public void ProcessRequest(HttpContext context)
         {
-            
             context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
 
@@ -94,19 +91,6 @@ namespace Foosun.Web.manageXXBN.news
                         {
                             if (System.IO.File.Exists(todayPath + news.Attachment))
                             {
-                                //System.IO.File.Move(srcPath + news.Attachment, todayPath + news.Attachment); // todayPath + news.Attachment.Remove(news.Attachment.LastIndexOf('\\'))
-                                //if ((System.IO.File.GetAttributes(srcPath + news.Attachment) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                                //{
-                                //    try
-                                //    {
-                                //        System.IO.File.SetAttributes(srcPath + news.Attachment, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                                //    }
-                                //    catch (UnauthorizedAccessException ex)
-                                //    {
-                                //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                                //    }
-                                //}
-                                //System.IO.File.Delete(srcPath + news.Attachment);
                                 DeleteFile(srcPath + news.Attachment);
                             }
                             else
