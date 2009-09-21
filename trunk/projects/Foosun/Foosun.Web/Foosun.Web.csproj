@@ -3758,7 +3758,6 @@
     <Content Include="Templets\xxbn\Images\Video.jpg" />
     <Content Include="Templets\xxbn\Images\wmjh.gif" />
     <Content Include="Templets\xxbn\Images\yinpin.gif" />
-    <Content Include="Templets\xxbn\js\main[1].js" />
     <Content Include="Templets\xxbn\dw_content.html" />
     <Content Include="Templets\xxbn\dw_list.htm" />
     <Content Include="Templets\xxbn\xml\bcastr.swf" />
