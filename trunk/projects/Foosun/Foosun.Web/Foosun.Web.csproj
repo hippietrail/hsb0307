@@ -543,1596 +543,1596 @@
     <Compile Include="Content.aspx.designer.cs">
       <DependentUpon>Content.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\adapt\adapt.aspx.cs">
+    <Compile Include="manage\adapt\adapt.aspx.cs">
       <DependentUpon>adapt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\adapt\adapt.aspx.designer.cs">
+    <Compile Include="manage\adapt\adapt.aspx.designer.cs">
       <DependentUpon>adapt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\adapt\add.aspx.cs">
+    <Compile Include="manage\adapt\add.aspx.cs">
       <DependentUpon>add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\adapt\add.aspx.designer.cs">
+    <Compile Include="manage\adapt\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\adapt\delete.aspx.cs">
+    <Compile Include="manage\adapt\delete.aspx.cs">
       <DependentUpon>delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\adapt\delete.aspx.designer.cs">
+    <Compile Include="manage\adapt\delete.aspx.designer.cs">
       <DependentUpon>delete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\adapt\edit.aspx.cs">
+    <Compile Include="manage\adapt\edit.aspx.cs">
       <DependentUpon>edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\adapt\edit.aspx.designer.cs">
+    <Compile Include="manage\adapt\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\adsclass_add.aspx.cs">
+    <Compile Include="manage\advertisement\adsclass_add.aspx.cs">
       <DependentUpon>adsclass_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\adsclass_add.aspx.designer.cs">
+    <Compile Include="manage\advertisement\adsclass_add.aspx.designer.cs">
       <DependentUpon>adsclass_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\adsclass_edit.aspx.cs">
+    <Compile Include="manage\advertisement\adsclass_edit.aspx.cs">
       <DependentUpon>adsclass_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\adsclass_edit.aspx.designer.cs">
+    <Compile Include="manage\advertisement\adsclass_edit.aspx.designer.cs">
       <DependentUpon>adsclass_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\Ads_add.aspx.cs">
+    <Compile Include="manage\advertisement\Ads_add.aspx.cs">
       <DependentUpon>Ads_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\Ads_add.aspx.designer.cs">
+    <Compile Include="manage\advertisement\Ads_add.aspx.designer.cs">
       <DependentUpon>Ads_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\ads_edit.aspx.cs">
+    <Compile Include="manage\advertisement\ads_edit.aspx.cs">
       <DependentUpon>ads_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\ads_edit.aspx.designer.cs">
+    <Compile Include="manage\advertisement\ads_edit.aspx.designer.cs">
       <DependentUpon>ads_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\ad_stat.aspx.cs">
+    <Compile Include="manage\advertisement\ad_stat.aspx.cs">
       <DependentUpon>ad_stat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\ad_stat.aspx.designer.cs">
+    <Compile Include="manage\advertisement\ad_stat.aspx.designer.cs">
       <DependentUpon>ad_stat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\list.aspx.cs">
+    <Compile Include="manage\advertisement\list.aspx.cs">
       <DependentUpon>list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\list.aspx.designer.cs">
+    <Compile Include="manage\advertisement\list.aspx.designer.cs">
       <DependentUpon>list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\showJsPath.aspx.cs">
+    <Compile Include="manage\advertisement\showJsPath.aspx.cs">
       <DependentUpon>showJsPath.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\advertisement\showJsPath.aspx.designer.cs">
+    <Compile Include="manage\advertisement\showJsPath.aspx.designer.cs">
       <DependentUpon>showJsPath.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\channel\channel_add.aspx.cs">
+    <Compile Include="manage\channel\channel_add.aspx.cs">
       <DependentUpon>channel_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\channel\channel_add.aspx.designer.cs">
+    <Compile Include="manage\channel\channel_add.aspx.designer.cs">
       <DependentUpon>channel_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\channel\error\GetError.aspx.cs">
+    <Compile Include="manage\channel\error\GetError.aspx.cs">
       <DependentUpon>GetError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\channel\error\GetError.aspx.designer.cs">
+    <Compile Include="manage\channel\error\GetError.aspx.designer.cs">
       <DependentUpon>GetError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\channel\list.aspx.cs">
+    <Compile Include="manage\channel\list.aspx.cs">
       <DependentUpon>list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\channel\list.aspx.designer.cs">
+    <Compile Include="manage\channel\list.aspx.designer.cs">
       <DependentUpon>list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect.aspx.cs">
+    <Compile Include="manage\collect\Collect.aspx.cs">
       <DependentUpon>Collect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect.aspx.designer.cs">
       <DependentUpon>Collect.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\CollectEditor.ascx.cs">
+    <Compile Include="manage\collect\CollectEditor.ascx.cs">
       <DependentUpon>CollectEditor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\CollectEditor.ascx.designer.cs">
+    <Compile Include="manage\collect\CollectEditor.ascx.designer.cs">
       <DependentUpon>CollectEditor.ascx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_Add.aspx.cs">
+    <Compile Include="manage\collect\Collect_Add.aspx.cs">
       <DependentUpon>Collect_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_Add.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_Add.aspx.designer.cs">
       <DependentUpon>Collect_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_List.aspx.cs">
+    <Compile Include="manage\collect\Collect_List.aspx.cs">
       <DependentUpon>Collect_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_List.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_List.aspx.designer.cs">
       <DependentUpon>Collect_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_News.aspx.cs">
+    <Compile Include="manage\collect\Collect_News.aspx.cs">
       <DependentUpon>Collect_News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_News.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_News.aspx.designer.cs">
       <DependentUpon>Collect_News.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_NewsModify.aspx.cs">
+    <Compile Include="manage\collect\Collect_NewsModify.aspx.cs">
       <DependentUpon>Collect_NewsModify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_NewsModify.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_NewsModify.aspx.designer.cs">
       <DependentUpon>Collect_NewsModify.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_NumSet.aspx.cs">
+    <Compile Include="manage\collect\Collect_NumSet.aspx.cs">
       <DependentUpon>Collect_NumSet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_NumSet.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_NumSet.aspx.designer.cs">
       <DependentUpon>Collect_NumSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_RuleAdd.aspx.cs">
+    <Compile Include="manage\collect\Collect_RuleAdd.aspx.cs">
       <DependentUpon>Collect_RuleAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_RuleAdd.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_RuleAdd.aspx.designer.cs">
       <DependentUpon>Collect_RuleAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_RuleList.aspx.cs">
+    <Compile Include="manage\collect\Collect_RuleList.aspx.cs">
       <DependentUpon>Collect_RuleList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_RuleList.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_RuleList.aspx.designer.cs">
       <DependentUpon>Collect_RuleList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepFive.aspx.cs">
+    <Compile Include="manage\collect\Collect_StepFive.aspx.cs">
       <DependentUpon>Collect_StepFive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepFive.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_StepFive.aspx.designer.cs">
       <DependentUpon>Collect_StepFive.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepFour.aspx.cs">
+    <Compile Include="manage\collect\Collect_StepFour.aspx.cs">
       <DependentUpon>Collect_StepFour.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepFour.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_StepFour.aspx.designer.cs">
       <DependentUpon>Collect_StepFour.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepThree.aspx.cs">
+    <Compile Include="manage\collect\Collect_StepThree.aspx.cs">
       <DependentUpon>Collect_StepThree.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepThree.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_StepThree.aspx.designer.cs">
       <DependentUpon>Collect_StepThree.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepTwo.aspx.cs">
+    <Compile Include="manage\collect\Collect_StepTwo.aspx.cs">
       <DependentUpon>Collect_StepTwo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Collect_StepTwo.aspx.designer.cs">
+    <Compile Include="manage\collect\Collect_StepTwo.aspx.designer.cs">
       <DependentUpon>Collect_StepTwo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Default.aspx.cs">
+    <Compile Include="manage\collect\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Default.aspx.designer.cs">
+    <Compile Include="manage\collect\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\MasterPage_Site.master.cs">
+    <Compile Include="manage\collect\MasterPage_Site.master.cs">
       <DependentUpon>MasterPage_Site.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\MasterPage_Site.master.designer.cs">
+    <Compile Include="manage\collect\MasterPage_Site.master.designer.cs">
       <DependentUpon>MasterPage_Site.master</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\collect\Store.aspx.cs">
+    <Compile Include="manage\collect\Store.aspx.cs">
       <DependentUpon>Store.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\collect\Store.aspx.designer.cs">
+    <Compile Include="manage\collect\Store.aspx.designer.cs">
       <DependentUpon>Store.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_chicklist.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_chicklist.aspx.cs">
       <DependentUpon>Constr_chicklist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_chicklist.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_chicklist.aspx.designer.cs">
       <DependentUpon>Constr_chicklist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Edit.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_Edit.aspx.cs">
       <DependentUpon>Constr_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Edit.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_Edit.aspx.designer.cs">
       <DependentUpon>Constr_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_List.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_List.aspx.cs">
       <DependentUpon>Constr_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_List.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_List.aspx.designer.cs">
       <DependentUpon>Constr_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Pay.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_Pay.aspx.cs">
       <DependentUpon>Constr_Pay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Pay.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_Pay.aspx.designer.cs">
       <DependentUpon>Constr_Pay.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Return.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_Return.aspx.cs">
       <DependentUpon>Constr_Return.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Return.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_Return.aspx.designer.cs">
       <DependentUpon>Constr_Return.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParam.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_SetParam.aspx.cs">
       <DependentUpon>Constr_SetParam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParam.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_SetParam.aspx.designer.cs">
       <DependentUpon>Constr_SetParam.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParamlist.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_SetParamlist.aspx.cs">
       <DependentUpon>Constr_SetParamlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParamlist.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_SetParamlist.aspx.designer.cs">
       <DependentUpon>Constr_SetParamlist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParamup.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_SetParamup.aspx.cs">
       <DependentUpon>Constr_SetParamup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_SetParamup.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_SetParamup.aspx.designer.cs">
       <DependentUpon>Constr_SetParamup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Stat.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_Stat.aspx.cs">
       <DependentUpon>Constr_Stat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_Stat.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_Stat.aspx.designer.cs">
       <DependentUpon>Constr_Stat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_ToNews.aspx.cs">
+    <Compile Include="manage\Contribution\Constr_ToNews.aspx.cs">
       <DependentUpon>Constr_ToNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\Constr_ToNews.aspx.designer.cs">
+    <Compile Include="manage\Contribution\Constr_ToNews.aspx.designer.cs">
       <DependentUpon>Constr_ToNews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\paymentannals.aspx.cs">
+    <Compile Include="manage\Contribution\paymentannals.aspx.cs">
       <DependentUpon>paymentannals.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Contribution\paymentannals.aspx.designer.cs">
+    <Compile Include="manage\Contribution\paymentannals.aspx.designer.cs">
       <DependentUpon>paymentannals.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Friend\Friend_List.aspx.cs">
+    <Compile Include="manage\Friend\Friend_List.aspx.cs">
       <DependentUpon>Friend_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Friend\Friend_List.aspx.designer.cs">
+    <Compile Include="manage\Friend\Friend_List.aspx.designer.cs">
       <DependentUpon>Friend_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Index.aspx.cs">
+    <Compile Include="manage\Index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Index.aspx.designer.cs">
+    <Compile Include="manage\Index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\createLabel_List.aspx.cs">
+    <Compile Include="manage\js\createLabel_List.aspx.cs">
       <DependentUpon>createLabel_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\createLabel_List.aspx.designer.cs">
+    <Compile Include="manage\js\createLabel_List.aspx.designer.cs">
       <DependentUpon>createLabel_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Add.aspx.cs">
+    <Compile Include="manage\js\JS_Add.aspx.cs">
       <DependentUpon>JS_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Add.aspx.designer.cs">
+    <Compile Include="manage\js\JS_Add.aspx.designer.cs">
       <DependentUpon>JS_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Files.aspx.cs">
+    <Compile Include="manage\js\JS_Files.aspx.cs">
       <DependentUpon>JS_Files.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Files.aspx.designer.cs">
+    <Compile Include="manage\js\JS_Files.aspx.designer.cs">
       <DependentUpon>JS_Files.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_GetCode.aspx.cs">
+    <Compile Include="manage\js\JS_GetCode.aspx.cs">
       <DependentUpon>JS_GetCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_GetCode.aspx.designer.cs">
+    <Compile Include="manage\js\JS_GetCode.aspx.designer.cs">
       <DependentUpon>JS_GetCode.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_List.aspx.cs">
+    <Compile Include="manage\js\JS_List.aspx.cs">
       <DependentUpon>JS_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_List.aspx.designer.cs">
+    <Compile Include="manage\js\JS_List.aspx.designer.cs">
       <DependentUpon>JS_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\Js_Publish.aspx.cs">
+    <Compile Include="manage\js\Js_Publish.aspx.cs">
       <DependentUpon>Js_Publish.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\Js_Publish.aspx.designer.cs">
+    <Compile Include="manage\js\Js_Publish.aspx.designer.cs">
       <DependentUpon>Js_Publish.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet.aspx.cs">
+    <Compile Include="manage\js\JS_Templet.aspx.cs">
       <DependentUpon>JS_Templet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet.aspx.designer.cs">
+    <Compile Include="manage\js\JS_Templet.aspx.designer.cs">
       <DependentUpon>JS_Templet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_templetReview.aspx.cs">
+    <Compile Include="manage\js\JS_templetReview.aspx.cs">
       <DependentUpon>JS_templetReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_templetReview.aspx.designer.cs">
+    <Compile Include="manage\js\JS_templetReview.aspx.designer.cs">
       <DependentUpon>JS_templetReview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet_Add.aspx.cs">
+    <Compile Include="manage\js\JS_Templet_Add.aspx.cs">
       <DependentUpon>JS_Templet_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet_Add.aspx.designer.cs">
+    <Compile Include="manage\js\JS_Templet_Add.aspx.designer.cs">
       <DependentUpon>JS_Templet_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet_Class.aspx.cs">
+    <Compile Include="manage\js\JS_Templet_Class.aspx.cs">
       <DependentUpon>JS_Templet_Class.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\js\JS_Templet_Class.aspx.designer.cs">
+    <Compile Include="manage\js\JS_Templet_Class.aspx.designer.cs">
       <DependentUpon>JS_Templet_Class.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_API.aspx.cs">
+    <Compile Include="manage\label\createLabel_API.aspx.cs">
       <DependentUpon>createLabel_API.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_API.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_API.aspx.designer.cs">
       <DependentUpon>createLabel_API.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Browse.aspx.cs">
+    <Compile Include="manage\label\createLabel_Browse.aspx.cs">
       <DependentUpon>createLabel_Browse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Browse.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_Browse.aspx.designer.cs">
       <DependentUpon>createLabel_Browse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_List.aspx.cs">
+    <Compile Include="manage\label\createLabel_List.aspx.cs">
       <DependentUpon>createLabel_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_List.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_List.aspx.designer.cs">
       <DependentUpon>createLabel_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Member.aspx.cs">
+    <Compile Include="manage\label\createLabel_Member.aspx.cs">
       <DependentUpon>createLabel_Member.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Member.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_Member.aspx.designer.cs">
       <DependentUpon>createLabel_Member.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Other.aspx.cs">
+    <Compile Include="manage\label\createLabel_Other.aspx.cs">
       <DependentUpon>createLabel_Other.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Other.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_Other.aspx.designer.cs">
       <DependentUpon>createLabel_Other.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Routine.aspx.cs">
+    <Compile Include="manage\label\createLabel_Routine.aspx.cs">
       <DependentUpon>createLabel_Routine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Routine.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_Routine.aspx.designer.cs">
       <DependentUpon>createLabel_Routine.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_simpleList.aspx.cs">
+    <Compile Include="manage\label\createLabel_simpleList.aspx.cs">
       <DependentUpon>createLabel_simpleList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_simpleList.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_simpleList.aspx.designer.cs">
       <DependentUpon>createLabel_simpleList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Ultimate.aspx.cs">
+    <Compile Include="manage\label\createLabel_Ultimate.aspx.cs">
       <DependentUpon>createLabel_Ultimate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\createLabel_Ultimate.aspx.designer.cs">
+    <Compile Include="manage\label\createLabel_Ultimate.aspx.designer.cs">
       <DependentUpon>createLabel_Ultimate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\Fixed.aspx.cs">
+    <Compile Include="manage\label\Fixed.aspx.cs">
       <DependentUpon>Fixed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\Fixed.aspx.designer.cs">
+    <Compile Include="manage\label\Fixed.aspx.designer.cs">
       <DependentUpon>Fixed.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Add.aspx.cs">
+    <Compile Include="manage\label\FreeLabel_Add.aspx.cs">
       <DependentUpon>FreeLabel_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Add.aspx.designer.cs">
+    <Compile Include="manage\label\FreeLabel_Add.aspx.designer.cs">
       <DependentUpon>FreeLabel_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_AddEnd.aspx.cs">
+    <Compile Include="manage\label\FreeLabel_AddEnd.aspx.cs">
       <DependentUpon>FreeLabel_AddEnd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_AddEnd.aspx.designer.cs">
+    <Compile Include="manage\label\FreeLabel_AddEnd.aspx.designer.cs">
       <DependentUpon>FreeLabel_AddEnd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Ajax.aspx.cs">
+    <Compile Include="manage\label\FreeLabel_Ajax.aspx.cs">
       <DependentUpon>FreeLabel_Ajax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Ajax.aspx.designer.cs">
+    <Compile Include="manage\label\FreeLabel_Ajax.aspx.designer.cs">
       <DependentUpon>FreeLabel_Ajax.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_List.aspx.cs">
+    <Compile Include="manage\label\FreeLabel_List.aspx.cs">
       <DependentUpon>FreeLabel_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_List.aspx.designer.cs">
+    <Compile Include="manage\label\FreeLabel_List.aspx.designer.cs">
       <DependentUpon>FreeLabel_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Test.aspx.cs">
+    <Compile Include="manage\label\FreeLabel_Test.aspx.cs">
       <DependentUpon>FreeLabel_Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\FreeLabel_Test.aspx.designer.cs">
+    <Compile Include="manage\label\FreeLabel_Test.aspx.designer.cs">
       <DependentUpon>FreeLabel_Test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\Label_List.aspx.cs">
+    <Compile Include="manage\label\Label_List.aspx.cs">
       <DependentUpon>Label_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\Label_List.aspx.designer.cs">
+    <Compile Include="manage\label\Label_List.aspx.designer.cs">
       <DependentUpon>Label_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\SaveStyle.aspx.cs">
+    <Compile Include="manage\label\SaveStyle.aspx.cs">
       <DependentUpon>SaveStyle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\SaveStyle.aspx.designer.cs">
+    <Compile Include="manage\label\SaveStyle.aspx.designer.cs">
       <DependentUpon>SaveStyle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\selectPagestyle.aspx.cs">
+    <Compile Include="manage\label\selectPagestyle.aspx.cs">
       <DependentUpon>selectPagestyle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\selectPagestyle.aspx.designer.cs">
+    <Compile Include="manage\label\selectPagestyle.aspx.designer.cs">
       <DependentUpon>selectPagestyle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\style.aspx.cs">
+    <Compile Include="manage\label\style.aspx.cs">
       <DependentUpon>style.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\style.aspx.designer.cs">
+    <Compile Include="manage\label\style.aspx.designer.cs">
       <DependentUpon>style.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\styleclass_add.aspx.cs">
+    <Compile Include="manage\label\styleclass_add.aspx.cs">
       <DependentUpon>styleclass_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\styleclass_add.aspx.designer.cs">
+    <Compile Include="manage\label\styleclass_add.aspx.designer.cs">
       <DependentUpon>styleclass_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\styleclass_edit.aspx.cs">
+    <Compile Include="manage\label\styleclass_edit.aspx.cs">
       <DependentUpon>styleclass_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\styleclass_edit.aspx.designer.cs">
+    <Compile Include="manage\label\styleclass_edit.aspx.designer.cs">
       <DependentUpon>styleclass_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\style_add.aspx.cs">
+    <Compile Include="manage\label\style_add.aspx.cs">
       <DependentUpon>style_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\style_add.aspx.designer.cs">
+    <Compile Include="manage\label\style_add.aspx.designer.cs">
       <DependentUpon>style_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\style_edit.aspx.cs">
+    <Compile Include="manage\label\style_edit.aspx.cs">
       <DependentUpon>style_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\style_edit.aspx.designer.cs">
+    <Compile Include="manage\label\style_edit.aspx.designer.cs">
       <DependentUpon>style_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabelclass_add.aspx.cs">
+    <Compile Include="manage\label\syslabelclass_add.aspx.cs">
       <DependentUpon>syslabelclass_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabelclass_add.aspx.designer.cs">
+    <Compile Include="manage\label\syslabelclass_add.aspx.designer.cs">
       <DependentUpon>syslabelclass_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabelclass_edit.aspx.cs">
+    <Compile Include="manage\label\syslabelclass_edit.aspx.cs">
       <DependentUpon>syslabelclass_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabelclass_edit.aspx.designer.cs">
+    <Compile Include="manage\label\syslabelclass_edit.aspx.designer.cs">
       <DependentUpon>syslabelclass_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_bak.aspx.cs">
+    <Compile Include="manage\label\syslabel_bak.aspx.cs">
       <DependentUpon>syslabel_bak.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_bak.aspx.designer.cs">
+    <Compile Include="manage\label\syslabel_bak.aspx.designer.cs">
       <DependentUpon>syslabel_bak.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_edit.aspx.cs">
+    <Compile Include="manage\label\syslabel_edit.aspx.cs">
       <DependentUpon>syslabel_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_edit.aspx.designer.cs">
+    <Compile Include="manage\label\syslabel_edit.aspx.designer.cs">
       <DependentUpon>syslabel_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\sysLabel_inlabel.aspx.cs">
+    <Compile Include="manage\label\sysLabel_inlabel.aspx.cs">
       <DependentUpon>sysLabel_inlabel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\sysLabel_inlabel.aspx.designer.cs">
+    <Compile Include="manage\label\sysLabel_inlabel.aspx.designer.cs">
       <DependentUpon>sysLabel_inlabel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\SysLabel_List.aspx.cs">
+    <Compile Include="manage\label\SysLabel_List.aspx.cs">
       <DependentUpon>SysLabel_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\SysLabel_List.aspx.designer.cs">
+    <Compile Include="manage\label\SysLabel_List.aspx.designer.cs">
       <DependentUpon>SysLabel_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\sysLabel_out.aspx.cs">
+    <Compile Include="manage\label\sysLabel_out.aspx.cs">
       <DependentUpon>sysLabel_out.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\sysLabel_out.aspx.designer.cs">
+    <Compile Include="manage\label\sysLabel_out.aspx.designer.cs">
       <DependentUpon>sysLabel_out.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_outLocal.aspx.cs">
+    <Compile Include="manage\label\syslabel_outLocal.aspx.cs">
       <DependentUpon>syslabel_outLocal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslabel_outLocal.aspx.designer.cs">
+    <Compile Include="manage\label\syslabel_outLocal.aspx.designer.cs">
       <DependentUpon>syslabel_outLocal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\label\syslable_add.aspx.cs">
+    <Compile Include="manage\label\syslable_add.aspx.cs">
       <DependentUpon>syslable_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\label\syslable_add.aspx.designer.cs">
+    <Compile Include="manage\label\syslable_add.aspx.designer.cs">
       <DependentUpon>syslable_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Login.aspx.cs">
+    <Compile Include="manage\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Login.aspx.designer.cs">
+    <Compile Include="manage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\main.aspx.cs">
+    <Compile Include="manage\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\main.aspx.designer.cs">
+    <Compile Include="manage\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\menu.aspx.cs">
+    <Compile Include="manage\menu.aspx.cs">
       <DependentUpon>menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\menu.aspx.designer.cs">
+    <Compile Include="manage\menu.aspx.designer.cs">
       <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\BatchAddNewsHandler.ashx.cs">
+    <Compile Include="manage\news\BatchAddNewsHandler.ashx.cs">
       <DependentUpon>BatchAddNewsHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_add.aspx.cs">
+    <Compile Include="manage\news\Class_add.aspx.cs">
       <DependentUpon>Class_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_add.aspx.designer.cs">
+    <Compile Include="manage\news\Class_add.aspx.designer.cs">
       <DependentUpon>Class_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\class_list.aspx.cs">
+    <Compile Include="manage\news\class_list.aspx.cs">
       <DependentUpon>class_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\class_list.aspx.designer.cs">
+    <Compile Include="manage\news\class_list.aspx.designer.cs">
       <DependentUpon>class_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_list_ajax.aspx.cs">
+    <Compile Include="manage\news\Class_list_ajax.aspx.cs">
       <DependentUpon>Class_list_ajax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_list_ajax.aspx.designer.cs">
+    <Compile Include="manage\news\Class_list_ajax.aspx.designer.cs">
       <DependentUpon>Class_list_ajax.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_Map.aspx.cs">
+    <Compile Include="manage\news\Class_Map.aspx.cs">
       <DependentUpon>Class_Map.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_Map.aspx.designer.cs">
+    <Compile Include="manage\news\Class_Map.aspx.designer.cs">
       <DependentUpon>Class_Map.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\class_site.aspx.cs">
+    <Compile Include="manage\news\class_site.aspx.cs">
       <DependentUpon>class_site.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\class_site.aspx.designer.cs">
+    <Compile Include="manage\news\class_site.aspx.designer.cs">
       <DependentUpon>class_site.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\class_site_ajax.aspx.cs">
+    <Compile Include="manage\news\class_site_ajax.aspx.cs">
       <DependentUpon>class_site_ajax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\class_site_ajax.aspx.designer.cs">
+    <Compile Include="manage\news\class_site_ajax.aspx.designer.cs">
       <DependentUpon>class_site_ajax.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_ToTemplet.aspx.cs">
+    <Compile Include="manage\news\Class_ToTemplet.aspx.cs">
       <DependentUpon>Class_ToTemplet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Class_ToTemplet.aspx.designer.cs">
+    <Compile Include="manage\news\Class_ToTemplet.aspx.designer.cs">
       <DependentUpon>Class_ToTemplet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\CPNS_News_List.aspx.cs">
+    <Compile Include="manage\news\CPNS_News_List.aspx.cs">
       <DependentUpon>CPNS_News_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\CPNS_News_List.aspx.designer.cs">
+    <Compile Include="manage\news\CPNS_News_List.aspx.designer.cs">
       <DependentUpon>CPNS_News_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Frame.aspx.cs">
+    <Compile Include="manage\news\Frame.aspx.cs">
       <DependentUpon>Frame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Frame.aspx.designer.cs">
+    <Compile Include="manage\news\Frame.aspx.designer.cs">
       <DependentUpon>Frame.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\History_Manage.aspx.cs">
+    <Compile Include="manage\news\History_Manage.aspx.cs">
       <DependentUpon>History_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\History_Manage.aspx.designer.cs">
+    <Compile Include="manage\news\History_Manage.aspx.designer.cs">
       <DependentUpon>History_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\newsindex.aspx.cs">
+    <Compile Include="manage\news\newsindex.aspx.cs">
       <DependentUpon>newsindex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\newsindex.aspx.designer.cs">
+    <Compile Include="manage\news\newsindex.aspx.designer.cs">
       <DependentUpon>newsindex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\News_add.aspx.cs">
+    <Compile Include="manage\news\News_add.aspx.cs">
       <DependentUpon>News_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\News_add.aspx.designer.cs">
+    <Compile Include="manage\news\News_add.aspx.designer.cs">
       <DependentUpon>News_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\news_addReviewTT.aspx.cs">
+    <Compile Include="manage\news\news_addReviewTT.aspx.cs">
       <DependentUpon>news_addReviewTT.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\news_addReviewTT.aspx.designer.cs">
+    <Compile Include="manage\news\news_addReviewTT.aspx.designer.cs">
       <DependentUpon>news_addReviewTT.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\News_list.aspx.cs">
+    <Compile Include="manage\news\News_list.aspx.cs">
       <DependentUpon>News_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\News_list.aspx.designer.cs">
+    <Compile Include="manage\news\News_list.aspx.designer.cs">
       <DependentUpon>News_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\News_Manage.aspx.cs">
+    <Compile Include="manage\news\News_Manage.aspx.cs">
       <DependentUpon>News_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\News_Manage.aspx.designer.cs">
+    <Compile Include="manage\news\News_Manage.aspx.designer.cs">
       <DependentUpon>News_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\news_page.aspx.cs">
+    <Compile Include="manage\news\news_page.aspx.cs">
       <DependentUpon>news_page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\news_page.aspx.designer.cs">
+    <Compile Include="manage\news\news_page.aspx.designer.cs">
       <DependentUpon>news_page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\News_PicSet.aspx.cs">
+    <Compile Include="manage\news\News_PicSet.aspx.cs">
       <DependentUpon>News_PicSet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\News_PicSet.aspx.designer.cs">
+    <Compile Include="manage\news\News_PicSet.aspx.designer.cs">
       <DependentUpon>News_PicSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\news_review.aspx.cs">
+    <Compile Include="manage\news\news_review.aspx.cs">
       <DependentUpon>news_review.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\news_review.aspx.designer.cs">
+    <Compile Include="manage\news\news_review.aspx.designer.cs">
       <DependentUpon>news_review.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\News_saveAjax.aspx.cs">
+    <Compile Include="manage\news\News_saveAjax.aspx.cs">
       <DependentUpon>News_saveAjax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\News_saveAjax.aspx.designer.cs">
+    <Compile Include="manage\news\News_saveAjax.aspx.designer.cs">
       <DependentUpon>News_saveAjax.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\news_stat.aspx.cs">
+    <Compile Include="manage\news\news_stat.aspx.cs">
       <DependentUpon>news_stat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\news_stat.aspx.designer.cs">
+    <Compile Include="manage\news\news_stat.aspx.designer.cs">
       <DependentUpon>news_stat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Recyle.aspx.cs">
+    <Compile Include="manage\news\Recyle.aspx.cs">
       <DependentUpon>Recyle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Recyle.aspx.designer.cs">
+    <Compile Include="manage\news\Recyle.aspx.designer.cs">
       <DependentUpon>Recyle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Site_add.aspx.cs">
+    <Compile Include="manage\news\Site_add.aspx.cs">
       <DependentUpon>Site_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Site_add.aspx.designer.cs">
+    <Compile Include="manage\news\Site_add.aspx.designer.cs">
       <DependentUpon>Site_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Site_List.aspx.cs">
+    <Compile Include="manage\news\Site_List.aspx.cs">
       <DependentUpon>Site_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Site_List.aspx.designer.cs">
+    <Compile Include="manage\news\Site_List.aspx.designer.cs">
       <DependentUpon>Site_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\SortPage.aspx.cs">
+    <Compile Include="manage\news\SortPage.aspx.cs">
       <DependentUpon>SortPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\SortPage.aspx.designer.cs">
+    <Compile Include="manage\news\SortPage.aspx.designer.cs">
       <DependentUpon>SortPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_add.aspx.cs">
+    <Compile Include="manage\news\Special_add.aspx.cs">
       <DependentUpon>Special_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_add.aspx.designer.cs">
+    <Compile Include="manage\news\Special_add.aspx.designer.cs">
       <DependentUpon>Special_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_edit.aspx.cs">
+    <Compile Include="manage\news\Special_edit.aspx.cs">
       <DependentUpon>Special_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_edit.aspx.designer.cs">
+    <Compile Include="manage\news\Special_edit.aspx.designer.cs">
       <DependentUpon>Special_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_List.aspx.cs">
+    <Compile Include="manage\news\Special_List.aspx.cs">
       <DependentUpon>Special_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\Special_List.aspx.designer.cs">
+    <Compile Include="manage\news\Special_List.aspx.designer.cs">
       <DependentUpon>Special_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\special_templet.aspx.cs">
+    <Compile Include="manage\news\special_templet.aspx.cs">
       <DependentUpon>special_templet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\special_templet.aspx.designer.cs">
+    <Compile Include="manage\news\special_templet.aspx.designer.cs">
       <DependentUpon>special_templet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews.aspx.cs">
+    <Compile Include="manage\news\unnews.aspx.cs">
       <DependentUpon>unnews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews.aspx.designer.cs">
+    <Compile Include="manage\news\unnews.aspx.designer.cs">
       <DependentUpon>unnews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews_Del.aspx.cs">
+    <Compile Include="manage\news\unnews_Del.aspx.cs">
       <DependentUpon>unnews_Del.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews_Del.aspx.designer.cs">
+    <Compile Include="manage\news\unnews_Del.aspx.designer.cs">
       <DependentUpon>unnews_Del.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\unNews_Edit.aspx.cs">
+    <Compile Include="manage\news\unNews_Edit.aspx.cs">
       <DependentUpon>unNews_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\unNews_Edit.aspx.designer.cs">
+    <Compile Include="manage\news\unNews_Edit.aspx.designer.cs">
       <DependentUpon>unNews_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews_iframe.aspx.cs">
+    <Compile Include="manage\news\unnews_iframe.aspx.cs">
       <DependentUpon>unnews_iframe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\news\unnews_iframe.aspx.designer.cs">
+    <Compile Include="manage\news\unnews_iframe.aspx.designer.cs">
       <DependentUpon>unnews_iframe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\AjaxSiteParam.aspx.cs">
+    <Compile Include="manage\publish\AjaxSiteParam.aspx.cs">
       <DependentUpon>AjaxSiteParam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\AjaxSiteParam.aspx.designer.cs">
+    <Compile Include="manage\publish\AjaxSiteParam.aspx.designer.cs">
       <DependentUpon>AjaxSiteParam.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\error\GetError.aspx.cs">
+    <Compile Include="manage\publish\error\GetError.aspx.cs">
       <DependentUpon>GetError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\error\GetError.aspx.designer.cs">
+    <Compile Include="manage\publish\error\GetError.aspx.designer.cs">
       <DependentUpon>GetError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\logs.aspx.cs">
+    <Compile Include="manage\publish\logs.aspx.cs">
       <DependentUpon>logs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\logs.aspx.designer.cs">
+    <Compile Include="manage\publish\logs.aspx.designer.cs">
       <DependentUpon>logs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf.aspx.cs">
+    <Compile Include="manage\publish\psf.aspx.cs">
       <DependentUpon>psf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf.aspx.designer.cs">
+    <Compile Include="manage\publish\psf.aspx.designer.cs">
       <DependentUpon>psf.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf_add.aspx.cs">
+    <Compile Include="manage\publish\psf_add.aspx.cs">
       <DependentUpon>psf_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf_add.aspx.designer.cs">
+    <Compile Include="manage\publish\psf_add.aspx.designer.cs">
       <DependentUpon>psf_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf_edit.aspx.cs">
+    <Compile Include="manage\publish\psf_edit.aspx.cs">
       <DependentUpon>psf_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\psf_edit.aspx.designer.cs">
+    <Compile Include="manage\publish\psf_edit.aspx.designer.cs">
       <DependentUpon>psf_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\site.aspx.cs">
+    <Compile Include="manage\publish\site.aspx.cs">
       <DependentUpon>site.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\site.aspx.designer.cs">
+    <Compile Include="manage\publish\site.aspx.designer.cs">
       <DependentUpon>site.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask.aspx.cs">
+    <Compile Include="manage\publish\siteTask.aspx.cs">
       <DependentUpon>siteTask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask.aspx.designer.cs">
+    <Compile Include="manage\publish\siteTask.aspx.designer.cs">
       <DependentUpon>siteTask.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask_add.aspx.cs">
+    <Compile Include="manage\publish\siteTask_add.aspx.cs">
       <DependentUpon>siteTask_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask_add.aspx.designer.cs">
+    <Compile Include="manage\publish\siteTask_add.aspx.designer.cs">
       <DependentUpon>siteTask_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask_edit.aspx.cs">
+    <Compile Include="manage\publish\siteTask_edit.aspx.cs">
       <DependentUpon>siteTask_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\publish\siteTask_edit.aspx.designer.cs">
+    <Compile Include="manage\publish\siteTask_edit.aspx.designer.cs">
       <DependentUpon>siteTask_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\statserver\Cnzz.aspx.cs">
+    <Compile Include="manage\statserver\Cnzz.aspx.cs">
       <DependentUpon>Cnzz.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\statserver\Cnzz.aspx.designer.cs">
+    <Compile Include="manage\statserver\Cnzz.aspx.designer.cs">
       <DependentUpon>Cnzz.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\statserver\getStatCode.aspx.cs">
+    <Compile Include="manage\statserver\getStatCode.aspx.cs">
       <DependentUpon>getStatCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\statserver\getStatCode.aspx.designer.cs">
+    <Compile Include="manage\statserver\getStatCode.aspx.designer.cs">
       <DependentUpon>getStatCode.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\stat\View.aspx.cs">
+    <Compile Include="manage\stat\View.aspx.cs">
       <DependentUpon>View.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\stat\View.aspx.designer.cs">
+    <Compile Include="manage\stat\View.aspx.designer.cs">
       <DependentUpon>View.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\ManageVote.aspx.cs">
+    <Compile Include="manage\survey\ManageVote.aspx.cs">
       <DependentUpon>ManageVote.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\ManageVote.aspx.designer.cs">
+    <Compile Include="manage\survey\ManageVote.aspx.designer.cs">
       <DependentUpon>ManageVote.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\setClass.aspx.cs">
+    <Compile Include="manage\survey\setClass.aspx.cs">
       <DependentUpon>setClass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\setClass.aspx.designer.cs">
+    <Compile Include="manage\survey\setClass.aspx.designer.cs">
       <DependentUpon>setClass.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\setItem.aspx.cs">
+    <Compile Include="manage\survey\setItem.aspx.cs">
       <DependentUpon>setItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\setItem.aspx.designer.cs">
+    <Compile Include="manage\survey\setItem.aspx.designer.cs">
       <DependentUpon>setItem.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\setParam.aspx.cs">
+    <Compile Include="manage\survey\setParam.aspx.cs">
       <DependentUpon>setParam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\setParam.aspx.designer.cs">
+    <Compile Include="manage\survey\setParam.aspx.designer.cs">
       <DependentUpon>setParam.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\setSteps.aspx.cs">
+    <Compile Include="manage\survey\setSteps.aspx.cs">
       <DependentUpon>setSteps.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\setSteps.aspx.designer.cs">
+    <Compile Include="manage\survey\setSteps.aspx.designer.cs">
       <DependentUpon>setSteps.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\setTitle.aspx.cs">
+    <Compile Include="manage\survey\setTitle.aspx.cs">
       <DependentUpon>setTitle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\setTitle.aspx.designer.cs">
+    <Compile Include="manage\survey\setTitle.aspx.designer.cs">
       <DependentUpon>setTitle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\survey\showJsPath.aspx.cs">
+    <Compile Include="manage\survey\showJsPath.aspx.cs">
       <DependentUpon>showJsPath.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\survey\showJsPath.aspx.designer.cs">
+    <Compile Include="manage\survey\showJsPath.aspx.designer.cs">
       <DependentUpon>showJsPath.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_add.aspx.cs">
+    <Compile Include="manage\Sys\admin_add.aspx.cs">
       <DependentUpon>admin_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_add.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_add.aspx.designer.cs">
       <DependentUpon>admin_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_edit.aspx.cs">
+    <Compile Include="manage\Sys\admin_edit.aspx.cs">
       <DependentUpon>admin_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_edit.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_edit.aspx.designer.cs">
       <DependentUpon>admin_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_group.aspx.cs">
+    <Compile Include="manage\Sys\admin_group.aspx.cs">
       <DependentUpon>admin_group.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_group.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_group.aspx.designer.cs">
       <DependentUpon>admin_group.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_GroupAdd.aspx.cs">
+    <Compile Include="manage\Sys\admin_GroupAdd.aspx.cs">
       <DependentUpon>admin_GroupAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_GroupAdd.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_GroupAdd.aspx.designer.cs">
       <DependentUpon>admin_GroupAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_GroupEdit.aspx.cs">
+    <Compile Include="manage\Sys\admin_GroupEdit.aspx.cs">
       <DependentUpon>admin_GroupEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_GroupEdit.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_GroupEdit.aspx.designer.cs">
       <DependentUpon>admin_GroupEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_list.aspx.cs">
+    <Compile Include="manage\Sys\admin_list.aspx.cs">
       <DependentUpon>admin_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_list.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_list.aspx.designer.cs">
       <DependentUpon>admin_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_POPSet.aspx.cs">
+    <Compile Include="manage\Sys\admin_POPSet.aspx.cs">
       <DependentUpon>admin_POPSet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\admin_POPSet.aspx.designer.cs">
+    <Compile Include="manage\Sys\admin_POPSet.aspx.designer.cs">
       <DependentUpon>admin_POPSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\checkFiles.aspx.cs">
+    <Compile Include="manage\Sys\checkFiles.aspx.cs">
       <DependentUpon>checkFiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\checkFiles.aspx.designer.cs">
+    <Compile Include="manage\Sys\checkFiles.aspx.designer.cs">
       <DependentUpon>checkFiles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\const.aspx.cs">
+    <Compile Include="manage\Sys\const.aspx.cs">
       <DependentUpon>const.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\const.aspx.designer.cs">
+    <Compile Include="manage\Sys\const.aspx.designer.cs">
       <DependentUpon>const.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CreateCheckfile.aspx.cs">
+    <Compile Include="manage\Sys\CreateCheckfile.aspx.cs">
       <DependentUpon>CreateCheckfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CreateCheckfile.aspx.designer.cs">
+    <Compile Include="manage\Sys\CreateCheckfile.aspx.designer.cs">
       <DependentUpon>CreateCheckfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm.aspx.cs">
       <DependentUpon>CustomForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm.aspx.designer.cs">
       <DependentUpon>CustomForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Add.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_Add.aspx.cs">
       <DependentUpon>CustomForm_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Add.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_Add.aspx.designer.cs">
       <DependentUpon>CustomForm_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Data.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_Data.aspx.cs">
       <DependentUpon>CustomForm_Data.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Data.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_Data.aspx.designer.cs">
       <DependentUpon>CustomForm_Data.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_HtmlCode.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_HtmlCode.aspx.cs">
       <DependentUpon>CustomForm_HtmlCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_HtmlCode.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_HtmlCode.aspx.designer.cs">
       <DependentUpon>CustomForm_HtmlCode.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Item.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_Item.aspx.cs">
       <DependentUpon>CustomForm_Item.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Item.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_Item.aspx.designer.cs">
       <DependentUpon>CustomForm_Item.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Item_Add.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_Item_Add.aspx.cs">
       <DependentUpon>CustomForm_Item_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_Item_Add.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_Item_Add.aspx.designer.cs">
       <DependentUpon>CustomForm_Item_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_JS.aspx.cs">
+    <Compile Include="manage\Sys\CustomForm_JS.aspx.cs">
       <DependentUpon>CustomForm_JS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\CustomForm_JS.aspx.designer.cs">
+    <Compile Include="manage\Sys\CustomForm_JS.aspx.designer.cs">
       <DependentUpon>CustomForm_JS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\database.aspx.cs">
+    <Compile Include="manage\Sys\database.aspx.cs">
       <DependentUpon>database.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\database.aspx.designer.cs">
+    <Compile Include="manage\Sys\database.aspx.designer.cs">
       <DependentUpon>database.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable.aspx.cs">
+    <Compile Include="manage\Sys\DefineTable.aspx.cs">
       <DependentUpon>DefineTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable.aspx.designer.cs">
+    <Compile Include="manage\Sys\DefineTable.aspx.designer.cs">
       <DependentUpon>DefineTable.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Edit_List.aspx.cs">
+    <Compile Include="manage\Sys\DefineTable_Edit_List.aspx.cs">
       <DependentUpon>DefineTable_Edit_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Edit_List.aspx.designer.cs">
+    <Compile Include="manage\Sys\DefineTable_Edit_List.aspx.designer.cs">
       <DependentUpon>DefineTable_Edit_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Edit_Manage.aspx.cs">
+    <Compile Include="manage\Sys\DefineTable_Edit_Manage.aspx.cs">
       <DependentUpon>DefineTable_Edit_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Edit_Manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\DefineTable_Edit_Manage.aspx.designer.cs">
       <DependentUpon>DefineTable_Edit_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_List.aspx.cs">
+    <Compile Include="manage\Sys\DefineTable_List.aspx.cs">
       <DependentUpon>DefineTable_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_List.aspx.designer.cs">
+    <Compile Include="manage\Sys\DefineTable_List.aspx.designer.cs">
       <DependentUpon>DefineTable_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Manage.aspx.cs">
+    <Compile Include="manage\Sys\DefineTable_Manage.aspx.cs">
       <DependentUpon>DefineTable_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\DefineTable_Manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\DefineTable_Manage.aspx.designer.cs">
       <DependentUpon>DefineTable_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_GetIn.aspx.cs">
+    <Compile Include="manage\Sys\File_GetIn.aspx.cs">
       <DependentUpon>File_GetIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_GetIn.aspx.designer.cs">
+    <Compile Include="manage\Sys\File_GetIn.aspx.designer.cs">
       <DependentUpon>File_GetIn.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_OnLine_Edit.aspx.cs">
+    <Compile Include="manage\Sys\File_OnLine_Edit.aspx.cs">
       <DependentUpon>File_OnLine_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_OnLine_Edit.aspx.designer.cs">
+    <Compile Include="manage\Sys\File_OnLine_Edit.aspx.designer.cs">
       <DependentUpon>File_OnLine_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_Txt_Edit.aspx.cs">
+    <Compile Include="manage\Sys\File_Txt_Edit.aspx.cs">
       <DependentUpon>File_Txt_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_Txt_Edit.aspx.designer.cs">
+    <Compile Include="manage\Sys\File_Txt_Edit.aspx.designer.cs">
       <DependentUpon>File_Txt_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_Win_Login.aspx.cs">
+    <Compile Include="manage\Sys\File_Win_Login.aspx.cs">
       <DependentUpon>File_Win_Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\File_Win_Login.aspx.designer.cs">
+    <Compile Include="manage\Sys\File_Win_Login.aspx.designer.cs">
       <DependentUpon>File_Win_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Form.aspx.cs">
+    <Compile Include="manage\Sys\Form.aspx.cs">
       <DependentUpon>Form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Form.aspx.designer.cs">
+    <Compile Include="manage\Sys\Form.aspx.designer.cs">
       <DependentUpon>Form.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Form_Add.aspx.cs">
+    <Compile Include="manage\Sys\Form_Add.aspx.cs">
       <DependentUpon>Form_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Form_Add.aspx.designer.cs">
+    <Compile Include="manage\Sys\Form_Add.aspx.designer.cs">
       <DependentUpon>Form_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_Add_Manage.aspx.cs">
+    <Compile Include="manage\Sys\General_Add_Manage.aspx.cs">
       <DependentUpon>General_Add_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_Add_Manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\General_Add_Manage.aspx.designer.cs">
       <DependentUpon>General_Add_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_Edit_Manage.aspx.cs">
+    <Compile Include="manage\Sys\General_Edit_Manage.aspx.cs">
       <DependentUpon>General_Edit_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_Edit_Manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\General_Edit_Manage.aspx.designer.cs">
       <DependentUpon>General_Edit_Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_manage.aspx.cs">
+    <Compile Include="manage\Sys\General_manage.aspx.cs">
       <DependentUpon>General_manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\General_manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\General_manage.aspx.designer.cs">
       <DependentUpon>General_manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\navimenu.aspx.cs">
+    <Compile Include="manage\Sys\navimenu.aspx.cs">
       <DependentUpon>navimenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\navimenu.aspx.designer.cs">
+    <Compile Include="manage\Sys\navimenu.aspx.designer.cs">
       <DependentUpon>navimenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\navimenuEdit.aspx.cs">
+    <Compile Include="manage\Sys\navimenuEdit.aspx.cs">
       <DependentUpon>navimenuEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\navimenuEdit.aspx.designer.cs">
+    <Compile Include="manage\Sys\navimenuEdit.aspx.designer.cs">
       <DependentUpon>navimenuEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Navimenu_list.aspx.cs">
+    <Compile Include="manage\Sys\Navimenu_list.aspx.cs">
       <DependentUpon>Navimenu_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\Navimenu_list.aspx.designer.cs">
+    <Compile Include="manage\Sys\Navimenu_list.aspx.designer.cs">
       <DependentUpon>Navimenu_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\shortcut.aspx.cs">
+    <Compile Include="manage\Sys\shortcut.aspx.cs">
       <DependentUpon>shortcut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\shortcut.aspx.designer.cs">
+    <Compile Include="manage\Sys\shortcut.aspx.designer.cs">
       <DependentUpon>shortcut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\shortcut_list.aspx.cs">
+    <Compile Include="manage\Sys\shortcut_list.aspx.cs">
       <DependentUpon>shortcut_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\shortcut_list.aspx.designer.cs">
+    <Compile Include="manage\Sys\shortcut_list.aspx.designer.cs">
       <DependentUpon>shortcut_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\skinChange.aspx.cs">
+    <Compile Include="manage\Sys\skinChange.aspx.cs">
       <DependentUpon>skinChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\skinChange.aspx.designer.cs">
+    <Compile Include="manage\Sys\skinChange.aspx.designer.cs">
       <DependentUpon>skinChange.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\sys_Param.aspx.cs">
+    <Compile Include="manage\Sys\sys_Param.aspx.cs">
       <DependentUpon>sys_Param.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\sys_Param.aspx.designer.cs">
+    <Compile Include="manage\Sys\sys_Param.aspx.designer.cs">
       <DependentUpon>sys_Param.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\table_list.aspx.cs">
+    <Compile Include="manage\Sys\table_list.aspx.cs">
       <DependentUpon>table_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\table_list.aspx.designer.cs">
+    <Compile Include="manage\Sys\table_list.aspx.designer.cs">
       <DependentUpon>table_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\table_manage.aspx.cs">
+    <Compile Include="manage\Sys\table_manage.aspx.cs">
       <DependentUpon>table_manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\table_manage.aspx.designer.cs">
+    <Compile Include="manage\Sys\table_manage.aspx.designer.cs">
       <DependentUpon>table_manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Sys\windlogin.aspx.cs">
+    <Compile Include="manage\Sys\windlogin.aspx.cs">
       <DependentUpon>windlogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Sys\windlogin.aspx.designer.cs">
+    <Compile Include="manage\Sys\windlogin.aspx.designer.cs">
       <DependentUpon>windlogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\editor.aspx.cs">
+    <Compile Include="manage\Templet\editor.aspx.cs">
       <DependentUpon>editor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\editor.aspx.designer.cs">
+    <Compile Include="manage\Templet\editor.aspx.designer.cs">
       <DependentUpon>editor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\freeLabelList.aspx.cs">
+    <Compile Include="manage\Templet\freeLabelList.aspx.cs">
       <DependentUpon>freeLabelList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\freeLabelList.aspx.designer.cs">
+    <Compile Include="manage\Templet\freeLabelList.aspx.designer.cs">
       <DependentUpon>freeLabelList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\LabelList.aspx.cs">
+    <Compile Include="manage\Templet\LabelList.aspx.cs">
       <DependentUpon>LabelList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\LabelList.aspx.designer.cs">
+    <Compile Include="manage\Templet\LabelList.aspx.designer.cs">
       <DependentUpon>LabelList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\LabelListM.aspx.cs">
+    <Compile Include="manage\Templet\LabelListM.aspx.cs">
       <DependentUpon>LabelListM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\LabelListM.aspx.designer.cs">
+    <Compile Include="manage\Templet\LabelListM.aspx.designer.cs">
       <DependentUpon>LabelListM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\Manage_List.aspx.cs">
+    <Compile Include="manage\Templet\Manage_List.aspx.cs">
       <DependentUpon>Manage_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\Manage_List.aspx.designer.cs">
+    <Compile Include="manage\Templet\Manage_List.aspx.designer.cs">
       <DependentUpon>Manage_List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\Templet\Txteditor.aspx.cs">
+    <Compile Include="manage\Templet\Txteditor.aspx.cs">
       <DependentUpon>Txteditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\Templet\Txteditor.aspx.designer.cs">
+    <Compile Include="manage\Templet\Txteditor.aspx.designer.cs">
       <DependentUpon>Txteditor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\top.aspx.cs">
+    <Compile Include="manage\top.aspx.cs">
       <DependentUpon>top.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\top.aspx.designer.cs">
+    <Compile Include="manage\top.aspx.designer.cs">
       <DependentUpon>top.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\announce.aspx.cs">
+    <Compile Include="manage\user\announce.aspx.cs">
       <DependentUpon>announce.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\announce.aspx.designer.cs">
+    <Compile Include="manage\user\announce.aspx.designer.cs">
       <DependentUpon>announce.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\announce_add.aspx.cs">
+    <Compile Include="manage\user\announce_add.aspx.cs">
       <DependentUpon>announce_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\announce_add.aspx.designer.cs">
+    <Compile Include="manage\user\announce_add.aspx.designer.cs">
       <DependentUpon>announce_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\Announce_Edit.aspx.cs">
+    <Compile Include="manage\user\Announce_Edit.aspx.cs">
       <DependentUpon>Announce_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\Announce_Edit.aspx.designer.cs">
+    <Compile Include="manage\user\Announce_Edit.aspx.designer.cs">
       <DependentUpon>Announce_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist.aspx.cs">
+    <Compile Include="manage\user\arealist.aspx.cs">
       <DependentUpon>arealist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist.aspx.designer.cs">
+    <Compile Include="manage\user\arealist.aspx.designer.cs">
       <DependentUpon>arealist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_add.aspx.cs">
+    <Compile Include="manage\user\arealist_add.aspx.cs">
       <DependentUpon>arealist_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_add.aspx.designer.cs">
+    <Compile Include="manage\user\arealist_add.aspx.designer.cs">
       <DependentUpon>arealist_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_cadd.aspx.cs">
+    <Compile Include="manage\user\arealist_cadd.aspx.cs">
       <DependentUpon>arealist_cadd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_cadd.aspx.designer.cs">
+    <Compile Include="manage\user\arealist_cadd.aspx.designer.cs">
       <DependentUpon>arealist_cadd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_City.aspx.cs">
+    <Compile Include="manage\user\arealist_City.aspx.cs">
       <DependentUpon>arealist_City.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_City.aspx.designer.cs">
+    <Compile Include="manage\user\arealist_City.aspx.designer.cs">
       <DependentUpon>arealist_City.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_upc.aspx.cs">
+    <Compile Include="manage\user\arealist_upc.aspx.cs">
       <DependentUpon>arealist_upc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_upc.aspx.designer.cs">
+    <Compile Include="manage\user\arealist_upc.aspx.designer.cs">
       <DependentUpon>arealist_upc.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_upp.aspx.cs">
+    <Compile Include="manage\user\arealist_upp.aspx.cs">
       <DependentUpon>arealist_upp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\arealist_upp.aspx.designer.cs">
+    <Compile Include="manage\user\arealist_upp.aspx.designer.cs">
       <DependentUpon>arealist_upp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti.aspx.cs">
+    <Compile Include="manage\user\discussacti.aspx.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti.aspx.designer.cs">
+    <Compile Include="manage\user\discussacti.aspx.designer.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti_list.aspx.cs">
+    <Compile Include="manage\user\discussacti_list.aspx.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti_list.aspx.designer.cs">
+    <Compile Include="manage\user\discussacti_list.aspx.designer.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti_up.aspx.cs">
+    <Compile Include="manage\user\discussacti_up.aspx.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussacti_up.aspx.designer.cs">
+    <Compile Include="manage\user\discussacti_up.aspx.designer.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussclass.aspx.cs">
+    <Compile Include="manage\user\discussclass.aspx.cs">
       <DependentUpon>discussclass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussclass.aspx.designer.cs">
+    <Compile Include="manage\user\discussclass.aspx.designer.cs">
       <DependentUpon>discussclass.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussclass_add.aspx.cs">
+    <Compile Include="manage\user\discussclass_add.aspx.cs">
       <DependentUpon>discussclass_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussclass_add.aspx.designer.cs">
+    <Compile Include="manage\user\discussclass_add.aspx.designer.cs">
       <DependentUpon>discussclass_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discussManage_add.aspx.cs">
+    <Compile Include="manage\user\discussManage_add.aspx.cs">
       <DependentUpon>discussManage_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discussManage_add.aspx.designer.cs">
+    <Compile Include="manage\user\discussManage_add.aspx.designer.cs">
       <DependentUpon>discussManage_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\discusssubclass_add.aspx.cs">
+    <Compile Include="manage\user\discusssubclass_add.aspx.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\discusssubclass_add.aspx.designer.cs">
+    <Compile Include="manage\user\discusssubclass_add.aspx.designer.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\icard.aspx.cs">
+    <Compile Include="manage\user\icard.aspx.cs">
       <DependentUpon>icard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\icard.aspx.designer.cs">
+    <Compile Include="manage\user\icard.aspx.designer.cs">
       <DependentUpon>icard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\iCardEdit.aspx.cs">
+    <Compile Include="manage\user\iCardEdit.aspx.cs">
       <DependentUpon>iCardEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\iCardEdit.aspx.designer.cs">
+    <Compile Include="manage\user\iCardEdit.aspx.designer.cs">
       <DependentUpon>iCardEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\icard_add.aspx.cs">
+    <Compile Include="manage\user\icard_add.aspx.cs">
       <DependentUpon>icard_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\icard_add.aspx.designer.cs">
+    <Compile Include="manage\user\icard_add.aspx.designer.cs">
       <DependentUpon>icard_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\icard_adds.aspx.cs">
+    <Compile Include="manage\user\icard_adds.aspx.cs">
       <DependentUpon>icard_adds.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\icard_adds.aspx.designer.cs">
+    <Compile Include="manage\user\icard_adds.aspx.designer.cs">
       <DependentUpon>icard_adds.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\message.aspx.cs">
+    <Compile Include="manage\user\message.aspx.cs">
       <DependentUpon>message.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\message.aspx.designer.cs">
+    <Compile Include="manage\user\message.aspx.designer.cs">
       <DependentUpon>message.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\onlinepay.aspx.cs">
+    <Compile Include="manage\user\onlinepay.aspx.cs">
       <DependentUpon>onlinepay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\onlinepay.aspx.designer.cs">
+    <Compile Include="manage\user\onlinepay.aspx.designer.cs">
       <DependentUpon>onlinepay.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\pointhistory.aspx.cs">
+    <Compile Include="manage\user\pointhistory.aspx.cs">
       <DependentUpon>pointhistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\pointhistory.aspx.designer.cs">
+    <Compile Include="manage\user\pointhistory.aspx.designer.cs">
       <DependentUpon>pointhistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\useraction.aspx.cs">
+    <Compile Include="manage\user\useraction.aspx.cs">
       <DependentUpon>useraction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\useraction.aspx.designer.cs">
+    <Compile Include="manage\user\useraction.aspx.designer.cs">
       <DependentUpon>useraction.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userdiscuss_list.aspx.cs">
+    <Compile Include="manage\user\userdiscuss_list.aspx.cs">
       <DependentUpon>userdiscuss_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userdiscuss_list.aspx.designer.cs">
+    <Compile Include="manage\user\userdiscuss_list.aspx.designer.cs">
       <DependentUpon>userdiscuss_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\usergroup.aspx.cs">
+    <Compile Include="manage\user\usergroup.aspx.cs">
       <DependentUpon>usergroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\usergroup.aspx.designer.cs">
+    <Compile Include="manage\user\usergroup.aspx.designer.cs">
       <DependentUpon>usergroup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\usergroupadd.aspx.cs">
+    <Compile Include="manage\user\usergroupadd.aspx.cs">
       <DependentUpon>usergroupadd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\usergroupadd.aspx.designer.cs">
+    <Compile Include="manage\user\usergroupadd.aspx.designer.cs">
       <DependentUpon>usergroupadd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\UserGroupEdit.aspx.cs">
+    <Compile Include="manage\user\UserGroupEdit.aspx.cs">
       <DependentUpon>UserGroupEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\UserGroupEdit.aspx.designer.cs">
+    <Compile Include="manage\user\UserGroupEdit.aspx.designer.cs">
       <DependentUpon>UserGroupEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userIDCard.aspx.cs">
+    <Compile Include="manage\user\userIDCard.aspx.cs">
       <DependentUpon>userIDCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userIDCard.aspx.designer.cs">
+    <Compile Include="manage\user\userIDCard.aspx.designer.cs">
       <DependentUpon>userIDCard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo.aspx.cs">
+    <Compile Include="manage\user\userinfo.aspx.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo.aspx.designer.cs">
+    <Compile Include="manage\user\userinfo.aspx.designer.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_base.aspx.cs">
+    <Compile Include="manage\user\userinfo_base.aspx.cs">
       <DependentUpon>userinfo_base.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_base.aspx.designer.cs">
+    <Compile Include="manage\user\userinfo_base.aspx.designer.cs">
       <DependentUpon>userinfo_base.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_contact.aspx.cs">
+    <Compile Include="manage\user\userinfo_contact.aspx.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_contact.aspx.designer.cs">
+    <Compile Include="manage\user\userinfo_contact.aspx.designer.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_safe.aspx.cs">
+    <Compile Include="manage\user\userinfo_safe.aspx.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userinfo_safe.aspx.designer.cs">
+    <Compile Include="manage\user\userinfo_safe.aspx.designer.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\userlist.aspx.cs">
+    <Compile Include="manage\user\userlist.aspx.cs">
       <DependentUpon>userlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\userlist.aspx.designer.cs">
+    <Compile Include="manage\user\userlist.aspx.designer.cs">
       <DependentUpon>userlist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom.aspx.cs">
+    <Compile Include="manage\user\usermycom.aspx.cs">
       <DependentUpon>usermycom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom.aspx.designer.cs">
+    <Compile Include="manage\user\usermycom.aspx.designer.cs">
       <DependentUpon>usermycom.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom_Look.aspx.cs">
+    <Compile Include="manage\user\usermycom_Look.aspx.cs">
       <DependentUpon>usermycom_Look.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom_Look.aspx.designer.cs">
+    <Compile Include="manage\user\usermycom_Look.aspx.designer.cs">
       <DependentUpon>usermycom_Look.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom_up.aspx.cs">
+    <Compile Include="manage\user\usermycom_up.aspx.cs">
       <DependentUpon>usermycom_up.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\user\usermycom_up.aspx.designer.cs">
+    <Compile Include="manage\user\usermycom_up.aspx.designer.cs">
       <DependentUpon>usermycom_up.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\ver\about.aspx.cs">
+    <Compile Include="manage\ver\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\ver\about.aspx.designer.cs">
+    <Compile Include="manage\ver\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manageXXBN\ver\Default.aspx.cs">
+    <Compile Include="manage\ver\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manageXXBN\ver\Default.aspx.designer.cs">
+    <Compile Include="manage\ver\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewsInformation.asmx.cs">
@@ -3640,8 +3640,6 @@
     <Content Include="Install\SQL\Value\site_param.sql" />
     <Content Include="Install\SQL\Value\stat.sql" />
     <Content Include="files\Cpsn\Columns.xml" />
-    <Content Include="manageXXBN\collect\MasterPage_Site.master" />
-    <Content Include="manageXXBN\news\BatchAddNewsHandler.ashx" />
     <Content Include="Install\SQL\mztj\index.html" />
     <Content Include="Install\css\styles.css" />
     <Content Include="Install\finishinstall.aspx" />
@@ -3656,232 +3654,6 @@
     <Content Include="Install\step3.aspx" />
     <Content Include="Install\step4.aspx" />
     <Content Include="Install\step_End.aspx" />
-    <Content Include="manageXXBN\adapt\adapt.aspx" />
-    <Content Include="manageXXBN\adapt\add.aspx" />
-    <Content Include="manageXXBN\adapt\delete.aspx" />
-    <Content Include="manageXXBN\adapt\edit.aspx" />
-    <Content Include="manageXXBN\advertisement\adsclass_add.aspx" />
-    <Content Include="manageXXBN\advertisement\adsclass_edit.aspx" />
-    <Content Include="manageXXBN\advertisement\Ads_add.aspx" />
-    <Content Include="manageXXBN\advertisement\ads_edit.aspx" />
-    <Content Include="manageXXBN\advertisement\ad_stat.aspx" />
-    <Content Include="manageXXBN\advertisement\list.aspx" />
-    <Content Include="manageXXBN\advertisement\showJsPath.aspx" />
-    <Content Include="manageXXBN\channel\channel_add.aspx" />
-    <Content Include="manageXXBN\channel\error\GetError.aspx" />
-    <Content Include="manageXXBN\channel\list.aspx" />
-    <Content Include="manageXXBN\collect\Collect.aspx" />
-    <Content Include="manageXXBN\collect\CollectEditor.ascx" />
-    <Content Include="manageXXBN\collect\Collect_Add.aspx" />
-    <Content Include="manageXXBN\collect\Collect_List.aspx" />
-    <Content Include="manageXXBN\collect\Collect_News.aspx" />
-    <Content Include="manageXXBN\collect\Collect_NewsModify.aspx" />
-    <Content Include="manageXXBN\collect\Collect_NumSet.aspx" />
-    <Content Include="manageXXBN\collect\Collect_RuleAdd.aspx" />
-    <Content Include="manageXXBN\collect\Collect_RuleList.aspx" />
-    <Content Include="manageXXBN\collect\Collect_StepFive.aspx" />
-    <Content Include="manageXXBN\collect\Collect_StepFour.aspx" />
-    <Content Include="manageXXBN\collect\Collect_StepThree.aspx" />
-    <Content Include="manageXXBN\collect\Collect_StepTwo.aspx" />
-    <Content Include="manageXXBN\collect\Default.aspx" />
-    <Content Include="manageXXBN\collect\Store.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_chicklist.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_Edit.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_List.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_Pay.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_Return.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_SetParam.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_SetParamlist.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_SetParamup.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_Stat.aspx" />
-    <Content Include="manageXXBN\Contribution\Constr_ToNews.aspx" />
-    <Content Include="manageXXBN\Contribution\paymentannals.aspx" />
-    <Content Include="manageXXBN\Friend\Friend_List.aspx" />
-    <Content Include="manageXXBN\index.aspx" />
-    <Content Include="manageXXBN\js\createLabel_List.aspx" />
-    <Content Include="manageXXBN\js\JS_Add.aspx" />
-    <Content Include="manageXXBN\js\JS_Files.aspx" />
-    <Content Include="manageXXBN\js\JS_GetCode.aspx" />
-    <Content Include="manageXXBN\js\JS_List.aspx" />
-    <Content Include="manageXXBN\js\Js_Publish.aspx" />
-    <Content Include="manageXXBN\js\JS_Templet.aspx" />
-    <Content Include="manageXXBN\js\JS_templetReview.aspx" />
-    <Content Include="manageXXBN\js\JS_Templet_Add.aspx" />
-    <Content Include="manageXXBN\js\JS_Templet_Class.aspx" />
-    <Content Include="manageXXBN\label\createLabel_API.aspx" />
-    <Content Include="manageXXBN\label\createLabel_Browse.aspx" />
-    <Content Include="manageXXBN\label\createLabel_List.aspx" />
-    <Content Include="manageXXBN\label\createLabel_Member.aspx" />
-    <Content Include="manageXXBN\label\createLabel_Other.aspx" />
-    <Content Include="manageXXBN\label\createLabel_Routine.aspx" />
-    <Content Include="manageXXBN\label\createLabel_simpleList.aspx" />
-    <Content Include="manageXXBN\label\createLabel_Ultimate.aspx" />
-    <Content Include="manageXXBN\label\Fixed.aspx" />
-    <Content Include="manageXXBN\label\FreeLabel_Add.aspx" />
-    <Content Include="manageXXBN\label\FreeLabel_AddEnd.aspx" />
-    <Content Include="manageXXBN\label\FreeLabel_Ajax.aspx" />
-    <Content Include="manageXXBN\label\FreeLabel_List.aspx" />
-    <Content Include="manageXXBN\label\FreeLabel_Test.aspx" />
-    <Content Include="manageXXBN\label\Label_List.aspx" />
-    <Content Include="manageXXBN\label\SaveStyle.aspx" />
-    <Content Include="manageXXBN\label\selectPagestyle.aspx" />
-    <Content Include="manageXXBN\label\style.aspx" />
-    <Content Include="manageXXBN\label\styleclass_add.aspx" />
-    <Content Include="manageXXBN\label\styleclass_edit.aspx" />
-    <Content Include="manageXXBN\label\style_add.aspx" />
-    <Content Include="manageXXBN\label\style_edit.aspx" />
-    <Content Include="manageXXBN\label\syslabelclass_add.aspx" />
-    <Content Include="manageXXBN\label\syslabelclass_edit.aspx" />
-    <Content Include="manageXXBN\label\syslabel_bak.aspx" />
-    <Content Include="manageXXBN\label\syslabel_edit.aspx" />
-    <Content Include="manageXXBN\label\sysLabel_inlabel.aspx" />
-    <Content Include="manageXXBN\label\SysLabel_List.aspx" />
-    <Content Include="manageXXBN\label\sysLabel_out.aspx" />
-    <Content Include="manageXXBN\label\syslabel_outLocal.aspx" />
-    <Content Include="manageXXBN\label\syslable_add.aspx" />
-    <Content Include="manageXXBN\Login.aspx" />
-    <Content Include="manageXXBN\main.aspx" />
-    <Content Include="manageXXBN\menu.aspx" />
-    <Content Include="manageXXBN\news\Class_add.aspx" />
-    <Content Include="manageXXBN\news\class_list.aspx" />
-    <Content Include="manageXXBN\news\Class_list_ajax.aspx" />
-    <Content Include="manageXXBN\news\Class_Map.aspx" />
-    <Content Include="manageXXBN\news\class_site.aspx" />
-    <Content Include="manageXXBN\news\class_site_ajax.aspx" />
-    <Content Include="manageXXBN\news\Class_ToTemplet.aspx" />
-    <Content Include="manageXXBN\news\CPNS_News_List.aspx" />
-    <Content Include="manageXXBN\news\Frame.aspx" />
-    <Content Include="manageXXBN\news\History_Manage.aspx" />
-    <Content Include="manageXXBN\news\newsindex.aspx" />
-    <Content Include="manageXXBN\news\News_add.aspx" />
-    <Content Include="manageXXBN\news\news_addReviewTT.aspx" />
-    <Content Include="manageXXBN\news\News_list.aspx" />
-    <Content Include="manageXXBN\news\News_Manage.aspx" />
-    <Content Include="manageXXBN\news\news_page.aspx" />
-    <Content Include="manageXXBN\news\News_PicSet.aspx" />
-    <Content Include="manageXXBN\news\news_review.aspx" />
-    <Content Include="manageXXBN\news\News_saveAjax.aspx" />
-    <Content Include="manageXXBN\news\news_stat.aspx" />
-    <Content Include="manageXXBN\news\Recyle.aspx" />
-    <Content Include="manageXXBN\news\Site_add.aspx" />
-    <Content Include="manageXXBN\news\Site_List.aspx" />
-    <Content Include="manageXXBN\news\SortPage.aspx" />
-    <Content Include="manageXXBN\news\Special_add.aspx" />
-    <Content Include="manageXXBN\news\Special_edit.aspx" />
-    <Content Include="manageXXBN\news\Special_List.aspx" />
-    <Content Include="manageXXBN\news\special_templet.aspx" />
-    <Content Include="manageXXBN\news\unnews.aspx" />
-    <Content Include="manageXXBN\news\unnews_Del.aspx" />
-    <Content Include="manageXXBN\news\unNews_Edit.aspx" />
-    <Content Include="manageXXBN\news\unnews_iframe.aspx" />
-    <Content Include="manageXXBN\publish\AjaxSiteParam.aspx" />
-    <Content Include="manageXXBN\publish\error\GetError.aspx" />
-    <Content Include="manageXXBN\publish\logs.aspx" />
-    <Content Include="manageXXBN\publish\psf.aspx" />
-    <Content Include="manageXXBN\publish\psf_add.aspx" />
-    <Content Include="manageXXBN\publish\psf_edit.aspx" />
-    <Content Include="manageXXBN\publish\site.aspx" />
-    <Content Include="manageXXBN\publish\siteTask.aspx" />
-    <Content Include="manageXXBN\publish\siteTask_add.aspx" />
-    <Content Include="manageXXBN\publish\siteTask_edit.aspx" />
-    <Content Include="manageXXBN\statserver\Cnzz.aspx" />
-    <Content Include="manageXXBN\statserver\getStatCode.aspx" />
-    <Content Include="manageXXBN\stat\View.aspx" />
-    <Content Include="manageXXBN\survey\ManageVote.aspx" />
-    <Content Include="manageXXBN\survey\setClass.aspx" />
-    <Content Include="manageXXBN\survey\setItem.aspx" />
-    <Content Include="manageXXBN\survey\setParam.aspx" />
-    <Content Include="manageXXBN\survey\setSteps.aspx" />
-    <Content Include="manageXXBN\survey\setTitle.aspx" />
-    <Content Include="manageXXBN\survey\showJsPath.aspx" />
-    <Content Include="manageXXBN\Sys\admin_add.aspx" />
-    <Content Include="manageXXBN\Sys\admin_edit.aspx" />
-    <Content Include="manageXXBN\Sys\admin_group.aspx" />
-    <Content Include="manageXXBN\Sys\admin_GroupAdd.aspx" />
-    <Content Include="manageXXBN\Sys\admin_GroupEdit.aspx" />
-    <Content Include="manageXXBN\Sys\admin_list.aspx" />
-    <Content Include="manageXXBN\Sys\admin_POPSet.aspx" />
-    <Content Include="manageXXBN\Sys\checkFiles.aspx" />
-    <Content Include="manageXXBN\Sys\const.aspx" />
-    <Content Include="manageXXBN\Sys\CreateCheckfile.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_Add.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_Data.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_HtmlCode.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_Item.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_Item_Add.aspx" />
-    <Content Include="manageXXBN\Sys\CustomForm_JS.aspx" />
-    <Content Include="manageXXBN\Sys\database.aspx" />
-    <Content Include="manageXXBN\Sys\DefineTable.aspx" />
-    <Content Include="manageXXBN\Sys\DefineTable_Edit_List.aspx" />
-    <Content Include="manageXXBN\Sys\DefineTable_Edit_Manage.aspx" />
-    <Content Include="manageXXBN\Sys\DefineTable_List.aspx" />
-    <Content Include="manageXXBN\Sys\DefineTable_Manage.aspx" />
-    <Content Include="manageXXBN\Sys\File_GetIn.aspx" />
-    <Content Include="manageXXBN\Sys\File_OnLine_Edit.aspx" />
-    <Content Include="manageXXBN\Sys\File_Txt_Edit.aspx" />
-    <Content Include="manageXXBN\Sys\File_Win_Login.aspx" />
-    <Content Include="manageXXBN\Sys\Form.aspx" />
-    <Content Include="manageXXBN\Sys\Form_Add.aspx" />
-    <Content Include="manageXXBN\Sys\General_Add_Manage.aspx" />
-    <Content Include="manageXXBN\Sys\General_Edit_Manage.aspx" />
-    <Content Include="manageXXBN\Sys\General_manage.aspx" />
-    <Content Include="manageXXBN\Sys\navimenu.aspx" />
-    <Content Include="manageXXBN\Sys\navimenuEdit.aspx" />
-    <Content Include="manageXXBN\Sys\Navimenu_list.aspx" />
-    <Content Include="manageXXBN\Sys\shortcut.aspx" />
-    <Content Include="manageXXBN\Sys\shortcut_list.aspx" />
-    <Content Include="manageXXBN\Sys\skinChange.aspx" />
-    <Content Include="manageXXBN\Sys\sys_Param.aspx" />
-    <Content Include="manageXXBN\Sys\table_list.aspx" />
-    <Content Include="manageXXBN\Sys\table_manage.aspx" />
-    <Content Include="manageXXBN\Sys\windlogin.aspx" />
-    <Content Include="manageXXBN\Templet\editor.aspx" />
-    <Content Include="manageXXBN\Templet\freeLabelList.aspx" />
-    <Content Include="manageXXBN\Templet\LabelList.aspx" />
-    <Content Include="manageXXBN\Templet\LabelListM.aspx" />
-    <Content Include="manageXXBN\Templet\Manage_List.aspx" />
-    <Content Include="manageXXBN\Templet\Txteditor.aspx" />
-    <Content Include="manageXXBN\top.aspx" />
-    <Content Include="manageXXBN\user\announce.aspx" />
-    <Content Include="manageXXBN\user\announce_add.aspx" />
-    <Content Include="manageXXBN\user\Announce_Edit.aspx" />
-    <Content Include="manageXXBN\user\arealist.aspx" />
-    <Content Include="manageXXBN\user\arealist_add.aspx" />
-    <Content Include="manageXXBN\user\arealist_cadd.aspx" />
-    <Content Include="manageXXBN\user\arealist_City.aspx" />
-    <Content Include="manageXXBN\user\arealist_upc.aspx" />
-    <Content Include="manageXXBN\user\arealist_upp.aspx" />
-    <Content Include="manageXXBN\user\discussacti.aspx" />
-    <Content Include="manageXXBN\user\discussacti_list.aspx" />
-    <Content Include="manageXXBN\user\discussacti_up.aspx" />
-    <Content Include="manageXXBN\user\discussclass.aspx" />
-    <Content Include="manageXXBN\user\discussclass_add.aspx" />
-    <Content Include="manageXXBN\user\discussManage_add.aspx" />
-    <Content Include="manageXXBN\user\discusssubclass_add.aspx" />
-    <Content Include="manageXXBN\user\icard.aspx" />
-    <Content Include="manageXXBN\user\iCardEdit.aspx" />
-    <Content Include="manageXXBN\user\icard_add.aspx" />
-    <Content Include="manageXXBN\user\icard_adds.aspx" />
-    <Content Include="manageXXBN\user\message.aspx" />
-    <Content Include="manageXXBN\user\onlinepay.aspx" />
-    <Content Include="manageXXBN\user\pointhistory.aspx" />
-    <Content Include="manageXXBN\user\useraction.aspx" />
-    <Content Include="manageXXBN\user\userdiscuss_list.aspx" />
-    <Content Include="manageXXBN\user\usergroup.aspx" />
-    <Content Include="manageXXBN\user\usergroupadd.aspx" />
-    <Content Include="manageXXBN\user\UserGroupEdit.aspx" />
-    <Content Include="manageXXBN\user\userIDCard.aspx" />
-    <Content Include="manageXXBN\user\userinfo.aspx" />
-    <Content Include="manageXXBN\user\userinfo_base.aspx" />
-    <Content Include="manageXXBN\user\userinfo_contact.aspx" />
-    <Content Include="manageXXBN\user\userinfo_safe.aspx" />
-    <Content Include="manageXXBN\user\userlist.aspx" />
-    <Content Include="manageXXBN\user\usermycom.aspx" />
-    <Content Include="manageXXBN\user\usermycom_Look.aspx" />
-    <Content Include="manageXXBN\user\usermycom_up.aspx" />
-    <Content Include="manageXXBN\ver\about.aspx" />
-    <Content Include="manageXXBN\ver\Default.aspx" />
     <Content Include="NewsInformation.asmx" />
     <Content Include="search.html" />
     <Content Include="site.xml" />
@@ -4562,6 +4334,236 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database\backup\dotNETCMS.bak" />
+    <Content Include="manage\adapt\adapt.aspx" />
+    <Content Include="manage\adapt\add.aspx" />
+    <Content Include="manage\adapt\delete.aspx" />
+    <Content Include="manage\adapt\edit.aspx" />
+    <Content Include="manage\advertisement\adsclass_add.aspx" />
+    <Content Include="manage\advertisement\adsclass_edit.aspx" />
+    <Content Include="manage\advertisement\Ads_add.aspx" />
+    <Content Include="manage\advertisement\ads_edit.aspx" />
+    <Content Include="manage\advertisement\ad_stat.aspx" />
+    <Content Include="manage\advertisement\list.aspx" />
+    <Content Include="manage\advertisement\showJsPath.aspx" />
+    <Content Include="manage\channel\channel_add.aspx" />
+    <Content Include="manage\channel\error\GetError.aspx" />
+    <Content Include="manage\channel\list.aspx" />
+    <Content Include="manage\collect\Collect.aspx" />
+    <Content Include="manage\collect\CollectEditor.ascx" />
+    <Content Include="manage\collect\Collect_Add.aspx" />
+    <Content Include="manage\collect\Collect_List.aspx" />
+    <Content Include="manage\collect\Collect_News.aspx" />
+    <Content Include="manage\collect\Collect_NewsModify.aspx" />
+    <Content Include="manage\collect\Collect_NumSet.aspx" />
+    <Content Include="manage\collect\Collect_RuleAdd.aspx" />
+    <Content Include="manage\collect\Collect_RuleList.aspx" />
+    <Content Include="manage\collect\Collect_StepFive.aspx" />
+    <Content Include="manage\collect\Collect_StepFour.aspx" />
+    <Content Include="manage\collect\Collect_StepThree.aspx" />
+    <Content Include="manage\collect\Collect_StepTwo.aspx" />
+    <Content Include="manage\collect\Default.aspx" />
+    <Content Include="manage\collect\Store.aspx" />
+    <Content Include="manage\Contribution\Constr_chicklist.aspx" />
+    <Content Include="manage\Contribution\Constr_Edit.aspx" />
+    <Content Include="manage\Contribution\Constr_List.aspx" />
+    <Content Include="manage\Contribution\Constr_Pay.aspx" />
+    <Content Include="manage\Contribution\Constr_Return.aspx" />
+    <Content Include="manage\Contribution\Constr_SetParam.aspx" />
+    <Content Include="manage\Contribution\Constr_SetParamlist.aspx" />
+    <Content Include="manage\Contribution\Constr_SetParamup.aspx" />
+    <Content Include="manage\Contribution\Constr_Stat.aspx" />
+    <Content Include="manage\Contribution\Constr_ToNews.aspx" />
+    <Content Include="manage\Contribution\paymentannals.aspx" />
+    <Content Include="manage\Friend\Friend_List.aspx" />
+    <Content Include="manage\index.aspx" />
+    <Content Include="manage\js\createLabel_List.aspx" />
+    <Content Include="manage\js\JS_Add.aspx" />
+    <Content Include="manage\js\JS_Files.aspx" />
+    <Content Include="manage\js\JS_GetCode.aspx" />
+    <Content Include="manage\js\JS_List.aspx" />
+    <Content Include="manage\js\Js_Publish.aspx" />
+    <Content Include="manage\js\JS_Templet.aspx" />
+    <Content Include="manage\js\JS_templetReview.aspx" />
+    <Content Include="manage\js\JS_Templet_Add.aspx" />
+    <Content Include="manage\js\JS_Templet_Class.aspx" />
+    <Content Include="manage\label\createLabel_API.aspx" />
+    <Content Include="manage\label\createLabel_Browse.aspx" />
+    <Content Include="manage\label\createLabel_List.aspx" />
+    <Content Include="manage\label\createLabel_Member.aspx" />
+    <Content Include="manage\label\createLabel_Other.aspx" />
+    <Content Include="manage\label\createLabel_Routine.aspx" />
+    <Content Include="manage\label\createLabel_simpleList.aspx" />
+    <Content Include="manage\label\createLabel_Ultimate.aspx" />
+    <Content Include="manage\label\Fixed.aspx" />
+    <Content Include="manage\label\FreeLabel_Add.aspx" />
+    <Content Include="manage\label\FreeLabel_AddEnd.aspx" />
+    <Content Include="manage\label\FreeLabel_Ajax.aspx" />
+    <Content Include="manage\label\FreeLabel_List.aspx" />
+    <Content Include="manage\label\FreeLabel_Test.aspx" />
+    <Content Include="manage\label\Label_List.aspx" />
+    <Content Include="manage\label\SaveStyle.aspx" />
+    <Content Include="manage\label\selectPagestyle.aspx" />
+    <Content Include="manage\label\style.aspx" />
+    <Content Include="manage\label\styleclass_add.aspx" />
+    <Content Include="manage\label\styleclass_edit.aspx" />
+    <Content Include="manage\label\style_add.aspx" />
+    <Content Include="manage\label\style_edit.aspx" />
+    <Content Include="manage\label\syslabelclass_add.aspx" />
+    <Content Include="manage\label\syslabelclass_edit.aspx" />
+    <Content Include="manage\label\syslabel_bak.aspx" />
+    <Content Include="manage\label\syslabel_edit.aspx" />
+    <Content Include="manage\label\sysLabel_inlabel.aspx" />
+    <Content Include="manage\label\SysLabel_List.aspx" />
+    <Content Include="manage\label\sysLabel_out.aspx" />
+    <Content Include="manage\label\syslabel_outLocal.aspx" />
+    <Content Include="manage\label\syslable_add.aspx" />
+    <Content Include="manage\Login.aspx" />
+    <Content Include="manage\main.aspx" />
+    <Content Include="manage\menu.aspx" />
+    <Content Include="manage\news\Class_add.aspx" />
+    <Content Include="manage\news\class_list.aspx" />
+    <Content Include="manage\news\Class_list_ajax.aspx" />
+    <Content Include="manage\news\Class_Map.aspx" />
+    <Content Include="manage\news\class_site.aspx" />
+    <Content Include="manage\news\class_site_ajax.aspx" />
+    <Content Include="manage\news\Class_ToTemplet.aspx" />
+    <Content Include="manage\news\CPNS_News_List.aspx" />
+    <Content Include="manage\news\Frame.aspx" />
+    <Content Include="manage\news\History_Manage.aspx" />
+    <Content Include="manage\news\newsindex.aspx" />
+    <Content Include="manage\news\News_add.aspx" />
+    <Content Include="manage\news\news_addReviewTT.aspx" />
+    <Content Include="manage\news\News_list.aspx" />
+    <Content Include="manage\news\News_Manage.aspx" />
+    <Content Include="manage\news\news_page.aspx" />
+    <Content Include="manage\news\News_PicSet.aspx" />
+    <Content Include="manage\news\news_review.aspx" />
+    <Content Include="manage\news\News_saveAjax.aspx" />
+    <Content Include="manage\news\news_stat.aspx" />
+    <Content Include="manage\news\Recyle.aspx" />
+    <Content Include="manage\news\Site_add.aspx" />
+    <Content Include="manage\news\Site_List.aspx" />
+    <Content Include="manage\news\SortPage.aspx" />
+    <Content Include="manage\news\Special_add.aspx" />
+    <Content Include="manage\news\Special_edit.aspx" />
+    <Content Include="manage\news\Special_List.aspx" />
+    <Content Include="manage\news\special_templet.aspx" />
+    <Content Include="manage\news\unnews.aspx" />
+    <Content Include="manage\news\unnews_Del.aspx" />
+    <Content Include="manage\news\unNews_Edit.aspx" />
+    <Content Include="manage\news\unnews_iframe.aspx" />
+    <Content Include="manage\publish\AjaxSiteParam.aspx" />
+    <Content Include="manage\publish\error\GetError.aspx" />
+    <Content Include="manage\publish\logs.aspx" />
+    <Content Include="manage\publish\psf.aspx" />
+    <Content Include="manage\publish\psf_add.aspx" />
+    <Content Include="manage\publish\psf_edit.aspx" />
+    <Content Include="manage\publish\site.aspx" />
+    <Content Include="manage\publish\siteTask.aspx" />
+    <Content Include="manage\publish\siteTask_add.aspx" />
+    <Content Include="manage\publish\siteTask_edit.aspx" />
+    <Content Include="manage\statserver\Cnzz.aspx" />
+    <Content Include="manage\statserver\getStatCode.aspx" />
+    <Content Include="manage\stat\View.aspx" />
+    <Content Include="manage\survey\ManageVote.aspx" />
+    <Content Include="manage\survey\setClass.aspx" />
+    <Content Include="manage\survey\setItem.aspx" />
+    <Content Include="manage\survey\setParam.aspx" />
+    <Content Include="manage\survey\setSteps.aspx" />
+    <Content Include="manage\survey\setTitle.aspx" />
+    <Content Include="manage\survey\showJsPath.aspx" />
+    <Content Include="manage\Sys\admin_add.aspx" />
+    <Content Include="manage\Sys\admin_edit.aspx" />
+    <Content Include="manage\Sys\admin_group.aspx" />
+    <Content Include="manage\Sys\admin_GroupAdd.aspx" />
+    <Content Include="manage\Sys\admin_GroupEdit.aspx" />
+    <Content Include="manage\Sys\admin_list.aspx" />
+    <Content Include="manage\Sys\admin_POPSet.aspx" />
+    <Content Include="manage\Sys\checkFiles.aspx" />
+    <Content Include="manage\Sys\const.aspx" />
+    <Content Include="manage\Sys\CreateCheckfile.aspx" />
+    <Content Include="manage\Sys\CustomForm.aspx" />
+    <Content Include="manage\Sys\CustomForm_Add.aspx" />
+    <Content Include="manage\Sys\CustomForm_Data.aspx" />
+    <Content Include="manage\Sys\CustomForm_HtmlCode.aspx" />
+    <Content Include="manage\Sys\CustomForm_Item.aspx" />
+    <Content Include="manage\Sys\CustomForm_Item_Add.aspx" />
+    <Content Include="manage\Sys\CustomForm_JS.aspx" />
+    <Content Include="manage\Sys\database.aspx" />
+    <Content Include="manage\Sys\DefineTable.aspx" />
+    <Content Include="manage\Sys\DefineTable_Edit_List.aspx" />
+    <Content Include="manage\Sys\DefineTable_Edit_Manage.aspx" />
+    <Content Include="manage\Sys\DefineTable_List.aspx" />
+    <Content Include="manage\Sys\DefineTable_Manage.aspx" />
+    <Content Include="manage\Sys\File_GetIn.aspx" />
+    <Content Include="manage\Sys\File_OnLine_Edit.aspx" />
+    <Content Include="manage\Sys\File_Txt_Edit.aspx" />
+    <Content Include="manage\Sys\File_Win_Login.aspx" />
+    <Content Include="manage\Sys\Form.aspx" />
+    <Content Include="manage\Sys\Form_Add.aspx" />
+    <Content Include="manage\Sys\General_Add_Manage.aspx" />
+    <Content Include="manage\Sys\General_Edit_Manage.aspx" />
+    <Content Include="manage\Sys\General_manage.aspx" />
+    <Content Include="manage\Sys\navimenu.aspx" />
+    <Content Include="manage\Sys\navimenuEdit.aspx" />
+    <Content Include="manage\Sys\Navimenu_list.aspx" />
+    <Content Include="manage\Sys\shortcut.aspx" />
+    <Content Include="manage\Sys\shortcut_list.aspx" />
+    <Content Include="manage\Sys\skinChange.aspx" />
+    <Content Include="manage\Sys\sys_Param.aspx" />
+    <Content Include="manage\Sys\table_list.aspx" />
+    <Content Include="manage\Sys\table_manage.aspx" />
+    <Content Include="manage\Sys\windlogin.aspx" />
+    <Content Include="manage\Templet\editor.aspx" />
+    <Content Include="manage\Templet\freeLabelList.aspx" />
+    <Content Include="manage\Templet\LabelList.aspx" />
+    <Content Include="manage\Templet\LabelListM.aspx" />
+    <Content Include="manage\Templet\Manage_List.aspx" />
+    <Content Include="manage\Templet\Txteditor.aspx" />
+    <Content Include="manage\top.aspx" />
+    <Content Include="manage\user\announce.aspx" />
+    <Content Include="manage\user\announce_add.aspx" />
+    <Content Include="manage\user\Announce_Edit.aspx" />
+    <Content Include="manage\user\arealist.aspx" />
+    <Content Include="manage\user\arealist_add.aspx" />
+    <Content Include="manage\user\arealist_cadd.aspx" />
+    <Content Include="manage\user\arealist_City.aspx" />
+    <Content Include="manage\user\arealist_upc.aspx" />
+    <Content Include="manage\user\arealist_upp.aspx" />
+    <Content Include="manage\user\discussacti.aspx" />
+    <Content Include="manage\user\discussacti_list.aspx" />
+    <Content Include="manage\user\discussacti_up.aspx" />
+    <Content Include="manage\user\discussclass.aspx" />
+    <Content Include="manage\user\discussclass_add.aspx" />
+    <Content Include="manage\user\discussManage_add.aspx" />
+    <Content Include="manage\user\discusssubclass_add.aspx" />
+    <Content Include="manage\user\icard.aspx" />
+    <Content Include="manage\user\iCardEdit.aspx" />
+    <Content Include="manage\user\icard_add.aspx" />
+    <Content Include="manage\user\icard_adds.aspx" />
+    <Content Include="manage\user\message.aspx" />
+    <Content Include="manage\user\onlinepay.aspx" />
+    <Content Include="manage\user\pointhistory.aspx" />
+    <Content Include="manage\user\useraction.aspx" />
+    <Content Include="manage\user\userdiscuss_list.aspx" />
+    <Content Include="manage\user\usergroup.aspx" />
+    <Content Include="manage\user\usergroupadd.aspx" />
+    <Content Include="manage\user\UserGroupEdit.aspx" />
+    <Content Include="manage\user\userIDCard.aspx" />
+    <Content Include="manage\user\userinfo.aspx" />
+    <Content Include="manage\user\userinfo_base.aspx" />
+    <Content Include="manage\user\userinfo_contact.aspx" />
+    <Content Include="manage\user\userinfo_safe.aspx" />
+    <Content Include="manage\user\userlist.aspx" />
+    <Content Include="manage\user\usermycom.aspx" />
+    <Content Include="manage\user\usermycom_Look.aspx" />
+    <Content Include="manage\user\usermycom_up.aspx" />
+    <Content Include="manage\ver\about.aspx" />
+    <Content Include="manage\ver\Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="manage\collect\MasterPage_Site.master" />
+    <Content Include="manage\news\BatchAddNewsHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
@@ -4626,7 +4628,7 @@
     <Folder Include="html\xxbn\" />
     <Folder Include="jsfiles\js\" />
     <Folder Include="Logs\public\" />
-    <Folder Include="manageXXBN\news\publish\error\" />
+    <Folder Include="manage\news\publish\error\" />
     <Folder Include="Properties\" />
     <Folder Include="Templets\channel\" />
     <Folder Include="Templets\siteTemplets\" />
