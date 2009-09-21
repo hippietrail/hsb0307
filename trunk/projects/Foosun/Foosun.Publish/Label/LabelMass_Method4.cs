@@ -1200,6 +1200,7 @@ namespace Foosun.Publish
 
         public string Analyse_ReadNews(int id /*DataRow dr*/, int TitleNumer, int ContentNumber, int NaviNumber, string str_Style, string styleid, int currentPageNum, int EndPageNum, int NewsTF)
         {
+            
             Foosun.Model.NewsContent Nci = new Foosun.Model.NewsContent();
             Nci = this.getNewsInfo(id, this.Param_CurrentNewsID);
 
@@ -1221,8 +1222,19 @@ namespace Foosun.Publish
             }
             if (Nci != null)
             {
+
                 if (TitleNumer <= 0)
-                    TitleNumer = 15;
+                {
+                    string str_TitleNumer = this.GetParamValue("FS:TitleNumer");
+                    if (string.IsNullOrEmpty(str_TitleNumer))
+                    {
+                        TitleNumer = 15;
+                    }
+                    else
+                    {
+                        TitleNumer = Convert.ToInt32(str_TitleNumer);
+                    }
+                }
                 if (ContentNumber <= 0)
                     ContentNumber = 15;
                 if (NaviNumber <= 0)
@@ -1250,6 +1262,7 @@ namespace Foosun.Publish
                 if (str_Style.IndexOf("{#Title}") > -1)
                 {
                     string str_title = Nci.NewsTitle;
+                    str_title=Foosun.Common.Input.GetSubString(str_title, TitleNumer);
                     string CommStr = "";
                     if (NewsTF == 0)
                     {
@@ -1261,7 +1274,7 @@ namespace Foosun.Publish
                             }
                         }
 
-                        str_title = getStyle(Foosun.Common.Input.GetSubString(str_title, TitleNumer), Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
+                        str_title = getStyle(str_title, Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
                     }
                     str_Style = str_Style.Replace("{#Title}", str_title + CommStr);
                 }
