@@ -42,8 +42,13 @@
         {
             alert('请选择要上传的文件!');
         }
+        else if (document.getElementById("file").value.length>200)
+        {
+            alert('文件名过长!请先修改文件名长度');
+        }
         else
         {
+          
             <% 
                 string Path=Server.UrlEncode(Request.QueryString["Path"]);
                 string ParentPath=Server.UrlEncode(Request.QueryString["ParentPath"]);
