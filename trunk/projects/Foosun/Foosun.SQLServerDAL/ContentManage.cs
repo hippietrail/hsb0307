@@ -1377,7 +1377,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public DataTable getSouceClass()
         {
-            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_Class where SiteID='" + Foosun.Global.Current.SiteID + "' and IsURL=0";
+            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_Class where SiteID='" + Foosun.Global.Current.SiteID + "' and IsURL=0 AND isRecyle <> 1 AND isPage=0";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
