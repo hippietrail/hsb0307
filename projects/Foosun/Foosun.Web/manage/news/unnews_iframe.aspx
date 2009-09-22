@@ -76,11 +76,11 @@ window.onload=CheckUnNews;
         新闻搜索:
         &nbsp;&nbsp;
         栏目:
-        <asp:TextBox ID="DdlClass" runat="server" CssClass="form"  />
+        <asp:TextBox ID="DdlClass" runat="server" CssClass="form SpecialFontFamily"  />
         <img src="../../sysImages/folder/s.gif" alt="选择栏目" border="0" style="cursor:pointer;" onclick="selectFile('newsclass',document.Form1.DdlClass,250,500);document.Form1.DdlClass.focus();" />
         &nbsp;&nbsp;
         关键字:
-        <asp:TextBox runat="server" ID="TxtKeywords" CssClass="form" Columns="15" />
+        <asp:TextBox runat="server" ID="TxtKeywords" CssClass="form SpecialFontFamily" Columns="15" />
         &nbsp;
         <asp:DropDownList ID="DdlKwdType" runat="server" CssClass="form">
             <asp:ListItem Value="title" Text="标题" />
