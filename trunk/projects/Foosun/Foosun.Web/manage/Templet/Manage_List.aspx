@@ -87,18 +87,22 @@ function EditFolder(path,filename)
 	    }    
 	}
 }
-function EditFile(path,filename)   
+function EditFile(path,filename, pureFilename)   
 {
 	var ReturnValue='';
-	ReturnValue=prompt('修改的名称：',filename.replace(/'|"/g,''));
+	alert(filename);
+	var fileName = decodeURIComponent(filename);
+	ReturnValue=prompt('修改的名称：',fileName.replace(/'|"/g,''));
 	if ((ReturnValue!='') && (ReturnValue!=null))
 	{
-	    self.location.href='?Type=EidtFileName&ch=<%Response.Write(Request.QueryString["ch"]); %>&Path='+path+'&OldFileName='+filename+'&NewFileName='+ReturnValue;
+	alert(self.location.href);
+	    self.location.href='?Type=EidtFileName&ch=<%Response.Write(Request.QueryString["ch"]); %>&Path='+path+'&OldFileName='+ filename +'&NewFileName='+ReturnValue;//encodeURIComponent(filename)
 	    //document.Templetslist.Type.value="EidtFileName";
 	    //document.Templetslist.Path.value=path;
 	    //document.Templetslist.OldFileName.value=filename;
 	    //document.Templetslist.NewFileName.value=ReturnValue;
 	    //document.Templetslist.submit();
+	    alert(self.location.href);
 	}
 	else
 	{

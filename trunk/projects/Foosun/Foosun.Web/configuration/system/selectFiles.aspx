@@ -24,6 +24,11 @@
 </html>
 
 <script language="javascript" type="text/javascript">
+function insertHTMLEdit(path)
+{
+    //
+    document.getElementById("sUrl").value=path;
+}
 function ListGo(Path,ParentPath)
 {
     //self.location='?Path='+Path+'&ParentPath='+ParentPath;
