@@ -1048,7 +1048,7 @@ namespace Foosun.Publish
         protected string getNewsDomain(string NewsID)
         {
             string newsDomain = CommonData.DalPublish.getNewsDomain(NewsID);
-            if (newsDomain != null && newsDomain == "")
+            if (newsDomain == null || newsDomain == "")
             {
                 return CommonData.SiteDomain;
             }
