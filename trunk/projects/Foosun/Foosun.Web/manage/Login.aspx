@@ -1,10 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="Manage_Login" enableEventValidation="false" Codebehind="Login.aspx.cs" %>
+ï»¿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Manage_Login" enableEventValidation="false" Codebehind="Login.aspx.cs" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Copyright" content="www.foosun.net" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> _By Foosun Inc.</title>
+<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> </title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 
 <link href="../sysImages/css/css.css" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
       <td style="height: 55px;width:10%;"></td>
       <td style="height: 55px;width:40%;">&nbsp;</td>
       <td style="height: 55px;width:50%;padding-right:10px;">
-      <div align="right"><a href="http://www.hgzp.com" target="_blank" class="JH">¹Ù·½ÍøÕ¾</a></div></td>
+      <div align="right"><a href="http://www.hgzp.com" target="_blank" class="JH">å®˜æ–¹ç½‘ç«™</a></div></td>
     </tr>
   </table>
 </div>
@@ -45,32 +45,32 @@
         <table width="100%" style="height:193px" border="0" cellpadding="1" cellspacing="5">
 
           <tr>
-            <td colspan="2"><div align="left">ÓÃ»§Ãû&nbsp;
+            <td colspan="2"><div align="left">ç”¨æˆ·å&nbsp;
                 <asp:TextBox ID="TxtName" runat="server" Width="129px" CssClass="username"></asp:TextBox>&nbsp;
-                <asp:RequiredFieldValidator ID="f_UserNameX" runat="server" ControlToValidate="TxtName" ErrorMessage="ÇëÌîĞ´ÓÃ»§Ãû"></asp:RequiredFieldValidator><script language="javascript" type="text/javascript">document.getElementById('TxtName').focus();</script>
+                <asp:RequiredFieldValidator ID="f_UserNameX" runat="server" ControlToValidate="TxtName" ErrorMessage="è¯·å¡«å†™ç”¨æˆ·å"></asp:RequiredFieldValidator><script language="javascript" type="text/javascript">document.getElementById('TxtName').focus();</script>
             </div></td>
           </tr>
           <tr>
-            <td colspan="2"><div align="left">ÃÜ¡¡Âë&nbsp;
+            <td colspan="2"><div align="left">å¯†ã€€ç &nbsp;
                 <asp:TextBox ID="TxtPassword" runat="server"  CssClass="password" TextMode="Password" Width="129px" MaxLength="18"></asp:TextBox>&nbsp;
-                <asp:RequiredFieldValidator ID="f_PasswordX" runat="server" ControlToValidate="TxtPassword" ErrorMessage="ÇëÌîĞ´ÃÜÂë"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="f_PasswordX" runat="server" ControlToValidate="TxtPassword" ErrorMessage="è¯·å¡«å†™å¯†ç "></asp:RequiredFieldValidator>
                 </div></td>
           </tr>
          <tr runat="server" id="safeCodeVerify_1">
-            <td colspan="2"><div align="left">°²È«Âë&nbsp;
+            <td colspan="2"><div align="left">å®‰å…¨ç &nbsp;
                 <asp:TextBox ID="TxtSafeCode" runat="server"  CssClass="password" TextMode="Password" Width="129px" MaxLength="80"></asp:TextBox>&nbsp;
-                Çø·Ö´óĞ¡Ğ´£¬Ä¬ÈÏÎª:hgzp.com
-                <asp:RequiredFieldValidator ID="f_safeCodeVerify" runat="server" ControlToValidate="TxtSafeCode" ErrorMessage="ÇëÌîĞ´°²È«Âë"></asp:RequiredFieldValidator>
+                åŒºåˆ†å¤§å°å†™ï¼Œé»˜è®¤ä¸º:hgzp.com
+                <asp:RequiredFieldValidator ID="f_safeCodeVerify" runat="server" ControlToValidate="TxtSafeCode" ErrorMessage="è¯·å¡«å†™å®‰å…¨ç "></asp:RequiredFieldValidator>
                 </div></td>
           </tr>
           
           <tr>
-            <td style="width:53%;" align="left">Ğ§ÑéÂë&nbsp;
+            <td style="width:53%;" align="left">æ•ˆéªŒç &nbsp;
                 <asp:TextBox ID="TxtVerify" CssClass="vercode" runat="server" Width="52px"></asp:TextBox>
                 <script type="text/javascript" language="JavaScript">
                    var numkey = Math.random();
                    numkey = Math.round(numkey*10000);
-                   document.write("<img src=\"../comm/Image.aspx?k="+ numkey +"\" width=\"70\" onClick=\"this.src+=Math.random()\" alt=\"Í¼Æ¬¿´²»Çå£¿µã»÷ÖØĞÂµÃµ½ÑéÖ¤Âë\" style=\"cursor:pointer;\" height=\"23\" hspace=\"4\"");
+                   document.write("<img src=\"../comm/Image.aspx?k="+ numkey +"\" width=\"70\" onClick=\"this.src+=Math.random()\" alt=\"å›¾ç‰‡çœ‹ä¸æ¸…ï¼Ÿç‚¹å‡»é‡æ–°å¾—åˆ°éªŒè¯ç \" style=\"cursor:pointer;\" height=\"23\" hspace=\"4\"");
                 </script>&nbsp;
             </td>
           </tr>
