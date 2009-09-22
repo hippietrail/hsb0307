@@ -3403,7 +3403,7 @@ namespace Foosun.SQLServerDAL
         #region IContentManage Members
 
         public const string ColumnMap_Insert = "INSERT INTO [fs_news_Class_Map] ([CpClassId] ,[CpClassName]  ,[SiteClassId] ,[SiteClassName] ,[ClassDaiName] ,[Media]) VALUES (@CpClassId, @CpClassName, @SiteClassId, @SiteClassName, @ClassDaiName, @Media)";
-        public const string ColumnMap_SelectAll = "SELECT Id, CpClassId, CpClassName, SiteClassId, SiteClassName, ClassDaiName, Media FROM fs_news_Class_Map";
+        public const string ColumnMap_SelectAll = "SELECT Id, CpClassId, CpClassName, SiteClassId, SiteClassName, ClassDaiName, Media FROM fs_news_Class_Map ORDER BY Media";
         public const string ColumnMap_Delete = "DELETE FROM [fs_news_Class_Map] WHERE CpClassId = @CpClassId AND  Media = @Media";
         
         public void InsertColumnMap(SiteColumnMapInfo c)

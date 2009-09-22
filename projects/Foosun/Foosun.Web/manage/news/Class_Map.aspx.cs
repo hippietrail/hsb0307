@@ -40,10 +40,7 @@ namespace Foosun.Web.manageXXBN.news
                 lstCpsnColumn.DataSource = d;
                 lstCpsnColumn.DataBind();
 
-
-               
-
-
+                BindMap(dt);
             }
 
         }
@@ -163,6 +160,15 @@ namespace Foosun.Web.manageXXBN.news
             lstSiteColumn.DataValueField = "Id";
             lstSiteColumn.DataSource = right;
             lstSiteColumn.DataBind();
+
+            DataTable dt = cm.GetAllColumnMap();
+            BindMap(dt);
+        }
+
+        private void BindMap(DataTable dt)
+        {
+            rtColumnMap.DataSource = dt;
+            rtColumnMap.DataBind();
         }
 
         private void Delete()
@@ -202,6 +208,9 @@ namespace Foosun.Web.manageXXBN.news
             lstSiteColumn.DataValueField = "Id";
             lstSiteColumn.DataSource = right;
             lstSiteColumn.DataBind();
+
+            DataTable dt = cm.GetAllColumnMap();
+            BindMap(dt);
         }
 
         protected void btnDelete_Click(object sender, ImageClickEventArgs e)
