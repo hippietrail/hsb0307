@@ -108,6 +108,7 @@ namespace Foosun.CMS.Common
                     }
                     else{getFileLent = FileLength;}
                     string fileName = PathToName(PostedFile.FileName);
+                    fileName = fileName.Replace(" ", "").Replace("　", "");
                     string lastFileName = "";
                     switch (fileType)
                     {
@@ -139,6 +140,7 @@ namespace Foosun.CMS.Common
                                 if (PostedFile.ContentLength > getFileLent) return "上传文件限制大小:" + getFileLent / 1024 + "kb！$0";
                                  //时间：2008-07-23    修改者：吴静岚
                                 //实现水印、缩图 开始
+                               
                                 string IsFileex = SavePath + @"\" + lastFileName;
                               
                                 if (!Directory.Exists(SavePath)) { Directory.CreateDirectory(SavePath); }
