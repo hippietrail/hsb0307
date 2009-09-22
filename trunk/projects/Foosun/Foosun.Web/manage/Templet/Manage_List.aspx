@@ -87,12 +87,12 @@ function EditFolder(path,filename)
 	    }    
 	}
 }
-function EditFile(path,filename, pureFilename)   
+function EditFile(path,filename)   
 {
 	var ReturnValue='';
-	alert(filename);
 	var fileName = decodeURIComponent(filename);
 	ReturnValue=prompt('ÐÞ¸ÄµÄÃû³Æ£º',fileName.replace(/'|"/g,''));
+	ReturnValue=encodeURIComponent(ReturnValue);
 	if ((ReturnValue!='') && (ReturnValue!=null))
 	{
 	alert(self.location.href);

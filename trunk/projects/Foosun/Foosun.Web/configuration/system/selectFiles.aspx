@@ -24,11 +24,7 @@
 </html>
 
 <script language="javascript" type="text/javascript">
-function insertHTMLEdit(path)
-{
-    //
-    document.getElementById("sUrl").value=path;
-}
+
 function ListGo(Path,ParentPath)
 {
     //self.location='?Path='+Path+'&ParentPath='+ParentPath;
@@ -150,5 +146,10 @@ function UpFile(path,type,ParentPath)
     var WWidth = (window.screen.width-500)/2;
     var Wheight = (window.screen.height-150)/2;
     window.open ("Upload.aspx?Path="+path+"&UpfileType="+type+"&ParentPath="+ParentPath, '文件上传', 'height=300, width=600, top='+Wheight+', left='+WWidth+', toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no'); 
+}
+function insertHTMLEdit(path)
+{
+    //
+    document.getElementById("sUrl").value=path;
 }
 </script>
