@@ -76,17 +76,21 @@
                                     <form id="Search_Form" name="Search_Form" method="get" action="/search.html" style="margin:0px; padding:0px;">
                                         <span style="font-size:18px;">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ:</span><br />
                                     <input name="tags" type="text" maxlength="20" class="search_text" onkeydown="javascript:if(event.keyCode==13){SearchGo85310(this.form);}" style="width: 176px ;" /> 
-                                    <input name="buttongo" type="button" value="search" onclick="javascript:SearchGo85310(this.form);" style="width: 66px; ">
+                                    <input name="buttongo" type="button" value="搜索" onclick="javascript:SearchGo85310(this.form);" style="width: 66px; " />
                                     </form> 
                                     </div>
                                     <div  style="margin:0px; padding:0px;">
                                     <!-- Search   Google   -->   
-                                      <FORM   method=GET   action="http://www.google.com/search" style="margin:0px; padding:0px;"> 
-                                      <INPUT   TYPE=text   name=q   style="width: 176px"   maxlength=20  class="search_text"  value="">     
-                                      <INPUT   TYPE=submit   name=btnG   value="Google" style="width:66px"> 
-                                      <INPUT   TYPE=hidden   name=hl   value=zh-CN>   
-                                      <INPUT   TYPE=hidden   name=ie   value=utf-8>   
-                                      </FORM>   
+                                      <form   method="GET"   action="http://www.google.com/search" style="margin:0px; padding:0px;"> 
+                                      <input type="text"   name="q" id="q"   style="width: 176px"   maxlength="20"  class="search_text"  value="" />     
+                                      <input type="submit"   name="btnG"   value="Google" style="width:66px" /> 
+                                      <input type="hidden"   name="hl"   value="zh-CN" />
+                                      <input type="hidden"   name="ie"   value="utf-8" /> 
+                                      <input type="hidden" name="oe" value="utf-8" />
+                                      <input type="hidden" name="domains" value="www.dw123.com" />
+                                      <input type="hidden" name="sitesearch" value="www.dw123.com" />
+                                      </form>
+
                                       <!--   Search   Google   --> 
                                     </div>      
                                     <script language="javascript" type="text/javascript">
