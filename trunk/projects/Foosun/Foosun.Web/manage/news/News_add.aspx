@@ -475,6 +475,7 @@ function getNewsInfo(obj)
 </head>
 <body onload="loadStat();DisplayUnNews();//<%Response.Write(loadTime); %>">
     <form id="Form1" runat="server">
+        <asp:HiddenField ID="attachmentFile" runat="server" />
         <iframe width="260" height="165" id="colorPalette" src="../../configuration/system/selcolor.htm"
             style="visibility: hidden; position: absolute; border: 1px gray solid; left: 297px;
             top: -20px;" frameborder="0" scrolling="no"></iframe>
@@ -823,9 +824,9 @@ function getNewsInfo(obj)
                     </td>
                 </tr>
                 <tr class="TR_BG_list" id="div_TTSE" style="display: none;">
-                    <td style="width: 10%;">
+                    <td style="width: 10%; height: 30px;">
                         头条参数</td>
-                    <td style="width: 90%;">
+                    <td style="width: 90%; height: 30px;">
                         <asp:CheckBox ID="PicTTTF" runat="server" onclick="TTClick(this);" Text="图片头条" />
                         <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle0',this)">
                             帮助</span>
