@@ -54,8 +54,8 @@
       </tr>
     </HeaderTemplate>
     <ItemTemplate>
-      <tr class="TR_BG_list"  onmouseover="overColor(this)" onmouseout="outColor(this)">
-        <td width="40%" valign="middle" ><%#((DataRowView)Container.DataItem)[1]%></td>
+      <tr class="TR_BG_list"  ><%--onmouseover="overColor(this)" onmouseout="outColor(this)"--%>
+        <td width="40%" valign="middle" class="SpecialFontFamily" ><%#((DataRowView)Container.DataItem)[1]%></td>
         <td align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["Type"]%></td>
         <td align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["table"] %>
         <td align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["stat"] %>
