@@ -246,9 +246,11 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                 DataRow[] rows = dtColumnMap.Select("CpClassName = '" + news.Column + "'" + " AND Media = '" + news.Media + "'");
                 if (rows.Length > 0)
                 {
-                    ClassName.Text = news.Column;
+                    
+                    //ClassName.Text = news.Column;
                     news.ColumnId = rows[0]["SiteClassId"].ToString();
                     ClassID.Value = news.ColumnId;
+                    ClassName.Text =  rd.getClassCName(news.ColumnId);
                 }
 
                 if (!String.IsNullOrEmpty(news.Attachment))
