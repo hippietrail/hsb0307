@@ -174,7 +174,7 @@
                         <textarea name="Content" rows="1" cols="1" style="display: none" id="Content" runat="server">			</textarea>
                     </div>
                     <div id="textcontent" style="display: none;" runat="server">
-                        <asp:TextBox ID="tContent" TextMode="MultiLine" Height="250" CssClass="form" Width="500"
+                        <asp:TextBox ID="tContent" TextMode="MultiLine" Height="250" CssClass="form SpecialFontFamily" Width="500"
                             runat="server"></asp:TextBox>
                     </div>
                 </td>
