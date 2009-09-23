@@ -43,7 +43,7 @@
          <tr class="TR_BG_list" id="ClssStyle_1">
             <td align="right">
                 栏目名称：</td>
-            <td style="width:80%">&nbsp;<asp:TextBox ID="TCname" Width="40%" runat="server" onChange="javascript:GetPY1(this);" MaxLength="50" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="点击查看帮助" onclick="Help('Class_Aspx_01',this)">帮助</span><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TCname" Display="Dynamic" ErrorMessage="<span class=reshow>(*)栏目中文名字不能为空!</span>"></asp:RequiredFieldValidator> 
+            <td style="width:80%">&nbsp;<asp:TextBox ID="TCname" Width="40%" runat="server"  MaxLength="50" CssClass="form"></asp:TextBox><%--onChange="javascript:GetPY1(this);"--%><span class="helpstyle" style="cursor:hand;" title="点击查看帮助" onclick="Help('Class_Aspx_01',this)">帮助</span><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TCname" Display="Dynamic" ErrorMessage="<span class=reshow>(*)栏目中文名字不能为空!</span>"></asp:RequiredFieldValidator> 
             </td>
           </tr>
           <tr class="TR_BG_list" id="Tr2">
