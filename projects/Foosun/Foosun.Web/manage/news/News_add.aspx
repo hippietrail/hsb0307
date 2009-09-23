@@ -277,6 +277,8 @@ function UnNewcheck()
     }else{
 	    return true;
     }
+    
+    
 }
 
 //不规则新闻JS结束
@@ -286,6 +288,7 @@ function UnNewcheck()
 
 function loadStat()
 {
+alert("dd");
     if(document.getElementById("isFiles").checked){$("isFiles_div1").style.display = "";}
     if(document.getElementById("SubTF").checked){document.getElementById("div_SubList").style.display = "";}
     if(document.getElementById("NewsProperty_TTTF1").checked){document.getElementById("div_TTSE").style.display = "";}
@@ -372,6 +375,8 @@ function loadStat()
         document.getElementById('div_FileEXName').style.display = "none";
       }
     }
+    
+    
 }
 function closediv()
 {
@@ -471,9 +476,24 @@ function getNewsInfo(obj)
         document.getElementById('div_vURL').style.display = "none";
     }
 }
+
+function selectType()
+{
+    var chkTitle = document.getElementById('at2RandButton');
+    window.setTimeout(function (){
+            if(chkTitle)
+            {
+                //alert(chkTitle.checked);
+                if(chkTitle.checked)
+                {
+                    ShowLink('url');
+                }
+            }
+        }, 0);
+}
     </script>
 </head>
-<body onload="loadStat();DisplayUnNews();//<%Response.Write(loadTime); %>">
+<body onload="loadStat();DisplayUnNews(); //<%Response.Write(loadTime); %>">
     <form id="Form1" runat="server">
         <asp:HiddenField ID="attachmentFile" runat="server" />
         <iframe width="260" height="165" id="colorPalette" src="../../configuration/system/selcolor.htm"
@@ -763,6 +783,8 @@ function getNewsInfo(obj)
                                 oFCKeditor.Width = '100%';
                                 oFCKeditor.Height = '100%';
                                 oFCKeditor.ReplaceTextarea();
+                                
+                                selectType();
                             }
                         </script>
 
@@ -1099,19 +1121,21 @@ function getNewsInfo(obj)
     </form>
     <script type="text/javascript" language="javascript">
     var chkTitle = document.getElementById('at2RandButton');
-    window.onload = function showInfo()
-    {
-        window.setTimeout(function (){
-            if(chkTitle)
-            {
-                //alert(chkTitle.checked);
-                if(chkTitle.checked)
-                {
-                    ShowLink('url');
-                }
-            }
-        }, 300);
-    }
+//    window.onload = function ()
+//    {
+//    loadStat();
+//    DisplayUnNews();
+//        window.setTimeout(function (){
+//            if(chkTitle)
+//            {
+//                alert(chkTitle.checked);
+//                if(chkTitle.checked)
+//                {
+//                    ShowLink('url');
+//                }
+//            }
+//        }, 300);
+//    }
     
     </script>
 </body>
