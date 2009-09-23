@@ -1099,13 +1099,20 @@ function getNewsInfo(obj)
     </form>
     <script type="text/javascript" language="javascript">
     var chkTitle = document.getElementById('at2RandButton');
-    if(chkTitle && chkTitle.type == "radio")
+    window.onload = function showInfo()
     {
-        if(chkTitle.checked)
-        {
-            ShowLink('url');
-        }
+        window.setTimeout(function (){
+            if(chkTitle)
+            {
+                //alert(chkTitle.checked);
+                if(chkTitle.checked)
+                {
+                    ShowLink('url');
+                }
+            }
+        }, 300);
     }
+    
     </script>
 </body>
 </html>
