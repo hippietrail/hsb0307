@@ -2,20 +2,789 @@
 <rss version="2.0">
 <foosunlabel>
   <labelitem>
-      <labelname>{FS_tttt}</labelname>
-      <labelid>614278728223</labelid>
-      <labelclassid>683288675142</labelclassid>
-      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews]
-<table height="500" width="500">
-    <tbody>
-        <tr>
-            <td valign="middle" align="center"><img height="320" alt="" width="200" align="center" src="/50_125770.jpg" /></td>
-        </tr>
-    </tbody>
-</table>
-[/FS:unLoop]]]></labelcontent>
+      <labelname>{FS_栏目导航}</labelname>
+      <labelid>458570182334</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=977902813160][/FS:unLoop]]]></labelcontent>
       <labeldescription><![CDATA[]]></labeldescription>
-      <labelcreattime>2008-2-22 10:35:56</labelcreattime>
+      <labelcreattime>2009-2-19 10:23:22</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_最新文章}</labelname>
+      <labelid>753452196650</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=-1,FS:SubNews=true,FS:Cols=10,FS:TitleNumer=25,FS:HashNaviContent=false,FS:isSub=true]{#class_Name}{$#NaviContent}[/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 13:32:59</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_位置导航}</labelname>
+      <labelid>816440334056</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Position][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 13:46:16</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_用户登陆}</labelname>
+      <labelid>911041565016</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=UserLogin,FS:LoginP=false][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 13:50:13</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_国内新闻}</labelname>
+      <labelid>257435427468</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=8,FS:NewsType=Hot,FS:ClassID=454585323506,FS:TitleNumer=35,FS:DescType=Date]
+<li><a href="{#URL}">{#Title}</a> <span>{#Date:Year04}年{#Date:Month}月{#Date:Day}日</span>[/FS:Loop]</li>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 14:16:57</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_国际新闻}</labelname>
+      <labelid>571360214712</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Hot,FS:ClassID=707699919035][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 14:18:17</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_巫山新闻}</labelname>
+      <labelid>856344647539</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Rec][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 14:19:19</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_NewsList}</labelname>
+      <labelid>699009899297</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=364031589108,FS:Cols=1,FS:TitleNumer=35,FS:ContentNumber=35][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-2-23 16:09:00</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_首页flash幻灯}</labelname>
+      <labelid>483148953493</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=FlashFilt,FS:FlashType=default,FS:Number=5,FS:Flashweight=296,FS:Flashheight=285,FS:FlashBG=FFFFFF,FS:ShowTitle=true,FS:isSub=true][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-6 8:47:49</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_新闻列表1}</labelname>
+      <labelid>203189510955</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=5,FS:NewsType=Last,FS:Cols=1,FS:isDiv=true,FS:TitleNumer=36][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-6 10:22:03</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_热点新闻}</labelname>
+      <labelid>181899571283</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Hot,FS:SubNews=true,FS:Cols=1,FS:isDiv=true,FS:TitleNumer=36,FS:isSub=true][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-6 16:30:35</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_www}</labelname>
+      <labelid>665493675198</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:Cols=1][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-6 16:33:21</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_新闻}</labelname>
+      <labelid>963198994389</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=14,FS:NewsType=list,FS:SubNews=true,FS:Cols=1,FS:isDiv=true,FS:TitleNumer=36,FS:isSub=true][#FS:StyleID=233294204229][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-6 16:34:32</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_位置导航标签}</labelname>
+      <labelid>659406984599</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Position][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-9 13:49:17</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_首页总站导航}</labelname>
+      <labelid>958923930322</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=SiteNavi,FS:NaviChar=
+|,FS:isDiv=true][/FS:unLoop]</li>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-10 10:18:39</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_userLogin}</labelname>
+      <labelid>004397582194</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=UserLogin,FS:LoginP=false][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-12 10:03:40</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_页面标题}</labelname>
+      <labelid>785416234947</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=PageTitle,FS:prefix=0$][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-16 11:18:36</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_新闻完整标题}</labelname>
+      <labelid>781479348616</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews][#FS:StyleID=971153239226][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-16 13:16:16</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_作者来源日期点击数}</labelname>
+      <labelid>291639681900</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews][#FS:StyleID=602424314005][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-16 13:28:21</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_新闻内容}</labelname>
+      <labelid>940173936308</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews][#FS:StyleID=192611638051][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-16 13:31:07</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_联盟资讯栏目导航}</labelname>
+      <labelid>137558620076</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=448423242987][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-16 16:28:51</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_内容页点击排行}</labelname>
+      <labelid>811943301946</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=TopNews,FS:Number=10,FS:ClassID=556482719969,FS:TopNewsType=Week,FS:SubNews=false,FS:Cols=1,FS:isPic=false,FS:TitleNumer=40,FS:ContentNumber=5][#FS:StyleID=442377519577#][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 9:11:40</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_点击排行}</labelname>
+      <labelid>840661717694</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=TopNews,FS:Number=3,FS:ClassID=556482719969,FS:TopNewsType=Hour,FS:SubNews=true,FS:isPic=false,FS:TitleNumer=20,FS:isSub=true][#FS:StyleID=442377519577#][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 10:03:51</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_相关新闻}</labelname>
+      <labelid>680524865961</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=CorrNews,FS:Number=10][#FS:StyleID=442377519577][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 10:58:31</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_内容页推荐新闻}</labelname>
+      <labelid>281099241844</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Rec,FS:ClassID=556482719969,FS:SubNews=false,FS:Cols=3,FS:isPic=false,FS:TitleNumer=36][#FS:StyleID=442377519577][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 13:25:02</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_文章评论}</labelname>
+      <labelid>062793436089</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews][#FS:StyleID=793925371406][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 13:46:21</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_现在位置}</labelname>
+      <labelid>952235343290</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Position,FS:DynChar=&gt;][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-17 14:17:08</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_内容页终极新闻列表}</labelname>
+      <labelid>148341105555</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=556482719969,FS:TitleNumer=60,FS:ContentNumber=300][#FS:StyleID=111619643867][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-18 13:49:04</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_列表页排行}</labelname>
+      <labelid>679456428012</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=556482719969,FS:Cols=1,FS:Desc=desc,FS:DescType=click,FS:TitleNumer=40][#FS:StyleID=275133696071][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-18 16:00:19</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_带栏目新闻标题列表}</labelname>
+      <labelid>989324620729</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:SubNews=true,FS:ClassID=448423242987,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=40,FS:isSub=true][#FS:StyleID=312891273169][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-19 11:35:19</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_滑动联盟新闻}</labelname>
+      <labelid>368857449553</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=11,FS:NewsType=Last,FS:ClassID=556482719969,FS:Desc=desc,FS:DescType=date,FS:isPic=false,FS:TitleNumer=33,FS:isSub=true][#FS:StyleID=423206599038][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-20 13:20:09</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_图片标题列表}</labelname>
+      <labelid>294585680663</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:NewsType=list,FS:ClassID=556482719969,FS:SubNews=true,FS:TitleNumer=36,FS:isSub=true][#FS:StyleID=216091974841][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-3-23 9:01:14</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_天空栏目导航}</labelname>
+      <labelid>715684773510</labelid>
+      <labelclassid>113555179150</labelclassid>
+      <labelcontent><![CDATA[<p>[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:NaviCSS=abcdefaaa,FS:NaviChar=|][/FS:unLoop]</p>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-2 11:10:32</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_当前位置}</labelname>
+      <labelid>609005956131</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Position,FS:DynChar=&gt;&gt;][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-7 9:14:23</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_本栏目新闻列表分页}</labelname>
+      <labelid>556391533970</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[<p>[FS:Loop,FS:SiteID=0,FS:LabelType=ClassList,FS:ListType=News,FS:isSub=false,FS:SubNews=false,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=50,FS:ContentNumber=200,FS:PageStyle=2$$15$][#FS:StyleID=038433012474][/FS:Loop]</p>]]></labelcontent>
+      <labeldescription><![CDATA[仅显示本栏目新闻列表，不再显示本栏目子栏目的新闻]]></labeldescription>
+      <labelcreattime>2009-4-7 10:25:24</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_栏目新闻列表}</labelname>
+      <labelid>531016383841</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=ClassList,FS:ListType=News,FS:isSub=true,FS:SubNews=true,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=50,FS:ContentNumber=200][#FS:StyleID=038433012474][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[显示本栏目及子栏目最新的新闻]]></labeldescription>
+      <labelcreattime>2009-4-7 11:01:47</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_子栏目导航}</labelname>
+      <labelid>237643971477</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=0][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-8 9:22:13</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_本栏目热点新闻}</labelname>
+      <labelid>294751738360</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=11,FS:NewsType=Hot,FS:ClassID=0,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=28][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-8 11:47:29</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_点击排行}</labelname>
+      <labelid>920991259786</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=0,FS:Cols=1,FS:Desc=desc,FS:DescType=click,FS:TitleNumer=28][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-8 13:50:29</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_幻灯新闻}</labelname>
+      <labelid>396674502113</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=FlashFilt,FS:FlashType=default,FS:Number=5,FS:ClassID=-1,FS:Flashweight=280,FS:Flashheight=280,FS:FlashBG=FFFFFF,FS:ShowTitle=false][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-8 14:06:57</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_文字头条}</labelname>
+      <labelid>026480228790</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=TodayWord,FS:ClassID=-1,FS:isBIGT=true,FS:bigTitleNumber=30,FS:Cols=1,FS:TitleNumer=40,FS:WNum=1][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-8 14:49:16</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_带栏目日期的最新新闻列表}</labelname>
+      <labelid>583498341619</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=-1,FS:SubNews=false,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=40,FS:HashNaviContent=false,FS:isSub=false][#FS:StyleID=937003963833][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-9 8:52:55</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_全部热点新闻列表}</labelname>
+      <labelid>662717261482</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:NewsType=Hot,FS:ClassID=-1,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=23][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-9 16:06:09</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_首页排行}</labelname>
+      <labelid>586332549548</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=-1,FS:SubNews=false,FS:Desc=desc,FS:DescType=click,FS:TitleNumer=40,FS:isSub=false][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-13 8:51:07</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_首页点击排行}</labelname>
+      <labelid>881009283075</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=-1,FS:SubNews=false,FS:Desc=desc,FS:DescType=click,FS:TitleNumer=36,FS:isSub=false][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-13 8:54:30</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_滑动本地资讯}</labelname>
+      <labelid>956704037413</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:NewsType=Last,FS:ClassID=464517875420,FS:SubNews=false,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=50,FS:isSub=false][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-13 9:30:14</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_本地资讯图文}</labelname>
+      <labelid>495787360177</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[<p>[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=803851363923,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]</p>
+<p>&nbsp;</p>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-13 9:56:48</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_友情链接}</labelname>
+      <labelid>690687354925</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=Frindlink,FS:TypeClassID=5091039536,FS:Number=80,FS:Cols=8,FS:FType=1][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-13 15:49:36</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_bywh}</labelname>
+      <labelid>174753638413</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=20,FS:NewsType=Last,FS:ClassID=-1,FS:Cols=2,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=50][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-14 10:45:03</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_栏目导航}</labelname>
+      <labelid>204158600212</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:NaviCSS=555][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-17 9:44:03</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_满屏浮动广告}</labelname>
+      <labelid>298442115217</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=841853784491529][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-20 16:11:35</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_文字广告}</labelname>
+      <labelid>118170926772</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=389095545429682][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-20 18:15:39</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_上下底端广告}</labelname>
+      <labelid>332886434332</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=853966512821750][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-20 18:19:55</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_调查标签}</labelname>
+      <labelid>423839129884</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=surveyJS,FS:JSID=1][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-22 14:29:17</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_统计}</labelname>
+      <labelid>617066334981</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=statJS,FS:JSID=833289953532,FS:statShowType=0][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-22 14:52:31</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_归档查询}</labelname>
+      <labelid>271095985745</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=History,FS:IsDate=true,FS:ShowDate=false][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-23 15:40:36</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_总站导航}</labelname>
+      <labelid>611524753660</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=SiteNavi,FS:isDiv=true][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-29 13:28:00</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_带日期最新新闻列表}</labelname>
+      <labelid>484990479357</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=-1,FS:SubNews=false,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=36,FS:HashNaviContent=false,FS:isSub=false][#FS:StyleID=402497396568][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-4-29 18:29:28</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_最新评论}</labelname>
+      <labelid>179147303195</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=LastComm,FS:Number=10,FS:ShowDate=left][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-4 13:34:42</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_评论列表}</labelname>
+      <labelid>226331304566</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews][#FS:StyleID=182754690743][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-4 13:43:48</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_专题列表}</labelname>
+      <labelid>522749901956</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=SpecialNavi,FS:SpecialID=-1][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-4 15:41:01</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_贝叶经导读}</labelname>
+      <labelid>663027895449</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=list,FS:ClassID=074880008639,FS:Cols=1,FS:TitleNumer=20][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-4 16:57:23</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_贝叶经章节列表}</labelname>
+      <labelid>798267263517</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=ClassList,FS:ListType=Special,FS:TitleNumer=20][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-5 9:50:38</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_贝叶经章节列表}</labelname>
+      <labelid>925645377410</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=ClassList,FS:ListType=Special,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-5 10:20:40</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_所有栏目}</labelname>
+      <labelid>248352371259</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=-1][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-7 11:02:34</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_满屏浮动广告1}</labelname>
+      <labelid>285826784958</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=677912669234968][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-5-12 15:35:26</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_search}</labelname>
+      <labelid>867132659306</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Search,FS:SearchType=true,FS:ShowDate=true,FS:ShowClass=true][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-6-10 13:51:29</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_公告}</labelname>
+      <labelid>407532175073</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=ANN][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-6-11 13:20:56</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_栏目导航自适应}</labelname>
+      <labelid>173895814753</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=0][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-6-18 10:36:28</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_农业之窗图文}</labelname>
+      <labelid>042934302893</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=665030062151,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-6-25 16:41:44</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_傣乡新闻图文}</labelname>
+      <labelid>563007134909</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=715047079358,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-6-25 16:45:08</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_数字报刊连接}</labelname>
+      <labelid>907296555403</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=Frindlink,FS:TypeClassID=3299733257,FS:Number=1,FS:Cols=1,FS:FType=1][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-7-22 19:16:33</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_滚动新闻}</labelname>
+      <labelid>731576407696</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=2,FS:NewsType=MarQuee,FS:ClassID=-1,FS:TitleNumer=36,FS:ContentNumber=0][#FS:StyleID=423206599038][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-7-22 20:03:51</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_新闻搜索}</labelname>
+      <labelid>939771635511</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=Search,FS:SearchType=false][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-7-23 10:20:27</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_假标题新闻列表测试}</labelname>
+      <labelid>232425110701</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=5,FS:NewsType=Last,FS:ClassID=-1,FS:Cols=1,FS:TitleNumer=20][#FS:StyleID=363181660628][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-3 10:52:39</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_带日期最新假标题新闻列表}</labelname>
+      <labelid>687465879632</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=-1,FS:SubNews=false,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=34,FS:HashNaviContent=false,FS:isSub=false][#FS:StyleID=551890309314][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-5 16:33:56</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_热点新闻子新闻测试}</labelname>
+      <labelid>360277159202</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=803851363923,FS:SubNews=true,FS:SubNaviCSS=&gt;,FS:Cols=1,FS:TitleNumer=20,FS:isSub=true][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-19 9:53:52</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_test1}</labelname>
+      <labelid>858735194064</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=LastComm,FS:Number=10][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-22 8:59:22</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_要闻报道图文}</labelname>
+      <labelid>954157970210</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[<div style="FONT-SIZE: 11px; WORD-BREAK: break-all">[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=803851363923,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]</div>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-31 13:44:46</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_社会论坛图文}</labelname>
+      <labelid>243780911820</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[<div style="FONT-SIZE: 11px; WORD-BREAK: break-all">[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=154284819893,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]</div>]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-8-31 13:46:17</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_栏目最新新闻列表_要闻报道}</labelname>
+      <labelid>714325668616</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=803851363923,FS:TitleNumer=40,FS:isSub=true][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-1 10:17:02</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_xxbn_栏目最新新闻列表_社会论坛}</labelname>
+      <labelid>146431048372</labelid>
+      <labelclassid>882324941476</labelclassid>
+      <labelcontent><![CDATA[[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=154284819893,FS:TitleNumer=40,FS:isSub=true][#FS:StyleID=183677816753][/FS:Loop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-1 10:56:17</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_系统js测试}</labelname>
+      <labelid>335683777197</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=sysJS,FS:JSID=071752916767][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-8 13:24:31</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_text_x1}</labelname>
+      <labelid>038650651779</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=741618517886890][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-9 16:59:56</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_test_x2}</labelname>
+      <labelid>719228671968</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=476498146953781][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-9 17:00:18</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_test_x3}</labelname>
+      <labelid>837692895123</labelid>
+      <labelclassid>578716837154</labelclassid>
+      <labelcontent><![CDATA[[FS:unLoop,FS:SiteID=0,FS:LabelType=adJS,FS:JSID=366526132220443][/FS:unLoop]]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-9 17:00:35</labelcreattime>
+      <labelissys>0</labelissys>
+  </labelitem>
+  <labelitem>
+      <labelname>{FS_33}</labelname>
+      <labelid>162132061570</labelid>
+      <labelclassid>294864222065</labelclassid>
+      <labelcontent><![CDATA[]]></labelcontent>
+      <labeldescription><![CDATA[]]></labeldescription>
+      <labelcreattime>2009-9-22 9:16:11</labelcreattime>
       <labelissys>0</labelissys>
   </labelitem>
 </foosunlabel>
