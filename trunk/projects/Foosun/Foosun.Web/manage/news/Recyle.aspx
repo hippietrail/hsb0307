@@ -48,15 +48,35 @@
   </tr>
 </table>
 </form>
+<script language="javascript" type="text/javascript">
+var table = document.getElementById("tblData");
+var dataRows = 0;
+
+if(table)
+{
+   dataRows = table.rows.length;
+}
+
+</script>
 </body>
+
+
 </html>
 <script language="javascript" type="text/javascript">
+
 function ChangeDiv(ID)
 {
 	Selete(ID);
 	setCookie("type",ID);
     setCookie("page",0);
 	GetList(ID,0);
+	
+	table = document.getElementById("tblData");
+	
+    if(table)
+    {
+       dataRows = table.rows.length;
+    }
 }
 
 function Selete(ID)
@@ -257,9 +277,17 @@ function GetList(Type,page)
 							    document.getElementById("List").innerHTML="Error";
 							else
 								document.getElementById("List").innerHTML=returnvalue;
+								
+							table = document.getElementById("tblData");
+							if(table)
+                            {
+                               dataRows = table.rows.length;
+                            }
 						}  
 				   }; 
 	new  Ajax.Request('Recyle.aspx?no-cache='+Math.random(),options);
+	
+
 }
 if(getCookie("type")!=null && getCookie("type")!="null" && getCookie("type")!="")
 {
@@ -268,5 +296,9 @@ if(getCookie("type")!=null && getCookie("type")!="null" && getCookie("type")!=""
 else
 {
     GetList('NCList',0);
+}
+if(table)
+{
+   dataRows = table.rows.length;
 }
 </script>

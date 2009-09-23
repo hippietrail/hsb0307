@@ -93,7 +93,18 @@ namespace Foosun.SQLServerDAL
                 {
                     string tbname = dt.Rows[i][0].ToString();
                     string str_Sql = "Select NewsID,ClassID,NewsProperty,NewsType,DataLib From " + tbname + " Where isRecyle=1 And SiteID='" + SiteID + "' And isRecyle=1";
+
+                    #region Husb 2009-09-23
+
+                    string sql = "Update fs_News Set isRecyle=0 Where SiteID='" + SiteID + "' AND isRecyle=1";
+
+                    DbHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+                    continue;
+                    #endregion
+
+
                     DataTable dv = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
+                    #region 
                     if (dv != null)
                     {
                         for (int j = 0; j < dv.Rows.Count; j++)
@@ -164,6 +175,8 @@ namespace Foosun.SQLServerDAL
                         dv.Clear();
                         dv.Dispose();
                     }
+                    #endregion
+
                 }
                 dt.Clear();
                 dt.Dispose();
