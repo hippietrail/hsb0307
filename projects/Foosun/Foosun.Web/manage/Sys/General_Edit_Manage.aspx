@@ -41,7 +41,7 @@
     </tr>
     <tr id="Tr_Title" class="TR_BG_list" style="display:none">
       <td  align="Left" style="width: 11%; height: 28px;" class="list_link">标题</td>
-      <td align="Left" class="list_link" style="height: 28px" ><asp:TextBox ID="Txt_Name" MaxLength="50" runat="server" CssClass="form"/>
+      <td align="Left" class="list_link" style="height: 28px" ><asp:TextBox ID="Txt_Name" MaxLength="50" runat="server" CssClass="form SpecialFontFamily"/>
         (<font color=red size=2>*</font>)<span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_GenTitle_0001',this)">帮助</span></td>
     </tr>
     <tr id="Tr_Url" class="TR_BG_list" style="display:none">
