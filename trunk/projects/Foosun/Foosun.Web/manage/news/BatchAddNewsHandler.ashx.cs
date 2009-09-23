@@ -490,6 +490,7 @@ namespace Foosun.Web.manageXXBN.news
                         if (reader.NodeType == XmlNodeType.CDATA)
                         {
                             news.Content = reader.Value.Trim();
+                            news.Content = news.Content.Replace("\n", "<br />");
                         }
                         if (reader.NodeType == XmlNodeType.EndElement)
                         {
