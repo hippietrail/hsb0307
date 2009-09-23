@@ -17,7 +17,7 @@
       <td height="1" colspan="2"></td>
     </tr>
     <tr>
-      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >自定义自段管理</td>
+      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >自定义字段管理</td>
       <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">位置导航：<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />自定义字段</div></td>
     </tr>
   </table>
