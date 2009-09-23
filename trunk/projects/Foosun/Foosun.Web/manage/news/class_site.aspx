@@ -196,4 +196,5 @@ function Button1_onclick() {
     document.location.reload();
 }
 
+document.getElementById("shortcut_id");
 </script>
