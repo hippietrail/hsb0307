@@ -17,10 +17,10 @@
   </table>
   <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
     <tr class="TR_BG_list">
-      <td width="11%" align="center" class="navi_link" style="width: 13%">专题中文名</td>
-      <td colspan="2" align="left"><asp:TextBox ID="S_Cname" runat="server" Width="250px"  onChange="javascript:GetPY1(this);" CssClass="form" MaxLength="50"></asp:TextBox>
+      <td width="11%" align="center" class="navi_link" style="width: 13%">专题名称</td>
+      <td colspan="2" align="left"><asp:TextBox ID="S_Cname" runat="server" Width="250px"   CssClass="form SpecialFontFamily" MaxLength="50"></asp:TextBox><%--onChange="javascript:GetPY1(this);"--%>
         <span class="helpstyle" style="cursor:help;" title="点击显示帮助" onclick="Help('H_SpecialAdd_001',this)">帮助</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldS_Cname" runat="server" ErrorMessage="<span class=reshow>(*)请填写专题中文名</spna>" ControlToValidate="S_Cname" Display="Static"></asp:RequiredFieldValidator></td>
+        <asp:RequiredFieldValidator ID="RequiredFieldS_Cname" runat="server" ErrorMessage="<span class=reshow>(*)请填写专题名称</spna>" ControlToValidate="S_Cname" Display="Static"></asp:RequiredFieldValidator></td>
     </tr>
     <tr class="TR_BG_list">
       <td align="center" class="navi_link" style="width: 13%">专题英文名</td>
