@@ -302,7 +302,7 @@ window.onload=DisplayUnNews;
             </tr>
             <tr class="TR_BG_list">
                 <td colspan="2" style="width:700px;">
-                <div  id="titleContent"></div>
+                <div  id="titleContent" class="SpecialFontFamily"></div>
                 <div  id="PreviewContent"></div>
                 </td>
             </tr>
