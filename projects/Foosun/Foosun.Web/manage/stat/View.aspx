@@ -98,7 +98,7 @@
     if(type == "class")
     {
   %>
-  <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1">
+  <table width="96%" border="0" align="center" cellpadding="5" cellspacing="1">
     <tr>
       <td height="18" style="width: 45%" colspan="2"  align="right" class="list_link"><a href="?act=add" class="topnavichar">新增分类</a>&nbsp;┊&nbsp;
         <asp:LinkButton ID="LinkButton1" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('确认删除所选信息吗?')){return true;}return false;}" OnClick="DelP_Click">批量删除分类</asp:LinkButton>
@@ -192,7 +192,7 @@
     if (type == "zonghe")
     {
  %>
-  <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table" id="ZongStatTable">
+  <table width="97%" border="0" align="center" cellpadding="5" cellspacing="1" class="table" id="ZongStatTable">
     <tr class="TR_BG_list">
       <td colspan="2" class="list_link">综合统计信息显示</td>
     </tr>
@@ -826,7 +826,7 @@ if(type=="come")
   }
   %>
   <br />
-  <table width="100%" border="0" cellpadding="8" cellspacing="0" class="copyright_bg" style="height: 76px">
+  <table width="100%" border="0" cellpadding="8" cellspacing="0" class="copyright_bg" style="height: 76px" align="center">
     <tr>
       <td align="center"><label id="copyright" runat="server" /></td>
     </tr>

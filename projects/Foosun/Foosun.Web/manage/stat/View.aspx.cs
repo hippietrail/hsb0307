@@ -325,7 +325,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         //取得传递的参数值
         string id = Request.QueryString["id"];
         //显示功能菜单
-        string liststr = "<table width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\" class=\"Navitable\">";
+        string liststr = "<table width=\"96%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\" class=\"Navitable\">";
         liststr = liststr + "<tr class=\"menulist\">\r";
         liststr = liststr + "<td height=\"18\" style=\"width: 45%\" colspan=\"2\"><div align=\"left\"> <a href=\"?type=class\" class=\"menulist\"><font color=\"#ff0000\">返回统计分类:</font></a>&nbsp;┊&nbsp;<a href=\"?type=zonghe&Navi=view&id=" + id + "\" class=\"menulist\">综合统计</a>&nbsp;┊&nbsp;<a href=\"?type=all&Navi=view&id=" + id + "\" class=\"menulist\">详细记录</a>&nbsp;┊&nbsp;<a href=\"?type=hour&Navi=view&id=" + id + "\" class=\"menulist\">24小时统计</a>&nbsp;┊&nbsp;<a href=\"?type=day&Navi=view&id=" + id + "\" class=\"menulist\">日统计</a>&nbsp;┊&nbsp;<a href=\"?type=week&Navi=view&id=" + id + "\" class=\"menulist\">周统计</a>&nbsp;┊&nbsp;<a href=\"?type=month&Navi=view&id=" + id + "\" class=\"menulist\">月统计</a>&nbsp;┊&nbsp;<a href=\"?type=page&Navi=view&id=" + id + "\" class=\"menulist\">被访页面</a>&nbsp;┊&nbsp;<a href=\"?type=ip&Navi=view&id=" + id + "\" class=\"menulist\">IP统计</a>&nbsp;┊&nbsp;<a href=\"?type=cs&Navi=view&id=" + id + "\" class=\"menulist\">客户端</a>&nbsp;┊&nbsp;<a href=\"?type=area&Navi=view&id=" + id + "\" class=\"menulist\">地区</a>&nbsp;┊&nbsp;<a href=\"?type=come&Navi=view&id=" + id + "\" class=\"menulist\"> 来路统计</a>&nbsp;┊&nbsp;<a href=\"?type=code&Navi=view&id=" + id + "\" class=\"menulist\"> 代码调用</a></div></td>\r";
         liststr = liststr + "</tr>\r";
