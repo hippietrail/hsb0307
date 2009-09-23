@@ -624,7 +624,7 @@ namespace Foosun.Web.manageXXBN.news
             switch (docType)
             {
                 case DocumentType.Picture:
-                    string header = String.Format("<div style=\"text-align:center\"><img height=\"284\" width=\"400\" border=\"0\" alt=\"\" src=\"{0}\" /></div>", url);
+                    string header = String.Format("<div style=\"text-align:center\"><img  border=\"0\" alt=\"\" src=\"{0}\" /></div>", url); // height=\"284\" width=\"400\"
                     c = header + content;
                     break;
                 case DocumentType.Text:
