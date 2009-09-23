@@ -230,6 +230,8 @@ public partial class News_add : Foosun.Web.UI.ManagePage
             {
                 Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "picExcute", "<script>ShowLink('pic')</script>");
             }
+
+            #region 采编过来的文档加载
             //hsb  change
             // 采编过来的文档加载
             if (Request.QueryString["file"] != null)
@@ -288,6 +290,8 @@ public partial class News_add : Foosun.Web.UI.ManagePage
 
                 FileContent.InnerText = news.Content;
             }
+
+            #endregion
         }
 
 
@@ -1484,6 +1488,8 @@ public partial class News_add : Foosun.Web.UI.ManagePage
             //判断是否需要生成百度开放式搜索协议
             if (SearchEngine.IsBaidu() == "1") { SearchEngine.RefreshBaidu(); }
             uc.isFiles = 0;
+
+            #region 处理附件
             if (this.isFiles.Checked)
             {
                 uc.isFiles = 1;
@@ -1556,7 +1562,10 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                     //rd.insertFileURL(gURLName, NewsID, getDataLibStr, gFileURL, int.Parse(gFileOrderID));
                 }
             }
-            //插入子新闻
+
+            #endregion
+
+            #region 插入子新闻
             string iNewsTF = "";
             uc.SubNewsTF = 0;
             if (SubTF.Checked)
@@ -1567,7 +1576,7 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                 #region 判断数据是否合法
                 if (OldNewsId == null)
                 {
-                    PageError("不规则新闻为空", "");
+                    PageError("不规则新闻为空,您可能选择了“添加子新闻”选项，但却没有添加子新闻", "");
                 }
                 #endregion 判断数据是否合法
 
@@ -1603,6 +1612,8 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                 }
                 #endregion 获取普通新闻数据结束
             }
+#endregion
+
             uc.SavePath = pd.getResultPage(SavePath, getDateTime, ClassID, "");
             string tmID = "{@自动编号ID}";
             uc.FileName = pd.getResultPage(FileName.Replace(tmID, (_IDStr + 1).ToString()), getDateTime, ClassID, "");
@@ -1693,36 +1704,38 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                 if (attachmentFile.Value.Length > 0)
                 {
 
-                    if ((System.IO.File.GetAttributes(attachmentFile.Value) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                    {
-                        try
-                        {
-                            System.IO.File.SetAttributes(attachmentFile.Value, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                        }
-                        catch (UnauthorizedAccessException ex)
-                        {
-                            throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                        }
-                    }
-                    System.IO.File.Delete(attachmentFile.Value);
+                    //if ((System.IO.File.GetAttributes(attachmentFile.Value) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
+                    //{
+                    //    try
+                    //    {
+                    //        System.IO.File.SetAttributes(attachmentFile.Value, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
+                    //    }
+                    //    catch (UnauthorizedAccessException ex)
+                    //    {
+                    //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
+                    //    }
+                    //}
+                    //System.IO.File.Delete(attachmentFile.Value);
+                    Foosun.Web.manageXXBN.news.BatchAddNewsHandler.DeleteFile(attachmentFile.Value);
                 }
-                if ((System.IO.File.GetAttributes(Request.QueryString["file"]) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                {
-                    try
-                    {
-                        System.IO.File.SetAttributes(Request.QueryString["file"], System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                    }
-                    catch (UnauthorizedAccessException ex)
-                    {
-                        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                    }
-                }
-                System.IO.File.Delete(Request.QueryString["file"]);
+                Foosun.Web.manageXXBN.news.BatchAddNewsHandler.DeleteFile(Request.QueryString["file"]);
+                //if ((System.IO.File.GetAttributes(Request.QueryString["file"]) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
+                //{
+                //    try
+                //    {
+                //        System.IO.File.SetAttributes(Request.QueryString["file"], System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
+                //    }
+                //    catch (UnauthorizedAccessException ex)
+                //    {
+                //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
+                //    }
+                //}
+                //System.IO.File.Delete(Request.QueryString["file"]);
             }
 
             PageRight(resultstr, "News_list.aspx?ClassID=" + ClassID + "");
 
-            PageRight(resultstr, "News_list.aspx?ClassID=" + ClassID + "");
+            //PageRight(resultstr, "News_list.aspx?ClassID=" + ClassID + "");
            
         }
 
