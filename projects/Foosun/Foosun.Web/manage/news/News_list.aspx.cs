@@ -667,7 +667,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
         if (Foosun.Publish.General.publishXML(sid))
         {
             Response.Clear();
-            Response.Write("成功此栏目XML成功！");
+            Response.Write("生成此栏目XML成功！");
         }
         else
         {
