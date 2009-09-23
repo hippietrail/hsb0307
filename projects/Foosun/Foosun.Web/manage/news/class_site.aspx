@@ -62,12 +62,13 @@ if(self==top)
 </table>
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
-    <td style="padding-left:0px;"><img src="../../sysImages/folder/navidot.gif" border="0" /><a href="news_list.aspx" target="sys_main" class="menulist" title="点击查看所有的新闻">全部新闻</a><img src="../../sysImages/folder/navidot.gif" border="0" /><a href="news_stat.aspx" target="sys_main" class="menulist" title="统计编辑的稿件">统筹</a>&nbsp;<label id="returnmenu" runat="server" /></td>
+    <td style="padding-left:0px;"><img src="../../sysImages/folder/navidot.gif" border="0" alt="" /><a href="news_list.aspx" target="sys_main" class="menulist" title="点击查看所有的新闻">全部新闻</a><img src="../../sysImages/folder/navidot.gif" border="0" alt="" /><a href="news_stat.aspx" target="sys_main" class="menulist" title="统计编辑的稿件">统筹</a>&nbsp;<label id="returnmenu" runat="server" /></td>
   </tr>
 </table>
-<div id="profile_2" style="width:100%;"><div style="width:100%;" id="Parent0" class="RootItem">&nbsp;&nbsp;loading...</div>
-    </div>
-    <input id="Button1" type="button" value="点此刷新数据" language="javascript" onclick="return Button1_onclick()" style="height: 68px; background-color: transparent; border-top-style: none; border-right-style: none; border-left-style: none; text-decoration: underline; border-bottom-style: none; width: 97px;" />
+<div id="profile_2" style="width:100%;">
+<div style="width:100%;" id="Parent0" class="RootItem">&nbsp;&nbsp;loading...</div>
+</div>
+<input id="Button1" type="button" value="点此刷新数据" language="javascript" onclick="return Button1_onclick()" style="height: 68px; background-color: transparent; border-top-style: none; border-right-style: none; border-left-style: none; text-decoration: underline; border-bottom-style: none; width: 97px;" />
 
   
 </body>
@@ -129,15 +130,15 @@ function GetSubClass(ParentId){
 	       {  		       
 		       //var url="/"+ transport.responseText +"/news/class_site_ajax.aspx";
 		       var url="../../"+transport.responseText +"/news/class_site_ajax.aspx";
-	            var Action="ParentId="+ParentId;
-	            var myAjax = new Ajax.Request(
+	           var Action="ParentId="+ParentId;
+	           var myAjax = new Ajax.Request(
 		            url,
-		            {method:"get",
-		            parameters:Action,
-		            onComplete:GetSubClassOk
+		            { method:"get",
+		              parameters:Action,
+		              onComplete:GetSubClassOk
 		            }
-		            );
-	                   }
+		       );
+	        }
        }; 
     new  Ajax.Request('../../configuration/system/getManageForder.aspx?no-cache='+Math.random(),options);
 }
