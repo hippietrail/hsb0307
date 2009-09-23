@@ -75,9 +75,9 @@ namespace Foosun.SQLServerDAL
                                 tempselect = "";
 
                             if (ali.showSiteID != null && ali.showSiteID != "" && ali.showSiteID != string.Empty)
-                                tempselect += " And SiteID='" + ali.showSiteID + "'";
+                                tempselect += " And " + Pre + "ads.SiteID='" + ali.showSiteID + "'";
                             else
-                                tempselect += " And SiteID='" + SiteID + "'";
+                                tempselect += " And " + Pre + "ads.SiteID='" + SiteID + "'";
 
                             str_Sql = "Select " + Pre + "ads.AdID," + Pre + "ads.adName," + Pre + "ads.adType," + Pre + "ads.creatTime," + Pre + "ads.CusID," + Pre + "ads.isLock,Cname From " + Pre + "ads left join " + Pre + "ads_class on ClassID=AcID Where" +
                                       " 1=1 " + tempselect + " Order By " + Pre + "ads.Id Desc";
