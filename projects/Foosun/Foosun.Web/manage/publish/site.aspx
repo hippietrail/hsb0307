@@ -61,10 +61,10 @@ jQuery(document).ready(
                 <table width="98%" border="0" align="center" cellpadding="2" cellspacing="1" class="table">
                     <tr class="TR_BG">
                         <td align="left" colspan="3" style="height: 20px">
-                            <strong><span id="news" onclick="OnMove(this,pubnews);" style="color:Blue;">[发布主页/新闻]</span>&nbsp;
-                            <span id="lanmu"  onclick="OnMove(this,publanmu);">[发布栏目]</span>&nbsp;
-                            <span id="special" onclick="OnMove(this,pubspec);">[发布专题]</span>
-                            <span id="singles" onclick="OnMove(this,TableSingle);">[发布单页]</span>
+                            <strong><span id="news" onclick="OnMove(this,pubnews);" style="cursor:hand">[发布主页/新闻]</span>&nbsp;
+                            <span id="lanmu"  onclick="OnMove(this,publanmu);"  style="cursor:hand">[发布栏目]</span>&nbsp;
+                            <span id="special" onclick="OnMove(this,pubspec);" style="cursor:hand">[发布专题]</span>
+                            <span id="singles" onclick="OnMove(this,TableSingle);" style="cursor:hand">[发布单页]</span>
                             </strong>
                             </td>
                     </tr>
