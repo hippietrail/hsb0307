@@ -130,7 +130,7 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
             bool v3 = sur.Del_Str_stepSql(TID);
             bool v4 = sur.Del_Str_manageSql(TID);
 
-            if (v1 && v2 && v3 && v4)
+            if (v1) // && v2 && v3 && v4
             {
                 rd.SaveUserAdminLogs(1, 1, UserNum, "删除投票主题", "删除成功");
                 PageRight("删除成功。", "setTitle.aspx");
