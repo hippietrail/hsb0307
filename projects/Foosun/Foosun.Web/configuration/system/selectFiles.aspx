@@ -135,7 +135,7 @@ function ReturnValue(obj)
 	}
 	
 	var selectedFile1 = document.getElementById("sUrl");
-	alert(selectedFile1.value);
+	//alert(selectedFile1.value);
     if(selectedFile1.value.length > 0)
     {
 
