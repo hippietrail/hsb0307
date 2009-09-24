@@ -68,7 +68,8 @@ public partial class manage_js_JS_List : Foosun.Web.UI.ManagePage
         int RdCount = 0, PgCount = 0;
         Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
         IList<NewsJSInfo> ljs = nj.GetPage(PageIndex, PAGESIZE, out RdCount, out PgCount, int.Parse(this.HidType.Value));
-        this.PageNavigator1.RecordCount = RdCount;
+        //this.PageNavigator1.RecordCount = RdCount;
+        this.PageNavigator1.RecordCount = ljs.Count;
         this.PageNavigator1.PageCount = PgCount;
         this.PageNavigator1.PageIndex = PageIndex;
         foreach (NewsJSInfo r in ljs)
