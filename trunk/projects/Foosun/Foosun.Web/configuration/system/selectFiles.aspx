@@ -18,6 +18,7 @@
  <input type="hidden" name="NewFileName" />
  <input type="hidden" name="filename" />
  <input type="hidden" name="Urlx" />
+ <asp:HiddenField ID="hfSelectedFile" runat="server" />
 </form>
 
 </body>
@@ -132,6 +133,14 @@ function ReturnValue(obj)
 	{
 	    parent.ReturnFun(Str);
 	}
+	
+	var selectedFile1 = document.getElementById("sUrl");
+	alert(selectedFile1.value);
+    if(selectedFile1.value.length > 0)
+    {
+
+         parent.document.getElementById("URLName").value = selectedFile1.value.substr(selectedFile1.value.lastIndexOf("/") + 1);
+    }
 }
 
 function ReturndefineValue(obj,str)
@@ -147,9 +156,12 @@ function UpFile(path,type,ParentPath)
     var Wheight = (window.screen.height-150)/2;
     window.open ("Upload.aspx?Path="+path+"&UpfileType="+type+"&ParentPath="+ParentPath, '文件上传', 'height=300, width=600, top='+Wheight+', left='+WWidth+', toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no'); 
 }
-function insertHTMLEdit(path)
+
+
+var selectedFile = document.getElementById("hfSelectedFile");
+if(selectedFile.value.length > 0)
 {
-    //
-    document.getElementById("sUrl").value=path;
+document.getElementById("sUrl").value = selectedFile.value;
+
 }
 </script>

@@ -200,7 +200,8 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
                             }
                             dt_sys.Clear(); dt_sys.Dispose();
                         }
-                        Response.Write("<script language=\"javascript\">try{ window.opener.insertHTMLEdit('" + str_returnpath + "/" + ReturnStr[0] + "') ; }catch(err){};try{window.opener.ListGo('" + s_rpath + "','" + s_rppath + "');}catch(err){};alert('文件上传成功!');window.close();</script>");
+                        //string s = "<script language=\"javascript\">try{ var file = opener.document.getElementById('sUrl'); if(file) { file.value = " + str_returnpath + "/" + ReturnStr[0] + ";} alert(file.parentNode.innerHTML); alert(file.value); window.opener.insertHTMLEdit('" + str_returnpath + "/" + ReturnStr[0] + "') ; }catch(err){};try{window.opener.ListGo('" + s_rpath + "','" + s_rppath + "');}catch(err){};alert('文件上传成功!');window.close();</script>";
+                        Response.Write("<script language=\"javascript\">try{ var file = opener.document.getElementById('hfSelectedFile'); if(file) { file.value = '" + str_returnpath + ReturnStr[0] + "';}  window.opener.insertHTMLEdit('" + str_returnpath + "/" + ReturnStr[0] + "') ; }catch(err){};try{  window.opener.ListGo('" + s_rpath + "','" + s_rppath + "');}catch(err){};alert('文件上传成功!');window.close();</script>");
                         Response.End();
                     }
                     else { ResultSTR = "<script language=\"javascript\">window.opener.ListGo('" + s_rpath + "','" + s_rppath + "');alert('" + ReturnStr[0] + "文件上传成功!');window.close();</script>"; }
