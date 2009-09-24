@@ -3608,7 +3608,6 @@
   <ItemGroup>
     <Content Include="api\dz\ADAPT.config" />
     <Content Include="api\api.aspx" />
-    <Content Include="baidu.xml" />
     <Content Include="configuration\config\api.config" />
     <Content Include="configuration\js\getcalendar.js" />
     <Content Include="configuration\js\jquery.bgiframe.js" />
