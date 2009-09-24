@@ -2202,13 +2202,6 @@
     <Compile Include="survey\Vote_Show.aspx.designer.cs">
       <DependentUpon>Vote_Show.aspx</DependentUpon>
     </Compile>
-    <Compile Include="test\WebForm1.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="test\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Update\FS3\Update.aspx.cs">
       <DependentUpon>Update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3766,8 +3759,6 @@
     <Content Include="Templets\xxbn\xml\fcommon7.html" />
     <Content Include="Templets\xxbn\xml\readme.txt" />
     <Content Include="Templets\xxbn\dw_index.htm" />
-    <Content Include="test\test5.aspx" />
-    <Content Include="test\WebForm1.aspx" />
     <Content Include="Web.config" />
     <Content Include="sysImages\blackwhite\admin\butclose.gif" />
     <Content Include="sysImages\blackwhite\admin\butopen.gif" />
