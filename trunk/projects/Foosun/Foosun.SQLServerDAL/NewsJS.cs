@@ -43,7 +43,7 @@ namespace Foosun.SQLServerDAL
         }
         public DataTable GetJSFilePage(int PageIndex, int PageSize, out int RecordCount, out int PageCount, int id)
         {
-            return DbHelper.ExecutePage("a.ID,a.Njf_title", Pre + "News_JSFile a inner join " + Pre + "News_JS b on a.JsID=b.JsID where a.SiteID='" + Current.SiteID + "' and b.id=" + id, "a.id", "order by a.id", PageIndex, PageSize, out RecordCount, out PageCount, null);
+            return DbHelper.ExecutePage("a.ID,a.Njf_title", Pre + "News_JSFile a inner join " + Pre + "News_JS b on a.JsID=b.JsID where a.SiteID='" + Current.SiteID + "' and b.id=" + id, "a.id", "order by a.id desc", PageIndex, PageSize, out RecordCount, out PageCount, null);
         }
         public void RemoveNews(int id)
         {
