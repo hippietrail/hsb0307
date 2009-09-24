@@ -50,7 +50,7 @@
     </tr>
     <tr id="Tr_Email" class="TR_BG_list" style="display:none">
       <td height="-5" align="Left" style="width: 11%"  class="list_link">电子邮件</td>
-      <td height="-5" align="Left" class="list_link"><asp:TextBox ID="Txt_Email" runat="server" MaxLength="50" CssClass="form" />
+      <td height="-5" align="Left" class="list_link"><asp:TextBox ID="Txt_Email" runat="server" MaxLength="50" CssClass="form" />(<font color=red size=2>*</font>)
         <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_GenEmail_0001',this)">帮助</span> </td>
     </tr>
     <tr id="Tr_SubMit" class="TR_BG_list" style="display:none">

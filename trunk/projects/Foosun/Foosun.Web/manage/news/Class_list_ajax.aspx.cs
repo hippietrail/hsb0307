@@ -109,7 +109,7 @@ namespace Foosun.Web.manage.news
                         this.ClassID = dt.Rows[j]["classid"].ToString();
                         if (dt.Rows[j]["isPage"].ToString() == "1")
                         {
-                            dt.Rows[j]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + dt.Rows[j]["ClassID"] + "&Action=Edit\" class=\"list_link\" title=\"点击修改单页面\">" + dt.Rows[j]["ClassCName"] + "</a>";
+                            dt.Rows[j]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + dt.Rows[j]["ClassID"] + "&Action=Edit\" class=\"list_link SpecialFontFamily\" title=\"点击修改单页面\">" + dt.Rows[j]["ClassCName"] + "</a>";
                         }
                         else
                         {

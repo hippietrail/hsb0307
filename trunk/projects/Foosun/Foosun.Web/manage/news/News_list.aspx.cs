@@ -257,7 +257,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             ClassID = this.keyWorks.Text;
             if (ClassID.IndexOf(',') != -1)
             {
-                ClassID = ClassID.Substring(0, ClassID.IndexOf(','));
+                ClassID = ClassID.Substring(ClassID.IndexOf(',')+1);
             }
             this.keyWorks.Text = string.Empty;
         }

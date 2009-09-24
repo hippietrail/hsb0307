@@ -375,7 +375,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                     this.ClassID = row["classid"].ToString();
                     if (row["isPage"].ToString() == "1")
                     {
-                        row["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + row["ClassID"] + "&Action=Edit\" class=\"list_link\" title=\"点击修改单页面\">" + row["ClassCName"] + "</a>";
+                        row["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + row["ClassID"] + "&Action=Edit\" class=\"list_link SpecialFontFamily\" title=\"点击修改单页面\">" + row["ClassCName"] + "</a>";
                     }
                     else
                     {
@@ -787,7 +787,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                 //取出子类
                 if (newsClassTable.Rows[k]["isPage"].ToString() == "1")
                 {
-                    newsClassTable.Rows[k]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link\" title=\"点击修改单页面\">" + newsClassTable.Rows[k]["ClassCName"] + "</a>";
+                    newsClassTable.Rows[k]["ClassCNames"] = "<a href=\"news_Page.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link SpecialFontFamily\" title=\"点击修改单页面\">" + newsClassTable.Rows[k]["ClassCName"] + "</a>";
                 }
                 else
                 {
