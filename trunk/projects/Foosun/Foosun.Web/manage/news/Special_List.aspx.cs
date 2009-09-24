@@ -156,7 +156,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
                                    "<a href=\"javascript:AddChild('" + dt.Rows[k]["SpecialID"] + "');\" class=\"list_link\">"+
                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                    "<a href=\"news_review.aspx?ID=" + dt.Rows[k]["SpecialID"] + "&type=special\" target=\"_blank\" class=\"list_link\">" +
-                                   "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                   "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览子专题\" /></a>" +
                                    "<input type=\"checkbox\" value=\"'" + dt.Rows[k]["SpecialID"] + "'\" id=\"S_ID\" name=\"S_ID\" />";
                 strchar += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                 strchar += "<td align=\"left\" valign=\"middle\" title=\"专题ID：" + dt.Rows[k]["SpecialID"] + "\">" + dt.Rows[k]["SpecialCName"] + "</td>";
@@ -205,7 +205,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
                                     "<a href=\"javascript:AddChild('" + dv.Rows[pi]["SpecialID"] + "');\" class=\"list_link\">" +
                                     "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                     "<a href=\"news_review.aspx?ID=" + dv.Rows[pi]["SpecialID"] + "&type=special\" target=\"_blank\" class=\"list_link\">" +
-                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览子专题\" /></a>" +
                                     "<input type=\"checkbox\" value=\"'" + dv.Rows[pi]["SpecialID"] + "'\" id=\"S_ID\" name=\"S_ID\" />";
                 strchar += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                 strchar += "<td align=\"left\" valign=\"middle\" >" + sign + dv.Rows[pi]["SpecialCName"] + "</td>";
