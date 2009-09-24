@@ -108,7 +108,6 @@ namespace Foosun.Publish
         protected string getStyle(string Title, string sColor, int Istr, int Bstr)
         {
             string tmpstr = Title;
-
             if ( (!String.IsNullOrEmpty(sColor)) && sColor.Trim() != string.Empty)
             {
                 tmpstr = "<span style=\"color:" + sColor + ";\">" + tmpstr + "</span>";
