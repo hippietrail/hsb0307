@@ -42,7 +42,7 @@
         {
             alert('请选择要上传的文件!');
         }
-        else if (document.getElementById("file").value.length>200)
+        else if (document.getElementById("file").value.length>100)
         {
             alert('文件名过长!请先修改文件名长度');
         }

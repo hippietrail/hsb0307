@@ -142,7 +142,7 @@ function ReturnValue()
 {
 	var cid = document.getElementById('ClsID').value;
 	var cnm = document.getElementById('ClsName').value;
-	var arryret = new Array(cid,cnm);
+	var arryret = new Array(cnm,cid);
 	parent.ReturnFun(arryret);
 }
 //-->
