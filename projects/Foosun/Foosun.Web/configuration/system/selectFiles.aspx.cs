@@ -24,6 +24,11 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
     bool tf = false;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (hfSelectedFile.Value.Length > 0)
+        {
+            
+        }
+
         //lsd modify20090824
         if (!string.IsNullOrEmpty(Request.QueryString["FileType"]))
         {
