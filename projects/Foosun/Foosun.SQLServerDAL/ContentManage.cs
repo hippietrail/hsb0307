@@ -1926,8 +1926,35 @@ namespace Foosun.SQLServerDAL
         }
         public int Add_JSFile(string JsID, string Njf_title, string NewsId, string PicPath, string ClassId, string SiteID, DateTime CreatTime, DateTime TojsTime)
         {
-            string Sql = "insert into " + Pre + "News_JSFile(JsID,Njf_title,NewsId,NewsTable,PicPath,ClassId,SiteID,CreatTime,TojsTime) values('" + JsID + "','" + Njf_title + "','" + NewsId + "','" + Pre + "News','" + PicPath + "','" + ClassId + "','" + SiteID + "','" + CreatTime + "','" + TojsTime + "')";
-            return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
+            //string Sql = "insert into " + Pre + "News_JSFile(JsID,Njf_title,NewsId,NewsTable,PicPath,ClassId,SiteID,CreatTime,TojsTime) values('" + JsID + "','" + Njf_title + "','" + NewsId + "','" + Pre + "News','" + PicPath + "','" + ClassId + "','" + SiteID + "','" + CreatTime + "','" + TojsTime + "')";
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into " + Pre + "news_JSFile(");
+            strSql.Append("JsID,Njf_title,NewsId,NewsTable,PicPath,ClassId,SiteID,CreatTime,TojsTime)");
+            strSql.Append(" values (");
+            strSql.Append("@JsID,@Njf_title,@NewsId,@NewsTable,@PicPath,@ClassId,@SiteID,@CreatTime,@TojsTime)");
+            strSql.Append(";select @@IDENTITY");
+            string sql = strSql.ToString();
+            SqlParameter[] parameters = {
+					new SqlParameter("@JsID", SqlDbType.NVarChar,12),
+					new SqlParameter("@Njf_title", SqlDbType.NVarChar,100),
+					new SqlParameter("@NewsId", SqlDbType.NVarChar,12),
+					new SqlParameter("@NewsTable", SqlDbType.NVarChar,20),
+					new SqlParameter("@PicPath", SqlDbType.NVarChar,200),
+					new SqlParameter("@ClassId", SqlDbType.NVarChar,12),
+					new SqlParameter("@SiteID", SqlDbType.NVarChar,12),
+					new SqlParameter("@CreatTime", SqlDbType.DateTime),
+					new SqlParameter("@TojsTime", SqlDbType.DateTime)};
+            parameters[0].Value = JsID;
+            parameters[1].Value = Njf_title;
+            parameters[2].Value = NewsId;
+            parameters[3].Value = Pre + "News";
+            parameters[4].Value = PicPath;
+            parameters[5].Value = ClassId;
+            parameters[6].Value = SiteID;
+            parameters[7].Value = CreatTime;
+            parameters[8].Value = TojsTime;
+
+            return DbHelper.ExecuteNonQuery(CommandType.Text, sql, parameters);
         }
         public DataTable sel_News_Class()
         {
