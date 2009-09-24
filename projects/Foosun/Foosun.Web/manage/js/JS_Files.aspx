@@ -133,7 +133,7 @@ function OnDelete(retv)
     </HeaderTemplate>
     <ItemTemplate>
       <tr class="TR_BG_list">
-        <td class="list_link"><%# DataBinder.Eval(Container.DataItem, "Njf_title")%></td>
+        <td class="list_link SpecialFontFamily"><%# DataBinder.Eval(Container.DataItem, "Njf_title")%></td>
         <td class="list_link" align="center"><a href="javascript:RemoveJS(<%# DataBinder.Eval(Container.DataItem, "ID")%>);" class="list_link"><img src="../../sysImages/folder/dels.gif" border="0" alt="删除JS调用" /></a><input type="checkbox" name="checkbox" value="<%# DataBinder.Eval(Container.DataItem, "ID")%>"/></td>
       </tr>
     </ItemTemplate>
