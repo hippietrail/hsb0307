@@ -252,14 +252,23 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
         {
             ClassID = Request.QueryString["ClassID"].ToString();
         }
-        if (!string.IsNullOrEmpty(this.keyWorks.Text))
+        //if (!string.IsNullOrEmpty(this.keyWorks.Text))
+        //{
+        //    ClassID = this.keyWorks.Text;
+        //    if (ClassID.IndexOf(',') != -1)
+        //    {
+        //        ClassID = ClassID.Substring(ClassID.IndexOf(',')+1);
+        //    }
+        //    this.keyWorks.Text = string.Empty;
+        //}
+        if (!string.IsNullOrEmpty(this.HiddenField_classId.Value))
         {
-            ClassID = this.keyWorks.Text;
-            if (ClassID.IndexOf(',') != -1)
-            {
-                ClassID = ClassID.Substring(ClassID.IndexOf(',')+1);
-            }
-            this.keyWorks.Text = string.Empty;
+            ClassID = this.HiddenField_classId.Value;
+            //if (ClassID.IndexOf(',') != -1)
+            //{
+            //    ClassID = ClassID.Substring(ClassID.IndexOf(',') + 1);
+            //}
+            //this.keyWorks.Text = string.Empty;
         }
         string sKeywrd = Foosun.Common.Input.Filter(this.TxtKeywords.Text.Trim());
         string DdlKwdType = this.DdlKwdType.SelectedValue;
