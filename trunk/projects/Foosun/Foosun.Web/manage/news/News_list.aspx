@@ -614,7 +614,8 @@ function closediv()
 <tr><td align="left">    新闻搜索:
         &nbsp;&nbsp;
         栏目:
-        <asp:TextBox ID="keyWorks" runat="server"  CssClass="SpecialFontFamily" onclick="selectFile('newsclass',document.form1.keyWorks,300,500);document.form1.keyWorks.focus();" Width="141px"></asp:TextBox>
+        <asp:TextBox ID="keyWorks" runat="server"  CssClass="SpecialFontFamily" onclick="selectFile('newsclass',new Array(document.form1.HiddenField_classId,document.form1.keyWorks),300,500);document.form1.keyWorks.focus();" Width="141px"></asp:TextBox>
+        <asp:HiddenField ID="HiddenField_classId" runat="server" />
         &nbsp;
 关键字:
         <asp:TextBox runat="server" ID="TxtKeywords" size="15"  CssClass="SpecialFontFamily"/>
