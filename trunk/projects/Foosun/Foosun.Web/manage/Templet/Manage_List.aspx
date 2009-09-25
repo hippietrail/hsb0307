@@ -95,14 +95,13 @@ function EditFile(path,filename)
 	ReturnValue=encodeURIComponent(ReturnValue);
 	if ((ReturnValue!='') && (ReturnValue!=null))
 	{
-	alert(self.location.href);
 	    self.location.href='?Type=EidtFileName&ch=<%Response.Write(Request.QueryString["ch"]); %>&Path='+path+'&OldFileName='+ filename +'&NewFileName='+ReturnValue;//encodeURIComponent(filename)
 	    //document.Templetslist.Type.value="EidtFileName";
 	    //document.Templetslist.Path.value=path;
 	    //document.Templetslist.OldFileName.value=filename;
 	    //document.Templetslist.NewFileName.value=ReturnValue;
 	    //document.Templetslist.submit();
-	    alert(self.location.href);
+
 	}
 	else
 	{
