@@ -489,6 +489,11 @@ function selectType()
                     ShowLink('url');
                 }
             }
+            var isHeadline = document.getElementById('NewsProperty_TTTF1');
+            if(isHeadline && isHeadline.checked)
+            {
+                TTClick1(isHeadline);
+            }
         }, 0);
 }
     </script>
