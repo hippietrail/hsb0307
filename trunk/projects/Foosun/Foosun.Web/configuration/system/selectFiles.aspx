@@ -138,8 +138,11 @@ function ReturnValue(obj)
 	//alert(selectedFile1.value);
     if(selectedFile1.value.length > 0)
     {
-
-         parent.document.getElementById("URLName").value = selectedFile1.value.substr(selectedFile1.value.lastIndexOf("/") + 1);
+        var urlName = parent.document.getElementById("URLName");
+        if(urlName)
+        {
+            urlName.value = selectedFile1.value.substr(selectedFile1.value.lastIndexOf("/") + 1);
+        }
     }
 }
 
