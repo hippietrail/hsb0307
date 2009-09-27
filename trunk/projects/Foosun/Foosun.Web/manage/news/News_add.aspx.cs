@@ -496,7 +496,7 @@ public partial class News_add : Foosun.Web.UI.ManagePage
         {
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                _STR += "<a href=\"javascript:addTags('" + dt.Rows[i]["Cname"].ToString() + "');AddMetaTags('" + dt.Rows[i]["Cname"].ToString() + "');\" class=\"helpstyle\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;&nbsp;";
+                _STR += "<a href=\"javascript:addTags('" + dt.Rows[i]["Cname"].ToString() + "');AddMetaTags('" + dt.Rows[i]["Cname"].ToString() + "');\" class=\"helpstyle SpecialFontFamily\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;&nbsp;";
             }
             dt.Clear(); dt.Dispose();
         }
