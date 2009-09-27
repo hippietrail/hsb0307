@@ -46,13 +46,13 @@
       </tr>
     </HeaderTemplate>
     <ItemTemplate>
-      <tr class="TR_BG_list"  onmouseover="overColor(this)" onmouseout="outColor(this)">
-        <td width="10%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)[1]%></td>
+      <tr class="TR_BG_list">
+        <td width="22%" align="center" valign="middle" class="SpecialFontFamily" ><%#((DataRowView)Container.DataItem)[1]%></td>
         <td width="9%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["Type"]%></td>
-        <td width="10%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["stat"]%></td>
-        <td width="12%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)[3] %>
-        <td width="25%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)[4] %>
-        <td width="27%" align="center" valign="middle" ><%#((DataRowView)Container.DataItem)["oPerate"]%> </td>
+        <td width="3%" align="center" valign="middle" class="SpecialFontFamily"><%#((DataRowView)Container.DataItem)["stat"]%></td>
+        <td width="12%" align="center" valign="middle" class="SpecialFontFamily"><%#((DataRowView)Container.DataItem)[3] %>
+        <td width="20%" align="center" valign="middle" class="SpecialFontFamily"><%#((DataRowView)Container.DataItem)[4] %>
+        <td width="27%" align="center" valign="middle" class="SpecialFontFamily"><%#((DataRowView)Container.DataItem)["oPerate"]%> </td>
       </tr>
     </ItemTemplate>
     <FooterTemplate>
