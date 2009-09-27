@@ -792,6 +792,29 @@ namespace Foosun.CMS
             return dal.GetPage(SpecialID, Editor, ClassID, sKeywrd, DdlKwdType, sChooses, SiteID, PageIndex, PageSize, out RecordCount, out PageCount, SqlCondition);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="SpecialID"></param>
+        /// <param name="Editor"></param>
+        /// <param name="ClassID"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="sKeywrd"></param>
+        /// <param name="DdlKwdType"></param>
+        /// <param name="sChooses"></param>
+        /// <param name="SiteID"></param>
+        /// <param name="PageIndex"></param>
+        /// <param name="PageSize"></param>
+        /// <param name="RecordCount"></param>
+        /// <param name="PageCount"></param>
+        /// <param name="SqlCondition"></param>
+        /// <returns></returns>
+        public DataTable GetPage(string SpecialID, string Editor, string ClassID, DateTime? startDate, DateTime? endDate, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
+        {
+            return dal.GetPage(SpecialID, Editor, ClassID, startDate, endDate, sKeywrd, DdlKwdType, sChooses, SiteID, PageIndex, PageSize, out RecordCount, out PageCount, SqlCondition);
+        }
+
         public DataTable getSiteList()
         {
             return dal.getSiteList();

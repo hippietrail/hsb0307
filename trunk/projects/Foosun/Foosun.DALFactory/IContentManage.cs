@@ -110,6 +110,8 @@ namespace Foosun.DALFactory
 
         #region 新闻列表
         DataTable GetPage(string SpecialID, string Editor, string ClassID, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition);
+        DataTable GetPage(string SpecialID, string Editor, string ClassID, DateTime? startDate, DateTime? endDate, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition);
+
         DataTable getSiteList();
         DataTable getSiteParam(string SiteID);
         int Del_news(string id);

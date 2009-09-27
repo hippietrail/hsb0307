@@ -628,8 +628,14 @@ function closediv()
             <asp:ListItem Value="souce" Text="来源" />
         </asp:DropDownList>
          &nbsp;&nbsp;
-         <asp:Button runat="server" ID="BtnSearch" Text=" 搜索 " CssClass="form" OnClick="BtnSearch_Click"/></td><td align="right">
-         </td></tr>
+         </td>
+         <td align="right"></td></tr>
+         <tr>
+         <td align="left">&nbsp;&nbsp;　　　　　日期从<asp:TextBox runat="server" ID="txtStartDate" onclick="WdatePicker();"  /> 　　　　到 <asp:TextBox runat="server" ID="txtEndDate" onclick="WdatePicker();"  /> 
+         <asp:Button runat="server" ID="BtnSearch" Text=" 搜索 " CssClass="form" OnClick="BtnSearch_Click"/>
+            </td>
+         <td align="right"></td>
+         </tr>
  <tr><td align="right" colspan="2">   <uc1:PageNavigator ID="PageNavigator1" runat="server" />
 </td></tr>
 </table>     
@@ -644,5 +650,7 @@ function closediv()
 </table>
     <asp:Label ID="LblChoose" runat="server" Visible="False" Width="49px"></asp:Label>
     <input id="HiddenSpecialID" runat="server" type="hidden" />
+    
+    <script language="javascript" type="text/javascript" src="../../configuration/js/My97DatePicker/WdatePicker.js"></script>
 </body>
 </html>

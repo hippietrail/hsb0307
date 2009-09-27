@@ -289,7 +289,18 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             Editor = Request.QueryString["Editor"].ToString();
         }
         int num = 20;
-        DataTable dt = rd.GetPage(SpecialID, Editor, ClassID, sKeywrd, DdlKwdType, sChooses, site, PageIndex, num, out i, out j, null);
+        DateTime? startDate = null;
+        DateTime? endDate = null;
+        if (txtStartDate.Text.Length == 10)
+        {
+            startDate = DateTime.Parse(txtStartDate.Text);
+        }
+        if (txtEndDate.Text.Length == 10)
+        {
+            endDate = DateTime.Parse(txtEndDate.Text);
+        }
+
+        DataTable dt = rd.GetPage(SpecialID, Editor, ClassID, startDate, endDate, sKeywrd, DdlKwdType, sChooses, site, PageIndex, num, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
