@@ -4553,6 +4553,10 @@
   <ItemGroup>
     <Content Include="manage\collect\MasterPage_Site.master" />
     <Content Include="manage\news\BatchAddNewsHandler.ashx" />
+    <Content Include="Templets\xxbn\css\imedai.js" />
+    <Content Include="Templets\xxbn\css\jquery.js" />
+    <Content Include="Templets\xxbn\css\newdai.js" />
+    <Content Include="Templets\xxbn\css\olddai.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
