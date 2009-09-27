@@ -70,11 +70,11 @@ public partial class configuration_system_Genlist : Foosun.Web.UI.DialogPage
                 {
                     if (_tmpstr == 0)
                     {
-                        dt.Rows[k]["op"] = "<a class=\"helpstyle\" href=\"#\" onclick=\"ReturnValue('" + dt.Rows[k]["Cname"].ToString() + "');\">" + dt.Rows[k]["Cname"] + "</a>&nbsp;&nbsp;";
+                        dt.Rows[k]["op"] = "<a class=\"helpstyle SpecialFontFamily\" href=\"#\" onclick=\"ReturnValue('" + dt.Rows[k]["Cname"].ToString() + "');\">" + dt.Rows[k]["Cname"] + "</a>&nbsp;&nbsp;";
                     }
                     else
                     {
-                        dt.Rows[k]["op"] = "<a class=\"helpstyle\" href=\"#\" onclick=\"ReturnValue('" + dt.Rows[k]["Cname"].ToString() + "');\">" + dt.Rows[k]["Cname"] + "</a>&nbsp;&nbsp;";
+                        dt.Rows[k]["op"] = "<a class=\"helpstyle SpecialFontFamily\" href=\"#\" onclick=\"ReturnValue('" + dt.Rows[k]["Cname"].ToString() + "');\">" + dt.Rows[k]["Cname"] + "</a>&nbsp;&nbsp;";
                     }
                 }
             }
