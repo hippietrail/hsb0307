@@ -1207,7 +1207,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="ClassID"></param>
         public void del_recyleClass(string ClassID)
         {
-            string str_sql = "Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "DELETE FROM fs_news_Class_Map WHERE SiteClassId = '" + ClassID.ToString() + "'; Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
             updateClass_News(ClassID);
         }
@@ -1436,7 +1436,9 @@ namespace Foosun.SQLServerDAL
         /// <param name="ClassID"></param>
         public void delClassAll()
         {
-            string str_sql = "delete From " + Pre + "News_Class Where SiteID = '" + Foosun.Global.Current.SiteID + "'";
+
+
+            string str_sql = "delete From fs_news_Class_Map; delete From " + Pre + "News_Class Where SiteID = '" + Foosun.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 
             //string Sql2 = "Select TableName From " + Pre + "sys_newsIndex order by id desc";

@@ -260,6 +260,13 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                     news.ColumnId = rows[0]["SiteClassId"].ToString();
                     ClassID.Value = news.ColumnId;
                     ClassName.Text =  rd.getClassCName(news.ColumnId);
+
+                    if (ClassName.Text == "没选择栏目")
+                    {
+                        //
+                        lblJavaScript.Text = "<script type=\"text/javascript\">alert('从采编系统签入的新闻没有设置栏目，或者没有设置网站对应的栏目。');</script>";
+                    }
+
                 }
 
                 if (!String.IsNullOrEmpty(news.Attachment))
@@ -496,7 +503,7 @@ public partial class News_add : Foosun.Web.UI.ManagePage
         {
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                _STR += "<a href=\"javascript:addTags('" + dt.Rows[i]["Cname"].ToString() + "');AddMetaTags('" + dt.Rows[i]["Cname"].ToString() + "');\" class=\"helpstyle SpecialFontFamily\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;&nbsp;";
+                _STR += "<a href=\"javascript:addTags('" + dt.Rows[i]["Cname"].ToString() + "');AddMetaTags('" + dt.Rows[i]["Cname"].ToString() + "');\" class=\"helpstyle\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;&nbsp;";
             }
             dt.Clear(); dt.Dispose();
         }

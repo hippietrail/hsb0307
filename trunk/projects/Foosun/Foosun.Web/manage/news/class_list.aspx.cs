@@ -244,7 +244,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                     //dt.Rows[k]["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Acation=Add," + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目&#13;栏目模板：" + dt.Rows[k]["ClassTemplet"].ToString() + "&#13;内容模板：" + dt.Rows[k]["ReadNewsTemplet"].ToString() + "\">" + dt.Rows[k]["ClassCName"] + "[" + dt.Rows[k]["ClassEname"] + "]</a>";
                     //--wjl>
                     //<--lsd加了栏目对照
-                    dt.Rows[k]["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Acation=Add," + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目&#13;栏目模板：" + dt.Rows[k]["ClassTemplet"].ToString() + "&#13;内容模板：" + dt.Rows[k]["ReadNewsTemplet"].ToString() + "&#13;栏目名称对照：" + dt.Rows[k]["ClassCNameRefer"].ToString() + "\">" + dt.Rows[k]["ClassCName"] + "[" + dt.Rows[k]["ClassEname"] + "]</a>";
+                    dt.Rows[k]["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Acation=Add," + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目&#13;栏目模板：" + dt.Rows[k]["ClassTemplet"].ToString() + "&#13;内容模板：" + dt.Rows[k]["ReadNewsTemplet"].ToString() + "&#13;栏目名称对照：" + dt.Rows[k]["ClassCNameRefer"].ToString() + "\">" + dt.Rows[k]["ClassCName"] + "[" + dt.Rows[k]["ClassEname"] +"][" + dt.Rows[k]["ClassCNameRefer"] + "]</a>";
                     //--lsd>
                 }
                 if (dt.Rows[k]["IsURL"].ToString() == "1")
@@ -379,7 +379,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                     }
                     else
                     {
-                        row["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Acation=Add," + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目\">" + row["ClassCName"] + "[" + row["ClassEname"] + "]</a>";
+                        row["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Acation=Add," + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目\">" + row["ClassCName"] + "[" + row["ClassEname"] +"][" + row["ClassCNameRefer"] + "]</a>";
                       
                     }
                     if (row["IsURL"].ToString() == "1")
@@ -792,7 +792,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                 else
                 {
                     //时间：2008-07-22 title显示模板 修改者：吴静岚
-                    newsClassTable.Rows[k]["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Acation=Add," + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目&#13;栏目模板：" + newsClassTable.Rows[k]["ClassTemplet"].ToString() + "&#13;内容模板：" + newsClassTable.Rows[k]["ReadNewsTemplet"].ToString() + "&#13;栏目名称对照：" + newsClassTable.Rows[k]["ClassCNameRefer"].ToString() + "\">" + newsClassTable.Rows[k]["ClassCName"] + "[" + newsClassTable.Rows[k]["ClassEname"] + "]</a>";
+                    newsClassTable.Rows[k]["ClassCNames"] = "<a name='LinkClassTile' href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Acation=Add," + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\" title=\"点击修改栏目&#13;栏目模板：" + newsClassTable.Rows[k]["ClassTemplet"].ToString() + "&#13;内容模板：" + newsClassTable.Rows[k]["ReadNewsTemplet"].ToString() + "&#13;栏目名称对照：" + newsClassTable.Rows[k]["ClassCNameRefer"].ToString() + "\">" + newsClassTable.Rows[k]["ClassCName"] + "[" + newsClassTable.Rows[k]["ClassEname"] + "][" + newsClassTable.Rows[k]["ClassCNameRefer"] + "]</a>";
                     //--wjl>
                 }
                 if (newsClassTable.Rows[k]["IsURL"].ToString() == "1")

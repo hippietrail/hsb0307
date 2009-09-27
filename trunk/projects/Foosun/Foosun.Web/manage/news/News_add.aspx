@@ -1143,6 +1143,7 @@ function selectType()
 //    }
     
     </script>
+    <asp:Literal ID="lblJavaScript" EnableViewState="false" runat="server"></asp:Literal>
 </body>
 </html>
 
