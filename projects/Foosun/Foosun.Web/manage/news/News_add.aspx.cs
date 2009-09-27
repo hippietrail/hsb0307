@@ -97,8 +97,17 @@ public partial class News_add : Foosun.Web.UI.ManagePage
             #region 加载服务上所有字体
             FontFamily[] ff = FontFamily.Families;
             foreach (FontFamily family in ff)
-            { this.PageFontFamily.Items.Add(new ListItem(family.Name.ToString())); }
+            {
+                if (family.Name.ToLower() != "aharoni")
+                {
+                    this.PageFontFamily.Items.Add(new ListItem(family.Name.ToString()));
+                }
+            }
             this.PageFontFamily.DataBind();
+            //if (PageFontFamily.Items.FindByText("Arial") != null)
+            //{
+            //    PageFontFamily.Items.FindByText("Arial").Selected = true;
+            //}
             #endregion
 
             #region 如何获得系统字体样式

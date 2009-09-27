@@ -882,7 +882,7 @@ function selectType()
                             background-color: #<%= Imagesbgcolor.Value%>;" title="选取图片前景色" onclick="GetColor(this,'Imagesbgcolor');" />
                         <br />
                         自定义标题:
-                        <asp:TextBox ID="topFontInfo" runat="server" Width="40%" CssClass="form"></asp:TextBox>
+                        <asp:TextBox ID="topFontInfo" runat="server" Width="40%" CssClass="form SpecialFontFamily"></asp:TextBox>
                         <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle',this)">
                             帮助</span>
                         <asp:HiddenField ID="tl_SavePath" runat="server" />
