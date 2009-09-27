@@ -1,12 +1,12 @@
 
 @font-face 
 {
-	font-family:HGTAIWH00; src:url("/fonts/DBFNT1.eot");  font-style:normal;}	
+	font-family:HGTAIWH00; src:url("/fonts/HGTAIWH1.eot");  font-style:normal;}	
 BODY 
 {
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/index_bg.gif) #deebf3 repeat-x;
-	font-family:HG_TaiTham_WHD, Arial, '新宋体', sans-serif ;
+	font-family:HGTAIWH00, Arial, '新宋体', sans-serif ;
 	font-size:24px;LINE-HEIGHT: 32px;
 	color:#365aa0;
 }
