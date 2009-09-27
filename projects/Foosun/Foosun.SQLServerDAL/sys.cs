@@ -179,8 +179,27 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void insertGeneral(string _Sel_Type, string _Name, string _LinkUrl, string _Email)
         {
-            string Sql = "Insert Into " + Pre + "news_Gen(gType,Cname,URL,EmailURL,SiteID) Values(" + _Sel_Type + ",'" + _Name + "','" + _LinkUrl + "','" + _Email + "','" + Foosun.Global.Current.SiteID + "')";
-            DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
+            //string Sql = "Insert Into " + Pre + "news_Gen(gType,Cname,URL,EmailURL,SiteID) Values(" + _Sel_Type + ",'" + _Name + "','" + _LinkUrl + "','" + _Email + "','" + Foosun.Global.Current.SiteID + "')";
+            //DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into fs_news_Gen(");
+            strSql.Append("Cname,gType,URL,EmailURL,SiteID)");
+            strSql.Append(" values (");
+            strSql.Append("@Cname,@gType,@URL,@EmailURL,@SiteID)");
+            string Sql = strSql.ToString();
+            SqlParameter[] parameters = {
+					new SqlParameter("@Cname", SqlDbType.NVarChar,100),
+					new SqlParameter("@gType", SqlDbType.TinyInt,1),
+					new SqlParameter("@URL", SqlDbType.NVarChar,200),
+					new SqlParameter("@EmailURL", SqlDbType.NVarChar,200),
+				    new SqlParameter("@SiteID", SqlDbType.NVarChar,12)};
+            parameters[0].Value = _Name;
+            parameters[1].Value = _Sel_Type;
+            parameters[2].Value = _LinkUrl;
+            parameters[3].Value = _Email;
+            parameters[4].Value = Foosun.Global.Current.SiteID;
+            DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parameters);
+
         }
 
         /// <summary>

@@ -45,7 +45,7 @@
     </tr>
     <tr id="Tr_Url" class="TR_BG_list" style="display:none">
       <td height="-5"  align="Left" style="width: 11%"  class="list_link">链接地址</td>
-      <td align="Left" class="list_link" height="-5"><asp:TextBox ID="Txt_LinkUrl" MaxLength="50"  runat="server" CssClass="form"/>
+      <td align="Left" class="list_link" height="-5"><asp:TextBox ID="Txt_LinkUrl" MaxLength="50"  runat="server" CssClass="form SpecialFontFamily"/>
         <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_GenUrl_0001',this)">帮助</span></td>
     </tr>
     <tr id="Tr_Email" class="TR_BG_list" style="display:none">
