@@ -1629,31 +1629,25 @@ namespace Foosun.SQLServerDAL
         #endregion 栏目
 
         #region 新闻列表
-        /// <summary>
-        /// 新闻列表
-        /// </summary>
-        /// <param name="SpecialID">专题编号</param>
-        /// <param name="Editor">作者</param>
-        /// <param name="NewsDbTbs">表名</param>
-        /// <param name="ClassID">栏目</param>
-        /// <param name="sKeywrd">关键字</param>
-        /// <param name="DdlKwdType">关键字类型</param>
-        /// <param name="sChooses">提交的类型</param>
-        /// <param name="SiteID">站点</param>
-        /// <param name="TablePrefix">表扩展名</param>
-        /// <param name="PageIndex">每页数量</param>
-        /// <param name="PageSize">每页数量</param>
-        /// <param name="RecordCount">总记录数</param>
-        /// <param name="PageCount"></param>
-        /// <param name="SqlCondition">SQL</param>
-        /// <returns>返回DataTable</returns>
-        public DataTable GetPage(string SpecialID, string Editor, string ClassID, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
+
+        public DataTable GetPage(string SpecialID, string Editor, string ClassID, DateTime? startDate, DateTime? endDate, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
         {
             string sFilter = " where a.isRecyle=0";
             if (ClassID != null && ClassID != "")
                 sFilter += " and a.ClassID='" + ClassID + "'";
             if (SpecialID != null && SpecialID != "")
                 sFilter += " and a.NewsID In (Select NewsID From " + Pre + "special_news Where SpecialID='" + SpecialID + "') ";
+
+            // 2009-09-27 husb
+            if (startDate != null)
+            {
+                sFilter += " AND a.CreatTime >= '" + startDate.Value.ToString("yyyy-MM-dd") + " 00:00:00.000' ";
+            }
+            if (endDate != null)
+            {
+                sFilter += " AND a.CreatTime < '" + endDate.Value.AddDays(1).ToString("yyyy-MM-dd") + " 00:00:00.000' ";
+            }
+
             string sKeywrds = sKeywrd;
             if (sKeywrds != "" && sKeywrds != null)
             {
@@ -1761,6 +1755,148 @@ namespace Foosun.SQLServerDAL
             string OrderFields = "order by a.OrderID desc,a.Id desc";
             return DbHelper.ExecutePage(AllFields, Condition, IndexField, OrderFields, PageIndex, PageSize, out RecordCount, out PageCount, null);
         }
+
+
+
+        /// <summary>
+        /// 新闻列表
+        /// </summary>
+        /// <param name="SpecialID">专题编号</param>
+        /// <param name="Editor">作者</param>
+        /// <param name="NewsDbTbs">表名</param>
+        /// <param name="ClassID">栏目</param>
+        /// <param name="sKeywrd">关键字</param>
+        /// <param name="DdlKwdType">关键字类型</param>
+        /// <param name="sChooses">提交的类型</param>
+        /// <param name="SiteID">站点</param>
+        /// <param name="TablePrefix">表扩展名</param>
+        /// <param name="PageIndex">每页数量</param>
+        /// <param name="PageSize">每页数量</param>
+        /// <param name="RecordCount">总记录数</param>
+        /// <param name="PageCount"></param>
+        /// <param name="SqlCondition">SQL</param>
+        /// <returns>返回DataTable</returns>
+        public DataTable GetPage(string SpecialID, string Editor, string ClassID, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
+        {
+            return GetPage(SpecialID, Editor, ClassID, null, null, sKeywrd, DdlKwdType, sChooses, SiteID, PageIndex, PageSize, out RecordCount, out PageCount, SqlCondition);
+
+            #region
+            //string sFilter = " where a.isRecyle=0";
+            //if (ClassID != null && ClassID != "")
+            //    sFilter += " and a.ClassID='" + ClassID + "'";
+            //if (SpecialID != null && SpecialID != "")
+            //    sFilter += " and a.NewsID In (Select NewsID From " + Pre + "special_news Where SpecialID='" + SpecialID + "') ";
+            //string sKeywrds = sKeywrd;
+            //if (sKeywrds != "" && sKeywrds != null)
+            //{
+            //    switch (DdlKwdType)
+            //    {
+            //        case "content":
+            //            sFilter += " and Content like N'%" + sKeywrds + "%' collate CHINESE_PRC_BIN";
+            //            break;
+            //        case "author":
+            //            sFilter += " and Author like N'%" + sKeywrds + "%' collate CHINESE_PRC_BIN";
+            //            break;
+            //        case "editor":
+            //            sFilter += " and NewsTitle like N'%" + sKeywrds + "%' collate CHINESE_PRC_BIN";
+            //            break;
+            //        default:
+            //            sFilter += " and NewsTitle like N'%" + sKeywrds + "%' collate CHINESE_PRC_BIN";
+            //            break;
+            //    }
+            //}
+            //string sChoose = sChooses;
+            //switch (sChoose)
+            //{
+            //    case "Auditing":
+            //        sFilter += " and (CheckStat is null or CheckStat='0|0|0|0' or CheckStat='1|0|0|0' or  CheckStat='2|0|0|0' or  CheckStat='3|0|0|0')";
+            //        break;
+            //    case "UnAuditing":
+            //        sFilter += " and (CheckStat<>'0|0|0|0' and CheckStat<>'1|0|0|0' and CheckStat<>'2|0|0|0' and CheckStat<>'3|0|0|0' and CheckStat is not null)";
+            //        break;
+            //    case "All":
+            //        break;
+            //    case "Contribute":
+            //        sFilter += " and a.isConstr=1";
+            //        break;
+            //    case "Commend":
+            //        sFilter += " and SUBSTRING(NewsProperty,1,1)='1'";
+            //        break;
+            //    case "Lock":
+            //        sFilter += " and a.isLock=1";
+            //        break;
+            //    case "UnLock":
+            //        sFilter += " and a.isLock=0";
+            //        break;
+            //    case "Top":
+            //        sFilter += " and a.OrderID=10";
+            //        break;
+            //    case "Hot":
+            //        sFilter += " and SUBSTRING(NewsProperty,5,1)='1'";
+            //        break;
+            //    case "Splendid":
+            //        sFilter += " and SUBSTRING(NewsProperty,15,1)='1'";
+            //        break;
+            //    case "Headline":
+            //        sFilter += " and SUBSTRING(NewsProperty,9,1)='1'";
+            //        break;
+            //    case "Slide":
+            //        sFilter += " and SUBSTRING(NewsProperty,7,1)='1'";
+            //        break;
+            //    case "my":
+            //        sFilter += " and Editor='" + Foosun.Global.Current.UserName + "'";
+            //        break;
+            //    case "isHtml":
+            //        sFilter += " and a.isHtml=1";
+            //        break;
+            //    case "unisHtml":
+            //        sFilter += " and a.isHtml=0";
+            //        break;
+            //    case "discuzz":
+            //        sFilter += " and a.DiscussTF=1";
+            //        break;
+            //    case "commat":
+            //        sFilter += " and a.CommTF=1";
+            //        break;
+            //    case "voteTF":
+            //        sFilter += " and a.VoteTF=1";
+            //        break;
+            //    case "contentPicTF":
+            //        sFilter += " and a.ContentPicTF=1";
+            //        break;
+            //    case "POPTF":
+            //        sFilter += " and a.isDelPoint!=0";
+            //        break;
+            //    case "Pic":
+            //        sFilter += " and a.NewsType=1";
+            //        break;
+            //    case "FilesURL":
+            //        sFilter += " and a.isFiles=1";
+            //        break;
+            //}
+            //if (SiteID != "" && SiteID != null)
+            //{
+            //    sFilter += " and a.SiteID='" + SiteID + "'";
+            //}
+            //else
+            //{
+            //    sFilter += " and a.SiteID='" + Foosun.Global.Current.SiteID + "'";
+            //}
+
+            //if (Editor != "")
+            //{
+            //    sFilter += " and a.Editor='" + Editor + "'";
+            //}
+            //string AllFields = "a.Id,a.NewsID,a.NewsType,a.TitleColor,a.TitleITF,a.TitleBTF,a.Author,a.DataLib,a.OrderID,a.NewsTitle,a.NewsTitleRefer,a.ishtml,a.Editor,a.Click,a.isConstr,a.ClassID,a.isLock,a.NewsProperty,a.CheckStat,a.URLaddress,b.UserName,c.ClassCName";
+            //string Condition = Pre + "News a left join " + Pre + "sys_User b on a.Editor=b.UserName left join " + Pre + "News_Class c on a.ClassID=c.ClassID " + sFilter;
+            //string IndexField = "a.Id";
+            //string OrderFields = "order by a.OrderID desc,a.Id desc";
+            //return DbHelper.ExecutePage(AllFields, Condition, IndexField, OrderFields, PageIndex, PageSize, out RecordCount, out PageCount, null);
+            #endregion
+        }
+
+
+        
         /// <summary>
         /// 得到站点列表
         /// </summary>
