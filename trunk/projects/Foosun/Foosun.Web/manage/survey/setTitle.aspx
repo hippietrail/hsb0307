@@ -117,7 +117,7 @@
     </tr>
     <tr class="TR_BG_list">
       <td align="right"  class="list_link" style="width: 171px"> 调查主题：</td>
-      <td  align="left" class="list_link"><asp:TextBox ID="Title" runat="server" Width="124px" CssClass="form"/>
+      <td  align="left" class="list_link"><asp:TextBox ID="Title" runat="server" Width="124px" CssClass="form SpecialFontFamily"/>
         <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_surveytitle_0002',this)">帮助</span></td>
     </tr>
     <tr class="TR_BG_list">

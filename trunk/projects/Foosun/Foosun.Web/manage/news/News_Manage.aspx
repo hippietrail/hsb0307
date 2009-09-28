@@ -174,15 +174,14 @@ function checkValidation()
         return false;
     if(clickNumber.value.length > 0)
     {
-        var dd =  /^d+$/.test(clickNumber.value);
-        if(dd)
+        var  newPar = /^\d+(\.\d+)?$/;
+        var dd = newPar.test(clickNumber.value);
+        if(!dd)
         {
-        return false;
+            alert(' 请填写正确的点击数！');
         }
-        else
-        {
-        return true;
-        }
+        return dd;
+        
     }
     return false;
 }
