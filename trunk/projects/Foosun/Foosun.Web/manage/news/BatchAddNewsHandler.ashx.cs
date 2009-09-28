@@ -54,6 +54,11 @@ namespace Foosun.Web.manageXXBN.news
                         continue;
                     }
 
+                    if (string.IsNullOrEmpty(news.Content) || news.Content.Length < "&nbsp;&nbsp;&nbsp;&nbsp;".Length + 3)
+                    {
+                        continue;
+                    }
+
                     DataRow[] rows = dtColumnMap.Select("CpClassName = '" + news.Column +"'" + " AND Media = '" + news.Media + "'");
                     if (rows.Length == 0)
                     {
@@ -140,7 +145,7 @@ namespace Foosun.Web.manageXXBN.news
             }
             else
             {
-                context.Response.Write("您选中的文档没有标题，或者栏目不合适。如果您还没有设置与采编系统的栏目对应关系，请先设置。");
+                context.Response.Write("您选中的文档没有标题，或者栏目不合适，也可能是新闻没有内容。如果您还没有设置与采编系统的栏目对应关系，请先设置。");
                 context.Response.End();
             }
 

@@ -494,7 +494,12 @@ function selectType()
             {
                 TTClick1(isHeadline);
             }
-        }, 0);
+            var isPicture = document.getElementById('at1RandButton');
+            if(isPicture && isPicture.checked)
+            {
+                ShowLink('pic');
+            }
+        }, 100);
 }
     </script>
 </head>
