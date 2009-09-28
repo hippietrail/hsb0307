@@ -611,7 +611,7 @@ function closediv()
     </asp:Repeater>
     
 <table width="98%" border="0" align="center" cellpadding="3" cellspacing="2" style="height: 20px">
-<tr><td align="left"> 新闻搜索:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<tr><td align="left" width="70%">新闻搜索: 
          栏目:<asp:TextBox ID="keyWorks" runat="server"  CssClass="SpecialFontFamily" onclick="selectFile('newsclass',new Array(document.form1.HiddenField_classId,document.form1.keyWorks),300,500);document.form1.keyWorks.focus();" Width="141px"></asp:TextBox>
               <asp:HiddenField ID="HiddenField_classId" runat="server" />
         关键字:<asp:TextBox runat="server" ID="TxtKeywords" size="15"  CssClass="SpecialFontFamily"/>
@@ -628,8 +628,8 @@ function closediv()
      <td align="right"></td>
 </tr>
 <tr>
-       <td align="left">&nbsp;&nbsp;　　　　　日期从<asp:TextBox runat="server" ID="txtStartDate" onclick="WdatePicker();"  /> 到 <asp:TextBox runat="server" ID="txtEndDate" onclick="WdatePicker();"  /> 
-            <asp:Button runat="server" ID="BtnSearch" Text=" 搜索 " CssClass="form" OnClick="BtnSearch_Click"/>
+       <td align="left" width="70%"><div style="margin-left:50px;">日期从<asp:TextBox runat="server" ID="txtStartDate" onclick="WdatePicker();" Width="140px"  />  &nbsp;&nbsp;&nbsp;&nbsp;到 &nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox runat="server" ID="txtEndDate" onclick="WdatePicker();"  Width="150px" /> &nbsp;&nbsp;
+            <asp:Button runat="server" ID="BtnSearch" Text=" 搜 索 "    CssClass="form" OnClick="BtnSearch_Click"/></div>
         </td>
         <td align="right"></td>
  </tr>
