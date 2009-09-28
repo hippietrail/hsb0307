@@ -499,6 +499,14 @@ function selectType()
             {
                 ShowLink('pic');
             }
+            
+            var leadin = document.getElementById('naviContent');
+            if(leadin.innerText && leadin.innerText.length > 0)
+            {
+                var chkLeadin = document.getElementById('naviContentTF');
+                chkLeadin.checked = true;
+                NaviClick(chkLeadin);
+            }
         }, 100);
 }
     </script>

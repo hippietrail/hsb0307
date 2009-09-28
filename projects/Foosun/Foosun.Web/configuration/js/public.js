@@ -82,7 +82,14 @@ function overColor(Obj)
 	var elements=Obj.childNodes;
 	for(var i=0;i<elements.length;i++)
 	{
-		elements[i].className="TR_BG"
+	    if(elements[i].className.indexOf("SpecialFontFamily") > -1)
+	    {
+	        elements[i].className="TR_BG SpecialFontFamily";
+	    }
+	    else
+	    {
+		    elements[i].className="TR_BG"
+		}
 		Obj.bgColor="";//颜色要改
 	}
 	
@@ -92,7 +99,14 @@ function outColor(Obj)
 	var elements=Obj.childNodes;
 	for(var i=0;i<elements.length;i++)
 	{
-		elements[i].className="TR_BG_list";
+	    if(elements[i].className.indexOf("SpecialFontFamily") > -1)
+	    {
+	        elements[i].className="TR_BG_list SpecialFontFamily";
+	    }
+	    else
+	    {
+		    elements[i].className="TR_BG_list";
+		}
 		Obj.bgColor="";
 	}
 }
