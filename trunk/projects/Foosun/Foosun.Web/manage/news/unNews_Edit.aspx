@@ -199,7 +199,7 @@ function UnNewPreview(){
 		    PreviewRowStr=FindFlag.split(",");
 		    for (var j=0;j<PreviewRowStr.length;j++)
 		    {
-		        For_string="<a class=\"list_link\" href=\""+UnNewArray[PreviewRowStr[j]][2]+"\" onclick=\"return false;\">"+UnNewArray[PreviewRowStr[j]][2]+"</a>";
+		        For_string="<a class=\"list_link SpecialFontFamily\" style=\"font-size:16pt;\" href=\""+UnNewArray[PreviewRowStr[j]][2]+"\" onclick=\"return false;\">"+UnNewArray[PreviewRowStr[j]][2]+"</a>";
 			    if (j==0)
 			    {
 				    PreviewStr+=For_string;
