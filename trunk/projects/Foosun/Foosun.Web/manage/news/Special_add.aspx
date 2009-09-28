@@ -100,7 +100,7 @@
     </tr>
     <tr class="TR_BG_list">
       <td align="center" class="navi_link" style="width: 13%">专题导航文字</td>
-      <td colspan="2" align="left"><asp:TextBox ID="S_Text" runat="server" CssClass="form" Width="360px" TextMode="MultiLine" Height="100px"></asp:TextBox>
+      <td colspan="2" align="left"><asp:TextBox ID="S_Text" runat="server" CssClass="form SpecialFontFamily" Width="360px" TextMode="MultiLine" Height="100px"></asp:TextBox>
         <span class="helpstyle" style="cursor:help;" title="点击显示帮助" onclick="Help('H_SpecialAdd_011',this)">帮助</span></td>
     </tr>
     <tr class="TR_BG_list">
@@ -111,7 +111,7 @@
     </tr>
     <tr class="TR_BG_list">
       <td align="center" class="navi_link" style="width: 13%">专题页面导航</td>
-      <td colspan="2" align="left"><asp:TextBox ID="S_Page" runat="server" CssClass="form"  TextMode="MultiLine" Width="360px" Height="100px"></asp:TextBox>
+      <td colspan="2" align="left"><asp:TextBox ID="S_Page" runat="server" CssClass="form SpecialFontFamily"  TextMode="MultiLine" Width="360px" Height="100px"></asp:TextBox>
         <span class="helpstyle" style="cursor:help;" title="点击显示帮助" onclick="Help('H_SpecialAdd_013',this)">帮助</span></td>
     </tr>
     <tr class="TR_BG_list">

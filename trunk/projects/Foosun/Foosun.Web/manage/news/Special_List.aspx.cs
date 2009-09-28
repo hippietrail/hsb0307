@@ -159,7 +159,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览子专题\" /></a>" +
                                    "<input type=\"checkbox\" value=\"'" + dt.Rows[k]["SpecialID"] + "'\" id=\"S_ID\" name=\"S_ID\" />";
                 strchar += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
-                strchar += "<td align=\"left\" valign=\"middle\" title=\"专题ID：" + dt.Rows[k]["SpecialID"] + "\">" + dt.Rows[k]["SpecialCName"] + "</td>";
+                strchar += "<td align=\"left\" valign=\"middle\" class=\"SpecialFontFamily\" title=\"专题ID：" + dt.Rows[k]["SpecialID"] + "\">" + dt.Rows[k]["SpecialCName"] + "</td>";
                 strchar += "<td align=\"left\" valign=\"middle\" >" + dt.Rows[k]["CreatTime"] + "</td>";
                 if (dt.Rows[k]["isLock"].ToString() == "1")
                     dt.Rows[k]["Lock"] = "<font color=\"red\">锁定</a>";
