@@ -130,7 +130,7 @@ namespace Foosun.CMS
             int getnumber = 50;
             int getType = 0;
             string updatePeri = "60";
-            string website = "www.foosun.net";
+            string website = "www.hgzp.com";
             string webmaster = "service@foosun.cn";
             StreamWriter sw = null;
             if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }

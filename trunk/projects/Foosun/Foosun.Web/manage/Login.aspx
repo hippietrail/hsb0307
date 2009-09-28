@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Copyright" content="www.foosun.net" />
+<meta name="Copyright" content="www.hgzp.com" />
 <title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> </title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 

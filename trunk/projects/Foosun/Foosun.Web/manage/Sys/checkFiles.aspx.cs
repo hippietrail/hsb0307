@@ -29,7 +29,7 @@ public partial class manage_Sys_checkFiles : Foosun.Web.UI.ManagePage
             this.PnlResult.Visible = false;
             this.PnlStart.Visible = true;
             copyright.InnerHtml = CopyRight;            //获取版权信息
-            ReloadURL = "http://passport.foosun.net/libary/dotnetcms/loadcheck/down.aspx?type=download";
+            ReloadURL = "http://passport.hgzp.com/libary/dotnetcms/loadcheck/down.aspx?type=download";
         }
     }
     /// <summary>

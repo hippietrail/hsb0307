@@ -26,7 +26,7 @@ namespace Foosun.CMS.Common
     {
         private int _width;
         private int _height;
-        private string _title = "www.foosun.net";    //文字标题
+        private string _title = "www.hgzp.com";    //文字标题
         private Color _bgcolor = Color.White;
         private int _fontsize = 14;  //字号
         private string _familyname = "仿宋";   //字体

@@ -277,7 +277,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public string getgPointName()
         {
-            string gflg = "风讯币";
+            string gflg = "风币";
             string Sql = "Select GpointName From " + Pre + "sys_PramUser";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
@@ -296,7 +296,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         public string siteName()
         {
-            string gflg = "风讯网站内容管理系统";
+            string gflg = "华光迅捷网站内容管理系统";
             string Sql = "Select SiteName From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
@@ -316,7 +316,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public string siteCopyRight()
         {
-            string gflg = "(c)2007 Foosun Inc. by dotNETCMS 1.0";
+            string gflg = "(c)2007 webfastcms 1.0";
             string Sql = "Select CopyRight From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
@@ -423,7 +423,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public string SiteEmail()
         {
-            string gflg = "service@foosun.cn";
+            string gflg = "service@hgzp.cn";
             string Sql = "Select Email From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
