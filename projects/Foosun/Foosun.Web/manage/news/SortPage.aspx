@@ -46,7 +46,7 @@
                 <td>
                     <asp:Label ID="ExprText" runat="server"></asp:Label>
                     <asp:DropDownList ID="TargetClassID" runat="server"  Width="200px"  CssClass="SpecialFontFamily">
-                    <asp:ListItem Value="0">根栏目</asp:ListItem>
+                    <%--<asp:ListItem Value="0">根栏目</asp:ListItem>--%>
                     </asp:DropDownList></td>
               </tr>
               <tr>
