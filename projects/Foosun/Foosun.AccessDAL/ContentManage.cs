@@ -3313,5 +3313,15 @@ namespace Foosun.AccessDAL
         }
 
         #endregion
+
+        #region IContentManage Members
+
+
+        public DataTable GetPage(string SpecialID, string Editor, string ClassID, DateTime? startDate, DateTime? endDate, string sKeywrd, string DdlKwdType, string sChooses, string SiteID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+
+        #endregion
     }
 }
