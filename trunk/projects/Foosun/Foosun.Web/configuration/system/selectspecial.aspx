@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
+<head>
 <title>选择专题__By Foosun.net & Foosun Inc.</title>
 <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
     <div align="center">
-        <select id="Special" name="Special" style="width:250px;height:150px"  runat="server" class="form" multiple></select>
+        <select id="Special" name="Special" style="width:250px;height:150px;"  runat="server" class="SpecialFontFamily" multiple></select>
     </div>
     <div align="center"><input type="button" value=" 选定" class="form" onclick="javascript:ReturnValue()" /> <span style="font-size:12px;">(可以多选)</span></div>
     </form>

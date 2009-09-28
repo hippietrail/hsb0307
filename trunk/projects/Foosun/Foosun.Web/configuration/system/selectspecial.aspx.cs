@@ -50,11 +50,14 @@ namespace Foosun.Web.configuration.system
                     ListItem itm = new ListItem();
                     itm.Value = r[0].ToString() + "|" + r[1].ToString();
                     itm.Text = strText + r[1].ToString();
+                    
                     list.Items.Add(itm);
                     if (r[0].ToString() != "0")
                         listShow(tempdt, r[0].ToString(), Layer + 1, list);
                 }
             }
+            list.Attributes.Add("ondblclick ", "ReturnValue()");
+            //list.Attributes.Add("class", "SpecialFontFamily");
         }
     }
 }
