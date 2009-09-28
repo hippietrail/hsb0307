@@ -116,18 +116,18 @@
 		            </tr>
 		            <tr>
 			            <td>标　签：
-			            <asp:TextBox ID="Tags" runat="server" MaxLength="100" Width="40%" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif" alt="选择已有标签" border="0" style="cursor:pointer;" onclick="selectFile('Tag',document.Form1.Tags,220,480);document.Form1.Tags.focus();" />
+			            <asp:TextBox ID="Tags" runat="server" MaxLength="100" Width="40%" CssClass="form SpecialFontFamily"></asp:TextBox><img src="../../sysImages/folder/s.gif" alt="选择已有标签" border="0" style="cursor:pointer;" onclick="selectFile('Tag',document.Form1.Tags,220,480);document.Form1.Tags.focus();" />
                             <asp:Button ID="Button5" runat="server" OnClick="tag_click" Text="设置TAG标签" /></td>
 		            </tr>
 		            <tr>
 			            <td>点击数：
 			                <asp:TextBox ID="Click" Width="40%" runat="server" CssClass="form"/>
-                            <asp:Button ID="Button6" runat="server" OnClick="click_click" Text="设置点击" /></td>
+                            <asp:Button ID="Button6" runat="server" OnClick="click_click" Text="设置点击" OnClientClick= "  return checkValidation();" /></td>
 		            </tr>
 		            <tr>
 			            <td>
                             来　源：
-                            <asp:TextBox ID="Souce" runat="server"  Width="40%" MaxLength="100" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif" alt="选择已有来源" border="0" style="cursor:pointer;" onclick="selectFile('Souce',document.Form1.Souce,220,450);document.Form1.Souce.focus();" />
+                            <asp:TextBox ID="Souce" runat="server"  Width="40%" MaxLength="100" CssClass="form SpecialFontFamily"></asp:TextBox><img src="../../sysImages/folder/s.gif" alt="选择已有来源" border="0" style="cursor:pointer;" onclick="selectFile('Souce',document.Form1.Souce,220,450);document.Form1.Souce.focus();" />
                             <asp:Button ID="Button7" runat="server" OnClick="source_click" Text="设置来源" /></td>
 		            </tr>
 		            <tr>
@@ -164,5 +164,31 @@
 </table>
 </div>
 </form>
+
+<script type="text/javascript">
+<!--
+function checkValidation()
+{
+    var clickNumber = document.getElementById('Click');
+    if(clickNumber.value.length == 0)
+        return false;
+    if(clickNumber.value.length > 0)
+    {
+        var dd =  /^d+$/.test(clickNumber.value);
+        if(dd)
+        {
+        return false;
+        }
+        else
+        {
+        return true;
+        }
+    }
+    return false;
+}
+
+// -->
+</script>
+
 </body>
 </html>
