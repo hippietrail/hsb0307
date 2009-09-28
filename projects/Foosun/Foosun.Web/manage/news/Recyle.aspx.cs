@@ -135,10 +135,10 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
         string str_TempStr = "<table width=\"100%\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\" class=\"Navitable\" align=\"center\">\r";
         str_TempStr += "<tr>\r";
         str_TempStr += "<td style=\"padding-right:15px;\" align=\"right\">\r";
-        str_TempStr += "<a href=\"javascript: if(dataRows > 3) { RAll('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">全部恢复</a>&nbsp;┊&nbsp;\r";
-        str_TempStr += "<a href=\"javascript: if(dataRows > 3) { DAll('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">全部删除</a>&nbsp;┊&nbsp;\r";
-        str_TempStr += "<a href=\"javascript: if(dataRows > 3) { PR('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">批量恢复</a>&nbsp;┊&nbsp;\r";
-        str_TempStr += "<a href=\"javascript: if(dataRows > 3) { PD('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">批量删除</a> \r";
+        str_TempStr += "<a href=\"javascript: if(dataRows > 2) { RAll('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">全部恢复</a>&nbsp;┊&nbsp;\r";
+        str_TempStr += "<a href=\"javascript: if(dataRows > 2) { DAll('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">全部删除</a>&nbsp;┊&nbsp;\r";
+        str_TempStr += "<a href=\"javascript: if(dataRows > 2) { PR('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">批量恢复</a>&nbsp;┊&nbsp;\r";
+        str_TempStr += "<a href=\"javascript: if(dataRows > 2) { PD('" + type + "');} else { alert('没有数据'); }\" class=\"list_link\">批量删除</a> \r";
         
         Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
         if (type == "NList")
