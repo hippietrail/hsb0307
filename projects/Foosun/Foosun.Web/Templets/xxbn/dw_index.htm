@@ -15,7 +15,8 @@
                     SDmodel.sd(["mm01", "mm02"], ["cc01", "cc02"], "active", "normal");
                     SDmodel.sd(["mmm01", "mmm02"], ["ccc01", "ccc02"], "active", "normal");
                    // SDmodel.sd(["mmmm01"],["cccc01"], "active", "normal");
-        
+                   
+                   BodyOnLoad();
                }
     </script>
     <script type="text/javascript" src="/Templets/xxbn/css/jquery.js"></script>
@@ -120,7 +121,7 @@
     });
 </script>
 </head>
-<body onload="BodyOnLoad();">
+<body>
     <div class="wrap">
         <div class="top">
              <div class="logo">
@@ -348,9 +349,7 @@
                 <div class="title">
                     <div class="title_left">广告区</div>
                 </div>
-                <div class="ad_left">
-                     <img src="/files/ad/guanggao01.gif" />
-                    </div>
+                <div class="ad_left">{FS_左侧广告2}<!--<img src="/files/ad/guanggao01.gif" />--></div>
             </div>
             <div class="area_center1">
                 <div class="title">
