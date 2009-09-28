@@ -15,7 +15,7 @@
     <tr>
       <td style="height: 55px;width:10%;"></td>
       <td style="height: 55px;width:40%;">&nbsp;</td>
-      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.foosun.net" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.foosun.net">技术论坛</a>&nbsp;┊&nbsp;<a href="http://www.newsCMS.com">NewsCMS</a>&nbsp;┊&nbsp;<a href="http://www.NewsIDC.com" title="专用虚拟主机" target="_blank">资讯数据(IDC)</a>&nbsp;┊&nbsp;<a href="http://help.foosun.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.foosun.net" target="_blank">开发者中心</a></div></td>
+      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hgzp.com" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.foosun.net">技术论坛</a>&nbsp;┊&nbsp;<a href="http://www.newsCMS.com">NewsCMS</a>&nbsp;┊&nbsp;<a href="http://www.NewsIDC.com" title="专用虚拟主机" target="_blank">资讯数据(IDC)</a>&nbsp;┊&nbsp;<a href="http://help.foosun.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.foosun.net" target="_blank">开发者中心</a></div></td>
     </tr>
   </table>
 

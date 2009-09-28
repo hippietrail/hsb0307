@@ -21,7 +21,7 @@ a:hover{
 <form id="form1" runat = "Server">
     <table border="0" cellpadding="2" align="center" class="2" style="width:70%;">
     <tr>
-        <td style="width:30%;"><a href="http://www.foosun.net" target="_blank"><img src="../sysImages/user/userlogo.gif" border="0" /></a></td>
+        <td style="width:30%;"><a href="http://www.hgzp.com" target="_blank"><img src="../sysImages/user/userlogo.gif" border="0" /></a></td>
         <td style="width:50%;">此处插入您的广告</td>
         <td style="width:20%;"><a href="login.aspx" class="list_link">登陆</a>&nbsp;┊&nbsp;<a href="Register.aspx" class="list_link">注册</a>&nbsp;┊&nbsp;<a href="javascript:void(0);" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('<%Response.Write(fURL); %>');" style="cursor:pointer;" class="list_link"><span style="color:Red">设为首页</span></a></td>
     </tr>

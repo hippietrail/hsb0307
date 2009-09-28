@@ -31,7 +31,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            ReloadURL = "http://passport.foosun.net/libary/dotnetcms/reloadlabel/label.aspx?type=reload";
+            ReloadURL = "http://passport.hgzp.net/libary/dotnetcms/reloadlabel/label.aspx?type=reload";
             if (Foosun.Global.Current.SiteID == "0")
             {
                 string getSiteID = Request.QueryString["SiteID"];
