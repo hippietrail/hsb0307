@@ -4629,6 +4629,7 @@
     <Folder Include="files\RemoteFiles\" />
     <Folder Include="files\shortPictures\" />
     <Folder Include="files\siteFiles\" />
+    <Folder Include="files\TempletPictures\" />
     <Folder Include="files\topline\" />
     <Folder Include="history\2009610\" />
     <Folder Include="html\xxbn\" />
