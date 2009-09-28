@@ -233,7 +233,7 @@
           <tr id="ClssStyle_26" class="TR_BG_list">
             <td align="right" >栏目导航说明：</td>
             <td>
-                &nbsp;<asp:TextBox ID="fontText" runat="server" Height="50px" TextMode="MultiLine"  Width="40%" CssClass="form"></asp:TextBox> <span class="helpstyle" style="cursor:hand;" title="点击查看帮助" onclick="Help('Class_Aspx_27',this)">帮助</span>
+                &nbsp;<asp:TextBox ID="fontText" runat="server" Height="50px" TextMode="MultiLine"  Width="40%" CssClass="form SpecialFontFamily"></asp:TextBox> <span class="helpstyle" style="cursor:hand;" title="点击查看帮助" onclick="Help('Class_Aspx_27',this)">帮助</span>
                 </td>
           </tr>
           <tr id="ClssStyle_27" class="TR_BG_list">
