@@ -1751,7 +1751,7 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                 //System.IO.File.Delete(Request.QueryString["file"]);
             }
 
-            PageRight(resultstr, "News_list.aspx");
+            PageRight(resultstr, "News_list.aspx", true);
 
             //PageRight(resultstr, "News_list.aspx?ClassID=" + ClassID + "");
            
