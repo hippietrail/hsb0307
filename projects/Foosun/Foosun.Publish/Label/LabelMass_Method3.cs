@@ -1000,7 +1000,15 @@ namespace Foosun.Publish
             string str_NaviCSS = this.GetParamValue("FS:NaviCSS");
             string str_gNaviChar = this.GetParamValue("FS:NaviChar");
             string str_Mapp = this.GetParamValue("FS:Mapp");
-
+            //lsd 20090929
+            LabelParameter[] labelParameters = this._LblParams;
+            string str_params = string.Empty;
+            foreach (LabelParameter lp in labelParameters)
+            {
+                str_params += " "+lp.LPName + "=" + lp.LPValue+"; ";
+ 
+            }
+            //end lsd
             if (str_NaviCSS != null)
             {
                 str_NaviCSS = "class=\"" + str_NaviCSS + "\"";
@@ -1039,14 +1047,14 @@ namespace Foosun.Publish
                     if (ClassId == "-1" && info.SiteID == this.Param_SiteID)//显示所有
                     {
                         string str_url = getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule);
-                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + ">" + newLine;
                         str_Navi += "   " + info.ClassCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
                     else if (info.ParentID == ClassId && info.SiteID == this.Param_SiteID)
                     {
                         string str_url = getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule);
-                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + ">" + newLine;
                         str_Navi += "   " + info.ClassCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
