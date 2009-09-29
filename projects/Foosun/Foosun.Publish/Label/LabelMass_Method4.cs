@@ -1331,7 +1331,13 @@ namespace Foosun.Publish
                         {
                             LostResultStr = Foosun.Common.Input.LostVoteStr(LostResultStr);
                         }
-                        str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber) + "...";
+                        //  2009-09-28 husb 原为"..."改为"..."：没有修改 //>>>
+                        str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber);
+                        if (!String.IsNullOrEmpty(str_content) && str_content.Length > 10) // ContentNumber
+                        {
+                            str_content += "...";
+                        }
+                        //str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber) + " >>>"; 
                         str_Style = str_Style.Replace("{#Content}", str_content.Replace("[FS:PAGE]", "").Replace("[FS:PAGE", "").Replace("$]", ""));
                     }
                     else if (NewsTF == 1)
