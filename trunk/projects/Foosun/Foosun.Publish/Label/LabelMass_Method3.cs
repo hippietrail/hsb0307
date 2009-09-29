@@ -1005,7 +1005,7 @@ namespace Foosun.Publish
             string str_params = string.Empty;
             foreach (LabelParameter lp in labelParameters)
             {
-                str_params += " "+lp.LPName + "=" + lp.LPValue+"; ";
+                str_params += " "+lp.LPName + "=" + lp.LPValue+" ";
  
             }
             //end lsd

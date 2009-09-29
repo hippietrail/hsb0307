@@ -344,6 +344,10 @@ A:hover {
 .new_list {
 	MARGIN: 10px auto; WIDTH: 600px;
 }
+.listContent 
+{
+     line-height:30px;
+	}
 .new_list_10 {
 	MARGIN: 10px auto; WIDTH: 640px; BORDER-TOP: #A45575 1px solid; height:200px; color:Red;
 }
@@ -352,7 +356,20 @@ A:hover {
 	BORDER-RIGHT: #A45575 1px solid; BORDER-TOP: #A45575 1px solid; MARGIN-TOP: 10px; BORDER-LEFT: #A45575 1px solid; WIDTH: 300px; BORDER-BOTTOM: #A45575 1px solid; HEIGHT: 280px
 }
 .hot_list {
-	MARGIN: 10px auto 0px; WIDTH: 280px; HEIGHT: 242px
+	MARGIN: 10px auto; WIDTH: 296px; HEIGHT: 360px;
+}
+.hot_list ul 
+{
+	margin:0px; padding:0px;  
+	}
+.hot_list ul  li 
+{
+	 margin:0px; padding:0px; width:100%; height:32px; line-height:32px; text-align:left; list-style-type:none; BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 0px 13px;
+	 }
+.hot_list ul  li a 
+{
+	font-size:18px; margin-left:15px;
+	
 }
 .newsList ul 
 { margin:0px; padding:0px; }

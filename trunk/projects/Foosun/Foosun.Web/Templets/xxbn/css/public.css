@@ -1,12 +1,12 @@
 
 @font-face 
 {
-	font-family:HGTAIWH00; src:url("/fonts/HGTAIWH.eot");  font-style:normal;}	
+	font-family:HGTAIWH00; src:url("/fonts/HGTAITH0.eot");  font-style:normal;}	
 BODY 
 {
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/index_bg.gif) #deebf3 repeat-x;
-	font-family:HGTAIWH00, Arial, '新宋体', sans-serif ;
+	font-family:HG_TaiTham_WBD, Arial, '新宋体', sans-serif ;
 	font-size:24px;LINE-HEIGHT: 32px;
 	color:#365aa0;
 }
@@ -111,7 +111,7 @@ UL LI FORM {
 	MARGIN: 10px auto 0px; WIDTH: 270px; HEIGHT: 260px
 }
 .area_list {
-	MARGIN: 10px auto 0px; WIDTH: 940px
+	MARGIN: 10px auto 0px; WIDTH: 940px; 
 }
 .area_list_left {
 	BORDER: #74accf 1px solid;  FLOAT: left;  WIDTH: 626px; DISPLAY: inline; margin:0px; padding:0px; 
@@ -126,6 +126,14 @@ UL LI FORM {
 .area_list_right10 {
 	FLOAT: right; WIDTH: 288px;DISPLAY: inline;
 }
+.area_list_right10 ul 
+{
+    margin:0px ;  padding:0px;margin-top:50px; margin-left:10px;
+	}
+.area_list_right10 ul li 
+{
+	  margin:0px ;  padding:0px; list-style-type:none;  width:280px;  height:50px;
+	}
 .area_content {
 	MARGIN: 10px auto 0px auto; WIDTH: 940px
 }
