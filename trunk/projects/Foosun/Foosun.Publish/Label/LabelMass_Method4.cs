@@ -1299,9 +1299,10 @@ namespace Foosun.Publish
                         str_Style = str_Style.Replace("{#sTitle}", "");
                 }
                 //连接地址--------------------------------------------------------------------------------------------------------
+                string URLS = "";
                 if (str_Style.IndexOf("{#URL}") > -1)
                 {
-                    string URLS = "";
+                    
                     if (Nci.NewsType == 2)
                     {
                         URLS = Nci.URLaddress;
@@ -1331,11 +1332,11 @@ namespace Foosun.Publish
                         {
                             LostResultStr = Foosun.Common.Input.LostVoteStr(LostResultStr);
                         }
-                        //  2009-09-28 husb 原为"..."改为"..."：没有修改 //>>>
+                        //  2009-09-28 husb 原为"..."改为">>>"：没有修改 //>>>
                         str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber);
                         if (!String.IsNullOrEmpty(str_content) && str_content.Length > 10) // ContentNumber
                         {
-                            str_content += "...";
+                            str_content += String.Format("&nbsp;&nbsp;<a href=\"{0}\" title=\"\" style=\"font-family:宋体,Verdana,Tahoma; font-size:9pt;\">&gt;&gt;&gt;</a>", URLS);// "...";
                         }
                         //str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber) + " >>>"; 
                         str_Style = str_Style.Replace("{#Content}", str_content.Replace("[FS:PAGE]", "").Replace("[FS:PAGE", "").Replace("$]", ""));
