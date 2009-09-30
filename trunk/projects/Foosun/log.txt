@@ -1,1 +1,12 @@
 SpecialFontFamily
+
+
+update  fs_api_qmenu set isActive = 0
+where Id in (
+2,3,7,10,14
+)
+
+update fs_api_navi set  isActive = 0 
+where am_ID in (
+8,11,12,13,21,43,44,55,30,31,33
+)
