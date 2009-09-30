@@ -25,7 +25,7 @@ namespace Foosun.SQLServerDAL
         public IDataReader Navilist(string UserNum)
         {
             string getS = "";
-            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_position='99999' and siteID='" + Foosun.Global.Current.SiteID + "' ";
+            string SQLTF = "select am_ID from " + Pre + "api_Navi where isActive = 1 AND am_position='99999' and siteID='" + Foosun.Global.Current.SiteID + "' ";
             object obj = DbHelper.ExecuteScalar(CommandType.Text, SQLTF, null);
             if (obj != null)
             {
@@ -35,7 +35,7 @@ namespace Foosun.SQLServerDAL
             {
                 getS = " and SiteID='0'";
             }
-            string Sql = "select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys,mainURL From " + Pre + "api_Navi where Am_position='00000' " + getS + " order by am_orderID asc,am_ID desc";
+            string Sql = "select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys,mainURL From " + Pre + "api_Navi where isActive = 1 AND Am_position='00000' " + getS + " order by am_orderID asc,am_ID desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -52,7 +52,7 @@ namespace Foosun.SQLServerDAL
             {
                 getS = " and SiteID='0'";
             }
-            string Sql = "Select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys From " + Pre + "api_Navi where Am_position='99999' " + getS + " order by am_orderID asc,am_ID desc";
+            string Sql = "Select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys From " + Pre + "api_Navi where isActive = 1 AND Am_position='99999' " + getS + " order by am_orderID asc,am_ID desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -79,7 +79,7 @@ namespace Foosun.SQLServerDAL
     new SqlParameter("@UserNum", UserNum), 
     new SqlParameter("@_num", _num) 
 };
-            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid From " + Pre + "API_Qmenu where ismanage=@_num and (UserNum=@UserNum or UserNum='0') order by OrderID desc,id desc";
+            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid From " + Pre + "API_Qmenu where isActive = 1 AND  ismanage=@_num and (UserNum=@UserNum or UserNum='0') order by OrderID desc,id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, param);
         }
 
@@ -90,7 +90,7 @@ namespace Foosun.SQLServerDAL
 new SqlParameter("@UserNum", UserNum)
 };
             string getS = "";
-            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_ParentID=@stype and siteID='" + Foosun.Global.Current.SiteID + "' ";
+            string SQLTF = "select am_ID from " + Pre + "api_Navi where isActive = 1 AND am_ParentID=@stype and siteID='" + Foosun.Global.Current.SiteID + "' ";
             object obj = DbHelper.ExecuteScalar(CommandType.Text, SQLTF, param);
             if (obj != null)
             {
@@ -100,7 +100,7 @@ new SqlParameter("@UserNum", UserNum)
             {
                 getS = " and SiteID='0'";
             }
-            string Sql = "Select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys,popCode From " + Pre + "api_Navi where am_ParentID=@stype " + getS + " order by am_orderID asc,am_ID desc";
+            string Sql = "Select am_ID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_type,siteID,userNum,isSys,popCode From " + Pre + "api_Navi where isActive = 1 AND am_ParentID=@stype " + getS + " order by am_orderID asc,am_ID desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, param);
         }
         /// <summary>
@@ -109,7 +109,7 @@ new SqlParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable ManagemenuNavilist()
         {
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where isActive = 1 AND Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -120,7 +120,7 @@ new SqlParameter("@UserNum", UserNum)
         public DataTable ManagechildmenuNavilist(string pID)
         {
             SqlParameter param = new SqlParameter("@pID", pID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where isActive = 1 AND am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -146,7 +146,7 @@ new SqlParameter("@UserNum", UserNum)
         public DataTable GetNaviEditID(int nID)
         {
             SqlParameter param = new SqlParameter("@nID", nID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_id=@nID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where isActive = 1 AND am_id=@nID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -157,7 +157,7 @@ new SqlParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable Getparentidlist()
         {
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where isActive = 1 AND Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -169,7 +169,7 @@ new SqlParameter("@UserNum", UserNum)
         public DataTable Getchildparentidlist(string pID)
         {
             SqlParameter param = new SqlParameter("@pID", pID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where isActive = 1 AND am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -343,7 +343,7 @@ new SqlParameter("@UserNum", UserNum)
         /// <returns></returns>
         public IDataReader QShortcutList(int _num)
         {
-            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid,orderid From " + Pre + "API_Qmenu where (UserNum='" + Foosun.Global.Current.UserNum + "' or UserNum='0') and ismanage=" + _num + " and SiteID='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,id desc";
+            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid,orderid From " + Pre + "API_Qmenu where isActive = 1 AND (UserNum='" + Foosun.Global.Current.UserNum + "' or UserNum='0') and ismanage=" + _num + " and SiteID='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -353,7 +353,7 @@ new SqlParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable QeditAction(int QID)
         {
-            string Sql = "Select QmID,qName,FilePath,Ismanage,OrderID,usernum,siteID From " + Pre + "API_Qmenu Where ID=" + QID + " and UserNum = '" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select QmID,qName,FilePath,Ismanage,OrderID,usernum,siteID From " + Pre + "API_Qmenu Where isActive = 1 AND  ID=" + QID + " and UserNum = '" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -363,7 +363,7 @@ new SqlParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable QGetRecord(int num)
         {
-            string Sql = "Select QmID From " + Pre + "API_Qmenu Where UserNum='" + Foosun.Global.Current.UserNum + "' and ismanage=" + num + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select QmID From " + Pre + "API_Qmenu Where isActive = 1 AND  UserNum='" + Foosun.Global.Current.UserNum + "' and ismanage=" + num + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
