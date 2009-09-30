@@ -1,0 +1,1 @@
+document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=807690679529289"  target=_blank><img src="/files/templetpictures/黄金广告位.gif" border="0" width="250"  height="250" align="top"></a>');

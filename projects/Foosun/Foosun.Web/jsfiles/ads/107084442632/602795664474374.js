@@ -1,0 +1,1 @@
+document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=602795664474374"  target=_blank><img src="/files/templetpictures/logo_old_brown.gif" border="0" width="153"  height="100" align="top"></a>');
