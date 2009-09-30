@@ -88,7 +88,15 @@ namespace Foosun.Web.UI
             System.Web.HttpContext.Current.Response.Write("    <ul>\r");
             if (noHistory)
             {
-                System.Web.HttpContext.Current.Response.Write("        <li>" + UserUrl(Url) + "</li>" + ReUrlStr + "\r");
+                if (String.IsNullOrEmpty(Msg))
+                {
+                    System.Web.HttpContext.Current.Response.Write("        <li>" + UserUrl(Url) + "</li>" + ReUrlStr + "\r");
+                }
+                else
+                {
+                    System.Web.HttpContext.Current.Response.Write("<li><span style=\"word-wrap:bread-word;word-break:break-all;font-size:11.5px;\">" + Msg + "</span></li>\r         " + "        <li>" + UserUrl(Url) + "</li>" + ReUrlStr + "\r");
+                }
+                
             }
             else
             {
