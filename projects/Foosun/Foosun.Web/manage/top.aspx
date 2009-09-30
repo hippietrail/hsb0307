@@ -80,11 +80,11 @@ function logout()
                                 </td>
                                 <td align="right">
                                     <a href="#" onclick="logout();" class="Lion_1">退出</a>&nbsp;┊&nbsp;
-                                    <a href="../<% Response.Write(Foosun.Config.UIConfig.dirUser); %>/index.aspx" target="_blank" class="Lion_1" title="进入会员中心">用户</a>&nbsp;┊&nbsp;
+                                    <%--<a href="../<% Response.Write(Foosun.Config.UIConfig.dirUser); %>/index.aspx" target="_blank" class="Lion_1" title="进入会员中心">用户</a>&nbsp;┊&nbsp;--%>
                                     <a href="../<% Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/ChangePassword.aspx" target="sys_main" class="Lion_1" title="修改密码">密码</a>&nbsp;┊&nbsp;
                                     <a href="sys/skinChange.aspx" title="设置系统皮肤" target="sys_main" class="Lion_1">风格</a>&nbsp;┊&nbsp;
-                                    <a href="../help/HelpList.aspx" target="sys_main" class="Lion_1" title="系统帮助">帮助</a>&nbsp;┊&nbsp;
-                                    <a href="http://www.hgzp.com" target="sys_main" class="Lion_1" title="官方网站">官方网站</a>&nbsp;&nbsp;
+                                    <a href="../help/HelpList.aspx" target="sys_main" class="Lion_1" title="系统帮助">帮助</a>
+                                    <%--<a href="http://www.hgzp.com" target="sys_main" class="Lion_1" title="官方网站">官方网站</a>&nbsp;&nbsp; &nbsp;┊&nbsp; --%>
                                </td>
                             </tr>
                         </table>
