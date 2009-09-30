@@ -6,7 +6,7 @@ BODY
 {
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/index_bg.gif) #deebf3 repeat-x;
-	font-family:HG_TaiTham_WBD, Arial, '新宋体', sans-serif ;
+	font-family:HGTAIWH00, Arial, '新宋体', sans-serif ;
 	font-size:24px;LINE-HEIGHT: 32px;
 	color:#365aa0;
 }
@@ -18,7 +18,7 @@ UL LI FORM {
 	  BACKGROUND:#ffffff; MARGIN: 0px auto; WIDTH: 960px; overflow:hidden;
 }
 .top {
-	BACKGROUND: #397dad; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 100px; 
+	BACKGROUND: #397dad; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 100px;  background-image:url(/files/TempletPictures/logo.gif)
 }
 .logo {
 	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px;
@@ -27,7 +27,7 @@ UL LI FORM {
 	 border-style:none;
 }
 .logo_old {
-	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 153px; HEIGHT: 100px;
+	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 153px; HEIGHT: 100px;background-image:url(/files/TempletPictures/logo_old.gif)
 }
 .logo_old IMG {
 	 border-style:none;
@@ -119,6 +119,15 @@ UL LI FORM {
 .area_list_left1 {
 	BORDER: #74accf 1px solid; FLOAT: left;  WIDTH: 640px; DISPLAY: inline;
 }
+.singlePageTitle 
+{
+	margin:10px auto; padding:0px;width:620px;  text-align:center;
+	}
+	 
+.AboutContent
+{
+	margin:0px auto; padding:0px; width:620px;
+	}
 .daiLanguage{ margin:0px; padding:0px; width:640px;  height:500px;BORDER-TOP: #74accf 1px solid; margin-top:10px; }
 .area_list_right {
 	FLOAT: right; WIDTH: 300px;DISPLAY: inline;
@@ -133,6 +142,10 @@ UL LI FORM {
 .area_list_right10 ul li 
 {
 	  margin:0px ;  padding:0px; list-style-type:none;  width:280px;  height:50px;
+	}
+.area_list_right10 ul li a
+{
+	  margin:0px ;  padding:0px;  color:Red;
 	}
 .area_content {
 	MARGIN: 10px auto 0px auto; WIDTH: 940px

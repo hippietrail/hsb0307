@@ -25,13 +25,13 @@ UL LI FORM {
 	BACKGROUND: #FA6800; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 100px; 
 }
 .logo {
-	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px;
+	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px; background-image:url(/files/TempletPictures/logo_new_brown.gif)
 }
 .logo IMG {
 	 border-style:none;
 }
 .logo_old {
-	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT:right;  WIDTH: 153px; HEIGHT: 100px;
+	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT:right;  WIDTH: 153px; HEIGHT: 100px; background-image:url(/files/TempletPictures/logo_old_brown.gif)
 }
 .logo_old IMG {
 	 border-style:none;
@@ -119,6 +119,14 @@ UL LI FORM {
 .area_list_left1 {
 	BORDER-RIGHT: #A45575 1px solid; BORDER-TOP: #A45575 1px solid; FLOAT: left; BORDER-LEFT: #A45575 1px solid; WIDTH: 640px; BORDER-BOTTOM: #A45575 1px solid;DISPLAY: inline;
 }
+.singlePageTitle 
+{
+	margin:10px auto; padding:0px;width:620px;  text-align:center;
+	}	 
+.AboutContent
+{
+	margin:0px auto; padding:0px; width:620px; 
+	}
 .daiLanguage{ margin:0px; padding:0px; width:640px;  height:500px;BORDER-TOP: #A45575 1px solid; margin-top:10px; }
 .area_list_right {
 	FLOAT: right; WIDTH: 300px;DISPLAY: inline;
@@ -126,6 +134,18 @@ UL LI FORM {
 .area_list_right10 {
 	FLOAT: right; WIDTH: 288px;DISPLAY: inline;
 }
+.area_list_right10 ul 
+{
+    margin:0px ;  padding:0px;margin-top:50px; margin-left:10px;
+	}
+.area_list_right10 ul li 
+{
+	  margin:0px ;  padding:0px; list-style-type:none;  width:280px;  height:50px;
+	}
+.area_list_right10 ul li a
+{
+	  margin:0px ;  padding:0px;  color:Red;
+	}
 .area_content {
 	MARGIN: 10px auto 0px auto; WIDTH: 940px
 }
@@ -157,9 +177,7 @@ UL LI FORM {
 .today2 SPAN {
 	FLOAT: right;  MARGIN-RIGHT: 5px;LINE-HEIGHT: 32px; font-size:14px;
 }
-.AboutContent {
-	margin:0px; padding:0px; MARGIN-TOP: 0px; WIDTH: 640px; HEIGHT: 314px;
-}
+
 .tupian {
 	margin:0px; padding:0px; MARGIN-TOP: 0px; WIDTH: 645px; HEIGHT: 314px;
 }

@@ -1,12 +1,12 @@
 @font-face 
 {
-	font-family:HGTAIWH; src:url("/fonts/TIMESNE1.eot");
+	font-family:HGTAIWH; src:url("/fonts/HGTAITH0.eot");
 	}	
 BODY 
 {
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/green/index-bg.gif) #FFFFFF repeat-x;
-	font-family:HG_TaiTham_WHD, Arial, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', sans-serif ;
+	font-family:HGTAIWH, Arial, 'ÐÂËÎÌå', sans-serif ;
 	font-size:24px;LINE-HEIGHT: 32px;
 	color:Green;
 }
@@ -21,13 +21,13 @@ UL LI FORM {
 	BACKGROUND: #8FD845; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 100px; 
 }
 .logo {
-	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px;
+	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px;background-image:url(/files/TempletPictures/logo_new_green.gif)
 }
 .logo IMG {
 	 border-style:none;
 }
 .logo_old {
-	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT:right;  WIDTH: 153px; HEIGHT: 100px;
+	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT:right;  WIDTH: 153px; HEIGHT: 100px;background-image:url(/files/TempletPictures/logo_old_green.gif)
 }
 .logo_old IMG {
 	 border-style:none;
@@ -115,6 +115,16 @@ UL LI FORM {
 .area_list_left1 {
 	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; FLOAT: left; BORDER-LEFT: #8FD845 1px solid; WIDTH: 640px; BORDER-BOTTOM: #8FD845 1px solid;DISPLAY: inline;
 }
+.singlePageTitle 
+{
+	margin:10px auto; padding:0px;width:620px;  text-align:center;
+	}
+	 
+.AboutContent
+{
+	margin:0px auto; padding:0px; width:620px;
+	}
+	
 .daiLanguage{ margin:0px; padding:0px; width:640px;  height:500px;BORDER-TOP: #8FD845 1px solid; margin-top:10px; }
 .area_list_right {
 	FLOAT: right; WIDTH: 300px;DISPLAY: inline;
@@ -122,6 +132,18 @@ UL LI FORM {
 .area_list_right10 {
 	FLOAT: right; WIDTH: 288px;DISPLAY: inline;
 }
+.area_list_right10 ul 
+{
+    margin:0px ;  padding:0px;margin-top:50px; margin-left:10px;
+	}
+.area_list_right10 ul li 
+{
+	  margin:0px ;  padding:0px; list-style-type:none;  width:280px;  height:50px; 
+	}
+.area_list_right10 ul li a
+{
+	  margin:0px ;  padding:0px;  color:Red;
+	}
 .area_content {
 	MARGIN: 10px auto 0px auto; WIDTH: 940px
 }
