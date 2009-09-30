@@ -56,7 +56,7 @@
 
         jQuery(document).click(function() { jQuery("#ime").css("display", "none"); });
         jQuery.each(jQuery("input[type=text]", jQuery("#searchRegion")), function() {
-            jQuery(this).css("font-family", "HGTAIWH00");
+            jQuery(this).css("font-family", "HGTAIWH");
             jQuery(this).css("font-size", "12pt");
             jQuery(this).keydown(function() {
                 var e = window.event || e;
@@ -168,7 +168,7 @@
       <div class="ui-widget-content" id="draggable">
           <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
           <span id="inputChar" style="font-size:12pt;"></span>
-          <div id="candicated" style="font-family:HGTAIWH00; font-size:16pt;"></div>
+          <div id="candicated" style="font-family:HGTAIWH; font-size:16pt;"></div>
       </div>
   </div>
                                <div class="search_menu" id="searchRegion">
@@ -180,8 +180,8 @@
                                     
 <div style=" display:none;">
 	<input id="Comp" name="Comp" type="text"  />
-	<textarea id="Cand"  name="Cand" cols="20" rows="11"  style="font-family:HGTAIWH00; font-size:16pt;" ></textarea>
-	<textarea id="InputArea"  name="InputArea" cols="20" rows="11" style="font-family:HGTAIWH00; font-size:16pt;"></textarea>
+	<textarea id="Cand"  name="Cand" cols="20" rows="11"  style="font-family:HGTAIWH; font-size:16pt;" ></textarea>
+	<textarea id="InputArea"  name="InputArea" cols="20" rows="11" style="font-family:HGTAIWH; font-size:16pt;"></textarea>
 	<input id="EnglishMode" name="EnglishMode" type="checkbox"  />英文(Ctrl)OnFocus="IME.InputArea.focus()"
     <input id="FullShape" name="FullShape" type="checkbox"  />全形字符(F12)OnFocus="IME.InputArea.focus()"
     <input id="AutoUp" name="AutoUp" type="checkbox" checked="checked"  />自动上字OnFocus="IME.InputArea.focus()"　翻页 PageUp/PageDown  
