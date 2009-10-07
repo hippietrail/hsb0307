@@ -596,7 +596,11 @@ function closediv()
       <tr class="TR_BG_list"  onmouseover="overColor(this)" onmouseout="outColor(this)" >
           <td class="list_link" align="center"><asp:Image runat="server" onclick="ShowDetail(this)" ID="ImgOrder" Width="18" BorderWidth="0" AlternateText='<%#((DataRowView)Container.DataItem)["OrderID"]%>' style="CURSOR: hand"/></td>
           <td class="list_link"><asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" NavigateUrl='<%#((DataRowView)Container.DataItem)["URLaddress"]%>'><asp:Image runat="server" ID="ImgNewType" AlternateText='<%#((DataRowView)Container.DataItem)["NewsType"]%>' onclick="ModPic(this.parentNode)"/></asp:HyperLink><asp:Image ID="ImgPic" runat="server" AlternateText='<%#((DataRowView)Container.DataItem)["NewsType"]%>' onclick="ModPic(this)"/><a class="list_linkSpecial SpecialFontFamily" name="newsTitle" title="<%#((DataRowView)Container.DataItem)["NewsTitleRefer"]%>" href="News_add.aspx?ClassID=<%#((DataRowView)Container.DataItem)["ClassID"]%>&NewsID=<%#((DataRowView)Container.DataItem)["NewsID"]%>&EditAction=Edit"><%#((DataRowView)Container.DataItem)["NewsTitles"]%></a><%#((DataRowView)Container.DataItem)["CommNum"]%><%#((DataRowView)Container.DataItem)["isConstrs"]%></td> 
-          <td align="left"><a href="News_list.aspx?ClassID=<%#((DataRowView)Container.DataItem)["ClassID"]%>&Editor=<%#((DataRowView)Container.DataItem)["Editor"]%>" title="查看此编辑/会员的文章" class="list_link"><%#((DataRowView)Container.DataItem)["Editor"]%></a><a href="../../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/showuser-<%#((DataRowView)Container.DataItem)["Editor"]%>.aspx" target="_blank"><img src="../../sysImages/folder/addnew.gif" alt="" title="查看会员资料" border="0" /></a></td>
+          <td align="left"><a href="News_list.aspx?ClassID=<%#((DataRowView)Container.DataItem)["ClassID"]%>&Editor=<%#((DataRowView)Container.DataItem)["Editor"]%>" title="查看此编辑/会员的文章" class="list_link"><%#((DataRowView)Container.DataItem)["Editor"]%></a>
+          
+         <%-- <a href="../../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/showuser-<%#((DataRowView)Container.DataItem)["Editor"]%>.aspx" target="_blank"><img src="../../sysImages/folder/addnew.gif" alt="" title="查看会员资料" border="0" /></a>
+          --%>
+          </td>
           <td class="list_link" align="center"><%#((DataRowView)Container.DataItem)["CheckStats"]%></td>
           <td align="center"><%#((DataRowView)Container.DataItem)["htmllock"]%></td>
           <td align="center"><%#((DataRowView)Container.DataItem)["op"]%></td>
