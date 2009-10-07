@@ -3683,7 +3683,6 @@
     <Content Include="Templets\xxbn\css\brown.css" />
     <Content Include="Templets\xxbn\css\bywh.css" />
     <Content Include="Templets\xxbn\css\green.css" />
-    <Content Include="Templets\xxbn\css\logo1.gif" />
     <Content Include="Templets\xxbn\css\main.js" />
     <Content Include="Templets\xxbn\css\nav.css" />
     <Content Include="Templets\xxbn\css\public.css" />

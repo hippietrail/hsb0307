@@ -34,7 +34,13 @@
     <td colspan="2" style="height: 8px"></td>
   </tr>
   <tr>
-    <td height="37" colspan="2">&nbsp;&nbsp;<label class="Lion_welcome" id="welcome" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;[<asp:linkbutton id="linkbutton" CssClass="list_link" onclick="linkbutton_Click" runat="server">退出</asp:linkbutton>，<asp:linkbutton id="changePass" CssClass="list_link" onclick="changePass_Click" runat="server">修改密码</asp:linkbutton>]&nbsp;&nbsp;&nbsp;<label id="messageID" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/userinfo_update.aspx" class="list_link" target="sys_main">[资料维护]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/friend/friendlist.aspx" class="list_link" target="sys_main">[我的好友]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/discuss/discussManageestablish_list.aspx" class="list_link" target="sys_main">[我的讨论组]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/url.aspx" class="list_link" target="sys_main">[网址收藏夹]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../help/help.aspx?HelpID=adminHelp" class="list_link" target="sys_main"><font color=red>[新手上路！]</font></a></td>
+    <td height="37" colspan="2">&nbsp;&nbsp;<label class="Lion_welcome" id="welcome" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;[<asp:linkbutton id="linkbutton" CssClass="list_link" onclick="linkbutton_Click" runat="server">退出</asp:linkbutton>，<asp:linkbutton id="changePass" CssClass="list_link" onclick="changePass_Click" runat="server">修改密码</asp:linkbutton>]&nbsp;&nbsp;&nbsp;<label id="messageID" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;
+   <%-- 
+    <a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/userinfo_update.aspx" class="list_link" target="sys_main">[资料维护]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/friend/friendlist.aspx" class="list_link" target="sys_main">[我的好友]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/discuss/discussManageestablish_list.aspx" class="list_link" target="sys_main">[我的讨论组]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    --%>
+    <a href="../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/url.aspx" class="list_link" target="sys_main">[网址收藏夹]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../help/help.aspx?HelpID=adminHelp" class="list_link" target="sys_main"><font color=red>[新手上路！]</font></a>
+    
+    </td>
   </tr>
 </table>
 <table width="99%" border="0" align="center" cellpadding="1" cellspacing="0" class="table">
