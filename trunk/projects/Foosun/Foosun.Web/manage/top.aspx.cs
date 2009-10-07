@@ -25,7 +25,6 @@ namespace Foosun.Web.manage
             Response.CacheControl = "no-cache";
             if (!IsPostBack)
             {
-                
                 navi_index.InnerHtml = getMenu();
                 apilist1 = getapMenu();
                 reURL();
