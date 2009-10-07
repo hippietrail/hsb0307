@@ -1,1 +1,1 @@
-document.write('<a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a><a href="/"></a>');
+document.write('<a href="/html/xxbn/20090824/521_1_1.html">  ᦟᧄ᧗ ᦱᦏ ᦰ...</a><a href="/"></a><a href="/html/xxbn/20090805/196_1_1.html">ᦐᧂ ᦉᦹ ᦘᦲᧄ ...</a><a href="/html/xxbn/ywbd/195_1_1.html">ᦐᧂ ᦉᦹ ᦘᦲᧄ ...</a><a href="/"></a><a href="/"></a><a href="/html/xxbn/20091007/647.html">ssssssssss...</a><a href="/html/xxbn/20090930/645.html">aaaaaaaaaa...</a>');

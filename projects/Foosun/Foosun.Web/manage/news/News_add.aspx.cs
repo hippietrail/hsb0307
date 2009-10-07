@@ -1721,34 +1721,9 @@ public partial class News_add : Foosun.Web.UI.ManagePage
             {
                 if (attachmentFile.Value.Length > 0)
                 {
-
-                    //if ((System.IO.File.GetAttributes(attachmentFile.Value) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                    //{
-                    //    try
-                    //    {
-                    //        System.IO.File.SetAttributes(attachmentFile.Value, System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                    //    }
-                    //    catch (UnauthorizedAccessException ex)
-                    //    {
-                    //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                    //    }
-                    //}
-                    //System.IO.File.Delete(attachmentFile.Value);
                     Foosun.Web.manageXXBN.news.BatchAddNewsHandler.DeleteFile(attachmentFile.Value);
                 }
                 Foosun.Web.manageXXBN.news.BatchAddNewsHandler.DeleteFile(Request.QueryString["file"]);
-                //if ((System.IO.File.GetAttributes(Request.QueryString["file"]) & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly)
-                //{
-                //    try
-                //    {
-                //        System.IO.File.SetAttributes(Request.QueryString["file"], System.IO.FileAttributes.Archive);//~FileAttributes.ReadOnly
-                //    }
-                //    catch (UnauthorizedAccessException ex)
-                //    {
-                //        throw new UnauthorizedAccessException("您没有权限删除过时的" + ex.Message, ex.InnerException);
-                //    }
-                //}
-                //System.IO.File.Delete(Request.QueryString["file"]);
             }
 
             PageRight(resultstr, "News_list.aspx", true);
