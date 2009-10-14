@@ -115,7 +115,8 @@ public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
             str_dirDumm = "//" + str_dirDumm;
 
         //string sourcePath = Server.MapPath(str_dirDumm + "\\database\\FS_dotNETCMS.mdb");    //数据库源地址
-        string sourcePath = Server.MapPath(ConfigurationManager.ConnectionStrings["foosun"].ConnectionString);    //数据库源地址
+        //string sourcePath = Server.MapPath(ConfigurationManager.ConnectionStrings["foosun"].ConnectionString);    //数据库源地址
+
         string desPath = Server.MapPath(str_dirDumm + "\\database\\backup\\" + str_filename + ".bak");//数据库目的地址
         string downPath = str_dirDumm + "/database/backup/" + str_filename + ".bak";             //数据库备份下载地址
         string delPath = str_dirDumm + "/manage/Sys/database.aspx?Action=Del&Path=" + downPath;                                                               //数据库备份删除地址
@@ -143,6 +144,7 @@ public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
         }
         else
         {
+            string sourcePath = Server.MapPath(ConfigurationManager.ConnectionStrings["foosun"].ConnectionString);    //数据库源地址
             result = dbClass.DbBak(sourcePath, desPath);
             switch (result)
             {

@@ -332,10 +332,10 @@ UL LI FORM {
 	MARGIN: 0px auto; WIDTH: 260px; HEIGHT: 25px
 }
 .normal {
-	
+	FONT-SIZE: 24px;
 }
 .active {
-	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #74accf 1px; FONT-WEIGHT: bolder; FONT-SIZE: 13px; BACKGROUND: #ffffff; BORDER-LEFT: #8FD845 1px solid; BORDER-BOTTOM: #74accf 1px
+	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #74accf 1px; FONT-WEIGHT: bolder; FONT-SIZE: 24px; BACKGROUND: #ffffff; BORDER-LEFT: #8FD845 1px solid; BORDER-BOTTOM: #74accf 1px
 }
 .dark {
 	BACKGROUND: #eaf6fd; FLOAT: left; MARGIN-LEFT: 1px; WIDTH: 120px; HEIGHT: 24px; TEXT-ALIGN: center;DISPLAY: inline;
@@ -479,7 +479,7 @@ A:hover {
 	MARGIN-TOP: 10px; WIDTH: 710px; COLOR: #2a2a2a; TEXT-INDENT: 24px; LINE-HEIGHT: 20px
 }
 .contentMain {
-      MARGIN: 10px auto 0px; OVERFLOW: hidden; WIDTH: 710px;  TEXT-INDENT: 24px; font-size:22px; 
+      MARGIN: 10px auto 0px; OVERFLOW: hidden; WIDTH: 710px;  TEXT-INDENT: 24px; font-size:28px; 
 }
 .xiangguan {
 	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; MARGIN-TOP: 10px; BORDER-LEFT: #8FD845 1px solid; WIDTH: 728px; BORDER-BOTTOM: #8FD845 1px solid
