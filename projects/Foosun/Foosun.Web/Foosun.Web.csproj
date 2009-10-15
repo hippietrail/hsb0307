@@ -3620,7 +3620,6 @@
     <Content Include="editor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <Content Include="editor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
     <Content Include="editor\fckeditor.cfc" />
-    <Content Include="fonts\HGTAIWH.eot" />
     <Content Include="Install\SQL\CreatData.sql" />
     <Content Include="Install\SQL\Value\collect.sql" />
     <Content Include="Install\SQL\Value\friend.sql" />
@@ -4569,6 +4568,10 @@
     <Content Include="Templets\xxbn\css\jquery.js" />
     <Content Include="Templets\xxbn\css\newdai.js" />
     <Content Include="Templets\xxbn\css\olddai.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\HGTAITH_NewAndOld.eot" />
+    <None Include="fonts\HGTAIWH_new.eot" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
