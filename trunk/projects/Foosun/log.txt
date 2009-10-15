@@ -10,3 +10,67 @@ update fs_api_navi set  isActive = 0
 where am_ID in (
 8,11,12,13,21,43,44,55,30,31,33
 )
+
+XSbn123456
+
+ID:www.chinaz.com KEY:D7FB1-76040-71Z08-A1W25-8ET55
+
+
+是dotnetfx35langpack_x86zh-CHS.exe中文包重复安装问题。。
+
+
+我也发生这个错误。以下是找到的解决方法
+详细请看
+http://www.cnblogs.com/lichang1987/archive/2009/08/02/1536744.html
+
+这个错误可以看出是个dotnetfx35langpack_x86zh-CHS.exe中文包的问题,原来是vs2008 中文版的安装时已经安装了中文版,但是sp1补丁没这么聪明,所以重复了,就抱错了. 那怎么解决,试了删除不行,方法有两种:
+办法一是改安装脚本ParameterInfo.xml绕过语言包的安装，办法二是安装到该包包时骗过安装程序返回成功结果就可以。
+
+第二个办法比较简单：
+首先把SP1的所有文件复制到硬盘上，打开vs90sp1文件夹，然后复制一份该文件夹下的VC_x86Runtime.exe改名dotnetfx35langpack_x86zh-CHS.exe替换该目录的dotnetfx35langpack_x86zh-CHS.exe，然后再运行SPInstaller.exe安装即可。
+
+今天重装系统,在装完vs2008,升级sp1时报了个错,错误如下:
+Exe (E:\GenPlan Company Project\VS2008SP1CHSX1512981\vs90sp1\VC_IA64Runtime.exe) succeeded.
+[8/1/2009, 23:21:59] Action complete
+[8/1/2009, 23:21:59] Exists: evaluating...
+[8/1/2009, 23:21:59] (IronSpigot::RegKeyT<class ATL::CRegKey>::Evaluate) RegKey: HKLM\SOFTWARE\Microsoft\VisualStudio\9.0 exists.
+[8/1/2009, 23:21:59] Exists evaluated to true
+[8/1/2009, 23:21:59] (IronSpigot::ExeInstallerBase::ExeInstallerBase) Created new ExePerformer for Exe item
+[8/1/2009, 23:21:59] (IronSpigot::CartmanExeInstallerBase::CartmanExeInstallerBase) Created new CartmanExePerformer for Exe item
+[8/1/2009, 23:21:59] (IronSpigot::CartmanExeInstaller::CartmanExeInstaller) In CartmanExeInstaller::CartmanExeInstaller
+[8/1/2009, 23:21:59] (IronSpigot::CompositePerformerBaseT<class IronSpigot::MsiInstaller,struct IronSpigot::MspInstaller,struct IronSpigot::MultipleMspInstaller,class IronSpigot::ExeSelectingPerformer<class IronSpigot::ExeInstaller,class IronSpigot::CartmanExeInstaller> >::PerformAction) Created new ExePerformer for Exe item
+[8/1/2009, 23:21:59] Action: Performing Action on Exe at E:\GenPlan Company Project\VS2008SP1CHSX1512981\vs90sp1\dotnetfx35langpack_x86zh-CHS.exe...
+[8/1/2009, 23:21:59] (IronSpigot::CartmanExeInstallerBase::PreCreateProcess) In PreCreateProcess
+[8/1/2009, 23:21:59] (IronSpigot::CartmanExeInstallerBase::PreCreateProcess) m_pSetupWatcher->Connect succeeded
+[8/1/2009, 23:21:59] (IronSpigot::ExeInstallerBase::Launch) Launching CreateProcess with command line = dotnetfx35langpack_x86zh-CHS.exe /q /norestart /progress CartmanSetupExeWatcher277306079
+[8/1/2009, 23:21:59] (IronSpigot::CartmanExeInstallerBase::PostCreateProcess) PostCreateProcess succeeded
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::EnsureExitCodeIsAnMSIErrorCode) Original exit code: E:\GenPlan Company Project\VS2008SP1CHSX1512981\vs90sp1\dotnetfx35langpack_x86zh-CHS.exe returned non-MSI error code: 0x1 - 函数不正确。 
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) Exe log file(s) :
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) C:\Users\ADMINI~1\AppData\Local\Temp\dd_dotnetfx35error_lp.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) C:\Users\ADMINI~1\AppData\Local\Temp\dd_dotnetfx35install_lp.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) C:\Users\ADMINI~1\AppData\Local\Temp\dd_depcheck_NETFX_EXP_35.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) Exe (E:\GenPlan Company Project\VS2008SP1CHSX1512981\vs90sp1\dotnetfx35langpack_x86zh-CHS.exe) failed with 0x80070643 - 安装时发生严重错误 .
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) Log File: dd_dotnetfx35error_lp.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) Log File: dd_dotnetfx35install_lp.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) Log File: dd_depcheck_NETFX_EXP_35.txt
+[8/1/2009, 23:22:26] (IronSpigot::ExeInstallerBase::PerformAction) PerformOperation on exe returned exit code 1603 (translates to HRESULT = 0x80070643)
+[8/1/2009, 23:22:26] Action complete
+[8/1/2009, 23:22:26] (IronSpigot::LogUtils::LogFinalResult) Final Result: Installation failed with error code: (0x80070643), 安装时发生严重错误 
+[8/1/2009, 23:22:26] Action complete
+
+这个错误可以看出是个dotnetfx35langpack_x86zh-CHS.exe中文包的问题,原来是vs2008 中文版的安装时已经安装了中文版,但是sp1补丁没这么聪明,所以重复了,就抱错了. 那怎么解决,试了删除不行,方法有两种:
+办法一是改安装脚本ParameterInfo.xml绕过语言包的安装，办法二是安装到该包包时骗过安装程序返回成功结果就可以。
+
+第二个办法比较简单：
+首先把SP1的所有文件复制到硬盘上，打开vs90sp1文件夹，然后复制一份该文件夹下的VC_x86Runtime.exe改名dotnetfx35langpack_x86zh-CHS.exe替换该目录的dotnetfx35langpack_x86zh-CHS.exe，然后再运行SPInstaller.exe安装即可。
+
+
+之前经常看到有别人提问VS2008 SP1安装失败如何解决。但是自己虽然在多台机器上安装过多次VS2008 SP1却从没失败过。直到最近在Windows 7上安装VS2008 SP1终于出错了的。这里介绍2个可能出现的错误及解决办法。
+1..NET Framework语言包安装出错。
+我就是在这一步出错的，W7装的是英文版且没装中文语言包，VS2008装的是简体中文版，SP1也是简体中文版。当安装SP1到.NET Framework Language Pack的时候出错了的，整个安装过程被中断并结束。其实这个语言包本来就有点小问题，就是刚发布SP1后大家普遍碰到的安装SP1后智能提示变英文的问题。而在W7下安装语言包出错可能是因为.NET Framework 3.5 SP1已经作为W7的一部分，无法通过其他安装程序安装，就像Vista下无法删除和安装.NET Framework 2.0的相关组件。
+我解决语言包安装出错这个问题的方法是把iso打开，找到vs90sp1目录，并手动安装这些补丁。正常情况下是执行了SPInstaller.exe，然后它会调用这个目录下的安装包。我们可以手动执行这些安装包，这些安装包大部分用于修复之前已知的错误，dotnetfx35.exe是.NET Framework 3.5 SP1，因为W7已经带了3.5 SP1，所以可以不装。最重要的是vs90sp1-KB945140-x86-chs.msp，它才真正安装了SP1，安装过程会持续较长的时间。正常安装的时候也经常会在这一步卡很长时间。安装完成后进入VS，看关于，Microsoft Visual Studio 2008版本9.0.30729.1 SP，.NET Framework版本3.5 SP1，这样基本上是安装完成了的。如果安装完以后VS菜单中的文字又有中文又有英文（这大部分出现在英文系统上装中文VS），到工具?选项?区域设置，选择中文（简体）。
+其他由于SP1包中某个组件安装错误而导致SP1无法安装的问题也可以试一下这个方法。
+2.DepCheck indicates Microsoft .NET Framework 2.0a is not installed
+还可能会提示DepCheck indicates [某些组件名] is not installed。这个问题经常有人碰到，一般是由于之前安装的.NET Framework引起的。最快的办法是卸载之前安装的.NET Framework，然后重新安装，一般即可解决问题。
+附：.NET Framework Setup Cleanup Utility下载：http://astebner.sts.winisp.net/Tools/dotnetfx_cleanup_tool.zip
+
