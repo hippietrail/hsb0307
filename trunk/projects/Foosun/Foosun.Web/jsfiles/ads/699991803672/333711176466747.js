@@ -1,1 +1,1 @@
-document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=333711176466747"  target=_blank><img src="/files/templetpictures/张曼玉.jpg" border="0" width="180"  height="240" align="top"></a>');
+document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=333711176466747"  target=_blank><img src="/files/dsc_0018.jpg" border="0" width="180"  height="240" align="top"></a>');
