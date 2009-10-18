@@ -678,11 +678,14 @@ namespace Foosun.SQLServerDAL
             string Sql = "";
             switch (Str)
             {
+                    // husb change 2009-10-18
                 case "News":
-                    Sql = "select top 1 NewsTitle from " + Pre + "news where NewsID=@ID";
+                    //Sql = "select top 1 NewsTitle from " + Pre + "news where NewsID=@ID"; // NewsTitleRefer
+                    Sql = "select top 1 NewsTitleRefer from " + Pre + "news where NewsID=@ID"; // 
                     break;
                 case "Class":
-                    Sql = "select top 1 ClassCName from " + Pre + "news_class where ClassID=@ID";
+                    //Sql = "select top 1 ClassCName from " + Pre + "news_class where ClassID=@ID";
+                    Sql = "select top 1 ClassCNameRefer from " + Pre + "news_class where ClassID=@ID";
                     break;
                 case "Special":
                     Sql = "select top 1 SpecialCName from " + Pre + "news_special where SpecialID=@ID";
