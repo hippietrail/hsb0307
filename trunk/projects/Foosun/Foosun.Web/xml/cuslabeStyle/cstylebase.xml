@@ -255,6 +255,16 @@
     <stylename>投票</stylename>
     <stylevalue>{#vote}</stylevalue>
   </foosunitem>
+
+  <!--<foosunitem>
+    <stylename>中文标题</stylename>
+    <stylevalue>{#ChineseTitle}</stylevalue>
+  </foosunitem>
+
+  <foosunitem>
+    <stylename>参考标题</stylename>
+    <stylevalue>{#ReferenceTitle}</stylevalue>
+  </foosunitem>-->
   
   <!--<foosunitem>
     <stylename>动态导航:1,2,3,4....</stylename>
