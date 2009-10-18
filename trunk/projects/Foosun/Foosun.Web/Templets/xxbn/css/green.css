@@ -34,13 +34,15 @@ UL LI FORM {
 }
 .banner 
 {
-   float:left;	 width:606px; height:80px; text-align:center; margin-top:10px;DISPLAY: inline;}
-.banner img { border-style:none ; margin-top:6px;}
+   float:left;	 width:600px; height:80px; text-align:center; margin-top:0px;DISPLAY: inline;
+}
+.banner img { border-style:none ; margin-top:1px; width:620px; height:99px; }
 .clear{
     clear: both;
     height:1px;
     margin-top:-1px; 
-    overflow:hidden}
+    overflow:hidden
+}
 
 .login {
 	BACKGROUND: url(/Templets/xxbn/Images/user_nav_bg.gif) repeat-x; WIDTH: 960px; HEIGHT: 31px; margin:0px;
@@ -233,7 +235,7 @@ UL LI FORM {
 	FONT-SIZE: 12px; WIDTH: 135px
 }
 .xuanze {
-	BORDER-RIGHT: #096bba 1px solid; BORDER-TOP: #096bba 1px solid; FONT-WEIGHT: bolder; FONT-SIZE: 12px; BORDER-LEFT: #096bba 1px solid; WIDTH: 60px; COLOR: #096bba; BORDER-BOTTOM: #096bba 1px solid
+	BORDER-RIGHT: #096bba 1px solid; BORDER-TOP: #096bba 1px solid; font-weight: bolder; FONT-SIZE: 12px; BORDER-LEFT: #096bba 1px solid; WIDTH: 60px; COLOR: #096bba; BORDER-BOTTOM: #096bba 1px solid
 }
 .sousuo {
 	FONT-SIZE: 12px; BACKGROUND: url(/Templets/xxbn/Images/search_pub.gif); WIDTH: 46px; COLOR: #0467a8; BORDER-TOP-STYLE: none; LINE-HEIGHT: 18px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 22px; BORDER-BOTTOM-STYLE: none

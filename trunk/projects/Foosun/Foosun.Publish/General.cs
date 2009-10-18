@@ -48,7 +48,7 @@ namespace Foosun.Publish
                     }
 
                 }
-                using (StreamWriter sw = new StreamWriter(FilePath, false))
+                using (StreamWriter sw = new StreamWriter(FilePath, false,Encoding.UTF8))
                 {
                     if (Regex.Match(Content, @"\</head\>[\s\S]*\<body", RegexOptions.IgnoreCase | RegexOptions.Compiled).Success)
                     {
