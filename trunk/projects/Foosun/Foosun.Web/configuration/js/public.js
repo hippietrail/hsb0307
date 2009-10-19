@@ -3,13 +3,13 @@
 
 function SpecialFontFamily()
 {
-   var  SpecialFontFamily="HG_Tai_HZ, Arial, Verdana, sans-serif ";
+   var  SpecialFontFamily="HG_TaiTham_WHD, Arial, Verdana, sans-serif ";
    return SpecialFontFamily;
 }
 function SetSpecialFontStyle(specialObject)
 {
-    specialObject.style.fontFamily="HG_TaiTham_WBD, Arial, Verdana, sans-serif ";
-    specialObject.style.fontSize="17px";
+    specialObject.style.fontFamily="HG_TaiTham_WHD, Arial, Verdana, sans-serif ";
+    specialObject.style.fontSize="20px";
 }
 // JavaScript Document
 //返回汉字的拼音的第一个字母
@@ -82,6 +82,10 @@ function overColor(Obj)
 	var elements=Obj.childNodes;
 	for(var i=0;i<elements.length;i++)
 	{
+	    if(! elements[i].className)
+	    {
+	         continue;
+	    }
 	    if(elements[i].className.indexOf("SpecialFontFamily") > -1)
 	    {
 	        elements[i].className="TR_BG SpecialFontFamily";
@@ -99,6 +103,10 @@ function outColor(Obj)
 	var elements=Obj.childNodes;
 	for(var i=0;i<elements.length;i++)
 	{
+	    if(! elements[i].className)
+	    {
+	        continue;
+	    }
 	    if(elements[i].className.indexOf("SpecialFontFamily") > -1)
 	    {
 	        elements[i].className="TR_BG_list SpecialFontFamily";
