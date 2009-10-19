@@ -12,13 +12,10 @@
 .sav {border: 1px dotted #FFCC66;background-color: #FFFFCC;clear: both;float: none;height: 60px;width: 60px;line-height: 18px;padding-left:3px;padding-top:3px;	padding-right:3px;	padding-bottom:3px;	}
 .reshows{height:28px;background-color: #FFFFB5;TEXT-DECORATION: none;COLOR: #FF0000;}
 </style>
-
-    <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
-
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/public.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/News_add.js"></script>
     <script type="text/javascript" src="../../editor/fckeditor.js"></script>
-
+     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
     <script language="javascript" type="text/javascript">
      
     <!-- 
