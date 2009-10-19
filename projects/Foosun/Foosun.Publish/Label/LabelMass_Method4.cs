@@ -1801,7 +1801,9 @@ namespace Foosun.Publish
                         widthstr = m1.Groups["y"].Value;
                         if (Nci.vURL.Length > 5)
                         {
-                            str_Style = str_Style.Replace(allstr, getNewsvURL(Nci.NewsID, NewsTF, Nci.vURL, heightstr, widthstr));
+                            //str_Style = str_Style.Replace(allstr, getNewsvURL(Nci.NewsID, NewsTF, Nci.vURL, heightstr, widthstr));
+                            //lsd change 20091019
+                            str_Style = str_Style.Replace(allstr, getNewsvURL(Nci.NewsID, 1, Nci.vURL, heightstr, widthstr));
                         }
                         else
                         {
