@@ -849,6 +849,7 @@ namespace Foosun.Publish
                     }
                     else if (info.ParentID == Specialid && info.SiteID == this.Param_SiteID)
                     {
+                        
                         string str_url = getSpeacilURL(info.isDelPoint.ToString(), info.SpecialID, info.SavePath, info.saveDirPath, info.FileName, info.FileEXName);
                         str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
                         str_Navi += "   " + info.SpecialCName + "</a>";
@@ -1003,10 +1004,14 @@ namespace Foosun.Publish
             //lsd 20090929
             LabelParameter[] labelParameters = this._LblParams;
             string str_params = string.Empty;
-            foreach (LabelParameter lp in labelParameters)
+            // husb 20091019 加判断_LblParams是否为空
+            if (this._LblParams != null)
             {
-                str_params += " "+lp.LPName + "=" + lp.LPValue+" ";
- 
+                foreach (LabelParameter lp in labelParameters)
+                {
+                    str_params += " " + lp.LPName + "=" + lp.LPValue + " ";
+
+                }
             }
             //end lsd
             if (str_NaviCSS != null)
