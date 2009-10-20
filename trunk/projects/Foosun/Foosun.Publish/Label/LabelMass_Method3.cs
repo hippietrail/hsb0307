@@ -808,11 +808,11 @@ namespace Foosun.Publish
             string str_NaviChar = this.GetParamValue("FS:NaviChar");
             string str_SpecialUrl = this.GetParamValue("FS:SpecialUrl");
             //string str_Mapp = this.GetParamValue("FS:Mapp");
-            string mystyle = this.Mass_Inserted;
-            string styleid = Regex.Match(mystyle, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
+            string str_Style = this.Mass_Inserted;
+            string styleid = Regex.Match(str_Style, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
             if (!styleid.Equals(string.Empty))
             {
-                mystyle = LabelStyle.GetStyleByID(styleid);
+                str_Style = LabelStyle.GetStyleByID(styleid);
             }
             if (str_NaviCSS != null)
                 str_NaviCSS = "class=\"" + str_NaviCSS + "\"";
@@ -848,20 +848,47 @@ namespace Foosun.Publish
             }
             if (str_SpecialUrl == "1")
             {
-                if (mystyle.Trim() == string.Empty)
-                {
-                    string str_url = getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName);
-                    str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
-                    str_Navi += "   " + si.SpecialCName + "</a>";
-                    str_Navi = CommonData.SiteDomain + str_Navi.Replace("//", "/").Replace("//", "/");
 
+                //专题中文名称--------------------------------------------------------------------------------------------------------
+                if (str_Style.IndexOf("{#special_Name}") > -1)
+                {
+                    if (si != null)
+                        str_Style = str_Style.Replace("{#special_Name}", si.SpecialCName);
+                    else
+                        str_Style = str_Style.Replace("{#special_Name}", "");
+                }
+                //如果有样式，就将连接地址替换到样式中{#class_Path}
+                if (str_Style.IndexOf("{#special_Path}") > -1)
+                {
+                    if (si != null)
+                    {
+                        str_Style = str_Style.Replace("{#special_Path}", getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName));
+                    }
+                    else
+                    {
+                        str_Style = str_Style.Replace("{#special_Path}", "");
+                    }
+                    str_Navi = str_Style;
                 }
                 else
                 {
-                    str_Navi = mystyle.Replace("{#special_Path}", getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName));
+                    if (si != null)
+                    {
+                        string str_url = getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName);
+                        str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        str_Navi += "   " + si.SpecialCName + "</a>";
+                        str_Navi = CommonData.SiteDomain + str_Navi.Replace("//", "/").Replace("//", "/");
+
+                    }
+                    else
+                    {
+                        str_Navi = string.Empty;
+
+                    }
+
+
                 }
                 return str_Navi;
-
             }
 
             IList<PubSpecialInfo> list = CommonData.NewsSpecial;
@@ -1031,6 +1058,16 @@ namespace Foosun.Publish
             string str_NaviCSS = this.GetParamValue("FS:NaviCSS");
             string str_gNaviChar = this.GetParamValue("FS:NaviChar");
             string str_Mapp = this.GetParamValue("FS:Mapp");
+
+            string str_ClassUrl = this.GetParamValue("FS:ClassUrl");
+            //string str_Mapp = this.GetParamValue("FS:Mapp");
+            string str_Style = this.Mass_Inserted;
+            string styleid = Regex.Match(str_Style, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
+            if (!styleid.Equals(string.Empty))
+            {
+                str_Style = LabelStyle.GetStyleByID(styleid);
+            }
+
             //lsd 20090929
             LabelParameter[] labelParameters = this._LblParams;
             string str_params = string.Empty;
@@ -1074,6 +1111,58 @@ namespace Foosun.Publish
                 ClassId = "0";
             }
             string str_Navi = "";
+            // lsd change 
+            PubClassInfo ci = new PubClassInfo();
+            if (ClassId != "0" && ClassId != "-1")
+            {
+                ci = CommonData.GetClassById(ClassId);
+            }
+            //如果标签中 FS:ClassUrl＝1 ，则返回该栏目的连接url.
+            if (str_ClassUrl == "1")
+            {
+                //栏目中文名称--------------------------------------------------------------------------------------------------------
+                if (str_Style.IndexOf("{#class_Name}") > -1)
+                {
+                    if (ci != null)
+                        str_Style = str_Style.Replace("{#class_Name}", ci.ClassCName);
+                    else
+                        str_Style = str_Style.Replace("{#class_Name}", "");
+                }
+                //如果有样式，就将连接地址替换到样式中{#class_Path}
+                if (str_Style.IndexOf("{#class_Path}") > -1)
+                {
+                    if (ci != null)
+                    {
+                        str_Style = str_Style.Replace("{#class_Path}", getClassURL(ci.Domain, ci.isDelPoint, ci.ClassID, ci.SavePath, ci.SaveClassframe, ci.ClassSaveRule));
+                    }
+                    else
+                    {
+                        str_Style = str_Style.Replace("{#class_Path}", "");
+                    }
+                    str_Navi=str_Style;
+                }
+                else
+                {
+                    if (ci != null)
+                    {
+                        string str_url = getClassURL(ci.Domain, ci.isDelPoint, ci.ClassID, ci.SavePath, ci.SaveClassframe, ci.ClassSaveRule);
+                        str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        str_Navi += "   " + ci.ClassCName + "</a>";
+                        str_Navi = CommonData.SiteDomain + str_Navi.Replace("//", "/").Replace("//", "/");
+
+                    }
+                    else
+                    {
+                        str_Navi = string.Empty;
+
+                    }
+
+
+                }
+                return str_Navi;
+
+            }
+
             IList<PubClassInfo> list = CommonData.NewsClass;
             if (list != null)
             {
