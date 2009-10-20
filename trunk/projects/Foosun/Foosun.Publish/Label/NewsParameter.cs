@@ -593,7 +593,7 @@ namespace Foosun.Publish
             {
                 if (vtype == 0)
                 {
-                    str = "<object id=\"nstv\" classid=\"CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6\" width=\""+heightstr+"\" height=\""+widthstr+"\" codebase=\"http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#\" Version=\"5,1,52,701standby=Loading Microsoft? Windows Media? Player components...\" type=\"application/x-oleobject\">" + newLine;
+                    str = "<object id=\"nstv\" classid=\"CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6\" width=\"" + widthstr + "\" height=\"" + heightstr + "\" codebase=\"http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#\" Version=\"5,1,52,701standby=Loading Microsoft? Windows Media? Player components...\" type=\"application/x-oleobject\">" + newLine;
                     str += "<param name=\"URL\" value=\"" + vURL + "\">" + newLine;
                     str += "<PARAM NAME=\"UIMode\" value=\"full\">" + newLine;
                     str += "<PARAM NAME=\"AutoStart\" value=\"true\">" + newLine;

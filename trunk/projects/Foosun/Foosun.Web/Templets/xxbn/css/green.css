@@ -66,7 +66,9 @@ UL LI FORM {
 	   MARGIN: 1px auto;  
 	   WIDTH: 980px; 
 	    
-	    background-image:url(../images/green/redtitle.gif) ;
+	   /* background-image:url(../images/green/redtitle.gif) ;*/
+	   border: solid 1px #fea817;
+	   background: #b5e684 url(/Templets/xxbn/Images/place_bg.gif) no-repeat 20px 8px;
 }
 .gonggao  ul { margin:0px; padding:0px; width:940px; }
 .gonggao  ul  li { margin:0px; padding:0px; width:410px; list-style-type:none; float:left ; margin-left:35px; }
@@ -303,6 +305,7 @@ UL LI FORM {
 .centerPicture
 {
     border:#8FD845 1px solid;
+    height:200px;
 }
 .floatLeft
 {
