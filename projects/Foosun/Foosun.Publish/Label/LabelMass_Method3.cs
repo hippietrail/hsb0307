@@ -806,8 +806,14 @@ namespace Foosun.Publish
             string str_SpecialID = this.GetParamValue("FS:SpecialID");
             string str_NaviCSS = this.GetParamValue("FS:NaviCSS");
             string str_NaviChar = this.GetParamValue("FS:NaviChar");
+            string str_SpecialUrl = this.GetParamValue("FS:SpecialUrl");
             //string str_Mapp = this.GetParamValue("FS:Mapp");
-
+            string mystyle = this.Mass_Inserted;
+            string styleid = Regex.Match(mystyle, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
+            if (!styleid.Equals(string.Empty))
+            {
+                mystyle = LabelStyle.GetStyleByID(styleid);
+            }
             if (str_NaviCSS != null)
                 str_NaviCSS = "class=\"" + str_NaviCSS + "\"";
             string Specialid = "0";
@@ -835,11 +841,35 @@ namespace Foosun.Publish
                 Specialid = "0";
             }
             string str_Navi = "";
+            PubSpecialInfo si = new PubSpecialInfo();
+            if (Specialid != "0" && Specialid != "-1")
+            {
+                si = CommonData.GetSpecial(Specialid);
+            }
+            if (str_SpecialUrl == "1")
+            {
+                if (mystyle.Trim() == string.Empty)
+                {
+                    string str_url = getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName);
+                    str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                    str_Navi += "   " + si.SpecialCName + "</a>";
+                    str_Navi = CommonData.SiteDomain + str_Navi.Replace("//", "/").Replace("//", "/");
+
+                }
+                else
+                {
+                    str_Navi = mystyle.Replace("{#special_Path}", getSpeacilURL(si.isDelPoint.ToString(), si.SpecialID, si.SavePath, si.saveDirPath, si.FileName, si.FileEXName));
+                }
+                return str_Navi;
+
+            }
+
             IList<PubSpecialInfo> list = CommonData.NewsSpecial;
             if (list != null)
             {
                 foreach (PubSpecialInfo info in list)
                 {
+
                     if (Specialid == "-1" && info.SiteID == this.Param_SiteID)//显示所有
                     {
                         string str_url = getSpeacilURL(info.isDelPoint.ToString(), info.SpecialID, info.SavePath, info.saveDirPath, info.FileName, info.FileEXName);
@@ -849,7 +879,7 @@ namespace Foosun.Publish
                     }
                     else if (info.ParentID == Specialid && info.SiteID == this.Param_SiteID)
                     {
-                        
+
                         string str_url = getSpeacilURL(info.isDelPoint.ToString(), info.SpecialID, info.SavePath, info.saveDirPath, info.FileName, info.FileEXName);
                         str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
                         str_Navi += "   " + info.SpecialCName + "</a>";
@@ -857,7 +887,7 @@ namespace Foosun.Publish
                     }
                 }
             }
-            return str_Navi;           
+            return str_Navi;
         }
         
         /// <summary>
