@@ -103,16 +103,19 @@ UL LI FORM {
 	WIDTH: 400px;  height:auto;
 }
 .area_left1 {
-	BORDER: #8FD845 1px solid;  BACKGROUND: url(/Templets/xxbn/Images/number.gif) no-repeat 0px 30px; FLOAT: left; WIDTH: 280px;  HEIGHT: 340px;DISPLAY: inline;
+	BORDER: #8FD845 1px solid;  BACKGROUND: url(/Templets/xxbn/Images/number.gif) no-repeat 0px 30px; FLOAT: left; WIDTH: 310px;  HEIGHT: 340px;DISPLAY: inline;
 }
 .area_center1 {
-	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; FLOAT: left; MARGIN-LEFT: 10px; BORDER-LEFT: #8FD845 1px solid; WIDTH: 315px; BORDER-BOTTOM: #8FD845 1px solid; HEIGHT: 340px;DISPLAY: inline;
+	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; FLOAT: left; MARGIN-LEFT: 10px; BORDER-LEFT: #8FD845 1px solid; WIDTH: 318px; BORDER-BOTTOM: #8FD845 1px solid; HEIGHT: 340px;DISPLAY: inline;
 }
 .area_right1 {
-	BORDER: #8FD845 1px solid;  FLOAT: left; MARGIN-LEFT: 10px;  WIDTH: 318px; HEIGHT: 340px;DISPLAY: inline;
+	BORDER: #8FD845 1px solid;  FLOAT: left; MARGIN-LEFT: 10px;  WIDTH: 320px; HEIGHT: 340px;DISPLAY: inline;
+}
+.right_main {
+	MARGIN: 5px auto 0px; WIDTH: 315px; HEIGHT: 303px; 
 }
 .area_main {
-	  margin-left:10px; BORDER: #8FD845 1px solid; FLOAT: left;  WIDTH: 645px; HEIGHT: 340px;DISPLAY: inline; 
+	  margin-left:10px; BORDER: #8FD845 1px solid; FLOAT: left;  WIDTH: 652px; HEIGHT: 340px;DISPLAY: inline; 
 }
 .area_main1 {
 	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; PADDING-LEFT: 5px; FLOAT: right; BORDER-LEFT: #8FD845 1px solid; WIDTH: 626px; PADDING-TOP: 10px; BORDER-BOTTOM: #8FD845 1px solid;DISPLAY: inline;
@@ -124,7 +127,7 @@ UL LI FORM {
 	MARGIN: 10px auto 0px; WIDTH: 270px; HEIGHT: 260px
 }
 .area_left3 {
-	BORDER: #8FD845 1px solid;   FLOAT: left; WIDTH: 280px;  HEIGHT: 340px;DISPLAY: inline;
+	BORDER: #8FD845 1px solid;   FLOAT: left; WIDTH: 310px;  HEIGHT: 340px;DISPLAY: inline;
 }
 .ad_left {
 	MARGIN-TOP: 16px; MARGIN-LEFT: 15px; WIDTH: 250px; LINE-HEIGHT: 24px; HEIGHT: 242px
@@ -229,9 +232,7 @@ UL LI FORM {
 .huadong {
 	 margin-top:8px; WIDTH: 310px; HEIGHT: 264px
 }
-.right_main {
-	MARGIN: 5px auto 0px; WIDTH: 305px; HEIGHT: 303px; 
-}
+
 .right_main  ul { margin:0px; padding:0px;}
 .right_main  ul li {margin:0px; padding:0px;  width:305px; height:30px; line-height:30px; list-style-type:none;
                     BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 0px 12px;}
@@ -666,18 +667,18 @@ A.end:hover {
 	TEXT-DECORATION: underline
 }
 .friend {
-	BORDER: #8FD845 1px solid; MARGIN: 3px auto;  WIDTH: 938px;
+	BORDER: #8FD845 1px solid; MARGIN: 3px auto;  WIDTH: 958px;
 }
-.friend_main { margin:0px; padding:0px; width:938px;HEIGHT: 125px}
+.friend_main { margin:0px; padding:0px; width:958px;HEIGHT: 125px}
 .friend_main ul { margin:0px; padding:0px; margin-left:10px;}
 .friend_main ul li 
 {
 	 margin:0px; padding:0px; width:100px; list-style-type:none; float:left;  text-align:left; font-size:14px;}
 .friend_title {
-	FONT-WEIGHT: bolder; FONT-SIZE: 14px; BACKGROUND: url(/Templets/xxbn/Images/green/title.gif) repeat-x; WIDTH: 938px; COLOR: #356aa0; TEXT-INDENT: 10px; LINE-HEIGHT: 25px; BORDER-BOTTOM: #8FD845 1px solid; HEIGHT: 25px
+	FONT-WEIGHT: bolder; FONT-SIZE: 14px; BACKGROUND: url(/Templets/xxbn/Images/green/title.gif) repeat-x; WIDTH: 958px; COLOR: #356aa0; TEXT-INDENT: 10px; LINE-HEIGHT: 25px; BORDER-BOTTOM: #8FD845 1px solid; HEIGHT: 25px
 }
 .bottom {
-	MARGIN: 5px auto 0px; WIDTH: 940px; COLOR: #356aa0; HEIGHT: auto;font-size:14px;
+	MARGIN: 5px auto 0px; WIDTH: 970px; COLOR: #356aa0; HEIGHT: auto;font-size:14px;
 }
 .about {
 	BORDER: #FEA817 1px solid; BACKGROUND: #8FD845; WIDTH: 940px; LINE-HEIGHT: 30px;  HEIGHT: 30px; TEXT-ALIGN: center; font-size:20px;
