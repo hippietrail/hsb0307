@@ -4562,6 +4562,10 @@
     <Content Include="configuration\js\My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="configuration\js\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="configuration\js\My97DatePicker\WdatePicker.js" />
+    <Content Include="files\siteFiles\logo60.jpg" />
+    <Content Include="files\siteFiles\mewdainews.jpg" />
+    <Content Include="files\TempletPictures\55.jpg" />
+    <Content Include="HTMLPage1.htm" />
     <Content Include="manage\collect\MasterPage_Site.master" />
     <Content Include="manage\news\BatchAddNewsHandler.ashx" />
     <Content Include="Templets\xxbn\css\imedai.js" />
@@ -4630,11 +4634,9 @@
     <Folder Include="files\content\" />
     <Folder Include="files\RemoteFiles\" />
     <Folder Include="files\shortPictures\" />
-    <Folder Include="files\siteFiles\" />
-    <Folder Include="files\TempletPictures\" />
     <Folder Include="files\topline\" />
     <Folder Include="history\2009610\" />
-    <Folder Include="html\xxbn\" />
+    <Folder Include="html\xxbn\video\" />
     <Folder Include="jsfiles\js\" />
     <Folder Include="Logs\public\" />
     <Folder Include="manage\news\publish\error\" />

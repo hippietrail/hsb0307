@@ -15,10 +15,10 @@ UL LI FORM {
 	PADDING: 0px;  MARGIN: 0px;
 }
 .wrap {
-	  BACKGROUND: #E6E6E6; MARGIN: 0px auto; WIDTH: 960px; overflow:hidden;
+	  BACKGROUND: #E6E6E6; MARGIN: 0px auto; WIDTH: 980px; overflow:hidden;
 }
 .top {
-	BACKGROUND: #8FD845; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 100px; 
+	BACKGROUND: #8FD845; MARGIN: 0px auto; WIDTH: 980px; HEIGHT: 100px; 
 }
 .logo {
 	MARGIN: 0px;MARGIN: 0px; DISPLAY: inline; FLOAT: left;  WIDTH: 200px; HEIGHT: 100px;background-image:url(/files/TempletPictures/logo_new_green.gif)
@@ -34,9 +34,9 @@ UL LI FORM {
 }
 .banner 
 {
-   float:left;	 width:600px; height:80px; text-align:center; margin-top:0px;DISPLAY: inline;
+   float:left;	 width:980px; height:80px; text-align:center; margin-top:0px;DISPLAY: inline;
 }
-.banner img { border-style:none ; margin-top:1px; width:620px; height:99px; }
+.banner img { border-style:none ; margin-top:1px; width:980px; height:99px; }
 .clear{
     clear: both;
     height:1px;
@@ -45,11 +45,28 @@ UL LI FORM {
 }
 
 .login {
-	BACKGROUND: url(/Templets/xxbn/Images/user_nav_bg.gif) repeat-x; WIDTH: 960px; HEIGHT: 31px; margin:0px;
+	BACKGROUND: url(/Templets/xxbn/Images/user_nav_bg.gif) repeat-x; WIDTH: 980px; HEIGHT: 31px; margin:0px;
+}
+.logobn
+{
+    float:left;
+    width:240px;
+    height:130px;
+    display:inline;
+}
+.columns
+{
+    float:left;
+    width:740px;
+    height:130px;
+    display:inline;
 }
 
 .gonggao {
-	   MARGIN: 3px auto;  WIDTH: 940px; 
+	   MARGIN: 1px auto;  
+	   WIDTH: 980px; 
+	    
+	    background-image:url(../images/green/redtitle.gif) ;
 }
 .gonggao  ul { margin:0px; padding:0px; width:940px; }
 .gonggao  ul  li { margin:0px; padding:0px; width:410px; list-style-type:none; float:left ; margin-left:35px; }
@@ -57,10 +74,10 @@ UL LI FORM {
 .gonggao  ul  li span { float:right; color:Green; font-size:14px;}
 
 .place {
-	BORDER: #FEA817 1px solid; BACKGROUND: url(/Templets/xxbn/Images/place_bg.gif) #B5E684 no-repeat 20px 8px; MARGIN: 3px auto;  WIDTH: 940px; LINE-HEIGHT: 26px;  HEIGHT: 26px
+	BORDER: #FEA817 1px solid; BACKGROUND: url(/Templets/xxbn/Images/place_bg.gif) #B5E684 no-repeat 20px 8px; MARGIN: 3px auto;  WIDTH: 978px; LINE-HEIGHT: 26px;  HEIGHT: 26px
 }
 .place1 {
-	DISPLAY: inline; MARGIN-LEFT: 40px; WIDTH: 400px; COLOR: #096bba; HEIGHT: 26px
+	DISPLAY: inline; MARGIN-LEFT: 2px; WIDTH: 300px; COLOR: #096bba; HEIGHT: 26px
 }
 .place1 A {
 	COLOR: #096bba; TEXT-DECORATION: none
@@ -69,17 +86,19 @@ UL LI FORM {
 	COLOR: #cc0000; TEXT-DECORATION: none
 }
 .area {
-	MARGIN: 3px auto; WIDTH: 940px; 
+	margin: 3px auto; WIDTH: 978px;
 }
 .area_left {
-	FLOAT: left; WIDTH: 282px; HEIGHT: auto;DISPLAY: inline;
+	FLOAT: left; WIDTH: 402px; HEIGHT: auto;DISPLAY: inline;
 }
 .area_center {
 	FLOAT: left; WIDTH: 392px; HEIGHT: auto; margin-left:10px;DISPLAY: inline;
 }
 .area_right {
-	 margin:0px; padding:0px;  FLOAT: left;  WIDTH: 244px;MARGIN-LEFT: 10px;DISPLAY: inline;
-
+	 margin:0px; padding:0px;  FLOAT: left;  WIDTH: 160px;MARGIN-LEFT: 10px;DISPLAY: inline;
+}
+.myflash {
+	WIDTH: 400px;  height:auto;
 }
 .area_left1 {
 	BORDER: #8FD845 1px solid;  BACKGROUND: url(/Templets/xxbn/Images/number.gif) no-repeat 0px 30px; FLOAT: left; WIDTH: 280px;  HEIGHT: 340px;DISPLAY: inline;
@@ -187,7 +206,7 @@ UL LI FORM {
 }
 .tupian ul li a { font-size:18px;}
 .tupian10 {
-	margin:0px; padding:0px; MARGIN-TOP: 10px; WIDTH: 640px; height:200px; BORDER-BOTTOM: #8FD845 1px solid;
+	margin:0px; padding:0px; MARGIN-TOP: 10px; WIDTH: 640px; height:400px; BORDER-BOTTOM: #8FD845 1px solid;
 }
 .tupian10 ul  
 {
@@ -217,19 +236,16 @@ UL LI FORM {
 .right_main  ul li a 
 {
 	margin:0px; padding:0px;font-size:20px; margin-left:15px;
-
-	}
-.myflash {
-	WIDTH: 280px;  height:auto;
 }
+
 .daohang {
-	BORDER: #8FD845 1px solid;  WIDTH: 280px; height:auto;
+	BORDER: #8FD845 1px solid;  WIDTH: 400px; height:auto;
 }
 .search {
-	WIDTH: 280px; height:95px;
+	WIDTH: 400px; height:40px;
 }
 .search_menu {
-	MARGIN-TOP: 0px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; WIDTH: 260px; 
+	MARGIN-TOP: 0px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; WIDTH: 400px; 
 }
 .shuru {
 	FONT-SIZE: 12px; WIDTH: 135px
@@ -268,8 +284,9 @@ UL LI FORM {
 .union_main {
 	WIDTH: 385px; HEIGHT: 274px
 }
+/* ============== */
 .vouch_cms {
-	border:#8FD845 1px solid; WIDTH: 242px; height:401px;
+	border:#8FD845 1px solid; WIDTH: 160px; height:401px;
 }
 .vouch_cms ul 
 { margin:0px; padding:0px; margin-top:12px;}
@@ -278,9 +295,20 @@ UL LI FORM {
 {
   margin:0px; padding:0px; height:32px; line-height:32px;  text-align:left; padding-left:20px; list-style-type:none; BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 4px 8px;}
 
-.tupian1 {
-	 BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; MARGIN:0px auto 0px; BORDER-LEFT: #8FD845 1px solid; WIDTH: 940px; BORDER-BOTTOM: #8FD845 1px solid;
+.tupian1 
+{
+    border:#8FD845 1px solid; MARGIN:0px auto 0px;  WIDTH:auto; height:200px;
+
 }
+.centerPicture
+{
+    border:#8FD845 1px solid;
+}
+.floatLeft
+{
+    float:left;
+}
+
 .tupian1_left {
 	BACKGROUND: url(/Templets/xxbn/Images/gundong.gif) no-repeat; FLOAT: left; WIDTH: 25px;DISPLAY: inline;
 }

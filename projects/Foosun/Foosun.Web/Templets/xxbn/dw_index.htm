@@ -128,26 +128,29 @@
 <body>
     <div class="wrap">
         <div class="top">
-        
+             <!--
              <div class="logo">
-               <!--{FS_新傣文logo}-->
+               {FS_新傣文logo}
             </div>
              <div class="banner">
-                 <!--<{FS_网站顶部flash}-->
-                 <img src="/files/TempletPictures/55.jpg" alt="" />
+                 <{FS_网站顶部flash}
+                 
             </div>
              <div class="logo_old">
-                <!--{FS_老傣文logo}-->
+                {FS_老傣文logo}
             </div> 
-            
-            
+            -->
+            <img src="/files/TempletPictures/55.jpg" alt="" />
         <div class="clear"></div> 
         </div>
         <div class="menu">
            <div class="menu_border"></div>
-                <ul>
-                     {FS_xxbn_栏目导航}
-                </ul>
+           <div class="logobn"><img alt="" src="/files/siteFiles/logo60.jpg" style="width:240px; height:130px;" /></div>
+           <div class="columns">
+            <ul >
+                 {FS_xxbn_栏目导航}
+            </ul>
+           </div>
            <div class="menu_border"></div>
            <div class="clear"></div>
         </div>  
@@ -155,21 +158,21 @@
     </div>
     <div class="wrap">
         <div class="gonggao"><marquee scrollamount=6 width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();"><ul>{FS_xxbn_滚动新闻}<div class="clear"></div></ul></marquee></div>
-        <div class="place">
+        <!--<div class="place">
             <div class="place1">
-                ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：{FS_当前位置}<!-- 您现在的位置-->
+                ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：{FS_当前位置}
             </div>
-        </div>
+        </div>-->
         <div class="area">
               <div class="area_left">
                     <div class="myflash">
                         {FS_xxbn_幻灯新闻}
                     </div>
-                     <div class="daohang">
+                     <div class="daohang" style="margin-top:8px;">
                          <div class="title">
                                 <div class="title_left">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ</div>
                           </div>
-                          <div class="search">
+                         <div class="search">
   <div id="ime" style="z-index:999; display:none; position:absolute; left:1px; top:1px;">
       <div class="ui-widget-content" id="draggable">
           <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
@@ -178,10 +181,10 @@
       </div>
   </div>
                                <div class="search_menu" id="searchRegion">
-                                    <div  style="margin:0px; padding:0px;">
+                                    <div  style="margin-top:6px; padding:0px;">
                                     <form id="Search_Form" name="Search_Form" method="get" action="/search.html" style="margin:0px; padding:0px;">
-                                        <span style="font-size:18px;">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ:</span><br />
-                                    <input name="tags" type="text" maxlength="20" class="search_text" onkeydown="javascript:if(event.keyCode==13){SearchGo85310(this.form);}" style="width: 176px ; height:18px;" /> 
+                                       <span style="font-size:18px;">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ:</span>
+                                    <input name="tags" type="text" maxlength="20" class="search_text" onkeydown="javascript:if(event.keyCode==13){SearchGo85310(this.form);}" style="width: 180px ; height:18px;" /> 
                                     <input name="buttongo" type="button" value="search" onclick="javascript:SearchGo85310(this.form);" style="width: 66px; " />
                                     
 <div style=" display:none;">
@@ -196,8 +199,9 @@
                                     
                                     </form> 
                                     </div>
+                                    <!-- Search   Google   --> 
+                                    <!--
                                     <div  style="margin:0px; padding:0px;">
-                                    <!-- Search   Google   -->   
                                       <form   method="GET"   action="http://www.google.com/search" style="margin:0px; padding:0px;"> 
                                       <input type="text"   name="q" id="q"   style="width: 176px"   maxlength="20"  class="search_text"  value="" />     
                                       <input type="submit"   name="btnG"   value="Google" style="width:66px" /> 
@@ -207,8 +211,6 @@
                                       <input type="hidden" name="domains" value="www.dw123.com" />
                                       <input type="hidden" name="sitesearch" value="www.dw123.com" />
                                       </form>
-
-                                      <!--   Search   Google   --> 
                                     </div>      
                                     <script language="javascript" type="text/javascript">
                                     function SearchGo85310(obj)
@@ -226,6 +228,7 @@
                                      window.open('/Search.html?type=news&tags='+escape(obj.tags.value)+'','','');
                                     }
                                     </script>
+                                    -->
    
                                </div>
                            </div>
@@ -242,33 +245,28 @@
                     </div>
               </div>
               <div class="area_right">
-                    <div class="vouch_cms"><ul>
-                    <li>ᦐᧂ ᦉᦹ ᦘᦲᧄ ᦵᦔᦲᧂ ᦈᧅ ᦵᦵᦎᧃᧈ ᦓᧁ</li>
-                    <li></li>
-                    <!--<li><img  src="/Templets/xxbn/Images/yinpin.gif"/></li>-->
+                    <div class="vouch_cms">
+                    <img  src="/files/siteFiles/mewdainews.jpg"/ style="margin-left:6px;margin-top:6px;">
+                    <img  src="/files/siteFiles/mewdainews.jpg" alt="" style="margin-left:6px; margin-top:6px;"/>
                     
-                    
-                    </ul>
-                    <img  src="/Templets/xxbn/Images/video.gif"/>
-                    <div style="margin-left:2px; margin-top:4px;">
-                    <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="200" width="234" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                        <param value="http://localhost:5295/vcastr22.swf" name="movie" />
-                        <param value="high" name="quality" />
-                        <param value="true" name="allowFullScreen" />
-                        <param value="vcastr_file=/files/e308_re5_gp.flv" name="FlashVars" />
-                    </object>
-                    </div>
-                    
-                    </div>
               </div>
               <div class="clear"></div>
+        </div>
         </div>
      </div>
      
     <div class="wrap">
-        <div class="tupian1">
-            {FS_首页中部横幅图片}
+        <div class="centerPicture floatLeft" style="height:200px;">
+           {FS_首页中部横幅图片}
         </div>
+        <div class="centerPicture floatLeft" style="height:180px; margin-left:6px; width:316px; vertical-align:top;" >
+           {FS_首页视频播放}
+           <a href="/html/xxbn/more.html">more</a>
+        </div>
+                <!--<div >style="margin-left:2px; margin-top:4px;"
+                    {FS_视频专题链接}
+                    <a style="font-weight:normal; font-size:9pt; " href="/html/xxbn/more.html">more video</a>
+                </div> -->
     </div>
     
     <div class="wrap">
