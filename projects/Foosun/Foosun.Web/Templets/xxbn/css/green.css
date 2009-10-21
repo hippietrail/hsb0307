@@ -61,6 +61,16 @@ UL LI FORM {
     height:130px;
     display:inline;
 }
+.columns ul
+{
+    line-height:20px;
+}
+
+.columns li
+{
+    height:20px;
+    line-height:20px;
+}
 
 .gonggao {
 	   MARGIN: 1px auto;  
@@ -245,7 +255,7 @@ UL LI FORM {
 	BORDER: #8FD845 1px solid;  WIDTH: 400px; height:auto;
 }
 .search {
-	WIDTH: 400px; height:40px;
+	WIDTH: 400px; height:66px;
 }
 .search_menu {
 	MARGIN-TOP: 0px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; WIDTH: 400px; 
@@ -480,8 +490,12 @@ A:hover {
 .nav1_list {
 	MARGIN: 10px auto 0px; WIDTH: 180px
 }
-.news {
-	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; BACKGROUND: #f7fcff; BORDER-LEFT: #8FD845 1px solid; WIDTH: 728px; BORDER-BOTTOM: #8FD845 1px solid
+.news 
+{
+    border:solid 1px #8fd845;
+    background: #f7fcff; 
+	 width: 728px; 
+	
 }
 .newstitle {
 	MARGIN: 0px auto ; WIDTH: 700px; TEXT-ALIGN: center; margin-top:10px; height:40px;
@@ -513,7 +527,7 @@ A:hover {
 	MARGIN-TOP: 10px; WIDTH: 710px; COLOR: #2a2a2a; TEXT-INDENT: 24px; LINE-HEIGHT: 20px
 }
 .contentMain {
-      MARGIN: 10px auto 0px; OVERFLOW: hidden; WIDTH: 710px;  TEXT-INDENT: 24px; font-size:28px; 
+      MARGIN: 10px auto 0px; OVERFLOW: hidden; WIDTH: 710px;  TEXT-INDENT: 24px; font-size:28px; color:Black;
 }
 .xiangguan {
 	BORDER-RIGHT: #8FD845 1px solid; BORDER-TOP: #8FD845 1px solid; MARGIN-TOP: 10px; BORDER-LEFT: #8FD845 1px solid; WIDTH: 728px; BORDER-BOTTOM: #8FD845 1px solid
@@ -707,14 +721,32 @@ A.end:hover {
 .byjlist ul { margin:0px; padding:0px;}
 .byjlist ul li { margin:0px; padding:0px; list-style-type:none; float :left ;  width:100px;HEIGHT: 27px; margin-left:10px;}
 
+.homeVideoLink
+{
+    height:18px;
+    _height:18px;
+}
+
 .homeVideoLink a
 {
     margin-right:8px; 
     font-family:ËÎÌו,Verdana,Tahoma; 
     font-size:9pt; 
     position:relative;
-    top:-36px; 
+    top:-18px; 
     left:290px;
+    height:18px;
+    _height:18px;
 }
 
 
+.video_List {
+	MARGIN: 10px auto; WIDTH: 600px;
+}
+
+.video_List ul { margin:0px; padding:0px;}
+.video_List ul li { margin:0px; padding:0px; list-style-type:none; float :left ;  width:186px;HEIGHT: 200px; margin-left:10px;display:inline; margin-top:8px;}
+.video_List IMG {
+	BORDER: #8FD845 1px solid;  WIDTH: 185px;  HEIGHT: 165px;
+}
+.video_List ul li a { font-size:18px;} 

@@ -1146,7 +1146,7 @@ namespace Foosun.Publish
                     if (ci != null)
                     {
                         string str_url = getClassURL(ci.Domain, ci.isDelPoint, ci.ClassID, ci.SavePath, ci.SaveClassframe, ci.ClassSaveRule);
-                        str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        str_Navi += " <a href=\"" + str_url + "\" " + str_NaviCSS + " target=\"_blank\">" + newLine;
                         str_Navi += "   " + ci.ClassCName + "</a>";
                         str_Navi = CommonData.SiteDomain + str_Navi.Replace("//", "/").Replace("//", "/");
 
@@ -1171,14 +1171,14 @@ namespace Foosun.Publish
                     if (ClassId == "-1" && info.SiteID == this.Param_SiteID)//显示所有
                     {
                         string str_url = getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule);
-                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + ">" + newLine;
+                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + " target=\"_blank\">" + newLine;
                         str_Navi += "   " + info.ClassCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
                     else if (info.ParentID == ClassId && info.SiteID == this.Param_SiteID)
                     {
                         string str_url = getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule);
-                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + ">" + newLine;
+                        str_Navi += "   <li>" + str_gNaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + str_params + " target=\"_blank\">" + newLine;
                         str_Navi += "   " + info.ClassCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
