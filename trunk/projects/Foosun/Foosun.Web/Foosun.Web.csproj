@@ -4572,6 +4572,7 @@
     <Content Include="Templets\xxbn\css\jquery.js" />
     <Content Include="Templets\xxbn\css\newdai.js" />
     <Content Include="Templets\xxbn\css\olddai.js" />
+    <Content Include="Templets\xxbn\dw_video.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fonts\HGTAITH_NewAndOld.eot" />
