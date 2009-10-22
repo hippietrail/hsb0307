@@ -1,6 +1,7 @@
 @font-face 
 {
-	font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot");
+	/*font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot");*/
+	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot");
 }	
 BODY 
 {
@@ -735,10 +736,28 @@ A.end:hover {
     font-family:ËÎÌו,Verdana,Tahoma; 
     font-size:9pt; 
     position:relative;
-    top:-38px; 
+    top:-18px; 
     left:290px;
     height:18px;
     _height:18px;
+}
+
+.homeAudioLink
+{
+    height:18px;
+    _height:18px;
+}
+
+.homeAudioLink a
+{
+    margin-right:8px; 
+    font-family:ËÎÌו,Verdana,Tahoma; 
+    font-size:9pt; 
+    position:relative;
+    left:100px;
+    /*top:-38px; 
+    height:18px;
+    _height:18px;*/
 }
 
 

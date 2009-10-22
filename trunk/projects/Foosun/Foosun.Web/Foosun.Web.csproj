@@ -4579,6 +4579,7 @@
   <ItemGroup>
     <None Include="fonts\HGTAITH_NewAndOld.eot" />
     <None Include="fonts\HGTAIWH_new.eot" />
+    <None Include="fonts\HG_Tai_WH.eot" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
