@@ -2104,6 +2104,7 @@ namespace Foosun.Publish
 
             #endregion 对栏目进行判断
 
+           
 
             int str_WNum_1 = 11;
             if (str_WNum != null)
@@ -2124,8 +2125,10 @@ namespace Foosun.Publish
                 str_Colsint = int.Parse(str_Cols);
 
             int dtCount = dt.Rows.Count;
+
             if (dt != null && dtCount > 0)
             {
+                #region 
                 for (int i = 0; i < dtCount; i++)
                 {
                     if (isBIGTTF)
@@ -2179,12 +2182,94 @@ namespace Foosun.Publish
 
                 }
                 dt.Clear(); dt.Dispose();
+                #endregion 
             }
             else
             {
                 twstr = "无文字头条";
             }
             return twstr;
+        }
+
+        public string Analyse_MultimediaHeadline()
+        {
+            string returnString = "";
+            string classId = this.GetParamValue("FS:ClassID");
+            string str_isSub = this.GetParamValue("FS:isSub");
+            this.Param_CurrentClassID = classId;
+
+            DataTable dt = null;
+            string Sql = string.Empty;
+
+            //string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "'";
+            string SqlCondition = " Where substring(NewsProperty,9,1)='1' and islock=0 and isRecyle=0";
+
+            string SqlOrderBy = " order by EditTime desc,id desc";
+            if (this._TemplateType == TempType.Class || this._TemplateType == TempType.Index)
+            {
+                if (str_isSub == "true")
+                    SqlCondition += " And [ClassID] In(" + getChildClassID(this.Param_CurrentClassID) + ")";
+                else
+                    SqlCondition += " And [ClassID] In('" + this.Param_CurrentClassID + "')";
+                Sql = "select top 1 * from [" + DBConfig.TableNamePrefix + "News] " + SqlCondition + SqlOrderBy;
+            }
+            else
+            {
+                Sql = "select top 1 * from [" + DBConfig.TableNamePrefix + "News] " + SqlCondition + SqlOrderBy;
+            }
+
+            //Sql = "select top 1  n.* from [fs_News] AS n INNER JOIN fs_news_Class AS c ON n.ClassID = c.ClassID Where c.NaviShowtf = 1 AND substring(NewsProperty,9,1)='1' and n.islock=0 and n.isRecyle=0 order by n.EditTime desc,n.id desc";
+            dt = CommonData.DalPublish.ExecuteSql(Sql);
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                return "";
+            }
+
+            string str_Style = this.Mass_Inserted;
+            string styleId = Regex.Match(str_Style, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
+            if (!styleId.Equals(string.Empty))
+            {
+                str_Style = LabelStyle.GetStyleByID(styleId);
+            }
+            if (str_Style.Trim().Equals(string.Empty))
+                return string.Empty;
+
+            //视频播放地址--------------------------------------------------------------------------------------------------------
+            if (str_Style.IndexOf("{#NewsvURL") > -1)
+            {
+                Regex reg1 = new Regex(@"\{\#NewsvURL,(?<x>[^,]+),(?<y>[^\}]+)\}", RegexOptions.Compiled);
+                Match m1 = reg1.Match(str_Style);
+                string heightstr = "400";
+                string widthstr = "400";
+                string allstr = "";
+                if (m1.Success)
+                {
+                    allstr = m1.Value;
+                    heightstr = m1.Groups["x"].Value;
+                    widthstr = m1.Groups["y"].Value;
+                    string videoUrl = "";
+                    if (dt.Rows[0]["NewsID"] == DBNull.Value || dt.Rows[0]["vURL"].ToString().Trim() == "")
+                    {
+                        return "";
+                    }
+                    videoUrl = dt.Rows[0]["vURL"].ToString().Trim();
+                    if (videoUrl.Length > 5)
+                    {
+                        string newId = dt.Rows[0]["NewsID"].ToString();
+                        
+                        str_Style = str_Style.Replace(allstr, getNewsvURL(newId, 1, videoUrl, heightstr, widthstr));
+                    }
+                    else
+                    {
+                        str_Style = str_Style.Replace(allstr, "");
+                    }
+                }
+            }
+
+            returnString = str_Style;
+
+            return returnString;
         }
 
 

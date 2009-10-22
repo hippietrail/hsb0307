@@ -59,6 +59,7 @@
                 <asp:ListItem Value="Sitemap">站点地图</asp:ListItem>
                 <asp:ListItem Value="TodayPic">图片头条</asp:ListItem>
                 <asp:ListItem Value="TodayWord">文字头条</asp:ListItem>
+                <asp:ListItem Value="MultimediaHeadline">多媒体头条</asp:ListItem>
                 <asp:ListItem Value="CorrNews">相关新闻</asp:ListItem>
                 <asp:ListItem Value="Metakey">Meta关键字</asp:ListItem>
                 <asp:ListItem Value="MetaDesc">Meta描述</asp:ListItem>
@@ -983,6 +984,32 @@ function ReturnDivValue()
             rvalue += "][/FS:unLoop]";
 	        parent.getValue(rvalue);
             break;
+        case "MultimediaHeadline":
+            rvalue = "[FS:unLoop,FS:SiteID=<%Response.Write(APIID); %>,FS:LabelType=MultimediaHeadline";   
+            if(document.ListLabel.ClassId.value!="") { rvalue += ",FS:ClassID=" + document.ListLabel.ClassId.value }                
+            if(document.getElementById("isBIGT").checked)
+            {
+                rvalue += ",FS:isBIGT=true"; 
+                rvalue += ",FS:BigCSS=" + document.ListLabel.BIGCSS.value; 
+                rvalue += ",FS:bigTitleNumber=" + document.ListLabel.bigTitleNumber.value; 
+            }
+            else
+            {
+                rvalue += ",FS:isBIGT=false"; 
+            }
+            var  vTSCHAR=document.ListLabel.TSCHAR.value;
+            var  vTECHAR=document.ListLabel.TECHAR.value;
+            if(document.ListLabel.TSCHAR.value!=""){ rvalue += ",FS:TSCHAR=" + vTSCHAR.replace("[","$#").replace("]","#$"); }
+            if(document.ListLabel.TECHAR.value!=""){ rvalue += ",FS:TECHAR=" + vTECHAR.replace("[","$#").replace("]","#$"); }
+            if(document.ListLabel.isSub.value!=""){ rvalue += ",FS:isSub=" + document.ListLabel.isSub.value; }
+            if(document.ListLabel.Cols.value!=""){ rvalue += ",FS:Cols=" + document.ListLabel.Cols.value; }
+            if(document.ListLabel.TitleNumer.value!=""){ rvalue += ",FS:TitleNumer=" + document.ListLabel.TitleNumer.value; }
+            //if(document.ListLabel.ContentNumber.value!=""){ rvalue += ",FS:ContentNumber=" + document.ListLabel.ContentNumber.value; }
+            if(document.ListLabel.WNum.value!=""){ rvalue += ",FS:WNum=" + document.ListLabel.WNum.value; }
+            if(document.ListLabel.WCSS.value!=""){ rvalue += ",FS:WCSS=" + document.ListLabel.WCSS.value; }
+            rvalue += "][/FS:unLoop]";
+	        parent.getValue(rvalue);
+            break;
         case "CorrNews":
             if(checkIsNull(document.ListLabel.Number,document.getElementById("spanNumber"),"循环数目不能为空"))
                 CheckStr=false;
@@ -1361,6 +1388,10 @@ function selectLabelType(type)
             showorhide(spanlist,true);
             break;
         case "TodayWord":
+            spanlist="TrClassId,TrChar,TrWNum,TrWCSS,TrCols,TrTitleNumer,TrisSub,TrBigT,TrBigCSS";
+            showorhide(spanlist,true);
+            break;
+        case "MultimediaHeadline":
             spanlist="TrClassId,TrChar,TrWNum,TrWCSS,TrCols,TrTitleNumer,TrisSub,TrBigT,TrBigCSS";
             showorhide(spanlist,true);
             break;

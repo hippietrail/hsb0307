@@ -4573,6 +4573,7 @@
     <Content Include="Templets\xxbn\css\newdai.js" />
     <Content Include="Templets\xxbn\css\olddai.js" />
     <Content Include="Templets\xxbn\dw_video.htm" />
+    <Content Include="Templets\xxbn\dw_video1.htm" />
     <Content Include="Templets\xxbn\Images\b.jpg" />
     <Content Include="Templets\xxbn\Images\bg_menu_nav.png" />
   </ItemGroup>
