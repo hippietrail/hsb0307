@@ -15,7 +15,7 @@ namespace Foosun.Publish
         {
             List, GroupMember, ConstrNews, NewUser, TopUser, UserLogin, OtherJS, statJS, surveyJS, adJS, sysJS,
             freeJS, LastComm, TopNews, RSS, SpeicalNaviRead, SpecialNavi, ClassNaviRead, ClassNavi, SiteNavi, Metakey, MetaDesc, Frindlink,
-            History, CorrNews, Sitemap, NorFilt, FlashFilt, Stat, Search, Position, PageTitle, unRule, ReadNews, ClassList, TodayPic, TodayWord, HistoryIndex, HotTag, CopyRight,
+            History, CorrNews, Sitemap, NorFilt, FlashFilt, Stat, Search, Position, PageTitle, unRule, ReadNews, ClassList, TodayPic, TodayWord, MultimediaHeadline, HistoryIndex, HotTag, CopyRight,
             ChannelList, ChannelClassList, ChannelContent, ChannelSearch, ChannelRSS, ChannelFlash
         };
         #region ±êÇ©²ÎÊý
@@ -253,6 +253,7 @@ namespace Foosun.Publish
                 case EnumLabelType.ClassList: return this.Analyse_ClassList();
                 case EnumLabelType.TodayPic: return this.Analyse_TodayPic();
                 case EnumLabelType.TodayWord: return this.Analyse_TodayWord();
+                case EnumLabelType.MultimediaHeadline: return this.Analyse_MultimediaHeadline();
                 case EnumLabelType.Metakey: return this.Analyse_Meta(0,this.Param_ChID);
                 case EnumLabelType.MetaDesc: return this.Analyse_Meta(1,this.Param_ChID);
                 case EnumLabelType.HotTag: return this.Analyse_HotTag();
