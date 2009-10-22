@@ -2086,6 +2086,13 @@ namespace Foosun.Publish
             {
                 Sql = "select top " + TNum + " * from [" + DBConfig.TableNamePrefix + "News]" + SqlCondition + SqlOrderBy;
             }
+            // husb  文字头条 加 FS:ClassID=1 时，仅取 可视栏目的文字头条
+            else if (str_ClassID == "1")
+            {
+                // select top 1  n.* from [fs_News] AS n INNER JOIN fs_news_Class AS c ON n.ClassID = c.ClassID Where c.NaviShowtf = 1 AND substring(NewsProperty,9,1)='1' and n.islock=0 and n.isRecyle=0 order by n.EditTime desc,n.id desc
+                //Sql = "select top n." + TNum + " * from [" + DBConfig.TableNamePrefix + "News] AS n INNER JOIN fs_news_Class AS c ON n.ClassID = c.ClassID Where c.NaviShowtf = 1 AND substring(NewsProperty,9,1)='1' and n.islock=0 and n.isRecyle=0 " + SqlOrderBy;
+                Sql = "select top 1  n.* from [fs_News] AS n INNER JOIN fs_news_Class AS c ON n.ClassID = c.ClassID Where c.NaviShowtf = 1 AND substring(NewsProperty,9,1)='1' and n.islock=0 and n.isRecyle=0 order by n.EditTime desc,n.id desc";
+            }
             else
             {
                 if (str_isSub == "true")
