@@ -76,14 +76,16 @@ UL LI FORM {
 	   MARGIN: 1px auto;  
 	   WIDTH: 980px; 
 	    
-	   /* background-image:url(../images/green/redtitle.gif) ;*/
+	   /* background-image:url(../images/green/redtitle.gif) place_bg.gif;*/
 	   border: solid 1px #fea817;
-	   background: #b5e684 url(/Templets/xxbn/Images/place_bg.gif) no-repeat 20px 8px;
+	   /*background: ##b5e684 url(/Templets/xxbn/Images/place_bg.gif) no-repeat 20px 8px;*/
+	   background: #3d61f2 url(/Templets/xxbn/Images/b.jpg) repeat-x ;
+	   color: White;
 }
 .gonggao  ul { margin:0px; padding:0px; width:940px; }
 .gonggao  ul  li { margin:0px; padding:0px; width:410px; list-style-type:none; float:left ; margin-left:35px; }
-.gonggao  ul  li a { color:Green;}
-.gonggao  ul  li span { float:right; color:Green; font-size:14px;}
+.gonggao  ul  li a { color:black; font-weight:bold;}
+.gonggao  ul  li span { float:right; color:black; font-size:14px;}
 
 .place {
 	BORDER: #FEA817 1px solid; BACKGROUND: url(/Templets/xxbn/Images/place_bg.gif) #B5E684 no-repeat 20px 8px; MARGIN: 3px auto;  WIDTH: 978px; LINE-HEIGHT: 26px;  HEIGHT: 26px
@@ -733,7 +735,7 @@ A.end:hover {
     font-family:ËÎÌו,Verdana,Tahoma; 
     font-size:9pt; 
     position:relative;
-    top:-18px; 
+    top:-38px; 
     left:290px;
     height:18px;
     _height:18px;
