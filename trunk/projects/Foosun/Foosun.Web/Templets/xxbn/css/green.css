@@ -8,7 +8,7 @@ BODY
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/green/index-bg.gif) #FFFFFF repeat-x;
 	font-family:HGTAIWH, Arial, '新宋体', sans-serif ;
-	font-size:24px;LINE-HEIGHT: 32px;
+	font-size:16pt;LINE-HEIGHT: 32px;
 	color:Green;
 }
 
@@ -337,15 +337,7 @@ UL LI FORM {
     border:#8FD845 1px solid; MARGIN:0px auto 0px;  WIDTH:auto; height:200px;
 
 }
-.centerPicture
-{
-    border:#8FD845 1px solid;
-    height:200px;
-}
-.floatLeft
-{
-    float:left;
-}
+
 
 .tupian1_left {
 	BACKGROUND: url(/Templets/xxbn/Images/gundong.gif) no-repeat; FLOAT: left; WIDTH: 25px;DISPLAY: inline;
@@ -824,11 +816,20 @@ A.end:hover {
 .byjlist ul { margin:0px; padding:0px;}
 .byjlist ul li { margin:0px; padding:0px; list-style-type:none; float :left ;  width:100px;HEIGHT: 27px; margin-left:10px;}
 
+.centerPicture
+{
+    border:#8FD845 1px solid;
+    height:200px;
+}
+.floatLeft
+{
+    float:left;
+}
 .homeVideoLink
 {
-    position:relative;
-    top:-2px;
+    display:block;
     height:18px;
+    line-height:18px;
     _height:18px;
 }
 
@@ -838,29 +839,27 @@ A.end:hover {
     font-family:宋体,Verdana,Tahoma; 
     font-size:9pt; 
     position:relative;
-    top:-18px; 
-    left:200px;
+    left:190px;
+    top:-12px;
     height:18px;
     _height:18px;
 }
 
 .homeAudioLink
 {
-    position:relative;
-    top:-10px;
+    display:block;
     height:18px;
+    line-height:18px;
     _height:18px;
 }
 .homeAudioLink a
 {
-    margin-right:8px; 
     font-family:宋体,Verdana,Tahoma; 
     font-size:9pt; 
+    bottom:2px;
     position:relative;
-    left:100px;
-    bottom:6px;
-    top:-4px;
-    _top:-4px; 
+    left:90px;
+    top:2px;
 }
 
 .video_List {

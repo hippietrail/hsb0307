@@ -2,36 +2,150 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>搜索webfastcms</title>
-<link href="sysImages/default/css/css.css" rel="stylesheet" type="text/css" />
+<title>搜索</title>
+<!--<link href="sysImages/default/css/css.css" rel="stylesheet" type="text/css" />-->
 <script language="javascript" type="text/javascript" src="configuration/js/Prototype.js"></script>
+    <script type="text/javascript" src="/Templets/xxbn/css/jquery.js"></script>
+    <script type="text/javascript" src="/Templets/xxbn/css/newdai.js"></script>
+    <script type="text/javascript" src="/Templets/xxbn/css/olddai.js"></script>
+    <script type="text/javascript" src="/Templets/xxbn/css/imedai.js"></script>
 <style type="text/css">
 /* CSS Document */
+@font-face 
+{
+	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot");
+}
 body {
+    font-family:HGTAIWH, Arial, '新宋体', sans-serif ;
 	margin:10;
 	padding:0;
 	background: #FFF;
-	font-size:12px;
+	font-size:18pt;
 	color: #74accf;
 	margin-left: 0px;
 	margin-top: 0px;
 	background-color: #F7F7F7;
 	line-height:20px;
 }
+.SpecialFontFamily
+{
+	font-size:18pt;
+	font-family:HGTAIWH,Verdana, Arial, sans-serif;
+}
 .class1
 {
-	font-size:14px;
+	font-size:18pt;
 	color:#FF0000;
 }
 .classnoe
 {
-	font-size:14px;
+	font-size:14pt;
 }
 </style>
+
+<script type="text/javascript">
+    function isArabicNumerals(el) {
+        if (el.style.backgroundPosition == '0px 15px') {
+            el.style.backgroundPosition = '0px 30px';
+            IME.arabicNumerals = false;
+        }
+        else {
+            el.style.backgroundPosition = '0px 15px';
+            IME.arabicNumerals = true;
+        }
+    }
+
+    function isNewDai(el) {
+        if (el.style.backgroundPosition == '0px 45px') {
+            el.style.backgroundPosition = '0px 60px';
+            CodeList = CodeListNew;
+            CodeList = CodeList.split(',');
+        }
+        else {
+            el.style.backgroundPosition = '0px 45px';
+            CodeList = CodeListOld;
+            CodeList = CodeList.split(',');
+        }
+    }
+
+    jQuery(document).ready(function() {
+
+        jQuery(document).click(function() { jQuery("#ime").css("display", "none"); });
+        jQuery.each(jQuery("#txtSearch"), function() {
+            jQuery(this).css("font-family", "HGTAIWH");
+            jQuery(this).css("font-size", "12pt");
+            jQuery(this).keydown(function() {
+                var e = window.event || e;
+                var srcElement = e.srcElement || e.target;
+                e.element = srcElement;
+
+                if (e.keyCode == 8) {
+                    this.focus();
+                }
+                var obj = ImeKeyDown(e);
+
+                jQuery("#inputChar").html(IME.Comp.value);
+                jQuery("#candicated").html(IME.Cand.value);
+
+                if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
+                    jQuery("#ime").css("display", "none");
+                    IME.arabicNumerals = true;
+                }
+                this.value = IME.InputArea.value; //IME.InputArea.value;
+
+                return obj;
+            }).keypress(function() {
+                var obj = ImeKeyPress(event);
+
+                jQuery("#inputChar").html(IME.Comp.value);
+                jQuery("#candicated").html(IME.Cand.value);
+
+                if (IME.Cand.value.length > 0) {
+                    jQuery("#ime").css("display", "block");
+                    jQuery("#ime").css("top", (jQuery(this).offset().top + 40) + "px");
+                    jQuery("#ime").css("left", jQuery(this).offset().left);
+
+                    appendTrace(IME.Cand.value.length);
+                    appendTrace(jQuery("#candicated").height() + " w:" + jQuery("#candicated").width());
+
+                    if (IME.Cand.value.length > 55) {
+                        jQuery("#draggable").css("height", "96px");
+                    }
+                    else {
+                        jQuery("#draggable").css("height", "70px");
+                    }
+                    IME.arabicNumerals = false;
+                }
+                else {
+                    if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
+                        jQuery("#ime").css("display", "none");
+                        IME.arabicNumerals = true;
+                    }
+                }
+
+                return obj;
+            }).keyup(function() {
+                var obj = ImeKeyUp(event);
+                return obj;
+            }).blur(function() {
+                IME.InputArea.value = "";
+                IME.Comp.value = "";
+                IME.Cand.value = "";
+
+                jQuery("#inputChar").html("");
+                jQuery("#candicated").html("");
+            }).focus(function() {
+                IME.InputArea.value = this.value;
+            });
+        });
+    });
+</script>
+
+
 </head>
-<body onload="getUrlParam();">
-<table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#EEEEEE">
+<body onload="getUrlParam(); BodyOnLoad(); ">
   <form id="form1">
+<table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#EEEEEE">
   <tr>
 	<td width="22%" rowspan="2"><a href="http://www.hgzp.com" target="_blank"><img src="sysImages/Login/Logo.gif" width="194" height="58" alt="powered by HuaGuang ImageSetter"  border="0" /></a></td>
 	<td valign="bottom" style="width:40%;height:26px;"><span id="snews" class="class1" onclick="getType('news')" style="cursor:pointer;font-size:14px;">全文</span>　<span  class="classnoe" onclick="getType('tag')" id="stag" style="cursor:pointer;font-size:14px;">TAG</span>　<span  class="classnoe" onclick="getType('author')" id="sauthor" style="cursor:pointer;font-size:14px;">作者</span>　<span  class="classnoe" onclick="getType('edit')" id="sedit" style="cursor:pointer;font-size:14px;">编辑</span></td>
@@ -41,11 +155,31 @@ body {
 	<td>
 	<input id="type" name="type" type="hidden" value="news" />
 	<input id="chid" name="chid" type="hidden" value="" />
-	<input name="tags" type="text" id="tags" size="30" onkeydown="javascript:if(event.keyCode==13){return false;}" class="SpecialFontFamily" />
+	<input name="tags" type="text" id="txtSearch" size="30" class="SpecialFontFamily" />
 	<input type="button" name="Submit1" style="font-family:Arial;font-size:12px;" value="继续搜索"  onclick="javascript:SearchGo(this.form);" /></td>
   </tr>
-  </form>
 </table>
+
+<div id="ime" style="z-index:999; display:none; position:absolute; left:1px; top:1px;">
+      <div class="ui-widget-content" id="draggable">
+          <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
+          <span id="inputChar" style="font-size:12pt;"></span>
+          <div id="candicated" style="font-family:HGTAIWH; font-size:16pt;"></div>
+      </div>
+</div>
+
+<div style=" display:none;">
+	    <input id="Comp" name="Comp" type="text"  />
+	    <textarea id="Cand"  name="Cand" cols="20" rows="11"  style="font-family:HGTAIWH; font-size:16pt;" ></textarea>
+	    <textarea id="InputArea"  name="InputArea" cols="20" rows="11" style="font-family:HGTAIWH; font-size:16pt;"></textarea>
+	    <input id="EnglishMode" name="EnglishMode" type="checkbox"  />英文(Ctrl)OnFocus="IME.InputArea.focus()"
+        <input id="FullShape" name="FullShape" type="checkbox"  />全形字符(F12)OnFocus="IME.InputArea.focus()"
+        <input id="AutoUp" name="AutoUp" type="checkbox" checked="checked"  />自动上字OnFocus="IME.InputArea.focus()"　翻页 PageUp/PageDown  
+        <textarea id="TraceConsole"  name="TraceConsole" cols="20" rows="11" ></textarea>
+</div>
+
+</form>
+
 <div style="padding-left:15px;padding-top:15px;" >
 <span id="Span_SearchList"><img alt="搜索中..." src="sysImages/folder/loading.gif" style="border:0px;" />正在搜索...</span>
  
