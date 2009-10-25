@@ -167,28 +167,28 @@ public partial class search : Foosun.Web.UI.BasePage
             {
 
                 str_Row += "<tr>" + newLine;
-                str_Row += "<td colspan=\"2\" class=\"SpecialFontFamily\"><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:14px;\">" + dr["Title"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> " + dr["CreatTime"].ToString() + "</li></td>" + newLine;
+                str_Row += "<td colspan=\"2\" ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:16pt;\">" + dr["Title"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a><span  style=\"font-size:11pt;\">" + dr["CreatTime"].ToString() + "</span></li></td>" + newLine;
                 str_Row += "</tr>" + newLine;
                 str_Row += "<tr>" + newLine;
-                str_Row += "<td colspan=\"2\" class=\"SpecialFontFamily\">" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green\">" + NewsUrl1 + "</div></td>" + newLine;
+                str_Row += "<td colspan=\"2\" >" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green; font-size:11pt;\">" + NewsUrl1 + "</div></td>" + newLine;
                 str_Row += "</tr>" + newLine;
-                str_Row += "<tr>" + newLine;
-                str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["Title"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
-                str_Row += "</tr>" + newLine;
+                //str_Row += "<tr>" + newLine;class=\"SpecialFontFamily\"class=\"SpecialFontFamily\"
+                //str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["Title"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
+                //str_Row += "</tr>" + newLine;
             }
             else
             {
                 str_Row += "<tr>" + newLine;
                 string gimgr = dim + dr["PicURL"].ToString().ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
                 str_Row += "<td rowspan=\"3\"><img src=\"" + gimgr + "\" height=\"110\" width=\"140\" border=\"0\" /></td>" + newLine;
-                str_Row += "<td align=\"left\" width=\"100%\" class=\"SpecialFontFamily\"><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:14px;\">" + dr["Title"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> " + dr["CreatTime"].ToString() + "</li></td>" + newLine;
+                str_Row += "<td align=\"left\" width=\"100%\" ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:16pt;\">" + dr["Title"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> <span  style=\"font-size:11pt;\">" + dr["CreatTime"].ToString() + "</span></li></td>" + newLine;
                 str_Row += "</tr>" + newLine;
                 str_Row += "<tr>" + newLine;
-                str_Row += "<td align=\"left\" class=\"SpecialFontFamily\">" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green\">" + NewsUrl1 + "</div></td>" + newLine;
+                str_Row += "<td align=\"left\" >" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green; font-size:11pt;\">" + NewsUrl1 + "</div></td>" + newLine;
                 str_Row += "</tr>" + newLine;
-                str_Row += "<tr>" + newLine;
-                str_Row += "<td align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["Title"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
-                str_Row += "</tr>" + newLine;
+                //str_Row += "<tr>" + newLine;class=\"SpecialFontFamily\"class=\"SpecialFontFamily\"
+                //str_Row += "<td align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["Title"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
+                //str_Row += "</tr>" + newLine;
             }
         }
         else
@@ -204,37 +204,40 @@ public partial class search : Foosun.Web.UI.BasePage
                     str_Row += "<tr>" + newLine;
                     string imgr = dim + dr["PicURL"].ToString().ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
                     str_Row += "<td rowspan=\"3\"><img src=\"" + imgr + "\" height=\"110\" width=\"140\" border=\"0\" /></td>" + newLine;
-                    str_Row += "<td align=\"left\" width=\"100%\" class=\"SpecialFontFamily\" ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:14px;\">" + dr["NewsTitle"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> " + dr["CreatTime"].ToString() + "</li></td>" + newLine;
+                    str_Row += "<td align=\"left\" width=\"100%\"  ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:16pt;\">" + dr["NewsTitle"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> <span  style=\"font-size:11pt;\">" + dr["CreatTime"].ToString() + "</span></li></td>" + newLine;
                     str_Row += "</tr>" + newLine;
                     str_Row += "<tr>" + newLine;
-                    str_Row += "<td align=\"left\" class=\"SpecialFontFamily\">" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green\">" + NewsUrl1 + "</div></td>" + newLine;
+                    str_Row += "<td align=\"left\" >" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green; font-size:11pt;\">" + NewsUrl1 + "</div></td>" + newLine;
                     str_Row += "</tr>" + newLine;
-                    str_Row += "<tr>" + newLine;
-                    str_Row += "<td align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
-                    str_Row += "</tr>" + newLine;
+                    //str_Row += "<tr>" + newLine;class=\"SpecialFontFamily\"class=\"SpecialFontFamily\"
+                    //str_Row += "<td align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
+                    //str_Row += "</tr>" + newLine;
+                    str_Row += "<tr><td></td></tr>" + newLine;
                     break;
                 case "0":
                     NewsUrl = getNewsURL.getnewsReview(dr["NewsID"].ToString(), "news");// dim + SaveClassframe + "/" + dr["SavePath"].ToString() + "/" + dr["FileName"].ToString() + dr["FileEXName"].ToString();
                     NewsUrl = NewsUrl.Replace("//", "/");// NewsUrl.Replace("//", "/");
                     NewsUrl1 = "http://" + Request.ServerVariables["SERVER_NAME"] + dim + NewsUrl; //+ SaveClassframe + "/" + dr["SavePath"].ToString() + "/" + dr["FileName"].ToString() + dr["FileEXName"].ToString();
                     str_Row += "<tr>" + newLine;
-                    str_Row += "<td colspan=\"2\" class=\"SpecialFontFamily\"><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:14px;\">" + dr["NewsTitle"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> " + dr["CreatTime"].ToString() + "</li></td>" + newLine;
+                    str_Row += "<td colspan=\"2\" ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:16pt;\">" + dr["NewsTitle"].ToString().Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "</span></a> <span  style=\"font-size:11pt;\">" + dr["CreatTime"].ToString() + "</span></li></td>" + newLine;
                     str_Row += "</tr>" + newLine;
                     str_Row += "<tr>" + newLine;
-                    str_Row += "<td colspan=\"2\" class=\"SpecialFontFamily\">" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green\">" + NewsUrl1 + "</div></td>" + newLine;
+                    str_Row += "<td colspan=\"2\" >" + Foosun.Common.Input.GetSubString(Foosun.Common.Input.FilterHTML((dr["Content"].ToString()).Replace("?", "？")), 100).Replace(stags, "<span style=\"color:red\">" + stags + "</span>") + "<div style=\"color:green; font-size:11pt;\">" + NewsUrl1 + "</div></td>" + newLine;
                     str_Row += "</tr>" + newLine;
-                    str_Row += "<tr>" + newLine;
-                    str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
-                    str_Row += "</tr>" + newLine;
+                    //str_Row += "<tr>" + newLine;class=\"SpecialFontFamily\"class=\"SpecialFontFamily\"
+                    //str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl1 + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
+                    //str_Row += "</tr>" + newLine;
+                    str_Row += "<tr><td></td></tr>" + newLine;
                     break;
                 case "2":
                     NewsUrl = dr["URLaddress"].ToString();
                     str_Row += "<tr>" + newLine;
-                    str_Row += "<td colspan=\"2\" class=\"SpecialFontFamily\"><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:14px;\">" + dr["NewsTitle"].ToString() + "</span></a> " + dr["CreatTime"].ToString() + "</li><div style=\"color:green\">" + NewsUrl + "</div></td>" + newLine;
+                    str_Row += "<td colspan=\"2\" ><li><a href=\"" + NewsUrl + "\" target=\"_blank\"><span style=\"font-size:16pt;\">" + dr["NewsTitle"].ToString() + "</span></a> <span  style=\"font-size:11pt;\">" + dr["CreatTime"].ToString() + "</span></li><div style=\"color:green; font-size:11pt;\">" + NewsUrl + "</div></td>" + newLine;
                     str_Row += "</tr>" + newLine;
-                    str_Row += "<tr>" + newLine;
-                    str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
-                    str_Row += "</tr>" + newLine;
+                    //str_Row += "<tr>" + newLine;class=\"SpecialFontFamily\"
+                    //str_Row += "<td colspan=\"2\" align=\"left\" valign=\"top\" style=\"height:35px;\"><a href=\"" + FavNewsUrl.Replace("//", "/") + "\" target=\"_blank\">收藏</a> <a href=\"javascript:void(0);\" onclick=\"sendfriend('" + NewsUrl + "','" + dr["NewsTitle"].ToString() + "');\">推荐给朋友</a></td>" + newLine;
+                    //str_Row += "</tr>" + newLine;
+                    str_Row += "<tr><td></td></tr>" + newLine;
                     break;
             }
         }
