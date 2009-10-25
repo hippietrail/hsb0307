@@ -1,4 +1,4 @@
-/*顶部下拉菜单部分*/
+
 function $(id) {
     return document.getElementById(id);
 }
@@ -31,7 +31,7 @@ function showMenu (baseID, divID) {
 		showMenu.cur && (showMenu.cur.style.display = 'none');
 	}
 }
-/*滑动部分*/
+
 function scrollDoor(){
 }
 scrollDoor.prototype = {
@@ -39,7 +39,7 @@ sd : function(menus,divs,openClass,closeClass){
 	var _this = this;
 	if(menus.length != divs.length)
 	{
-		alert("菜单层数量和内容层数量不一样!");
+		//alert("菜单层数量和内容层数量不一�?");
 		return false;
 	}				
 	for(var i = 0 ; i < menus.length ; i++)

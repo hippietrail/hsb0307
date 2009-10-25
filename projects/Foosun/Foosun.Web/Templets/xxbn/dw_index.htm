@@ -3,6 +3,12 @@
 <head>
     <title>西双版纳傣文网</title><!--{FS_FREE__站点域名}-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="description" content="傣文网，是世界十大报纸之一《人民日报》建设的以新闻为主的大型网上信息发布平台，也是互联网上最大的中文和多语种新闻网站之一。作为国家重点新闻网站，人民网以新闻报道的权威性、及时性、多样性和评论性为特色，在网民中树立起了“权威媒体、大众网站”的形象。" />
+    <meta name="keywords" content="西双版纳,西双版纳傣文网,傣文网,傣文,西傣文,西双版纳新闻,西双版纳风景,原始森林,新闻中心,时政,社会,地方,地方领导,经济,能源环保,跨国公司,新农村,教育,科技,文化,饮食,娱乐,旅游,游戏,短信,彩信,资料,图片,直播,访谈,观点,理论,传媒,国际军事,台湾,港澳,汽车,房产,IT,家电,开发区,百强县,体育,奥运,彩票, 健康,男士,生活,天气,光盘,数据" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <link href="/Templets/xxbn/css/nav.css" type="text/css" rel="stylesheet" />
     <link href="/Templets/xxbn/css/green.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" language="javascript" src="/Templets/xxbn/css/main.js"></script>
@@ -127,27 +133,20 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="top">
-             <!--
-             <div class="logo">
-               {FS_新傣文logo}
-            </div>
-             <div class="banner">
-                 <{FS_网站顶部flash}
-                 
-            </div>
-             <div class="logo_old">
-                {FS_老傣文logo}
-            </div> 
-            -->
-            <img src="/files/TempletPictures/55.jpg" style="width:980px; height:100px;" alt="" />
-            <!--{FS_网站顶部flash}-->
-            
-        <div class="clear"></div> 
-        </div>
+        <!--<div class="top">
+            <img src="/files/siteFiles/topbar.jpg" style="width:980px;" alt="" />
+        </div>-->
+        <img src="/files/siteFiles/topbar.jpg" style=" display:block; width:980px;" alt="" />
         <div class="menu">
            <div class="menu_border"></div>
-           <div class="logobn"><img alt="" src="/files/siteFiles/logo.gif" style="width:230px; height:122px; margin:2px;" /></div>
+           <div class="logobn">
+           <img src="/files/siteFiles/logo.gif" style="width:230px; height:122px; margin:2px; border:0px; color:White;" alt="" usemap="#Map1" />
+           <map id="Map1" > 
+                <area shape="rect" coords="0,0,230,61" href=" http://www.dw12.com"  alt="163"/> 
+                <area shape="rect" coords="0,61,230,122" href=" http://old.dw12.com"  alt="sina"/>   
+           </map> 
+
+           </div>
            <div class="columns">
             <ul >
                  {FS_xxbn_栏目导航}
@@ -159,12 +158,8 @@
         
     </div>
     <div class="wrap">
-        <div class="gonggao"><marquee scrollamount=6 width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();"><ul>{FS_xxbn_滚动新闻}<div class="clear"></div></ul></marquee></div>
-        <!--<div class="place">
-            <div class="place1">
-                ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：{FS_当前位置}
-            </div>
-        </div>-->
+        <div class="gonggao"><marquee scrollamount="6" width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();">{FS_xxbn_滚动新闻}</marquee></div>
+       <!-- <li><span class="time">{#DateShort}</span><a title="{#uTitle}" target="_blank" href="{#URL}">{#Title}</a></li> <ul>{FS_xxbn_滚动新闻}</ul>        -->
         <div class="area">
               <div class="area_left">
                     <div class="myflash">
@@ -213,7 +208,8 @@
                                       <input type="hidden" name="domains" value="www.dw123.com" />
                                       <input type="hidden" name="sitesearch" value="www.dw123.com" />
                                       </form>
-                                    </div>      
+                                    </div>   
+                                    -->   
                                     <script language="javascript" type="text/javascript">
                                     function SearchGo85310(obj)
                                     {
@@ -230,7 +226,7 @@
                                      window.open('/Search.html?type=news&tags='+escape(obj.tags.value)+'','','');
                                     }
                                     </script>
-                                    -->
+                                    
    
                                </div>
                            </div>
@@ -248,8 +244,8 @@
               </div>
               <div class="area_right">
                     <div class="vouch_cms">
-                    <img  src="/files/siteFiles/new.jpg" style="margin-left:6px;margin-top:6px; width: 128px; height: 184px; ">
-                    <img  src="/files/siteFiles/old.jpg" alt="" style="margin-left:6px; margin-top:6px;  width: 128px; height: 184px;"/>
+                    <img  src="/files/siteFiles/new.jpg" style="margin-left:6px;margin-top:6px; width: 146px; height: 188px; " />
+                    <img  src="/files/siteFiles/old.jpg" alt="" style="margin-left:6px; margin-top:2px;  width: 146px; height: 188px;"/>
                     
               </div>
               <div class="clear"></div>
@@ -258,15 +254,15 @@
      </div>
      
     <div class="wrap">
-        <div class="centerPicture floatLeft" style="width:130px;" >
-           <div>网站音频</div>
-           <a href="#" style="border:none 0px white;"><img src="/files/siteFiles/audio.png" alt="" style="border:none 0px white;"  /></a> 
+        <div class="centerPicture floatLeft" style="width:130px;  _height:180px;" >
+           <!--<div>网站音频</div>-->
+           <a href="{FS_栏目Url}" style="border:none 0px white;"><img src="/files/siteFiles/audio.gif" alt="" style="border:none 0px white; margin-left:2px; margin-top:2px;"  /></a> 
            <div class="homeAudioLink">{FS_首页音频链接}</div>
         </div>
-        <div class="centerPicture floatLeft" style=" margin-left:6px; width:508px;" >
+        <div class="centerPicture floatLeft" style=" margin-left:6px; width:588px; _height:200px;" >
            {FS_首页中部横幅图片}
         </div>
-        <div class="centerPicture floatLeft" style="margin-left:7px; width:318px; vertical-align:top;" >
+        <div class="centerPicture floatLeft" style="margin-left:4px; width:238px;_height:180px; vertical-align:top; padding-top:2px;" >
            {FS_视频新闻栏目头条}
            <div class="homeVideoLink">{FS_首页视频链接}</div>
         </div>
@@ -309,7 +305,8 @@
                 <div class="tupian" id="cc01">
                    <ul>{FS_xxbn_要闻报道图文}</ul></div>
                 <div class="tupian" id="cc02" style="display: none">
-                    <ul>{FS_xxbn_社会论坛图文}</ul></div>
+                    <ul>{FS_xxbn_社会论坛图文}</ul>
+                </div>
                 <!--<div class="tupian" id="cc03" style="display: none">
                     <ul></ul></div>
                 <div class="tupian" id="cc04" style="display: none">
@@ -326,44 +323,31 @@
     
     <div class="wrap">
          <div class="area">
-               <div class="area_left3">
-                <div class="title">
-                    <div class="title_left">傣乡风情</div>
+               <div class="pink">
+                <div class="pinkTitle">
+                    <div class="pinkText">傣乡风情</div>
                 </div>
                 <div class="ad_left">{FS_首页广告上}</div>
-            </div>
-               <div class="area_main">
-                <div class="title">
-                    <div class="title2">
+               </div>
+               
+               <div class="pink_main">
+                <div class="pinkTitle">
+                    <div class="pinkText">
                         <ul>
-                            <li class="active" id="mmm01"><a href="http://www.xxbn.cn/down/Templet/Dvbbs" target="_blank">
+                            <li class="active" id="mmm01"><a href="http://www.xxbn.cn/down/Templet/Dvbbs" target="_blank" style="border-color:#f0b8ff;">
                                ᦩᦱᧄ ᦣᦴᧉ ᦂᦱᧃ ᦵᦣᧆ ᦉᦱᧂᧉnjzc3 </a> </li>
                             <li id="mmm02"><a href="http://www.xxbn.cn/down/Templet/Discuz" target="_blank">
                             ᦂᦱᧃ ᦉᦱᧂᧉ ᦵᦵᦎᧂᧈ ᦢᦱᧃᧉ ᦑᦳᧂᧈ ᦺᦖᧈxncjs5 </a>
                             </li>
-                            <!--<li id="mmm03"><a href="http://www.xxbn.cn/down/Templet/Enterprise" target="_blank">
-                                </a> </li>
-                            <li id="mmm04"><a href="http://www.xxbn.cn/down/Templet/Gov" target="_blank"></a>
-                            </li>
-                            <li id="mmm05"><a href="http://www.xxbn.cn/down/Templet/Disport" target="_blank"></a>
-                            </li>
-                            <li id="mmm06"><a href="http://www.xxbn.cn/down/Templet/Way" target="_blank"></a>
-                            </li>-->
                         </ul>
                     </div>
                 </div>
-                <div class="tupian" id="ccc01">
+                <div class="picPink" id="ccc01">
                    <ul>{FS_xxbn_傣乡新闻图文}</ul></div>
-                <div class="tupian" id="ccc02" style="display: none">
-                    </div>
-                <!--<div class="tupian" id="ccc03" style="display: none">
-                    {FS400_滑动}</div>
-                <div class="tupian" id="ccc04" style="display: none">
-                    {FS400_滑动}</div>
-                <div class="tupian" id="ccc05" style="display: none">
-                    {FS400_滑动}</div>
-                <div class="tupian" id="ccc06" style="display: none">
-                    {FS400_滑动}</div>-->
+                <div class="picPink" id="ccc02" style="display: none">
+                <ul>{FS_xxbn_农业之窗图文}</ul>
+                </div>
+                
             </div>
                <div class="clear"></div>
          </div>
@@ -371,40 +355,30 @@
     
     <div class="wrap">
         <div class="area">
-            <div class="area_left3">
-                <div class="title">
-                    <div class="title_left">傣乡风情</div>
+            <div class="brownRegion">
+                <div class="brownTitle">
+                    <div class="brownText">傣乡风情</div>
                 </div>
                 <div class="ad_left">{FS_首页广告下}</div>
             </div>
-            <div class="area_center1">
-                <div class="title">
-                    <div class="title_left">
+            <div class="brown_center">
+                <div class="brownTitle">
+                    <div class="brownText">
                        ᦃᦱᧁᧈ ᦉᦱᧃ ᦂᦱᧃ ᦐᧅywbd1
                     </div>
                 </div>
                 <div class="right_main">
                          <ul>{FS_xxbn_栏目最新新闻列表_要闻报道}</ul>
-                    </div>
+                </div>
             </div> 
-            <div class="area_right1">
-                <div class="title">
-                    <div class="title_left">
-                        ᦅᧄ ᦷᦈᧆᧈ ᦈᦱ ᦢᦱᧃᧉ ᦵᦙᦲᧂshlt2</div>
+            <div class="brown_right">
+                <div class="brownTitle">
+                    <div class="brownText">ᦅᧄ ᦷᦈᧆᧈ ᦈᦱ ᦢᦱᧃᧉ ᦵᦙᦲᧂshlt2</div>
                 </div>
                 <div class="right_main">
                     <ul>{FS_xxbn_栏目最新新闻列表_社会论坛}</ul>
-                    </div>
-            </div>
-            <!--<div class="area_right1">
-                <div class="title">
-                    <div class="title_left">
-                        <a href="http://www.xxbn.cn/College/JS/index.html">栏目</a></div>
                 </div>
-                <div class="right_main">
-                    <img src="/files/ad/口腔溃疡.gif" />
-                    </div>
-            </div>-->
+            </div>
             <div class="clear"></div>
         </div>
     </div>

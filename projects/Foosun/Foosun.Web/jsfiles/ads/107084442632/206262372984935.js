@@ -1,1 +1,1 @@
-document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=206262372984935"  target=_blank><img src="/files/dsc_0003.jpg" border="0" width="250"  height="250" align="top"></a>');
+document.write('<a href="/jsfiles/ads/adsclick.aspx?adsID=206262372984935"  target=_blank><img src="/files/dsc_0003.jpg" border="0" width="300"  height="300" align="top"></a>');
