@@ -4594,6 +4594,7 @@
     <Content Include="fonts\HG_Tai_WH.eot" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DigitalNewspaper\" />
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
     <Folder Include="editor\editor\plugins\" />
     <Folder Include="editor\language\danish\" />
