@@ -23,6 +23,19 @@ namespace Foosun.Web.manageXXBN.news
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //
+            string op = Request.QueryString["op"];
+            if (!String.IsNullOrEmpty(op))
+            {
+                string filename = Request.QueryString["file"];
+                NewsInfo news = BatchAddNewsHandler.CreateNewsInfo(filename);
+                if (!String.IsNullOrEmpty(news.Attachment))
+                {
+                    BatchAddNewsHandler.DeleteFile(filename.Substring(0, filename.LastIndexOf('\\') + 1) + news.Attachment);
+                }
+                BatchAddNewsHandler.DeleteFile(filename);
+            }
+
                 if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)
                     str_dirMana = "//" + str_dirMana;
                 string FileID = Request.QueryString["Id"];
@@ -175,8 +188,6 @@ namespace Foosun.Web.manageXXBN.news
                         sub = "javascript:ListGo('" + tmp.Replace("\\", "\\\\") + "\\\\" + fileInfo.FileName + "','" + fileInfo.ParentDirectory.Remove(0, str_FilePath.Length).Replace("\\", "\\\\") + "');";
                         ((HyperLink)e.Item.FindControl("folder")).NavigateUrl = sub;
                     }
-
-
                     
                     ((HyperLink)e.Item.FindControl("folder")).Text = fileInfo.FileName;
                     ((HyperLink)e.Item.FindControl("folder")).Visible = true;
@@ -197,8 +208,12 @@ namespace Foosun.Web.manageXXBN.news
                     ((HyperLink)e.Item.FindControl("aAddFile")).Text = "<img src='../../sysImages/default/sysico/add.gif' border='0' alt='添加为新闻' />";
                     ((HyperLink)e.Item.FindControl("aEnter")).Visible = false;
                     ((CheckBox)e.Item.FindControl("chk")).Visible = true; //
-                }
 
+                    ((HyperLink)e.Item.FindControl("aDelete")).Visible = true;
+                    ((HyperLink)e.Item.FindControl("aDelete")).NavigateUrl = "CPNS_News_List.aspx?file=" + System.Web.HttpUtility.UrlEncode(fileInfo.FullName) + "&op=delete";
+                    ((HyperLink)e.Item.FindControl("aDelete")).Text = "<img src='../../sysImages/default/sysico/del.gif' border='0' alt='添加为新闻' />";
+                    ((HyperLink)e.Item.FindControl("aDelete")).Attributes.Add("onclick", "return confirm('您确实要删除本条新闻吗？');");
+                }
                 
                 ((Literal)e.Item.FindControl("fileExtension")).Text = fileInfo.FileType;
                 ((Literal)e.Item.FindControl("fileCreateAt")).Text = fileInfo.CreateAt.ToString("");

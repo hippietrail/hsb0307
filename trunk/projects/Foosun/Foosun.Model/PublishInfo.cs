@@ -13,6 +13,7 @@ namespace Foosun.Model
         public string ClassID = string.Empty;
         public string ClassCName = string.Empty;
         public string ClassEName = string.Empty;
+        public string ClassAlias = string.Empty;
         public string ParentID = string.Empty;
         public int IsURL;
         //public int OrderID;

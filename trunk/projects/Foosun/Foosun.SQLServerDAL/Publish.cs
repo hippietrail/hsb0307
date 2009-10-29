@@ -23,9 +23,10 @@ namespace Foosun.SQLServerDAL
         {
             IList<PubClassInfo> list = new List<PubClassInfo>();
             string Sql = "select Id,ClassID,ClassCName,ClassEName,ParentID,[Domain],IsURL,URLaddress,ClassTemplet,SavePath,SaveClassframe,ClassSaveRule";
-            Sql += ",ClassIndexRule,SiteID,NaviPIC,NaviContent,MetaKeywords,MetaDescript,isDelPoint,Gpoint,iPoint,GroupNumber,NaviShowtf,NaviPosition,NewsPosition,isPage";
+            Sql += ",ClassIndexRule,SiteID,NaviPIC,NaviContent,MetaKeywords,MetaDescript,isDelPoint,Gpoint,iPoint,GroupNumber,NaviShowtf,NaviPosition,NewsPosition,isPage, ClassCNameRefer";
             //wjl 2008-07-23 栏目导航问题
-            Sql += " from " + Pre + "news_Class where isRecyle=0 and isLock=0 and NaviShowtf = 1  order by OrderID desc,id desc";
+            // husb 2009-10-28 非可视栏目也显示
+            Sql += " from " + Pre + "news_Class where isRecyle=0 and isLock=0  order by OrderID desc,id desc";//and NaviShowtf = 1 
             //--wjl>
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, null);
             while (rd.Read())
@@ -56,6 +57,7 @@ namespace Foosun.SQLServerDAL
                 if (rd["NaviPosition"] != DBNull.Value) info.NaviPosition = rd["NaviPosition"].ToString();
                 if (rd["NewsPosition"] != DBNull.Value) info.NewsPosition = rd["NewsPosition"].ToString();
                 if (rd["isPage"] != DBNull.Value) info.isPage = Convert.ToInt32(rd["isPage"].ToString());
+                if (rd["ClassCNameRefer"] != DBNull.Value) info.ClassAlias = rd["ClassCNameRefer"].ToString();
                 if (rd["NaviShowtf"] != DBNull.Value) info.NaviShowtf = Convert.ToInt32(rd["NaviShowtf"].ToString());
                 list.Add(info);
             }

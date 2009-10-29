@@ -285,7 +285,6 @@ Global
 		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|.NET.ActiveCfg = Debug
 		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|Any CPU.ActiveCfg = Debug
 		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|Mixed Platforms.ActiveCfg = Debug

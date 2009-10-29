@@ -295,7 +295,9 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                         string url = "/" + Foosun.Config.UIConfig.dirFile + "/doc/" + DateTime.Now.ToString("yyyyMMdd") + "/" + news.Attachment.Replace(" ", "");
 
                         // 根据文档类型，修改新闻的内容
-                        news.Content = Foosun.Web.manageXXBN.news.BatchAddNewsHandler.ChangeContent(news.Content, news.DocumentType, url);
+                        Foosun.CMS.sys Sys = new Foosun.CMS.sys();
+                        DataTable watermarkParamter = Sys.WaterStart();
+                        news.Content = Foosun.Web.manageXXBN.news.BatchAddNewsHandler.ChangeContent(news.Content, news.DocumentType, url, watermarkParamter);
 
                         if (news.DocumentType == Foosun.Web.manageXXBN.news.DocumentType.Audio || news.DocumentType == Foosun.Web.manageXXBN.news.DocumentType.Video)
                         {

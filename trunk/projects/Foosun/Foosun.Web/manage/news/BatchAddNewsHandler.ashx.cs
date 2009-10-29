@@ -13,6 +13,7 @@ using System.Web.Caching;
 using System.Text;
 using Foosun.Publish;
 using System.Collections.Generic;
+using System.Drawing;
 
 
 namespace Foosun.Web.manageXXBN.news
@@ -38,6 +39,9 @@ namespace Foosun.Web.manageXXBN.news
 
             DataTable dtColumnMap = rd.GetAllColumnMap();
 
+            Foosun.CMS.sys Sys = new Foosun.CMS.sys();
+            DataTable watermarkParamter = Sys.WaterStart();
+
             int cnt = 0;
             foreach (string f in fileList)
             {
@@ -45,7 +49,7 @@ namespace Foosun.Web.manageXXBN.news
                 {
                     NewsInfo news = CreateNewsInfo(f);
 
-                    if ( String.IsNullOrEmpty( news.Column) || news.Column == "没选择栏目" )
+                    if (String.IsNullOrEmpty(news.Column) || news.Column == "没选择栏目")
                     {
                         continue;
                     }
@@ -59,7 +63,7 @@ namespace Foosun.Web.manageXXBN.news
                         continue;
                     }
 
-                    DataRow[] rows = dtColumnMap.Select("CpClassName = '" + news.Column +"'" + " AND Media = '" + news.Media + "'");
+                    DataRow[] rows = dtColumnMap.Select("CpClassName = '" + news.Column + "'" + " AND Media = '" + news.Media + "'");
                     if (rows.Length == 0)
                     {
                         continue;
@@ -106,10 +110,10 @@ namespace Foosun.Web.manageXXBN.news
                             string url = "/" + Foosun.Config.UIConfig.dirFile + "/doc/" + DateTime.Now.ToString("yyyyMMdd") + "/" + news.Attachment.Replace(" ", "");//.Remove(news.Attachment.LastIndexOf('\\')
 
                             // 根据文档类型，修改新闻的内容
-                            uc.Content = ChangeContent(uc.Content, news.DocumentType, url);
+                            uc.Content = ChangeContent(uc.Content, news.DocumentType, url, watermarkParamter);
                         }
                     }
-                    
+
 
                     // 将新闻插入数据库中
                     rd.insertNewsContent(uc);
@@ -122,7 +126,7 @@ namespace Foosun.Web.manageXXBN.news
                     // 删除已经用过的文件
                     //System.IO.File.Delete(f);
                     DeleteFile(f);
-                    if(System.IO.Directory.GetFileSystemEntries(f.Remove(f.LastIndexOf('\\'))).Length == 0)
+                    if (System.IO.Directory.GetFileSystemEntries(f.Remove(f.LastIndexOf('\\'))).Length == 0)
                     {
                         System.IO.Directory.Delete(f.Remove(f.LastIndexOf('/')));
                     }
@@ -149,7 +153,7 @@ namespace Foosun.Web.manageXXBN.news
                 context.Response.End();
             }
 
-            
+
         }
 
         #region 生成新闻对象
@@ -264,7 +268,7 @@ namespace Foosun.Web.manageXXBN.news
             if (dts != null && dts.Rows.Count > 0)
             {
                 _IDStr = int.Parse(dts.Rows[0]["Id"].ToString());
-                dts.Clear(); 
+                dts.Clear();
                 dts.Dispose();
             }
             else
@@ -304,11 +308,11 @@ namespace Foosun.Web.manageXXBN.news
             string newsId = Foosun.Common.Rand.Number(12);
 
             int count = 1;
-            while(count > 0)
+            while (count > 0)
             {
                 DataTable rTF = manager.getNewsIDTF(newsId, dataLib);
                 count = rTF.Rows.Count;
-                if(count > 0)
+                if (count > 0)
                 {
                     newsId = Foosun.Common.Rand.Number(12);
                 }
@@ -589,7 +593,7 @@ namespace Foosun.Web.manageXXBN.news
                 case "Complex":
                     t = DocumentType.Complex;
                     break;
-                    
+
 
             }
             return t;
@@ -624,13 +628,29 @@ namespace Foosun.Web.manageXXBN.news
             }
         }
 
-        public static string ChangeContent(string content, DocumentType docType, String url)
+        public static string ChangeContent(string content, DocumentType docType, String url, DataTable watermarkParamter)
         {
             string c = "";
             switch (docType)
             {
                 case DocumentType.Picture:
-                    string header = String.Format("<div style=\"text-align:center\"><img  border=\"0\" alt=\"\" src=\"{0}\" /></div>", url); // height=\"284\" width=\"400\"
+                    if (watermarkParamter != null && watermarkParamter.Rows.Count > 0)
+                    {
+                        FSImage fd = new FSImage(0, 0, HttpContext.Current.Server.MapPath(url));
+                        fd.Diaph = watermarkParamter.Rows[0]["PintPictrans"].ToString();
+                        fd.Quality = 100;
+                        fd.Title = watermarkParamter.Rows[0]["PrintWord"].ToString();
+                        fd.FontSize = Convert.ToInt32(watermarkParamter.Rows[0]["Printfontsize"].ToString());
+                        if (watermarkParamter.Rows[0]["PrintBTF"].ToString() == "1")
+                            fd.StrStyle = FontStyle.Bold;
+                        fd.FontColor = ColorTranslator.FromHtml("#" + watermarkParamter.Rows[0]["Printfontcolor"].ToString());
+                        fd.BackGroudColor = Color.White;
+                        fd.FontFamilyName = watermarkParamter.Rows[0]["Printfontfamily"].ToString();
+                        fd.Waterpos = watermarkParamter.Rows[0]["PrintPosition"].ToString();
+                        fd.Watermark();
+                    }
+
+                    string header = String.Format("<div style=\"text-align:center\"><img height=\"470\" width=\"680\" border=\"0\" alt=\"\" src=\"{0}\" /></div>", url); // height=\"470\" width=\"680\"
                     c = header + content;
                     break;
                 case DocumentType.Text:
@@ -875,7 +895,7 @@ namespace Foosun.Web.manageXXBN.news
         public string ColumnId { get { return columnId; } set { columnId = value; } }
     }
 
-    
+
 
 
     public enum DocumentType

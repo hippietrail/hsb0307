@@ -604,6 +604,13 @@ namespace Foosun.Publish
                 }
                 else if (vtype == 1)
                 {
+                    int height = 30;
+                    bool isInt32 = Int32.TryParse(heightstr, out height);
+                    if (isInt32)
+                    {
+                        heightstr = (height - 30).ToString();
+                    }
+
                     str = "<object id=\"player\" name=\"player\" classid=\"clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA\" width=\"" + widthstr + "\" height=\"" + heightstr + "\">" + newLine;
                     str += "<param name=_ExtentX value=18415>" + newLine;
                     str += "<param name=_ExtentY value=9102>" + newLine;
@@ -620,7 +627,7 @@ namespace Foosun.Publish
                     str += "<param name=MAINTAINASPECT value=0>" + newLine;
                     str += "<param name=BACKGROUNDCOLOR value=#000000>" + newLine;
                     str += "</object><br>" + newLine;
-                    str += "<object ID=RP2 CLASSID=clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA WIDTH=400 HEIGHT=50>" + newLine;
+                    str += "<object ID=RP2 CLASSID=clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA width=\"" + widthstr + "\" height=\"26\">" + newLine;
                     str += "<param name=_ExtentX value=18415>" + newLine;
                     str += "<param name=_ExtentY value=1005>" + newLine;
                     str += "<param name=AUTOSTART value=-1>" + newLine;
@@ -636,6 +643,7 @@ namespace Foosun.Publish
                     str += "<param name=MAINTAINASPECT value=0>" + newLine;
                     str += "<param name=BACKGROUNDCOLOR value=#000000>" + newLine;
                     str += "</object>" + newLine;
+
                 }
                 else if (vtype == 2)
                 {

@@ -29,7 +29,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public IDataReader GetClassSitenewsstr(string ParentID, string SiteID)
         {
-            string Sql = "Select ClassID,[Domain],DataLib,SiteID,ClassCName,(Select Count(id) from " + Pre + "news_Class where ParentID=a.ClassID and isRecyle=0 and isUrl=0 and islock=0 and isPage=0) as HasSub from " + Pre + "news_Class a where ParentID='" + ParentID + "' and isRecyle=0 and isUrl=0 and islock=0 and SiteID='" + SiteID + "' and isPage=0 order by OrderID desc,id desc";
+            string Sql = "Select ClassID,[Domain],DataLib,SiteID,ClassCName,ClassCNameRefer,(Select Count(id) from " + Pre + "news_Class where ParentID=a.ClassID and isRecyle=0 and isUrl=0 and islock=0 and isPage=0) as HasSub from " + Pre + "news_Class a where ParentID='" + ParentID + "' and isRecyle=0 and isUrl=0 and islock=0 and SiteID='" + SiteID + "' and isPage=0 order by OrderID desc,id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -1187,9 +1187,9 @@ namespace Foosun.SQLServerDAL
             param[35].Value = uc.isLock;
             param[36] = new SqlParameter("@isRecyle", SqlDbType.TinyInt, 1);
             param[36].Value = uc.isRecyle;
-            param[37] = new SqlParameter("@NaviPosition", SqlDbType.NVarChar, 255);
+            param[37] = new SqlParameter("@NaviPosition", SqlDbType.NVarChar, 1023);
             param[37].Value = uc.NaviPosition;
-            param[38] = new SqlParameter("@NewsPosition", SqlDbType.NVarChar, 255);
+            param[38] = new SqlParameter("@NewsPosition", SqlDbType.NVarChar, 1023);
             param[38].Value = uc.NewsPosition;
             param[39] = new SqlParameter("@isComm", SqlDbType.TinyInt, 1);
             param[39].Value = uc.isComm;

@@ -13,8 +13,8 @@
     <form id="FileList" runat="server">
     <table width="100%"  align="center" border="0" cellpadding="0" cellspacing="0" class="toptable">
   <tr>
-    <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">文件管理</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">位置导航：<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img src="../../sysImages/folder/navidot.gif" border="0" />采编新闻签发</div></td>
+    <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" height="30">文件管理</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">位置导航：<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img src="../../sysImages/folder/navidot.gif" border="0" alt="" />采编新闻签发</div></td>
   </tr>
 </table>
 
@@ -44,8 +44,10 @@
 <td class="list_link" align="left"><span style="font-size:10px"><asp:Literal ID="fileCreateAt" runat="server"></asp:Literal></span></td>
 <td class="list_link" align="left">
     <asp:HyperLink ID="aAddFile" runat="server" CssClass="list_link" ToolTip="添加为新闻"></asp:HyperLink>
-    <asp:HyperLink ID="aEnter" runat="server" CssClass="list_link" ToolTip="移动此文件" Visible="false"></asp:HyperLink>
+    <asp:HyperLink ID="aEnter" runat="server" CssClass="list_link" ToolTip="进入此目录" Visible="false"></asp:HyperLink>
+    <asp:HyperLink ID="aDelete" runat="server" CssClass="list_link" ToolTip="删除此文件" Visible="false"></asp:HyperLink>
     <asp:CheckBox ID="chk" runat="server" Visible="false" /><asp:HiddenField ID="fileFullName" runat="server" />
+    
     <%--<a href="javascript:MoveFile('\\ad','107_116.jpg')" class="list_link" title=""><img src="../../sysImages/default/sysico/remove1.gif" border="0" alt="转移此项" /></a>--%>
     <%--<a href='http://localhost:5516\files\ad\107_116.jpg' class="list_link" title="点击预览此文件" target="_blank"><img src="../../sysImages/default/sysico/review.gif" border="0" alt="预览该文件" /></a>
     <a href="javascript:EditFile('\\ad','107_116.jpg')" class="list_link" title="点击为此文件更名"><img src="../../sysImages/default/sysico/editname.gif" border="0" alt="为此项改名" /></a>

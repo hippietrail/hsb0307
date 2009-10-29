@@ -1168,6 +1168,10 @@ namespace Foosun.Publish
             {
                 foreach (PubClassInfo info in list)
                 {
+                    if (info.NaviShowtf != 1)
+                    {
+                        continue;
+                    }
                     if (ClassId == "-1" && info.SiteID == this.Param_SiteID)//显示所有
                     {
                         string str_url = getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule);

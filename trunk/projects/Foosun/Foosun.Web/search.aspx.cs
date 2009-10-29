@@ -66,7 +66,7 @@ public partial class search : Foosun.Web.UI.BasePage
         string editor = Request.QueryString["editor"];
 
         string str_List = "<table width=\"100%\" border=\"0\"align=\"center\" cellpadding=\"4\" cellspacing=\"1\">";
-        str_List += "<tr><td colspan=\"2\"  class=\"SpecialFontFamily\" >搜索<font ><b>“" + tags + "”</b></font>结果如下：</td></tr>";
+        str_List += "<tr><td colspan=\"2\"  >ᦌᦸᦰ ᦠᦱ<font ><b>“" + tags + "”</b></font>ᦒᦲ ᦉᦳᧆ ᦵᦖᦲᧃ ᦗᦻ ᦺᦎᧉ：</td></tr>";
         Foosun.Model.Search si = new Foosun.Model.Search();
 
         si.type = type;
@@ -109,7 +109,7 @@ public partial class search : Foosun.Web.UI.BasePage
             }
             else
             {
-                str_List += "<tr>" + newLine + "<td>没有找到相关的记录。" + newLine + "</td>" + newLine + "</tr>";
+                str_List += "<tr>" + newLine + "<td>ᦠᦱ ᦢᧁᧈ ᦠᧃ ᦆᦱᧁᧈ ᦎᦲᧆ ᦋᦱᧇ。" + newLine + "</td>" + newLine + "</tr>";
             }
             str_List += "</table>";
 
@@ -128,7 +128,7 @@ public partial class search : Foosun.Web.UI.BasePage
 
         catch
         {
-            SearchTemplet = SearchTemplet.Replace("{#Page_SearchContent}", "没有找到相关的记录");
+            SearchTemplet = SearchTemplet.Replace("{#Page_SearchContent}", "ᦠᦱ ᦢᧁᧈ ᦠᧃ ᦆᦱᧁᧈ ᦎᦲᧆ ᦋᦱᧇ");
             SearchTemplet = SearchTemplet.Replace("{#Page_SearchPages}", "");
         }
         return SearchTemplet;
@@ -268,15 +268,15 @@ public partial class search : Foosun.Web.UI.BasePage
     /// <returns></returns>
     protected string ShowPage(int page, int Cnt, int pageCount)
     {
-        string urlstr = "共" + Cnt.ToString() + "条记录,共" + pageCount.ToString() + "页,当前第" + page.ToString() + "页   ";
-        urlstr += "<a href=\"javascript:GetSearchList('1');\" title=\"首页\" >首页</a> ";
+        string urlstr = "ᦗᦸᧂᦰ" + Cnt.ToString() + "ᦃᦸᧉ ᦷᦈᧆ ᦖᦻ,ᦗᦸᧂᦰ" + pageCount.ToString() + "ᦐᦱᧉ,ᦢᧆ ᦵᦡᧁᧈ " + page.ToString() + " ᦐᦱᧉ   ";
+        urlstr += "<a href=\"javascript:GetSearchList('1');\" title=\"首页\" >ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> ";
         if ((page - 1) < 1)
         {
-            urlstr += " 上一页 ";
+            urlstr += " ᦐᦱᧉ ᦀᦸᧃ ";
         }
         else
         {
-            urlstr += " <a href=\"javascript:GetSearchList('" + (page - 1) + "');\" title=\"上一页\" >上一页</a> ";
+            urlstr += " <a href=\"javascript:GetSearchList('" + (page - 1) + "');\" title=\"上一页\" >ᦐᦱᧉ ᦀᦸᧃ</a> ";
         }
         for (int i = page; i < (page + 10); i++)
         {
@@ -291,13 +291,13 @@ public partial class search : Foosun.Web.UI.BasePage
         }
         if (page == pageCount)
         {
-            urlstr += " 下一页 ";
+            urlstr += " ᦐᦱᧉ ᦋᦸᧄ ";
         }
         else
         {
-            urlstr += " <a href=\"javascript:GetSearchList('" + (page + 1) + "');\" title=\"下一页\" >下一页</a> ";
+            urlstr += " <a href=\"javascript:GetSearchList('" + (page + 1) + "');\" title=\"下一页\" >ᦐᦱᧉ ᦋᦸᧄ</a> ";
         }
-        urlstr += " <a href=\"javascript:GetSearchList('" + pageCount + "');\" title=\"尾页\">尾页</a> ";
+        urlstr += " <a href=\"javascript:GetSearchList('" + pageCount + "');\" title=\"尾页\">ᦐᦱᧉ ᦉᦳᧆ</a> ";
         return urlstr;
     }
 }

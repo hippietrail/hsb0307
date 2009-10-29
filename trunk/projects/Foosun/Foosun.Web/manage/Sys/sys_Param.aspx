@@ -31,7 +31,6 @@
       <span id="td_rssxmlwap"  style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('rssxmlwap')">RSS.XML.WAP</span>&nbsp;┊ &nbsp;
       <span id="td_platform" style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('platform')">平台设置</span>
       <span id="td_api" style="cursor:pointer;display:none;" onclick="javascript:ChangeDiv('api')">API参数</span>
-     
     </td>
     </tr>
     </table>
