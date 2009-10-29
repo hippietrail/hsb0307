@@ -4562,9 +4562,7 @@
     <Content Include="configuration\js\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="configuration\js\My97DatePicker\WdatePicker.js" />
     <Content Include="files\siteFiles\audio.gif" />
-    <Content Include="files\siteFiles\audio.png" />
     <Content Include="files\siteFiles\logo.gif" />
-    <Content Include="files\siteFiles\logo.jpg" />
     <Content Include="files\siteFiles\mewdainews.jpg" />
     <Content Include="files\siteFiles\new.jpg" />
     <Content Include="files\siteFiles\old.jpg" />
@@ -4588,12 +4586,14 @@
     <Content Include="Templets\xxbn\Images\green\redtitle.gif" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\siteFiles\audio2.gif" />
     <Content Include="fonts\HG_Tai_WH.eot" />
     <Content Include="fonts\HG_TaiTham_WBD_IE.eot" />
     <Content Include="fonts\HG_Tai_WB.eot" />
     <Content Include="Templets\xxbn\dw_VideoContent.htm" />
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
     <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
+    <Content Include="Templets\xxbn\Images\marqueePink.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalNewspaper\" />

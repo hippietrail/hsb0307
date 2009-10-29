@@ -200,7 +200,7 @@ UL LI FORM {
 	  margin:0px ;  padding:0px;  color:Red;
 	}
 .area_content {
-	MARGIN: 2px auto 0px auto; WIDTH: 970px
+	MARGIN: 6px auto 0px auto; WIDTH: 970px
 }
 
 .area_content_left {
@@ -822,7 +822,9 @@ A.end:hover {
 .friend_main ul { margin:0px; padding:0px; margin-left:10px;}
 .friend_main ul li 
 {
-	 margin:0px; padding:0px; width:120px; list-style-type:none; float:left;  text-align:left; font-size:14px;}
+	 margin:0px; padding:0px; width:120px; list-style-type:none; float:left;  text-align:left; font-size:14px; font-size:16pt; 
+	 
+}
 .friend_title {
 	FONT-WEIGHT: bolder; FONT-SIZE: 14px; BACKGROUND: url(/Templets/xxbn/Images/green/LightRedTitle.gif) repeat-x; WIDTH: 970px; COLOR: #356aa0; TEXT-INDENT: 10px; LINE-HEIGHT: 25px; BORDER-BOTTOM: #d4d3d3 1px solid; HEIGHT: 25px
 }

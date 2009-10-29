@@ -356,7 +356,7 @@ a.navi_link:hover
 
 .list_link {
 		color: #395575;
-		font-size: 12px;
+		font-size: 12pt;
 		text-decoration: none;
 
 		}
@@ -541,9 +541,14 @@ a.list_link_o:hover
 		}
 .SpecialFontFamily
 {
-	font-size:18px;
+	font-size:18pt;
 	font-family:HG_TaiTham_WHD,Verdana, Arial, sans-serif;/*lsd加少数民族字体HG_Tai_BZ */
 }
+.SpecialFontFamily .list_link
+{
+	font-size:18pt;
+}
+
 .list_linkSpecial
 {
 	    color : #395575;

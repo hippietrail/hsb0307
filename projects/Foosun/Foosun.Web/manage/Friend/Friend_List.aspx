@@ -315,7 +315,7 @@
                     <td width="7%" align="center" valign="middle" height="20" >
                         <%#((DataRowView)Container.DataItem)[0]%>
                     </td>
-                    <td width="30%" align="center" valign="middle"  class="SpecialFontFamily">
+                    <td width="30%" align="center" valign="middle"  class="SpecialFontFamily" style="font-size:18pt;">
                         <%#((DataRowView)Container.DataItem)[1]%>
                     </td>
                     <td width="10%" align="center" valign="middle">
@@ -365,7 +365,7 @@
                 <td align="right" class="list_link">
                     站点名称：</td>
                 <td align="left" class="list_link">
-                    <asp:TextBox ID="Name" runat="server" Width="124px" CssClass="form" />
+                    <asp:TextBox ID="Name" runat="server" Width="180px" CssClass="form" />
                     <font color="red">(*)</font><span class="helpstyle" style="cursor: help;" title="点击查看帮助"
                         onclick="Help('H_FriendLink_0002',this)">帮助</span></td>
             </tr>
@@ -384,7 +384,7 @@
                 <td align="right" class="list_link">
                     连接地址：</td>
                 <td align="left" class="list_link">
-                    <asp:TextBox ID="Url" runat="server" Width="124px" CssClass="form" />
+                    <asp:TextBox ID="Url" runat="server" Width="180px" CssClass="form" />
                     <span class="helpstyle" style="cursor: help;" title="点击查看帮助" onclick="Help('H_FriendLink_0004',this)">
                         帮助</span></td>
             </tr>
