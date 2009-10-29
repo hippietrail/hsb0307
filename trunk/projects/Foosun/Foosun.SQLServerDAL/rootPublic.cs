@@ -934,7 +934,7 @@ namespace Foosun.SQLServerDAL
         public DataTable getClassListPublic(string ParentID)
         {
             SqlParameter param = new SqlParameter("@ParentID", ParentID);
-            string Sql = "Select ClassID,ClassCName,ParentID from " + Pre + "news_class where isURL=0 and isLock=0 and isRecyle=0 and isPage!=1 and ParentID=@ParentID and SiteID ='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,Id desc";
+            string Sql = "Select ClassID,ClassCName,ParentID, ClassCNameRefer from " + Pre + "news_class where isURL=0 and isLock=0 and isRecyle=0 and isPage!=1 and ParentID=@ParentID and SiteID ='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,Id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }

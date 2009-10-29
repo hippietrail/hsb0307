@@ -160,7 +160,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                 {
                     stxt += "┉";
                 }
-                it.Text = stxt + r["ClassCName"].ToString();
+                it.Text = stxt + r["ClassCName"].ToString() + "[" + r["ClassCNameRefer"] + "]";
                 lst.Items.Add(it);
                 ClassRender(lst, r["ClassID"].ToString(), Layer + 1);
             }

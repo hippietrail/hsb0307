@@ -36,11 +36,11 @@
     <file relUrl="sysImages/blackwhite/sysico/untop.gif" publishTime="2009/10/14 11:43:56" />
     <file relUrl="sysImages/folder/nos.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="sysImages/green/admin/menu_dot_user_21.gif" publishTime="2009/10/14 11:42:45" />
-    <file relUrl="bin/Foosun.Config.pdb" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Config.pdb" publishTime="2009/10/29 21:17:25" />
     <file relUrl="manage/user/userinfo_contact.aspx" publishTime="2009/10/14 11:52:19" />
     <file relUrl="Templets/xxbn/Images/menu_bg3.gif" publishTime="2009/10/14 11:54:34" />
     <file relUrl="editor/editor/css/images/block_h4.png" publishTime="2009/10/14 11:48:36" />
-    <file relUrl="bin/Foosun.Web.dll" publishTime="2009/10/29 19:38:22" />
+    <file relUrl="bin/Foosun.Web.dll" publishTime="2009/10/29 21:17:32" />
     <file relUrl="sysImages/user/face/14.jpg" publishTime="2009/10/14 11:44:06" />
     <file relUrl="configuration/config/Request.xml" publishTime="2009/10/14 11:40:09" />
     <file relUrl="sysImages/blackwhite/sysico/review1.gif" publishTime="2009/10/14 11:43:56" />
@@ -105,7 +105,7 @@
     <file relUrl="manage/Contribution/Constr_Edit.aspx" publishTime="2009/10/14 11:49:16" />
     <file relUrl="manage/adapt/adapt.aspx" publishTime="2009/10/14 11:49:44" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/rdp.gif" publishTime="2009/10/14 11:48:39" />
-    <file relUrl="bin/Foosun.CMS.dll" publishTime="2009/10/29 19:38:18" />
+    <file relUrl="bin/Foosun.CMS.dll" publishTime="2009/10/29 21:17:27" />
     <file relUrl="history.aspx" publishTime="2009/10/14 11:56:38" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/zip.gif" publishTime="2009/10/14 11:48:39" />
     <file relUrl="sysImages/red/admin/menu_dot_21.gif" publishTime="2009/10/14 11:43:10" />
@@ -185,7 +185,7 @@
     <file relUrl="manage/Sys/navimenu.aspx" publishTime="2009/10/14 11:51:16" />
     <file relUrl="Templets/xxbn/Images/place_bg.gif" publishTime="2009/10/14 11:54:34" />
     <file relUrl="Templets/xxbn/xml/readme.txt" publishTime="2009/10/14 11:52:27" />
-    <file relUrl="bin/Foosun.Web.UI.pdb" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.Web.UI.pdb" publishTime="2009/10/29 21:17:29" />
     <file relUrl="sysImages/skinreview/5.gif" publishTime="2009/10/14 11:41:56" />
     <file relUrl="editor/editor/css/fck_internal.css" publishTime="2009/10/14 11:48:36" />
     <file relUrl="sysImages/blue/admin/menu_dot_user_21.gif" publishTime="2009/10/14 11:42:12" />
@@ -214,7 +214,7 @@
     <file relUrl="sysImages/default/sysico/comm.gif" publishTime="2009/10/14 11:41:37" />
     <file relUrl="user/constr/Constrlistpass.aspx" publishTime="2009/10/14 11:56:38" />
     <file relUrl="sysImages/user/Rss/sharp Reader.gif" publishTime="2009/10/14 11:43:58" />
-    <file relUrl="bin/Foosun.DALFactory.dll" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.DALFactory.dll" publishTime="2009/10/29 21:17:26" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/swt.gif" publishTime="2009/10/14 11:48:39" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/exe.gif" publishTime="2009/10/14 11:48:39" />
     <file relUrl="sysImages/StatIcon/tu_back_2.gif" publishTime="2009/10/14 11:41:38" />
@@ -264,7 +264,7 @@
     <file relUrl="help/HelpList.aspx" publishTime="2009/10/14 11:49:10" />
     <file relUrl="editor/editor/dialog/fck_about.html" publishTime="2009/10/14 11:48:22" />
     <file relUrl="manage/collect/Collect_NewsModify.aspx" publishTime="2009/10/14 11:51:27" />
-    <file relUrl="bin/Foosun.Install.dll" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.Install.dll" publishTime="2009/10/29 21:17:29" />
     <file relUrl="manage/Templet/Txteditor.aspx" publishTime="2009/10/14 11:50:01" />
     <file relUrl="sysImages/blackwhite/admin/rePage.jpg" publishTime="2009/10/14 11:43:51" />
     <file relUrl="editor/editor/css/behaviors/showtableborders.htc" publishTime="2009/10/14 11:48:35" />
@@ -421,7 +421,7 @@
     <file relUrl="editor/editor/images/smiley/msn/thumbs_up.gif" publishTime="2009/10/14 11:48:29" />
     <file relUrl="Templets/xxbn/Images/logo5.gif" publishTime="2009/10/14 11:54:34" />
     <file relUrl="manage/Sys/admin_group.aspx" publishTime="2009/10/14 11:51:16" />
-    <file relUrl="bin/Foosun.Publish.dll" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.Publish.dll" publishTime="2009/10/29 21:17:26" />
     <file relUrl="Templets/xxbn/Images/video.gif" publishTime="2009/10/14 11:54:34" />
     <file relUrl="manage/news/news_stat.aspx" publishTime="2009/10/14 11:50:33" />
     <file relUrl="sysImages/folder/s.gif" publishTime="2009/10/14 11:43:44" />
@@ -464,7 +464,7 @@
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/xml.gif" publishTime="2009/10/14 11:48:41" />
     <file relUrl="files/TempletPictures/banner_blog_std.jpg" publishTime="2009/10/21 15:18:34" />
     <file relUrl="editor/editor/dialog/fck_docprops.html" publishTime="2009/10/14 11:48:23" />
-    <file relUrl="bin/Foosun.CMS.pdb" publishTime="2009/10/29 19:38:18" />
+    <file relUrl="bin/Foosun.CMS.pdb" publishTime="2009/10/29 21:17:27" />
     <file relUrl="configuration/historyjs.html" publishTime="2009/10/14 11:40:30" />
     <file relUrl="sysImages/red/admin/m_bg_2.gif" publishTime="2009/10/14 11:43:10" />
     <file relUrl="sysImages/red/admin/bottom_bg.gif" publishTime="2009/10/14 11:43:10" />
@@ -507,7 +507,7 @@
     <file relUrl="sysImages/blue/admin/menu_dot_21.gif" publishTime="2009/10/14 11:42:12" />
     <file relUrl="files/siteFiles/audio.gif" publishTime="2009/10/23 10:50:07" />
     <file relUrl="sysImages/red/admin/menu_bg.gif" publishTime="2009/10/14 11:43:10" />
-    <file relUrl="bin/Foosun.Web.UI.dll" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.Web.UI.dll" publishTime="2009/10/29 21:17:29" />
     <file relUrl="manage/label/FreeLabel_Add.aspx" publishTime="2009/10/14 11:49:42" />
     <file relUrl="sysImages/sblue/sysico/addpage.gif" publishTime="2009/10/14 11:43:33" />
     <file relUrl="manage/Sys/table_manage.aspx" publishTime="2009/10/14 11:51:16" />
@@ -532,7 +532,7 @@
     <file relUrl="manage/user/Announce_Edit.aspx" publishTime="2009/10/14 11:52:19" />
     <file relUrl="editor/editor/dialog/common/images/locked.gif" publishTime="2009/10/14 11:48:16" />
     <file relUrl="manage/Contribution/Constr_Return.aspx" publishTime="2009/10/14 11:49:16" />
-    <file relUrl="bin/Foosun.Web.pdb" publishTime="2009/10/29 19:38:22" />
+    <file relUrl="bin/Foosun.Web.pdb" publishTime="2009/10/29 21:17:32" />
     <file relUrl="sysImages/Login/input_password.gif" publishTime="2009/10/14 11:42:50" />
     <file relUrl="sysImages/default/admin/m_bg_3.gif" publishTime="2009/10/14 11:41:32" />
     <file relUrl="sysImages/blackwhite/admin/menu_dot_21.gif" publishTime="2009/10/14 11:43:51" />
@@ -590,7 +590,7 @@
     <file relUrl="editor/editor/filemanager/connectors/aspx/upload.aspx" publishTime="2009/10/14 11:48:50" />
     <file relUrl="Templets/xxbn/Images/f05.gif" publishTime="2009/10/14 11:54:33" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/ai.gif" publishTime="2009/10/14 11:48:39" />
-    <file relUrl="bin/Foosun.Publish.pdb" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.Publish.pdb" publishTime="2009/10/29 21:17:26" />
     <file relUrl="vplay.html" publishTime="2009/10/20 13:33:22" />
     <file relUrl="sysImages/normal/title_bg.gif" publishTime="2009/10/14 11:42:17" />
     <file relUrl="manage/index.aspx" publishTime="2009/10/14 11:52:19" />
@@ -672,14 +672,14 @@
     <file relUrl="FlvPlayer.swf" publishTime="2009/10/14 11:56:38" />
     <file relUrl="sysImages/default/sysico/addnews.gif" publishTime="2009/10/14 11:41:37" />
     <file relUrl="manage/js/createLabel_List.aspx" publishTime="2009/10/14 11:50:41" />
-    <file relUrl="bin/Foosun.DALFactory.pdb" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.DALFactory.pdb" publishTime="2009/10/29 21:17:26" />
     <file relUrl="sysImages/FileIcon/notype.gif" publishTime="2009/10/14 11:42:27" />
     <file relUrl="editor/editor/filemanager/browser/default/images/Folder32.gif" publishTime="2009/10/14 11:48:41" />
     <file relUrl="sysImages/blue/admin/RectNoColor.gif" publishTime="2009/10/14 11:42:12" />
     <file relUrl="sysImages/blue/sysico/js.gif" publishTime="2009/10/14 11:42:13" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/bmp.gif" publishTime="2009/10/14 11:48:41" />
     <file relUrl="manage/user/userIDCard.aspx" publishTime="2009/10/14 11:52:19" />
-    <file relUrl="bin/Foosun.PlugIn.dll" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.PlugIn.dll" publishTime="2009/10/29 21:17:28" />
     <file relUrl="files/siteFiles/mewdainews.jpg" publishTime="2009/10/19 19:35:15" />
     <file relUrl="sysImages/red/admin/m_bg_1.gif" publishTime="2009/10/14 11:43:10" />
     <file relUrl="editor/editor/skins/silver/images/toolbar.end.gif" publishTime="2009/10/14 11:48:34" />
@@ -832,7 +832,7 @@
     <file relUrl="sysImages/green/admin/butclose.gif" publishTime="2009/10/14 11:42:45" />
     <file relUrl="editor/editor/dialog/fck_spellerpages/spellerpages/controls.html" publishTime="2009/10/14 11:48:22" />
     <file relUrl="editor/editor/filemanager/browser/default/images/ButtonArrow.gif" publishTime="2009/10/14 11:48:41" />
-    <file relUrl="bin/Foosun.Common.pdb" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Common.pdb" publishTime="2009/10/29 21:17:25" />
     <file relUrl="sysImages/sblue/sysico/unlock.gif" publishTime="2009/10/14 11:43:33" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/ppt.gif" publishTime="2009/10/14 11:48:39" />
     <file relUrl="Templets/xxbn/Images/brown/index-bg.gif" publishTime="2009/10/14 11:52:32" />
@@ -852,14 +852,14 @@
     <file relUrl="sysImages/folder/new1.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="sysImages/folder/error.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="sysImages/sblue/admin/menu_bg_02.jpg" publishTime="2009/10/14 11:43:30" />
-    <file relUrl="bin/Foosun.DALProfile.dll" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.DALProfile.dll" publishTime="2009/10/29 21:17:25" />
     <file relUrl="Templets/xxbn/Images/number.jpg" publishTime="2009/10/14 11:54:34" />
     <file relUrl="editor/scripts/icons/btnStrikethrough.gif" publishTime="2009/10/14 11:47:38" />
     <file relUrl="xml/sys/Channel/value.config" publishTime="2009/10/14 11:54:59" />
     <file relUrl="editor/editor/skins/silver/fck_strip.gif" publishTime="2009/10/14 11:48:34" />
     <file relUrl="sysImages/blackwhite/admin/m_bg_1.gif" publishTime="2009/10/14 11:43:51" />
     <file relUrl="sysImages/blue/admin/reght_1_bg_1.gif" publishTime="2009/10/14 11:42:12" />
-    <file relUrl="bin/Foosun.Install.pdb" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.Install.pdb" publishTime="2009/10/29 21:17:29" />
     <file relUrl="editor/editor/js/fckeditorcode_gecko.js" publishTime="2009/10/19 9:22:13" />
     <file relUrl="sysImages/blackwhite/sysico/editonline.gif" publishTime="2009/10/14 11:43:56" />
     <file relUrl="sysImages/blackwhite/sysico/enter.gif" publishTime="2009/10/14 11:43:56" />
@@ -915,7 +915,7 @@
     <file relUrl="manage/top.aspx" publishTime="2009/10/14 11:52:19" />
     <file relUrl="sysImages/green/sysico/review.gif" publishTime="2009/10/14 11:42:48" />
     <file relUrl="Templets/xxbn/xml/bcastr.swf" publishTime="2009/10/14 11:52:27" />
-    <file relUrl="bin/Foosun.AccessDAL.pdb" publishTime="2009/10/29 19:38:19" />
+    <file relUrl="bin/Foosun.AccessDAL.pdb" publishTime="2009/10/29 21:17:27" />
     <file relUrl="manage/news/Recyle.aspx" publishTime="2009/10/14 11:50:33" />
     <file relUrl="Install/image/logo.jpg" publishTime="2009/10/14 11:39:28" />
     <file relUrl="sysImages/blackwhite/sysico/top.gif" publishTime="2009/10/14 11:43:56" />
@@ -926,14 +926,14 @@
     <file relUrl="sysImages/Label/preview/HotTag.gif" publishTime="2009/10/14 11:41:10" />
     <file relUrl="Templets/xxbn/Images/bg_menu_nav.png" publishTime="2009/10/21 19:55:27" />
     <file relUrl="manage/stat/View.aspx" publishTime="2009/10/14 11:51:50" />
-    <file relUrl="bin/Foosun.Global.dll" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Global.dll" publishTime="2009/10/29 21:17:25" />
     <file relUrl="editor/editor/dialog/fck_link/fck_link.js" publishTime="2009/10/14 11:48:14" />
     <file relUrl="editor/editor/skins/default/images/toolbar.buttonarrow.gif" publishTime="2009/10/14 11:48:31" />
     <file relUrl="editor/scripts/icons/btnRedo.gif" publishTime="2009/10/14 11:47:38" />
     <file relUrl="manage/user/arealist_upp.aspx" publishTime="2009/10/14 11:52:19" />
     <file relUrl="sysImages/default/admin/login_bg_2.gif" publishTime="2009/10/14 11:41:32" />
     <file relUrl="jsfiles/ads/CreateJs/FilterAway.js" publishTime="2009/10/14 11:44:40" />
-    <file relUrl="bin/Foosun.Model.dll" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Model.dll" publishTime="2009/10/29 21:17:25" />
     <file relUrl="Templets/Content/testcontent.html" publishTime="2009/10/14 11:54:51" />
     <file relUrl="Install/image/ok.gif" publishTime="2009/10/14 11:39:28" />
     <file relUrl="sysImages/default/admin/butClose.gif" publishTime="2009/10/14 11:41:32" />
@@ -941,7 +941,7 @@
     <file relUrl="editor/search2.htm" publishTime="2009/10/14 11:49:09" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/pdf.gif" publishTime="2009/10/14 11:48:41" />
     <file relUrl="user/discuss/discussTopi_commentary.aspx" publishTime="2009/10/14 11:56:13" />
-    <file relUrl="bin/Foosun.PlugIn.pdb" publishTime="2009/10/29 19:38:20" />
+    <file relUrl="bin/Foosun.PlugIn.pdb" publishTime="2009/10/29 21:17:28" />
     <file relUrl="sysImages/green/admin/menu_dot.gif" publishTime="2009/10/14 11:42:45" />
     <file relUrl="configuration/system/SelectNewsspecial_ajax.aspx" publishTime="2009/10/14 11:40:09" />
     <file relUrl="editor/editor/dialog/fck_find.html" publishTime="2009/10/14 11:48:23" />
@@ -1023,7 +1023,7 @@
     <file relUrl="sysImages/default/admin/menu_bg_01.gif" publishTime="2009/10/14 11:41:32" />
     <file relUrl="manage/publish/siteTask.aspx" publishTime="2009/10/14 11:51:43" />
     <file relUrl="Templets/images/white.jpg" publishTime="2009/10/14 11:54:51" />
-    <file relUrl="bin/Foosun.Control.pdb" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.Control.pdb" publishTime="2009/10/29 21:17:26" />
     <file relUrl="editor/editor/dialog/common/fck_dialog_common.js" publishTime="2009/10/14 11:48:17" />
     <file relUrl="editor/editor/images/smiley/msn/shades_smile.gif" publishTime="2009/10/14 11:48:29" />
     <file relUrl="user/info/UpdateGroup.aspx" publishTime="2009/10/14 11:55:35" />
@@ -1134,7 +1134,7 @@
     <file relUrl="editor/fcktemplates.xml" publishTime="2009/10/14 11:49:10" />
     <file relUrl="editor/editor/lang/en.js" publishTime="2009/10/14 11:48:25" />
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/swf.gif" publishTime="2009/10/14 11:48:41" />
-    <file relUrl="bin/Foosun.Model.pdb" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Model.pdb" publishTime="2009/10/29 21:17:25" />
     <file relUrl="sysImages/FileIcon/txt.gif" publishTime="2009/10/14 11:42:27" />
     <file relUrl="database/backup/dotNETCMS.bak" publishTime="2009/10/14 11:47:12" />
     <file relUrl="sysImages/folder/daylist.gif" publishTime="2009/10/14 11:43:44" />
@@ -1184,7 +1184,7 @@
     <file relUrl="sysImages/blue/css/thickbox.css" publishTime="2009/10/14 11:42:12" />
     <file relUrl="Templets/xxbn/dw_video1.htm" publishTime="2009/10/28 16:03:55" />
     <file relUrl="manage/label/styleclass_add.aspx" publishTime="2009/10/14 11:49:42" />
-    <file relUrl="bin/Foosun.Common.dll" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Common.dll" publishTime="2009/10/29 21:17:25" />
     <file relUrl="Templets/xxbn/css/public_backup.css" publishTime="2009/10/14 11:54:48" />
     <file relUrl="Templets/xxbn/Images/menu_bg_border.gif" publishTime="2009/10/14 11:54:34" />
     <file relUrl="sysImages/blackwhite/sysico/remove.gif" publishTime="2009/10/14 11:43:56" />
@@ -1207,7 +1207,7 @@
     <file relUrl="sysImages/folder/hidead.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="sysImages/blackwhite/admin/menu_t.jpg" publishTime="2009/10/14 11:43:51" />
     <file relUrl="Content.aspx" publishTime="2009/10/14 11:56:38" />
-    <file relUrl="bin/Foosun.SQLServerDAL.pdb" publishTime="2009/10/29 19:38:19" />
+    <file relUrl="bin/Foosun.SQLServerDAL.pdb" publishTime="2009/10/29 21:17:28" />
     <file relUrl="configuration/js/My97DatePicker/My97DatePicker.htm" publishTime="2009/10/14 11:40:18" />
     <file relUrl="sysImages/red/admin/login_button_334.gif" publishTime="2009/10/14 11:43:10" />
     <file relUrl="manage/news/News_list.aspx" publishTime="2009/10/14 11:50:34" />
@@ -1219,8 +1219,8 @@
     <file relUrl="jsfiles/ads/CreateJs/DriftBox.js" publishTime="2009/10/14 11:44:40" />
     <file relUrl="manage/news/News_saveAjax.aspx" publishTime="2009/10/14 11:50:33" />
     <file relUrl="manage/Contribution/Constr_SetParamlist.aspx" publishTime="2009/10/14 11:49:15" />
-    <file relUrl="bin/Foosun.Control.dll" publishTime="2009/10/29 19:38:17" />
-    <file relUrl="bin/Foosun.Global.pdb" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Control.dll" publishTime="2009/10/29 21:17:26" />
+    <file relUrl="bin/Foosun.Global.pdb" publishTime="2009/10/29 21:17:25" />
     <file relUrl="configuration/config/Foosun.config" publishTime="2009/10/14 11:40:09" />
     <file relUrl="editor/editor/css/fck_showtableborders_gecko.css" publishTime="2009/10/14 11:48:36" />
     <file relUrl="user/constr/ConstrClass.aspx" publishTime="2009/10/14 11:56:38" />
@@ -1293,7 +1293,7 @@
     <file relUrl="manage/news/Class_Map.aspx" publishTime="2009/10/14 11:50:34" />
     <file relUrl="manage/js/JS_Add.aspx" publishTime="2009/10/14 11:50:41" />
     <file relUrl="Templets/xxbn/Images/menu_pre.gif" publishTime="2009/10/14 11:54:34" />
-    <file relUrl="bin/Foosun.Config.dll" publishTime="2009/10/29 19:38:16" />
+    <file relUrl="bin/Foosun.Config.dll" publishTime="2009/10/29 21:17:25" />
     <file relUrl="sysImages/folder/no2.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="editor/border.htm" publishTime="2009/10/14 11:49:10" />
     <file relUrl="editor/editor/css/images/fck_anchor.gif" publishTime="2009/10/14 11:48:36" />
@@ -1367,7 +1367,7 @@
     <file relUrl="manage/user/usermycom_Look.aspx" publishTime="2009/10/14 11:52:19" />
     <file relUrl="Templets/xxbn/Images/f04.jpg" publishTime="2009/10/14 11:54:34" />
     <file relUrl="sysImages/default/admin/button_bg_2.jpg" publishTime="2009/10/14 11:41:32" />
-    <file relUrl="bin/Foosun.SQLServerDAL.dll" publishTime="2009/10/29 19:38:19" />
+    <file relUrl="bin/Foosun.SQLServerDAL.dll" publishTime="2009/10/29 21:17:28" />
     <file relUrl="manage/js/JS_Templet_Class.aspx" publishTime="2009/10/14 11:50:41" />
     <file relUrl="Templets/xxbn/Images/search_pub.gif" publishTime="2009/10/14 11:54:33" />
     <file relUrl="sysImages/StatIcon/mc.gif" publishTime="2009/10/14 11:41:38" />
@@ -1484,7 +1484,7 @@
     <file relUrl="editor/editor/filemanager/browser/default/images/icons/32/pdf.gif" publishTime="2009/10/14 11:48:39" />
     <file relUrl="sysImages/blackwhite/admin/menu_bg_01.gif" publishTime="2009/10/14 11:43:51" />
     <file relUrl="sysImages/default/admin/menu_dot_21.gif" publishTime="2009/10/14 11:41:32" />
-    <file relUrl="bin/Foosun.AccessDAL.dll" publishTime="2009/10/29 19:38:19" />
+    <file relUrl="bin/Foosun.AccessDAL.dll" publishTime="2009/10/29 21:17:27" />
     <file relUrl="sysImages/folder/set.gif" publishTime="2009/10/14 11:43:44" />
     <file relUrl="manage/Sys/admin_GroupAdd.aspx" publishTime="2009/10/14 11:51:15" />
     <file relUrl="manage/Sys/admin_add.aspx" publishTime="2009/10/14 11:51:16" />
@@ -1527,7 +1527,7 @@
     <file relUrl="editor/editor/images/smiley/msn/confused_smile.gif" publishTime="2009/10/14 11:48:28" />
     <file relUrl="xml/sys/base.config" publishTime="2009/10/18 11:18:59" />
     <file relUrl="manage/user/useraction.aspx" publishTime="2009/10/14 11:52:19" />
-    <file relUrl="bin/Foosun.DALProfile.pdb" publishTime="2009/10/29 19:38:17" />
+    <file relUrl="bin/Foosun.DALProfile.pdb" publishTime="2009/10/29 21:17:25" />
     <file relUrl="user/message/Message_box.aspx" publishTime="2009/10/14 11:55:14" />
     <file relUrl="editor/editor/dialog/fck_universalkey/fck_universalkey.css" publishTime="2009/10/14 11:48:20" />
     <file relUrl="sysImages/blue/admin/foosun_bg.jpg" publishTime="2009/10/14 11:42:12" />
