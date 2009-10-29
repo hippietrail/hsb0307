@@ -3672,7 +3672,6 @@
     <Content Include="Templets\images\dig_leftc.gif" />
     <Content Include="Templets\images\foosun_mid.jpg" />
     <Content Include="Templets\images\jian.gif" />
-    <Content Include="Templets\images\logo.gif" />
     <Content Include="Templets\images\mid.jpg" />
     <Content Include="Templets\images\topdht.jpg" />
     <Content Include="Templets\images\white.jpg" />
@@ -4594,6 +4593,7 @@
     <Content Include="fonts\HG_Tai_WB.eot" />
     <Content Include="Templets\xxbn\dw_VideoContent.htm" />
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
+    <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalNewspaper\" />

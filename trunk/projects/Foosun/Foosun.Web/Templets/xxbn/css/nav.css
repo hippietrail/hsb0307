@@ -9,8 +9,9 @@ A.navbar:link {
 }
 .menu_border
 {
-   margin:0px; padding:0px;  BACKGROUND: url(/Templets/xxbn/Images/menu_bg_border.gif) repeat-x 0px 0px; MARGIN: 0px  auto; WIDTH: 980px; height:6px;  overflow:hidden;
-	}
+   margin:0px; padding:0px;   MARGIN: 0px  auto; WIDTH: 980px; height:1px;  overflow:hidden;
+   /* BACKGROUND: url(/Templets/xxbn/Images/menu_bg_border.gif) repeat-x 0px 0px; */
+}
 .menu ul { margin:0px; padding:0px; width:740px;}
 
 .menu ul  LI {
