@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{FS_页面标题}</title><!--{FS_FREE__站点域名}-->
+    <title>{FS_页面标题}</title><!--{FS_FREE__站点域名}{FS_新闻内容页标题}-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="/Templets/xxbn/css/nav.css" type="text/css" rel="stylesheet" />
     <link href="/Templets/xxbn/css/green.css" type="text/css" rel="stylesheet" />
@@ -11,12 +11,12 @@
     <div class="wrap">
         <img src="/files/siteFiles/topbar.jpg" style=" display:block; width:980px;" alt="" />
         <div class="menu">
-            <div class="menu_border"></div>
+           <div class="menu_border"></div>
            <div class="logobn">
            <img src="/files/siteFiles/logo.gif" style="width:230px; height:122px; margin:2px; border:0px; color:White;" alt="" usemap="#Map1" />
            <map id="Map1" > 
-                <area shape="rect" coords="0,0,230,61"  href=" http://www.dw12.com"  alt="新傣文网站"/> 
-                <area shape="rect" coords="0,61,230,122" href=" http://www.tai12.com" target="_blank" alt="老傣文网站"/>
+                <area shape="rect" coords="0,0,230,61" href=" http://www.dw12.com"  alt="163"/> 
+                <area shape="rect" coords="0,61,230,122" href=" http://old.dw12.com"  alt="sina"/>   
            </map> 
 
            </div>
@@ -26,57 +26,53 @@
             </ul>
            </div>
            <div class="menu_border"></div>
-           <div class="clear"></div>
         </div>
     </div>
     <div class="wrap">
         <div class="place">
             <div class="place1">
-                ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：{FS_当前位置}
+                ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：{FS_现在位置}
             </div>
         </div>
-        <div class="area_list">
-            <div class="area_list_left">
-                <div class="new_list">{FS_本栏目新闻列表分页}</div>
+        <div class="area_content">
+            <div class="area_content_left">
+                <div class="nav1">
+                    <div class="title">
+                        <div class="title_left">傣乡风情</div>
+                    </div>
+                    <div class="nav1_list">{FS_内容页左侧上}</div>
+                </div>
+                <!--<div class="show_content">{FS_内容页左侧2}</div>-->
+                <div class="hot1">
+                    <div class="title">
+                        <div class="title_left">傣乡风情</div>
+                    </div>
+                    <div class="hot1_list">
+                        {FS_内容页左侧中}
+                     </div>
+                </div>
+                <div class="hot1">
+                    <div class="title">
+                        <div class="title_left">傣乡风情 </div>
+                    </div>
+                    <div class="hot1_list">{FS_内容页左侧下}</div>
+                </div>
+                <div class="show_content">
+                 
+                </div>
+                
             </div>
-            <div class="area_list_right">
-                <!--<div class="nav">
-                    <div class="nav_list">
-                        <ul>{FS_栏目导航自适应}</ul>
-                    </div>
-                </div>-->
-                <div class="hot">
-                    <div class="title">
-                        <div class="title_left">ᦃᦱᧁᧈ ᦉᦱᧃ ᦑᧂ ᦜᦻ ᦠᦳᧄ</div>
-                    </div>
-                    <div class="hot_list">
-                        <ul>{FS_xxbn_本栏目热点新闻}</ul>
-                    </div>
-                </div>
-                <div style="  height:4px;"></div>
-                <div class="hot">
-                    <div class="title">
-                        <div class="title_left">ᦂᦱᧃᧉ ᦆᧇ ᦵᦵᦋᧃ ᦺᦃ ᦑᦸᧂᦰ</div>
-                    </div>
-                    <div class="hot_list">
-                        <ul>{FS_xxbn_点击排行}</ul>
-                    </div>
-                </div>
-                <div style="  height:4px;"></div>
-                <div class="show_list">
-                   {FS_栏目页上}
-                </div>
-                 <div class="show_list" style="margin-top:4px;">
-                   {FS_栏目页中}
-                </div>
-                 <div class="show_list" style="margin-top:4px;">
-                   {FS_栏目页下}
+            
+            <div class="area_content_right">
+                <div class="news">
+                    <div class="newstitle">{FS_新闻完整标题}</div>
+                    <div class="info">{FS_作者来源日期点击数}</div>
+                    <div class="videoContent">{FS_新闻内容}</div>
                 </div>
             </div>
             <div class="clear"></div>
         </div>
     </div>
-    
     <div class="wrap">
           <div class="bottom">
              <div class="about">{FS_版权声明}
@@ -87,6 +83,5 @@
             </div>
         </div>
     </div>
-    
 </body>
 </html>
