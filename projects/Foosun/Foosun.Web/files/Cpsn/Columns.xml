@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="GBK"?>
 <columns>
-  <media name="女友">
-    <column id="81b934dc6f344c0bad905ece91d924bf">fhhgfh</column>
-  </media>
-  <media name="南方都市报网站">
-    <column id="29e9cbc87dec460fa9f0f0a676bae442">医药</column>
-    <column id="a868f7bd80964c06834d69d50d7221d2">新闻</column>
-    <column id="aec586cc927c465ebdc2cad0dda41a64">娱乐</column>
-    <column id="b28ee0db314443eeaa4dbddd4dd0c9a8">财经</column>
-    <column id="cc95f2f5b4544a71809954c686386668">体育</column>
+  <media name="新傣文网站">
+    <column id="0650a6e936014015918cfebe923cc7da">傣乡资讯</column>
+    <column id="2cf43c8211834c2aa6b0c71d5c14d2eb">要闻报道</column>
+    <column id="9073ef1cb9e14cacb2c07fa717c3ae4c">文化生活</column>
+    <column id="91b908e699cb44f2a0921e526c319f57">旅游资讯</column>
+    <column id="a7d85c80a7784370a32615f0f87d31f1">东盟瞭望</column>
+    <column id="ba0fbf254d1f4fa6b3205d396110763e">社会论坛</column>
+    <column id="bd6bc87579ea41c1801012eb2604dfa9">生活常识</column>
+    <column id="c68a40185a5b4400a5ffb5e487d9ad29">贝叶文化</column>
+    <column id="e255a5a04be64a2aa55df5d1293369d4">社会新闻</column>
+    <column id="ec41522bc1994ac59a5cfd88550c7c1a">民族宗教</column>
+    <column id="eea2bb8bb8b543b590bb88cae191e790">科技动态</column>
+    <column id="f5c4b844e6c149c19a66f139e6cbb306">农业之窗</column>
   </media>
 </columns>
