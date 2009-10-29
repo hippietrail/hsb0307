@@ -42,13 +42,13 @@ namespace Foosun.Publish
                 //lsd change 去掉文件的只读属性
                 if (File.Exists(FilePath))
                 {
-                    if ((File.GetAttributes(FilePath) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly) 
+                    if ((File.GetAttributes(FilePath) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
                     {
                         File.SetAttributes(FilePath, FileAttributes.Archive);
                     }
 
                 }
-                using (StreamWriter sw = new StreamWriter(FilePath, false,Encoding.UTF8))
+                using (StreamWriter sw = new StreamWriter(FilePath, false, Encoding.UTF8))
                 {
                     if (Regex.Match(Content, @"\</head\>[\s\S]*\<body", RegexOptions.IgnoreCase | RegexOptions.Compiled).Success)
                     {
@@ -64,8 +64,12 @@ namespace Foosun.Publish
                     sw.Dispose();
                 }
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            
         }
         /// <summary>
         /// 创建文件夹
@@ -401,7 +405,11 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+                if(!SiteRootPath.EndsWith("\\"))
+                {
+                    SiteRootPath += "\\";
+                }
                 string strTempletDir = strgTemplet;
                 string dim = Foosun.Config.UIConfig.dirDumm;
                 IDataReader rd = CommonData.DalPublish.GetSinglePageClass(ClassID);
@@ -415,6 +423,11 @@ namespace Foosun.Publish
                         finallyContent = finallyContent.Replace("{#Page_Navi}", "<a href=\"" + dim + "/\">首页</a> >> " + rd["ClassCName"].ToString());
                         //结束 wjl-->
                         saveNewsPath = rd["SavePath"].ToString();
+                        saveNewsPath = saveNewsPath.TrimStart('/');
+                        if (saveNewsPath.IndexOf('/') > -1)
+                        {
+                            saveNewsPath = saveNewsPath.Replace('/', '\\');
+                        }
                         //输出到页面中
                         WriteHtml(finallyContent, SiteRootPath + saveNewsPath);
                         //解析页面内容
@@ -480,12 +493,21 @@ namespace Foosun.Publish
                         }
                         string fileNames = null;
                         string EXName = null;
+
                         for (int i = 0; i < n; i++)
                         {
-                            string filepath = SiteRootPath + saveNewsPath;
+                            //string filepath = SiteRootPath + saveNewsPath; // 这里竟然是这个："D:\\Husb\\Projects\\HgCms\\Foosun.Web\\\\/html/xxbn/dym/contactus.html"
                             fileNames = saveNewsPath.Substring(saveNewsPath.LastIndexOf('/'), saveNewsPath.Length - saveNewsPath.LastIndexOf('/'));
                             fileNames = fileNames.Substring(1, fileNames.IndexOf('.') - 1);
                             EXName = saveNewsPath.Substring(saveNewsPath.LastIndexOf('.'), saveNewsPath.Length - saveNewsPath.LastIndexOf('.'));
+
+                            // husb 2009-10-29
+                            saveNewsPath = saveNewsPath.TrimStart('/');
+                            if (saveNewsPath.IndexOf('/') > -1)
+                            {
+                                saveNewsPath = saveNewsPath.Replace('/', '\\');
+                            }
+                            string filepath = SiteRootPath + saveNewsPath;
 
                             int laspot = filepath.LastIndexOf('.');
                             if (i == 0)
