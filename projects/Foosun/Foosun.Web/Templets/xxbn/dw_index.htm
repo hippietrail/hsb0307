@@ -59,8 +59,10 @@
     }
 
     jQuery(document).ready(function() {
-
-        jQuery(document).click(function() { jQuery("#ime").css("display", "none"); });
+        jQuery(document).click(function() { 
+            jQuery("#ime").css("display", "none"); 
+            jQuery("#imeFrame").css("display", "none"); 
+        });
         jQuery.each(jQuery("input[type=text]", jQuery("#searchRegion")), function() {
             jQuery(this).css("font-family", "HGTAIWH");
             jQuery(this).css("font-size", "12pt");
@@ -79,6 +81,7 @@
 
                 if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
                     jQuery("#ime").css("display", "none");
+                    jQuery("#imeFrame").css("display", "none");
                     IME.arabicNumerals = true;
                 }
                 this.value = IME.InputArea.value; //IME.InputArea.value;
@@ -92,8 +95,14 @@
 
                 if (IME.Cand.value.length > 0) {
                     jQuery("#ime").css("display", "block");
-                    jQuery("#ime").css("top", (jQuery(this).offset().top + 40) + "px");
+                    jQuery("#ime").css("top", (jQuery(this).offset().top + 20) + "px");
                     jQuery("#ime").css("left", jQuery(this).offset().left);
+                    
+                    var imePosition = jQuery("#ime").position();
+                    jQuery("#imeFrame").css("top", imePosition.top);
+                    jQuery("#imeFrame").css("left", imePosition.left);
+                    jQuery("#imeFrame").css("height", jQuery("#ime").height());
+                    jQuery("#imeFrame").css("width", jQuery("#ime").width());
 
                     appendTrace(IME.Cand.value.length);
                     appendTrace(jQuery("#candicated").height() + " w:" + jQuery("#candicated").width());
@@ -109,6 +118,9 @@
                 else {
                     if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
                         jQuery("#ime").css("display", "none");
+                        
+                        jQuery("#imeFrame").css("display", "none");
+                        
                         IME.arabicNumerals = true;
                     }
                 }
@@ -170,7 +182,8 @@
                                 <div class="title_left">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ</div>
                           </div>
                          <div class="search">
-  <div id="ime" style="z-index:999; display:none; position:absolute; left:1px; top:1px;">
+                         
+  <div id="ime" style="z-index:9999; display:none; position:absolute; left:1px; top:1px;">
       <div class="ui-widget-content" id="draggable">
           <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
           <span id="inputChar" style="font-size:12pt;"></span>
@@ -377,6 +390,12 @@
         </div>
     </div>
 
-    
+<iframe
+    id="imeFrame"
+    src="javascript:false;"
+    scrolling="no"
+    frameborder="0"
+    style="z-index:999; position:absolute; top:0px; left:0px; display:none;">
+</iframe>
 </body>
 </html>
