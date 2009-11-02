@@ -1482,7 +1482,9 @@ public partial class News_add : Foosun.Web.UI.ManagePage
                                         {
                                             if (dsContent.Trim() == string.Empty)
                                             {
-                                                dsContent = uc.NewsTitle;
+                                                // husb :如果没填假标题，就不处理
+                                                continue;
+                                                //dsContent = uc.NewsTitle;
                                             }
  
                                         }
