@@ -141,7 +141,8 @@ function checkData(value)
 {
     spanclear();
     var re = /^[0-9]{0,4}\|[0-9]{0,4}$/;
-    var re1 = /^http:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?$/;    
+    //var re1 = /^http:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?$/;
+    var re1 = /^([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?$/;
     var re2 = /^[0-9]*$$/;
     if(document.AdsForm.adName.value=="")
     {

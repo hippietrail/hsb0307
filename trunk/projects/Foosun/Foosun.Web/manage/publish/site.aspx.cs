@@ -47,9 +47,9 @@ namespace Foosun.Web
                 copyright.InnerHtml = CopyRight;            //获取版权信息
                 //Response.CacheControl = "no-cache";                        //设置页面无缓存    
                 Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
-                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", 0));
+                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID, ClassCNameRefer", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", 0));
                 dataSpecialTable = ac.getClassList("SpecialID,SpecialCName,ParentID", "news_special", string.Format("Where  isRecyle<>1 and SiteID='{0}'", 0));
-                dataIspageTable = ac.getClassList("ClassID,ClassCName", "News_Class", string.Format("Where isRecyle<>1 and isPage={0}", 1));
+                dataIspageTable = ac.getClassList("ClassID,ClassCName, ClassCNameRefer", "News_Class", string.Format("Where isRecyle<>1 and isPage={0}", 1));
                 InitialDivClass(divClassClass);
                 InitialDivClass(divClassNews);
                 InitialDivSpecial(DivSpecial);
@@ -79,7 +79,7 @@ namespace Foosun.Web
             {
                 ListItem tempListItem = new ListItem();
                 tempListItem.Value = rows[i]["ClassID"].ToString();
-                tempListItem.Text = rows[i]["ClassCName"].ToString();
+                tempListItem.Text = rows[i]["ClassCName"].ToString() + "[" + rows[i]["ClassCNameRefer"].ToString() + "]";
                 divClassBox.Items.Add(tempListItem);
                 InitialChildItems(tempListItem.Value, divClassBox, "┉┉");
             }
@@ -93,7 +93,7 @@ namespace Foosun.Web
             {
                 ListItem tempListChildItem = new ListItem();
                 tempListChildItem.Value = rows[i]["ClassID"].ToString();
-                tempListChildItem.Text = strFlag + rows[i]["ClassCName"].ToString();
+                tempListChildItem.Text = strFlag + rows[i]["ClassCName"].ToString() + "[" + rows[i]["ClassCNameRefer"].ToString() + "]";
                 divClassBox.Items.Add(tempListChildItem);
                 InitialChildItems(tempListChildItem.Value, divClassBox, strFlag + "┉┉");
             }

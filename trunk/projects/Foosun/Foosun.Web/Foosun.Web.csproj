@@ -4590,10 +4590,12 @@
     <Content Include="fonts\HG_Tai_WH.eot" />
     <Content Include="fonts\HG_TaiTham_WBD_IE.eot" />
     <Content Include="fonts\HG_Tai_WB.eot" />
+    <Content Include="Templets\images\mar_bg.gif" />
     <Content Include="Templets\xxbn\dw_VideoContent.htm" />
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
     <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
     <Content Include="Templets\xxbn\Images\marqueePink.gif" />
+    <Content Include="Templets\xxbn\Images\mar_bg.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalNewspaper\" />

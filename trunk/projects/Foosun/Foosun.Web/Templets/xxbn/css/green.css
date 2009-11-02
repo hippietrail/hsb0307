@@ -1,8 +1,8 @@
 @font-face 
 {
 	/*font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot"); HG_Tai_WB */ 
-	/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot");*/
-	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB.eot");
+	/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot"); HG_Tai_WB_IE*/
+	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot");
 }	
 BODY 
 {
@@ -89,15 +89,16 @@ UL LI FORM {
 	   /* background-image:url(../images/green/redtitle.gif) place_bg.gif;*/
 	   border: solid 1px #fea817;
 	   /*background: ##b5e684 url(/Templets/xxbn/Images/place_bg.gif) no-repeat 20px 8px;*/
-	   background: #fff url(/Templets/xxbn/Images/marqueePink.gif) repeat-x ;
+	   background: #fff url(/Templets/xxbn/Images/mar_bg.gif) repeat-x ;
 	   color: White;
 }
 .gonggao  span { margin-right:40px; }
+.gonggao  span a { color:White; }
 
 .gonggao  ul { margin:0px; padding:0px; width:940px; }
 .gonggao  ul  li { margin:0px; padding:0px; width:460; list-style-type:none; float:left ; margin-left:320px; display:inline; }
-.gonggao  ul  li a { color:black; font-weight:bold;}
-.gonggao  ul  li span { float:right; color:black; font-size:14px;}
+.gonggao  ul  li a { color:White; font-weight:bold;}
+.gonggao  ul  li span { float:right; color:White; font-size:16pt;}
 
 .place {
 	BORDER: #FEA817 1px solid; BACKGROUND: url(/Templets/xxbn/Images/place_bg.gif) #B5E684 no-repeat 20px 8px; MARGIN: 3px auto;  WIDTH: 978px; LINE-HEIGHT: 32px;  HEIGHT: 26px
@@ -378,10 +379,12 @@ UL LI FORM {
     border-left:#f0b8ff 1px solid;
 	COLOR: #356aa0;
 	PADDING-RIGHT: 10px; DISPLAY: inline; 
-	PADDING-LEFT: 10px; FONT-WEIGHT: bolder;  BACKGROUND: #ffffff; FLOAT: left; 
+	PADDING-LEFT: 10px; FONT-WEIGHT: bolder;   
 	PADDING-BOTTOM: 0px; MARGIN-LEFT: 10px; 
 	
 	PADDING-TOP: 0px;  HEIGHT: 25px;
+	BACKGROUND: #e3f7ff;
+	FLOAT: left; 
 }
 
 .pink_main {
@@ -822,7 +825,7 @@ A.end:hover {
 .friend_main ul { margin:0px; padding:0px; margin-left:10px;}
 .friend_main ul li 
 {
-	 margin:0px; padding:0px; width:120px; list-style-type:none; float:left;  text-align:left; font-size:16pt; 
+	 margin:0px; padding:0px; width:230px; list-style-type:none; float:left;  text-align:left; font-size:16pt; 
 	 
 }
 .friend_title {
@@ -946,8 +949,19 @@ A.end:hover {
 }
 
 .video_list {
-	MARGIN: 10px auto; WIDTH: 300px; HEIGHT: 800px;
+	MARGIN: 10px auto; WIDTH: 300px; 
 }
+
+.height400
+{
+    HEIGHT: 440px;
+}
+
+.height300
+{
+    HEIGHT: 292px;
+}
+
 .video_list ul 
 {
 	margin:0px; padding:0px;  
@@ -983,4 +997,20 @@ A.end:hover {
     /*border-right:#E5E5E5 1px solid;
     border-bottom:#E5E5E5 1px solid;*/
     display:inline;
+}
+
+.audio_list {
+	MARGIN: 10px auto; WIDTH: 450px; HEIGHT: 500px;
+}
+.audio_list ul 
+{
+	margin:0px; padding:0px;  
+	}
+.audio_list ul  li 
+{
+	 margin:0px; padding:0px; width:100%; height:32px; line-height:32px; text-align:left; list-style-type:none; BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 0px 13px;
+	 }
+.audio_list ul  li a 
+{
+	font-size:18px; margin-left:15px;font-size:18pt;
 }

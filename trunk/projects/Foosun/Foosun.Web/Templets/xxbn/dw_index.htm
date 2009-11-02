@@ -7,7 +7,7 @@
     <meta name="author" content="" />
     <meta name="copyright" content="" />
     <meta name="description" content="傣文网，我国第一个傣文网站，是西双版纳报社建设的以新闻和傣族文化为主的大型网上信息发布平台，是宣传西双版纳地区风土人情、民族文化的主力媒体之一。" />
-    <meta name="keywords" content="西双版纳,西双版纳傣文网,傣文网,傣文,西傣文,西双版纳新闻,西双版纳风景,原始森林,新闻中心,时政,社会,地方,地方领导,经济,能源环保,跨国公司,新农村,教育,科技,文化,饮食,娱乐,旅游,资料,图片" />
+    <meta name="keywords" content="西双版纳,西双版纳傣文网,傣文网,傣文,西傣文,傣族,泼水节,泼水,西双版纳新闻,西双版纳风景,翡翠,赌石,原始森林,新闻中心,时政,社会,地方,地方领导,经济,能源环保,跨国公司,新农村,教育,科技,文化,饮食,娱乐,旅游,资料,图片" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <link href="/Templets/xxbn/css/nav.css" type="text/css" rel="stylesheet" />
     <link href="/Templets/xxbn/css/green.css" type="text/css" rel="stylesheet" />
@@ -167,8 +167,8 @@
            <div class="menu_border"></div>
            <div class="clear"></div>
         </div>  
-        
     </div>
+    
     <div class="wrap">
         <div class="gonggao"><marquee scrollamount="6" width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();">{FS_xxbn_滚动新闻}</marquee></div>
        <!-- <li><span class="time">{#DateShort}</span><a title="{#uTitle}" target="_blank" href="{#URL}">{#Title}</a></li> <ul>{FS_xxbn_滚动新闻}</ul>        -->
@@ -234,15 +234,11 @@
                                     {
                                      alert('请填写关键字');return false;
                                     }
-                                    //window.location.href='/Search.html?type=news&tags='+escape(obj.tags.value)+'';
-                                    //window.location.href=encodeURI('/Search.html?type=news&tags='+obj.tags.value+'');
+                                    
                                      window.open('/Search.html?type=news&tags='+escape(obj.tags.value)+'','','');
                                     }
                                     </script>
-                                    
                                     <!--<div><a href="http://www.bndaily.com/" target="_blank" style="font-family:宋体,Verdana,Tahoma; font-size:9pt; position:relative; left:260px; ">进入西双版纳新闻网</a></div>-->
-                                    
-   
                                </div>
                            </div>
                      </div>   
@@ -284,8 +280,7 @@
          <div class="area">
             <div class="area_left1">
                 <div class="title">
-                    <div class="title_left">
-                       ᦆᧇ ᦵᦵᦋᧃ ᦂᦱᧃᧉ ᦀᦱᧃᧈ</div><!--阅读排行-->
+                    <div class="title_left"> ᦆᧇ ᦵᦵᦋᧃ ᦂᦱᧃᧉ ᦀᦱᧃᧈ</div><!--阅读排行-->
                 </div>
                 <div class="paihang"><ul>
                     {FS_xxbn_首页点击排行}</ul></div>
@@ -295,8 +290,8 @@
                 <div class="title">
                     <div class="title2">
                         <ul>
-                            <li class="active" id="mm01">ᦆᦱᧁᧈ ᦂᦱᧃ ᦵᦵᦀᧁᧈ ᦟᦸᧈ旅游资讯</li>
-                            <li id="mm02"> ᦩᦱᧄ ᦣᦴᧉ ᦞᧆ ᦒ ᦓ ᦒᧄ贝叶文化</li>
+                            <li class="active" id="mm01">ᦆᦱᧁᧈ ᦂᦱᧃ ᦵᦵᦀᧁᧈ ᦟᦸᧈ</li>
+                            <li id="mm02"> ᦩᦱᧄ ᦣᦴᧉ ᦞᧆ ᦒ ᦓ ᦒᧄ</li>
                         </ul>
                     </div>
                 </div>
@@ -313,6 +308,36 @@
     </div>
     
     <div class="wrap">
+        <div class="area">
+            <div class="brownRegion">
+                <div class="brownTitle">
+                    <div class="brownText">ᦔ ᦵᦞ ᦓᦲ ᦵᦙᦲᧂ ᦺᦑ</div>
+                </div>
+                <div class="ad_left">{FS_首页广告下}</div>
+            </div>
+            <div class="brown_center">
+                <div class="brownTitle">
+                    <div class="brownText">
+                       ᦃᦱᧁᧈ ᦉᦱᧃ ᦂᦱᧃ ᦐᧅ
+                    </div>
+                </div>
+                <div class="right_main">
+                         <ul>{FS_xxbn_栏目最新新闻列表_要闻报道}</ul>
+                </div>
+            </div> 
+            <div class="brown_right">
+                <div class="brownTitle">
+                    <div class="brownText">ᦅᧄ ᦷᦈᧆᧈ ᦈᦱ ᦢᦱᧃᧉ ᦵᦙᦲᧂ</div>
+                </div>
+                <div class="right_main">
+                    <ul>{FS_xxbn_栏目最新新闻列表_社会论坛}</ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>    
+    
+    <div class="wrap">
          <div class="area">
                <div class="pink">
                 <div class="pinkTitle">
@@ -325,8 +350,8 @@
                 <div class="pinkTitle">
                     <div class="pinkText">
                         <ul>
-                            <li class="active" id="mmm01"><a href="{FS_文化生活栏目URL}" target="_blank" style="border-color:#f0b8ff;">ᦩᦱᧄ ᦣᦴᧉ ᦷᦞ ᦠᦱᧃ文化生活</a> </li>
-                            <li id="mmm02"><a href="{FS_民族宗教栏目URL}" target="_blank">ᦉᦱ ᦉ ᦓᦱ ᦘᦱ ᦉᦱ民族宗教</a></li>
+                            <li class="active" id="mmm01"><a href="{FS_文化生活栏目URL}" target="_blank" style="border-color:#f0b8ff;">ᦩᦱᧄ ᦣᦴᧉ ᦷᦞ ᦠᦱᧃ</a> </li>
+                            <li id="mmm02"><a href="{FS_民族宗教栏目URL}" target="_blank">ᦉᦱ ᦉ ᦓᦱ ᦘᦱ ᦉᦱ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -342,36 +367,10 @@
          </div>
     </div>
     
-    <div class="wrap">
-        <div class="area">
-            <div class="brownRegion">
-                <div class="brownTitle">
-                    <div class="brownText">ᦔ ᦵᦞ ᦓᦲ ᦵᦙᦲᧂ ᦺᦑ</div>
-                </div>
-                <div class="ad_left">{FS_首页广告下}</div>
-            </div>
-            <div class="brown_center">
-                <div class="brownTitle">
-                    <div class="brownText">
-                       ᦃᦱᧁᧈ ᦉᦱᧃ ᦂᦱᧃ ᦐᧅywbd1
-                    </div>
-                </div>
-                <div class="right_main">
-                         <ul>{FS_xxbn_栏目最新新闻列表_要闻报道}</ul>
-                </div>
-            </div> 
-            <div class="brown_right">
-                <div class="brownTitle">
-                    <div class="brownText">ᦅᧄ ᦷᦈᧆᧈ ᦈᦱ ᦢᦱᧃᧉ ᦵᦙᦲᧂshlt2</div>
-                </div>
-                <div class="right_main">
-                    <ul>{FS_xxbn_栏目最新新闻列表_社会论坛}</ul>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
+
+    
     <!--友情链接 -->
+    
     <div class="wrap">
         <div class="friend">
             <div class="friend_title"></div>
