@@ -585,7 +585,7 @@ function selectType()
                         标题<asp:RequiredFieldValidator ID="f_NewsTitle" runat="server" ControlToValidate="NewsTitle"
                             Display="Dynamic" ErrorMessage="<span class='reshow'>*</span>"></asp:RequiredFieldValidator></td>
                     <td style="width: 90%;">
-                        <asp:TextBox ID="NewsTitle" runat="server" Width="50%" CssClass="titlerule" MaxLength="100" ></asp:TextBox>
+                        <asp:TextBox ID="NewsTitle" runat="server" CssClass="titlerule" MaxLength="500" ></asp:TextBox>
                         &nbsp;&nbsp;<asp:CheckBox Checked="true" ID="isHTML" runat="server" Text="立刻发布" />
                         <asp:DropDownList ID="DropDownList1" CssClass="form" onchange="javascript:titleFlag(this.value);"
                             runat="server">

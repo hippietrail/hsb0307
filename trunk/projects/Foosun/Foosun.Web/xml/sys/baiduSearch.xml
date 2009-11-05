@@ -13,7 +13,7 @@
     <!--站点地址,不带http://,不带虚拟目录-->
     <website>www.hgzp.com</website>
     <!--管理员信箱-->
-    <webmaster>service@foosun.cn</webmaster>
+    <webmaster>service@hgzp.com</webmaster>
   </item>
 </foosun>
 </rss>

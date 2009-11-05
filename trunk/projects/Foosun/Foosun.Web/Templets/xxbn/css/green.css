@@ -1,7 +1,7 @@
 @font-face 
 {
 	/*font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot"); HG_Tai_WB */ 
-	/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot"); HG_Tai_WB_IE*/
+	/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot"); HG_Tai_WB_IE HG_TaiTham_WBD_IE  */
 	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot");
 }	
 BODY 
@@ -9,12 +9,20 @@ BODY
 	margin:0px;  padding:0px;
     BACKGROUND:url(/Templets/xxbn/Images/green/bodyBg.jpg) #fff repeat-x;
 	font-family:HGTAIWH, Arial, 'ÐÂËÎÌå', sans-serif ;
-	font-size:16pt;LINE-HEIGHT: 32px;
+	font-size:18pt;LINE-HEIGHT: 32px;
 	color:Green;
 }
 
 UL LI FORM {
 	PADDING: 0px;  MARGIN: 0px;
+}
+p a img
+{
+	border: 0px;
+}
+div a img
+{
+	border: 0px;
 }
 .song12
 {
@@ -119,10 +127,10 @@ UL LI FORM {
 	FLOAT: left; WIDTH: 402px; HEIGHT: auto;DISPLAY: inline;
 }
 .area_center {
-	FLOAT: left; WIDTH: 392px; HEIGHT: auto; margin-left:10px;DISPLAY: inline; _width:378px;
+	FLOAT: left; WIDTH: 432px; HEIGHT: auto; margin-left:5px;DISPLAY: inline; _width:418px;
 }
 .area_right {
-	 margin:0px; padding:0px;  FLOAT: left;  WIDTH: 160px;MARGIN-LEFT: 10px;DISPLAY: inline;
+	 margin:0px; padding:0px;  FLOAT: left;  WIDTH: 133px;MARGIN-LEFT: 5px;DISPLAY: inline;
 }
 .myflash {
 	WIDTH: 400px;  height:auto;
@@ -229,14 +237,14 @@ UL LI FORM {
 	FLOAT: right; WIDTH: 728px;DISPLAY: inline;
 }
 .today {
-	BORDER: #d4d3d3 1px solid;  WIDTH: 390px;_width:378px;
+	BORDER: #d4d3d3 1px solid;  WIDTH: 430px;_width:418px;
 }
 .today1 {
-	MARGIN-TOP: 5px; WIDTH: 392px;  BORDER-BOTTOM: #cccccc 1px dashed; HEIGHT: 50px; line-height:50px;_width:378px;
+	MARGIN-TOP: 5px; WIDTH: 430px;  BORDER-BOTTOM: #cccccc 1px dashed; HEIGHT: 50px; line-height:50px;_width:418px;
 }
 .today1 a { font-size :25px;  color:Red; text-decoration:underline;}
 .today2 {
-	MARGIN-TOP: 10px;  WIDTH: 392px; HEIGHT: 335px;_width:378px;
+	MARGIN-TOP: 10px;  WIDTH: 430px; HEIGHT: 335px;_width:418px;
 }
 .today2 ul  {
 	margin:0px; padding:0px;  margin-left:7px;
@@ -245,7 +253,7 @@ UL LI FORM {
 	 margin:0px; padding:0px; list-style-type:none; BACKGROUND: url(/Templets/xxbn/Images/menu_pre.gif) no-repeat 0px 4px;  height:32px;
 }
 .today2 ul li A  {
-	 margin-left:20px;  height:32px;LINE-HEIGHT: 32px;
+	 margin-left:20px;  height:32px;LINE-HEIGHT: 32px;font-size:20pt;
 }
 .today2 SPAN {
 	FLOAT: right;  MARGIN-RIGHT: 5px;LINE-HEIGHT: 32px; font-size:14px;
@@ -270,7 +278,7 @@ UL LI FORM {
 	margin:0px; padding:0px; list-style-type:none; float :left ;  width:300px; BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 16px 8px;}
 .tupian10 ul li a { margin-left:30px;}
 .paihang {
-	MARGIN-TOP: 0px; MARGIN-LEFT: 30px; WIDTH: 250px;  HEIGHT: 312px;font-size:18px;
+	MARGIN-TOP: 0px; MARGIN-LEFT: 30px; WIDTH: 276px;  HEIGHT: 312px;font-size:18pt;
 }
 .paihang ul
 {
@@ -287,7 +295,7 @@ UL LI FORM {
                     BACKGROUND: url(/Templets/xxbn/Images/bg_li.gif) no-repeat 0px 12px;}
 .right_main  ul li a 
 {
-	margin:0px; padding:0px;font-size:20px; margin-left:15px;
+	margin:0px; padding:0px;font-size:18pt; margin-left:15px;
 }
 
 .daohang {
@@ -338,7 +346,7 @@ UL LI FORM {
 }
 /* ============== */
 .vouch_cms {
-	border:#d4d3d3 1px solid; WIDTH: 160px; height:401px;
+	border:#d4d3d3 1px solid; WIDTH: 130px; height:401px;
 }
 .vouch_cms ul 
 { margin:0px; padding:0px; margin-top:12px;}

@@ -4563,12 +4563,9 @@
     <Content Include="configuration\js\My97DatePicker\WdatePicker.js" />
     <Content Include="files\siteFiles\audio.gif" />
     <Content Include="files\siteFiles\logo.gif" />
-    <Content Include="files\siteFiles\mewdainews.jpg" />
     <Content Include="files\siteFiles\new.jpg" />
     <Content Include="files\siteFiles\old.jpg" />
     <Content Include="files\siteFiles\topbar.jpg" />
-    <Content Include="files\TempletPictures\55.jpg" />
-    <Content Include="files\TempletPictures\banner_blog_std.jpg" />
     <Content Include="HTMLPage1.htm" />
     <Content Include="manage\collect\MasterPage_Site.master" />
     <Content Include="manage\news\BatchAddNewsHandler.ashx" />
@@ -4587,6 +4584,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="files\siteFiles\audio2.gif" />
+    <Content Include="files\TempletPictures\middle.swf" />
     <Content Include="fonts\HG_Tai_WH.eot" />
     <Content Include="fonts\HG_TaiTham_WBD_IE.eot" />
     <Content Include="fonts\HG_Tai_WB.eot" />
@@ -4652,10 +4650,12 @@
     <Folder Include="editor\scripts\moz\icons\tchi\" />
     <Folder Include="editor\scripts\style\" />
     <Folder Include="editor\scripts\table\" />
+    <Folder Include="files\audio\" />
     <Folder Include="files\content\" />
     <Folder Include="files\RemoteFiles\" />
     <Folder Include="files\shortPictures\" />
     <Folder Include="files\topline\" />
+    <Folder Include="files\video\" />
     <Folder Include="history\2009610\" />
     <Folder Include="html\xxbn\video\" />
     <Folder Include="jsfiles\js\" />

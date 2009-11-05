@@ -14,7 +14,7 @@ namespace Foosun.Config
         {
             get
             {
-                string tstr = ConfigurationManager.ConnectionStrings["foosun"].ConnectionString;
+                string tstr = ConfigurationManager.ConnectionStrings["foosun"].ConnectionString;// hgcms
                 if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     return "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + HttpContext.Current.Server.MapPath(tstr) + ";Persist Security Info=True;";

@@ -316,7 +316,7 @@ public partial class General_manage : Foosun.Web.UI.ManagePage
                             break;
                     }
                     #endregion
-                    dt.Rows[k]["Cname"] = "<a class=\"list_link\"  href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\">" + dt.Rows[k]["Cname"].ToString() + "</a>";
+                    dt.Rows[k]["Cname"] = "<a class=\"list_link\" style=\"font-size:18pt;\" href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\">" + dt.Rows[k]["Cname"].ToString() + "</a>";
                     dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=suo&id=" + id + "\" title=\"点击锁定\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=unsuo&id=" + id + "\" title=\"点击解锁\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=del&id=" + id + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此常规项\" /></a><input type='checkbox' name='general_checkbox' id='general_checkbox'value=\"" + id + "\"/>";
                 }
                 DataList1.DataSource = dt;
