@@ -208,7 +208,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void UpdateGeneral(string _Sel_Type, string _Name, string _LinkUrl, string _Email, int GID)
         {
-            string Sql = "Update " + Pre + "news_Gen Set gType=" + _Sel_Type + ",Cname='" + _Name + "',EmailURL='" + _Email + "',URL='" + _LinkUrl + "' where id=" + GID + " and SiteID = " + Foosun.Global.Current.SiteID + "";
+            string Sql = "Update " + Pre + "news_Gen Set gType=" + _Sel_Type + ",Cname=N'" + _Name + "',EmailURL='" + _Email + "',URL='" + _LinkUrl + "' where id=" + GID + " and SiteID = " + Foosun.Global.Current.SiteID + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 

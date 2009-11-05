@@ -340,9 +340,9 @@ namespace Foosun.SQLServerDAL
             param[0].Value = uc.NewsType;
             param[1] = new SqlParameter("@OrderID", SqlDbType.TinyInt, 1);
             param[1].Value = uc.OrderID;
-            param[2] = new SqlParameter("@NewsTitle", SqlDbType.NVarChar, 100);
+            param[2] = new SqlParameter("@NewsTitle", SqlDbType.NVarChar, 1024);
             param[2].Value = uc.NewsTitle;
-            param[3] = new SqlParameter("@sNewsTitle", SqlDbType.NVarChar, 100);
+            param[3] = new SqlParameter("@sNewsTitle", SqlDbType.NVarChar, 1024);
             param[3].Value = uc.sNewsTitle;
             param[4] = new SqlParameter("@TitleColor", SqlDbType.NVarChar, 10);
             param[4].Value = uc.TitleColor;
@@ -445,9 +445,9 @@ namespace Foosun.SQLServerDAL
             param[1].Value = uc.NewsType;
             param[2] = new SqlParameter("@OrderID", SqlDbType.TinyInt, 1);
             param[2].Value = uc.OrderID;
-            param[3] = new SqlParameter("@NewsTitle", SqlDbType.NVarChar, 100);
+            param[3] = new SqlParameter("@NewsTitle", SqlDbType.NVarChar, 1024);
             param[3].Value = uc.NewsTitle;
-            param[4] = new SqlParameter("@sNewsTitle", SqlDbType.NVarChar, 100);
+            param[4] = new SqlParameter("@sNewsTitle", SqlDbType.NVarChar, 1024);
             param[4].Value = uc.sNewsTitle;
             param[5] = new SqlParameter("@TitleColor", SqlDbType.NVarChar, 10);
             param[5].Value = uc.TitleColor;
