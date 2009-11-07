@@ -1,9 +1,11 @@
+/*font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot"); HG_Tai_WB */ 
+/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot"); HG_Tai_WB_IE HG_TaiTham_WBD_IE  */
+
 @font-face 
 {
-	/*font-family:HGTAIWH; src:url("/fonts/HGTAITHNewAndOld.eot"); HG_Tai_WB */ 
-	/* font-family:HGTAIWH; src:url("/fonts/HG_Tai_WH.eot"); HG_Tai_WB_IE HG_TaiTham_WBD_IE  */
 	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot");
-}	
+}
+
 BODY 
 {
 	margin:0px;  padding:0px;
@@ -637,7 +639,7 @@ A:hover {
 	
 }
 .newstitle {
-	MARGIN: 0px auto ; WIDTH: 700px; TEXT-ALIGN: center; margin-top:10px; height:40px;
+	MARGIN: 0px auto ; WIDTH: 700px; TEXT-ALIGN: center; margin-top:10px; height:56px;
 }
 .newstitle H1 {
 	 font-size:26px;
