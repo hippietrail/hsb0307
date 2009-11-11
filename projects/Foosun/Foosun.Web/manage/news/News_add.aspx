@@ -585,7 +585,7 @@ function selectType()
                         标题<asp:RequiredFieldValidator ID="f_NewsTitle" runat="server" ControlToValidate="NewsTitle"
                             Display="Dynamic" ErrorMessage="<span class='reshow'>*</span>"></asp:RequiredFieldValidator></td>
                     <td style="width: 90%;">
-                        <asp:TextBox ID="NewsTitle" runat="server" CssClass="titlerule" MaxLength="500" ></asp:TextBox>
+                        <asp:TextBox ID="NewsTitle" runat="server" Width="50%" CssClass="titlerule" MaxLength="100" ></asp:TextBox>
                         &nbsp;&nbsp;<asp:CheckBox Checked="true" ID="isHTML" runat="server" Text="立刻发布" />
                         <asp:DropDownList ID="DropDownList1" CssClass="form" onchange="javascript:titleFlag(this.value);"
                             runat="server">
@@ -752,7 +752,7 @@ function selectType()
                             <a style="cursor: pointer;" onclick="selectFile('picEdit',document.getElementById('picContentTF'),320,500);"
                                 title="在上传的时候，请在编辑区鼠标点击，设置要上传图片的位置。"><font color="blue">选择图片</font></a></div>
                     </td>
-                    <td style="width: 90%; height: 300px;" id="EditSizeID">
+                    <td style="width: 90%; height: 600px;" id="EditSizeID">
                         <div style="height: 30px;">
                             <asp:CheckBox ID="RemoteTF" runat="server" title="保存图片(文件)到本地" Text="远程存图" /><span
                                 class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_downfiles',this)">帮助</span>
