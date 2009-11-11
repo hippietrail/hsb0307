@@ -1,19 +1,17 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectView>ShowAllFiles</ProjectView>
-  </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" xmlns="">
         <WebProjectProperties>
-          <StartPageUrl>manage/Login.aspx</StartPageUrl>
+          <StartPageUrl>manage/index.aspx</StartPageUrl>
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>D:\Husb\Projects\Publish\New\</PublishTargetLocation>
-          <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
+          <PublishTargetLocation>
+          </PublishTargetLocation>
+          <PublishDeleteAllFiles>False</PublishDeleteAllFiles>
           <PublishCopyAppData>True</PublishCopyAppData>
           <ExternalProgram>
           </ExternalProgram>
