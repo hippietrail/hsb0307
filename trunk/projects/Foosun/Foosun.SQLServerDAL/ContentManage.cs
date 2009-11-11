@@ -543,7 +543,7 @@ namespace Foosun.SQLServerDAL
             param[50].Value = uc.isFiles;
             param[51] = new SqlParameter("@vURL", SqlDbType.NVarChar, 200);
             param[51].Value = uc.vURL;
-            param[52] = new SqlParameter("@NewsTitleRefer", SqlDbType.NVarChar, 200);
+            param[52] = new SqlParameter("@NewsTitleRefer", SqlDbType.NVarChar, 512);
             param[52].Value = uc.NewsTitleRefer;
             return param;
         }
