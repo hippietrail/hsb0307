@@ -629,8 +629,6 @@ A:hover {
 .nav_list10  li {
 	 margin:0px; padding:0px; width:270px; float:left; list-style-type:none; 
 }
-
-
 .news 
 {
     border:solid 1px #8fd845;
@@ -648,10 +646,10 @@ A:hover {
 	MARGIN: 0px auto ;  padding:0px; WIDTH: 700px; BORDER-BOTTOM: #e1e4e6 1px solid; height:50px;
 }
 .info UL {
-  margin:0px; padding:0px;	MARGIN-LEFT: 50px; WIDTH: 650px;
+  margin:0px; padding:0px;	MARGIN-LEFT: 6px; WIDTH: 700px;
 }
 .info LI {
-	FLOAT: left; MARGIN-LEFT: 20px;LINE-HEIGHT: 40px; LIST-STYLE-TYPE: none; TEXT-ALIGN: center;HEIGHT: 40px
+	FLOAT: left; MARGIN-LEFT: 10px;LINE-HEIGHT: 40px; LIST-STYLE-TYPE: none; TEXT-ALIGN: center;HEIGHT: 40px
 }
 .info UL LI span 
 { font-size :15px;}

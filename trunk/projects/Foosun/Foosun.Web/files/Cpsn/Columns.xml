@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="GBK"?>
 <columns>
+  <media name="老傣文网站">
+    <column id="034a448c793d4956915ae84125b768ae">农业之窗</column>
+    <column id="263569daeb41423aa03478783f3fcdcc">旅游资讯</column>
+    <column id="50f84aaedfb54f89a41e245e0a4af226">贝叶文化</column>
+    <column id="56617693ec5d400890c448ed84c64c6c">傣乡资讯</column>
+    <column id="75e38610fdc04eadb96fe64115b13130">民族宗教</column>
+    <column id="75fcc143c544433294e4ab6ecbb02fa0">文化生活</column>
+    <column id="7955666e57ef413488b72b87f5587526">科技动态</column>
+    <column id="893a66df08d14ca28b94d5632f37f2c5">社会论坛</column>
+    <column id="ab9f77e06544439889bdac493cdc547d">社会新闻</column>
+    <column id="c39451c0fbe44fb1969b7b03dcaccde4">东盟瞭望</column>
+    <column id="c44037898ad24580ae11db3d20aa4be2">要闻报道</column>
+    <column id="da3645210caf415e992a260c05c1d8a3">生活常识</column>
+  </media>
   <media name="新傣文网站">
     <column id="0650a6e936014015918cfebe923cc7da">傣乡资讯</column>
     <column id="2cf43c8211834c2aa6b0c71d5c14d2eb">要闻报道</column>
