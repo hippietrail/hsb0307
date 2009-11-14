@@ -335,7 +335,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
                     {
                         String strchar = null;
                         string id = dt.Rows[k]["ClassID"].ToString();
-                        dt.Rows[k]["ClassCName"] = "<a href='Friend_List.aspx?type=edit_class&id=" + id + "' class='list_link' style=\"font-size:18pt;\" title='点击查看详情或修改'>" + dt.Rows[k]["ClassCName"].ToString() + "</a>";
+                        dt.Rows[k]["ClassCName"] = "<a href='Friend_List.aspx?type=edit_class&id=" + id + "' class='list_link' title='点击查看详情或修改'>" + dt.Rows[k]["ClassCName"].ToString() + "</a>";
                         dt.Rows[k]["oPerate"] = "<a href=\"Friend_List.aspx?type=edit_class&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"Friend_List.aspx?type=delone_class&id=" + id + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？其下的子类也将被删除!')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><a href=\"Friend_List.aspx?type=add_class&parentid=" + id + "\" class=\"list_link\" title=\"添加子类\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><input type='checkbox' name='friend_checkbox' id='friend_checkbox' value=\"" + id + "\"/>";
                         strchar += "<tr class=\"TR_BG_list\">";
                         strchar += "<td  align=\"left\" valign=\"middle\" class=\"SpecialFontFamily\" >" + dt.Rows[k]["ClassCName"] + "</td>";
@@ -432,7 +432,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
                         int Type = int.Parse(dt.Rows[k]["Type"].ToString());
                         int llock = int.Parse(dt.Rows[k]["Lock"].ToString());
                         string Authorr = dt.Rows[k]["Author"].ToString();
-                        dt.Rows[k]["Name"] = "<a href='" + LinkUrl + "' class=\"list_link\" title='" + siteName + "' target=\"_bank\">" + dt.Rows[k]["Name"].ToString() + "</a>";
+                        dt.Rows[k]["Name"] = "<a href='" + LinkUrl + "' class=\"list_link\" style=\"font-size:18pt;\" target=\"_bank\">" + dt.Rows[k]["Name"].ToString() + "</a>";
                         dt.Rows[k]["operate"] = "<input type=\"checkbox\" id=\"friend_checkbox_link\" value=\"" + dt.Rows[k]["id"].ToString() + "\" name=\"friend_checkbox_link\"  />";
                         #region 取类别的名称
                         string className = "";
