@@ -309,6 +309,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             dt.Columns.Add("op", typeof(string));
             dt.Columns.Add("htmllock", typeof(string));
             dt.Columns.Add("NewsTitles", typeof(string));
+            //dt.Columns.Add("ChineseTitle", typeof(string));
             dt.Columns.Add("CheckStats", typeof(string));
             dt.Columns.Add("isConstrs", typeof(string));
             dt.Columns.Add("CommNum", typeof(string));
@@ -340,6 +341,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
                     titleStr = titleStr.Substring(0, 50) + "...";//lsd modify 26 -> 40
                 }
                 dt.Rows[k]["NewsTitles"] = titleC + titleI + titleB + titleStr + titleB1 + titleI1 + titleC1 + _ishtml1;
+
                 string[] CheckStat = dt.Rows[k]["CheckStat"].ToString().Split('|');
                 string _strCheck = "";
                 if (CheckStat[0] == "1") { _strCheck = "<img style=\"cursor:pointer;\" src=\"../../sysImages/folder/no1.gif\" title=\"一级审核的新闻\">"; }
