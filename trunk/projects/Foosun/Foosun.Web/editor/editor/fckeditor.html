@@ -33,7 +33,8 @@
 
 function LoadScript( url )
 {
-	document.write( '<script type="text/javascript" src="' + url + '" onerror="alert(\'Error loading \' + this.src);"><\/script>' ) ;
+	//document.write( '<script type="text/javascript" src="' + url + '" onerror="alert(\'Error loading \' + this.src);"><\/script>' ) ;
+	document.write( '<scr' + 'ipt type="text/javascript" src="' + url + '"><\/scr' + 'ipt>' ) ;
 }
 
 function LoadCss( url )
@@ -46,11 +47,22 @@ var sSuffix = /msie/.test( navigator.userAgent.toLowerCase() ) ? 'ie' : 'gecko' 
 
 LoadScript( 'js/fckeditorcode_' + sSuffix + '.js' ) ;
 
+
+
 // Base configuration file.
 LoadScript( '../fckconfig.js' ) ;
+//alert("mozilla/5.0 (windows; u; windows nt 5.2; zh-cn; rv:1.9.1.3) gecko/20090824 firefox/3.5.3".Contains("gecko"));
 
 	</script>
 	<script type="text/javascript">
+	
+//alert( 'js/fckeditorcode_' + sSuffix + '.js');
+//var ss = "ss";
+//alert(ss.Contains('s'));
+//if(ss.Contains)
+//{
+//alert("tt");
+//}
 
 // Create the default cleanup object used by the editor.
 if ( FCKBrowserInfo.IsIE )
