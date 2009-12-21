@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="傣文网，我国第一个傣文网站，是西双版纳报社建设的以新闻和傣族文化为主的大型网上信息发布平台，是宣传西双版纳地区风土人情、民族文化的主力媒体之一。" />
+<meta name="keywords" content="西双版纳,西双版纳傣文网,傣文网,傣文,西傣文,傣族,泼水节,泼水,西双版纳新闻,西双版纳风景,翡翠,赌石,原始森林,新闻中心,时政,社会,地方,地方领导,经济,能源环保,跨国公司,新农村,教育,科技,文化,饮食,娱乐,旅游,资料,图片" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>西双版纳傣文网</title>
+
+<link href="style/layout.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<link href="style/indexstyle.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+
+<!--[if IE 6]>
+<link href="style/hack.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<![endif]-->
+<!--[if IE 8]>
+<link href="style/hack_ie8.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<![endif]-->
+<!--[if !IE]><!-->
+<link href="style/hack_noie.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<!--<![endif]-->
+
+<script language="javascript" src="js/select.js" type="text/javascript"></script>
+<script language="javascript" src="js/effect.js" type="text/javascript"></script>
+<script language="javascript" src="js/swfobject1.js" type="text/javascript"></script>
+<script src="js/swfobject.js" language="javascript" type="text/javascript"></script>
+<!--检索-->
+<script src="js/search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+function searchsubmit(){
+    var site="";
+  var   obj   =   document.getElementsByName('sites');   
+  for   (i=0;i<obj.length;i++){
+    if   (obj[i].checked){
+        site=obj[i].value;
+    }
+  }
+
+if(site=="people"){
+    people();
+    return false;
+} else if(site=="shizheng"){
+    shizheng();
+    return false;
+} else if(site=="caijing"){
+    caijing();
+} else {
+    return false;
+    }
+}
+
+function people()
+{
+document.searchForm.action = "http://search.people.com.cn/rmw/GB/rmwsearch/gj_search_pd.jsp";
+if(getParameter_DJ('ALL') == false) return false; 
+} 
+function shizheng()
+{
+window.open("http://www.infomix.com.cn/search.aspx?parameter="+encodeURIComponent(document.searchForm.names.value));
+}
+
+function caijing()
+{
+document.searchForm.searchValue.value=document.searchForm.names.value;
+document.searchForm.action = "http://search.secutimes.com/newsSearch.jsp";
+}
+</script>
+<!--回顾-->
+<script language="JavaScript" type="text/javascript">
+function go() {
+
+        var today = new Date();
+        var bday = new Date(2006,04, 27);
+
+        tf=document.dateform;
+        vd=tf.sday.options[tf.sday.selectedIndex].value;
+        vm=tf.smonth.options[tf.smonth.selectedIndex].value;
+vy=tf.syear.options[tf.syear.selectedIndex].value;
+        var aday = new Date(vy ,vm-1, vd);
+		if((vy>2004)){ document.location="http://news.people.com.cn/GB/28053/review/"+vy+vm+vd+".html";}
+ else if ((vd<27)&&(vm<04)&&(vy=2004))
+ { window.alert("回顾请从2004年04月27日开始");}
+ else    {
+        document.location="http://news.people.com.cn/GB/28053/review/"+vy+vm+vd+".html";}
+}
+function resetselect () {
+	var mydate = new Date();
+    var myyear = mydate.getFullYear();
+    var mymonth = mydate.getMonth()+1;
+	var mytoday = mydate.getDate();
+	if(new String(mymonth).length==1)mymonth="0"+new String(mymonth);
+	if(new String(mytoday).length==1)mytoday="0"+new String(mytoday);
+	document.dateform.syear.value=myyear;
+    document.dateform.smonth.value=mymonth;
+    document.dateform.sday.value=mytoday;
+}
+</script>
+<script language="javascript" type="text/javascript">
+//Cookie日期修正函数 function FixCookieDate(date)
+function FixCookieDate(date){
+	var base = new Date(0);
+	var skew = base.getTime();
+	if (skew > 0)date.setTime(date.getTime() - skew);
+}
+
+//设置Cookie函数 function SetCookie(name,value,expires,path,domain,secure)
+function SetCookie(name,value,expires,path,domain,secure){
+	document.cookie = name + "=" + escape(value) + ((expires)? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+}
+	//设置Cookie相应名值对中值的函数 function getCookieVal(offset)
+	function getCookieVal(offset) {
+		var endstr = document.cookie.indexOf(";",offset);
+		if (endstr == -1) endstr = document.cookie.length;
+		return unescape(document.cookie.substring(offset,endstr));
+	}
+
+	//设置Cookie函数 function GetCookie(name)
+	function GetCookie(name){
+		var arg = name + '=';
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+		var flag = ''
+		while (i<clen) {
+			var j = i + alen;
+			if (document.cookie.substring(i,j) == arg) flag = getCookieVal(j);
+			i = document.cookie.indexOf(" ",i) + 1;
+			if (i == 0) break;
+		}
+		return flag;
+	}
+function myCustomize(city)
+{
+	if(city == "#")
+	{
+		alert("请选择城市");
+		return false;
+	}
+
+	var expdate = new Date();
+		FixCookieDate(expdate);//修正MAC机器的BUG
+		expdate.setTime(expdate.getTime() + (1000*60*60*24*365));//设置Cookie的有效期为1年
+//	SetCookie('PEOPLE_CUSTOMIZE_city',city,expdate,'/');
+    SetCookie('PEOPLE_CUSTOMIZE_city',city,expdate,'/','people.com.cn');
+
+	document.getElementById("weathercustomize").src="http://weather.people.com.cn/customize/jump2009.html";
+
+	//location.reload();
+}
+</script>
+
+<script src="js/fullscreenadv.js" type="text/javascript"></script>
+
+</head>
+<body onload='s = new Selecter("t_select_list");v=new Selecter1("t_select_list1");e=new Selecter2("t_select_list3");g=new Selecter4("t_select_list4")'>
+
+<!--广告位-->
+<div class="pt_5"><script language="javascript1.1"  src="http://pro.people.com.cn/js.ng/channel_range=1/&channel_id=1&PagePos=60&size=98060&site=people"></script></div>
+<!--登陆-->
+<div class="login">
+<div class="paper">
+<span class="paper">报系</span>
+<span class="t_selected" onclick="s.changeListState(event);" id="s1" onmouseover="s.state=true;" onmouseout="s.state=false;" onblur="s.hiddenList()"> 请选择报系</span>
+<input type="hidden" id="s1_value"/>
+  <div class="t_select_list" id="t_select_list" onmouseover="s.state=true;" onmouseout="s.state=false;">
+      <label onclick="s.changeSelected(this,event);" value="1"><a href="http://paper.people.com.cn/rmrb/paperindex.htm" target="_blank">人民日报</a></label>
+      <label onclick="s.changeSelected(this,event);" value="2"><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">海外版</a></label>
+      <label onclick="s.changeSelected(this,event);" value="3"><a href="http://www.people.com.cn/paper/tx_hqrw/tx_hqrw.html" target="_blank">环球人物</a></label>
+      <label onclick="s.changeSelected(this,event);" value="4"><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></label>
+      <label onclick="s.changeSelected(this,event);" value="5"><a href="http://paper.people.com.cn/jhsb/paperindex.htm" target="_blank">京华时报</a></label>
+      <label onclick="s.changeSelected(this,event);" value="6"><a href="http://paper.people.com.cn/gjjrb/" target="_blank">国际金融</a></label>
+      <label onclick="s.changeSelected(this,event);" value="7"><a href="http://paper.people.com.cn/jnsb/paperindex.htm" target="_blank">江南时报</a></label>
+      <label onclick="s.changeSelected(this,event);" value="8"><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></label>
+      <label onclick="s.changeSelected(this,event);" value="9"><a href="http://paper.people.com.cn/dd/" target="_blank">大地</a></label>
+      <label onclick="s.changeSelected(this,event);" value="10"><a href="http://www.people.com.cn/paper/jianjie/nk/xy1.html" target="_blank">内刊</a></label>
+      <label onclick="s.changeSelected(this,event);" value="11"><a href="http://www.people.com.cn/paper/jianjie/bzjj_01.htm" target="_blank">...更多>></a></label>
+  </div>
+&nbsp;&nbsp;&nbsp;&nbsp;地方频道
+</div>
+<div class="t_select1">
+<span class="t_selected" onclick="v.changeListState(event);" id="s2" onmouseover="v.state=true;" onmouseout="v.state=false;" onblur="v.hiddenList()">
+    请选择频道</span>
+<input type="hidden" id="s2_value"/>
+  <div class="t_select_list" id="t_select_list1" onmouseover="v.state=true;" onmouseout="v.state=false;">
+      <label onclick="v.changeSelected(this,event);" value="1"><a href="http://bj.people.com.cn/GB/index.html" target="_blank">北京</a></label>
+      <label onclick="v.changeSelected(this,event);" value="2"><a href="http://unn.people.com.cn/GB/14798/index.html" target="_blank">天津</a></label>
+      <label onclick="v.changeSelected(this,event);" value="3"><a href="http://he.people.com.cn/" target="_blank">河北</a></label>
+      <label onclick="v.changeSelected(this,event);" value="4"><a href="http://sx.people.com.cn/" target="_blank">山西</a></label>
+      <label onclick="v.changeSelected(this,event);" value="5"><a href="http://unn.people.com.cn/GB/14785/index.html" target="_blank">内蒙古</a></label>
+      <label onclick="v.changeSelected(this,event);" value="6"><a href="http://unn.people.com.cn/GB/14783/index.html" target="_blank">辽宁</a></label>
+      <label onclick="v.changeSelected(this,event);" value="7"><a href="http://unn.people.com.cn/GB/14780/index.html" target="_blank">吉林</a></label>
+      <label onclick="v.changeSelected(this,event);" value="8"><a href="http://unn.people.com.cn/GB/14776/index.html" target="_blank">黑龙江</a></label>
+      <label onclick="v.changeSelected(this,event);" value="9"><a href="http://unn.people.com.cn/GB/14794/index.html" target="_blank">上海</a></label>
+      <label onclick="v.changeSelected(this,event);" value="10"><a href="http://sd.people.com.cn/" target="_blank">山东</a></label>
+      <label onclick="v.changeSelected(this,event);" value="11"><a href="http://unn.people.com.cn/GB/21674/index.html" target="_blank">安徽</a></label>
+      <label onclick="v.changeSelected(this,event);" value="12"><a href="http://unn.people.com.cn/GB/14803/index.html" target="_blank">浙江</a></label>
+      <label onclick="v.changeSelected(this,event);" value="13"><a href="http://fj.people.com.cn/" target="_blank">福建</a></label>
+      <label onclick="v.changeSelected(this,event);" value="14"><a href="http://unn.people.com.cn/GB/14781/index.html" target="_blank">江苏</a></label>
+      <label onclick="v.changeSelected(this,event);" value="15"><a href="http://unn.people.com.cn/GB/14782/index.html" target="_blank">江西</a></label>
+      <label onclick="v.changeSelected(this,event);" value="16"><a href="http://gd.people.com.cn/" target="_blank">广东</a></label>
+      <label onclick="v.changeSelected(this,event);" value="17"><a href="http://gx.people.com.cn/" target="_blank">广西</a></label>
+      <label onclick="v.changeSelected(this,event);" value="18"><a href="http://hi.people.com.cn/" target="_blank">海南</a></label>
+      <label onclick="v.changeSelected(this,event);" value="19"><a href="http://hb.people.com.cn/" target="_blank">湖北</a></label>
+      <label onclick="v.changeSelected(this,event);" value="20"><a href="http://unn.people.com.cn/GB/14778/index.html" target="_blank">湖南</a></label>
+      <label onclick="v.changeSelected(this,event);" value="21"><a href="http://henan.people.com.cn/" target="_blank">河南</a></label>
+      <label onclick="v.changeSelected(this,event);" value="22"><a href="http://cq.people.com.cn/" target="_blank">重庆</a></label>
+      <label onclick="v.changeSelected(this,event);" value="23"><a href="http://unn.people.com.cn/GB/14796/index.html" target="_blank">四川</a></label>
+      <label onclick="v.changeSelected(this,event);" value="24"><a href="http://unn.people.com.cn/GB/14802/index.html" target="_blank">云南</a></label>
+      <label onclick="v.changeSelected(this,event);" value="25"><a href="http://unn.people.com.cn/GB/14772/index.html" target="_blank">贵州</a></label>
+      <label onclick="v.changeSelected(this,event);" value="26"><a href="http://unn.people.com.cn/GB/14799/index.html" target="_blank">西藏</a></label>
+      <label onclick="v.changeSelected(this,event);" value="27"><a href="http://unn.people.com.cn/GB/14793/index.html" target="_blank">陕西</a></label>
+      <label onclick="v.changeSelected(this,event);" value="28"><a href="http://gs.people.com.cn/" target="_blank">甘肃</a></label>
+      <label onclick="v.changeSelected(this,event);" value="29"><a href="http://unn.people.com.cn/GB/14801/index.html" target="_blank">新疆</a></label>
+      <label onclick="v.changeSelected(this,event);" value="30"><a href="http://unn.people.com.cn/GB/14788/index.html" target="_blank">青海</a></label>
+      <label onclick="v.changeSelected(this,event);" value="31"><a href="http://unn.people.com.cn/GB/14786/index.html" target="_blank">宁夏</a></label>
+      <label onclick="v.changeSelected(this,event);" value="32"><a href="http://hm.people.com.cn/GB/index.html" target="_blank">港澳</a></label>
+      <label onclick="v.changeSelected(this,event);" value="33"><a href="http://tw.people.com.cn/GB/index.html" target="_blank">台湾</a></label>
+      <!--<label onclick="v.changeSelected(this,event);" value="34"><a href="http://qd.people.com.cn/" target="_blank">青岛</a></label>
+      <label onclick="v.changeSelected(this,event);" value="35"><a href="http://nb.people.com.cn/" target="_blank">宁波</a></label>
+      <label onclick="v.changeSelected(this,event);" value="36"><a href="http://dl.people.com.cn/" target="_blank">大连</a></label>
+      <label onclick="v.changeSelected(this,event);" value="37"><a href="http://sz.people.com.cn/" target="_blank">深圳</a></label>
+      <label onclick="v.changeSelected(this,event);" value="38"><a href="http://xm.people.com.cn/" target="_blank">厦门</a></label>-->
+      <label onclick="v.changeSelected(this,event);" value="39"><a href="http://wuxi.people.com.cn/" target="_blank">无锡</a></label>
+      <label onclick="v.changeSelected(this,event);" value="40"><a href="http://jszj.people.com.cn/" target="_blank">镇江</a></label>
+      <label onclick="v.changeSelected(this,event);" value="41"><a href="http://zb.people.com.cn/" target="_blank">淄博</a></label>
+      <label onclick="v.changeSelected(this,event);" value="42"><a href="http://yt.people.com.cn/GB/index.html" target="_blank">烟台</a></label>
+      <label onclick="v.changeSelected(this,event);" value="43"><a href="http://wf.people.com.cn/" target="_blank">潍坊</a></label>
+      <label onclick="v.changeSelected(this,event);" value="44"><a href="http://su.people.com.cn/" target="_blank">苏南</a></label>
+      <label onclick="v.changeSelected(this,event);" value="44"><a href="http://wz.people.com.cn/GB/index.html" target="_blank">温州</a></label>  </div>
+</div>
+<form name="searchForm" METHOD="post" target="_blank" onsubmit="return searchsubmit();">&nbsp;&nbsp;检索
+<input class="one" size="19" type="text" name="names" id="names" />
+<input type="hidden" name="parameter" id="parameter" />
+<input type="hidden" name="searchValue" id="searchValue" />
+<input type="hidden" name="XMLLIST" />
+<input type="image" src="images/search.gif" name="Submit" />
+<input name="sites" id="sites" type="radio"  value="people" width="2" height="2" checked="true">
+本站<input name="sites" id="Radio1" type="radio" value="shizheng" width="2" height="2">
+时政<input name="sites" id="Radio2" type="radio" value="caijing" width="2" height="2">
+财经&nbsp;<a href="http://search.people.com.cn/rmw/GB/rmwsearch/dj_index.jsp" target="_blank" class="dx">更多</a>&nbsp;&nbsp;
+<a href="http://mail.people.com.cn" target="_blank">人民邮箱</a>
+<a style="cursor:hand;" onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.people.com.cn');" href="#"><span style="color:#676767">设为首页</span></a>
+<a href="http://www.people.com.cn/GB/138812/index.html" target="_blank">网站地图</a>
+<a href="http://www.people.com.cn/GB/168602/index.html" target="_blank">人民日报广告</a>
+</form>
+</div>
+<!--导航区-->
+<div class="nav">
+  <div class="logo"><a href="#" target="_blank"><img src="images/logo.gif" alt="人民网" border="0" /></a><!--<a href="#" target="_blank"><img src="images/60/logo60.jpg" alt="人民网" border="0" /></a>-->
+   <p>2009年12月14日&nbsp;&nbsp;星期一</p>
+   <span class="mar_em">
+   <script type="text/javascript">
+var marqueeContent99=new Array();   //滚动新闻
+marqueeContent99[0]='<img src="images/ico.gif" border="0" height="11" width="9" alt="" />wap.people.com.cn';
+marqueeContent99[1]='人民网.公益&nbsp;&nbsp;人民网.中国';
+var marqueeInterval99=new Array();  //定义一些常用而且要经常用到的变量
+var marqueeId99=0;
+var marqueeDelay99=5000;  //更新时间,毫秒
+var marqueeHeight99=20;  //容器高度
+//接下来的是定义一些要使用到的函数
+function initMarquee99() {
+ var str=marqueeContent99[0];
+ document.write('<div id=marqueeBox99 style="overflow:hidden;height:'+marqueeHeight99+'px" onmouseover="clearInterval(marqueeInterval99[0])" onmouseout="marqueeInterval99[0]=setInterval(\'startMarquee99()\',marqueeDelay99)"><div>'+str+'</div></div>');
+ marqueeId99++;
+ marqueeInterval99[0]=setInterval("startMarquee99()",marqueeDelay99);
+ }
+function startMarquee99() {
+ var str=marqueeContent99[marqueeId99];
+  marqueeId99++;
+ if(marqueeId99>=marqueeContent99.length) marqueeId99=0;
+ if(document.getElementById("marqueeBox99").childNodes.length==1) {
+  var nextLine=document.createElement('DIV');
+  nextLine.innerHTML=str;
+  document.getElementById("marqueeBox99").appendChild(nextLine);
+  }
+ else {
+  document.getElementById("marqueeBox99").childNodes[0].innerHTML=str;
+  document.getElementById("marqueeBox99").appendChild(document.getElementById("marqueeBox99").childNodes[0]);
+  document.getElementById("marqueeBox99").scrollTop=0;
+  }
+ clearInterval(marqueeInterval99[1]);
+ marqueeInterval99[1]=setInterval("scrollMarquee99()",20);
+ }
+function scrollMarquee99() {
+ document.getElementById("marqueeBox99").scrollTop++;
+ if(document.getElementById("marqueeBox99").scrollTop%marqueeHeight99==(marqueeHeight99-1)){
+  clearInterval(marqueeInterval99[1]);
+  }
+ }
+initMarquee99();
+</script>
+   </span>
+  </div>
+  <!--主导航区-->
+  <div class="new_nav">
+    <div>
+	 <a href="http://bbs1.people.com.cn/boardList.do?action=postList&boardId=1" target="_blank">强国论坛</a><a href="http://wireless.people.com.cn/GB/121072/135335/index.html" target="_blank">手机论坛</a><a href="http://chinapic.people.com.cn/" target="_blank">图说中国</a><a href="http://bbs.people.com.cn/" target="_blank">社区</a><a href="http://blog.people.com.cn/" target="_blank">博客</a><a href="http://vblog.people.com.cn/" target="_blank">播客</a><a href="http://digg.people.com.cn/index.html" target="_blank">掘客</a>|<a href="http://shop.people.com.cn/" target="_blank">商城</a>|&nbsp;<img src="images/language.jpg" border="0" usemap="#Map" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="1,0,33,14" href="http://www.people.com.cn/BIG5/" target="_blank" alt="" />
+  <area shape="rect" coords="45,1,90,14" href="http://english.peopledaily.com.cn/" target="_blank" alt="" />
+<area shape="rect" coords="104,1,144,15" href="http://j.people.com.cn/" target="_blank" alt="" />
+<area shape="rect" coords="160,0,216,14" href="http://french.peopledaily.com.cn/" target="_blank" alt="" />
+<area shape="rect" coords="229,0,282,13" href="http://spanish.peopledaily.com.cn/" target="_blank" alt="" />
+<area shape="rect" coords="288,0,379,12" href="http://russian.people.com.cn/" target="_blank" alt="" />
+<area shape="rect" coords="388,1,421,14" href="http://arabic.people.com.cn/" target="_blank" alt="" />
+</map>
+	 <ul>
+	    <li class="one"><strong><a href="http://news.people.com.cn/GB/index.html" target="_blank">新闻</a></strong><a href="http://politics.people.com.cn/GB/index.html" target="_blank">时政</a><a href="http://society.people.com.cn/GB/index.html" target="_blank">社会</a><a href="http://pic.people.com.cn/GB/index.html" target="_blank">图片</a><a href="http://tv.people.com.cn/GB/index.html" target="_blank">宽频</a>|<strong><a href="http://unn.people.com.cn/GB/41796/index.html" target="_blank">地方</a></strong><a href="http://leaders.people.com.cn/GB/index.html" target="_blank">领导</a><a href="http://expo.people.com.cn/GB/index.html" target="_blank">节会</a><a href="http://invest.people.com.cn/GB/index.html" target="_blank">招商</a><a href="http://travel.people.com.cn/GB/index.html" target="_blank">旅游</a>|<strong><a href="http://finance.people.com.cn/GB/index.html" target="_blank">经济</a></strong><a href="http://nc.people.com.cn/GB/index.html" target="_blank">农村</a><a href="http://env.people.com.cn/GB/index.html" target="_blank">环保</a><a href="http://health.people.com.cn/GB/index.html" target="_blank">健康</a>|<strong><a href="http://house.people.com.cn/GB/index.html" target="_blank">房产</a></strong><a href="http://shipin.people.com.cn/GB/index.html" target="_blank">食品</a><a href="http://medicine.people.com.cn/GB/index.html" target="_blank">卫生</a>|<strong><a href="http://edu.people.com.cn/GB/index.html" target="_blank">教育</a></strong><a href="http://scitech.people.com.cn/GB/index.html" target="_blank">科技</a><a href="http://culture.people.com.cn/GB/index.html" target="_blank">文化</a><a href="http://comic.people.com.cn/GB/index.html" target="_blank">动漫</a>|<a href="http://art.people.com.cn/GB/index.html" target="_blank">收藏</a><span class="one"><a href="http://fashion.people.com.cn/GB/index.html" target="_blank">男</a><a href="http://lady.people.com.cn/GB/index.html" target="_blank">女</a></span></li>
+		 <li><strong><a href="http://opinion.people.com.cn/GB/index.html" target="_blank">观点</a></strong><a href="http://theory.people.com.cn/GB/index.html" target="_blank">理论</a><a href="http://media.people.com.cn/GB/index.html" target="_blank">传媒</a><a href="http://yq.people.com.cn/" target="_blank">舆情</a><a href="http://www.people.com.cn/GB/32306/143124/index.html" target="_blank">访谈</a>|<strong><a href="http://world.people.com.cn/GB/index.html" target="_blank">国际</a></strong><a href="http://military.people.com.cn/GB/index.html" target="_blank">军事</a><a href="http://tw.people.com.cn/GB/index.html" target="_blank">台湾</a><a href="http://hm.people.com.cn/GB/index.html" target="_blank">港澳</a><a href="http://japan.people.com.cn/" target="_blank">日本</a>|<strong><a href="http://it.people.com.cn/GB/index.html" target="_blank">I&nbsp;T </a></strong><a href="http://auto.people.com.cn/GB/index.html" target="_blank">汽车</a><a href="http://mobile.people.com.cn/GB/index.html" target="_blank">手机</a><a href="http://homea.people.com.cn/GB/index.html" target="_blank">家电</a>|<strong><a href="http://ccnews.people.com.cn/GB/index.html" target="_blank">央企</a></strong><a href="http://mnc.people.com.cn/GB/index.html" target="_blank">跨国</a><a href="http://caac.people.com.cn/GB/index.html" target="_blank">民航</a>|<strong><a href="http://sports.people.com.cn/GB/index.html" target="_blank">体育</a></strong><a href="http://ent.people.com.cn/GB/index.html" target="_blank">娱乐</a><a href="http://game.people.com.cn/GB/index.html" target="_blank">游戏</a><a href="http://lottery.people.com.cn/" target="_blank">彩票</a>|<a href="http://wireless.people.com.cn/GB/index.html" target="_blank">无线</a><a href="http://mms.people.com.cn/" target="_blank">玩机</a></li>
+	 </ul>
+	</div>
+	<p><span class="red"><a href="http://cpc.people.com.cn/" target="_blank">中国共产党新闻</a></span>|<a href="http://kxfz.people.com.cn/" target="_blank">学习实践网</a>|<a href="http://npc.people.com.cn/GB/index.html" target="_blank">人大</a><a href="http://cppcc.people.com.cn/GB/index.html" target="_blank">政协</a><a href="http://gov.people.com.cn/GB/index.html" target="_blank">政府</a><a href="http://acftu.people.com.cn/GB/index.html" target="_blank">工会</a><a href="http://acwf.people.com.cn/GB/index.html" target="_blank">妇联</a><a href="http://scitech.people.com.cn/GB/131715/index.html" target="_blank">科协</a>|<a href="http://www.wenming.cn/" target="_blank">文明网</a><a href="http://xz.people.com.cn/" target="_blank">西藏</a><a href="http://gongyi.people.com.cn/" target="_blank">公益</a><a href="http://www.512.gov.cn/" target="_blank">救灾</a><a href="http://www.photobase.cn/" target="_blank">人民图片</a><a href="http://energy.people.com.cn/GB/index.html" target="_blank">能源</a><a href="http://dtv.people.com.cn" target="_blank">DTV</a>
+    <span class="t_selected4 selectf" onclick="g.changeListState(event);" id="s4" onmouseover="g.state=true;" onmouseout="g.state=false;" onblur="g.hiddenList()">
+    更多</span>
+<input type="hidden" id="s4_value"/>
+  <div class="t_select_list4" id="t_select_list4" onmouseover="g.state=true;" onmouseout="g.state=false;">
+      <label onclick="g.changeSelected(this,event);" value="1"><a href="http://www.12380.gov.cn/index.html" target="_blank">中组部12380举报网</a></label>
+      <label onclick="g.changeSelected(this,event);" value="2"><a href="http://ip.people.com.cn/GB/index.html" target="_blank">知识产权频道</a></label>
+      <label onclick="g.changeSelected(this,event);" value="3"><a href="http://mag.people.com.cn/" target="_blank">杂志频道</a></label>
+      <label onclick="g.changeSelected(this,event);" value="4"><a href="http://book.people.com.cn/GB/index.html" target="_blank">读书频道</a></label>
+      <label onclick="g.changeSelected(this,event);" value="5"><a href="http://chinese.people.com.cn/GB/" target="_blank">华人华侨</a></label>
+      <label onclick="g.changeSelected(this,event);" value="6"><a href="http://mongol.people.com.cn/" target="_blank">蒙文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="7"><a href="http://tibet.people.com.cn/" target="_blank">藏文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="8"><a href="http://uyghur.people.com.cn/" target="_blank">维文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="9"><a href="http://kazakh.people.com.cn/" target="_blank">哈文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="10"><a href="http://korean.people.com.cn/" target="_blank">朝鲜文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="11"><a href="http://yi.people.com.cn/" target="_blank">彝文</a></label>
+      <label onclick="g.changeSelected(this,event);" value="12"><a href="http://sawcuengh.people.com.cn/" target="_blank">壮文</a></label>      
+      <label onclick="g.changeSelected(this,event);" value="13"><a href="http://news.people.com.cn/GB/154298/index.html" target="_blank">人民网专题汇总</a></label>
+      <label onclick="g.changeSelected(this,event);" value="14"><a href="http://www.marketdaily.com.cn/" target="_blank">市场网</a></label>
+      <label onclick="g.changeSelected(this,event);" value="15"><a href="http://www.zzdjw.com/" target="_blank">中直党建网</a></label>
+      <label onclick="g.changeSelected(this,event);" value="16"><a href="http://cpc.people.com.cn/cunguan/" target="_blank">大学生村官园地</a></label>
+  </div>
+    </p>
+  </div>
+</div>
+<!--顶部广告-->
+<div class="top_ad">
+	  <div class="fl ad_r"><div style="margin:0;padding:0;" id="FDL">
+<script type="text/javascript">
+var imagePathL=new Array();//图片地址
+var linkPathL=new Array();//连接地址
+
+imagePathL.push("images/dtv1.jpg")
+linkPathL.push("http://dtv.people.com.cn/")
+
+var imagePathL_str=""
+var linkPathL_str=""
+
+for(var i=0;i<imagePathL.length;i++){
+	imagePathL_str+=imagePathL[i]+"|";
+	linkPathL_str+=linkPathL[i]+"|";
+}
+
+var FDL = new SWFObject("flash/picshow.swf", "FDL", "165", "60", "7", "");
+FDL.addParam("menu", "false");
+FDL.addParam("wmode", "transparent");
+FDL.addVariable("ad_num", "1"); //翻牌数量
+FDL.addVariable("pic_width", "165"); //图片宽
+FDL.addVariable("pic_height", "60"); //图片高
+FDL.addVariable("flip_time", "300"); //翻牌速度
+FDL.addVariable("pause_time", "4000"); //间隔时间
+FDL.addVariable("wait_time", "1000"); //等待时间
+FDL.addVariable("pics", imagePathL_str); //广告图片地址
+FDL.addVariable("urls", linkPathL_str); //广告链接地址
+
+FDL.write("FDL");
+</script>
+</div>
+</div>
+<div class="fm ml_5">
+	  <iframe marginwidth="0" marginheight="0" frameborder="0" width="625" height="60" scrolling="no" src="http://pro.people.com.cn/html.ng/channel_range=1/&channel_id=1&PagePos=42&size=62560&site=people">
+<script language="javascript1.1" src="http://pro.people.com.cn/js.ng/params.richmedia=yes&channel_range=1/&channel_id=1&PagePos=42&size=62560&site=people"></script>
+<noscript><a href="http://pro.people.com.cn/click.ng/params.richmedia=yes&channel_range=1/&channel_id=1&PagePos=42&size=62560&site=people" target="_top"><img src="http://pro.people.com.cn/image.ng/params.richmedia=yes&channel_range=1/&channel_id=1&PagePos=42&size=62560&site=people" width="625" height="60" border="0" /></a></noscript>
+</iframe>
+</div>
+
+<div class="fr"><div style="margin:0;padding:0;" id="FP">
+<script type="text/javascript">
+var imagePath=new Array();//图片地址
+var linkPath=new Array();//连接地址
+
+imagePath.push("images/toupiao165.jpg")
+linkPath.push("http://www.people.com.cn/adv/toupiao.html")
+
+imagePath.push("images/zhongri.jpg")
+linkPath.push("http://cjkeizai.j.people.com.cn/")
+
+imagePath.push("images/maotai16560.gif")
+linkPath.push("http://www.people.com.cn/adv/maotai.html")
+
+imagePath.push("images/kelite16560.gif")
+linkPath.push("http://www.people.com.cn/adv/kelite.html")
+
+imagePath.push("images/bohai16560.gif")
+linkPath.push("http://www.people.com.cn/adv/bohai.html")
+var imagePath_str=""
+var linkPath_str=""
+
+for(var i=0;i<imagePath.length;i++){
+	imagePath_str+=imagePath[i]+"|";
+	linkPath_str+=linkPath[i]+"|";
+}
+
+var FP = new SWFObject("flash/picshow.swf", "FP", "165", "60", "7", "");
+FP.addParam("menu", "false");
+FP.addParam("wmode", "transparent");
+FP.addVariable("ad_num", "5"); //翻牌数量
+FP.addVariable("pic_width", "165"); //图片宽
+FP.addVariable("pic_height", "60"); //图片高
+FP.addVariable("flip_time", "300"); //翻牌速度
+FP.addVariable("pause_time", "4000"); //间隔时间
+FP.addVariable("wait_time", "1000"); //等待时间
+FP.addVariable("pics", imagePath_str); //广告图片地址
+FP.addVariable("urls", linkPath_str); //广告链接地址
+
+FP.write("FP");
+</script></div></div>
+	  <p><a href="http://www.people.com.cn/adv/yinlu.html"target="_blank" class="aNewList2">智能型变频起重机</a>&nbsp;&nbsp;<a 
+
+href="http://www.letongink.com/china/index.asp"target="_blank" class="aNewList2">油墨龙头成功登陆A股</a>&nbsp;&nbsp;<a 
+
+href="http://homea.people.com.cn/GB/41416/173588/index.html"target="_blank" class="aNewList2">中国家电创新产品推选</a>&nbsp;&nbsp;<a href=" 
+
+http://www.peoplexz.com/"  target="_blank"class="aNewList2">华网在线商务论坛</a>&nbsp;&nbsp;<a 
+
+href="http://energy.people.com.cn/GB/71901/index.html"target="_blank" class="aNewList2">人民网电力频道推出</a>&nbsp;&nbsp;<a 
+
+href="http://hm.people.com.cn/GB/42280/174360/174361/174362/index.html"target="_blank" class="aNewList2">澳门知多少有奖知识竞猜</a>&nbsp;&nbsp;<a href="http://auto.people.com.cn/GB/25959/141374/141376/10525300.html"target="_blank" class="aNewList2">福瑞迪当选最佳动力车型</a></p>
+	</div>
+<!--结束顶部广告-->
+<!--新增板块区域-->
+<div class="xinban_c">
+    <div class="mar"><span class="fl">热词搜索</span><a href='http://hm.people.com.cn/GB/42280/174360/index.html' target='_blank'>澳门回归10周年</a><a href='http://env.people.com.cn/GB/146189/175118/index.html' target='_blank'>气候大会</a><a href='http://politics.people.com.cn/GB/8198/166006/index.html' target='_blank'>政府网站绩效评估</a><a href='http://2010.people.com.cn/' target='_blank'>世博</a><a href='http://sports.people.com.cn/GB/31928/32032/174072/index.html' target='_blank'>东亚运</a><a href='http://opinion.people.com.cn/GB/157411/175449/index.html' target='_blank'>手机黄祸</a><a href='http://news.people.com.cn/GB/174359/index.html' target='_blank'>检阅2009</a><a href=http://society.people.com.cn/GB/8217/176331/index.html target='_blank'>校园踩踏</a>
+  <div class="weather fr">
+    <!--天气预报-->
+	<div class="weather1"><span class="wea_c"><iframe style="float:left;" marginheight=1 marginwidth=0 frameborder="0" width="175" height="30" allowTransparency="true" scrolling=no name=weathercustomize id=weathercustomize src="http://weather.people.com.cn/customize/jump2009.html"></iframe></span>
+  <span class="t_selected2" onclick="e.changeListState(event);" id="s3" onmouseover="e.state=true;" onmouseout="e.state=false;" onblur="e.hiddenList()">
+    请选择城市
+ </span>
+ <input type="hidden" id="s3_value"/>
+  <div class="t_select_list2" id="t_select_list3" onmouseover="e.state=true;" onmouseout="e.state=false;">
+      <label onclick="e.changeSelected(this,event);" value="54511" >北京</label>
+<label onclick="e.changeSelected(this,event);" value="50953" >哈尔滨</label>
+<label onclick="e.changeSelected(this,event);" value="51463" >乌鲁木齐</label>
+<label onclick="e.changeSelected(this,event);" value="52418" >敦煌</label>
+<label onclick="e.changeSelected(this,event);" value="52866" >西宁</label>
+<label onclick="e.changeSelected(this,event);" value="52889" >兰州</label>
+<label onclick="e.changeSelected(this,event);" value="53463" >呼和浩特</label>
+<label onclick="e.changeSelected(this,event);" value="53588" >五台山</label>
+<label onclick="e.changeSelected(this,event);" value="53614" >银川</label>
+<label onclick="e.changeSelected(this,event);" value="53698" >石家庄</label>
+<label onclick="e.changeSelected(this,event);" value="53772" >太原</label>
+<label onclick="e.changeSelected(this,event);" value="53946" >黄龙</label>
+<label onclick="e.changeSelected(this,event);" value="54161" >长春</label>
+<label onclick="e.changeSelected(this,event);" value="54342" >沈阳</label>
+<label onclick="e.changeSelected(this,event);" value="54527" >天津</label>
+<label onclick="e.changeSelected(this,event);" value="54662" >大连</label>
+<label onclick="e.changeSelected(this,event);" value="54765" >烟台</label>
+<label onclick="e.changeSelected(this,event);" value="54774" >威海</label>
+<label onclick="e.changeSelected(this,event);" value="54823" >济南</label>
+<label onclick="e.changeSelected(this,event);" value="54826" >泰山</label>
+<label onclick="e.changeSelected(this,event);" value="54857" >青岛</label>
+<label onclick="e.changeSelected(this,event);" value="55591" >拉萨</label>
+<label onclick="e.changeSelected(this,event);" value="56182" >九寨沟</label>
+<label onclick="e.changeSelected(this,event);" value="56294" >成都</label>
+<label onclick="e.changeSelected(this,event);" value="56385" >峨眉山</label>
+<label onclick="e.changeSelected(this,event);" value="56651" >丽江</label>
+<label onclick="e.changeSelected(this,event);" value="56751" >大理</label>
+<label onclick="e.changeSelected(this,event);" value="56778" >昆明</label>
+<label onclick="e.changeSelected(this,event);" value="57012549" >西安</label>
+<label onclick="e.changeSelected(this,event);" value="57083" >郑州</label>
+<label onclick="e.changeSelected(this,event);" value="57494" >武汉</label>
+<label onclick="e.changeSelected(this,event);" value="57516" >重庆</label>
+<label onclick="e.changeSelected(this,event);" value="57687" >长沙</label>
+<label onclick="e.changeSelected(this,event);" value="57816" >贵阳</label>
+<label onclick="e.changeSelected(this,event);" value="57957" >桂林</label>
+<label onclick="e.changeSelected(this,event);" value="58238" >南京</label>
+<label onclick="e.changeSelected(this,event);" value="58321" >合肥</label>
+<label onclick="e.changeSelected(this,event);" value="58357" >苏州</label>
+<label onclick="e.changeSelected(this,event);" value="58367" >上海</label>
+<label onclick="e.changeSelected(this,event);" value="58437" >黄山</label>
+<label onclick="e.changeSelected(this,event);" value="58457" >杭州</label>
+<label onclick="e.changeSelected(this,event);" value="58506" >庐山</label>
+<label onclick="e.changeSelected(this,event);" value="58543" >千岛湖</label>
+<label onclick="e.changeSelected(this,event);" value="58562" >宁波</label>
+<label onclick="e.changeSelected(this,event);" value="58606" >南昌</label>
+<label onclick="e.changeSelected(this,event);" value="58730" >武夷山</label>
+<label onclick="e.changeSelected(this,event);" value="58847" >福州</label>
+<label onclick="e.changeSelected(this,event);" value="58968" >台北</label>
+<label onclick="e.changeSelected(this,event);" value="59134" >厦门</label>
+<label onclick="e.changeSelected(this,event);" value="59287" >广州</label>
+<label onclick="e.changeSelected(this,event);" value="59316" >汕头</label>
+<label onclick="e.changeSelected(this,event);" value="59431" >南宁</label>
+<label onclick="e.changeSelected(this,event);" value="59493" >深圳</label>
+<label onclick="e.changeSelected(this,event);" value="59758" >海口</label>
+<label onclick="e.changeSelected(this,event);" value="59948" >三亚</label>
+<label onclick="e.changeSelected(this,event);" value="45005" >香港</label>
+<label onclick="e.changeSelected(this,event);" value="45011" >澳门</label>
+<label onclick="e.changeSelected(this,event);" value="03334" >曼彻斯特</label>
+<label onclick="e.changeSelected(this,event);" value="03772" >伦敦</label>
+<label onclick="e.changeSelected(this,event);" value="06240" >阿姆斯特丹</label>
+<label onclick="e.changeSelected(this,event);" value="06660" >苏黎世</label>
+<label onclick="e.changeSelected(this,event);" value="06700" >日内瓦</label>
+<label onclick="e.changeSelected(this,event);" value="07149" >巴黎</label>
+<label onclick="e.changeSelected(this,event);" value="08181" >巴塞罗那</label>
+<label onclick="e.changeSelected(this,event);" value="10147" >汉堡</label>
+<label onclick="e.changeSelected(this,event);" value="10385" >柏林</label>
+<label onclick="e.changeSelected(this,event);" value="10637" >法兰克福</label>
+<label onclick="e.changeSelected(this,event);" value="11035" >维也纳</label>
+<label onclick="e.changeSelected(this,event);" value="16066" >米兰</label>
+<label onclick="e.changeSelected(this,event);" value="16242" >罗马</label>
+<label onclick="e.changeSelected(this,event);" value="16716" >雅典</label>
+<label onclick="e.changeSelected(this,event);" value="27612" >莫斯科</label>
+<label onclick="e.changeSelected(this,event);" value="47108" >首尔</label>
+<label onclick="e.changeSelected(this,event);" value="47662" >东京</label>
+<label onclick="e.changeSelected(this,event);" value="48455" >曼谷</label>
+<label onclick="e.changeSelected(this,event);" value="48647" >吉隆坡</label>
+<label onclick="e.changeSelected(this,event);" value="48698" >新加坡</label>
+<label onclick="e.changeSelected(this,event);" value="62366" >开罗</label>
+<label onclick="e.changeSelected(this,event);" value="63742" >内罗毕</label>
+<label onclick="e.changeSelected(this,event);" value="71624" >多伦多</label>
+<label onclick="e.changeSelected(this,event);" value="71628" >渥太华</label>
+<label onclick="e.changeSelected(this,event);" value="71892" >温哥华</label>
+<label onclick="e.changeSelected(this,event);" value="72219" >亚特兰大</label>
+<label onclick="e.changeSelected(this,event);" value="72243" >休斯顿</label>
+<label onclick="e.changeSelected(this,event);" value="72295" >洛杉矶</label>
+<label onclick="e.changeSelected(this,event);" value="72386" >拉斯维加斯</label>
+<label onclick="e.changeSelected(this,event);" value="72403" >华盛顿</label>
+<label onclick="e.changeSelected(this,event);" value="72494" >旧金山</label>
+<label onclick="e.changeSelected(this,event);" value="72503" >纽约</label>
+<label onclick="e.changeSelected(this,event);" value="72509" >波士顿</label>
+<label onclick="e.changeSelected(this,event);" value="72530" >芝加哥</label>
+<label onclick="e.changeSelected(this,event);" value="76680" >墨西哥城</label>
+<label onclick="e.changeSelected(this,event);" value="80415" >加拉加斯</label>
+<label onclick="e.changeSelected(this,event);" value="83780" >圣保罗</label>
+<label onclick="e.changeSelected(this,event);" value="94767" >悉尼</label>
+<label onclick="e.changeSelected(this,event);" value="94866" >墨尔本</label>
+  </div>
+  <a href="http://weather.people.com.cn" target=_blank>天气</a><a href="#" onclick="javascript:myCustomize(s.selectedElement.value);">定制</a>
+</div>
+	<!--结束天气预报-->
+  </div>
+</div>
+	<!--结束天气预报-->
+		<div class="xinban_c1">
+		   <div class="xinban_l">
+		     <div class="xinban_flash">
+			 <div id="jdtdiv"></div>
+<script type="text/javascript">
+var jdttopvars = {
+  pic: "images/F200912140739366705902413.jpg|images/F200912140739354829201519.jpg|images/F200912140739362522917679.jpg|images/F200912140835532239329930.jpg|images/F200912140904205412282991.jpg|images/F200912140739362430313092.jpg",
+
+url:
+"http://pic.people.com.cn/GB/165652/165653/10569245.html|http://pic.people.com.cn/GB/8229/119683/index.html|http://pic.people.com.cn/GB/166071/166816/10569205.html|http://pic.people.com.cn/GB/166071/166816/10569996.html|http://chinapic.people.com.cn/viewthread.php?tid=198777|http://www.people.com.cn/adv/letong.html",
+
+infor: "胡锦涛同土库曼斯坦总统举行会谈|日报：湖南村民枪袭本村村民并纵火致11人亡|菲律宾南部发生大规模越狱事件|意大利总理贝卢斯科尼遇袭 面部受伤出血|图说网友扫描合肥旧城改造|"
+};
+swfobject.embedSWF("flash/jdttop420250.swf?"+Math.random(), "jdtdiv", "420", "250", "9.0.0", "",jdttopvars,{wmode:"opaque"},false);
+</script>
+			 </div>
+			 <div class="xinban_banner"><script language="javascript1.1" src="http://pro.people.com.cn/js.ng/channel_range=1/&channel_id=1&PagePos=120&size=42040&site=people"></script><noscript><a href="http://pro.people.com.cn/click.ng/channel_range=1/&channel_id=1&PagePos=120&size=42040&site=people" target="_top"><img src="http://pro.people.com.cn/image.ng/channel_range=1/&channel_id=1&PagePos=120&size=42040&site=people" width="980" height="60" border="0"></a></noscript></script><!--<a href="http://60.people.com.cn/" target="_blank"><img src="http://www.people.com.cn/mediafile/200909/08/F200909081316495973551226.jpg" width="420" height="40" alt="中国坐标" border="0" /></a>--></div>
+		   </div>
+		   <div class="xinban_r">
+		      <!--新闻头条-->
+			  <div class="xinban_main">
+			  <a href="http://env.people.com.cn/GB/146189/175118/index.html" target="_blank"><img src="images/F200912141003115076116332.gif" width="486" height="36" border="0"></a>
+
+			  <p><a href=http://env.people.com.cn/GB/10571871.html class="anavy" target=_blank>[哥本哈根非"傻根"]</a><a
+href=http://env.people.com.cn/GB/10490790.html class="anavy" target=_blank>[哥本哈根之路:一</a><a href=http://env.people.com.cn/GB/10499113.html class="anavy" target=_blank>二</a><a href=http://env.people.com.cn/GB/10507278.html class="anavy" target=_blank>三</a><a href=http://env.people.com.cn/GB/10520456.html class="anavy" target=_blank>四</a><a href=http://env.people.com.cn/GB/10524758.html class="anavy" target=_blank>五</a><a href=http://env.people.com.cn/GB/10532940.html class="anavy" target=_blank>六</a><a href=http://env.people.com.cn/GB/10549109.html class="anavy" target=_blank>七]</a><a href=http://world.people.com.cn/GB/1030/174581/index.html class="anavy" target=_blank>[环球瞭望]</a><a href=http://tv.people.com.cn/GB/14645/25060/176125/index.html class="anavy" target=_blank>[视频]</a><a href=http://comments.people.com.cn/bbs_new/filepool/htdoc/html/0032bc78a46549855f4f954273bb3d477cdc79b7/n175118/l_175118_1.html class="anavy" target=_blank>[留言]</a><a href=http://www.people.com.cn/GB/59476/ class="rmsp_0516_1" target=_blank>[更多]</a></p>
+			  </div>
+			  <!--结束新闻头条-->
+			  <!--新闻内容-->
+			  <div class="xinban_news">
+			    <div class="xinban_title"><img src="images/ico3.gif" border="0" alt="" /><strong><a href="http://news.people.com.cn/GB/index.html" target="_blank">追踪</a></strong><a href=http://env.people.com.cn/GB/10549109.html target='_blank'>哥本哈根:我反对空头支票</a><br></div>
+				<div class="xinban_nc">
+				  <ul><li>·<a href=http://society.people.com.cn/GB/41158/10569150.html target='_blank'>武广高铁票价 最低为490元</a>&nbsp;<a href=http://society.people.com.cn/GB/41158/10569179.html target='_blank'>答问</a></li><li>·<a href=http://sports.people.com.cn/GB/31928/32032/174072/index.html target='_blank'>东亚运闭幕中国五连冠下站天津</a></li></ul>
+				</div>
+				<div class="xinban_title"><img src="images/ico2.gif" border="0" alt="" /><strong><a href="http://news.people.com.cn/GB/154298/index.html" target="_blank">关注</a></strong><a href=http://it.people.com.cn/GB/10569146.html target='_blank'>本网网友:监管BT疏堵结合</a><br></div>
+				<div class="xinban_nc">
+				  <ul><li>·<a href='http://it.people.com.cn/GB/42891/42894/10572539.html' target='_blank'>百度普通搜索仍为“黄窝”导航</a></li><li>·<a href='http://it.people.com.cn/GB/119390/118342/176714/index.html' target='_blank'>三大BT网悉数落马&nbsp;网民恶搞哀悼</a></li></ul>
+				</div>
+				<div class="xinban_title"><img src="images/ico1.gif" border="0" alt="" /><strong><a href="http://opinion.people.com.cn/GB/8213/49160/index.html" target="_blank">人民日报</a></strong><a href=http://opinion.people.com.cn/GB/40604/10570854.html target='_blank'>作风靠抓也靠带</a><br></div>
+				<div class="xinban_nc xianban_nc11">
+				  <ul><li>·<a href=http://opinion.people.com.cn/GB/10569144.html target='_blank'>领导开会10分钟:"捞干货"有收获</a></li><li>·<a href=http://opinion.people.com.cn/GB/10569149.html target='_blank'>"帐篷征婚":未婚，被房子闹"昏"</a></li></ul>
+				</div>
+			  </div>
+			  <!--结束新闻内容-->
+			  <!--滚动新闻-->
+			  <div class="xinban_xian">
+			    <div class="xinban_title"><span><a href="http://www.people.com.cn/GB/gdxw.html" target="_blank">滚动新闻</a></span><!--<a href="#" target="_blank"><img src="images/kuaibao.gif" border="0" alt="" /></a>--></div>
+				<div id="dem" style="overflow: hidden; width:295px; height:200px;">
+        <ul class="lh18 f12px">
+        <div id="dem1">
+          <div class="xinban_nc">
+				  <ul><li>·<a href='http://society.people.com.cn/GB/41158/10573786.html' target="_blank">青海：力争３年内棚户区12.7万户居…</a> [10:59]</li>
+<li>·<a href='http://world.people.com.cn/GB/10573720.html' target="_blank">丹麦气候&quot;示范岛&quot;:气候变化议题关乎…</a> [10:56]</li>
+<li>·<a href='http://world.people.com.cn/GB/10573671.html' target="_blank">伊拉克判处13名恐怖分子死刑&nbsp;曾参与…</a> [10:53]</li>
+<li>·<a href='http://society.people.com.cn/GB/10573665.html' target="_blank">北京一男子发“寻人启事”征女友被城管…</a> [10:52]</li>
+<li>·<a href='http://politics.people.com.cn/GB/159296/10573616.html' target="_blank">1967年：文革开始后的第一个春节&nbsp;…</a> [10:48]</li>
+<li>·<a href='http://politics.people.com.cn/GB/14562/10573514.html' target="_blank">青海：多项举措解决农牧区群众看病难看…</a> [10:41]</li>
+<li>·<a href='http://finance.people.com.cn/GB/10573441.html' target="_blank">专家解读：中国经济增长方式为何久推不…</a> [10:38]</li>
+<li>·<a href='http://politics.people.com.cn/GB/1026/10573436.html' target="_blank">毛泽东没被“万岁”呼声陶醉&nbsp;笑谈自己…</a> [10:37]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573350.html' target="_blank">207个项目申报深圳公益在行动</a> [10:31]</li>
+<li>·<a href='http://finance.people.com.cn/GB/10573343.html' target="_blank">国际油价走出&quot;8连阴&quot;&nbsp;三大利空致跌…</a> [10:31]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573290.html' target="_blank">澳门“公益金百万行”规模胜往届</a> [10:26]</li>
+<li>·<a href='http://finance.people.com.cn/GB/10573258.html' target="_blank">创业板到底是谁的财富摇篮？</a> [10:23]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573201.html' target="_blank">申城时尚公益流行&quot;做好人&quot;</a> [10:20]</li>
+<li>·<a href='http://world.people.com.cn/GB/10573200.html' target="_blank">富国能否带头深度减排是气候大会成败关键</a> [10:20]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573187.html' target="_blank">千万阳光工程全国公益捐赠活动在河南举行</a> [10:20]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573182.html' target="_blank">公益卫星将携学生创意飞天</a> [10:19]</li>
+<li>·<a href='http://finance.people.com.cn/GB/10573152.html' target="_blank">中国装备制造业涌向海外&nbsp;专家呼吁避免…</a> [10:19]</li>
+<li>·<a href='http://edu.people.com.cn/GB/10573111.html' target="_blank">贵州&quot;教师胁迫女生卖淫案&quot;主犯被执行…</a> [10:17]</li>
+<li>·<a href='http://society.people.com.cn/GB/41159/10573106.html' target="_blank">组图：湖南安化男子杀13亲人&nbsp;身背鸟…</a> [10:17]</li>
+<li>·<a href='http://world.people.com.cn/GB/10573105.html' target="_blank">组图：2009诺奖得主高锟享誉而归抵…</a> [10:17]</li>
+<li>·<a href='http://medicine.people.com.cn/GB/10573103.html' target="_blank">追踪&quot;甲流患儿死亡遭弃尸&quot;&nbsp;是谁让孩…</a> [10:17]</li>
+<li>·<a href='http://gongyi.people.com.cn/GB/10573102.html' target="_blank">谁来关注大学生公益创业教育</a> [10:16]</li>
+<li>·<a href='http://medicine.people.com.cn/GB/10573058.html' target="_blank">2009年医师资格考试医学综合笔试分…</a> [10:14]</li>
+<li>·<a href='http://finance.people.com.cn/GB/10573044.html' target="_blank">财政支出预算完成7成&nbsp;财政部:防止年…</a> [10:13]</li>
+<li>·<a href='http://culture.people.com.cn/GB/46104/46105/10573018.html' target="_blank">文化批评：中国文化复兴&nbsp;别像土耳其那…</a> [10:12]</li>
+
+</ul>
+				</div>
+        </div>
+        <div id="dem2"></div>
+        </ul>
+        </div>
+
+                <script language="javascript">
+var speed=60
+
+var FGDem=document.getElementById('dem');
+var FGDem1=document.getElementById('dem1');
+var FGDem2=document.getElementById('dem2');
+FGDem2.innerHTML=FGDem1.innerHTML
+
+function Marquee(){
+if(FGDem2.offsetHeight-FGDem.scrollTop<=0)
+FGDem.scrollTop-=FGDem1.offsetHeight
+else{
+FGDem.scrollTop++
+}
+}
+var MyMar=setInterval(Marquee,speed)
+FGDem.onmouseover=function() {clearInterval(MyMar)}
+FGDem.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+</script>
+			  </div>
+			  <!--结束滚动新闻-->
+		   </div>
+		</div>
+	</div>
+<!--结束新增板块区域-->
+
+<!--广告位-->
+    <div class="pt_5">
+
+        <script language="javascript1.1" src="http://pro.people.com.cn/js.ng/channel_range=1/&channel_id=1&PagePos=160&size=98060&site=people"></script>
+
+        <noscript>
+            <a href="http://pro.people.com.cn/click.ng/channel_range=1/&channel_id=1&PagePos=160&size=98060&site=people"
+                target="_top">
+                <img src="http://pro.people.com.cn/image.ng/channel_range=1/&channel_id=1&PagePos=160&size=98060&site=people"
+                    width="980" height="60" border="0"></a>
+        </noscript>
+        </script></div>
+    <!--要闻区-->
+    <div class="bc">
+    </div>
+    <div class="b980 h_news">
+        <!--左侧-->
+        <div class="fl b435">
+            <div class="tab_t">
+                <ul>
+                    <li style="line-height: 120%;" class="one"><strong><a href="http://news.people.com.cn/GB/index.html"
+                        target="_blank">新闻</a></strong><br />
+                        NEWS</li>
+                    <li><a href="http://politics.people.com.cn/GB/index.html" target="_blank">时政</a></li>
+                    <li><a href="http://politics.people.com.cn/GB/1024/index.html" target="_blank">高层</a></li>
+                    <li><a href="http://politics.people.com.cn/GB/shizheng/252/9823/index.html" target="_blank">
+                        任免</a></li>
+                    <li><a href="http://world.people.com.cn/GB/index.html" target="_blank">国际</a></li>
+                    <li><a href="http://chinese.people.com.cn/GB/" target="_blank">华人</a></li>
+                    <li><a href="http://finance.people.com.cn/GB/index.html" target="_blank">财经</a></li>
+                    <li><a href="http://society.people.com.cn/GB/index.html" target="_blank">民生</a></li>
+                    <li><a href="http://env.people.com.cn/GB/index.html" target="_blank">环保</a></li>
+                    <li><a href="http://auto.people.com.cn/GB/index.html" target="_blank">汽车</a></li>
+                    <li><a href="http://unn.people.com.cn/GB/82414/index.html" target="_blank">地方</a></li>
+                    <li><a href="http://tw.people.com.cn/GB/index.html" target="_blank">台湾</a></li>
+                    <li><a href="http://hm.people.com.cn/GB/index.html" target="_blank">港澳</a></li>
+                    <li><a href="http://dxdp.people.com.cn/" target="_blank">大学</a></li>
+                    <li><a href="http://sports.people.com.cn/nba/" target="_blank">姚明</a></li>
+                    <li><a href="http://scitech.people.com.cn/life/" target="_blank">生命</a></li>
+                    <li><a href="http://www.people.com.cn/GB/144613/index.html" target="_blank">产经</a></li>
+                    <li><a href="http://military.people.com.cn/GB/index.html" target="_blank">军事</a></li>
+                    <li class="bnone"><a href="http://diaocha.people.com.cn/GB/index.html" target="_blank">
+                        调查</a></li>
+                </ul>
+            </div>
+            <div class="tab_c">
+                <h2>
+                    <a href="http://politics.people.com.cn/GB/8198/176690/index.html" target='_blank'>胡锦涛赠送土库曼斯坦《二十四史》</a>&nbsp;<a
+                        href="http://world.people.com.cn/GB/57507/10569142.html" target='_blank'>人相亲情相融</a></h2>
+                <ul>
+                    <li>·<a href="http://politics.people.com.cn/GB/8198/176759/index.html" target='_blank'>习近平今日离京出访亚洲四国&nbsp;访日本行程最受瞩目</a></li>
+                    <li>·<a href="http://politics.people.com.cn/GB/1026/10569163.html" target='_blank'>声音</a>&nbsp;<a
+                        href="http://politics.people.com.cn/GB/1026/10569163.html" target='_blank'>罗清泉:文化不仅是软实力，也是硬支撑硬资源</a></li>
+                    <li>·<a href="http://society.people.com.cn/GB/1062/10569183.html" target='_blank'>湖北大冶叫停"请老板露一面，奖金过万"的招商政策</a></li>
+                    <li>·<a href="http://politics.people.com.cn/GB/8198/9478/index.html" target='_blank'>安徽最牛"土地爷"受贿千万</a>&nbsp;<a
+                        href="http://politics.people.com.cn/GB/14562/10569160.html" target='_blank'>江西"雷人"环保官被处理</a></li>
+                    <li>·<a href="http://hm.people.com.cn/GB/42273/10572142.html" target='_blank'>刘吴惠兰谈香港女性地位：</a><a
+                        href="http://hm.people.com.cn/GB/42273/10572142.html" target='_blank'>两性平等不需要特别优惠</a></li>
+                    <li>·<a href="http://hm.people.com.cn/GB/42273/10571906.html" target='_blank'>本网推出澳门回归十年专题</a>&nbsp;<a
+                        href="http://world.people.com.cn/GB/57506/10569165.html" target='_blank'>日议员在华"零距"离考察</a></li>
+                </ul>
+                <div class="dian">
+                </div>
+                <h2>
+                    <a href="http://energy.people.com.cn/GB/10569672.html" target='_blank'>中石化真在低价出口成品油?</a>&nbsp;<a
+                        href='http://finance.people.com.cn/GB/10569255.html' target='_blank'>国际巨头控我食油价</a></h2>
+                <ul>
+                    <li>·<a href="http://finance.people.com.cn/GB/10569125.html" target='_blank'>我国发现10亿吨大铁矿</a>&nbsp;<a
+                        href="http://finance.people.com.cn/GB/10569812.html" target='_blank'>任志强也被迪拜“套”住了</a></li>
+                    <li>·<a href='http://auto.people.com.cn/GB/10569702.html' target='_blank'>上海汽车将中国车卖给印度</a>&nbsp;<a
+                        href='http://mobile.people.com.cn/GB/135088/10569202.html' target='_blank'>手机黄毒危害胜过矿难</a></li>
+                    <li>·<a href='http://medicine.people.com.cn/GB/10569310.html' target='_blank'>遭弃尸甲流患儿:是因医不起?</a>&nbsp;<a
+                        href='http://shipin.people.com.cn/GB/10569256.html' target='_blank'>成本致豆油涨价是谎言</a></li>
+                    <li>·<a href='http://unn.people.com.cn/GB/14748/10570299.html' target='_blank'>江苏将有严重冰冻</a>&nbsp;<a
+                        href='http://unn.people.com.cn/GB/14770/21733/10571894.html' target='_blank'>武广高速动车组开通&nbsp;票价分两等</a></li>
+                    <li>·<a href="http://world.people.com.cn/GB/10569168.html" target='_blank'>贝卢斯科尼被打断鼻梁打掉牙</a>&nbsp;<a
+                        href="http://world.people.com.cn/GB/10569122.html" target='_blank'>俄火灾夜总会执照造假</a></li>
+                    <li>·<a href="http://world.people.com.cn/GB/10569172.html" target='_blank'>09大国关系:美国"变乖"
+                        欧盟"抱团"</a>&nbsp;<a href="http://world.people.com.cn/GB/10569170.html" target='_blank'>布朗突访阿富汗</a></li>
+                </ul>
+                <div class="dian">
+                </div>
+                <h2>
+                    <a href="http://edu.people.com.cn/GB/index.html" target='_blank'>教师绩效工资将发</a>&nbsp;<a
+                        href="http://media.people.com.cn/GB/index.html" target='_blank'>央视观众席垮塌</a>&nbsp;<a
+                            href='http://scitech.people.com.cn/GB/index.html' target='_blank'>切最珍贵大脑</a></h2>
+                <ul>
+                    <li>·<a href='http://ent.people.com.cn/GB/8222/86596/174652/index.html' target='_blank'>张艺谋回应堕落说</a>&nbsp;<a
+                        href='http://sports.people.com.cn/GB/index.html' target='_blank'>丁俊晖称霸英锦赛</a>&nbsp;<a
+                            href='http://culture.people.com.cn/GB/index.html' target='_blank'>关闭BT的博弈</a></li>
+                    <li>·<a href='http://society.people.com.cn/GB/index.html' target='_blank'>湖南纵火杀死13名亲人疑犯落网</a>&nbsp;<a
+                        href='http://society.people.com.cn/GB/42733/10571283.html' target='_blank'>作案过程披露</a>&nbsp;<a
+                            href='http://society.people.com.cn/GB/41159/10573106.html' target='_blank'>组图</a></li>
+                    <li>·<a href='http://military.people.com.cn/GB/10569129.html' target='_blank'>美日未来海战&quot;六大金刚&quot;</a>&nbsp;<a
+                        href='http://military.people.com.cn/GB/10569123.html' target='_blank'>泰拟&quot;诱降&quot;朝鲜武器运输机</a></li>
+                    <li>·<a href='http://legal.people.com.cn/GB/43027/166412/index.html' target='_blank'>重庆涉黑案律师造假被捕</a>&nbsp;<a
+                        href='http://military.people.com.cn/GB/1076/52967/10569192.html' target='_blank'>解密二炮导弹发射应急预案</a></li>
+                    <li>·<a href='http://world.people.com.cn/GB/10570061.html' target='_blank'>组图:美国媒体投票选出“99个男人最想得到的女人”</a></li>
+                    <li>·<a href="http://tw.people.com.cn/GB/index.html" target='_blank'>80后县长另类谢票秀</a>&nbsp;<a
+                        href="http://tw.people.com.cn/GB/10569655.html" target='_blank'>蔡英文回应"双英会"</a>&nbsp;<a
+                            href="http://tw.people.com.cn/GB/73803/index.html" target='_blank'>曝雷人照</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--中间-->
+        <div class="fm b209">
+            <div class="tab_t1">
+                <ul>
+                    <li onmouseover="showNew1(1);" id="new1_1" style="cursor: pointer;" class="one"><a
+                        href="http://www.people.com.cn/GB/32306/143124/index.html" target="_blank">访&nbsp;谈</a></li>
+                    <li class="m"></li>
+                    <li onmouseover="showNew1(2);" id="new1_2" style="cursor: pointer;"><a href="http://news.people.com.cn/GB/124421/index.html"
+                        target="_blank">直&nbsp;播</a></li>
+                    <li class="m"></li>
+                    <li onmouseover="showNew1(3);" id="new1_3" style="cursor: pointer;"><a>热&nbsp;议</a></li>
+                </ul>
+            </div>
+            <div class="tab_c1 h210" id="newc1_1" style="display: block;">
+                <div class="tab_list tab_list1">
+                    <ul>
+                        <li><a href='http://scitech.people.com.cn/GB/61045/71078/176830/index.html' target='_blank'>
+                            14:00&nbsp;李森朱雪芬谈科协会员日</a></li>
+                        <li><a href='http://cppcc.people.com.cn/GB/34961/85825/176310/index.html' target='_blank'>
+                            回放:曾湘泉解读薪酬与GDP关系</a></li>
+                        <li><a href='http://cppcc.people.com.cn/GB/34961/85825/176336/index.html' target='_blank'>
+                            回放:傅崇兰石向阳姚晓敏谈拆迁</a></li>
+                        <li><a href='http://hm.people.com.cn/GB/42280/175722/index.html' target='_blank'>回放:罗华王淑军谈澳门回归报道</a></li>
+                        <li><a href="http://scitech.people.com.cn/GB/61045/126379/176542/index.html" target='_blank'>
+                            回放:章道义谈科普创作青黄不接?</a></li>
+                        <li><a href="http://www.people.com.cn/GB/32306/143124/147553/176598/index.html" target='_blank'>
+                            回放:北京高法院长池强做客强坛</a></li>
+                    </ul>
+                </div>
+                <div class="tab_img">
+                    <ul>
+                        <li><a href="http://www.people.com.cn/GB/32306/143124/147553/176264/176271/index.html"
+                            target="_blank">
+                            <img src="images/F200912101700541682629632.jpg" width="60" height="60" border="0"></a><br />
+                        </li>
+                        <li><a href="http://www.people.com.cn/GB/32306/143124/147553/176598/index.html" target="_blank">
+                            <img src="images/F200912111102471521126303.jpg" width="60" height="60" border="0"></a><br />
+                        </li>
+                        <li><a href="http://hm.people.com.cn/GB/42280/175722/index.html" target="_blank">
+                            <img src="images/F200912110853083013771953.jpg" width="60" height="60" border="0"></a><br />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab_c1 h210" id="newc1_2" style="display: none;">
+                <div class="tab_list tab_list1">
+                    <ul>
+                        <li><a href='http://sports.people.com.cn/GB/149349/175352/index.html' target='_blank'>
+                            8:00骑士-雷霆&nbsp;</a>&nbsp;<a href='http://sports.people.com.cn/GB/149349/175353/index.html'
+                                target='_blank'>10:30马刺-快船</a></li>
+                        <li><a href='http://mobile.people.com.cn/GB/113285/170685/index.html' target='_blank'>
+                            回放:手机行业影响力高峰论坛</a></li>
+                        <li><a href='http://sports.people.com.cn/GB/149349/175343/index.html' target='_blank'>
+                            回放:勇士-篮网</a>&nbsp;<a href='http://sports.people.com.cn/GB/149349/175344/index.html'
+                                target='_blank'>骑士-火箭</a></li>
+                        <li><a href='http://sports.people.com.cn/GB/149349/175341/index.html' target='_blank'>
+                            回放:雄鹿-凯尔特人</a>&nbsp;<a href='http://sports.people.com.cn/GB/149349/175342/index.html'
+                                target='_blank'>篮网-公牛</a></li>
+                        <li><a href="http://ent.people.com.cn/GB/98772/98779/175836/index.html" target='_blank'>
+                            回放:人民喜爱的艺术家颁奖典礼</a></li>
+                        <li><a href='http://tv.people.com.cn/GB/43911/10501398.html' target='_blank'>回放:三教泰斗·武夷论茶</a></li>
+                        <li><a href='http://edu.people.com.cn/GB/8216/175477/index.html' target='_blank'>回放&nbsp;独家直播&quot;京师教育论坛&quot;</a></li>
+                        <li><a href='http://tv.people.com.cn/GB/43911/10486729.html' target='_blank'>回放&nbsp;第九届中国崇礼国际滑雪节</a></li>
+                        <li><a href="http://hm.people.com.cn/GB/42280/175655/index.html" target='_blank'>回放:澳门基本法实施十周年座谈会</a></li>
+                    </ul>
+                </div>
+                <div class="tab_img">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab_c1 h210" id="newc1_3" style="display: none;">
+                <div class="tab_list">
+                    <ul>
+                        <li>·<a href='http://rexian.people.com.cn/GB/56029/10548862.html' target='_blank'>网友:房价高涨&nbsp;再多优惠也无奈</a></li>
+                        <li>·<a href='http://opinion.people.com.cn/GB/1036/index.html' target='_blank'>毛泽东热为何经久不衰？</a></li>
+                        <li><a href="http://bbs1.people.com.cn/postDetail.do?boardId=1&treeView=1&view=2&id=96437934"
+                            target="_blank">·劝民价会降,论涨有空间,忽悠？<a></li>
+                        <li><a href='http://ezheng.people.com.cn/' target='_blank'>·[E政广场]</a><a href="http://ezheng.people.com.cn/proposalPostDetail.do?boardId=1&view=1&id=38064"
+                            target='_blank'>严禁开发商转卖土地</a></li>
+                        <li><a href="http://blog.people.com.cn" target="_blank">·博客:</a><a href="http://blog.people.com.cn/blog/c/LianZheng"
+                            target="_blank">女检察长已是违纪官员</a></li>
+                        <li>·批评：<a href="http://culture.people.com.cn/GB/46104/46105/index.html" target="_blank">老拳砸开作协"腐败门"</a></li>
+                        <li>·<a href='http://finance.people.com.cn/GB/8215/145108/index.html' target='_blank'>吴酩</a>:<a
+                            href='http://finance.people.com.cn/GB/10569812.html' target='_blank'>任志强也被迪拜“套”住了</a></li>
+                        <li><a href='http://jiaju.people.com.cn/GB/151416/151434/10561043.html' target='_blank'>
+                            ·热评2009家居业九大跳槽人物</a></li>
+                        <li>·<a href="http://unn.people.com.cn/GB/14748/82702/index.html" target="_blank">[观察]</a><a
+                            href="http://unn.people.com.cn/GB/14748/10570205.html" target="_blank">良好动机为何民意不买账？</a></li>
+                    </ul>
+                </div>
+                <div class="tab_img">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="f_tool">
+                <a href="http://news.people.com.cn/GB/28053/index.html" target="_blank">新闻榜</a>|<a
+                    href="http://news.people.com.cn/GB/28165/index.html" target="_blank">留言榜</a>|<a href="http://www.people.com.cn/GB/zhuangao.html"
+                        target="_blank">专稿</a>|<a href="http://rss.people.com.cn/" target="_blank">RSS</a></div>
+            <div class="tab_t1 tab_t2">
+                <ul>
+                    <li class="one"><a href="http://tv.people.com.cn/GB/index.html" target="_blank">
+                        <img src="images/ico4.gif" alt="人民宽频" border="0" /></a></li>
+                    <li class="m"></li>
+                    <li class="two"><a href='http://vblog.people.com.cn' target='_blank'>播客</a><a href='http://tv.people.com.cn/GB/14645/index.html'
+                        target="_blank">新闻</a> <a href='http://tv.people.com.cn/GB/79889/index.html' target="_blank">
+                            娱乐</a> <a href='http://tv.people.com.cn/GB/61602/index.html' target="_blank">生活</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab_c1 lh170 b210">
+                <div class="tab_img">
+                    <ul>
+                        <li><a href="http://tv.people.com.cn/GB/61602/80292/175876/index.html" target="_blank">
+                            <img src="images/F200912141037249979315123.jpg" width="92" height="64" border="0"
+                                alt="抑郁症离我们多远"></a><br />
+                            <a href="http://tv.people.com.cn/GB/61602/80292/175876/index.html" target="_blank">抑郁症离我们多远</a></li>
+                        <li><a href="http://tv.people.com.cn/GB/79889/80295/176729/index.html" target="_blank">
+                            <img src="images/F200912140803125788282573.jpg" width="92" height="64" border="0"
+                                alt="郭晶晶引爆香港"></a><br />
+                            <a href="http://tv.people.com.cn/GB/79889/80295/176729/index.html" target="_blank">郭晶晶引爆香港</a></li>
+                    </ul>
+                </div>
+                <div class="tab_list">
+                    <ul>
+                        <li>·<a href='http://tv.people.com.cn/GB/14645/25060/10571548.html' target="_blank">意总理出席集会脸遭重击出血入院</a></li>
+                        <li>·<a href='http://tv.people.com.cn/GB/39805/42848/10572236.html' target="_blank">十代十对双胞胎！曾做过一样的梦</a></li>
+                        <li>·<a href='http://tv.people.com.cn/GB/14645/10567827.html' target="_blank">《七子之歌》主唱小女孩如今啥样</a></li>
+                        <li>·<a href='http://tv.people.com.cn/GB/14644/135863/10571951.html' target="_blank">对租户的房屋强行拆迁是侵权行为</a></li>
+                        <li>·<a href='http://tv.people.com.cn/GB/61602/10572228.html' target="_blank">从耳朵看健康&nbsp;颜色反映肾脏功能</a></li>
+                        <li>·<a href='http://vblog.people.com.cn/index.php?option=com_content&id=27340
+' target='_blank'>广东罕见双头女婴被遗弃 仅活7天</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--右侧-->
+        <div class="fr b324">
+            <!--共产党新闻-->
+            <div class="cpc_t">
+                <span><a href="http://cpc.people.com.cn/" target="_blank">中国共产党新闻</a></span><a href='http://kxfz.people.com.cn/GB/index.html'
+                    target='_blank'>学习与实践网</a>|<a href='http://cpc.people.com.cn/GB/67481/169048/index.html'
+                        target='_blank'>四中全会</a>|<a href='http://rsl.people.com.cn/' target='_blank'>软实力网</a>
+            </div>
+            <div class="cpc_c">
+                <div>
+                    <span><a href="http://cpc.people.com.cn/GB/67481/94157/174880/index.html" target="_blank">
+                        <img src="images/F200912140805401999411891.jpg" width="60" height="60" border="0"></a><br />
+                    </span><a href='http://cpc.people.com.cn/GB/67481/94157/174880/index.html' target='_blank'>
+                        <strong>离岗18年县委书记王伯祥最近"红"了</strong></a><br />
+                    <a href='http://71bbs.people.com.cn/viewthread.php?tid=106973' target='_blank'>习近平让组织部长关照谁</a>|<a
+                        href='http://71bbs.people.com.cn/viewthread.php?tid=106937' target='_blank'>斩"小金库"黑手</a><br />
+                    <a href='http://renshi.people.com.cn/GB/10572217.html' target='_blank'>全国组织部长会侧记:责任感使命感紧迫感</a><br />
+                </div>
+                <ul>
+                    <li><a href='http://cpc.people.com.cn/GB/64093/67206/67703/10571099.html' target='_blank'>
+                        <strong>老信访办主任上访与温总理说"政府的良心"</strong></a></li>
+                    <li><a href='http://cpc.people.com.cn/GB/64093/82429/83082/10572912.html' target='_blank'>
+                        卢展工缅怀焦裕禄|冀新任副书记陈全国保定调研</a></li>
+                    <li><a href='http://cpc.people.com.cn/GB/64093/117005/10571714.html' target='_blank'>
+                        原河南省委书记徐光春率豫18市书记或市长访台</a></li>
+                    <li><a href='http://renshi.people.com.cn/' target='_blank'>浙江任免一批高校负责人|陈伟义任台州市委常委</a></li>
+                    <li><a href='http://fanfu.people.com.cn/GB/index.html' target='_blank'>上海原普陀区长蔡志强涉嫌受贿被移送司法机关</a></li>
+                    <li><a href='http://theory.people.com.cn/GB/index.html' target='_blank'>党委书记要善于当"班长"</a>|<a
+                        href='http://theory.people.com.cn/GB/10571361.html' target='_blank'>中国经济迎"质变"时刻</a></li>
+                    <li><a href='http://dangshi.people.com.cn/GB/index.html' target='_blank'>瞿秋白建立台湾共产党?|谁是王明上台背后推手?</a></li>
+                    <li><a href='http://cpc.people.com.cn/GB/64093/87393/10569236.html' target='_blank'>
+                        <em class="black">讣告|袁隆逝世 享年92岁</em></a>|<a href='http://cpc.people.com.cn/GB/64093/87393/10569237.html'
+                            target='_blank'><em class="black">张瑞霭逝世 享年85岁</em></a></li>
+                </ul>
+            </div>
+            <div class="cpc_link">
+                <a target="_blank" href="http://cpc.people.com.cn/GB/64093/64094/index.html">高层</a>|<a
+                    target="_blank" href="http://cpc.people.com.cn/GB/64093/64102/index.html">干部</a>|<a
+                        target="_blank" href="http://dangjian.people.com.cn/">党建</a>|<a target="_blank" href="http://dangshi.people.com.cn/GB/index.html">党史</a>|<a
+                            target="_blank" href="http://renshi.people.com.cn/">人事</a>|<a target="_blank" href="http://fanfu.people.com.cn/GB/index.html">反腐</a>|<a
+                                target="_blank" href="http://theory.people.com.cn/GB/index.html">理论</a>|<a target="_blank"
+                                    href="http://71.people.com.cn/">社区</a>|<a href="http://cpc.people.com.cn/GB/69112/index.html"
+                                        target="_blank">纪念馆</a></div>
+            <div class="duan">
+            </div>
+            <!--名牌栏目-->
+            <div class="name_c">
+                <a href='http://opinion.people.com.cn/GB/8213/49160/49205/index.html' target='_blank'>
+                    任仲平</a>|<a href='http://opinion.people.com.cn/GB/8213/49160/49220/index.html' target='_blank'>人民论坛</a>|<a
+                        href='http://politics.people.com.cn/GB/8198/73046/index.html' target='_blank'>声音</a>|<a
+                            href='http://politics.people.com.cn/GB/8198/114987/index.html' target='_blank'>红头文件评点</a>|<a
+                                href="http://rmgc.people.com.cn/GB/index.html" target="_blank">人民观察</a><br />
+                <a href='http://opinion.people.com.cn/GB/8213/49160/69963/index.html' target='_blank'>
+                    国纪平</a>|<a href='http://opinion.people.com.cn/GB/8213/49160/49219/index.html' target='_blank'>人民时评</a>|<a
+                        href='http://opinion.people.com.cn/GB/8213/49160/80638/index.html' target='_blank'>新语</a>|<a
+                            href='http://opinion.people.com.cn/GB/8213/49160/54773/index.html' target='_blank'>望海楼</a>|<a
+                                href='http://finance.people.com.cn/GB/8215/78329/index.html' target='_blank'>感言</a>|<a
+                                    href="http://culture.people.com.cn/GB/70968/index.html" target="_blank">文化讲坛</a>
+            </div>
+            <!--切换广告-->
+            <div class="tab_ad">
+                <div>
+                    <iframe width="300" height="60" scrolling="no" frameborder="0" marginheight="5" marginwidth="0"
+                        src="http://www.people.com.cn/adv/sogou32060a.html"></iframe>
+                </div>
+                <p>
+                    &nbsp;<iframe marginwidth="0" marginheight="0" frameborder="0" width="100" height="50"
+                        scrolling="no" src="http://www.people.com.cn/GB/55011/55013/161149/index.html"></iframe>
+                    &nbsp;<iframe marginwidth="0" marginheight="0" frameborder="0" width="100" height="50"
+                        scrolling="no" src="http://www.people.com.cn/GB/55011/55013/161150/index.html"></iframe>
+                    &nbsp;<iframe marginwidth="0" marginheight="0" frameborder="0" width="100" height="50"
+                        scrolling="no" src="http://www.people.com.cn/GB/55011/55013/161151/index.html"></iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="bc1 bc8">
+    </div>
+    
+     <div class="pt_5">
+
+        <script language="javascript1.1" src="http://pro.people.com.cn/js.ng/channel_range=1/&channel_id=1&PagePos=61&size=98060&site=people"></script>
+
+        <noscript>
+            <a href="http://pro.people.com.cn/click.ng/channel_range=1/&channel_id=1&PagePos=61&size=98060&site=people"
+                target="_top">
+                <img src="http://pro.people.com.cn/image.ng/channel_range=1/&channel_id=1&PagePos=61&size=98060&site=people"
+                    width="980" height="60" border="0"></a></noscript></script></div>
+
+</body>
+</html>
+
