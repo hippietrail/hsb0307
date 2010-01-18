@@ -544,11 +544,12 @@ a.list_link_o:hover
 	font-size:18pt;
 	font-family:HG_TaiTham_WHD,Verdana, Arial, sans-serif;/*lsd加少数民族字体HG_Tai_BZ */
 }
+/*
 .SpecialFontFamily a
 {
 	font-size:18pt;
 }
-
+*/
 .list_linkSpecial
 {
 	    color : #395575;
