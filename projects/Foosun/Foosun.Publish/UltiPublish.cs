@@ -1082,7 +1082,7 @@ namespace Foosun.Publish
                 switch (Numstr)
                 {
                     case "0":
-                        Pagestr += "<div style=\"padding-top:15px;" + postResult_css + ">"+gong + n + ye+",&nbsp;"+dangqiandi+ (i + 1) +ye+ ",&nbsp;";
+                        Pagestr += "<div style=\"padding-top:15px;\" " + postResult_css + ">"+gong + n + ye+",&nbsp;"+dangqiandi+ (i + 1) +ye+ ",&nbsp;";
                         if (i == 0)
                         {
                             Pagestr += getPageStyle(shouye, postResult_color) + "&nbsp;";
@@ -1373,7 +1373,7 @@ namespace Foosun.Publish
                 switch (Numstr)
                 {
                     case "0":
-                        Pagestr += "<div style=\"padding-top:15px;" + postResult_css + ">" + gong + n + ye + ",&nbsp;" + dangqiandi + (i + 1) + ye + ",&nbsp;";
+                        Pagestr += "<div style=\"padding-top:15px;\" " + postResult_css + ">" + gong + n + ye + ",&nbsp;" + dangqiandi + (i + 1) + ye + ",&nbsp;";
                         if (i == 0)
                         {
                             Pagestr += getPageStyle(shouye, postResult_color) + "&nbsp;";
@@ -1662,7 +1662,7 @@ namespace Foosun.Publish
             switch (Numstr)
             {
                 case "0":
-                    Pagestr += "<div style=\"padding-top:15px;" + postResult_css + ">共" + n + "页,&nbsp;当前第" + (i + 1) + "页,&nbsp;";
+                    Pagestr += "<div style=\"padding-top:15px;\" " + postResult_css + ">共" + n + "页,&nbsp;当前第" + (i + 1) + "页,&nbsp;";
                     if (i == 0)
                     {
                         Pagestr += getPageStyle("首页", postResult_color) + "&nbsp;";
