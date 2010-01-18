@@ -252,7 +252,7 @@
                 <asp:ListItem Value="true">ÊÇ</asp:ListItem>
                 <asp:ListItem Value="false">·ñ</asp:ListItem>
               </asp:DropDownList></td>
-        </tr>          
+        </tr>
           <tr class="TR_BG_list" id="TrClassId" style="display:none;">
             <td align="right" class="navi_link" style="width:28%">À¸Ä¿ID</td>
             <td align="left" class="navi_link"><asp:TextBox ReadOnly="true" ID="ClassName" runat="server" CssClass="form" Width="120px"></asp:TextBox>
