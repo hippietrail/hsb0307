@@ -1,0 +1,54 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: #fff; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 180%; PADDING-TOP: 0px; FONT-FAMILY: ËÎÌו; TEXT-ALIGN: center
+}
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; VERTICAL-ALIGN: middle; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #fff
+}
+.weather1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/img/2009people_index/images/mar_bg.gif) repeat-x; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto; COLOR: #fff; PADDING-TOP: 3px; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.wea_c {
+	FLOAT: left; MARGIN: 0px 5px
+}
+.weather1 A {
+	COLOR: #fff
+}
+.t_selected {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 3px; FONT-SIZE: 12px; Z-INDEX: 1; BACKGROUND: url(/img/2009people_index/images/wea_bg.gif) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 80px; CURSOR: pointer; COLOR: #fff; LINE-HEIGHT: 22px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.t_select_list {
+	BORDER-RIGHT: #8686ae 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #8686ae 1px solid; MARGIN-TOP: 0px; DISPLAY: none; PADDING-LEFT: 2px; FONT-SIZE: 12px; Z-INDEX: 2; BACKGROUND: #f7f7fe; PADDING-BOTTOM: 2px; BORDER-LEFT: #8686ae 1px solid; WIDTH: 115px; LINE-HEIGHT: 150%; PADDING-TOP: 2px; BORDER-BOTTOM: #8686ae 1px solid; POSITION: absolute; TEXT-ALIGN: left
+}
+.t_select_list LABEL {
+	DISPLAY: block; COLOR: #000; TEXT-DECORATION: none
+}
+.t_select_list LABEL A {
+	COLOR: #000
+}
+.t_select_list LABEL:hover {
+	BACKGROUND: #f1f1f1; TEXT-DECORATION: none
+}
+.t_select1 {
+	MARGIN: 0px
+}

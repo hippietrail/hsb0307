@@ -1,0 +1,768 @@
+.b980 {
+	MARGIN: 0px auto; WIDTH: 980px
+}
+.b978 {
+	MARGIN: 0px auto; WIDTH: 978px
+}
+.b435 {
+	WIDTH: 435px; height:auto;
+}
+.b209 {
+	WIDTH: 210px
+}
+.b324 {
+	WIDTH: 324px;
+}
+.b538 { WIDTH: 538px; height:420px; border:1px solid #C2CFD6;}
+.b269 {
+	WIDTH: 267px
+}
+.b268 {
+	WIDTH: 269px
+}
+.b700 {
+	WIDTH: 700px
+}
+.b350 {
+	WIDTH: 350px
+}
+.h200 {
+	HEIGHT: 200px
+}
+.h405 {
+	HEIGHT: 405px
+}
+.h176 {
+	HEIGHT: 169px
+}
+.h200 {
+	HEIGHT: 198px
+}
+.b645 {
+	WIDTH: 645px
+}
+.b430
+{
+
+   width:430px;height:420px; border:1px solid #C2CFD6;}
+.h162 {
+	HEIGHT: 162px
+}
+.h189 {
+	HEIGHT: 189px
+}
+.h165 {
+	HEIGHT: 163px
+}
+.h50 {
+	HEIGHT: 38px
+}
+.b434 {
+	WIDTH: 434px
+}
+.h210 {
+	HEIGHT: 275px
+}
+.lh170 {
+	LINE-HEIGHT: 170%
+}
+.lh190 {
+	LINE-HEIGHT: 190%
+}
+.fl {
+	FLOAT: left
+}
+.fm {
+	FLOAT: left
+}
+.fr {
+	FLOAT: right
+}
+.mr_5 {
+	MARGIN-RIGHT: 5px
+}
+.ml_5 {
+	MARGIN-LEFT: 5px
+}
+.ml_8 {
+	MARGIN-LEFT: 9px
+}
+.pt_5 {
+	PADDING-TOP: 5px;
+}
+.pb_5 {
+	PADDING-BOTTOM: 5px
+}
+.pl_5 {
+	PADDING-LEFT: 5px
+}
+.pl_12 {
+	PADDING-LEFT: 12px
+}
+.pr_5 {
+	PADDING-RIGHT: 5px
+}
+.bd1 {
+	BORDER-RIGHT: #b1b1b1 1px solid; BORDER-TOP: #b1b1b1 1px solid; BORDER-LEFT: #b1b1b1 1px solid; BORDER-BOTTOM: #b1b1b1 1px solid
+}
+.bc {
+	BACKGROUND: url(/Templets/people_xxbn/image/top.gif) no-repeat; MARGIN: 5px auto 0px; OVERFLOW: hidden; WIDTH: 980px; HEIGHT: 1px
+}
+.bc1 {
+	BACKGROUND: url(/Templets/people_xxbn/image/bottom1.gif) no-repeat; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 980px; HEIGHT: 1px
+}
+.bc2 {
+	BACKGROUND: url(/Templets/people_xxbn/image/top1.gif) no-repeat; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 980px; HEIGHT: 1px
+}
+.bc3 {
+	BACKGROUND: url(/Templets/people_xxbn/image/top2.gif)
+}
+.bc4 {
+	BACKGROUND: url(/Templets/people_xxbn/image/top3.gif)
+}
+.bc5 {
+	BACKGROUND: url(/Templets/people_xxbn/image/top4.gif)
+}
+.bc6 {
+	BACKGROUND: url(/Templets/people_xxbn/image/bottom3.gif) no-repeat; MARGIN: 0px auto 5px; WIDTH: 305px; HEIGHT: 3px
+}
+.bc7 {
+	CLEAR: both; BACKGROUND: url(/Templets/people_xxbn/image/bottom4.gif) no-repeat; MARGIN: 5px 0px 0px; OVERFLOW: hidden; WIDTH: 100%; HEIGHT: 1px
+}
+.bc8 {
+	BACKGROUND: url(/Templets/people_xxbn/image/bottom.gif) no-repeat
+}
+.dian {
+	BACKGROUND: url(/Templets/people_xxbn/image/dian1.gif) repeat-x 50% top; MARGIN: 4px auto; OVERFLOW: hidden; WIDTH: 95%; HEIGHT: 2px
+}
+.duan {
+	BORDER-RIGHT: #778a9d 1px; BORDER-TOP: #778a9d 1px solid; BACKGROUND: #fff; OVERFLOW: hidden; BORDER-LEFT: #778a9d 1px; BORDER-BOTTOM: #778a9d 1px solid; HEIGHT: 7px
+}
+.duan1 {
+	BORDER-TOP: #9caebc 1px solid; BACKGROUND: #fff; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 100%; BORDER-BOTTOM: #9caebc 1px solid; HEIGHT: 5px
+}
+.duan2 {
+	BORDER-TOP-STYLE: none
+}
+.cs_c DIV.fm DIV.duan1 {
+	MARGIN: 0px 0px 0px -1px
+}
+.mt_7 {
+	MARGIN: 7px auto 0px
+}
+HR {
+	CLEAR: both; BACKGROUND: url(/Templets/people_xxbn/image/dian2.gif) repeat-x 50% top; MARGIN: 5px 0px 0px 8px; OVERFLOW: hidden; WIDTH: 95%; COLOR: #7ba5d7; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 1px; BORDER-BOTTOM-STYLE: none
+}
+A.dx {
+	TEXT-DECORATION: underline
+}
+.blue {
+	COLOR: #003464
+}
+.blue A {
+	COLOR: #003464
+}
+EM.red {
+	COLOR: #680009; FONT-STYLE: normal
+}
+EM.red A {
+	COLOR: #680009; FONT-STYLE: normal
+}
+EM.f700 {
+	FONT-WEIGHT: 700
+}
+EM.blue {
+	COLOR: #036; FONT-STYLE: normal
+}
+EM.blue A {
+	COLOR: #036; FONT-STYLE: normal
+}
+EM.black {
+	COLOR: #000000; FONT-STYLE: normal
+}
+EM.black A {
+	COLOR: #000000; FONT-STYLE: normal
+}
+EM.f400 {
+	FONT-WEIGHT: 400
+}
+EM.f12 {
+	FONT-SIZE: 12px
+}
+.top_ad {
+	BORDER-RIGHT: #b1c7da 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #b1c7da 1px; PADDING-LEFT: 3px; BACKGROUND: #fff; PADDING-BOTTOM: 3px; MARGIN: 0px auto; BORDER-LEFT: #b1c7da 1px solid; WIDTH: 970px; PADDING-TOP: 5px; BORDER-BOTTOM: #b1c7da 1px solid; HEIGHT: auto
+}
+.ad_r {
+	MARGIN: 0px 3px 0px 0px
+}
+.ad_l {
+	MARGIN: 0px 0px 0px 5px
+}
+.top_ad P {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; MARGIN: 10px 0px 0px; COLOR: #46606f; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.top_ad P A {
+	MARGIN: 0px 10px 0px 0px; COLOR: #46606f
+}
+.top_ad P SPAN {
+	COLOR: #360
+}
+.tab_ad {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; MARGIN: 0px auto; WIDTH: 99%; COLOR: #39536a; PADDING-TOP: 2px; TEXT-ALIGN: left
+}
+.tab_ad DIV IMG {
+	FLOAT: left; MARGIN: 5px 10px
+}
+.tab_ad DIV {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.tab_ad A {
+	COLOR: #39536a
+}
+.tab_ad A:unknown {
+	COLOR: #39536a
+}
+.tab_ad P IMG {
+	MARGIN: 0px 2px 0px 4px
+}
+.paper_ad {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 10px; BACKGROUND: #eff9ff; PADDING-BOTTOM: 0px; MARGIN: 5px auto 0px; WIDTH: 97%; LINE-HEIGHT: 35px; PADDING-TOP: 0px; HEIGHT: 35px; TEXT-ALIGN: left
+}
+.paper_ad A {
+	MARGIN: 0px 7px; COLOR: #000
+}
+.t1 {
+	BORDER-TOP: #9badbb 1px solid; BACKGROUND: url(/Templets/people_xxbn/image/t1_bg.gif) repeat-x 50% top; MARGIN: 0px 0px 0px 1px; FONT: 700 14px/28px ??; WIDTH: 99%; HEIGHT: 28px
+}
+.t_all {
+	CLEAR: both; BACKGROUND: url(/Templets/people_xxbn/image/ta_bg.gif) repeat-x 50% top; MARGIN: 7px auto; WIDTH: 980px; HEIGHT: 35px
+}
+.t_all UL LI {
+	FLOAT: left; LINE-HEIGHT: 35px
+}
+.t_all LI.left {
+	BACKGROUND: url(/Templets/people_xxbn/image/t_left.gif) no-repeat left 50%; WIDTH: 14px
+}
+.t_all LI.right {
+	BACKGROUND: url(/Templets/people_xxbn/image/t_right.gif) no-repeat right 50%; FLOAT: right; HEIGHT: 35px
+}
+.t_all LI.title {
+	BACKGROUND: url(/Templets/people_xxbn/image/title.jpg) no-repeat; MARGIN: 0px 20px 0px 0px; WIDTH: 215px; HEIGHT: 35px
+}
+.t_all A {
+	MARGIN: 0px 5px; COLOR: #fff
+}
+.t_all A:visited {
+	COLOR: #fff
+}
+.t_all LI.title1 {
+	BACKGROUND: url(/Templets/people_xxbn/image/title1.jpg) no-repeat; MARGIN: 0px 20px 0px 0px; WIDTH: 196px; HEIGHT: 35px
+}
+.t_all LI.title2 {
+	BACKGROUND: url(/Templets/people_xxbn/image/title2.jpg) no-repeat; MARGIN: 0px 20px 0px 0px; WIDTH: 196px; HEIGHT: 35px
+}
+.t2 {
+	PADDING-RIGHT: 11px; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/people_xxbn/image/t2_bg.gif) repeat-x 50% top; PADDING-BOTTOM: 0px; MARGIN: 0px auto 8px; FONT: 700 14px/23px ??; WIDTH: 96%; COLOR: #d10401; PADDING-TOP: 0px; HEIGHT: 23px; TEXT-ALIGN: left
+}
+.t2 A {
+	COLOR: #c00
+}
+.t2 A:visited {
+	COLOR: #c00
+}
+.t4 A:visited {
+	COLOR: #c00
+}
+.t5 A:visited {
+	COLOR: #c00
+}
+.t6 A:visited {
+	COLOR: #c00
+}
+.t8 A:visited {
+	COLOR: #c00
+}
+.t5 SPAN A:visited {
+	COLOR: #000
+}
+
+.t2_c {
+	FONT-SIZE: 14px; MARGIN: 0px auto; WIDTH: 99%; LINE-HEIGHT: 180%; TEXT-ALIGN: left
+}
+
+.t3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; PADDING-BOTTOM: 0px; MARGIN: 0px auto 8px; FONT: 700 12px/27px ??; WIDTH: 93%; COLOR: #d30100; PADDING-TOP: 0px; BORDER-BOTTOM: #d2d9df 1px solid; HEIGHT: 27px; TEXT-ALIGN: left
+}
+.eco DIV.t3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; PADDING-BOTTOM: 0px; MARGIN: 0px auto 8px; FONT: 700 12px/27px ??; WIDTH: 93%; COLOR: #d30100; PADDING-TOP: 0px; BORDER-BOTTOM: #d2d9df 1px solid; HEIGHT: 27px; TEXT-ALIGN: left
+}
+.t3 A {
+	COLOR: #d30100
+}
+.t4 {
+	BACKGROUND: url(/Templets/people_xxbn/image/t3_bg.gif) repeat-x 50% top;  WIDTH: 100%; COLOR: #08043A; HEIGHT: 28px; TEXT-ALIGN: left
+}
+.t4 A {
+	COLOR: #08043A
+}
+.t4 SPAN {
+	MARGIN: 0px 0px 0px 295px
+}
+.t5 {
+	BORDER-RIGHT: #c2cfd6 1px; BORDER-TOP: #c2cfd6 1px solid; BACKGROUND: #eff6fa; MARGIN: 0px auto; FONT: 700 14px/27px ??; BORDER-LEFT: #c2cfd6 1px; WIDTH: 99%; COLOR: #c00; BORDER-BOTTOM: #c2cfd6 1px solid; HEIGHT: 27px
+}
+.t5 A {
+	COLOR: #c00
+}
+.t5 SPAN {
+	FLOAT: right; MARGIN: -19px 10px 0px 0px; FONT: 400 12px ??; COLOR: #000
+}
+.t5 SPAN A {
+	MARGIN: 0px 3px; COLOR: #000
+}
+.t5_c {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; MARGIN: 5px auto; WIDTH: 97%; LINE-HEIGHT: 170%; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.t6 {
+	BORDER-TOP: #c2cfd6 1px solid; BACKGROUND: url(/Templets/people_xxbn/image/t6_bg.gif) repeat-x 50% top; MARGIN: 0px -1px 0px 1px; WIDTH: 100%; COLOR: #08043a; HEIGHT: 28px
+}
+.t6 SPAN {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/people_xxbn/image/t6_bg1.jpg) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 10px; WIDTH: 95px; PADDING-TOP: 10px; HEIGHT: 18px; TEXT-ALIGN: center
+}
+.t6 SPAN A {
+	FONT: 700 14px ??; COLOR: #c00
+}
+.t6_a { margin:0px; padding:0px; margin-top:5px;}
+.t6 A {
+	MARGIN:0px 5px; COLOR: #08043a
+}
+.t6 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP:0px
+}
+.t6_c {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; MARGIN: 5px auto; WIDTH: 95%; LINE-HEIGHT: 170%; PADDING-TOP: 0px
+}
+.t6_c A {
+	MARGIN: 0px 5px 0px 0px
+}
+.t7 P {
+	COLOR: #69010a
+}
+.t7 P A {
+	MARGIN: 0px 1px; COLOR: #69010a
+}
+.t7 P A:visited {
+	COLOR: #69010a
+}
+.t7_c {
+	MARGIN: 10px 0px 0px
+}
+.t7_c UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px
+}
+.t7_c A {
+	FONT-SIZE: 14px
+}
+.t7_c SPAN {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/people_xxbn/image/t7c_bg.gif) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 8px 0px 12px; WIDTH: 54px; LINE-HEIGHT: 150%; PADDING-TOP: 0px; HEIGHT: 19px; TEXT-ALIGN: center
+}
+.t7_c SPAN A {
+	FONT-SIZE: 12px; COLOR: #004488
+}
+.t7_c SPAN IMG {
+	MARGIN: 0px 2px 0px 0px; VERTICAL-ALIGN: middle
+}
+.t7_c STRONG A {
+	MARGIN: 0px 0px 0px 10px; FONT: 400 12px ??; COLOR: #004488
+}
+.t8 {
+	BORDER-TOP: #c3c3c3 1px solid; BACKGROUND: url(/Templets/people_xxbn/image/t8_bg.gif) repeat-x 50% top; MARGIN: 0px auto; WIDTH: 99%; HEIGHT: 24px
+}
+.t8 UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; FONT: 700 14px ??; WIDTH: 102px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.t8 LI.m {
+	BACKGROUND: url(/Templets/people_xxbn/image/t8_bg1.gif) no-repeat; WIDTH: 1px; HEIGHT: 24px
+}
+.t8 LI.one {
+	FONT-WEIGHT: 400; BACKGROUND: url(/Templets/people_xxbn/image/t8_bg2.gif) repeat-x 50% top; HEIGHT: 24px
+}
+.t8 LI.two A {
+	FONT-SIZE: 12px; COLOR: #333
+}
+.t8 LI.two A:visited {
+	COLOR: #333
+}
+.t8 LI.t3 {
+	WIDTH: 95%; TEXT-ALIGN: left
+}
+.t8 A {
+	COLOR: #c00
+}
+.t8_c {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 10px; BACKGROUND: url(/Templets/people_xxbn/image/t8_bg3.gif) repeat-x 50% top; PADDING-BOTTOM: 4px; MARGIN: 0px auto; WIDTH: 90%; COLOR: #000; PADDING-TOP: 10px
+}
+.t8_c P {
+	MARGIN: 0px 0px 7px; LINE-HEIGHT: 190%
+}
+.t8_c P A {
+	COLOR: #036
+}
+.t8_c1 {
+	HEIGHT: auto
+}
+.t9 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/Templets/people_xxbn/image/t9_bg.gif) repeat-x 50% top; PADDING-BOTTOM: 0px; FONT: 700 14px ??; PADDING-TOP: 8px; HEIGHT: 20px
+}
+.t9_c {
+	MARGIN: 0px auto; WIDTH: 98%
+}
+.t9_c SPAN {
+	DISPLAY: block; FLOAT: left; MARGIN: 10px 9px 7px; WIDTH: 84px; LINE-HEIGHT: 150%; TEXT-ALIGN: left
+}
+.t9_c SPAN IMG {
+	DISPLAY: block; MARGIN: 0px auto 5px
+}
+.t10 {
+	CLEAR: both; MARGIN: 0px auto; WIDTH: 99%; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.t10 UL LI {
+	BACKGROUND: url(/Templets/people_xxbn/image/t10_bg.gif) no-repeat; FLOAT: left; WIDTH: 53px; HEIGHT: 22px; TEXT-ALIGN: center
+}
+.t10 SPAN {
+	DISPLAY: block; FLOAT: left; MARGIN: 8px 25px 0px 15px
+}
+.t10 SPAN A {
+	FONT: 700 14px ??; COLOR: #c00
+}
+.t10 SPAN A:visited {
+	COLOR: #c00
+}
+.t100 {
+	BORDER-RIGHT: #9caeba 1px solid; MARGIN: 0px 0px 0px 2px; WIDTH: 99%
+}
+.t11 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 8px; MARGIN: 0px; LINE-HEIGHT: 170%; PADDING-TOP: 3px
+}
+.t12 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; MARGIN: 7px auto 0px; PADDING-TOP: 0px
+}
+.t13 P {
+	MARGIN: 6px auto; LINE-HEIGHT: 180%
+}
+.t13 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.s_img SPAN {
+	DISPLAY: block; FLOAT: left; MARGIN: 0px 13px 0px 15px; WIDTH: 105px; HEIGHT: 93px
+}
+.s_img SPAN IMG {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+.s_img SPAN A {
+	DISPLAY: block; FONT-SIZE: 12px; BACKGROUND: #336799; MARGIN: 5px 0px 0px; WIDTH: 100%; COLOR: #fff; LINE-HEIGHT: 180%; TEXT-ALIGN: center
+}
+.s_img SPAN A:visited {
+	COLOR: #ffffff
+}
+.s_img1 SPAN A {
+	BACKGROUND: #3d5d6a
+}
+.s_img2 SPAN A {
+	BACKGROUND: #496d0d
+}
+.s_img3 SPAN A {
+	BACKGROUND: #cc0001
+}
+.pt_2 {
+	PADDING-BOTTOM: 2px
+}
+.pt_2 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 4px 0px 0px; PADDING-TOP: 4px
+}
+
+.t_selected {
+	PADDING-RIGHT: 0px; DISPLAY:block; PADDING-LEFT: 3px; FONT-SIZE: 12px; Z-INDEX: 1; BACKGROUND: url(/Templets/people_xxbn/image/select.gif) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 107px; CURSOR: pointer; COLOR: #ccc; LINE-HEIGHT: 22px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.t_select_list {
+	BORDER-RIGHT: #8686ae 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #8686ae 1px solid; MARGIN-TOP: 0px; OVERFLOW-Y: scroll; DISPLAY: none; PADDING-LEFT: 2px; FONT-SIZE: 12px; Z-INDEX: 2; BACKGROUND: #f7f7fe; PADDING-BOTTOM: 2px; BORDER-LEFT: #8686ae 1px solid; WIDTH: 105px; LINE-HEIGHT: 150%; PADDING-TOP: 2px; BORDER-BOTTOM: #8686ae 1px solid; POSITION: absolute; HEIGHT: 200px; TEXT-ALIGN: left; 
+}
+.t_select_list LABEL {
+	DISPLAY: block; COLOR: #000; TEXT-DECORATION: none
+}
+.t_select_list LABEL A {
+	DISPLAY: block; MARGIN: 0px; COLOR: #000; TEXT-DECORATION: none
+}
+.t_select_list LABEL:hover {
+	BACKGROUND: #f1f1f1; TEXT-DECORATION: none
+}
+.t_select1 {
+	MARGIN: 0px ; float:left;
+}
+.pic_show_l {
+	MARGIN-TOP: 0px; FONT-SIZE: 12px;  OVERFLOW: hidden; WIDTH: 100%; ZOOM: 1; 
+}
+.pic_show_l .pcont {
+	PADDING-LEFT: 5px; FLOAT: left; OVERFLOW: hidden; WIDTH:945px;
+}
+.pic_show_l .ScrCont {
+	MARGIN-LEFT: -5px; WIDTH: 100%; ZOOM: 1
+}
+.pic_show_l #list1_1 {
+	FLOAT: left
+}
+.pic_show_l #list2_1 {
+	FLOAT: left
+}
+.pic_show_l .leftbotton {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 15px; PADDING-TOP: 50px; HEIGHT: 72px
+}
+.pic_show_l .rightbotton {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 15px; PADDING-TOP: 50px; HEIGHT: 72px
+}
+.pic_show_l .leftbotton IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.pic_show_l .rightbotton IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.pic_show_l .LeftBotton {
+	BACKGROUND-POSITION: 0px 0px; MARGIN: 8px 5px 0px
+}
+.pic_show_l .RightBotton {
+	BACKGROUND-POSITION: 0px -100px; MARGIN: 8px 1px 10px 5px
+}
+.pic_show_l .LeftBotton:hover {
+	BACKGROUND-POSITION: -20px 0px
+}
+.pic_show_l .RightBotton:hover {
+	BACKGROUND-POSITION: -20px -100px
+}
+.pic_show_l DIV#list1_1 A {
+	COLOR: #fff
+}
+.pic_show_l DIV#list2_1 A {
+	COLOR: #fff
+}
+.pic_show_l DIV#list1_1 IMG {
+	DISPLAY: block; MARGIN: 2px auto 1px; CURSOR: pointer
+}
+.pic_show_l DIV#list2_1 IMG {
+	DISPLAY: block; MARGIN: 2px auto 1px; CURSOR: pointer
+}
+.pic_show_l DIV#list1_1 A {
+	FLOAT: left; MARGIN: 0px 10px; WIDTH: 150px; LINE-HEIGHT: 24px; TEXT-ALIGN: center
+}
+.pic_show_l DIV#list2_1 A {
+	FLOAT: left; MARGIN: 0px 10px; WIDTH: 150px; LINE-HEIGHT: 24px; TEXT-ALIGN: center
+}
+.t_selected2 {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 3px; FONT-SIZE: 12px; Z-INDEX: 1; BACKGROUND: url(/Templets/people_xxbn/image/wea_bg.gif) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 80px; CURSOR: pointer; COLOR: #fff; LINE-HEIGHT: 22px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.t_select_list2 {
+	BORDER-RIGHT: #8686ae 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #8686ae 1px solid; MARGIN-TOP: 0px; OVERFLOW-Y: scroll; DISPLAY: none; PADDING-LEFT: 2px; FONT-SIZE: 12px; Z-INDEX: 2; BACKGROUND: #f7f7fe; FLOAT: left; PADDING-BOTTOM: 2px; BORDER-LEFT: #8686ae 1px solid; WIDTH: 75px; LINE-HEIGHT: 150%; PADDING-TOP: 2px; BORDER-BOTTOM: #8686ae 1px solid; POSITION: absolute; HEIGHT: 200px; TEXT-ALIGN: left
+}
+.t_select_list2 LABEL {
+	DISPLAY: block; COLOR: #000; TEXT-DECORATION: none
+}
+.t_select_list2 LABEL A {
+	COLOR: #000
+}
+.t_select_list2 LABEL:hover {
+	BACKGROUND: #f1f1f1; TEXT-DECORATION: none
+}
+.t_select1 {
+	MARGIN: 0px
+}
+.new_nav SPAN.t_selected4 {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 3px; FONT-SIZE: 12px; Z-INDEX: 1; BACKGROUND: url(/Templets/people_xxbn/image/select1.gif) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 134px; CURSOR: pointer; COLOR: #000; LINE-HEIGHT: 22px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 22px; TEXT-ALIGN: left
+}
+.new_nav DIV.t_select_list4 {
+	BORDER-RIGHT: #8686ae 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #8686ae 1px solid; MARGIN-TOP: 0px; DISPLAY: none; PADDING-LEFT: 2px; FONT-SIZE: 12px; Z-INDEX: 2; BACKGROUND: #f7f7fe; FLOAT: left; PADDING-BOTTOM: 2px; BORDER-LEFT: #8686ae 1px solid; WIDTH: 110px; LINE-HEIGHT: 150%; PADDING-TOP: 2px; BORDER-BOTTOM: #8686ae 1px solid; POSITION: absolute; HEIGHT: auto; TEXT-ALIGN: left
+}
+.new_nav DIV.t_select_list4 LABEL {
+	DISPLAY: block; COLOR: #000; TEXT-DECORATION: none
+}
+.new_nav DIV.t_select_list4 LABEL A {
+	COLOR: #000
+}
+.new_nav DIV.t_select_list4 LABEL:hover {
+	BACKGROUND: #f1f1f1; TEXT-DECORATION: none
+}
+.t_select1 {
+	MARGIN: 0px
+}
+#copyright {
+	CLEAR: both; FONT-SIZE: 12px; MARGIN: 5px auto; WIDTH: 980px; COLOR: #333; PADDING-TOP: 10px; HEIGHT: auto
+}
+#copyright P {
+	MARGIN: 0px 0px 2px
+}
+#copyright A {
+	COLOR: #333
+}
+#copyright P.p1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; MARGIN: 15px auto; WIDTH: 90%; LINE-HEIGHT: 150%; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+#copyright P.p1 A {
+	COLOR: #f00
+}
+#copyright P.p2 {
+	MARGIN: 8px 0px 0px; TEXT-ALIGN: center
+}
+.red A {
+	COLOR: #c00; TEXT-DECORATION: none
+}
+.red {
+	COLOR: #c00
+}
+.red A:visited {
+	COLOR: #c00
+}
+.jn512 {
+	BORDER-RIGHT: #b1b1b1 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #d8efff; PADDING-BOTTOM: 3px; MARGIN: 0px auto; BORDER-LEFT: #b1b1b1 1px solid; PADDING-TOP: 3px
+}
+.jn512:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.scroll_div {
+	MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 960px; WHITE-SPACE: nowrap; HEIGHT: 250px
+}
+.scroll_div IMG {
+	MARGIN: auto 0px; WIDTH: 319px; HEIGHT: 247px
+}
+.scroll_div LI {
+	DISPLAY: inline
+}
+.scroll_div UL {
+	DISPLAY: inline
+}
+#scroll_begin {
+	DISPLAY: inline
+}
+#scroll_end {
+	DISPLAY: inline
+}
+.xinban_c {
+	MARGIN: 0px auto; WIDTH: 980px; HEIGHT: auto
+}
+.xinban_mar {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(images/60_bg1.gif) repeat-x 50% top; PADDING-BOTTOM: 0px; WIDTH: 980px; PADDING-TOP: 2px; HEIGHT: 27px
+}
+.xinban_mar SPAN.f_l {
+	PADDING-RIGHT: 0px; MARGIN-TOP: -2px; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: 700; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 77px; COLOR: #fff; PADDING-TOP: 2px; HEIGHT: 23px; TEXT-ALIGN: center
+}
+.xinban_mar MARQUEE {
+	FLOAT: left
+}
+.xinban_mar A {
+	MARGIN: 0px 7px; COLOR: #fff
+}
+.xinban_mar A:visited {
+	COLOR: #fff
+}
+.xinban_c1 {
+	BORDER: #ccc 1px solid; PADDING: 0px;  PADDING-LEFT: 8px;  WIDTH: 970px;   HEIGHT: auto
+}
+.xinban_flash {
+	MARGIN: 12px auto
+}
+.xinban_banner {
+	MARGIN: 8px auto
+}
+.xinban_l {
+	FLOAT: left; WIDTH: 420px
+}
+.xinban_r {
+	FLOAT: right; BORDER-LEFT: #ccc 1px solid; WIDTH: 540px; HEIGHT: auto
+}
+.xinban_f {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 80px; BACKGROUND: url(images/60/60_bg3.jpg) no-repeat left 50%; PADDING-BOTTOM: 0px; WIDTH: 338px; PADDING-TOP: 0px; HEIGHT: 58px
+}
+.xinban_fl {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 166px; COLOR: #690007; PADDING-TOP: 15px; HEIGHT: auto; TEXT-ALIGN: left
+}
+.xinban_fl A {
+	COLOR: #690007
+}
+.xinban_main {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; MARGIN: 8px auto 0px; PADDING-TOP: 5px; BORDER-BOTTOM: #ccc 1px solid; font-size:40px; font-weight:bold; height:40px; line-height:40px;
+}
+.xinban_main P {
+	MARGIN: 5px 0px
+}
+.xinban_main P A {
+	MARGIN: 0px 2px
+}
+.xinban_news {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 540px; PADDING-TOP: 8px; HEIGHT: 350px;
+}
+.xinban_xian {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px 25px 0px 0px; WIDTH: 295px; PADDING-TOP: 8px; HEIGHT: auto
+}
+.xinban_title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; PADDING-BOTTOM: 0px; MARGIN: 3px auto 2px; WIDTH: 93%; COLOR: #000; PADDING-TOP: 2px; HEIGHT: 20px; TEXT-ALIGN: left
+}
+.xinban_title STRONG {
+	MARGIN: 0px 10px 0px 0px
+}
+.xinban_title STRONG A {
+	FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #000000
+}
+.xinban_title A {
+	FONT-WEIGHT: 400; MARGIN: 0px 0px 0px 3px; COLOR: #004488
+}
+.xinban_title IMG {
+	MARGIN: 0px 3px 0px 0px
+}
+.xinban_title1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; WIDTH: 230px; PADDING-TOP: 4px
+}
+.xinban_nc {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(images/dian1.gif) repeat-x 50% bottom; PADDING-BOTTOM: 3px; MARGIN: 0px auto; WIDTH: 92%; COLOR: #000; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.xinban_nc UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px
+}
+.xinban_nc1 A {
+	FONT-SIZE: 12px
+}
+.xinban_xian DIV.xinban_title {
+	WIDTH: 100%; COLOR: #b41414
+}
+.xinban_xian DIV.xinban_title SPAN {
+	FONT-WEIGHT: 700; FONT-SIZE: 14px; FLOAT: left; COLOR: #b41414
+}
+.xinban_xian DIV.xinban_title IMG {
+	FLOAT: right; COLOR: #b41414
+}
+.xinban_xian DIV.xinban_title A {
+	FONT-WEIGHT: 700; COLOR: #b41414
+}
+.xinban_xian DIV.xinban_nc {
+	BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 100%
+}
+.xinban_ce {
+	WIDTH: 95%; TEXT-ALIGN: left
+}
+.xinban_ce DIV {
+	CLEAR: both; MARGIN: 0px 0px 10px; WIDTH: 100%; COLOR: #690007; HEIGHT: 70px
+}
+.xinban_ce DIV IMG {
+	BORDER-RIGHT: #c9c9c7 1px solid; BORDER-TOP: #c9c9c7 1px solid; FLOAT: left; MARGIN: 0px 10px 0px 0px; BORDER-LEFT: #c9c9c7 1px solid; BORDER-BOTTOM: #c9c9c7 1px solid
+}
+.xinban_ce DIV A {
+	COLOR: #690007
+}
+.xinban_ce UL LI {
+	WIDTH: 100%; COLOR: #690007; TEXT-ALIGN: left
+}
+.xinban_ce UL LI A {
+	COLOR: #690007
+}
+.weather_1 {
+	FLOAT: right; MARGIN: 0px; WIDTH: 350px; COLOR: #fff
+}
+.xianban_nc11 {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
