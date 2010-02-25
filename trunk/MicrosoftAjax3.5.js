@@ -5458,7 +5458,7 @@ Sys.Net._WebRequestManager = function Sys$Net$_WebRequestManager() {
 
         // skip the request if it has been aborted;
         if (executor.get_aborted()) {
-            return;
+            return false;
         }
 
         var evArgs = new Sys.Net.NetworkRequestEventArgs(webRequest);
@@ -5469,7 +5469,9 @@ Sys.Net._WebRequestManager = function Sys$Net$_WebRequestManager() {
 
         if (!evArgs.get_cancel()) {
             executor.executeRequest();
+			return true;
         }
+		return false;
     }
 Sys.Net._WebRequestManager.prototype = {
     add_invokingRequest: Sys$Net$_WebRequestManager$add_invokingRequest,
@@ -5673,8 +5675,13 @@ Sys.Net.WebRequest = function Sys$Net$WebRequest() {
             throw Error.invalidOperation(Sys.Res.invokeCalledTwice);
         }
 
-        Sys.Net.WebRequestManager.executeRequest(this);
-        this._invokeCalled = true;
+		var executed = false;
+        executed = Sys.Net.WebRequestManager.executeRequest(this);
+		if(executed)
+		{
+			this._invokeCalled = true;
+		}
+
     }
 Sys.Net.WebRequest.prototype = {
     add_completed: Sys$Net$WebRequest$add_completed,
