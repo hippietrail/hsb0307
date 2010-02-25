@@ -1,0 +1,228 @@
+BODY {
+	MARGIN: 0px; FONT-FAMILY: "宋体"; COLOR: #666666; FONT-SIZE: 12px
+}
+TD {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+A:link {
+	COLOR: #444444; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #444444; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #333333; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.wul {
+	LINE-HEIGHT: 1.7; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.wul A:link {
+	LINE-HEIGHT: 1.7; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.wul A:visited {
+	LINE-HEIGHT: 1.7; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.wul A:hover {
+	LINE-HEIGHT: 1.7; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.ul {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.ul A:link {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.ul A:visited {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.ul A:hover {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.black {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 14px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.blackul {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 13px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.blackul A:link {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 13px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.blackul A:visited {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 13px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.blackul A:hover {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 13px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.whiteul {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #ffffff; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.whiteul A:link {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #ffffff; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.whiteul A:visited {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #ffffff; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.whiteul A:hover {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #ffffff; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.redul {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #ff0000; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.big {
+	LINE-HEIGHT: 1.4; FONT-FAMILY: "黑体"; COLOR: #2476ff; FONT-SIZE: 28px; FONT-WEIGHT: 900; TEXT-DECORATION: none
+}
+.big A:link {
+	LINE-HEIGHT: 1.4; FONT-FAMILY: "黑体"; COLOR: #2476ff; FONT-SIZE: 28px; FONT-WEIGHT: 900; TEXT-DECORATION: none
+}
+.big A:visited {
+	LINE-HEIGHT: 1.4; FONT-FAMILY: "黑体"; COLOR: #2476ff; FONT-SIZE: 28px; FONT-WEIGHT: 900; TEXT-DECORATION: none
+}
+.big A:hover {
+	LINE-HEIGHT: 1.4; FONT-FAMILY: "黑体"; COLOR: #2476ff; FONT-SIZE: 28px; FONT-WEIGHT: 900; TEXT-DECORATION: underline
+}
+.blueul {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.blueul A:link {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.blueul A:visited {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.blueul A:hover {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: underline
+}
+.blueulB {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.new {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.d1 {
+	BORDER-BOTTOM: gray thin solid; BORDER-LEFT: gray thin solid; BORDER-TOP: gray thin solid; BORDER-RIGHT: gray thin solid
+}
+.d2 {
+	BORDER-BOTTOM: #d9d9d9 thin solid; BORDER-LEFT: #d9d9d9 thin solid; BORDER-TOP: #d9d9d9 thin solid; BORDER-RIGHT: #d9d9d9 thin solid
+}
+.input1 {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #888888 1px solid; BACKGROUND-COLOR: #eeeeee; FONT-FAMILY: verdana; FONT-SIZE: 12px; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+.input1-bor {
+	BORDER-BOTTOM: #333333 1px solid; BORDER-LEFT: #333333 1px solid; BACKGROUND-COLOR: #f0f8ff; FONT-FAMILY: verdana; FONT-SIZE: 12px; BORDER-TOP: #333333 1px solid; BORDER-RIGHT: #333333 1px solid
+}
+.mbig {
+	LINE-HEIGHT: 1.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 25px; FONT-WEIGHT: 900; TEXT-DECORATION: none
+}
+.weater {
+	FONT-FAMILY: "宋体"; COLOR: #444444; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.weater A:link {
+	FONT-FAMILY: "宋体"; COLOR: #444444; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.weater A:visited {
+	FONT-FAMILY: "宋体"; COLOR: #444444; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.weater A:hover {
+	FONT-FAMILY: "宋体"; COLOR: #444444; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.hiddenblock {
+	DISPLAY: none
+}
+.showblock {
+	DISPLAY: block
+}
+.divTab1 .normal {
+	BACKGROUND-IMAGE: url(/image/sp_di2.gif)
+}
+.divTab1 .active {
+	BACKGROUND-IMAGE: url(/image/sp_di1.gif); FONT-WEIGHT: bold
+}
+.divTab2 .normal {
+	BACKGROUND-IMAGE: url(/image/w2.gif)
+}
+.divTab2 .active {
+	BACKGROUND-IMAGE: url(/image/w1.gif)
+}
+.divTab3 .normal {
+	BACKGROUND-IMAGE: url(/image/sp_di2.gif)
+}
+.divTab3 .active {
+	BACKGROUND-IMAGE: url(/image/sp_di1.gif); FONT-WEIGHT: bold
+}
+.divTab4 .active {
+	BACKGROUND-IMAGE: url(/image/ju11.gif)
+}
+.divTab4 .normal {
+	BACKGROUND-IMAGE: url(/images/ju1.gif); FONT-WEIGHT: bold
+}
+.jiaohu1 {
+	BORDER-BOTTOM: #b8caa2 1px solid; BACKGROUND: url(/image/hd_up_bg.gif); HEIGHT: 25px; FONT-WEIGHT: normal; BORDER-RIGHT: #b8caa2 1px solid
+}
+.jiaohu2 {
+	HEIGHT: 25px; BORDER-RIGHT: #b8caa2 1px solid
+}
+.bg05 {
+	BORDER-LEFT: #b8caa2 1px solid; COLOR: #47791a; FONT-SIZE: 12px; BORDER-TOP: #b8caa2 1px solid
+}
+.paihang A:link {
+	LINE-HEIGHT: 1.9; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.paihang A:visited {
+	LINE-HEIGHT: 1.9; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.paihang A:hover {
+	LINE-HEIGHT: 1.9; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: underline
+}
+.border1 TD {
+	BORDER-BOTTOM: #b4b4b4 1px solid
+}
+#othborder {
+	BORDER-BOTTOM-WIDTH: 0px !important
+}
+.othborder {
+	BORDER-BOTTOM-WIDTH: 0px !important
+}
+.aend {
+	PADDING-LEFT: 2em; BACKGROUND: url(/image/zi_14.gif) no-repeat left center
+}
+.aend:hover {
+	BACKGROUND: url(/image/zi_15.gif) no-repeat left center
+}
+.border15 {
+	BORDER-BOTTOM: #dadada 0px solid; BORDER-LEFT: #dadada 1px solid; BORDER-TOP: #dadada 0px solid; BORDER-RIGHT: #dadada 1px solid
+}
+#border6 {
+	BORDER-RIGHT: #e5e6de 1px solid
+}
+.article_tdbgall {
+	BACKGROUND: #f5f5f5
+}
+.AnnounceTitle {
+	LINE-HEIGHT: 2.8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 20px; FONT-WEIGHT: 900; TEXT-DECORATION: none
+}
+.menu-zi {
+	FONT-FAMILY: "宋体"; COLOR: #ffffff; FONT-SIZE: 12px
+}
+.main_search {
+	BORDER-BOTTOM: #d2d3d9 1px solid; BORDER-LEFT: #d2d3d9 1px solid; BACKGROUND: #f9f9f9; HEIGHT: 25px; COLOR: #037fa8; BORDER-TOP: #d2d3d9 1px solid; BORDER-RIGHT: #d2d3d9 1px solid
+}
+.main_shadow {
+	HEIGHT: 4px
+}
+.pic {
+	LINE-HEIGHT: 2.4; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.pic A:link {
+	LINE-HEIGHT: 2.4; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.pic A:visited {
+	LINE-HEIGHT: 2.4; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+.pic A:hover {
+	LINE-HEIGHT: 2.4; FONT-FAMILY: "宋体"; COLOR: #272778; FONT-SIZE: 13px; TEXT-DECORATION: underline
+}
+.tt {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 2px
+}
+.kapian {
+	BORDER-BOTTOM: #c5c5c5 1px solid; BORDER-LEFT: 1px; PADDING-RIGHT: 1px; BORDER-TOP: #c5c5c5 1px solid; BORDER-RIGHT: #c5c5c5 1px solid; PADDING-TOP: 20px
+}

@@ -1,0 +1,2 @@
+﻿MAX=50;  //==输入码的最大限长。例如仓頡设定为5了、五笔则为4等。
+CodeListNew="1 ᧑,2 ᧒,3 ᧓,4 ᧔,5 ᧕,6 ᧖,7 ᧗,8 ᧘,9 ᧙,a ᦱ,b ᦚ,b' ᦝ,bb ᦛ,bb' ᦞ,bbb ᦜ,bbb' ᦟ,c ᦎ,c' ᦑ,cc ᦏ,cc' ᦒ,ccc ᦐ,ccc' ᦓ,d ᦳ,e ᧁ,f ᦴ,fw ᦼ,g ᦵ,gsw ᧀ,h ᦷ,hw ᦽ,i ᧆ,j ᦸ,jw ᦾ,k ᦹ,kw ᦿ,l ᧈ,ll ᧉ,m ᦀ,m' ᦁ,mm ᦦ,mm' ᦨ,mmm ᦧ,mmm' ᦩ,mmmm ᦪ,mmmm' ᦫ,n ᦠ,n' ᦣ,nce ᦮,nn ᦡ,nn' ᦤ,nnn ᦢ,nnn' ᦥ,nv ,o ᧇ,p ᧞,pp ᧟,q ᦰ,qw ᦻ,r ᧂ,s ᦲ,t ᧃ,u ᧅ,v ᦔ,v' ᦗ,vce ᦭,vv ᦕ,vv' ᦘ,vvv ᦖ,vvv' ᦙ,vxe ,vze ᦬,w ᦺ,x ᦈ,x' ᦋ,xx ᦉ,xx' ᦌ,xxx ᦊ,xxx' ᦍ,y ᧄ,z ᦂ,z' ᦅ,zz ᦃ,zz' ᦆ,zzz ᦄ,zzz' ᦇ";
