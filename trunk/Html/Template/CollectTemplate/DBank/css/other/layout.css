@@ -1,0 +1,1334 @@
+HTML,.gtxtlist .sbd .filename A:hover,.gmask,#outlinkpop .bd .selfile LI A:hover {
+	BACKGROUND:#fff
+}
+
+HTML,LEGEND,.gtxtlist .sbd .filename A,#outlinkpop .bd .selfile LI A {
+	COLOR:#000
+}
+
+BODY {
+	FONT:12px/1.7 Tahoma,Georgia,Verdana,Simsun,Arial,Helvetica,"Microsoft YaHei",Mingliu
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD,.btn-op SPAN SPAN,#inbox .filepanl .cont STRONG,#inbox .filepanl .viewattach .tips,#outlink .filepanl .cont,.gimport LI,.gimport LI.first .chosemail LI,.gimport LI.act,.gimport .tips,#importmen LI,#importmen LI.act,#sendfile LI,#sendfile LI .fileform P,#groupdrop LI,.gpopup .bd LI,.gpopup .ft P,.gpopup .ft P,#activepop .bd LI P,#activepop .ft,#edituserpop .ft,#copymovepop .bd .pop-tips,#mobbindpop .bd .pop-cont OL,#saveotherpop .bd .pop-tips,#uploadpop .bd .pop-tips,#uploadpop .ft P,#sharepop .bd .pop-tips,#sharepop .bd LI,#sharepop .bd .fricont LI UL,#sharepop .ft P,#outlinkpop .bd .pop-tips,#outlinkpop .bd .pop-info,#outlinkpop .bd .selfile LI {
+	PADDING-RIGHT:0
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD,#inbox .filepanl .viewattach .tips,#outlink .filepanl .cont,.gimport LI,.gimport LI.first .chosemail LI,#importmen LI,#sendfile LI,#sendfile LI .fileform P,#groupdrop LI,.gpopup .bd LI,.gpopup .ft P,.gpopup .ft P,#copymovepop .bd .pop-tips,#mobbindpop .bd .pop-cont OL,#saveotherpop .bd .pop-tips,#uploadpop .bd .pop-tips,#uploadpop .ft P,#sharepop .bd .pop-tips,#sharepop .bd LI,#sharepop .ft P,#outlinkpop .bd .pop-tips,#outlinkpop .bd .pop-info,#outlinkpop .bd .selfile LI,#outlinkpop .ft {
+	PADDING-LEFT:0
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD,.gcont .mhd .breadcrumbs A,.gcont .mhd .oplist,.gtxtlist .shd TABLE TH,.gtxtlist .shd TABLE TH A,.gtxtlist .sbd TH,.gtxtlist .sbd TD,.gtxtlist .sbd .filename A SPAN,.status,.btn-op INPUT,.btn-op SPAN,.btn-op SPAN SPAN,.btn-op-cancel SPAN,.btn-nor SPAN SPAN,.btn-pop SPAN SPAN,.gsearchform,#inbox .filepanl .cont P,#inbox .filepanl .viewattach .tips,.gimport LI.first .chosemail LI,.gimport LI.first .chosemail LI A,.gimport LI.act,#importmen LI,#importmen LI.act,#sendfile LI .fileform UL,.grtips .hd,.grtips .bd,.grtips .ft,#infotips,.gpopup .hd,.gpopup .bd,#loginpop .bd,#activepop .bd,#activepop .bd LI P,#edituserpop .bd,#mobbindpop .bd .pop-cont,#addfripop .bd .pop-cont,#uploadpop .bd .pop-cont,#uploadpop .ft P,#sharepop .bd,#sharepop .bd .tit,#sharepop .bd LI,#sharepop .ft P,#outlinkpop .bd .pop-info .tips,#outlinkpop .bd .selfile LI {
+	PADDING-BOTTOM:0
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD,.chkrad {
+	MARGIN:0
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD,.gcont .mhd .breadcrumbs A,.gtxtlist .shd TABLE TH,.gtxtlist .shd TABLE TH A,.gtxtlist .sbd TH,.gtxtlist .sbd TD,.gtxtlist .sbd .filename A SPAN,.status,.btn-op INPUT,.btn-op SPAN,.btn-op SPAN SPAN,.btn-op-cancel SPAN,.btn-nor SPAN SPAN,.btn-pop SPAN SPAN,.gsearchform,#inbox .filepanl .cont P,#inbox .filepanl .viewattach,#inbox .filepanl .viewattach .tips,#outlink .filepanl .cont,.gimport LI.first .chosemail LI,.gimport LI.first .chosemail LI A,#sendfile LI .fileform UL,#frilist .hd,#infotips,.gpopup .hd,#loginpop .ft,#activepop .ft,#edituserpop .ft,#copymovepop .ft,#mobbindpop .bd .pop-cont,#mobbindpop .ft,#addfripop .bd .pop-cont,#addfripop .ft,#uploadpop .bd .pop-cont,#uploadpop .ft P,#sharepop .bd .tit,#sharepop .bd LI,#sharepop .ft P,#outlinkpop .bd .pop-info .tips,#outlinkpop .bd .selfile LI {
+	PADDING-TOP:0
+}
+
+TABLE {
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	border-spacing:0
+}
+
+FIELDSET,IMG,.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM,.btn-op INPUT,.btn-op SPAN {
+	BORDER-TOP-STYLE:none;
+	BORDER-RIGHT-STYLE:none;
+	BORDER-LEFT-STYLE:none;
+	BORDER-BOTTOM-STYLE:none
+}
+
+LI {
+	LIST-STYLE-TYPE:none
+}
+
+IMG,OBJECT,TEXTAREA,.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM,#sharepop .bd .addmen .giptbox,#outlinkpop .bd .pop-info DIV.other .giptbox,#outlinkpop .bd .selfile TD {
+	VERTICAL-ALIGN:top
+}
+
+INPUT,SELECT,.gtxtlist .sbd .filename A IMG,.gimglist LI A SPAN EM,.gimglist LI A SPAN EM IMG,.giptbox,.btn-pre,.btn-next,.gimport LI.first .chosemail LI,.gimport .tips IMG,#importfile .btn-view,#sendfile LI .fileform LI IMG,.grtips .ft SPAN,#activepop .bd LI IMG,#outlinkpop .bd .selfile LI A IMG {
+	VERTICAL-ALIGN:middle
+}
+
+CAPTION,TH {
+	TEXT-ALIGN:left
+}
+
+H1,H2,H3,H4,H5,H6,INPUT,TEXTAREA,SELECT,ADDRESS,CAPTION,CITE,CODE,DFN,EM,TH,VAR,ABBR,ACRONYM {
+	FONT-SIZE:100%;
+	FONT-STYLE:normal
+}
+
+Q:unknown,Q:unknown {
+	content:""
+}
+
+INS,A,.gtxtlist .sbd .filename A:hover,.txt-hide,.txt-hide:hover,.gbtn:hover,#sharepop .bd .fricont LI H4 A:hover,#outlinkpop .bd .selfile LI A:hover {
+	TEXT-DECORATION:none
+}
+
+.clearfix:unknown,#hd:unknown,#bd:unknown,#ft:unknown,.hd:unknown,.bd:unknown,.ft:unknown,.part:unknown,.gmodule:unknown {
+	CLEAR:both;
+	VISIBILITY:hidden;
+	HEIGHT:0;
+	content:"."
+}
+
+.clearfix:unknown,#hd:unknown,#bd:unknown,#ft:unknown,.hd:unknown,.bd:unknown,.ft:unknown,.part:unknown,.gmodule:unknown,.gtxtlist .shd TABLE TH A,.gimglist LI A SPAN,.gimglist LI A SPAN EM,#inbox .filepanl .cont STRONG,#contact .sbd SPAN,.gimport LI.first .chosemail LI A,#frilist .bd LI STRONG,#frilist .bd H6 A,#loadprogress .hd EM,.gdrop .gdrop-cont A,.grtips .hd P A,#uploadpop .bd LI .progress SPAN,#sharepop .bd .fricont LI H4 A,#sharepop .bd .fricont LI H4 A STRONG,#outlinkpop .bd .selfile LI A,#outlinkpop .bd .selfile LI A STRONG,#outlinkpop .bd .selfile LI.on .btn-selfile-clo {
+	DISPLAY:block
+}
+
+.clearfix,#hd,#bd,#ft,.hd,.bd,.ft,.part,.gmodule,.gcont .mbd,.gtxtlist,.gfileview,.gtxtlist .shd TABLE TH A,.gtxtlist .sbd,.gfileview .sbd,.gimglist LI,#inbox .filepanl .viewattach,#inbox .filepanl .viewattach LI,.gimport LI.first .chosemail LI,#sendfile LI .fileform,.gdrop .gdrop-cont LI,.gdrop .gdrop-cont A,.gpopup .bd LI,.gpopup .ft P,#sharepop .bd .fricont LI UL,#outlinkpop .bd .pop-info DIV,#outlinkpop .bd .selfile LI A STRONG {
+	ZOOM:1
+}
+
+A {
+	COLOR:#06c
+}
+
+A:hover,.gcont .mhd .breadcrumbs A,.gimport .tips A,#uploadpop .bd LI .op A,#sharepop .bd .opmen .ico-setup,#outlinkpop .bd .pop-info P A {
+	TEXT-DECORATION:underline
+}
+
+.hide,.gimport LI.first .chosemail UL,#frilist .bd UL UL,#frilist .bd DIV UL,#uploadpop .bd LI.ok .progress,#uploadpop .bd LI.ok .op,#uploadpop .bd LI.ok .info SPAN,#uploadpop .bd LI.fail .progress,#uploadpop .bd LI.fail .info SPAN,#uploadpop .bd LI.over .progress,#outlinkpop .bd .selfile LI .btn-selfile-clo,#attachpop .bd .catlist,#attachpop .bd .pop-cont .sft,#attachpop .ft .catlist {
+	DISPLAY:none
+}
+
+.gcont,.gcont .mbd,.gtxtlist .sbd,.gfileview .sbd,.gimport LI.first .chosemail,#attachpop .giptbox .btn-cholist {
+	RIGHT:0
+}
+
+.gcont,.gcont .mbd,.gtxtlist .sbd,.gfileview .sbd,.gtxtlist .sft,.gfileview .sft,.gmask,#attachpop .bd .catlist,#attachpop .ft .catlist {
+	LEFT:0
+}
+
+.gcont,.gcont .mbd,.gtxtlist .shd TABLE,.gtxtlist .sbd,.gfileview .sbd,.gtxtlist .sft,.gfileview .sft,.gmask,.gsearchform .iptbox-search,#frilist .bd,#sharepop .bd .searchmen .giptbox,#outlinkpop .bd .selfile LI A {
+	WIDTH:100%
+}
+
+.gcont,.gcont .mbd,.gtxtlist .sft,.gfileview .sft,#attachpop .bd .pop-cont .sbd {
+	BOTTOM:0
+}
+
+.gcont,.gcont .mbd,.gtxtlist .sbd,.gfileview .sbd,.gtxtlist .sft,.gfileview .sft,.gimglist LI A SPAN EM,.gmask,.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton,.gimport LI.first .chosemail,.gimport LI.first .btn-chomail,#importfile .ico-setup,#loadprogress,.gdrop,.grtips,#infotips,.gpopup,.gpopup .hd .act,.gpopup .bd .pop-msg,#addfripop .bd .pop-cont LI .btn-cholist,#uploadpop .bd LI .op,#sharepop .bd .chkcont LI .btn-share-del,#outlinkpop .bd .selfile LI .btn-selfile-clo,#attachpop .giptbox .btn-cholist,#attachpop .bd .catlist,#attachpop .ft .catlist {
+	POSITION:absolute
+}
+
+.gcont,.gimglist .sbd,.gmask {
+	TOP:0
+}
+
+.gcont,.gtxtlist .shd TABLE,.btn-nor SPAN,.btn-pop SPAN,#outlinkpop .bd .selfile LI A {
+	HEIGHT:100%
+}
+
+.gcont .mhd,#importfile .btn-sel {
+	Z-INDEX:3
+}
+
+.gcont .mhd,.gpopup .bd,.gpopup .ft {
+	BORDER-LEFT:#fff 1px solid
+}
+
+.gcont .mhd,.gimglist LI A SPAN,.gimglist LI A SPAN EM IMG,.gsearchform,.gimport,.gimport LI.first,#importfile #importname,#importfile .btn-sel,#importfile .btn-view,.gdrop .gdrop-cont,.gpopup .popinner,.gpopup .bd,.gpopup .bd .pop-cont,#addfripop .bd .pop-cont LI,#uploadpop .bd LI,#sharepop .bd .chkcont,#sharepop .bd .chkcont LI,#outlinkpop .bd .selfile LI,#attachpop .bd .pop-tips,#attachpop .bd .pop-tips .catalog,#attachpop .bd .pop-tips .catalog .giptbox,#attachpop .ft,#attachpop .ft .finfo,#attachpop .ft .giptbox {
+	POSITION:relative
+}
+
+.gcont .mhd {
+	HEIGHT:62px
+}
+
+.gcont .mhd .breadcrumbs,.gcont .mhd .breadcrumbs H1,.gtxtlist,.gfileview,.gtxtlist .shd,.gtxtlist .sbd TH,.gtxtlist .sbd TD,.gtxtlist .sft,.gfileview .sft,.gimglist LI,.gimglist LI A SPAN,.txt-hide,.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM,.btn-open,.btn-close,.btn-nor SPAN SPAN EM,#inbox .filepanl .viewattach LI,.gimport LI.first .chosemail LI,#sendfile UL,#sendfile LI LABEL,#sendfile LI .fileform,#frilist .bd LI STRONG,#frilist .bd H6 A,#loadprogress .hd,#loadprogress .bd,.grtips .hd P A,.gpopup .hd,.gpopup .bd LI,.gpopup .ft P,#noticepop .bd DT,#uploadpop .bd LI .progress SPAN,#sharepop .bd .contactmen,#sharepop .bd .nowmen,#outlinkpop .bd .pop-info DIV,#outlinkpop .bd .selfile LI,#outlinkpop .bd .selfile LI A,#outlinkpop .bd .selfile LI A STRONG {
+	OVERFLOW:hidden
+}
+
+.gcont .mhd .breadcrumbs,#sendfile LI LABEL,#loginpop .hd .tit,#activepop .hd .tit,#edituserpop .hd .tit {
+	LINE-HEIGHT:2
+}
+
+.gcont .mhd .breadcrumbs,.gcont .mhd .breadcrumbs H1,#sharepop .bd .tit {
+	HEIGHT:27px
+}
+
+.gcont .mhd .breadcrumbs H1,.btn-op-cancel SPAN {
+	PADDING-RIGHT:17px
+}
+
+.gcont .mhd .breadcrumbs H1,.gimglist LI,.btn-attach-back,.btn-attach-back-on,.btn-attach-up,.btn-attach-view,#sendfilecont #frilist,.grtips .bd IMG,#noticepop .bd DT,#sharepop .bd .contactmen,#sharepop .bd .nowmen {
+	DISPLAY:inline
+}
+
+.gcont .mhd .breadcrumbs H1,.status .status-size,.gimglist LI,.btn-attach-back,.btn-attach-back-on,.btn-attach-up,.btn-attach-view,#inbox .filetime SPAN,#outlink .filetime SPAN,#inbox .filepanl .viewattach DL,#sendfile LI LABEL,#loadprogress .bd DT,.grtips .hd H2,.grtips .bd IMG,.gpopup .hd .tit,.gpopup .bd .label,#noticepop .bd DT,.gexchange .bd .pop-cont LI SPAN,.gexchange .bd .pop-cont LI.type DD,#uploadpop .bd LI .info H3,#uploadpop .bd LI .progress .loading,#uploadpop .ft P,#sharepop .bd .contactmen,#sharepop .bd .nowmen,#sharepop .bd .tit H3,#sharepop .ft P,#sharepop .bd .opmen,#outlinkpop .bd .selfile LI A IMG,#attachpop .bd .pop-tips .tit,#attachpop .bd .pop-tips .catalog,#attachpop .bd .pop-tips .op,#attachpop .ft .label,#attachpop .ft .finfo {
+	FLOAT:left
+}
+
+.gcont .mhd .breadcrumbs H1 {
+	FONT:bold 12px/2.2 Simsun;
+	_line-height:2.3
+}
+
+.gcont .mhd .breadcrumbs H1,#uploadpop .bd LI .progress EM {
+	MARGIN-LEFT:16px
+}
+
+.gcont .mhd .breadcrumbs A,#sendfile LI LABEL,#frilist .hd,#addfripop .bd .pop-cont .label SPAN,#uploadpop .bd .pop-cont,#sharepop .bd .searchmen,#sharepop .bd .addmen,#outlinkpop .bd .pop-info .tips {
+	PADDING-RIGHT:5px
+}
+
+.gcont .mhd .breadcrumbs A,#frilist .hd,#uploadpop .bd .pop-cont,#sharepop .bd .searchmen,#sharepop .bd .addmen {
+	PADDING-LEFT:5px
+}
+
+.gcont .mhd .oplist,#sharepop .bd {
+	PADDING-RIGHT:16px
+}
+
+.gcont .mhd .oplist,.ico-addattach,.btn-op SPAN SPAN {
+	PADDING-LEFT:16px
+}
+
+.gcont .mhd .oplist,.gimglist LI A STRONG,.giptbox,.giptarea,.gimport LI.first .chosemail UL,.gimport .tips,#sendfile LI,#sharepop .bd .searchmen,#sharepop .bd .fricont LI UL,#outlinkpop .bd .pop-info {
+	PADDING-TOP:3px
+}
+
+.gcont .mhd .oplist A {
+	MARGIN-RIGHT:3px
+}
+
+.gcont .mbd,.gtxtlist .sbd,.gfileview .sbd,#frilist .bd {
+	OVERFLOW-Y:auto;
+	OVERFLOW-X:hidden
+}
+
+.gcont .mbd,#importfile .btn-view,#attachpop .bd .pop-tips {
+	Z-INDEX:2
+}
+
+.gcont .mbd {
+	TOP:62px;
+	_height:100%
+}
+
+.gtxtlist TABLE {
+	WIDTH:auto
+}
+
+.gtxtlist .shd,.btn-nor,#outlink .filepanl .viewfile TD {
+	HEIGHT:25px
+}
+
+.gtxtlist .shd TABLE TH,.gtxtlist .shd TABLE TH A,.gtxtlist .sbd TH,.gtxtlist .sbd TD,#inbox .filetime SPAN,#outlink .filetime SPAN {
+	PADDING-RIGHT:8px
+}
+
+.gtxtlist .shd TABLE TH,.gtxtlist .shd TABLE TH A,.gtxtlist .sbd TH,.gtxtlist .sbd TD,#inbox .filetime SPAN,#outlink .filetime SPAN,#frilist .bd UL,#frilist .bd DIV {
+	PADDING-LEFT:8px
+}
+
+.gtxtlist .shd TABLE TH.fircol,.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN {
+	BACKGROUND:none transparent scroll repeat 0% 0%
+}
+
+.gtxtlist .shd TABLE TH A {
+	MARGIN:0 -8px 0 -6px;
+	FONT:12px/1.231 Simsun
+}
+
+.gtxtlist .shd TABLE TH.fircol A {
+	MARGIN-LEFT:-8px
+}
+
+.gtxtlist .shd TABLE TH A EM,#inbox .filepanl .cont {
+	PADDING-RIGHT:14px
+}
+
+.gtxtlist .sbd,.gfileview .sbd {
+	BOTTOM:22px;
+	TOP:25px
+}
+
+.gtxtlist .sbd TH,.gtxtlist .sbd TD,.gtxtlist .sbd .filename A SPAN STRONG,.gimglist LI A STRONG,#inbox .filepanl .cont STRONG,#frilist .bd LI STRONG,#frilist .bd H6 A,#sharepop .bd .tit H3,#sharepop .bd .fricont LI H4 A STRONG,#outlinkpop .bd .selfile LI A STRONG,#attachpop .bd .pop-tips .catalog .giptbox H3,#attachpop .ft .giptbox H3 {
+	FONT-WEIGHT:normal
+}
+
+.gtxtlist .sbd TH,.gtxtlist .sbd TD {
+	WHITE-SPACE:nowrap;
+	TEXT-OVERFLOW:ellipsis
+}
+
+.gtxtlist .sbd .filename A,.gtxtlist .sbd .filename A SPAN,.gtxtlist .sbd .filename A SPAN STRONG,.ico-disk,.ico-flie,.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM,.grtips .ft SPAN,#outlinkpop .bd .pop-info .tips {
+	DISPLAY:inline-block
+}
+
+.gtxtlist .sbd .filename A,.gtxtlist .sbd .filename A SPAN,.gimglist LI A STRONG,.gsearchform,.gimport LI.first .chosemail UL,.gimport LI.first .chosemail LI A {
+	PADDING-LEFT:3px
+}
+
+.gtxtlist .sbd .filename A,.gdrop .gdrop-cont .unable A,#sharepop .bd .chkcont LI {
+	CURSOR:default
+}
+
+.gtxtlist .sbd .filename A,#contact .sbd SPAN {
+	LINE-HEIGHT:1.5
+}
+
+.gtxtlist .sbd .filename A IMG {
+	MARGIN-RIGHT:2px
+}
+
+.gtxtlist .sbd .filename A SPAN,.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN,.gdrop .gdrop-cont,#outlinkpop .bd .selfile LI A IMG {
+	PADDING-RIGHT:1px
+}
+
+.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN,.gdrop .gdrop-cont {
+	PADDING-LEFT:1px
+}
+
+.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN,#inbox .filetime SPAN,#outlink .filetime SPAN,.gdrop .gdrop-cont,.gdrop .gdrop-cont .dark-line,#groupdrop LI {
+	PADDING-BOTTOM:1px
+}
+
+.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN {
+	CURSOR:text
+}
+
+.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN,.giptbox,.giptarea,.ico-disk,.ico-flie,#frilist .bd LI STRONG,#frilist .bd H6 A,.gdrop .gdrop-cont LI,#groupdrop LI {
+	LINE-HEIGHT:1.231
+}
+
+.gtxtlist .sbd TR.rename A SPAN,.gtxtlist .sbd TR.rename A:hover SPAN,#inbox .filetime SPAN,#outlink .filetime SPAN,.gdrop .gdrop-cont,#groupdrop LI {
+	PADDING-TOP:1px
+}
+
+.gtxtlist .sbd .filepanl {
+	MARGIN:1px
+}
+
+.gtxtlist .sft,.gfileview .sft {
+	HEIGHT:22px;
+	_bottom:62px
+}
+
+.status {
+	PADDING-RIGHT:18px
+}
+
+.status,.ico-setup,.btn-nor SPAN SPAN,.btn-pop SPAN SPAN,#sharepop .bd .fricont LI H4 A STRONG {
+	PADDING-LEFT:18px
+}
+
+.status,#uploadpop .bd LI .progress {
+	HEIGHT:20px
+}
+
+.status .status-num,.btn-open,.btn-close,#inbox .filepanl .viewattach .tips,#sendfile LI .fileform P SPAN,#sendfilecont #frilist,.grtips .hd P,#loginpop .ft P .lostpwd,#levelpop .bd .pop-cont LI.consum A,#uploadpop .bd LI .info SPAN,#uploadpop .bd LI.setuptips .ico-setup,#uploadpop .ft .pop-op,#sharepop .ft .pop-op,#outlinkpop .bd .pop-info P A {
+	FLOAT:right
+}
+
+.gimglist LI {
+	MARGIN:8px 7px 11px 25px;
+	HEIGHT:98px
+}
+
+.gimglist LI,#attachpop .bd .pop-tips .op {
+	WIDTH:80px
+}
+
+.gimglist LI,#loadprogress .bd DL {
+	LINE-HEIGHT:1.4
+}
+
+.gimglist LI,.gimglist LI A SPAN,.btn-open,.btn-close,#loadprogress .hd,#loadprogress .bd DT {
+	TEXT-ALIGN:center
+}
+
+.gimglist LI A SPAN {
+	WIDTH:78px;
+	HEIGHT:78px
+}
+
+.gimglist LI A SPAN,.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM,#frilist .bd LI STRONG,#frilist .bd H6 A,#outlinkpop .bd .selfile LI A STRONG {
+	CURSOR:pointer
+}
+
+.gimglist LI A SPAN EM,.gpopup {
+	LEFT:50%;
+	TOP:50%
+}
+
+.gimglist LI A SPAN EM IMG {
+	LEFT:-50%;
+	MAX-WIDTH:76px;
+	MAX-HEIGHT:76px;
+	TOP:-50%
+}
+
+.gimglist LI A STRONG,.gsearchform,.gimport LI.first .chosemail UL,.gimport LI.first .chosemail LI A {
+	PADDING-RIGHT:3px
+}
+
+.gimglist LI A STRONG,#frilist .hd,#uploadpop .bd LI,#uploadpop .bd LI.ok,#outlinkpop .ft {
+	PADDING-BOTTOM:6px
+}
+
+.txt-hide {
+	FONT:0/20 arial
+}
+
+.giptbox,.giptarea,#sendfile LI .fileform UL,#frilist .hd H3 {
+	PADDING-RIGHT:2px;
+	PADDING-LEFT:2px
+}
+
+.giptbox,.giptarea {
+	FONT-SIZE:12px;
+	FONT-FAMILY:Tahoma
+}
+
+.giptbox,.giptarea,.gimport LI.first .chosemail UL,.gimport .tips,#sendfile LI,#sendfile LI .fileform P,.gdrop .gdrop-cont A,#sharepop .bd .fricont LI UL {
+	PADDING-BOTTOM:3px
+}
+
+.giptbox,#frilist {
+	WIDTH:180px
+}
+
+.giptbox,.btn-attach-back,.btn-attach-back-on,.grtips .hd P A {
+	HEIGHT:15px
+}
+
+.ico-setup {
+	LINE-HEIGHT:14px
+}
+
+.ico-setup,.ico-disk,.ico-flie,.btn-attach-view,.btn-nor SPAN SPAN EM {
+	HEIGHT:14px
+}
+
+.ico-disk,.ico-flie,#inbox .filepanl .cont P,#inbox .filepanl .cont STRONG,#inbox .filepanl .viewattach,#frilist .bd LI STRONG,#frilist .bd H6 A,#sharepop .bd {
+	PADDING-LEFT:20px
+}
+
+.gbtn,.gbtn SPAN,.gbtn INPUT,.gbtn EM {
+	outline:none
+}
+
+.btn-attach-back,.btn-attach-back-on,.btn-attach-up,.btn-attach-view {
+	MARGIN-LEFT:8px
+}
+
+.btn-attach-back,.btn-attach-back-on,.btn-nor SPAN SPAN EM,.grtips .hd P A {
+	WIDTH:15px
+}
+
+.btn-attach-up {
+	WIDTH:13px
+}
+
+.btn-attach-up,#outlinkpop .bd .selfile LI {
+	HEIGHT:16px
+}
+
+.btn-attach-view,.btn-chomail,.btn-cholist,.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton {
+	WIDTH:22px
+}
+
+.btn-share-del {
+	WIDTH:9px;
+	HEIGHT:9px
+}
+
+.btn-selfile-clo {
+	WIDTH:6px
+}
+
+.btn-selfile-clo,#uploadpop .bd LI .progress .loading {
+	HEIGHT:6px
+}
+
+.btn-chomail,.btn-cholist,.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton,#frilist .bd LI STRONG,#frilist .bd H6 A {
+	HEIGHT:18px
+}
+
+.btn-open,.btn-close {
+	MARGIN:6px 12px 0 0;
+	WIDTH:11px;
+	COLOR:#9296a2
+}
+
+.btn-open,.btn-close,.btn-pre,.btn-next {
+	HEIGHT:10px
+}
+
+.btn-pre,.btn-next {
+	WIDTH:10px;
+	COLOR:#fff
+}
+
+.btn-op {
+	LINE-HEIGHT:24px
+}
+
+.btn-op,#attachpop .bd .pop-tips .tit {
+	_line-height:1.8
+}
+
+.btn-op INPUT,.btn-op SPAN,.gdrop .gdrop-cont A,.grtips .hd,.grtips .bd,.grtips .ft,#infotips,.gpopup .hd,.gexchange .bd .pop-cont LI.type,#sharepop .bd .tit {
+	PADDING-RIGHT:10px
+}
+
+.btn-op INPUT,.btn-op SPAN,#uploadpop .bd LI {
+	PADDING-LEFT:6px
+}
+
+.btn-op INPUT,.btn-op SPAN {
+	MARGIN-LEFT:2px;
+	OVERFLOW:visible;
+	HEIGHT:24px
+}
+
+.btn-op-cancel SPAN {
+	PADDING-LEFT:17px
+}
+
+.btn-nor,.btn-nor SPAN SPAN,.btn-pop,.btn-pop SPAN SPAN,.gpopup .bd,#copymovepop .ft,#mobbindpop .ft,#addfripop .ft,#saveotherpop .ft,#noticepop .ft,.gexchange .ft,#uploadpop .ft,#sharepop .ft,#outlinkpop .ft {
+	PADDING-RIGHT:9px
+}
+
+.btn-nor {
+	LINE-HEIGHT:25px
+}
+
+.btn-nor SPAN SPAN EM,#uploadpop .bd LI.setuptips .ico-setup {
+	MARGIN-TOP:5px
+}
+
+.btn-nor SPAN SPAN EM,.grtips .hd P A {
+	FONT:0/20 Arial
+}
+
+.btn-pop-clo,.btn-pop-clo2 {
+	WIDTH:28px
+}
+
+.btn-pop-clo,.btn-pop-clo2,.btn-pop-min {
+	HEIGHT:17px
+}
+
+.btn-pop-min {
+	WIDTH:27px
+}
+
+.btn-pop {
+	LINE-HEIGHT:28px;
+	HEIGHT:28px
+}
+
+.gloadgray,.gloadgray *,#importmen {
+	COLOR:#666
+}
+
+.gmask,#loadprogress,.grtips,.gpopup {
+	Z-INDEX:99
+}
+
+.gmask,#importfile .btn-sel {
+	FILTER:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity:0
+}
+
+.gmask {
+	HEIGHT:250px
+}
+
+.gsearchform .iptbox-search {
+	MARGIN:0 -3px
+}
+
+.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton,.gimport LI.first .btn-chomail {
+	RIGHT:1px
+}
+
+.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton,#noticepop .bd DT {
+	FONT:0/50 Arial
+}
+
+.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton,.gimport LI.first .btn-chomail,#outlinkpop .bd .selfile LI .btn-selfile-clo {
+	TOP:5px
+}
+
+.gsearchform .btn-search,.gsearchform .contactbutton,.gsearchform .clearbutton {
+	_right:6px
+}
+
+#netdisk .seccol,#netdisk .thicol,#inbox2 TABLE .seccol,#inbox2 TABLE .thicol,#outlink TABLE .seccol,#outlink TABLE .thicol {
+	WIDTH:92px
+}
+
+#netdisk .seccol,#outlink TABLE .seccol,#sendfile LI LABEL,.grtips .ft,.gpopup .bd .label,#copymovepop .ft .pop-op,#mobbindpop .ft,#addfripop .ft,#saveotherpop .ft,#noticepop .ft,.gexchange .bd .pop-cont LI SPAN,.gexchange .ft,#sharepop .bd .tit,#outlinkpop .ft {
+	TEXT-ALIGN:right
+}
+
+#netdisk .foucol,#inbox2 TABLE .foucol,#outlink TABLE .foucol {
+	WIDTH:148px
+}
+
+#inbox TABLE .fircol,#contact TABLE .fircol {
+	WIDTH:138px
+}
+
+#inbox TABLE .thicol,#contact TABLE .foucol,#sharepop .bd .contactmen,#sharepop .bd .nowmen {
+	WIDTH:218px
+}
+
+#inbox .filepanl .cont {
+	PADDING-LEFT:14px;
+	PADDING-TOP:14px
+}
+
+#inbox .filepanl .cont,#loginpop .ft,#activepop .ft,#edituserpop .ft,#copymovepop .ft,#saveotherpop .ft,#noticepop .ft,.gexchange .ft,#uploadpop .ft,#sharepop .ft {
+	PADDING-BOTTOM:14px
+}
+
+#inbox .filepanl .cont P,#inbox .filepanl .viewattach {
+	PADDING-RIGHT:20px
+}
+
+#inbox .filepanl .cont STRONG,#copymovepop .bd .pop-tips,#saveotherpop .bd .pop-tips,#uploadpop .bd .pop-tips,#uploadpop .bd LI.setuptips DIV,#sharepop .bd .searchmen,#sharepop .bd .addmen,#attachpop .bd .pop-tips {
+	PADDING-BOTTOM:5px
+}
+
+#inbox .filepanl .cont STRONG,.gimport {
+	PADDING-TOP:20px
+}
+
+#inbox .filepanl .viewattach,.gexchange .bd .pop-cont {
+	PADDING-BOTTOM:8px
+}
+
+#inbox .filepanl .viewattach {
+	LINE-HEIGHT:1.6
+}
+
+#inbox .filepanl .viewattach LI {
+	MARGIN-TOP:8px;
+	PADDING-LEFT:40px
+}
+
+#inbox .filepanl .viewattach DL {
+	HEIGHT:36px
+}
+
+#outlink .filepanl .cont,#uploadpop .bd LI .progress .loading SPAN {
+	MARGIN-TOP:1px
+}
+
+#outlink .filepanl .cont,#sharepop .bd .pop-tips,#outlinkpop .bd .pop-tips,#outlinkpop .bd .pop-info {
+	PADDING-BOTTOM:10px
+}
+
+#outlink .filepanl .viewfile TH.fircol {
+	BACKGROUND-IMAGE:none
+}
+
+#outlink .filepanl .viewfile .fircol SPAN {
+	PADDING-LEFT:26px
+}
+
+#contact TABLE .thicol {
+	WIDTH:126px
+}
+
+#contact .sbd TD {
+	LINE-HEIGHT:1.8;
+	BORDER-BOTTOM:#e5e9ec 1px solid
+}
+
+#contact .sbd .seccol,#contact .sbd .thicol,#contact .sbd .foucol {
+	BORDER-LEFT:#e5e9ec 1px solid
+}
+
+.gimport {
+	PADDING-RIGHT:65px
+}
+
+.gimport,#activepop .bd LI P {
+	PADDING-LEFT:65px
+}
+
+.gimport,#attachpop .ft {
+	PADDING-BOTTOM:20px
+}
+
+.gimport LI,#mobbindpop .bd .pop-cont OL {
+	PADDING-BOTTOM:15px
+}
+
+.gimport LI,#mobbindpop .bd .pop-cont OL,#mobbindpop .bd .pop-cont LI,#sharepop .ft {
+	PADDING-TOP:15px
+}
+
+.gimport LI.first {
+	WIDTH:435px
+}
+
+.gimport LI.first .chosemail,#levelpop .bd .pop-cont LI.type DD,#sharepop .bd .addmen .giptbox {
+	WIDTH:150px
+}
+
+.gimport LI.first .chosemail {
+	TOP:15px
+}
+
+.gimport LI.first .chosemail INPUT {
+	WIDTH:144px
+}
+
+.gimport LI.first .chosemail UL {
+	MARGIN-TOP:-1px
+}
+
+.gimport LI P,.gimport LI.act {
+	PADDING-LEFT:90px
+}
+
+.gimport LI P,#sendfile LI .fileform P SPAN,#sharepop .bd .fricont SPAN,#sharepop .bd .chkcont SPAN {
+	COLOR:#999
+}
+
+.gimport LI.act,#importmen LI.act {
+	PADDING-TOP:30px
+}
+
+.gimport .tips {
+	MARGIN-TOP:30px;
+	WIDTH:500px
+}
+
+.gimport .tips,#infotips,.gpopup .hd,.gexchange .bd .pop-cont LI.type,#sharepop .bd .tit {
+	PADDING-LEFT:10px
+}
+
+#importfile #importname {
+	Z-INDEX:4
+}
+
+#importfile .btn-sel {
+	MARGIN-LEFT:-139px
+}
+
+#importfile .btn-sel,#sendfile LI LABEL,#sharepop .bd .fricont LI H4 {
+	HEIGHT:23px
+}
+
+#importfile .btn-view {
+	MARGIN-LEFT:-55px
+}
+
+#importfile .chosemail {
+	LEFT:88px
+}
+
+#importfile .ico-setup {
+	LEFT:250px;
+	TOP:20px
+}
+
+#importmen LI,.gpopup .bd,#loginpop .bd,#activepop .bd,#activepop .bd LI P,#edituserpop .bd,#saveotherpop .ft,#noticepop .ft,.gexchange .bd .pop-cont LI.type DT,.gexchange .ft,#uploadpop .ft,#sharepop .bd,#outlinkpop .bd .pop-info P,#attachpop .ft LI {
+	PADDING-TOP:10px
+}
+
+#importmen LI.act {
+	PADDING-LEFT:140px
+}
+
+#importmen H3,#loginpop .hd .tit,#activepop .hd .tit,#edituserpop .hd .tit {
+	FONT-SIZE:14px
+}
+
+#importmen H3 {
+	COLOR:#263347
+}
+
+#sendfile {
+	MARGIN:5px 192px 0 0
+}
+
+#sendfile LI LABEL {
+	WIDTH:50px;
+	_margin-right:-3px
+}
+
+#sendfile LI LABEL.other {
+	LINE-HEIGHT:20
+}
+
+#sendfile LI .fileform INPUT,#sendfile LI .fileform TEXTAREA,#sendfile LI .fileform UL {
+	WIDTH:98%
+}
+
+#sendfile LI .fileform TEXTAREA {
+	HEIGHT:80px
+}
+
+#sendfile LI .fileform P,#loadprogress .bd DL,.grtips .hd,.grtips .bd,.grtips .ft,#copymovepop .bd .pop-tips,#saveotherpop .bd .pop-tips,.gexchange .bd .pop-cont LI.type DD,#uploadpop .bd .pop-tips,#uploadpop .bd LI.setuptips DIV,#sharepop .bd .opmen LI {
+	PADDING-TOP:5px
+}
+
+#sendfile LI .fileform P SPAN {
+	PADDING-RIGHT:2%
+}
+
+#sendfile LI .fileform LI IMG {
+	MARGIN-LEFT:6px
+}
+
+#frilist .hd H3,#mobbindpop .ft,#addfripop .ft {
+	PADDING-BOTTOM:2px
+}
+
+#frilist .hd H3,#sharepop .bd .pop-tips,#outlinkpop .bd .pop-tips,#outlinkpop .ft,#attachpop .ft {
+	PADDING-TOP:2px
+}
+
+#frilist .bd {
+	HEIGHT:308px
+}
+
+#frilist .bd UL UL,#frilist .bd DIV UL,.gexchange .bd .pop-cont {
+	PADDING-LEFT:28px
+}
+
+#frilist .bd LI STRONG,#frilist .bd H6 A {
+	MARGIN-TOP:6px
+}
+
+#sendfilecont #frilist {
+	MARGIN:10px
+}
+
+#loadprogress {
+	RIGHT:48px;
+	WIDTH:260px;
+	TOP:17px
+}
+
+#loadprogress .hd {
+	FONT:10px/1.4 Arial,Simsun;
+	WIDTH:64px;
+	HEIGHT:40px
+}
+
+#loadprogress .hd EM {
+	PADDING-TOP:7px
+}
+
+#loadprogress .bd {
+	FILTER:alpha(opacity=80);
+	WIDTH:254px;
+	HEIGHT:63px;
+	-moz-opacity:.8;
+	opacity:.8
+}
+
+#loadprogress .bd DT,#sharepop .bd .pop-tips {
+	FONT-WEIGHT:bold
+}
+
+#loadprogress .bd DT {
+	WIDTH:102px;
+	HEIGHT:58px
+}
+
+#loadprogress .bd DT EM {
+	FONT:32px/54px Arial
+}
+
+.gdrop,#noticepop {
+	Z-INDEX:100
+}
+
+.gdrop {
+	MARGIN:2px;
+	WIDTH:112px
+}
+
+.gdrop .gdrop-cont,.gpopup .popinner {
+	LEFT:-2px;
+	TOP:-2px
+}
+
+.gdrop .gdrop-cont A {
+	PADDING-LEFT:19px
+}
+
+.gdrop .gdrop-cont A,.gpopup .bd LI,.gpopup .ft P,.gexchange .bd .pop-cont LI.type,#sharepop .bd .addmen,#attachpop .bd .pop-tips .op {
+	PADDING-TOP:4px
+}
+
+#drop {
+	LEFT:280px;
+	TOP:180px
+}
+
+#groupdrop {
+	RIGHT:17px;
+	WIDTH:229px;
+	TOP:176px
+}
+
+.grtips {
+	RIGHT:20px;
+	WIDTH:329px;
+	BOTTOM:3px;
+	HEIGHT:101px
+}
+
+.grtips .hd,.grtips .bd,.grtips .ft {
+	PADDING-LEFT:11px
+}
+
+.grtips .hd P A {
+	COLOR:#d2dbe5
+}
+
+.grtips .bd IMG {
+	MARGIN:5px 14px 0 0
+}
+
+#infotips {
+	Z-INDEX:101;
+	LEFT:42%;
+	TOP:42px
+}
+
+.gpopup .hd {
+	HEIGHT:26px
+}
+
+.gpopup .hd .act {
+	RIGHT:11px;
+	TOP:-1px;
+	_top:0
+}
+
+.gpopup .bd,.gpopup .ft {
+	BORDER-RIGHT:#fff 1px solid;
+	BORDER-TOP:#fff 0 solid
+}
+
+.gpopup .bd,#copymovepop .ft,#mobbindpop .ft,#addfripop .ft,#saveotherpop .ft,#noticepop .ft,.gexchange .ft,#uploadpop .ft,#sharepop .ft {
+	PADDING-LEFT:9px
+}
+
+.gpopup .bd {
+	BORDER-BOTTOM:#fff 0 solid
+}
+
+.gpopup .bd LI,.gpopup .ft P,.gpopup .ft P,.gexchange .bd .pop-cont LI.type {
+	PADDING-BOTTOM:4px
+}
+
+.gpopup .bd .giptbox {
+	WIDTH:190px
+}
+
+.gpopup .bd .label,#attachpop .bd .pop-tips .tit,#attachpop .ft .label {
+	LINE-HEIGHT:2.1
+}
+
+.gpopup .bd .label {
+	MARGIN-RIGHT:4px;
+	_margin-right:1px
+}
+
+.gpopup .bd .pop-cont,#sharepop .bd .fricont,#sharepop .bd .chkcont,#attachpop .bd .pop-cont .sbd {
+	OVERFLOW:auto
+}
+
+.gpopup .ft {
+	BORDER-BOTTOM:#fff 1px solid
+}
+
+.gpopup .ft P,#noticepop .bd DL,.gexchange .bd .pop-cont,#uploadpop .ft .pop-op {
+	PADDING-TOP:8px
+}
+
+#loginpop {
+	MARGIN:-120px 0 0 -185px
+}
+
+#loginpop,#activepop,#edituserpop {
+	WIDTH:368px
+}
+
+#loginpop .hd,#activepop .hd,#edituserpop .hd {
+	HEIGHT:34px
+}
+
+#loginpop .hd .tit,#activepop .hd .tit,#edituserpop .hd .tit {
+	PADDING-LEFT:32px
+}
+
+#loginpop .bd {
+	PADDING-RIGHT:60px;
+	PADDING-LEFT:60px
+}
+
+#loginpop .bd .pop-tips,#activepop .bd .pop-tips,#edituserpop .bd .pop-tips {
+	MARGIN:-5px 0 23px
+}
+
+#loginpop .bd .pop-msg {
+	LEFT:104px
+}
+
+#loginpop .bd .pop-msg,#activepop .bd .pop-msg {
+	TOP:33px
+}
+
+#loginpop .bd .label {
+	WIDTH:42px
+}
+
+#loginpop .ft {
+	PADDING-RIGHT:62px;
+	PADDING-LEFT:102px
+}
+
+#activepop {
+	MARGIN:-144px 0 0 -185px
+}
+
+#activepop .bd {
+	PADDING-RIGHT:52px;
+	PADDING-LEFT:52px
+}
+
+#activepop .bd .pop-msg {
+	LEFT:116px
+}
+
+#activepop .bd .label,#edituserpop .bd .label,#addfripop .bd .pop-cont .label {
+	WIDTH:60px
+}
+
+#activepop .bd LI IMG {
+	MARGIN-RIGHT:5px
+}
+
+#activepop .ft {
+	PADDING-LEFT:116px
+}
+
+#edituserpop {
+	MARGIN:-150px 0 0 -185px
+}
+
+#edituserpop .bd {
+	PADDING-RIGHT:37px;
+	PADDING-LEFT:47px
+}
+
+#edituserpop .bd .pop-msg {
+	LEFT:110px;
+	TOP:50px
+}
+
+#edituserpop .ft {
+	PADDING-LEFT:110px
+}
+
+#copymovepop {
+	LEFT:514px;
+	TOP:126px
+}
+
+#copymovepop,#saveotherpop {
+	WIDTH:332px
+}
+
+#copymovepop .bd .pop-cont {
+	HEIGHT:262px
+}
+
+#mobbindpop,#addfripop {
+	MARGIN:-125px 0 0 -216px
+}
+
+#mobbindpop,#addfripop,#noticepop,.gexchange,#uploadpop {
+	WIDTH:432px
+}
+
+#mobbindpop .bd .pop-cont,#addfripop .bd .pop-cont {
+	PADDING-RIGHT:50px;
+	PADDING-LEFT:50px;
+	HEIGHT:165px
+}
+
+#mobbindpop .bd .pop-cont LI SPAN {
+	PADDING-LEFT:30px
+}
+
+#mobbindpop .bd .pop-cont LI .giptbox,#outlinkpop .bd .pop-info .tips {
+	MARGIN-LEFT:10px
+}
+
+#mobbindpop .bd .pop-cont LI .giptbox {
+	WIDTH:70px
+}
+
+#addfripop .bd .pop-cont UL {
+	PADDING-TOP:12px
+}
+
+#addfripop .bd .pop-cont LI .btn-cholist {
+	RIGHT:16px;
+	TOP:9px
+}
+
+#addfripop .bd .pop-cont .giptbox {
+	WIDTH:223px
+}
+
+#saveotherpop {
+	MARGIN:-212px 0 0 -166px
+}
+
+#saveotherpop .bd .pop-cont {
+	HEIGHT:288px
+}
+
+#noticepop {
+	MARGIN:-72px 0 0 -216px
+}
+
+#noticepop .bd DT {
+	MARGIN:8px 20px 0 30px;
+	WIDTH:48px;
+	HEIGHT:46px
+}
+
+.gexchange {
+	MARGIN:-160px 0 0 -216px
+}
+
+.gexchange .bd .pop-cont {
+	PADDING-RIGHT:28px;
+	FONT-FAMILY:Simsun
+}
+
+.gexchange .bd .pop-cont LI SPAN {
+	WIDTH:94px
+}
+
+.gexchange .bd .pop-cont LI.consum SPAN,#levelpop .bd .pop-cont LI.validity SPAN {
+	WIDTH:136px
+}
+
+#levelpop .bd .pop-cont LI.consum A {
+	MARGIN-RIGHT:40px
+}
+
+#pvpop .bd .pop-cont LI.type DD,#sizepop .bd .pop-cont LI.type DD,#outlinkpop .bd .pop-info .label {
+	WIDTH:100px
+}
+
+#pvpop .bd .pop-cont LI.consum A,#sizepop .bd .pop-cont LI.consum A {
+	MARGIN-LEFT:28px
+}
+
+#uploadpop {
+	MARGIN:-212px 0 0 -216px
+}
+
+#uploadpop .bd .pop-cont {
+	HEIGHT:298px
+}
+
+#uploadpop .bd LI {
+	PADDING-RIGHT:6px
+}
+
+#uploadpop .bd LI,#uploadpop .bd LI.ok {
+	PADDING-TOP:6px
+}
+
+#uploadpop .bd LI .info,#uploadpop .bd LI .progress .loading {
+	WIDTH:290px
+}
+
+#uploadpop .bd LI .progress SPAN {
+	MARGIN-TOP:7px
+}
+
+#uploadpop .bd LI .progress .loading SPAN {
+	WIDTH:50%;
+	HEIGHT:4px
+}
+
+#uploadpop .bd LI .op {
+	LEFT:310px;
+	TOP:4px
+}
+
+#uploadpop .bd LI.ok {
+	PADDING-RIGHT:15px;
+	PADDING-LEFT:15px
+}
+
+#uploadpop .bd LI.setuptips DIV,#attachpop .ft {
+	PADDING-RIGHT:12px;
+	PADDING-LEFT:12px
+}
+
+#sharepop,#outlinkpop,#attachpop {
+	MARGIN:-245px 0 0 -292px;
+	WIDTH:585px
+}
+
+#sharepop .bd .contactmen,#sharepop .bd .nowmen {
+	MARGIN-RIGHT:10px;
+	HEIGHT:358px
+}
+
+#sharepop .bd .tit {
+	LINE-HEIGHT:27px
+}
+
+#sharepop .bd LI {
+	LINE-HEIGHT:1.9
+}
+
+#sharepop .bd .fricont,#sharepop .bd .chkcont {
+	HEIGHT:295px
+}
+
+#sharepop .bd .fricont LI UL {
+	PADDING-LEFT:36px
+}
+
+#sharepop .bd .fricont LI LI {
+	MARGIN:1px 10px 0 0
+}
+
+#sharepop .bd .fricont LI H4 {
+	LINE-HEIGHT:23px
+}
+
+#sharepop .bd .fricont LI H4 A {
+	MARGIN:0 10px 0 6px
+}
+
+#sharepop .bd .chkcont LI {
+	PADDING-LEFT:22px;
+	MARGIN:1px 1px 0
+}
+
+#sharepop .bd .chkcont LI .btn-share-del {
+	RIGHT:10px;
+	TOP:7px
+}
+
+#sharepop .bd .opmen {
+	WIDTH:85px
+}
+
+#outlinkpop .bd .pop-cont {
+	OVERFLOW-Y:hidden;
+	OVERFLOW-X:auto;
+	WIDTH:561px;
+	HEIGHT:126px
+}
+
+#outlinkpop .bd .pop-info {
+	MARGIN-TOP:10px
+}
+
+#outlinkpop .bd .pop-info DIV.other .giptbox {
+	WIDTH:346px
+}
+
+#outlinkpop .bd .pop-info .tips {
+	PADDING-LEFT:25px
+}
+
+#outlinkpop .bd .pop-info P {
+	WIDTH:352px
+}
+
+#outlinkpop .bd .selfile TD {
+	WIDTH:185px
+}
+
+#outlinkpop .bd .selfile LI {
+	MARGIN:0 8px 0 6px;
+	WIDTH:171px;
+	LINE-HEIGHT:16px
+}
+
+#outlinkpop .bd .selfile LI A:hover STRONG,#outlinkpop .bd .selfile LI.on A STRONG {
+	BACKGROUND:#dde5f2
+}
+
+#outlinkpop .bd .selfile LI .btn-selfile-clo {
+	RIGHT:6px
+}
+
+#attachpop .bd .pop-tips .catalog {
+	WIDTH:410px
+}
+
+#attachpop .bd .pop-tips .catalog .giptbox {
+	WIDTH:400px
+}
+
+#attachpop .bd .pop-tips .catalog .giptbox H3 {
+	MARGIN-LEFT:4px
+}
+
+#attachpop .giptbox .btn-cholist {
+	TOP:2px
+}
+
+#attachpop .bd .catlist {
+	WIDTH:404px
+}
+
+#attachpop .bd .catlist,#attachpop .ft .catlist {
+	TOP:23px
+}
+
+#attachpop .bd .pop-cont,#attachpop .bd .pop-cont .gimglist .sbd {
+	HEIGHT:245px
+}
+
+#attachpop .bd .pop-cont .sbd {
+	HEIGHT:220px
+}
+
+#attachpop .bd .pop-cont .gimglist .sbd LI {
+	MARGIN:8px 18px 11px 10px
+}
+
+#attachpop .ft .label {
+	WIDTH:65px
+}
+
+#attachpop .ft .finfo {
+	WIDTH:446px
+}
+
+#attachpop .ft .giptbox {
+	WIDTH:424px
+}
+
+#attachpop .ft .catlist {
+	WIDTH:428px
+}

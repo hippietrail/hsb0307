@@ -1,0 +1,81 @@
+HTML {
+	BACKGROUND:#fff
+}
+
+HTML,LEGEND {
+	COLOR:#000
+}
+
+BODY {
+	FONT:12px/1.7 Tahoma,Georgia,Verdana,Simsun,Arial,Helvetica,"Microsoft YaHei",Mingliu
+}
+
+BODY,DIV,DL,DT,DD,UL,OL,LI,H1,H2,H3,H4,H5,H6,PRE,CODE,FORM,FIELDSET,LEGEND,INPUT,BUTTON,TEXTAREA,P,BLOCKQUOTE,TH,TD {
+	PADDING-RIGHT:0;
+	PADDING-LEFT:0;
+	PADDING-BOTTOM:0;
+	MARGIN:0;
+	PADDING-TOP:0
+}
+
+TABLE {
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	border-spacing:0
+}
+
+FIELDSET,IMG {
+	BORDER-TOP-STYLE:none;
+	BORDER-RIGHT-STYLE:none;
+	BORDER-LEFT-STYLE:none;
+	BORDER-BOTTOM-STYLE:none
+}
+
+LI {
+	LIST-STYLE-TYPE:none
+}
+
+IMG,OBJECT,TEXTAREA {
+	VERTICAL-ALIGN:top
+}
+
+INPUT,SELECT {
+	VERTICAL-ALIGN:middle
+}
+
+CAPTION,TH {
+	TEXT-ALIGN:left
+}
+
+H1,H2,H3,H4,H5,H6,INPUT,TEXTAREA,SELECT,ADDRESS,CAPTION,CITE,CODE,DFN,EM,TH,VAR,ABBR,ACRONYM {
+	FONT-SIZE:100%;
+	FONT-STYLE:normal
+}
+
+Q:unknown,Q:unknown {
+	content:""
+}
+
+INS,A {
+	TEXT-DECORATION:none
+}
+
+.clearfix:unknown,#hd:unknown,#bd:unknown,#ft:unknown,.hd:unknown,.bd:unknown,.ft:unknown,.part:unknown,.gmodule:unknown {
+	CLEAR:both;
+	DISPLAY:block;
+	VISIBILITY:hidden;
+	HEIGHT:0;
+	content:"."
+}
+
+.clearfix,#hd,#bd,#ft,.hd,.bd,.ft,.part,.gmodule {
+	ZOOM:1
+}
+
+A {
+	COLOR:#06c
+}
+
+A:hover {
+	TEXT-DECORATION:underline
+}

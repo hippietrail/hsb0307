@@ -1,0 +1,1617 @@
+HTML {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 0px; OVERFLOW: auto; PADDING-TOP: 0px; HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+A {
+	FONT-FAMILY: Arial,Tahoma,Georgia,Verdana,Simsun
+}
+.wrap {
+	MARGIN: 0px auto; WIDTH: 1004px
+}
+.copyright {
+	MARGIN: 0px auto; WIDTH: 710px
+}
+.copyright UL {
+	FLOAT: left
+}
+.copyright LI {
+	BORDER-RIGHT: #5d5c5c 1px solid; PADDING-RIGHT: 5px; DISPLAY: inline; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; COLOR: #5d5c5c; LINE-HEIGHT: 26px; PADDING-TOP: 0px; _line-height: 28px
+}
+* + HTML .copyright LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 26px; PADDING-TOP: 0px
+}
+.copyright LI.last {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.copyright LI A {
+	COLOR: #5d5c5c
+}
+.copyright P {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; COLOR: #5d5c5c; PADDING-TOP: 4px
+}
+.copyright P .icpnum {
+	PADDING-RIGHT: 25px; COLOR: #5d5c5c
+}
+.gbtns {
+	DISPLAY: inline-block; OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 30px
+}
+.gbtns SPAN {
+	BACKGROUND: url(images/page_y.jpg) no-repeat 0px -1107px; FLOAT: left; HEIGHT: 30px
+}
+.gbtns SPAN STRONG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 400; FONT-SIZE: 12px; BACKGROUND: url(images/page_y.jpg) repeat-x 0px -1137px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN-LEFT: 13px; LINE-HEIGHT: 22px; PADDING-TOP: 4px; HEIGHT: 30px; TEXT-ALIGN: center; _line-height: 16px; _padding: 8px 0 0
+}
+* + HTML .gbtns SPAN STRONG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px
+}
+.gbtns SPAN STRONG SPAN {
+	DISPLAY: inline-block; FLOAT: none; MARGIN: 0px 5px 0px 0px; VERTICAL-ALIGN: middle; OVERFLOW: hidden
+}
+.gbtns SPAN SPAN {
+	BACKGROUND: url(images/page_y.jpg) no-repeat 0px -1167px; FLOAT: left; WIDTH: 13px; HEIGHT: 30px
+}
+.gbtns SPAN STRONG SPAN.licon {
+	BACKGROUND: url(images/icon.gif) no-repeat -137px -56px; WIDTH: 13px; HEIGHT: 16px
+}
+.gbtns SPAN STRONG SPAN.dicon {
+	BACKGROUND: url(images/icon.gif) no-repeat -137px -73px; WIDTH: 13px; HEIGHT: 16px
+}
+.gbtns SPAN STRONG SPAN.bicon {
+	BACKGROUND: url(images/icon.gif) no-repeat -133px -90px; WIDTH: 17px; POSITION: relative; TOP: 2px; HEIGHT: 16px
+}
+.gbtns SPAN STRONG SPAN.picon {
+	BACKGROUND: url(images/icon.gif) no-repeat -136px -106px; WIDTH: 14px; POSITION: relative; TOP: 0px; HEIGHT: 16px; _top: -2px
+}
+.clewinfo {
+	Z-INDEX: 99; RIGHT: 0px; LEFT: 0px; WIDTH: 100%; WHITE-SPACE: nowrap; POSITION: absolute; TOP: 47px; HEIGHT: 22px; TEXT-ALIGN: center; _top: 46px
+}
+.clewinfo SPAN {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 3px; COLOR: #fff; PADDING-TOP: 3px
+}
+.green {
+	BACKGROUND: #408e16
+}
+.red {
+	BACKGROUND: #c00
+}
+.tipred {
+	COLOR: #c00
+}
+.righticon {
+	BACKGROUND: url(images/icon.gif) no-repeat -130px -146px; HEIGHT: 14px
+}
+.erroricon {
+	BACKGROUND: url(images/icon.gif) no-repeat -132px -185px; HEIGHT: 14px
+}
+.nextbtn {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(images/page.png) no-repeat; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 87px; CURSOR: pointer; HEIGHT: 30px; BORDER-RIGHT-WIDTH: 0px
+}
+.backbtn {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(images/page.png) no-repeat; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 87px; CURSOR: pointer; HEIGHT: 30px; BORDER-RIGHT-WIDTH: 0px
+}
+.nextbtn {
+	BACKGROUND-POSITION: -135px -166px
+}
+.backbtn {
+	BACKGROUND-POSITION: -223px -166px
+}
+.wrap .hd {
+	HEIGHT: 82px
+}
+.wrap .hd .logo {
+	BACKGROUND: url(images/page.png) no-repeat 0px 0px; LEFT: 21px; FLOAT: left; OVERFLOW: hidden; WIDTH: 170px; CURSOR: pointer; POSITION: relative; TOP: 35px; HEIGHT: 33px
+}
+.wrap .hd .msg {
+	RIGHT: 80px; FLOAT: right; COLOR: #2d2d2d; POSITION: relative; TOP: 51px
+}
+.wrap .hd .msg A {
+	COLOR: #3b73c7; TEXT-DECORATION: underline
+}
+.wrap .bd {
+	CLEAR: both; BACKGROUND: #d0dee9; WIDTH: 1004px; HEIGHT: 313px
+}
+.wrap .bd .focuspic {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px -261px; LEFT: 100px; FLOAT: left; WIDTH: 440px; POSITION: relative; TOP: 29px; HEIGHT: 261px
+}
+.wrap .bd .focuspic .lbg {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px 0px; FLOAT: left; WIDTH: 13px; HEIGHT: 261px
+}
+.wrap .bd .focuspic .cbg {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 261px; TEXT-ALIGN: center
+}
+.wrap .bd .focuspic .rbg {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px -522px; FLOAT: right; WIDTH: 13px; HEIGHT: 261px
+}
+.wrap .bd .focuspic .lbtn {
+	DISPLAY: inline-block; Z-INDEX: 1; BACKGROUND: url(images/page.png) no-repeat 0px -203px; LEFT: -20px; OVERFLOW: hidden; WIDTH: 28px; POSITION: absolute; TOP: 94px; HEIGHT: 47px
+}
+.wrap .bd .focuspic .rbtn {
+	DISPLAY: inline-block; Z-INDEX: 1; RIGHT: -20px; BACKGROUND: url(images/page.png) no-repeat -29px -203px; OVERFLOW: hidden; WIDTH: 28px; POSITION: absolute; TOP: 94px; HEIGHT: 47px
+}
+.wrap .login {
+	RIGHT: 17px; FLOAT: right; POSITION: relative; TOP: 50px
+}
+.wrap .title {
+	FLOAT: left; WIDTH: 255px
+}
+.wrap .title H2 {
+	MARGIN-TOP: 4px; FONT-WEIGHT: 400; FLOAT: left; COLOR: #666
+}
+.wrap .title H2 A {
+	FONT-WEIGHT: 700; MARGIN: 0px 1px; COLOR: #06c; TEXT-DECORATION: underline
+}
+.wrap .title .dl {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -389px 0px; FLOAT: left; OVERFLOW: hidden; WIDTH: 52px; MARGIN-RIGHT: 8px; HEIGHT: 20px
+}
+.wrap .pswmsg {
+	CLEAR: both; FLOAT: left; WIDTH: 300px; COLOR: #136b07; HEIGHT: 22px; TEXT-ALIGN: center
+}
+.wrap .pswmsg SPAN {
+	MARGIN-TOP: 5px
+}
+.wrap .login TABLE {
+	CLEAR: both; TABLE-LAYOUT: auto; FLOAT: left; WIDTH: 360px
+}
+.wrap .login TH {
+	FONT-WEIGHT: 400; FONT-SIZE: 14px; VERTICAL-ALIGN: top; WIDTH: 50px; COLOR: #213557; PADDING-TOP: 9px; TEXT-ALIGN: left
+}
+.wrap .login TD {
+	HEIGHT: 41px
+}
+.wrap .login TR TD SPAN {
+	DISPLAY: block; WIDTH: 100px; COLOR: #c00; LINE-HEIGHT: 30px
+}
+.wrap .login TR.tch TD {
+	HEIGHT: 35px; _height: 36px
+}
+.wrap .login TR.tbh TD {
+	PADDING-TOP: 7px; _padding-top: 6px
+}
+.wrap .login .tbg {
+	BORDER-RIGHT: #9faaba 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #9faaba 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(images/page_y.jpg) repeat-x 0px -884px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #9faaba 1px solid; WIDTH: 190px; LINE-HEIGHT: 23px; PADDING-TOP: 0px; BORDER-BOTTOM: #9faaba 1px solid; FONT-FAMILY: Arial; HEIGHT: 23px
+}
+.wrap .login .checkbox {
+	VERTICAL-ALIGN: middle; WIDTH: 13px; MARGIN-RIGHT: 7px; HEIGHT: 13px
+}
+.wrap .login .btn {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: url(images/page.png) no-repeat 0px -33px; OVERFLOW: hidden; BORDER-LEFT: 0px; WIDTH: 134px; CURSOR: pointer; BORDER-BOTTOM: 0px; POSITION: relative; HEIGHT: 41px
+}
+.wrap .login TR.tch TD A {
+	COLOR: #666; _top: 2px; _position: relative
+}
+.wrap .login TR.tch TD A:hover {
+	COLOR: #06c
+}
+.wrap .ad {
+	MARGIN: 48px 0px 0px 81px; WIDTH: 923px; HEIGHT: 110px
+}
+.wrap .ad .module {
+	FLOAT: left; MARGIN-RIGHT: 30px; HEIGHT: 84px
+}
+.wrap .ad .pa {
+	FLOAT: left; MARGIN: 4px 12px 0px 0px; OVERFLOW: hidden; WIDTH: 64px; HEIGHT: 64px
+}
+.wrap .ad .pb {
+	FLOAT: left; MARGIN: 4px 12px 0px 0px; OVERFLOW: hidden; WIDTH: 64px; HEIGHT: 64px
+}
+.wrap .ad .pc {
+	FLOAT: left; MARGIN: 4px 12px 0px 0px; OVERFLOW: hidden; WIDTH: 64px; HEIGHT: 64px
+}
+.wrap .ad .pd {
+	FLOAT: left; MARGIN: 4px 12px 0px 0px; OVERFLOW: hidden; WIDTH: 64px; HEIGHT: 64px
+}
+.wrap .ad .pa {
+	BACKGROUND: url(images/page.png) no-repeat 0px -75px
+}
+.wrap .ad .pb {
+	BACKGROUND: url(images/page.png) no-repeat 0px -139px
+}
+.wrap .ad .pc {
+	BACKGROUND: url(images/page.png) no-repeat -64px -139px
+}
+.wrap .ad .pd {
+	BACKGROUND: url(images/page.png) no-repeat -64px -74px
+}
+.wrap .ad .module DL {
+	FLOAT: left
+}
+.wrap .ad .module DT {
+	FONT-WEIGHT: 700; COLOR: #666; LINE-HEIGHT: 21px
+}
+.wrap .ad .module DD {
+	COLOR: #666; LINE-HEIGHT: 21px
+}
+.wrap .ad .module DD SPAN {
+	FONT-WEIGHT: 700; MARGIN-LEFT: 2px; COLOR: #f00
+}
+.wrap .ad .module DD A {
+	COLOR: #666
+}
+.wrap .ad .module DD A:hover {
+	COLOR: #06c
+}
+.wrap .ft {
+	CLEAR: both; BACKGROUND: #eee; OVERFLOW: hidden; WIDTH: 1004px; HEIGHT: 26px; TEXT-ALIGN: center
+}
+.lft {
+	MIN-WIDTH: 1000px; BACKGROUND: #eee; MARGIN: -26px 0px 0px; WIDTH: 100%; COLOR: #5d5c5c; HEIGHT: 26px; TEXT-ALIGN: center; _margin: -28px 0 0
+}
+.nodisk {
+	MIN-WIDTH: 1000px; MIN-HEIGHT: 100%; WIDTH: 100%; _height: 100%
+}
+.nodisk .hd {
+	MIN-WIDTH: 1000px; BACKGROUND: url(images/page_y.jpg) repeat-x 0px -809px; WIDTH: 100%; HEIGHT: 75px
+}
+.nodisk .hd .logo {
+	BACKGROUND: url(images/page.png) no-repeat 0px 0px; LEFT: 14px; OVERFLOW: hidden; WIDTH: 170px; CURSOR: pointer; POSITION: relative; TOP: 18px; HEIGHT: 33px
+}
+.nodisk .hd .logos {
+	BACKGROUND: url(images/page.png) no-repeat 0px 0px; LEFT: 14px; OVERFLOW: hidden; WIDTH: 170px; CURSOR: pointer; POSITION: relative; TOP: 18px; HEIGHT: 33px
+}
+.nodisk .hd .loginmsg {
+	Z-INDEX: 10000; RIGHT: 37px; FLOAT: right; POSITION: relative; TOP: 9px
+}
+.nodisk .hd .loginmsg .key {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -372px 0px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; WIDTH: 17px; CURSOR: pointer; MARGIN-RIGHT: 4px; HEIGHT: 18px
+}
+.nodisk .hd .loginmsg A {
+	COLOR: #2b2b2b; TEXT-DECORATION: underline
+}
+.nodisk .hd .headside {
+	DISPLAY: inline-block; FLOAT: left; MARGIN: -18px 0px 0px 225px
+}
+.nodisk .hd .headside H1 {
+	FONT-WEIGHT: 400; COLOR: #263347; TEXT-ALIGN: left
+}
+.nodisk .hd .headside H1 STRONG {
+	FONT-WEIGHT: 700
+}
+.nodisk .hd .headtip {
+	Z-INDEX: 100; RIGHT: 37px; FLOAT: right; POSITION: relative; TOP: 9px
+}
+.nodisk .hd .headtip LI {
+	DISPLAY: inline
+}
+.nodisk .hd .headtip .key {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -372px 0px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; WIDTH: 17px; CURSOR: pointer; MARGIN-RIGHT: 4px; HEIGHT: 18px
+}
+.nodisk .hd .headtip A {
+	MARGIN: 0px 8px 0px 2px; COLOR: #2b2b2b; TEXT-DECORATION: underline
+}
+.nodisk .bd {
+	PADDING-BOTTOM: 26px; MARGIN: 35px auto; WIDTH: 766px; COLOR: #000; TEXT-ALIGN: center
+}
+.nodisk .bd:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; FONT: 1px/0 serif; HEIGHT: 0px; content: "."
+}
+* HTML .nodisk .bd {
+	HEIGHT: 1%
+}
+.nodisk .bd .hd {
+	MIN-WIDTH: 766px; BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 766px; BORDER-BOTTOM: #bbc0c6 1px solid; HEIGHT: 34px
+}
+.nodisk .bd .hd SPAN {
+	FLOAT: left
+}
+.nodisk .bd .reg {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -135px -33px; FLOAT: left; OVERFLOW: hidden; WIDTH: 56px; MARGIN-RIGHT: 77px; HEIGHT: 28px
+}
+.nodisk .bd .regs {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -302px -33px; FLOAT: left; OVERFLOW: hidden; WIDTH: 111px; MARGIN-RIGHT: 22px; HEIGHT: 28px
+}
+.nodisk .bd .psw {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -191px -33px; FLOAT: left; OVERFLOW: hidden; WIDTH: 111px; MARGIN-RIGHT: 22px; HEIGHT: 28px
+}
+.nodisk .bd .server {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -302px -90px; FLOAT: left; OVERFLOW: hidden; WIDTH: 112px; MARGIN-RIGHT: 22px; HEIGHT: 28px
+}
+.nodisk .bd .dl {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -301px -61px; WIDTH: 112px; HEIGHT: 28px
+}
+.nodisk .bd UL {
+	FLOAT: left
+}
+.nodisk .bd LI {
+	DISPLAY: inline; FONT-WEIGHT: 700; FLOAT: left; WIDTH: 163px; COLOR: #333; LINE-HEIGHT: 26px; MARGIN-RIGHT: 14px; HEIGHT: 26px
+}
+* + HTML .nodisk .bd LI {
+	LINE-HEIGHT: 28px
+}
+.nodisk .bd LI.bg {
+	BACKGROUND: url(images/page.png) no-repeat -135px -87px; OVERFLOW: hidden
+}
+.nodisk .bd LI.check {
+	BACKGROUND: url(images/page.png) no-repeat -135px -61px; OVERFLOW: hidden; COLOR: #fff
+}
+.nodisk .bd LI.bgs {
+	BACKGROUND: url(images/page.png) no-repeat -135px -139px; OVERFLOW: hidden
+}
+.nodisk .bd LI.checks {
+	BACKGROUND: url(images/page.png) no-repeat -135px -113px; OVERFLOW: hidden; COLOR: #fff
+}
+.nodisk .bd .mbd {
+	MARGIN-TOP: 20px
+}
+.nodisk .bd .mbd A {
+	COLOR: #000
+}
+.nodisk .bd .mbd A:hover {
+	COLOR: #000; TEXT-DECORATION: none
+}
+.nodisk .bd .mbd .leftside {
+	FLOAT: left; WIDTH: 500px
+}
+.nodisk .bd .mbd .leftside TABLE {
+	TABLE-LAYOUT: auto
+}
+.nodisk .bd .mbd .leftside TH {
+	FONT-WEIGHT: 400; VERTICAL-ALIGN: top; WIDTH: 80px; COLOR: #000; PADDING-TOP: 3px; TEXT-ALIGN: right
+}
+* + HTML .nodisk .bd .mbd .leftside TH {
+	PADDING-TOP: 5px
+}
+.nodisk .bd .mbd .leftside TD {
+	WIDTH: 420px; COLOR: #858585; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside TD INPUT.inputext {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; FONT: 12px Simsun; BORDER-LEFT: #98a3b3 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 16px
+}
+.nodisk .bd .mbd .leftside TD INPUT.inpumin {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; FONT: 12px Simsun; BORDER-LEFT: #98a3b3 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 16px
+}
+.nodisk .bd .mbd .leftside TD INPUT.inputext {
+	WIDTH: 255px
+}
+.nodisk .bd .mbd .leftside TD INPUT.inpumin {
+	WIDTH: 80px
+}
+.nodisk .bd .mbd .leftside TD INPUT.checkbox {
+	WIDTH: 13px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 13px; BORDER-BOTTOM-STYLE: none
+}
+.nodisk .bd .mbd .leftside TD EM {
+	PADDING-LEFT: 12px
+}
+.nodisk .bd .mbd .leftside TD P {
+	PADDING-BOTTOM: 12px; COLOR: #999
+}
+.nodisk .bd .mbd .leftside TD P.info {
+	COLOR: #c00
+}
+.nodisk .bd .mbd .leftside TD IMG {
+	VERTICAL-ALIGN: middle; WIDTH: 40px; HEIGHT: 20px
+}
+.nodisk .bd .mbd .leftside TR.tdh TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 30px; COLOR: #408de3; PADDING-TOP: 15px
+}
+.nodisk .bd .mbd .leftside TR.tdh TD SPAN {
+	COLOR: #000
+}
+.nodisk .bd .mbd .leftside TR.tdh TD A {
+	COLOR: #408de3; TEXT-DECORATION: underline
+}
+.nodisk .bd .mbd .leftside TD A.code {
+	MARGIN-LEFT: 5px; COLOR: #408de3; TEXT-DECORATION: underline
+}
+.nodisk .bd .mbd .leftside .register P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 15px; COLOR: #666; LINE-HEIGHT: 20px; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside .register P A {
+	MARGIN-TOP: 15px; DISPLAY: inline-block; FONT-WEIGHT: 700; FONT-SIZE: 14px; COLOR: #2369af
+}
+.nodisk .bd .mbd .leftside .register H3 {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 40px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; PADDING-BOTTOM: 0px; COLOR: #666; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside .register UL {
+	MARGIN-TOP: 2px; WIDTH: 250px
+}
+.nodisk .bd .mbd .leftside .register LI {
+	PADDING-LEFT: 20px; FONT-WEIGHT: 400; BACKGROUND: url(images/icon.gif) no-repeat -135px -124px; COLOR: #666; LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside .register LI A {
+	MARGIN: 0px; COLOR: #06c; TEXT-DECORATION: underline
+}
+.nodisk .bd .mbd .leftside .register LI A:hover {
+	COLOR: #06c
+}
+.nodisk .bd .mbd .leftside .download {
+	COLOR: #666; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside .download LI {
+	DISPLAY: block; FLOAT: left; MARGIN-BOTTOM: 14px; WIDTH: 500px
+}
+.nodisk .bd .mbd .leftside .download LI P {
+	FONT-WEIGHT: 400; MARGIN-BOTTOM: 3px; COLOR: #858585; LINE-HEIGHT: 14px
+}
+.nodisk .bd .mbd .leftside .download LI P A {
+	FONT-WEIGHT: 400; COLOR: #06c; TEXT-DECORATION: underline
+}
+.nodisk .bd .mbd .leftside .leftbtn {
+	MARGIN-TOP: 35px; FLOAT: left; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .leftside .leftbtn .downicon {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: url(images/page.png) no-repeat -302px -128px; BORDER-LEFT: 0px; WIDTH: 103px; BORDER-BOTTOM: 0px; HEIGHT: 32px
+}
+.nodisk .bd .mbd .leftside .download .del {
+	MARGIN: 0px 0px 0px 50px; COLOR: #c00
+}
+.nodisk .bd .mbd .loginav {
+	FLOAT: right; WIDTH: 225px
+}
+.nodisk .bd .mbd .bbsicon {
+	DISPLAY: block; BACKGROUND: url(images/page.png) no-repeat; MARGIN-BOTTOM: 33px; OVERFLOW: hidden; WIDTH: 225px; CURSOR: pointer
+}
+.nodisk .bd .mbd .logicon {
+	DISPLAY: block; BACKGROUND: url(images/page.png) no-repeat; MARGIN-BOTTOM: 33px; OVERFLOW: hidden; WIDTH: 225px; CURSOR: pointer
+}
+.nodisk .bd .mbd .regicon {
+	DISPLAY: block; BACKGROUND: url(images/page.png) no-repeat; MARGIN-BOTTOM: 33px; OVERFLOW: hidden; WIDTH: 225px; CURSOR: pointer
+}
+.nodisk .bd .mbd .diskicon {
+	DISPLAY: block; BACKGROUND: url(images/page.png) no-repeat; MARGIN-BOTTOM: 33px; OVERFLOW: hidden; WIDTH: 225px; CURSOR: pointer
+}
+.nodisk .bd .mbd .bbsicon {
+	BACKGROUND-POSITION: 0px -250px; HEIGHT: 60px
+}
+.nodisk .bd .mbd .logicon {
+	BACKGROUND-POSITION: 0px -310px; HEIGHT: 60px
+}
+.nodisk .bd .mbd .regicon {
+	BACKGROUND-POSITION: 0px -437px; HEIGHT: 60px
+}
+.nodisk .bd .mbd .diskicon {
+	BACKGROUND-POSITION: 0px -371px; POSITION: relative; TOP: -5px; HEIGHT: 66px; _top: -7px
+}
+.nodisk .bd .mbd .enabled {
+	MARGIN: 0px auto; WIDTH: 554px; TEXT-ALIGN: center
+}
+.nodisk .bd .mbd .enabled P {
+	FONT-WEIGHT: 700; MARGIN-BOTTOM: 47px
+}
+.nodisk .bd .mbd .enabled .diskicon {
+	FLOAT: left
+}
+.nodisk .bd .mbd .enabled .bbsicon {
+	FLOAT: right
+}
+.nodisk .bd .mbd .mainside {
+	WIDTH: auto; COLOR: #666; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .mainside .mtop {
+	MARGIN-TOP: 17px
+}
+.nodisk .bd .mbd .mainside .ticon {
+	DISPLAY: inline-block; BACKGROUND: url(images/icon.gif) no-repeat -137px 0px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; WIDTH: 13px; MARGIN-RIGHT: 5px; HEIGHT: 12px
+}
+.nodisk .bd .mbd .mainside .tbtn {
+	CLEAR: both; MARGIN: 35px auto 0px; TEXT-ALIGN: center
+}
+.nodisk .bd .mbd .mainside .squareo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 12px 60px 32px; WIDTH: 261px; PADDING-TOP: 24px; HEIGHT: 162px; _margin: 12px 90px 32px 30px
+}
+.nodisk .bd .mbd .mainside .squareb {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 12px 60px 32px; WIDTH: 261px; PADDING-TOP: 24px; HEIGHT: 162px; _margin: 12px 90px 32px 30px
+}
+.nodisk .bd .mbd .mainside .squareg {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 12px 60px 32px; WIDTH: 261px; PADDING-TOP: 24px; HEIGHT: 162px; _margin: 12px 90px 32px 30px
+}
+.nodisk .bd .mbd .mainside .squareo P {
+	MARGIN-LEFT: 39px
+}
+.nodisk .bd .mbd .mainside .squareb P {
+	MARGIN-LEFT: 39px
+}
+.nodisk .bd .mbd .mainside .squareg P {
+	MARGIN-LEFT: 39px
+}
+.nodisk .bd .mbd .mainside .active {
+	DISPLAY: block; BACKGROUND: url(images/page.png) no-repeat; MARGIN: 21px auto 0px; WIDTH: 153px; HEIGHT: 60px
+}
+.nodisk .bd .mbd .mainside P.titles {
+	FONT-WEIGHT: 700; FONT-SIZE: 14px; COLOR: #c00
+}
+.nodisk .bd .mbd .mainside P.titles EM {
+	COLOR: #000
+}
+.nodisk .bd .mbd .mainside .squareo {
+	BORDER-RIGHT: #ffe594 1px solid; BORDER-TOP: #ffe594 1px solid; BACKGROUND: #fef9e5; BORDER-LEFT: #ffe594 1px solid; BORDER-BOTTOM: #ffe594 1px solid
+}
+.nodisk .bd .mbd .mainside .squareo SPAN {
+	COLOR: #c00
+}
+.nodisk .bd .mbd .mainside .squareo .active {
+	BACKGROUND-POSITION: -225px -310px
+}
+.nodisk .bd .mbd .mainside .squareb {
+	BORDER-RIGHT: #c4c9f3 1px solid; BORDER-TOP: #c4c9f3 1px solid; BACKGROUND: #e9ecff; BORDER-LEFT: #c4c9f3 1px solid; BORDER-BOTTOM: #c4c9f3 1px solid; _margin: 12px 0 32px 30px
+}
+.nodisk .bd .mbd .mainside .squareb .active {
+	BACKGROUND-POSITION: -225px -370px
+}
+.nodisk .bd .mbd .mainside .squareg {
+	BORDER-RIGHT: #c9c9c9 1px solid; BORDER-TOP: #c9c9c9 1px solid; BACKGROUND: #f1f1f1; BORDER-LEFT: #c9c9c9 1px solid; BORDER-BOTTOM: #c9c9c9 1px solid
+}
+.nodisk .bd .mbd .mainside .squareg .ticon {
+	DISPLAY: inline-block; BACKGROUND: url(images/icon.gif) no-repeat -123px 0px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; WIDTH: 13px; MARGIN-RIGHT: 5px; HEIGHT: 12px
+}
+.nodisk .bd .mbd .mainside .squareg .active {
+	BACKGROUND-POSITION: -225px -250px
+}
+.nodisk .bd .mbd .mainside .tip {
+	CLEAR: both; MARGIN: 0px auto; WIDTH: 480px; HEIGHT: 40px
+}
+.nodisk .bd .mbd .mainside .tip SPAN {
+	FONT-WEIGHT: 400; FONT-SIZE: 12px; FLOAT: left; COLOR: #c00
+}
+.nodisk .bd .mbd .mainside .tip P {
+	PADDING-LEFT: 9px; FLOAT: left; MARGIN: 0px; COLOR: #c00; LINE-HEIGHT: 18px; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .mainside .tip .laughface {
+	DISPLAY: inline-block; BACKGROUND: url(images/icon.gif) no-repeat -134px -40px; VERTICAL-ALIGN: middle; WIDTH: 16px; MARGIN-RIGHT: 5px; POSITION: relative; TOP: 2px; HEIGHT: 16px
+}
+.nodisk .bd .mbd .mainside .activation {
+	MARGIN: 0px auto; WIDTH: 263px
+}
+.nodisk .bd .mbd .mainside .activation .squareo {
+	BORDER-RIGHT: #ffe594 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffe594 1px solid; PADDING-LEFT: 0px; BACKGROUND: #fef9e5; PADDING-BOTTOM: 0px; MARGIN: 12px 0px 40px; BORDER-LEFT: #ffe594 1px solid; WIDTH: 261px; PADDING-TOP: 24px; BORDER-BOTTOM: #ffe594 1px solid; HEIGHT: 162px
+}
+.nodisk .bd .mbd .mainside .activation .squareo .active {
+	BACKGROUND-POSITION: -225px -430px
+}
+.nodisk .bd .mbd .mainside .activation .squareo P {
+	MARGIN: 0px; TEXT-ALIGN: center
+}
+.nodisk .bd .mbd .mainside .activation .squareo P.titles {
+	FONT-WEIGHT: 700; FONT-SIZE: 14px; MARGIN-LEFT: 39px; COLOR: #c00; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .mainside .activation .squareo P.titles EM {
+	COLOR: #000
+}
+.nodisk .bd .mbd .mainside .activation A {
+	COLOR: #1063c3; TEXT-DECORATION: underline
+}
+.nodisk .bd .mbd .mainside .activation .smstext {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 2px 0px 0px 12px; BORDER-LEFT: #98a3b3 1px solid; WIDTH: 70px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 20px
+}
+.nodisk .bd .mbd .mainside .activation .smsbtn {
+	CLEAR: both; MARGIN: 0px auto; TEXT-ALIGN: center
+}
+.nodisk .bd .mbd .mainside .activation .smsbtn A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+.nodisk .bd .mbd .mainside .pswation {
+	FLOAT: left; MARGIN: 20px 0px 10px; WIDTH: 100%
+}
+.nodisk .bd .mbd .mainside .pswation H2 {
+	FONT-WEIGHT: 400; FLOAT: left; COLOR: #000; MARGIN-RIGHT: 4px
+}
+.nodisk .bd .mbd .mainside .pswation .pswd {
+	FLOAT: left; COLOR: #000
+}
+.nodisk .bd .mbd .mainside .pswation .pswd EM {
+	MARGIN-LEFT: 10px
+}
+.nodisk .bd .mbd .mainside .pswation .pswd P {
+	MARGIN-BOTTOM: 10px
+}
+.nodisk .bd .mbd .mainside .pswation .pswd P STRONG {
+	COLOR: #000; MARGIN-RIGHT: 5px
+}
+.nodisk .bd .mbd .mainside .pswation .pswtext {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: #98a3b3 1px solid; WIDTH: 210px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 20px
+}
+.nodisk .bd .mbd .mainside .pswation .pswdbtn {
+	MARGIN-TOP: 15px; WIDTH: 93px
+}
+.nodisk .bd .mbd .mainside .pswation .pswd P.blod {
+	FONT-WEIGHT: 700
+}
+.nodisk .bd .mbd .mainside .pswation .pswd P.blod STRONG {
+	MARGIN-LEFT: 5px; COLOR: #fd6c01
+}
+.nodisk .bd .mbd .mainside .pswation .pswbg {
+	MARGIN-TOP: 15px; DISPLAY: inline-block; OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 42px
+}
+.nodisk .bd .mbd .mainside .pswation .pswbg SPAN {
+	BACKGROUND: url(images/page_y.jpg) no-repeat 0px -980px; FLOAT: left; HEIGHT: 42px
+}
+.nodisk .bd .mbd .mainside .pswation .pswbg SPAN STRONG {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; BACKGROUND: url(images/page_y.jpg) repeat-x 0px -1022px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN-LEFT: 13px; COLOR: #fff; LINE-HEIGHT: 42px; PADDING-TOP: 0px; HEIGHT: 42px; TEXT-ALIGN: center; _padding: 8px 0 0
+}
+.nodisk .bd .mbd .mainside .pswation .pswbg SPAN SPAN {
+	BACKGROUND: url(images/page_y.jpg) no-repeat 0px -1064px; FLOAT: left; WIDTH: 13px; HEIGHT: 42px
+}
+.nodisk .bd .mbd .mainside .pswmodify {
+	TABLE-LAYOUT: auto
+}
+.nodisk .bd .mbd .mainside .pswmodify TH {
+	FONT-WEIGHT: 400; WIDTH: 80px; COLOR: #000; LINE-HEIGHT: 30px; HEIGHT: 35px; TEXT-ALIGN: right
+}
+* + HTML .nodisk .bd .mbd .mainside .pswmodify TH {
+	PADDING-TOP: 5px
+}
+.nodisk .bd .mbd .mainside .pswmodify TD {
+	WIDTH: 420px; COLOR: #858585; TEXT-ALIGN: left
+}
+.nodisk .bd .mbd .mainside .pswmodify TD INPUT.inputext {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; FONT: 12px Simsun; BORDER-LEFT: #98a3b3 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 16px
+}
+.nodisk .bd .mbd .mainside .pswmodify TD INPUT.inputext {
+	WIDTH: 220px
+}
+.nodisk .bd .mbd .mainside .pswmodify TD EM {
+	PADDING-LEFT: 10px
+}
+.nodisk .bd .mbd .mainside .pswmodify TD .modbtn {
+	WIDTH: 80px
+}
+.nodisk .bd .mbd .mainside .pswmodify .pswdb TD {
+	PADDING-TOP: 15px
+}
+.error {
+	MIN-WIDTH: 1000px; MIN-HEIGHT: 100%; WIDTH: 100%; _height: 100%
+}
+.error .hd {
+	HEIGHT: 82px
+}
+.error .bd {
+	BACKGROUND: url(images/error.jpg) repeat-x 0px -262px; MARGIN: 80px auto; WIDTH: 780px; COLOR: #000; HEIGHT: 262px; TEXT-ALIGN: left
+}
+.error .bd .erm .elbg {
+	BACKGROUND: url(images/error.jpg) no-repeat 0px 0px; FLOAT: left; WIDTH: 30px; HEIGHT: 262px
+}
+.error .bd .erm .erbg {
+	DISPLAY: inline-block; BACKGROUND: url(images/error.jpg) no-repeat 0px -524px; FLOAT: right; WIDTH: 30px; HEIGHT: 262px
+}
+.error .bd .erm .ebd {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; MARGIN: 42px 0px 0px 42px; WIDTH: 636px; HEIGHT: 178px; _margin: 42px 0 0 33px
+}
+.error .bd .erm .ebd .eh {
+	FONT-WEIGHT: 700; FONT-SIZE: 16px; PADDING-BOTTOM: 3px; COLOR: #32669b; LINE-HEIGHT: 28px; BORDER-BOTTOM: #bbc0c6 1px solid
+}
+.error .bd .erm .ebd .eh .eface {
+	DISPLAY: inline-block; BACKGROUND: url(images/page.png) no-repeat -442px 0px; OVERFLOW: hidden; WIDTH: 21px; MARGIN-RIGHT: 18px; HEIGHT: 33px
+}
+.error .bd .erm .ebd .emsg {
+	MARGIN: 15px 0px 0px; TEXT-ALIGN: center
+}
+.error .bd .erm .ebd .emsg H2 {
+	FONT-WEIGHT: 400; TEXT-ALIGN: left
+}
+.error .bd .erm .ebd .emsg P {
+	LINE-HEIGHT: 28px
+}
+.error .bd .erm .ebd .emsg P.tleft {
+	TEXT-ALIGN: left
+}
+.error .bd .erm .ebd .emsg P.tleft A {
+	COLOR: #1a5db0; TEXT-DECORATION: underline
+}
+.error .bd .erm .ebd .emsg P.upt {
+	MARGIN-TOP: 10px; FONT-WEIGHT: 700; COLOR: #fe6b01
+}
+.error .bd .erm .ebd .emsg P.upt SPAN {
+	COLOR: #2d2d2d
+}
+.error .bd:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; FONT: 1px/0 serif; HEIGHT: 0px; content: "."
+}
+* HTML .error .bd {
+	HEIGHT: 1%
+}
+.eabtn {
+	MARGIN-TOP: 10px; TEXT-ALIGN: left
+}
+.eabtn A {
+	FLOAT: left; COLOR: #000; MARGIN-RIGHT: 10px
+}
+.eabtn A:hover {
+	TEXT-DECORATION: none
+}
+.service {
+	PADDING-RIGHT: 8px; OVERFLOW-Y: auto; PADDING-LEFT: 15px; FONT-WEIGHT: 400; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; WIDTH: 742px; COLOR: #535659; PADDING-TOP: 0px; HEIGHT: 420px
+}
+.service H2 {
+	FONT-SIZE: 12px; MARGIN: 10px 0px; TEXT-ALIGN: left
+}
+.service P {
+	TEXT-INDENT: 24px; LINE-HEIGHT: 20px; TEXT-ALIGN: left
+}
+.service P SPAN {
+	DISPLAY: block; PADDING-LEFT: 24px; TEXT-INDENT: 0px
+}
+.serbtn {
+	MARGIN: 50px auto 0px; TEXT-ALIGN: center
+}
+.focusField {
+	OVERFLOW: hidden; COLOR: #000
+}
+.inputField {
+	OVERFLOW: hidden; COLOR: #000
+}
+.idleField {
+	BACKGROUND: #fff; COLOR: #979797
+}
+.gdrop {
+	BACKGROUND: #d9d9d9
+}
+.gdrop .gdrop-cont {
+	BORDER-RIGHT: #a3b8c9 1px solid; BORDER-TOP: #a3b8c9 1px solid; BACKGROUND: #fbfbfb; BORDER-LEFT: #a3b8c9 1px solid; BORDER-BOTTOM: #a3b8c9 1px solid
+}
+.gdrop .gdrop-cont .dark-line {
+	BORDER-BOTTOM: #d7d7d7 1px solid
+}
+.gdrop .gdrop-cont .light-line {
+	BORDER-TOP: #fff 1px solid
+}
+.gdrop .gdrop-cont A {
+	COLOR: #000
+}
+.gdrop .gdrop-cont A:hover {
+	COLOR: #fff; BACKGROUND-COLOR: #4d84bc; TEXT-DECORATION: none
+}
+.gdrop .gdrop-cont .unable A {
+	COLOR: #999
+}
+.gdrop .gdrop-cont .unable A:hover {
+	COLOR: #999
+}
+.gbtn {
+	BACKGROUND: url(../default/split.png) no-repeat
+}
+.gbtn SPAN {
+	BACKGROUND: url(../default/split.png) no-repeat
+}
+.gbtn INPUT {
+	BACKGROUND: url(../default/split.png) no-repeat
+}
+.gico {
+	BACKGROUND: url(ico.png) no-repeat; outline: none
+}
+.ico-new {
+	BACKGROUND-POSITION: -15px -138px
+}
+.ico-new:hover {
+	BACKGROUND-POSITION: -15px -234px
+}
+.ico-upload {
+	BACKGROUND-POSITION: -15px -162px
+}
+.ico-upload:hover {
+	BACKGROUND-POSITION: -15px -260px
+}
+.ico-del {
+	BACKGROUND-POSITION: -16px -186px
+}
+.ico-del:hover {
+	BACKGROUND-POSITION: -16px -283px
+}
+.ico-now {
+	BACKGROUND-POSITION: -18px -209px
+}
+.ico-now:hover {
+	BACKGROUND-POSITION: -18px -304px
+}
+.ico-addattach {
+	BACKGROUND-POSITION: -18px -371px
+}
+.ico-setup {
+	BACKGROUND-POSITION: -18px -468px
+}
+.btn-clo {
+	BACKGROUND-POSITION: -85px -179px
+}
+.btn-clo:hover {
+	BACKGROUND-POSITION: -102px -179px
+}
+.btn-clo-active {
+	BACKGROUND-POSITION: -119px -179px
+}
+.btn-chomail {
+	BACKGROUND-POSITION: -16px -104px
+}
+.btn-open {
+	BACKGROUND-POSITION: -8px -370px
+}
+.btn-close {
+	BACKGROUND-POSITION: -8px -381px
+}
+.btn-pre {
+	BACKGROUND-POSITION: 2px -381px
+}
+.btn-next {
+	BACKGROUND-POSITION: 4px -368px
+}
+.btn-op {
+	BACKGROUND-POSITION: -174px -156px; COLOR: #000
+}
+.btn-op INPUT {
+	BACKGROUND-POSITION: right -231px
+}
+.btn-op SPAN {
+	BACKGROUND-POSITION: right -231px
+}
+.btn-op:hover {
+	BACKGROUND-POSITION: -174px -181px
+}
+.btn-op:hover INPUT {
+	BACKGROUND-POSITION: right -256px
+}
+.btn-op:hover SPAN {
+	BACKGROUND-POSITION: right -256px
+}
+.btn-search {
+	BACKGROUND-POSITION: -21px -375px; COLOR: #fff; BACKGROUND-COLOR: #fff
+}
+.btn-nor {
+	BACKGROUND-POSITION: right -78px; COLOR: #000
+}
+.btn-nor SPAN {
+	BACKGROUND-POSITION: -173px 0px
+}
+.btn-nor:hover {
+	BACKGROUND-POSITION: right -104px; COLOR: #000
+}
+.btn-nor:hover SPAN {
+	BACKGROUND-POSITION: -173px -26px
+}
+.btn-nor SPAN SPAN {
+	BACKGROUND: url(../default/ico.png) no-repeat -999px 0px
+}
+.btn-pop SPAN SPAN {
+	BACKGROUND: url(../default/ico.png) no-repeat -999px 0px
+}
+.btn-nor-new SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -390px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-new:hover SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -390px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-upload SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -414px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-upload:hover SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -414px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-download SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -438px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-download:hover SPAN SPAN {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -10px -438px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-list SPAN SPAN {
+	PADDING-RIGHT: 14px; BACKGROUND-POSITION: right -100px; PADDING-LEFT: 9px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-list:hover SPAN SPAN {
+	PADDING-RIGHT: 14px; BACKGROUND-POSITION: right -100px; PADDING-LEFT: 9px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.btn-nor-list SPAN SPAN EM {
+	BACKGROUND: url(../default/split.png) no-repeat 0px -348px
+}
+.btn-pop-clo {
+	BACKGROUND-POSITION: -56px -156px
+}
+.btn-pop-clo:hover {
+	BACKGROUND-POSITION: -56px -174px
+}
+.btn-pop-clo2 {
+	BACKGROUND-POSITION: -27px -156px
+}
+.btn-pop-clo2:hover {
+	BACKGROUND-POSITION: -27px -174px
+}
+.btn-pop-min {
+	BACKGROUND-POSITION: 0px -156px
+}
+.btn-pop-min:hover {
+	BACKGROUND-POSITION: 0px -174px
+}
+.btn-pop {
+	BACKGROUND-POSITION: right -395px; COLOR: #000
+}
+.btn-pop SPAN {
+	BACKGROUND-POSITION: -173px -306px
+}
+.btn-pop:hover {
+	BACKGROUND-POSITION: right -424px
+}
+.btn-pop:hover SPAN {
+	BACKGROUND-POSITION: -173px -336px
+}
+.btn-pop-login SPAN SPAN {
+	BACKGROUND-POSITION: -5px -902px; PADDING-LEFT: 28px
+}
+.btn-pop-login:hover SPAN SPAN {
+	BACKGROUND-POSITION: -5px -902px; PADDING-LEFT: 28px
+}
+.btn-pop-save SPAN SPAN {
+	BACKGROUND-POSITION: -5px -871px; PADDING-LEFT: 30px
+}
+.btn-pop-save:hover SPAN SPAN {
+	BACKGROUND-POSITION: -5px -871px; PADDING-LEFT: 30px
+}
+.giptbox {
+	BORDER-RIGHT: #98a4b4 1px solid; BORDER-TOP: #98a4b4 1px solid; BACKGROUND: url(../default/duyao_r_x.png) repeat-x 0px -385px; BORDER-LEFT: #98a4b4 1px solid; BORDER-BOTTOM: #98a4b4 1px solid
+}
+.iptbox-search {
+	COLOR: #666
+}
+.gpopup {
+	Z-INDEX: 1000; BACKGROUND: #d9d9d9; LEFT: 50%; POSITION: absolute; TOP: 50%
+}
+.gpopup .popinner {
+	BORDER-RIGHT: #8fa1b9 1px solid; BORDER-TOP: #8fa1b9 1px solid; BACKGROUND: url(../default/pop_r_x.png) #fdfdfd repeat-x 0px bottom; LEFT: -2px; BORDER-LEFT: #8fa1b9 1px solid; BORDER-BOTTOM: #8fa1b9 1px solid; POSITION: relative; TOP: -2px
+}
+.gpopup .hd {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(../default/duyao_r_x.png) repeat-x 0px -443px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; HEIGHT: 26px
+}
+.gpopup .hd .tit {
+	FLOAT: left; FONT: bold 12px/27px Simsun; COLOR: #2f3c4d
+}
+.gpopup .hd .act {
+	RIGHT: 11px; POSITION: absolute; TOP: -1px; _top: 0
+}
+.gpopup .bd {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #fff 0px solid; PADDING-LEFT: 9px; PADDING-BOTTOM: 0px; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #fff 0px solid; POSITION: relative
+}
+.gpopup .bd .pop-msg {
+	COLOR: #c00; POSITION: absolute
+}
+.gpopup .bd LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; OVERFLOW: hidden; PADDING-TOP: 4px; ZOOM: 1
+}
+.gpopup .ft P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; OVERFLOW: hidden; PADDING-TOP: 4px; ZOOM: 1
+}
+.gpopup .bd .giptbox {
+	BORDER-LEFT-COLOR: #858f9b; BORDER-BOTTOM-COLOR: #dfddde; WIDTH: 190px; COLOR: #666; BORDER-TOP-COLOR: #858f9b; BORDER-RIGHT-COLOR: #dfddde
+}
+.gpopup .bd .label {
+	FLOAT: left; LINE-HEIGHT: 2.1; MARGIN-RIGHT: 4px; TEXT-ALIGN: right; _margin-right: 1px
+}
+.gpopup .bd .pop-cont {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #fff; OVERFLOW: auto; BORDER-LEFT: #c0c0c0 1px solid; BORDER-BOTTOM: #c0c0c0 1px solid; POSITION: relative
+}
+.gpopup .ft {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 0px solid; BORDER-LEFT: #fff 1px solid; BORDER-BOTTOM: #fff 1px solid
+}
+.gpopup .ft P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; PADDING-TOP: 8px
+}
+#loginpop {
+	MARGIN: -120px 0px 0px -185px; WIDTH: 368px
+}
+#loginpop .hd {
+	BACKGROUND-POSITION: 0px -408px; HEIGHT: 34px
+}
+#loginpop .hd .tit {
+	PADDING-LEFT: 32px; FONT-SIZE: 14px; BACKGROUND: url(../default/ico.png) no-repeat -8px -803px; LINE-HEIGHT: 2
+}
+#loginpop .bd {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 60px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+#loginpop .bd .pop-tips {
+	MARGIN: -5px 0px 23px; COLOR: #666
+}
+#loginpop .bd .pop-msg {
+	LEFT: 104px; TOP: 33px
+}
+#loginpop .bd .label {
+	WIDTH: 42px
+}
+#loginpop .ft {
+	PADDING-RIGHT: 62px; PADDING-LEFT: 102px; PADDING-BOTTOM: 14px; PADDING-TOP: 0px
+}
+#loginpop .ft P .lostpwd {
+	FLOAT: right
+}
+#activepop {
+	MARGIN: -144px 0px 0px -185px; WIDTH: 368px
+}
+#activepop .hd {
+	BACKGROUND-POSITION: 0px -408px; HEIGHT: 34px
+}
+#activepop .hd .tit {
+	PADDING-LEFT: 32px; FONT-SIZE: 14px; BACKGROUND: url(../default/ico.png) no-repeat -8px -803px; LINE-HEIGHT: 2
+}
+#activepop .bd {
+	PADDING-RIGHT: 52px; PADDING-LEFT: 52px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+#activepop .bd .pop-tips {
+	MARGIN: -5px 0px 23px; COLOR: #666
+}
+#activepop .bd .pop-msg {
+	LEFT: 116px; TOP: 33px
+}
+#activepop .bd .label {
+	WIDTH: 60px
+}
+#activepop .bd LI P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 65px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+#activepop .bd LI IMG {
+	VERTICAL-ALIGN: middle; MARGIN-RIGHT: 5px
+}
+#activepop .ft {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 116px; PADDING-BOTTOM: 14px; PADDING-TOP: 0px
+}
+#saveotherpop {
+	MARGIN: -212px 0px 0px -166px; WIDTH: 332px
+}
+#saveotherpop .bd .pop-tips {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; COLOR: #666; PADDING-TOP: 5px
+}
+#saveotherpop .bd .pop-cont {
+	HEIGHT: 288px
+}
+#saveotherpop .ft {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; PADDING-BOTTOM: 14px; PADDING-TOP: 10px; TEXT-ALIGN: right
+}
+.image {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.audio {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.video {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.document {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.compress {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.application {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.web {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.file {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.imagegray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.audiogray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.videogray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.documentgray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.compressgray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.applicationgray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.webgray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.filegray {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.imageicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.audioicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.videoicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.documenticon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.compressicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.applicationicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.webicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.fileicon {
+	BACKGROUND: url(../../images/icon.png) no-repeat; OVERFLOW: hidden
+}
+.image {
+	BACKGROUND-POSITION: -179px 0px; FLOAT: left; WIDTH: 26px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.audio {
+	BACKGROUND-POSITION: -311px 0px; FLOAT: left; WIDTH: 31px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.video {
+	BACKGROUND-POSITION: -223px 0px; FLOAT: left; WIDTH: 27px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.document {
+	BACKGROUND-POSITION: -135px 0px; FLOAT: left; WIDTH: 25px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.compress {
+	BACKGROUND-POSITION: -43px 0px; FLOAT: left; WIDTH: 28px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.application {
+	BACKGROUND-POSITION: -268px 0px; FLOAT: left; WIDTH: 27px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.web {
+	BACKGROUND-POSITION: -88px 0px; FLOAT: left; WIDTH: 28px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.file {
+	BACKGROUND-POSITION: 0px 0px; FLOAT: left; WIDTH: 25px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.msnicons {
+	BACKGROUND-POSITION: -378px -87px
+}
+.emailicons {
+	BACKGROUND-POSITION: -431px -87px
+}
+.qqicons {
+	BACKGROUND-POSITION: -378px -139px
+}
+.sendicons {
+	BACKGROUND-POSITION: -431px -139px
+}
+.dbankicons {
+	BACKGROUND-POSITION: -378px -191px
+}
+.triangularicon {
+	BACKGROUND-POSITION: -385px -30px; DISPLAY: inline-block; WIDTH: 5px; HEIGHT: 9px
+}
+.titleicon {
+	BACKGROUND-POSITION: -248px -35px; DISPLAY: inline-block; WIDTH: 13px; HEIGHT: 12px
+}
+.imagegray {
+	BACKGROUND-POSITION: -179px -49px; FLOAT: left; WIDTH: 26px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.audiogray {
+	BACKGROUND-POSITION: -311px -49px; FLOAT: left; WIDTH: 31px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.videogray {
+	BACKGROUND-POSITION: -223px -49px; FLOAT: left; WIDTH: 27px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.documentgray {
+	BACKGROUND-POSITION: -135px -49px; FLOAT: left; WIDTH: 25px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.compressgray {
+	BACKGROUND-POSITION: -43px -49px; FLOAT: left; WIDTH: 28px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.applicationgray {
+	BACKGROUND-POSITION: -268px -49px; FLOAT: left; WIDTH: 27px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.webgray {
+	BACKGROUND-POSITION: -88px -49px; FLOAT: left; WIDTH: 28px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.filegray {
+	BACKGROUND-POSITION: 0px -49px; FLOAT: left; WIDTH: 25px; MARGIN-RIGHT: 7px; HEIGHT: 31px
+}
+.framemoduleshow {
+	Z-INDEX: 1000; LEFT: 50%; POSITION: absolute; TOP: 50%
+}
+.framemodule {
+	BORDER-RIGHT: #c4c4c4 1px solid; BORDER-TOP: #c4c4c4 1px solid; Z-INDEX: 100; BACKGROUND: #f7f7f7; LEFT: -2px; BORDER-LEFT: #c4c4c4 1px solid; WIDTH: 432px; BOTTOM: 2px; BORDER-BOTTOM: #c4c4c4 1px solid; POSITION: relative
+}
+.frameheader {
+	BACKGROUND-POSITION: 0px -247px; MARGIN: 1px 1px 0px; HEIGHT: 33px
+}
+.frameheader H1 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: 700; FONT-SIZE: 12px; FLOAT: left; COLOR: #fff; LINE-HEIGHT: 33px; HEIGHT: 33px
+}
+.frameheader A {
+	FLOAT: right; MARGIN: 12px 12px 0px 0px; LINE-HEIGHT: 9px; HEIGHT: 9px
+}
+.framecenter {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.framecenter EM.lftspace {
+	FLOAT: right; PADDING-TOP: 5px
+}
+.framecenter P {
+	COLOR: #000
+}
+.framemian {
+	BORDER-RIGHT: #c0c0c0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #c0c0c0 1px solid; MARGIN-TOP: 10px; OVERFLOW-Y: scroll; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 410px; PADDING-TOP: 0px; BORDER-BOTTOM: #c0c0c0 1px solid; HEIGHT: 278px
+}
+.framefoot P {
+	FLOAT: left; COLOR: #858585; LINE-HEIGHT: 18px
+}
+.framefoot P.paddingtop {
+	PADDING-TOP: 10px
+}
+.framefoot INPUT {
+	FONT-SIZE: 12px; FLOAT: right; MARGIN: 0px 0px 0px 8px
+}
+.frameheader {
+	BACKGROUND: url(../default/lane_page_y.png) 0px -706px; MARGIN: 1px 0px 0px
+}
+.frameheader H1 {
+	BACKGROUND: url(../default/lane_win_sprites.png) no-repeat -75px -24px; WIDTH: 78px; COLOR: #2c3d51; TEXT-INDENT: -999%
+}
+.frameheader .min {
+	MARGIN-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -171px -330px; WIDTH: 29px; HEIGHT: 16px
+}
+.frameheader .close {
+	MARGIN-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -171px -330px; WIDTH: 29px; HEIGHT: 16px
+}
+.frameheader .close:hover {
+	BACKGROUND-POSITION: -91px -446px
+}
+.frameheader .min {
+	BACKGROUND-POSITION: -91px -355px
+}
+.framecenter {
+	BACKGROUND: url(../default/lane_win_bg.gif) repeat-x
+}
+.framemodule .btn {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -132px 0px; BORDER-LEFT: 0px; CURSOR: pointer; BORDER-BOTTOM: 0px; HEIGHT: 30px
+}
+.framemodule .cancelbutton {
+	WIDTH: 58px
+}
+.framemodule .copysbutton {
+	WIDTH: 58px
+}
+.framemodule .savebutton {
+	WIDTH: 58px
+}
+.framemodule .updatebutton {
+	WIDTH: 58px
+}
+.framemodule .removebutton {
+	WIDTH: 58px
+}
+.framemodule .closebutton {
+	WIDTH: 58px
+}
+.framemodule .confirmbutton {
+	WIDTH: 58px
+}
+.framemodule .mainbtn .savebutton {
+	BACKGROUND-POSITION: -141px -120px
+}
+.framemodule .mainbtn .cancelbutton {
+	BACKGROUND-POSITION: -61px -155px
+}
+.framemodule .mainbtn .confirmbutton {
+	BACKGROUND-POSITION: 0px -190px
+}
+.framemodule .mainbtn .removebutton {
+	BACKGROUND-POSITION: -141px -225px
+}
+.framemodule .mainbtn .copysbutton {
+	BACKGROUND-POSITION: -61px -260px
+}
+.framemodule .mainbtn .updatebutton {
+	BACKGROUND-POSITION: 0px -295px
+}
+.framemodule .mainbtn .closebutton {
+	BACKGROUND-POSITION: -140px -410px
+}
+.framemodule .mainbtn .largefilesbutton {
+	BACKGROUND-POSITION: 0px -470px; WIDTH: 93px
+}
+.framemodule INPUT.gray {
+	COLOR: #999
+}
+.framemodule INPUT.txt {
+	BORDER-RIGHT: #e4e4e4 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #858e9d 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(lane_page_y.png) repeat-x 0px -746px; PADDING-BOTTOM: 5px; BORDER-LEFT: #858e9d 1px solid; WIDTH: 195px; PADDING-TOP: 5px; BORDER-BOTTOM: #e4e4e4 1px solid
+}
+.framemodule .errortip {
+	COLOR: #cd0100
+}
+.frameheadernor {
+	BACKGROUND: url(../default/lane_win_bg.gif) repeat-x 0px -675px; HEIGHT: 26px
+}
+.frameheadernor H1 {
+	HEIGHT: 26px
+}
+.framecentersend SPAN {
+	BACKGROUND: url(../default/lane_bg_tip.png) no-repeat 0px 0px; WIDTH: 48px; HEIGHT: 47px
+}
+.framelogin {
+	Z-INDEX: 1000; BACKGROUND: url(../../images/loginbg.png) 50% top; LEFT: 50%; MARGIN: -184px 0px 0px -125px; WIDTH: 369px; POSITION: absolute; TOP: 50%
+}
+.frameloginheader {
+	HEIGHT: 34px
+}
+.frameloginheader H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; FONT-WEIGHT: 700; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #2f3d4f; PADDING-TOP: 12px
+}
+.framelogin SPAN {
+	HEIGHT: 25px
+}
+.framelogin SPAN A {
+	DISPLAY: block; FLOAT: right; MARGIN: 14px 17px 0px 0px; WIDTH: 9px; HEIGHT: 9px
+}
+.framelogincenter {
+	PADDING-LEFT: 10px; MARGIN: 10px 0px 20px 8px; WIDTH: 350px
+}
+.framelogincenter #dbkshowregiback A {
+	COLOR: #06c
+}
+.frameloginp {
+	LINE-HEIGHT: 18px
+}
+.frameloginp EM {
+	FONT-WEIGHT: 700; COLOR: #c00
+}
+.frameloginfoot {
+	CLEAR: both; BACKGROUND: url(../../images/loginbg.png) 50% bottom; WIDTH: 369px; HEIGHT: 10px
+}
+.framelogin P {
+	FONT-SIZE: 12px; COLOR: #2f3d4f; TEXT-ALIGN: left
+}
+.framelogin TABLE {
+	FLOAT: left; MARGIN: 10px 0px 20px 12px
+}
+.framelogin TABLE TH {
+	PADDING-RIGHT: 5px; WIDTH: 70px; LINE-HEIGHT: 30px; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.framelogin TABLE TD {
+	LINE-HEIGHT: 30px; TEXT-ALIGN: left
+}
+.framelogin TABLE TD IMG {
+	VERTICAL-ALIGN: text-bottom; MARGIN-RIGHT: 5px
+}
+.framelogin TABLE TD A {
+	COLOR: #0e62c2
+}
+.framelogin TABLE TD A:hover {
+	COLOR: #c1d7e6
+}
+.framelogin TABLE TD .inputext {
+	BORDER-RIGHT: #98a4b4 1px solid; BORDER-TOP: #98a4b4 1px solid; BORDER-LEFT: #98a4b4 1px solid; WIDTH: 193px; COLOR: #979797; BORDER-BOTTOM: #98a4b4 1px solid
+}
+.framelogin TABLE TD .inputextgray {
+	BORDER-RIGHT: #cbd1d9 1px solid; BORDER-TOP: #cbd1d9 1px solid; BORDER-LEFT: #cbd1d9 1px solid; WIDTH: 193px; COLOR: #979797; BORDER-BOTTOM: #cbd1d9 1px solid
+}
+.framelogin TABLE TD.lineheigh {
+	COLOR: #979797; LINE-HEIGHT: 20px
+}
+.framelogin TABLE TD.top {
+	PADDING-TOP: 17px
+}
+.framelogin TABLE TD.loginclause {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; COLOR: #0e63c1; PADDING-TOP: 5px
+}
+.framelogin TABLE TD.loginclause INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px; POSITION: relative; TOP: 0px
+}
+.framelogin TABLE TD.loginclause A.paw {
+	MARGIN-LEFT: 50px
+}
+.framelogin TABLE TD.tips {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.framelogin TABLE TD.tips SPAN {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; COLOR: #c00; HEIGHT: 12px; BORDER-RIGHT-WIDTH: 0px
+}
+.framelogin TABLE TD .enterbutton {
+	FLOAT: left
+}
+.framelogin TABLE TD .userlogin {
+	FONT-WEIGHT: 700; FONT-SIZE: 14px; FLOAT: left; MARGIN: 0px 0px 0px 20px; CURSOR: pointer; COLOR: #0e63c2; TEXT-DECORATION: underline
+}
+.framemodulemoveshow {
+	Z-INDEX: 1000; LEFT: 50%; POSITION: absolute; TOP: 50%
+}
+.framemodulemove {
+	BORDER-RIGHT: #c4c4c4 1px solid; BORDER-TOP: #c4c4c4 1px solid; Z-INDEX: 100; BACKGROUND: #f7f7f7; LEFT: -2px; BORDER-LEFT: #c4c4c4 1px solid; WIDTH: 331px; BOTTOM: 2px; BORDER-BOTTOM: #c4c4c4 1px solid; POSITION: relative
+}
+.framemainmove {
+	BORDER-RIGHT: #c0c0c0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #c0c0c0 1px solid; MARGIN-TOP: 10px; OVERFLOW-Y: scroll; PADDING-LEFT: 5px; BACKGROUND: #fff; PADDING-BOTTOM: 0px; OVERFLOW: auto; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 310px; PADDING-TOP: 10px; BORDER-BOTTOM: #c0c0c0 1px solid; HEIGHT: 258px
+}
+.framemovefoot {
+	MARGIN-TOP: 10px; HEIGHT: 55px
+}
+.framemovefoot P {
+	PADDING-BOTTOM: 5px; COLOR: #858585; LINE-HEIGHT: 18px
+}
+.framemovefoot P.gray {
+	PADDING-BOTTOM: 5px; COLOR: #000; LINE-HEIGHT: 18px
+}
+.framemovefoot INPUT {
+	FLOAT: right; MARGIN: 6px 0px 0px 5px
+}
+.framemovefoot INPUT.removebutton {
+	MARGIN: 6px 8px 0px 0px
+}
+.framemovefoot INPUT.copysbutton {
+	MARGIN: 6px 8px 0px 0px
+}
+.downloadlists {
+	FLOAT: left; MARGIN: 5px 0px; WIDTH: 280px; HEIGHT: 30px
+}
+.downloadlists SPAN {
+	MARGIN: 2px 0px 0px; WIDTH: 35px
+}
+.downloadlists P {
+	OVERFLOW: hidden; WIDTH: 214px; COLOR: #858585; LINE-HEIGHT: 16px; WHITE-SPACE: nowrap
+}
+.downloadlists P.false {
+	COLOR: #c60000
+}
+.downloadlists P SPAN {
+	MARGIN: 0px; WIDTH: auto; COLOR: #000
+}
+.downloadlists P EM {
+	PADDING-LEFT: 12px; COLOR: #000
+}
+.downloadlists P EM.false {
+	PADDING-LEFT: 12px; COLOR: #c60000
+}
+.downloadlists P EM.sizes {
+	PADDING-LEFT: 5px; COLOR: #858585
+}
+.downloadlists .downloadcheckbox {
+	FLOAT: left; MARGIN: 6px 8px 0px 0px
+}
+.frameheader {
+	BACKGROUND: url(../default/lane_page_y.png) 0px -706px; MARGIN: 1px 0px 0px
+}
+.frameheader H1 {
+	BACKGROUND: url(../default/lane_win_sprites.png) no-repeat -75px -24px; WIDTH: 78px; COLOR: #2c3d51; TEXT-INDENT: -999%
+}
+.frameheader .min {
+	MARGIN-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -171px -330px; WIDTH: 29px; HEIGHT: 16px
+}
+.frameheader .close {
+	MARGIN-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -171px -330px; WIDTH: 29px; HEIGHT: 16px
+}
+.frameheader .close:hover {
+	BACKGROUND-POSITION: -91px -446px
+}
+.frameheader .min {
+	BACKGROUND-POSITION: -91px -355px
+}
+.framecenter {
+	BACKGROUND: url(../default/lane_win_bg.gif) repeat-x
+}
+.framemodule .btn {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: url(../default/lane_btn_sprites.png) no-repeat -132px 0px; BORDER-LEFT: 0px; CURSOR: pointer; BORDER-BOTTOM: 0px; HEIGHT: 30px
+}
+.framemodule .cancelbutton {
+	WIDTH: 58px
+}
+.framemodule .copysbutton {
+	WIDTH: 58px
+}
+.framemodule .savebutton {
+	WIDTH: 58px
+}
+.framemodule .updatebutton {
+	WIDTH: 58px
+}
+.framemodule .removebutton {
+	WIDTH: 58px
+}
+.framemodule .closebutton {
+	WIDTH: 58px
+}
+.framemodule .confirmbutton {
+	WIDTH: 58px
+}
+.framemodule .mainbtn .savebutton {
+	BACKGROUND-POSITION: -141px -120px
+}
+.framemodule .mainbtn .cancelbutton {
+	BACKGROUND-POSITION: -61px -155px
+}
+.framemodule .mainbtn .confirmbutton {
+	BACKGROUND-POSITION: 0px -190px
+}
+.framemodule .mainbtn .removebutton {
+	BACKGROUND-POSITION: -141px -225px
+}
+.framemodule .mainbtn .copysbutton {
+	BACKGROUND-POSITION: -61px -260px
+}
+.framemodule .mainbtn .updatebutton {
+	BACKGROUND-POSITION: 0px -295px
+}
+.framemodule .mainbtn .closebutton {
+	BACKGROUND-POSITION: -140px -410px
+}
+.framemodule .mainbtn .largefilesbutton {
+	BACKGROUND-POSITION: 0px -470px; WIDTH: 93px
+}
+.framemodule INPUT.gray {
+	COLOR: #999
+}
+.framemodule INPUT.txt {
+	BORDER-RIGHT: #e4e4e4 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #858e9d 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(../default/lane_page_y.png) repeat-x 0px -746px; PADDING-BOTTOM: 5px; BORDER-LEFT: #858e9d 1px solid; WIDTH: 195px; PADDING-TOP: 5px; BORDER-BOTTOM: #e4e4e4 1px solid
+}
+.framemodule .errortip {
+	COLOR: #cd0100
+}
+.frameheadernor {
+	BACKGROUND: url(../default/lane_win_bg.gif) repeat-x 0px -675px; HEIGHT: 26px
+}
+.frameheadernor H1 {
+	HEIGHT: 26px
+}
+#ajaxlogin {
+	Z-INDEX: 1000
+}
+#ajaxlogin .framemodule {
+	LEFT: -2px; MARGIN: 0px; WIDTH: 366px; POSITION: relative; TOP: auto; _width: 354px
+}
+#ajaxlogin .framemodule .frameheader {
+	_width: 366px
+}
+#ajaxlogin .framemodule .frameheader .close {
+	MARGIN-RIGHT: 12px; _margin-right: 6px
+}
+#ajaxlogin .framelogincenter {
+	WIDTH: auto
+}
+#ajaxlogin .frameloginfoot {
+	DISPLAY: none
+}
+#ajaxlogin .framecenter .enterbutton {
+	BACKGROUND-POSITION: 0px -80px; WIDTH: 77px
+}
+#ajaxlogin .framemodule H1 {
+	HEIGHT: 26px
+}
+#ajaxlogin .framemodule {
+	BACKGROUND: url(../default/lane_win_login_bg.png) repeat-x 0px 34px
+}
+#dbkaltuser .framemodule {
+	BACKGROUND: url(../default/lane_win_login_bg.png) repeat-x 0px 34px
+}
+#ajaxlogin .framecenter {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#dbkaltuser .framecenter {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.framecentersend SPAN {
+	BACKGROUND: url(../default/lane_bg_tip.png) no-repeat 0px 0px; WIDTH: 48px; HEIGHT: 47px
+}
+#dbksavetodisk .framemodule .frameheadernor H1 {
+	BACKGROUND: url(../default/lane_win_sprites.png) no-repeat 10px -268px
+}
+.inputext {
+	BORDER-RIGHT: #98a3b3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #98a3b3 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #98a3b3 1px solid; WIDTH: 263px; CURSOR: text; LINE-HEIGHT: 16px; PADDING-TOP: 2px; BORDER-BOTTOM: #98a3b3 1px solid; HEIGHT: 22px
+}
+.infiniteCarousel {
+	WIDTH: 403px; POSITION: relative; TEXT-ALIGN: left
+}
+.infiniteCarousel .wrapper {
+	LEFT: 0px; OVERFLOW: hidden; WIDTH: 403px; POSITION: absolute; TOP: 0px; HEIGHT: 241px
+}
+.infiniteCarousel .wrapper UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 840px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 17px
+}
+.infiniteCarousel UL LI {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 403px; PADDING-TOP: 0px; HEIGHT: 223px
+}
+.infiniteCarousel UL LI A IMG {
+	DISPLAY: block
+}
+.infiniteCarousel .arrow {
+	DISPLAY: block; Z-INDEX: 10; BACKGROUND: url(images/page.png) no-repeat; OVERFLOW: hidden; WIDTH: 28px; CURSOR: pointer; TEXT-INDENT: -999px; POSITION: absolute; TOP: 94px; HEIGHT: 47px
+}
+.infiniteCarousel .forward {
+	BACKGROUND-POSITION: -29px -203px; RIGHT: -39px; _right: -40px
+}
+.infiniteCarousel .back {
+	BACKGROUND-POSITION: 0px -203px; LEFT: -38px
+}
+#dbankmask {
+	DISPLAY: none; Z-INDEX: 999; RIGHT: 0px; FILTER: Alpha(opacity=51); POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #000; opacity: 0.51
+}
+#dbankcover {
+	DISPLAY: none; Z-INDEX: 999; RIGHT: 0px; FILTER: Alpha(opacity=51); POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #000; opacity: 0.51
+}
+#dbankcover {
+	Z-INDEX: 999; FILTER: Alpha(opacity=0); BACKGROUND-COLOR: #fff; opacity: 0
+}
+#dbankwaitgif {
+	DISPLAY: none; Z-INDEX: 1001; LEFT: 50%; MARGIN: -8px 0px 0px -8px; WIDTH: 16px; POSITION: absolute; TOP: 50%; HEIGHT: 16px
+}

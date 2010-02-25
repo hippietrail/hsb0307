@@ -1,0 +1,36 @@
+BODY {
+	FONT: small/1.231 arial,helvetica,clean,sans-serif
+}
+SELECT {
+	FONT: 99% arial,helvetica,clean,sans-serif
+}
+INPUT {
+	FONT: 99% arial,helvetica,clean,sans-serif
+}
+BUTTON {
+	FONT: 99% arial,helvetica,clean,sans-serif
+}
+TEXTAREA {
+	FONT: 99% arial,helvetica,clean,sans-serif
+}
+BUTTON {
+	FONT: 99% arial,helvetica,clean,sans-serif
+}
+TABLE {
+	
+}
+PRE {
+	FONT-SIZE: 108%; LINE-HEIGHT: 100%; FONT-FAMILY: monospace
+}
+CODE {
+	FONT-SIZE: 108%; LINE-HEIGHT: 100%; FONT-FAMILY: monospace
+}
+KBD {
+	FONT-SIZE: 108%; LINE-HEIGHT: 100%; FONT-FAMILY: monospace
+}
+SAMP {
+	FONT-SIZE: 108%; LINE-HEIGHT: 100%; FONT-FAMILY: monospace
+}
+TT {
+	FONT-SIZE: 108%; LINE-HEIGHT: 100%; FONT-FAMILY: monospace
+}
