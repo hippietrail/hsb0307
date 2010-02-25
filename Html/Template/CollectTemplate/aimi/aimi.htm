@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AiMi白领社区</title>
+<meta name="keywords" content="AiMi白领社区，白领交友，白领职场，白领网上家园"/>
+<meta name="description" content=" AiMi白领社区专注城市白领的社交网络平台，你可以在其中休闲交友、分享白领生活的点滴。"/>
+<link href="theme/default/style.css?1" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/script_common.js"></script>
+<script language="javascript" type="text/javascript" src="js/indexnav.js"></script>
+<script language="javascript" type="text/javascript" src="js/select2css.js"></script>
+<script language="javascript" type="text/javascript" src="js/script_publicajax.js"></script>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<style type="text/css">
+@import url("theme/default/style.css");
+@import url("theme/default/style-new.css");
+@import url(css/global.css?1);
+</style>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script language="javascript" type="text/javascript">
+function goHome(){document.location.href = self.location;}
+function setHome(obj)
+{
+if (document.all)
+{
+document.body.style.behavior = 'url(#default#homepage)';
+document.body.setHomePage(document.location.href);
+}
+else if (window.sidebar)
+{
+if (window.netscape)
+{
+try
+{  
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+}  
+catch (e)  
+{  
+alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config\n然后将 signed.applets.codebase_principal_support 项的值该为true");  
+}
+} 
+var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+prefs.setCharPref('browser.startup.homepage', document.location.href);
+}
+}
+function bookmark()
+{
+var url = document.location.href;
+var title = document.title;
+
+    if (window.sidebar)
+{
+window.sidebar.addPanel(title, url, "");
+}
+    else if (window.opera && window.print)
+    {
+var mbm = document.createElement('a');
+mbm.setAttribute('rel', 'sidebar');
+mbm.setAttribute('href', url);
+mbm.setAttribute('title', title);
+mbm.click();
+    }
+    else if (document.all)
+{
+window.external.AddFavorite(url, title);
+}
+else
+{
+alert("请按 Ctrl+D 把此页加入收藏夹。");
+return;
+}
+}
+</script>
+</head>
+<body id="mainbody" onload="bodyload()">
+<!--头部-->
+<div class="headeriami">
+  <div class="logo"><img src="images/logo.gif" /></div>
+  <div class="searh">
+ 
+  <form method="get" action="/search.php" id="fsearchFrom">
+  	<span class="gray" style="float:left"><a href="javascript:goHome()" onclick="setHome(this)">设为首页</a> │ <a href="javascript:bookmark()">加入收藏</a></span>
+    <div class="ghdsearch">
+<label for="frikey">找找朋友:</label>
+<input type="text" name="u" id="frikey" value="输入关键字" class="ipt-box" onfocus="if(this.value=='输入关键字'){this.value='';}"/>
+<input type="submit" value="查找" class="gbtn ghdsearch-btn" />
+</div>
+  </form>
+  
+  </div>
+</div>
+<!--导航-->
+<div id="header_orange">
+   <div class="nav_orange">
+   	<ul class="menu_orange">
+<li style="width:96px;"><a href="/" class="active"><span>爱米首页</span></a></li>
+<li class="navline">&nbsp;</li>
+<!--
+<li style="width:96px;"><a href="/music.php?ac=street" target="_blank" ><span>爱米音乐</span></a></li>
+<li class="navline">&nbsp;</li>
+-->
+<li style="width:96px;"><a href="/toDbank.php"  target="_blank"><span>爱米网盘</span></a></li>
+<li class="navline">&nbsp;</li>
+
+<li style="width:96px;"><a href="http://www.aimilife.com" title="生活服务" target="_blank"><span>生活服务</span></a></li>
+<li class="navline">&nbsp;</li>
+
+<li><a href="help.php"><span>帮助</span></a></li>
+</ul>
+   <div class="userinfo" id="welcomeDiv"></div>
+   </div>
+</div>
+<script language="javascript">
+function ajaxCallAvatar(html)
+{
+$('welcomeDiv').innerHTML = html;
+}
+function flushWelcomeBox()
+{
+var ajaxurl = "/ajaxchecklogin.php?avatar=small&rand="+Math.random();
+publicAjaxGET(ajaxurl,ajaxCallAvatar);
+  }
+  flushWelcomeBox();
+</script>
+<!--main-->
+<div class="mainiami">
+<div class="Area1 clear">
+  	<div class="ColA">
+  <!--banner flash start-->
+
+<script type="text/javascript">
+var interval_time = 5;
+var focus_width = 680;
+var focus_height = 186;
+var text_height = 1;
+var text_mtop = 0;
+var text_lm = 0;
+var textmargin = text_mtop+"|"+text_lm;
+var textcolor = "#ffffff|#ffffff";
+var text_align= 'center'; 
+var swf_height = focus_height+text_mtop; 
+var text_size = 12;
+var borderStyle="1|0xFCF9E6|100";
+var pics='images/b6f29ce1c93859ff533d738b4db41523.jpg|images/7fcd25d51febbf3fb0f696baf8f8d12e.jpg|images/20bb4c535efc543f3364ff5213d15fb0.jpg';
+var links='%2Fuserapp.php%3Fid%3D1011554%26my_suffix%3DLw%253D%253D|%2Fuserapp.php%3Fid%3D1021978%26my_suffix%3DLw%253D%253D|%2Ffgame.php';
+var texts='||||';
+
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+document.write('<param name="bgcolor" value="#FCF9E6"/><param name="allowScriptAccess" value="sameDomain"><param name="movie" value="flash/slide.swf"> <param name="quality" value="high"><param name="Wmode" value="transparent">');
+document.write('<param name="menu" value="false"><param name="wmode" value="opaque">');
+document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'&textmargin='+textmargin+'&textcolor='+textcolor+'&borderstyle='+borderStyle+'&text_align='+text_align+'&interval_time='+interval_time+'&textsize='+text_size+'">');
+document.write('<embed src="flash/slide.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'&textmargin='+textmargin+'&textcolor='+textcolor+'&borderstyle='+borderStyle+'&text_align='+text_align+'&interval_time='+interval_time+'&textsize='+text_size+'" menu="false" bgcolor="#FCF9E6" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+document.write('</object>');
+</script>
+ 
+  <!--banner flash end -->
+</div> 
+<div class="ColB" id="loginDiv"> 
+
+<DIV class="login">
+<FORM id="loginform" name="loginform" onsubmit="ajaxLogin(); return false;" action="do.php?ac=71ee30ae117cddace55bd01714904227&&ref" method="post">
+<DIV class="divbox"><DIV><LABEL>用户名</LABEL> <INPUT class="textbg" id="username" name="username" value="" /> </DIV><DIV><LABEL>密&nbsp;&nbsp;&nbsp;码</LABEL><INPUT class="textbg" id="password" type="password" name="password" value="" /></DIV><DIV style="PADDING-LEFT: 64px; PADDING-TOP: 4px"><P><INPUT id="cookietime" type="checkbox" name="cookietime" value="315360000" /> 下一次自动登录 </P></DIV><DIV class="login_tip" style="PADDING-LEFT: 66px; PADDING-TOP: 4px"><SPAN>›<A class="active" href="http://www.aimi.com/reg.php">新注册</A></SPAN><SPAN class="pipe">|</SPAN><SPAN><A href="http://www.aimi.com/do.php?ac=lostpasswd">找回密码</A></SPAN></DIV></DIV>
+<DIV class="divboxr"><INPUT class="bntlogin" id="loginsubmit" type="submit" name="loginsubmit" value="登录" /></DIV><INPUT type="hidden" name="refer" value="space.php?do=home" /> <INPUT id="formhash" type="hidden" name="formhash" value="1ba852c9" /> </FORM></DIV>
+
+</div>
+    <script language="javascript">
+    function focusEnter(events,n)
+    {
+        var eventSource;
+        var currentKey = events.charCode||events.keyCode;
+        if(document.all) eventSource =window.event.srcElement; 
+        else eventSource = events.target;        
+        if(currentKey == 13)
+        {
+        	 if (n==1) $('password').focus();
+        	 else ajaxLogin();
+        }  
+      }
+    	
+  function ajaxCallBack(html)
+{
+ $('loginDiv').innerHTML = html;
+}
+function flushLoginBox()
+{
+  var ajaxurl = "/ajaxchecklogin.php?rand="+Math.random();
+publicAjaxGET(ajaxurl,ajaxCallBack);
+  }
+  flushLoginBox();
+</script>
+    <script language="javascript">
+    	function loginCallBack(flag)
+    	{
+    		 if (flag == '0'){
+    		 	 alert('用户名或密码错误!');
+    		 }else if (/^donew.php/.test(flag)) {
+    		 window.location.href = flag;
+    	} else {
+    		 	  flushLoginBox();
+    		 	  flushWelcomeBox();
+    		 }
+      }
+    function ajaxLogin()
+  {
+  	  if ($('username').value=='' || $('password').value=='')
+  	  {
+  	  	 alert('用户名或密码不能为空!');
+  	  	 return false;
+  	  }
+  	  var postStr = "username="+encodeURIComponent($('username').value);
+  	  postStr += "&password="+$('password').value;
+  	  if ($('cookietime').checked) postStr += "&cookietime="+$('cookietime').value;
+  	  else postStr += "&cookietime=0";
+  	  var url = "/ajaxLogin.php";			     
+  	  publicAjaxPOST(url,postStr,loginCallBack);
+  }
+  function ajaxLogout()
+  {
+  var ajaxurl = "/cp.php?ac=common&op=logout&ajaxLogout=true&rand="+Math.random();
+publicAjaxGET(ajaxurl,loginCallBack);
+  }
+ </script>		
+  	</div>
+<div class="Area2 clear">
+  	<div class="ColA">
+ 	<h2>
+<span class="l_title">aimi头条</span>
+<span class="r_more"><a href="/blog/index.php?a=everyone" >更多&gt;&gt;</a></span>
+</h2>
+<ul>
+<li class="PicList">
+<div class="Pic"><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=134077" target="_blank"><img src="http://file.aimi.com/file/kkDbXTBvlF7s/6fa9b6e51a23e6981e9c4075a50c500b660a/1ad56462199b7b477b53b499514bd78d.jpg" alt="30而立你准备好了么" width="155" height="120" /></a></div>
+<div class="List"><h3><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=134077"  target="_blank" title="30而立你准备好了么">30而立你准备好了么</a></h3><p>小沈阳说，人生最痛苦的事莫过于人死了钱还没花了，赵本山说，人生最大的痛苦莫过于人... </p></div></li>
+	
+              
+<li><span>
+<a href="/space.php?uid=212832" target="_blank" title="查看田心">田心</a>
+</span>[格调] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=212832&aid=134102" title="[格调]心情：要做一个温暖的女孩">心情：要做一个温暖的女孩</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=343721" target="_blank" title="查看小Y">小Y</a>
+</span>[分享] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=343721&aid=134076" title="[分享]忧郁是一只近在咫尺的洋葱">忧郁是一只近在咫尺的洋葱</a></li>
+  </ul>
+<ul class="PicTxt">
+  	
+              
+<li><span>
+<a href="/space.php?uid=200585" target="_blank" title="查看田涛">田涛</a>
+</span>[总结] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=200585&aid=133963" title="[总结]《蜗居》100句血淋淋的经典">《蜗居》100句血淋淋的经典</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=213007" target="_blank" title="查看虫子">虫子</a>
+</span>[星座] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=213007&aid=133967" title="[星座]2010年，异性缘最好的星座">2010年，异性缘最好的星座</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=213010" target="_blank" title="查看lilychen">lilychen</a>
+</span>[生活] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=213010&aid=133972" title="[生活]长胖！只因这六大生活恶习！">长胖！只因这六大生活恶习！</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=205308" target="_blank" title="查看默默">默默</a>
+</span>[推荐] <a target="_blank" href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=134074" title="[推荐]拍雪景婚纱最美的五个地方">拍雪景婚纱最美的五个地方</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=343721" target="_blank" title="查看小Y">小Y</a>
+</span>[测试] <a target="_blank" href="http://www.aimi.com/vote.php?ac=view&voteid=2824" title="[测试]看看你最难以抗拒哪种诱惑？">看看你最难以抗拒哪种诱惑？</a></li>
+  	
+              
+<li><span>
+<a href="/space.php?uid=402324" target="_blank" title="查看星娃">星娃</a>
+</span>[杯具] <a target="_blank" href="http://www.aimi.com/space.php?uid=402324&do=thread&id=14340" title="[杯具]2009热门词汇盘点不完全版">2009热门词汇盘点不完全版</a></li>
+  </ul>
+</div> 
+<div class="ColB"> 
+ 	<h2>
+<span class="l_title">活动速递</span>
+<span class="r_more"><a href="/party.php?ac=everyone" >更多&gt;&gt;</a></span>
+</h2>
+<ul>
+<li class="Pic"><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=213113&aid=23183" target="_blank" ><img src="http://file.aimi.com/file/gxViCqiG2SLg/3165e024064bd1e916675b00ac39c06e7ab4/3df3e6c1fa960c401a58f85c95ff3e8f.png" width="229" height="73" align="absmiddle" /><span class="Pic_mark"></span></a></li><li class="List02"><a href="http://www.aimi.com/space.php?uid=213113&do=thread&id=11989" target="_blank"  title="爱米欢乐谷亲子活动图片总结">爱米欢乐谷亲子活动图片总结</a></li>
+<li class="List03"><a href="http://www.aimi.com/space.php?uid=213113&do=thread&id=13725" target="_blank"  title="《神秘百宝箱》获奖名单公布">《神秘百宝箱》获奖名单公布</a></li>
+<li class="List04"><a href="http://www.aimi.com/space.php?do=taskday" target="_blank"  title="完成AIMI任务有意外惊喜哦！">完成AIMI任务有意外惊喜哦！</a></li>
+</ul>
+</div>
+<div class="Area_bot"></div>
+  	</div>
+ 	
+<div class="Area3 clear">
+<div class="ColA">
+<h2><span class="l_title">aimi FUN 爱玩</span></h2>
+<div class="ColC">
+<h2><span class="l_title">本周打榜游戏</span><span class="r_more"><a href="/fgame.php" >更多&gt;&gt;</a></span>
+</h2>
+<div class="Pic"><a href="/fgame.php?ac=intogame&fgid=204"  target="_blank" ><img src="http://www.aimi.com/FlashGame/pic/wzfy.jpg" /></a><span><a href="/fgame.php">我要打榜</a></span></div>
+<div class="List">
+<h1><a href="/fgame.php?ac=intogame&fgid=204" title="武装飞鱼">武装飞鱼</a></h1>
+<ul>
+	
+<li><p>一等奖1名: <strong>三万游戏币</strong></p></li>
+	
+<li><p>二等奖1名: 二万游戏币</p></li>
+	
+<li><p>三等奖1名: 一万游戏币</p></li>
+<li><a href="/fgame.php?ac=gprizes">我要打榜</a></li>
+</ul>
+</div>
+</div>
+<div class="ColD">
+<h2>
+<span class="l_title">本周热门音乐</span>
+<span class="r_more"><a href="javascript:void(0);" >更多&gt;&gt;</a></span>
+</h2>
+<ul>
+<li class="PicList"><div class="Pic"><a target="_blank"  href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=22867"><img src="http://file.aimi.com/file/gWEdtnt3lUvA/4d2bbe23d87d513df6eed5964123dac35abf/122c168d4b0a132d748f7b79e13b06ad.jpg" /></a></div>
+<div class="List"><p><strong><a target="_blank"  href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=22867">转身的时候 </a></strong></p>
+<p>看到你开心快乐的时候 我的心就像是飞跃的云朵 轻轻的
+</p>
+<p><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=22867" class="btn_play" title="点击查看">点击查看</a></p></div></li>
+	
+<li class="List"><span class="no2">02</span><span class="colA"><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=133873" target="_blank"  title="想念圣诞节">想念圣诞节</a></span><span class="colB"><a href="javascript:void(0);">萧亚轩</a></span><!-- <span class="colC"><a href="#" title="试听">试听</a></span> --> </li>
+	
+<li class="List"><span class="no2">03</span><span class="colA"><a href="http://www.aimi.com/blog/index.php?c=viewer&a=article&uid=205308&aid=133874" target="_blank"  title="我怀念的">我怀念的</a></span><span class="colB"><a href="javascript:void(0);">孙燕姿</a></span><!-- <span class="colC"><a href="#" title="试听">试听</a></span> --> </li>
+            </ul>
+</div>
+</div>
+<div class="ColB">
+<h2>
+<span class="l_title">品牌空间</span>
+<span class="r_more"><a href="" ></a></span>
+</h2>
+<ul>
+	
+<li class="Pic">
+<a href="http://www.aimi.com/space.php?uid=205885" target="_blank" ><img src="http://file.aimi.com/file/gWReVvz646hZ/5f833311aac6c06a9cb932788417b53a49e6/af8c74b65289cac987cf38b082b515ed.png" alt="AIMI摄影协会-多彩人生"/></a>
+<p><a href="http://www.aimi.com/space.php?uid=205885" title="AIMI摄影协会-多彩人生">AIMI摄影协会-多彩人生</a></p>
+</li>
+	
+<li class="List" target="_blank" >[原创]<a href="http://www.aimi.com/blog/index.php?uid=212866&a=blog&c=viewer" title="&nbsp;&nbsp;写给挽救婚姻的人 出轨女人的心声">&nbsp;&nbsp;写给挽救婚姻的人 出轨女人的心声</a> </li>
+	
+<li class="List" target="_blank" >[记录]<a href="http://www.aimi.com/space.php?uid=201230" title="&nbsp;&nbsp;快乐成长小宝 有图片留下美好记忆">&nbsp;&nbsp;快乐成长小宝 有图片留下美好记忆</a> </li>
+	
+<li class="List" target="_blank" >[专栏]<a href="http://www.aimi.com/space.php?uid=200365" title="&nbsp;&nbsp; 蹲下身来 尝试用孩子的眼光看世界">&nbsp;&nbsp; 蹲下身来 尝试用孩子的眼光看世界</a> </li>
+	
+<li class="List" target="_blank" >[早教]<a href="http://www.aimi.com/space.php?uid=343721" title="&nbsp;&nbsp;亲子会总结我们如何走近孩子的内心 ">&nbsp;&nbsp;亲子会总结我们如何走近孩子的内心 </a> </li>
+
+</ul>
+</div>
+<div class="Area_bot"></div>
+</div>
+<!--
+<div class="Area4 clear">
+<div class="ColA"><a href="" target="" ><img src="" width="681" height="91" /></a></div>
+<div class="ColB"><a href="http://www.aimi.com/music.php?ac=street" target="_blank" ><img src="http://file.aimi.com/file/3sEPfnRs0FUc/6f68eed2f7c1237e3b6b8b1fa26c2c4875b6/3d4832e3dd3c867d04f352e21bda2f9d.png" width="280" height="91" /></a></div>
+</div>
+-->
+<div class="Area5 clear">
+<div class="ColA">
+<div class="ColC">
+<h2>
+<span class="l_title">爱米人物</span>
+<span class="r_more"><a href="/cp.php?ac=friend&op=find" >更多&gt;&gt;</a></span>
+</h2>
+<ul>
+	
+	
+<li><div class="Pic"><a target=""  href="space.php?uid=403211" title="洛儿"><img  src="http://file.dbank.com/file/OyvHbeQCiSp9WjRh93C1ueGJr0eNnv6VMgTo5AYIYdQ./4df86a12785285c78763fd1534e6029b39d3/aimi.jpg?key=AAACgAAAAADsu_jYZGJhbmsuY29t&p=imgsize%7C120%2A120" width="94" height="94" /></a></div><div class="List"><a target="" href="space.php?uid=403211"title="查看洛儿">洛儿</a><p>小小的人啊，风吹起阿，天天都...</p><p class="c_addfriend"><a href="/cp.php?ac=friend&op=add&uid=403211">加TA好友</a></p></div></li>
+	
+	
+<li><div class="Pic"><a target=""  href="space.php?uid=213530" title="宁小宁"><img  src="http://file.dbank.com/file/3m5YV2DMAFLmg3m9nu-KO5DcbrYadYzvp4iyKcQ_DBo./31d4290796e5e3da184dda0285d91c722cf9/aimi.jpg?key=AAACgAAAAAA6NQ4LZGJhbmsuY29t&p=imgsize%7C120%2A120" width="94" height="94" /></a></div><div class="List"><a target="" href="space.php?uid=213530"title="查看宁小宁">宁小宁</a><p>那些固执地一直仰望天空的日子...</p><p class="c_addfriend"><a href="/cp.php?ac=friend&op=add&uid=213530">加TA好友</a></p></div></li>
+	
+	
+<li><div class="Pic"><a target=""  href="space.php?uid=278055" title="糖果"><img  src="http://file.dbank.com/file/vivXC8Q8agclJrvyxrVYih9XW2XmFopUK1VOMM2eE1o./6e4bf501d14bd1c0f9f1141ae38dfbd42deb/aimi.jpg?key=AAACgAAAAAAqMdhwZGJhbmsuY29t&p=imgsize%7C120%2A120" width="94" height="94" /></a></div><div class="List"><a target="" href="space.php?uid=278055"title="查看糖果">糖果</a><p>我们都 一样 一样的坚强 一...</p><p class="c_addfriend"><a href="/cp.php?ac=friend&op=add&uid=278055">加TA好友</a></p></div></li>
+</ul>
+</div>
+
+<!--  暂时不显示相册和群组 -->			
+<!--  =================================================================================== -->			
+			
+<div class="ColD">
+<h2>
+<span class="l_title">热门群组</span>
+<span class="r_more"><a href="/group.php" >更多&gt;&gt;</a></span>
+</h2>
+<ul>
+	
+	
+	
+	
+	
+<li><div class="Pic"><a target="" href="/group.php?ac=singlegroup&tagid=2968"><img src="attachment/200911/9/200585_1257739310mI7i.jpg" width="94" height="94" alt="母婴之家"  /></a></div><div class="List"><a target=""  href="/group.php?ac=singlegroup&tagid=2968" title="母婴之家">母婴之家</a><span> (1414)</span><p><span>群简介：</span>母婴之家,宝宝和妈妈的家...</p><p><a href="/cp.php?ac=mtag&op=join&tagid=2968" class="c_addgroup">加入该群</a></p></div></li>
+	
+	
+	
+	
+	
+<li><div class="Pic"><a target="" href="/group.php?ac=singlegroup&tagid=1190"><img src="attachment/200905/18/200585_1242614140ZfBQ.jpg" width="94" height="94" alt="米友互动"  /></a></div><div class="List"><a target=""  href="/group.php?ac=singlegroup&tagid=1190" title="米友互动">米友互动</a><span> (5480)</span><p><span>群简介：</span>AIMI活动专区，米友交...</p><p><a href="/cp.php?ac=mtag&op=join&tagid=1190" class="c_addgroup">加入该群</a></p></div></li>
+	
+	
+	
+	
+	
+<li><div class="Pic"><a target="" href="/group.php?ac=singlegroup&tagid=622"><img src="attachment/200904/29/213159_1240977303Ej7D.jpg" width="94" height="94" alt="迷你游戏"  /></a></div><div class="List"><a target=""  href="/group.php?ac=singlegroup&tagid=622" title="迷你游戏">迷你游戏</a><span> (3372)</span><p><span>群简介：</span>迷你小游戏：公告，讨论区</p><p><a href="/cp.php?ac=mtag&op=join&tagid=622" class="c_addgroup">加入该群</a></p></div></li>
+</ul>	
+</div>	
+
+<!--  以上 暂时不显示相册和群组 -->			
+		
+<div class="ColE">
+<h2>
+<span class="l_title">看图说事</span>
+<span class="r_more"><a href="/album/index.php?c=Main&a=albumAll" >更多&gt;&gt;</a></span>
+</h2>
+<div class="PicList">
+<a href="javascript:toLeft();" class="prev"></a>
+<div id="scrollbody">
+<table cellpadding="0" border="0" align="left" valign="center" cellspace="0">
+<tbody><tr>
+<td id="scroll1">
+<table cellpadding="0" border="0" align="left" valign="center" cellspace="0">
+<tbody><tr>
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=146437"><img alt="嫣嫣美女"  src="http://file.aimi.com/file/nlCxglvyKC0m/ef50a29c4f2181aed2673bdd83320d8070bd/8b2e44c7a71dfc3c94d86fa449ef4128.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=146437" title="嫣嫣美女">嫣嫣美女</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=146039"><img alt="紫夢聖靈"  src="http://file.aimi.com/file/xYTgc9DUFN7V/2c13d0f789ab41934b5a86dc77e96f475b28/34557f7a1ee63d99a8cd3bc8eae9ccb4.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=146039" title="紫夢聖靈">紫夢聖靈</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=144375"><img alt="梧桐山记"  src="http://file.aimi.com/file/Kr0Eehan58ci/55aee219f57ff51d912e2c47fbb31fe04ac3/484be467f32ccf78e511a5ac7aac15e5.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=144375" title="梧桐山记">梧桐山记</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=143410"><img alt="当日新娘妆"  src="http://file.aimi.com/file/Ml6i1FCobNi2/9bc2a958d8fc6d26d4d09d43eb9c28c7598c/918bdf3566a01dff5348abfcd859ed0d.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=143410" title="当日新娘妆">当日新娘妆</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=142954"><img alt="caris"  src="http://file.aimi.com/file/Vd7875mkWl30/9b64b6218e738e904b52946e3575024452b7/f3c0955079d7262bda1dba42c5dbe0b2.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=142954" title="caris">caris</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=142594"><img alt="三岁混血男模"  src="http://file.aimi.com/file/M1je3fX9IlMg/4d2fff61eb55b43717f838ef58d8d57854a4/a97affd31f1851108de772f889b7a175.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=142594" title="三岁混血男模">三岁混血男模</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=145247"><img alt="可爱的瑶"  src="http://file.aimi.com/file/G5psWORADRC4/7743e47bbc96ab39f4737b0729de5d4a5b6b/776abfea2ed52e6afef3392252db13b4.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/index.php?c=Pic&a=picShow&picid=145247" title="可爱的瑶">可爱的瑶</a></p></td>	
+							
+	
+<td><div class="Pic"><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=146454"><img alt="车展MM"  src="http://file.aimi.com/file/PTB9awPAtI9e/b21c3d5b9527d5ea1107fd018d707e23f8e/3f0b01de27f6cc993f80bd507953471b.jpg" /></a></div><p><a target="_blank" href="http://www.aimi.com/album/?c=Pic&a=picShow&picid=146454" title="车展MM">车展MM</a></p></td>	
+</tr></tbody></table>
+</td>
+<td id="scroll2">
+</td>
+</tr></tbody></table></div>
+<a href="javascript:toRight();" class="next"></a>
+</div>	
+</div>	
+		
+<!-- 以上 暂时不显示相册和群组 -->		
+
+<!--  =================================================================================== -->
+</div>
+<div class="ColB">
+<a href="http://www.aimi.com/music.php?ac=street" target="_blank" ><img src="http://file.aimi.com/file/3sEPfnRs0FUc/6f68eed2f7c1237e3b6b8b1fa26c2c4875b6/3d4832e3dd3c867d04f352e21bda2f9d.png" width="280" height="91" /></a>
+<div id="dyaimiup" class="dymodule">
+<div class="hd">
+<h3>AIMI脚印</h3>
+</div>
+<div class="bd">
+<ul>
+<li><a >10月10日  开心斗地主应用上线</a></li>
+<li><a >10月10日  斗鸡应用上线</a></li>
+<li><a >9月29日   开心农场应用上线</a></li>
+<li><a >9月25日   图片秀应用上线</a></li>
+<li><a >9月24日   百万富翁应用上线</a></li>
+<li><a >9月24日   心理测试应用上线</a></li>
+<li><a >9月17日   全民公投应用上线</a></li>
+<li><a >9月11日   晒秘密应用上线</a></li>
+<li><a > 9月04日   任务应用上线</a></li>
+<li><a >8月14日   个人中心新版上线</a></li>
+	
+</ul>
+</div>
+<div class="ft"></div>
+</div>
+</div>
+<div class="Area_bot"></div>
+</div>
+
+</div>
+<!--footer-->
+<div class="clear"></div>
+
+<div class="indexfooter">
+<p class="gayeb"><a href="/" class="gayeb" target="_blank">AiMi白领社区</a>&nbsp;-&nbsp;<a href="/contactus.php" target="_blank" class="gayeb">联系我们</a>&nbsp;-&nbsp;<a href="contract.php" class="gayeb" target="_blank">AIMI.COM服务条款</a>&nbsp;-&nbsp;<a href="private.php" class="gayeb" target="_blank" >隐私权政策</a></p>
+<p class="gayeb">
+Powered by <a  href="http://www.aimi.com" target="_blank" class="gayeblack"><strong>www.aimi.com</strong></a>
+&copy; 2001-2009
+</p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3020194-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
+<!-- Make Static HTML Time: 2009-12-30 09:25:30 -->

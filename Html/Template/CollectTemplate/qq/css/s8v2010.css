@@ -1,0 +1,88 @@
+a{color:#3d464b;}
+a.lchot{color:#bd0a01;}
+a.lchot:visited{color:#bd0a01;}
+.fc30{color:#3d464b;}
+
+#TextNav {color:#3d464b;}#TextNav a:hover,#TextNav a.lcnew:hover{background-color:#9aa7ad;}
+
+#Soso{background:url(images/s_b_2010.png) no-repeat;}
+
+#Wealth,#Wealth a{color:#fff;}
+#s7 div{background:url(images/skinbt.png) no-repeat -14px -77px;}
+
+#SosoArea input.w,#SosoArea input.bot,#sosoFod,#sosoFod h3.s,#sosoFod h3.s1,
+#proNav,
+#News,#finance,#car,#tech,#edu,#kid,#astro,
+#News h4,#News h4.s,#News span h4,#News span h4.s,
+#finance h4,#car h4,#tech h4,#edu h4,#kid h4,#astro h4,
+#finance h4.s,#car h4.s,#tech h4.s,#edu h4.s,#kid h4.s,#astro h4.s,
+#financeInfo form input.i,
+#today,#blog,#vfoucs,#video,#sports,#ent,#lady,#book,#game,#comic,
+.res_b,.pro_b,
+#adAreaA,#adAreaA h3,#adAreaA h3.s,.adAreaA_t,.adAreaA_b,
+#adAreaB,#adAreaB h3,#adAreaB h3.s,.adAreaB_t,.adAreaB_b
+{background-image:url(images/skin8v2010.png);background-repeat:no-repeat;}
+
+#SosoArea input.w{color:#ccc;background-color:transparent;background-position:0 -45px;}
+#SosoArea input.bot{color:#6c4e1a;background-position:0 -10px;}
+#sosoFod {background-position:58px -76px;}
+#sosoFod h3{color:#424b51;}
+#sosoFod h3.s{color:#fff;background-position:-70px -10px;}
+#sosoFod h3 a{color:#424b51;}
+#sosoFod h3.s a{color:#fff;}
+#sosoFod h3.s1{color:#a00;background-position:-70px -10px;}
+#sosoFod h3.s2{color:#fff;}
+#sosoFod .more a{color:#a00;}
+
+#proNav{background-position:0 -270px;}
+#proNav span{color:#6e717d}
+#proNav a{color:#3d464b;}
+#proNav a:hover{color:#fff;background:#9aa7ad;}
+#proNav a.m{color:#696768;}
+
+#proArea_banner{background:#f6f7f8;}
+
+#News,#finance,#car,#tech,#edu,#kid,#astro{background-position:0 -110px;}
+
+#News h4{color:#333;background-position:-80px -160px;}
+#News h4.s{color:#333;background-position:-80px -190px;}
+#News span h4{background-position:-80px -160px;}
+#News span h4.s {background-position:-80px -190px;}
+#finance h4,#car h4,#tech h4,#edu h4,#kid h4,#astro h4{color:#333;background-position:0 -160px;}
+#finance h4.s,#car h4.s,#tech h4.s,#edu h4.s,#kid h4.s,#astro h4.s{color:#333;background-position:0 -190px;}
+
+#NewsInfo h3 a{color:#3d464b;}
+#NewsInfo h3 a.visited{color:#800080}
+
+#NewsInfo,#financeInfo,#carInfo,#techInfo,#eduInfo,#kidInfo,#astroInfo{border-left:1px solid #e6c48f;border-right:1px solid #e6c48f;}
+
+#today,#blog,#vfoucs,#video,#sports,#ent,#lady,#book,#game,#comic{color:#333;background-position:0 -225px;}
+#video .fr a{color:#a5752a;}
+#todayInfo,#blogInfo,#vfoucsInfo,#videoInfo,#sportsInfo,#entInfo,#ladyInfo,#bookInfo,#gameInfo,#comicInfo{border-left:1px solid #D4D4D4;border-right:1px solid #D4D4D4;}
+
+.res_b{background-position:0 -145px;}.pro_b{background-position:0 -255px;}
+
+.adArea h5,.adArea h5 a{color:#5f5f5f;}
+
+#adAreaAInfo,#adAreaBInfo,#adAreaC,#adAreaD,#adAreaE,#adAreaP,#adAreaDi,#adAreaS{border-left:1px solid #d4d4d4;border-right:1px solid #d4d4d4;background:#fffcf6}
+#adAreaBInfo{background:#fff;}
+
+#adAreaAInfo a,#adAreaA a,#adAreaBInfo a,#adAreaB a,#adAreaC a,#adAreaD a,#adAreaE a,#adAreaP a,#adAreaDi a,#adAreaS a{color:#5f5f5f;}
+#adAreaAInfo a:hover,#adAreaA a:hover,#adAreaBInfo a:hover,#adAreaB a:hover,#adAreaC a:hover,#adAreaD a:hover,#adAreaE a:hover,#adAreaP a:hover,#adAreaDi a:hover,#adAreaS a:hover{color:#bd0a01;}
+#adAreaAInfo a.lchot,#adAreaBInfo a.lchot,#adAreaC a.lchot,#adAreaD a.lchot,#adAreaE a.lchot,#adAreaP a.lchot,#adAreaDi a.lchot,#adAreaS a.lchot{color:#bd0a01;}
+#adAreaAInfo a.lcbhot,#adAreaBInfo a.lcbhot,#adAreaC a.lcbhot,#adAreaD a.lcbhot,#adAreaE a.lcbhot,#adAreaP a.lcbhot,#adAreaDi a.lcbhot,#adAreaS a.lcbhot{color:#bd0a01;font-weight:bold;}
+
+#adAreaA{background-position:-175px -160px;}
+#adAreaA h3{color:#5f5f5f;background-position:-175px -10px;}
+#adAreaA h3.s{background-position:-225px -10px;}
+.adAreaA_t{background-position:0 -260px;}
+.adAreaA_b{background-position:0 -264px;}
+
+#adAreaB{background-position:-175px -190px;}
+#adAreaB h3{color:#5f5f5f;background-position:-280px -10px;}
+#adAreaB h3.s{background-position:-320px -10px;}
+.adAreaB_t{background-position:-200px -260px;}
+.adAreaB_b{background-position:-200px -264px;}
+
+#adAreaS span{color:#a5752a;}
+#adAreaS span a{color:#a5752a;}/*  |xGv00|464a42cbc22b41cb7f34d47ed65ecf6f */

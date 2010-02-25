@@ -1,0 +1,18 @@
+.wrap .hd .logo {
+	BACKGROUND: url(images/logo.png) no-repeat; LEFT: 12px; OVERFLOW: hidden; WIDTH: 221px; CURSOR: pointer; POSITION: relative; TOP: 0px; HEIGHT: 73px
+}
+.wrap .bd {
+	BACKGROUND: url(images/bdbg.jpg) no-repeat; WIDTH: 1004px; HEIGHT: 313px
+}
+.wrap .bd .focuspic {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px -261px; LEFT: 100px; FLOAT: left; WIDTH: 440px; POSITION: relative; TOP: 29px; HEIGHT: 261px
+}
+.wrap .bd .focuspic .lbg {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px 0px; FLOAT: left; WIDTH: 13px; HEIGHT: 261px
+}
+.wrap .bd .focuspic .cbg {
+	FLOAT: left; WIDTH: 414px; HEIGHT: 261px; TEXT-ALIGN: center
+}
+.wrap .bd .focuspic .rbg {
+	BACKGROUND: url(images/page_y.jpg) repeat-x 0px -522px; FLOAT: right; WIDTH: 13px; HEIGHT: 261px
+}
