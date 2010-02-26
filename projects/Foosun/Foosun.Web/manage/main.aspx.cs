@@ -352,4 +352,10 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
     {
         Response.Redirect("../" + Foosun.Config.UIConfig.dirUser + "/info/Logscreat.aspx",true);
     }
+
+
+    protected void OnNumberClick(object sender, EventArgs e)
+    {
+        Literal1.Text = Foosun.Common.Rand.Number(12);
+    }
 }
