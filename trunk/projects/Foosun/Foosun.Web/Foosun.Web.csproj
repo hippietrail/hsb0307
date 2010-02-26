@@ -4713,6 +4713,9 @@
     <Content Include="Templets\xxbn\Images\mar_bg.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="database\update.sql" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="DigitalNewspaper\" />
     <Folder Include="editor\editor\filemanager\browser\default\connectors\" />
     <Folder Include="editor\editor\plugins\" />
