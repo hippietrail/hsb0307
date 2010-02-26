@@ -300,7 +300,7 @@ EM.f12 {
 	COLOR: #d30100
 }
 .t4 {
-	BACKGROUND: url(/Templets/people_xxbn/image/t3_bg.gif) repeat-x 50% top;  WIDTH: 100%; COLOR: #08043A; HEIGHT: 28px; TEXT-ALIGN: left
+	BACKGROUND: url(/Templets/people_xxbn/image/t3_bg.gif) repeat-x 50% top;  WIDTH: 100%; COLOR: #08043A; HEIGHT: 28px; TEXT-ALIGN: left; line-height:28px;
 }
 .t4 A {
 	COLOR: #08043A
