@@ -6,7 +6,9 @@ BODY
 	line-height: 180%;
 	font-family: ËÎÌå;
 	text-align:center;
-	background-color: #fff;
+	
+	background: url(../image/2010fbg.jpg) center top repeat-x;
+	background-color:#fff;
 	font-family: HG_Tai_WB, Arial, 'ĞÂËÎÌå' , sans-serif;
 }
 *
@@ -1659,7 +1661,7 @@ A:visited
 {
 	margin: 0px;
 	padding: 0px;
-	width: 230px;
+	width: 240px;
 	list-style-type: none;
 	float: left;
 	text-align:center;

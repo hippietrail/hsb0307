@@ -4706,6 +4706,7 @@
     <Content Include="Templets\people\style\hack_noie.css" />
     <Content Include="Templets\people\style\indexstyle.css" />
     <Content Include="Templets\people\style\layout.css" />
+    <Content Include="Templets\people_xxbn\image\2010fbg.jpg" />
     <Content Include="Templets\xxbn\dw_VideoContent.htm" />
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
     <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
