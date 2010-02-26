@@ -2245,8 +2245,8 @@ a:hover
 
 /*page*/
 .pagePictures { margin:0px; padding:0px;width: 350px;}
-.pagePictures ul { margin:0px; padding:0px;width: 350px; margin-left:3px;}
-.pagePictures ul li { list-style-type:none; width:160px; float:left;  margin:7px; }
+.pagePictures ul { margin:0px; padding:0px;width: 346px; margin-left:3px;}
+.pagePictures ul li { list-style-type:none; width:160px; float:left;  margin:5px; }
 .pagePictures ul li span 
 {
    width:160px; font-size:20px;
@@ -2277,6 +2277,7 @@ a:hover
 	float: left;
 	height: auto;
 	color: #012d5c;
+	min-height:350px;
 }
 .content
 {
@@ -2348,7 +2349,7 @@ a:hover
 	height: 20px;
 	vertical-align: middle;
 }
-.input1.title
+.input1 .title
 {
 	width: 35px;
 	background: #dbdddc;
@@ -2386,7 +2387,7 @@ a:hover
 	border-left: #c1c1c1 1px solid;
 	line-height: 210%;
 	margin: 0px 0px 0px;
-	width: 352px;
+	width: 350px;
 	background: #effdfe;
 	
 	border-top: #c1c1c1 1px solid;
@@ -2496,16 +2497,16 @@ EM
 	padding-bottom: 10px;
 	margin: 0px auto;
 	padding-left: 0px;
-	width: 350px;
+	width: 344px;
 	padding-right: 0px;
 	height: auto;
 	clear: both;
 	padding-top: 10px; 
 	background: url(/Templets/people_xxbn/image/number.gif) no-repeat 0 6px;
-	margin-left:5px;
+	margin-left:4px;
 }
-.pageNewsPaiHang ul { margin:0px; padding:0px; width:350px; margin-left:14px;}
-.pageNewsPaiHang ul li { margin:0px; padding:0px; width:336px; line-height:30px; height:30px; }
+.pageNewsPaiHang ul { margin:0px; padding:0px; width:332px; margin-left:14px;}
+.pageNewsPaiHang ul li { margin:0px; padding:0px; width:332px; line-height:30px; height:30px; }
 .pageNewsPaiHang ul li A
 {
 	color: #003365;  font-size:24px; margin-left:15px;
