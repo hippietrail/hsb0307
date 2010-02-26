@@ -4585,6 +4585,11 @@
     <Content Include="fonts\HG_TaiTham_WBD_IE.eot" />
     <Content Include="fonts\HG_Tai_WB.eot" />
     <Content Include="Templets\images\mar_bg.gif" />
+    <Content Include="Templets\js\imedai.js" />
+    <Content Include="Templets\js\jquery.js" />
+    <Content Include="Templets\js\main.js" />
+    <Content Include="Templets\js\newdai.js" />
+    <Content Include="Templets\js\olddai.js" />
     <Content Include="Templets\people\default.htm" />
     <Content Include="Templets\people\flash\ads.swf" />
     <Content Include="Templets\people\flash\gonghang42040.swf" />
