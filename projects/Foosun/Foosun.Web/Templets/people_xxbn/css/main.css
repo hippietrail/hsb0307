@@ -2064,7 +2064,8 @@ a:hover
 {
 	margin-top: 0px;
 	width: 981px;
-	background: url(/Templets/people_xxbn/image/xinendbg1.gif);
+	background-color:#fff;
+	/*background: url(/Templets/people_xxbn/image/xinendbg1.gif);*/
 	height: auto;
 }
 .xz2jlb
@@ -2084,8 +2085,8 @@ a:hover
 }
 .xz2jlb_1
 {
-	margin: 6px auto 0px;
-	width: 300px;
+	margin: 0px auto 0px;
+	width: 310px;
 	height: auto;
 	clear: both;
 }
@@ -2095,12 +2096,13 @@ a:hover
 	width: 313px;
 	clear: both;
 }
+
 .xz2jlb_2 UL LI.xzsub1_1
 {
 	text-align: center;
 	border-left: #6bcde8 1px solid;
 	background: #6bcde8;
-	width: 312px;
+	width: 311px;
 	height: 33px;
 }
 .xz2jlb_2 UL LI
@@ -2117,35 +2119,38 @@ a:hover
 {
 	color: #003365;
 }
+
 .xz2jlb_3
 {
-	padding-bottom: 10px;
 	margin: 0px auto;
-	padding-left: 0px;
-	width: 300px;
-	padding-right: 0px;
+	width: 310px;
 	height: auto;
 	clear: both;
-	padding-top: 10px;
-	
+	padding:10px 0px 10px 0px;
 }
 .xz2jlb_3 UL
 {
-	width:140px; margin:0px; padding:0px;  height:auto; 
-
-	}
+	width:310px; margin:0px; padding:0;  height:auto; 
+}
 .xz2jlb_3 UL LI
 {
 	text-align: center;
-	margin: 2px 5px 0px;
+	margin: 2px 6px 0px 0px;
 	float: left;
-	width:290px;
-	
+	width:310px;
+	border: solid 1px #d4d4d4;
+	margin-bottom:6px;
+	padding:0;
 }
-.xz2jlb_3 UL LI span {margin-top:6px; margin-bottom:0px; height:30px; width:290px; display:block; }
+.xz2jlb_3 UL LI span {margin-top:6px; margin-bottom:0px; height:30px; width:300px; display:block; }
 .xz2jlb_3 UL LI A
 {
-	 font-size:24px;}
+	 font-size:24px;
+}
+.xz2jlb_3 UL LI A img
+{
+ width:310px;
+}
 .xz2jlb_2 UL LI.xzsub1_2
 {
 	text-align: center;
@@ -2172,7 +2177,8 @@ a:hover
 	height: auto;
 	clear: both;
 	padding-top: 10px; 
-	background: url(/Templets/people_xxbn/image/number.gif) no-repeat 0 6px
+	background: url(/Templets/people_xxbn/image/number.gif) no-repeat 0 6px;
+	border : solid 1px #d4d4d4;
 }
 .xz2jlb_4 ul { margin:0px; padding:0px; width:296px; margin-left:14px;}
 .xz2jlb_4 ul li { margin:0px; padding:0px; width:295px; line-height:30px; height:30px; }
@@ -2186,6 +2192,7 @@ a:hover
 	width: 660px;
 	float: right;
 	font-size: 24px;
+	 border:solid 1px #d4d4d4;
 }
 .xz2jlb_right div 
 {
