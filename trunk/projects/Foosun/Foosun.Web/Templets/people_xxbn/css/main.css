@@ -1,10 +1,14 @@
+@font-face 
+{
+	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot");
+}
 BODY
 {
 	padding: 0px;
 	font-size: 12px;
 	margin: 0px;
 	line-height: 180%;
-	font-family: ËÎÌו;
+	
 	text-align:center;
 	
 	background: url(../image/2010fbg.jpg) center top repeat-x;
