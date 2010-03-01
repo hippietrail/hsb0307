@@ -118,6 +118,8 @@ INSERT INTO [dbo].[fs_sys_Label] (
 	SELECT 201, '324310793293', '932462318447', '{FS_people_贝叶文化图文}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=6,FS:NewsType=Last,FS:ClassID=939459291685,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=20][#FS:StyleID=009016332516][/FS:Loop]', '', '10-29-2009 15:02:17.110', 0, 0, 0, '0', NULL UNION
 	SELECT 202, '173539481079', '932462318447', '{FS_东盟瞭望栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=532001601801,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
 	SELECT 203, '419943644641', '932462318447', '{FS_社会论坛栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=154284819893,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
-	SELECT 204, '380125976475', '932462318447', '{FS_要闻报道栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=803851363923,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL 	
+	SELECT 204, '380125976475', '932462318447', '{FS_要闻报道栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=803851363923,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	SELECT 205, '569572494405', '932462318447', '{FS_音频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=780931872925,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	SELECT 206, '025841987429', '932462318447', '{FS_视频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=918316733085,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL 	
 SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
 GO
