@@ -1740,7 +1740,7 @@ A:visited
 /*video*/
 .videoNews
 {
-	margin: 5px 0 0 10px;
+	margin: 5px 0 0 2px;
 	width: 580px;
 	color: #356aa0;
 }
@@ -1949,8 +1949,8 @@ a:hover
 }
 .videoNewsText
 {
-	width: 393px;
-	margin: 0px 12px 0 3px;
+	width: 382px;
+	margin: 0px 12px 0 2px;
 	padding: 0px;
 	float: right;
 }
@@ -2529,14 +2529,14 @@ EM
 .video_List ul li a { font-size:18px;}
 
 .videoNewsList  {
-	 margin:0px; padding:0px; WIDTH:383px;
+	 margin:0px; padding:0px; WIDTH:380px;
 }
 
-.videoNewsList ul { margin:0px; padding:0px;WIDTH: 383px; margin-top:0px;}
-.videoNewsList ul li { margin:0px; padding:0px; list-style-type:none; float :left ;  width:383px;HEIGHT: 32px; line-height:32px;
+.videoNewsList ul { margin:0px; padding:0px;WIDTH: 380px; margin-top:0px;}
+.videoNewsList ul li { margin:0px; padding:0px; list-style-type:none; float :left ;  width:380px;HEIGHT: 32px; line-height:32px;
                    background: url(/Templets/people_xxbn/image/Soft_common2.gif) no-repeat 0px 5px; }
                    
-.videoNewsList ul li a { margin:0px; padding:0px; font-size:24px;width:383px;  margin-left:30px;}
+.videoNewsList ul li a { margin:0px; padding:0px; font-size:24px;width:380px;  margin-left:30px;}
 .audioNewslist 
 {
 	 margin:0px; padding:0px; WIDTH:465px; height:400px;
