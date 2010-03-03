@@ -123,3 +123,8 @@ INSERT INTO [dbo].[fs_sys_Label] (
 	SELECT 206, '025841987429', '932462318447', '{FS_视频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=918316733085,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL 	
 SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
 GO
+
+
+UPDATE    fs_news_Class
+SET               ClassTemplet = '/Templets/people_xxbn/list.htm', ReadNewsTemplet = '/Templets/people_xxbn/aticle.htm' 
+WHERE     (isPage = 0) AND (NaviShowtf = 1)
