@@ -128,3 +128,29 @@ GO
 UPDATE    fs_news_Class
 SET               ClassTemplet = '/Templets/people_xxbn/list.htm', ReadNewsTemplet = '/Templets/people_xxbn/aticle.htm' 
 WHERE     (isPage = 0) AND (NaviShowtf = 1)
+GO
+
+UPDATE    fs_news
+SET  Templet = '/Templets/people_xxbn/aticle.htm'
+WHERE  ClassID IN (
+'803851363923',
+'154284819893',
+'715047079358',
+'665030062151',
+'878924867746',
+'931312341270',
+'922157719584',
+'532001601801',
+'398090726902',
+'939459291685',
+'074880008639',
+'423565744168',
+'442378444275',
+'169134870432',
+'918316733085',
+'628950861675',
+'780931872925',
+'284097771334'
+)
+
+GO
