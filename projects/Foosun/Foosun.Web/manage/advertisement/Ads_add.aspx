@@ -39,9 +39,10 @@
           <asp:ListItem Value="7">左下底端</asp:ListItem>
           <asp:ListItem Value="8">右下底端</asp:ListItem>
           <asp:ListItem Value="9">对联广告(顶部)</asp:ListItem>
-          <asp:ListItem Value="12">对联广告(底部)</asp:ListItem>
           <asp:ListItem Value="10">滚动广告</asp:ListItem>
           <asp:ListItem Value="11">文字广告</asp:ListItem>
+          <asp:ListItem Value="12">对联广告(底部)</asp:ListItem>
+          <asp:ListItem Value="13">flash广告</asp:ListItem>
      </asp:DropDownList>
         <span class="helpstyle" style="cursor:help;" title="点击显示帮助" onclick="Help('H_AdsAdd_003',this)">帮助</span></td>
     </tr>
@@ -235,6 +236,25 @@ function checkData(value)
                 return false;
             }
         }
+        if(value=="13")
+        {
+            if(document.AdsForm.rightPic.value=="")
+            {
+                document.getElementById("spanRightPic").innerHTML="<span class=reshow>(*)请输入图片/动画地址</spna>";
+                return false;
+            }    
+            if(document.AdsForm.rightSize.value=="")
+            {
+                document.getElementById("spanrightSize").innerHTML="<span class=reshow>(*)请输入图片/动画大小</spna>";
+                return false;
+            }
+            var rightSizevalue = document.AdsForm.rightSize.value;  
+            if(re.test(rightSizevalue)==false)
+            {
+                document.getElementById("spanrightSize1").innerHTML="<span class=reshow>(*)格式不正确,格式为(200|300),高或者宽不能超过四位数</spna>";
+                return false;
+            }
+        }
        // if(document.AdsForm.LinkURL.value=="")
       //  {
       //      document.getElementById("spanLinkURL").innerHTML="<span class=reshow>(*)请输入链接地址</spna>";
@@ -342,6 +362,10 @@ function checkadType(value)
             document.getElementById("TrAdTxt").style.display="";
             break;
         case "12":
+            document.getElementById("TrrightPic").style.display="";
+            document.getElementById("TrrightSize").style.display="";
+            break;
+        case "13":
             document.getElementById("TrrightPic").style.display="";
             document.getElementById("TrrightSize").style.display="";
             break;

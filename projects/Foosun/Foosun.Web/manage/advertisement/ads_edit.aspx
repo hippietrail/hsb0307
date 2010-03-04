@@ -221,17 +221,36 @@ function checkData(value)
                 return false;
             }
         }
-        if(document.AdsForm.LinkURL.value=="")
+        if(value=="13")
         {
-            document.getElementById("spanLinkURL").innerHTML="<span class=reshow>(*)请输入链接地址</spna>";
-            return false;
+            if(document.AdsForm.rightPic.value=="")
+            {
+                document.getElementById("spanRightPic").innerHTML="<span class=reshow>(*)请输入图片/动画地址</spna>";
+                return false;
+            }    
+            if(document.AdsForm.rightSize.value=="")
+            {
+                document.getElementById("spanrightSize").innerHTML="<span class=reshow>(*)请输入图片/动画大小</spna>";
+                return false;
+            }
+            var rightSizevalue = document.AdsForm.rightSize.value;  
+            if(re.test(rightSizevalue)==false)
+            {
+                document.getElementById("spanrightSize1").innerHTML="<span class=reshow>(*)格式不正确,格式为(200|300),高或者宽不能超过四位数</spna>";
+                return false;
+            }
         }
-        var LinkURLvalue = document.AdsForm.LinkURL.value;
-        if(re1.test(LinkURLvalue)==false)
-        {
-            document.getElementById("spanLinkURL1").innerHTML="<span class=reshow>(*)链接地址格式不正确</spna>";
-            return false;
-        }
+//        if(document.AdsForm.LinkURL.value=="")
+//        {
+//            document.getElementById("spanLinkURL").innerHTML="<span class=reshow>(*)请输入链接地址</spna>";
+//            return false;
+//        }
+//        var LinkURLvalue = document.AdsForm.LinkURL.value;
+//        if(re1.test(LinkURLvalue)==false)
+//        {
+//            document.getElementById("spanLinkURL1").innerHTML="<span class=reshow>(*)链接地址格式不正确</spna>";
+//            return false;
+//        }
         if(value=="10")
         {
             if(document.AdsForm.CycID.value=="")
@@ -326,6 +345,10 @@ function checkadType(value)
             document.getElementById("TrAdTxt").style.display="";
             break;
         case "12":
+            document.getElementById("TrrightPic").style.display="";
+            document.getElementById("TrrightSize").style.display="";
+            break;
+        case "13":
             document.getElementById("TrrightPic").style.display="";
             document.getElementById("TrrightSize").style.display="";
             break;
