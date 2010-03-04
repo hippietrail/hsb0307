@@ -169,7 +169,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
 
     protected void gettype(string type)
     {
-        for (int i = 0; i <= 12; i++)
+        for (int i = 0; i <= 13; i++)
         {
             ListItem itm = new ListItem();
             if (type == i.ToString())
@@ -230,6 +230,9 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
                 break;
             case "12":
                 str_tempstr = "对联广告(底部)";
+                break;
+            case "13":
+                str_tempstr = "flash广告";
                 break;
         }
         return str_tempstr;
