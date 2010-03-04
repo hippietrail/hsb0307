@@ -881,6 +881,84 @@ public class createJs
         CreateJsFile(adsID, adsClassID, str_AdsJsstr);
     }
 
+    public static void CreateAds13(string adsID, string classID)
+    {
+        //throw new Exception("The method or operation is not implemented.");
+        string str_AdsJsstr = "";
+        string str_TempLeft = "";
+        string str_TempRight = "";
+        if (checkJs(adsID) == true)
+            str_AdsJsstr = "document.write('此广告已暂停或失效!')";
+        else
+        {
+            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            DataTable dt = ac.getAdsPicInfo("leftPic,leftSize,linkURL", "ads", adsID);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    string str_leftPic = ReplaceDirfile(dt.Rows[0][0].ToString());
+                    string str_leftSize = dt.Rows[0][1].ToString();
+
+                    str_leftPic = str_leftPic.ToLower();
+                    string[] arr_LeftSize = str_leftSize.Split('|');
+                    string[] arr_url = dt.Rows[0]["linkURL"].ToString().Split(';');
+                    str_TempLeft = " imagePathL.push(\"" + Foosun.Publish.CommonData.getUrl() + str_leftPic + "\");" +
+                                   "  linkPathL.push(\"" + arr_url[0] + "\");";
+                }
+            }
+            dt = ac.getAdsPicInfo("rightPic,rightSize,LinkURL", "ads", adsID);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    string str_rightPic = ReplaceDirfile(dt.Rows[0][0].ToString());
+                    string str_rightSize = dt.Rows[0][1].ToString();
+
+                    str_rightPic = str_rightPic.ToLower();
+                    string[] arr_rightSize = str_rightSize.Split('|');
+                    string[] arr_url = dt.Rows[0]["linkURL"].ToString().Split(';');
+                    string url = arr_url[0];
+                    if (arr_url.Length > 1)
+                    {
+                        url = arr_url[1];
+                    }
+                    str_TempRight = "imagePathL.push(\"" + Foosun.Publish.CommonData.getUrl() + str_rightPic + "\");" +
+                                   "linkPathL.push(\"" + url + "\");";
+                }
+            }
+            //str_AdsJsstr = "document.write('<script type=\"text/javascript\">"+
+            //                " var imagePathL = new Array();  "+
+            //                " var linkPathL = new Array(); ";
+            //str_AdsJsstr = str_AdsJsstr + str_TempLeft + str_TempRight ;
+            //str_AdsJsstr = str_AdsJsstr + " var imagePathL_str = \"\"" +
+            //                              " var linkPathL_str = \"\"" +
+
+            //                           " for (var i = 0; i < imagePathL.length; i++) {" +
+            //                           " imagePathL_str += imagePathL[i] + \"|\";" +
+            //                           " linkPathL_str += linkPathL[i] + \"|\";}" +
+            //                           " var FDL = new SWFObject(\"/Templets/people_xxbn/flash/picshow.swf\", \"FDL\", \"165\", \"60\", \"7\", \"\");" +
+            //                           " FDL.addParam(\"menu\", \"false\");" +
+            //                           " FDL.addParam(\"wmode\", \"transparent\");" +
+            //                           " FDL.addVariable(\"ad_num\", \"2\");" +
+            //                           " FDL.addVariable(\"pic_width\", \"165\");" +
+            //                           " FDL.addVariable(\"pic_height\", \"60\");" +
+            //                           " FDL.addVariable(\"flip_time\", \"300\"); " +
+            //                           " FDL.addVariable(\"pause_time\", \"4000\"); " +
+            //                           " FDL.addVariable(\"wait_time\", \"1000\");" +
+            //                           " FDL.addVariable(\"pics\", imagePathL_str); " +
+            //                           " FDL.addVariable(\"urls\", linkPathL_str); " +
+            //                           " FDL.write(\"FDL\");" +
+            //                           " </script>')";
+
+           str_AdsJsstr="document.write('<script type=\"text/javascript\"> var imagePathL = new Array(); var linkPathL = new Array();"+ str_TempLeft+ str_TempRight+"  var imagePathL_str = \"\"; var linkPathL_str = \"\"; for (var i = 0; i < imagePathL.length; i++) { imagePathL_str += imagePathL[i] + \"|\"; linkPathL_str += linkPathL[i] + \"|\";} var FDL = new SWFObject(\"/Templets/people_xxbn/flash/picshow.swf\", \"FDL\", \"165\", \"60\", \"7\", \"\"); FDL.addParam(\"menu\", \"false\");FDL.addParam(\"wmode\", \"transparent\");FDL.addVariable(\"ad_num\", \"2\"); FDL.addVariable(\"pic_width\", \"165\"); FDL.addVariable(\"pic_height\", \"60\");FDL.addVariable(\"flip_time\", \"300\");FDL.addVariable(\"pause_time\", \"4000\"); FDL.addVariable(\"wait_time\", \"1000\");FDL.addVariable(\"pics\", imagePathL_str);FDL.addVariable(\"urls\", linkPathL_str); FDL.write(\"FDL\");</script>')";
+
+
+            CreateJsFile(adsID, classID, str_AdsJsstr);
+
+        }
+    }
+
 
     /// <summary>
     /// 替换图片路径中的{@dirfile}为实际地址
@@ -894,4 +972,6 @@ public class createJs
         string str_Temppath = picpath.Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
         return str_Temppath;
     }
+
+  
 }
