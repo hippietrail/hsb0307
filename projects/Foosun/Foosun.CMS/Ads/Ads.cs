@@ -219,6 +219,9 @@ namespace Foosun.CMS.Ads
                 case "12":
                     createJs.CreateAds11(AdID, classID);
                     break;
+                case "13":
+                    createJs.CreateAds13(AdID, classID);
+                    break;
             }
         }
 
