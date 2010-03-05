@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>{FS_页面标题}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/Templets/people_xxbn/css/weather090116.css" type="text/css" rel="stylesheet" />
+    <link href="/Templets/people_xxbn/css/layout.css" type="text/css" rel="stylesheet" />
+    <!-- <link href="/Templets/people_xxbn/css/hack_noie.css" type="text/css" rel="stylesheet" />
+    <link href="/Templets/people_xxbn/css/hack.css" type="text/css" rel="stylesheet" />
+    <link href="/Templets/people_xxbn/css/hack_ie8.css" type="text/css" rel="stylesheet" />-->
+    <link href="/Templets/people_xxbn/css/main.css" type="text/css" rel="stylesheet" />
+    <!--[if IE 6]>
+    <link href="/Templets/people_xxbn/css/hack.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+    <![endif]-->
+    <!--[if IE 8]>
+    <link href="/Templets/people_xxbn/css/hack_ie8.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link href="/Templets/people_xxbn/css/hack_noie.css" type="text/css" rel="stylesheet"
+        rev="stylesheet" media="all" />
+    <!--<![endif]-->
+
+    <script language="javascript" src="/Templets/people_xxbn/js/jspublic.js"></script>
+
+    <script language="javascript" src="/Templets/people_xxbn/js/Prototype.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/jquery.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/newdai.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/olddai.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/imedai.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/Prototype.js"></script>
+
+    <script type="text/javascript" src="/Templets/people_xxbn/js/jspublic.js"></script>
+  
+    <link href="css/weather090116.css" type="text/css" rel="stylesheet" />
+    <link href="css/layout.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <!--[if IE 6]>
+    <link href="/Templets/people_xxbn/css/hack.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+    <![endif]-->
+    <!--[if IE 8]>
+    <link href="/Templets/people_xxbn/css/hack_ie8.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link href="css/hack_noie.css" type="text/css" rel="stylesheet" rev="stylesheet"
+        media="all" />
+    <!--<![endif]-->
+</head>
+<body>
+    <div class="pt_5">
+        <img src="/Templets/people_xxbn/image/chuangxin98060.gif" />
+    </div>
+    <div class="login">
+        <div class="gonggao">
+            <marquee onmousemove="this.stop();" onmouseout="this.start();" height="32" width="940">
+                {FS_people_滚动新闻}
+            </marquee>
+        </div>
+    </div>
+    <!--导航区-->
+    <div class="nav">
+        <div class="logo">
+            <a href="#" target="_blank">
+                <img src="/Templets/people_xxbn/image/logo_xxbn.gif" alt="人民网" border="0" /></a>
+        </div>
+        <!--主导航区-->
+        <div class="new_nav">
+            <ul>
+                {FS_people_栏目导航}</ul>
+        </div>
+    </div>
+    <div class="xinban_c">
+        <div class="mar">
+            <span class="fl">ᦷᦎ ᦈᧁᧉ ᦢᧆ ᦵᦡᧁᧈ ᦊᦴᧈ ：</span>{FS_people_现在位置}
+        </div>
+    </div>
+    <!--新闻内容区域-->
+    <div class="content">
+        <!--左侧内容-->
+        <div class="left_content">
+            <div class="left_c_c">
+               
+                <div id="p_title">
+                    <h1>
+                        {#Page_Title}</h1>
+                </div>
+                <h2>
+                </h2>
+                <p class="p1">
+                </p>
+                <p>
+                </p>
+                <table class="title" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <!--  <td width="80">
+                            &nbsp;【字号 <a target="_blank" href="#" onclick="return doZoom(18)">大</a> <a href="#"
+                                onclick="return doZoom(16)">中</a> <a target="_blank" href="#" onclick="return doZoom(15)">
+                                    小</a>】
+                        </td>-->
+                        <td>
+                            <div class="contentinfo">
+                                <ul>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div id="p_content" class="show_c">
+                    {#Page_Content}
+                </div>
+            </div>
+        </div>
+        <div class="right_content">
+            <!--热图推荐-->
+            <table class="pci_new" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td colspan="2" valign="top">
+                        <div class="pci_title">
+                            &nbsp;&nbsp;&nbsp;热图推荐</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="pagePictures">
+                            <ul>
+                                {FS_people_page_pictures}</ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--<div style="height:6px;" ></div>
+            <table class="pci_new hot_new" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td valign="top">
+                        <div class="pci_title">
+                            &nbsp;&nbsp;&nbsp;精彩新闻</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="pageNewsPaiHang">
+                            <ul>
+                                {FS_people_栏目_点击排行}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>-->
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="about">
+            {FS_people_版权声明}
+        </div>
+        <div class="about1">
+            <div class="about1_0">
+                <span>[ᦍᦲᧃᧉ ᦓᦱᧃᧉICPᦷᦈᧆ ᦖᦻ08002231]</span>&nbsp;&nbsp;&nbsp;ᦁᧄ ᦓᦱᧆ ᦃᦸᧂ ᦙᦲ : ᦷᦣᧂ ᦐᧂ
+                ᦉᦹ ᦘᦲᧄ ᦱ᧒ ᦗᧃ ᦓᦱ</div>
+            <ul>
+                <li>ᦑᦲᧈ ᦊᦴᧈ : ᦵᦋᧂ ᦣᦳᧂᧈ ᦉᦹᧈ ᦑᦱᧂ ᦂᦱᧆ ᦟᦱᧃᧉ ᦉᦲᧃᧉᦂᦱᧂ<span>94</span>&nbsp;&nbsp;&nbsp;ᦃᧁᧈ
+                    ᦓᦱᧄ ᦗᦱᧆ ᦚᦱᧅ ᦟᦻ :<span>666100</span>&nbsp;&nbsp;&nbsp;ᦓᦱᧄ ᦗᦱᧆ ᦵᦵᦎᧃᧈ ᦧᦱᧈ : <span>0691-2122592</span></li></ul>
+        </div>
+    </div>
+ 
+                
+              
+</body>
+</html>
