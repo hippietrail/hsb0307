@@ -4710,6 +4710,7 @@
     <Content Include="Templets\people\style\hack_noie.css" />
     <Content Include="Templets\people\style\indexstyle.css" />
     <Content Include="Templets\people\style\layout.css" />
+    <Content Include="Templets\people_xxbn\about.htm" />
     <Content Include="Templets\people_xxbn\aticle.htm" />
     <Content Include="Templets\people_xxbn\audio.htm" />
     <Content Include="Templets\people_xxbn\css\com20070619.css" />
