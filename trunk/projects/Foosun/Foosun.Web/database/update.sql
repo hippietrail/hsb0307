@@ -120,7 +120,11 @@ INSERT INTO [dbo].[fs_sys_Label] (
 	SELECT 203, '419943644641', '932462318447', '{FS_社会论坛栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=154284819893,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
 	SELECT 204, '380125976475', '932462318447', '{FS_要闻报道栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=803851363923,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
 	SELECT 205, '569572494405', '932462318447', '{FS_音频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=780931872925,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
-	SELECT 206, '025841987429', '932462318447', '{FS_视频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=918316733085,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL 	
+	SELECT 206, '025841987429', '932462318447', '{FS_视频新闻url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=918316733085,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	
+	SELECT 207, '433545251898', '932462318447', '{FS_people_滚动图片}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=6,FS:NewsType=list] <a target="_blank" href="{#URL}"><img alt="" src="{#Picture}" /></a> [/FS:Loop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	SELECT 208, '384323353272', '932462318447', '{FS_people_幻灯广告L}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=3,FS:NewsType=list,FS:ClassID=111622483303]imagePathL.push("{#Picture}"); linkPathL.push("{#URL}");[/FS:Loop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	SELECT 209, '393987762343', '932462318447', '{FS_people_幻灯广告R}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=3,FS:NewsType=list,FS:ClassID=111622483303]imagePath.push("{#Picture}"); linkPath.push("{#URL}");[/FS:Loop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL 
 SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
 GO
 
