@@ -1646,6 +1646,16 @@ A:visited
 {
 	float: left;
 }
+#demo1 img
+{
+  height:104px;
+  width:152px;
+}
+#demo2 img
+{
+  height:104px;
+  width:152px;
+}
 .friendlink
 {
 	margin: 0px;
