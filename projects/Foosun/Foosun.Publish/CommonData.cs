@@ -15,6 +15,9 @@ namespace Foosun.Publish
         public static IList<PubSpecialInfo> NewsSpecial = new List<PubSpecialInfo>();
         public static IList<PubCHClassInfo> CHClass = new List<PubCHClassInfo>();
         public static IList<PubCHSpecialInfo> CHSpecial = new List<PubCHSpecialInfo>();
+
+        public static IList<PubClassInfo> NoNavigationClass = new List<PubClassInfo>();
+
         /// <summary>
         /// 取得网站域名的根目录(绝对路径及相对路径)
         /// </summary>
@@ -60,6 +63,14 @@ namespace Foosun.Publish
             CHClass = CommonData.DalPublish.GetCHClassList();
             NewsSpecial = CommonData.DalPublish.GetSpecialList();
             CHSpecial = CommonData.DalPublish.GetCHSpecialList();
+
+            foreach (PubClassInfo col in NewsClass)
+            {
+                if (col.NaviShowtf == 0)
+                {
+                    NoNavigationClass.Add(col);
+                }
+            }
         }
         /// <summary>
         /// 取得栏目的相关信息,必须是没有放在回收站中的
@@ -252,5 +263,7 @@ namespace Foosun.Publish
             Foosun.Model.PubClassInfo pci = CommonData.GetClassById(ClassID);
             return CommonData.getClassURL(pci.Domain,pci.isDelPoint, pci.ClassID, pci.SavePath, pci.SaveClassframe, pci.ClassSaveRule);
         }
+
+
     }
 }
