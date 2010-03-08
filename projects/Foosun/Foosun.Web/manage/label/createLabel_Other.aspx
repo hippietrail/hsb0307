@@ -35,7 +35,7 @@
           <tr class="TR_BG_list" id="TrfreeJS" style="display:none;">
             <td align="right" class="navi_link" style="width: 28%">自由JS编号</td>
             <td width="79%" align="left" class="navi_link"><asp:DropDownList ID="freeJSID" runat="server" Width="200px" CssClass="form">
-             </asp:DropDownList><span id="spanfreeJS"></span></td>
+             </asp:DropDownList><span id="spanfreeJS"></span><input id="chbCreateContent" type="checkbox" /><span >直接生成内容</span></td>
           </tr>
 
           <tr class="TR_BG_list" id="TrsysJS" style="display:none;">
@@ -208,10 +208,12 @@ function ReturnDivValue()
             rvalue += "][/FS:Loop]";
             break;
         case "freeJS":
-            rvalue+="[FS:unLoop,FS:SiteID=<%Response.Write(APIID); %>,FS:LabelType=";
+            rvalue+="[FS:unLoop,FS:SiteID=<%Response.Write(APIID); %>,FS:LabelType=freeJS,";
             if(checkIsNull(document.ListLabel.freeJSID,document.getElementById("spanfreeJS"),"请选择自由JS"))
                 CheckStr=false;
-            rvalue += "freeJS,FS:JSID=" + document.ListLabel.freeJSID.value + "][/FS:unLoop]";
+            if(document.getElementById("chbCreateContent").checked==true)
+            rvalue+=" FS:CreateContent=true,";
+            rvalue += "FS:JSID=" + document.ListLabel.freeJSID.value + "][/FS:unLoop]";
             break;
         case "sysJS":
             rvalue+="[FS:unLoop,FS:SiteID=<%Response.Write(APIID); %>,FS:LabelType=";
