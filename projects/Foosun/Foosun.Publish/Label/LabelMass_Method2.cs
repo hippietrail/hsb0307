@@ -88,6 +88,7 @@ namespace Foosun.Publish
         public string Analyse_freeJS()
         {
             string str_freeJSID = this.GetParamValue("FS:JSID");
+            string str_CreateContent = this.GetParamValue("FS:CreateContent");
             string str_jsCode = "";
             if (str_freeJSID != null)
             {
@@ -95,7 +96,23 @@ namespace Foosun.Publish
                 if (rd.Read())
                 {
                     string jsFlies = CommonData.SiteDomain + (rd.GetString(0) + "/" + rd.GetString(1)).Replace("//", "/") + ".js";
+
                     str_jsCode = "<script language=\"javascript\" src=\"" + jsFlies + "\"></script>";
+                    //20100305 lsd ÐÞ¸Ä change
+                    if (str_CreateContent == "true")
+                    {
+                        string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+                        str_jsCode = General.ReadHtml(SiteRootPath.Trim('\\')+jsFlies);
+                        if (str_jsCode.IndexOf("document.write") != -1)
+                        {
+                            int lastIndex = str_jsCode.LastIndexOf("');");
+                            int firstIndex=str_jsCode.LastIndexOf("('");
+                            str_jsCode = str_jsCode.Substring(firstIndex+2,str_jsCode.Length-(firstIndex+2+1+3));
+                            
+                        }
+
+ 
+                    }
                 }
                 rd.Close();
             }
