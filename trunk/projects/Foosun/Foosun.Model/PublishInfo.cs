@@ -35,7 +35,7 @@ namespace Foosun.Model
         //public int InHitoryDay;
         //public string DataLib = string.Empty;
         public string SiteID = string.Empty;
-        public int NaviShowtf;
+        public int NaviShowtf = 1;
         public string NaviPIC = string.Empty;
         public string NaviContent = string.Empty;
         public string MetaKeywords = string.Empty;

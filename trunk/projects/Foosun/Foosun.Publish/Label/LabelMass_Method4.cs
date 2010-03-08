@@ -627,6 +627,13 @@ namespace Foosun.Publish
                 str_FlashBG = "FFF";
 
             string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And SubString([NewsProperty],7,1)='1'";
+
+            string excludeClass = GetNovigationClassString();
+            if(!String.IsNullOrEmpty(excludeClass) && excludeClass.Length > 2)
+            {
+                SqlCondition += " AND [ClassID] NOT IN (" + excludeClass  + ")";
+            }
+
             if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
             {
                 SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And mid([NewsProperty],7,1)='1'";
@@ -737,6 +744,17 @@ namespace Foosun.Publish
                 }
             }
             return str_FlashFilt;
+        }
+
+        public string GetNovigationClassString()
+        {
+            string s = "";
+            foreach (PubClassInfo col in CommonData.NoNavigationClass)
+            {
+                s += "'" + col.ClassID + "',";
+            }
+            s = s.Trim(',');
+            return s;
         }
 
 
