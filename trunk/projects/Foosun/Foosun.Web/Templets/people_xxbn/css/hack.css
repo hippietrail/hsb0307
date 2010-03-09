@@ -2,10 +2,10 @@
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px
 }
 .logo {
-	MARGIN: 10px 0px 0px 5px
+	MARGIN: 0px 0px 0px 0px
 }
 .new_nav {
-	MARGIN: 5px 3px 0px 0px
+	MARGIN: 0px 0px 0px 0px
 }
 .new_nav DIV {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
@@ -202,3 +202,16 @@ HR {
 .xinban_xian {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px 15px 0px 0px; WIDTH: 295px; PADDING-TOP: 8px; HEIGHT: auto
 }
+.xz2jlb
+{
+	MARGIN: 0px auto; WIDTH: 978px ; 
+
+	}
+.xz2jlb_left
+{
+	text-align: left;
+	width: 313px;
+	float: left;
+	
+
+	}
