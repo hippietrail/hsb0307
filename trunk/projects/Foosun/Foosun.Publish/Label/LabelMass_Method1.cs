@@ -164,7 +164,7 @@ namespace Foosun.Publish
                 SqlCondition += " And [isConstr]=1";
             }
             string excludeClass = GetNovigationClassString();
-            if (str_IsAdvertisement != null && str_IsAdvertisement == "1")
+            if ( (str_IsAdvertisement != null && str_IsAdvertisement == "1") )
             {
                 if (SqlCondition.Length > 0)
                 {

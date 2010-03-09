@@ -629,6 +629,8 @@ A:hover {
 .nav_list10  li {
 	 margin:0px; padding:0px; width:270px; float:left; list-style-type:none; 
 }
+
+
 .news 
 {
     border:solid 1px #8fd845;
@@ -637,7 +639,7 @@ A:hover {
 	
 }
 .newstitle {
-	MARGIN: 0px auto ; WIDTH: 700px; TEXT-ALIGN: center; margin-top:10px; height:56px;
+	MARGIN: 0px auto ; WIDTH: 700px; TEXT-ALIGN: center; margin-top:10px; height:60px;
 }
 .newstitle H1 {
 	 font-size:26px;
