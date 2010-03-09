@@ -11,7 +11,7 @@ BODY
 	
 	text-align:center;
 	
-	background: url(../image/2010fbg.jpg) center top repeat-x;
+	/*background: url(../image/2010fbg.jpg) center top repeat-x;*/
 	background-color:#fff;
 	font-family: HG_Tai_WB, Arial, '新宋体' , sans-serif;
 }
@@ -93,6 +93,7 @@ A:visited
 	float: left;
 	margin: 2px -30px -2px 20px;
 }
+
 /*nav*/
 .nav
 {
@@ -260,6 +261,7 @@ A:visited
 {
 	color: #fff;
 }
+
 /*hard news*/
 .h_news
 {
@@ -349,6 +351,7 @@ A:visited
 	font-size: 14px;
 	padding: 1px 5px 2px 8px;
 }
+
 /*tab title 1*/
 .tab_t1
 {
@@ -440,6 +443,7 @@ A:visited
 	color: #CA0000;
 	margin: 0 6px;
 }
+
 /*cpc news*/
 .cpc_t
 {
@@ -524,6 +528,7 @@ A:visited
 {
 	color: #C00;
 }
+
 /*nameplate column*/
 .name_c
 {
@@ -692,6 +697,7 @@ A:visited
 	margin: 0 0 0 8px;
 	width: 135px;
 }
+
 /*paper*/
 .paper_c
 {
@@ -836,6 +842,7 @@ A:visited
 	margin: 0 5px;
 	border: 1px solid #7E9DB9;
 }
+
 /*blog bbs*/
 .bb
 {
@@ -1109,6 +1116,7 @@ A:visited
 {
 	line-height: 180%;
 }
+
 /*clime*/
 .city
 {
@@ -1155,6 +1163,7 @@ A:visited
 }
 /*20090504*/
 /*culture and sports*/
+
 .cs_c
 {
 	background: url(/Templets/people_xxbn/image/end_bg2.gif) repeat-y;
@@ -1816,6 +1825,15 @@ A:visited
 	color: #1D659F;
 	text-decoration: none;
 }
+.hong18
+{
+   font-family:黑体;
+   font-size: 18px;
+   line-height: 26px;
+   font-weight: bold;
+   color:Red;
+   text-decoration:none;
+  	}
 .hong13
 {
 	font-family: "宋体";
@@ -1823,15 +1841,6 @@ A:visited
 	line-height: 22px;
 	font-weight: bold;
 	color: #7F0000;
-	text-decoration: none;
-}
-.hong18
-{
-	font-family: "黑体";
-	font-size: 18px;
-	line-height: 26px;
-	font-weight: bold;
-	color: #B40D00;
 	text-decoration: none;
 }
 .border
@@ -1848,6 +1857,7 @@ A:visited
 	border: #A2C4E6 solid;
 	border-width: 1px 1px 1px 1px;
 }
+
 .hei14
 {
 	font-family: "宋体";
@@ -1866,6 +1876,7 @@ A:visited
 	text-decoration: none;
 	color: #B40D00;
 }
+
 .hong12
 {
 	font-family: "宋体";
@@ -1921,6 +1932,7 @@ a:hover
 	color: #6D6D6D;
 	text-decoration: none;
 }
+
 .border1
 {
 	border: 1px #DADADA solid;
@@ -1969,39 +1981,6 @@ a:hover
 	padding: 0px;
 	float: right;
 }
-/*
-.blueul
-{
-	line-height: 1.8;
-	font-family: "宋体";
-	color: #272778;
-	font-size: 13px;
-	text-decoration: none;
-}
-.blueul A:link
-{
-	line-height: 1.8;
-	font-family: "宋体";
-	color: #272778;
-	font-size: 13px;
-	text-decoration: none;
-}
-.blueul A:visited
-{
-	line-height: 1.8;
-	font-family: "宋体";
-	color: #272778;
-	font-size: 13px;
-	text-decoration: none;
-}
-.blueul A:hover
-{
-	line-height: 1.8;
-	font-family: "宋体";
-	color: #272778;
-	font-size: 13px;
-	text-decoration: underline;
-}*/
 .clear
 {
 	clear: both;
@@ -2081,11 +2060,14 @@ a:hover
 }
 .xz2jlb
 {
+	margin:0px;
+	padding:0px;
 	margin-top: 0px;
-	width: 981px;
+	width: 980px;
 	background-color:#fff;
 	/*background: url(/Templets/people_xxbn/image/xinendbg1.gif);*/
 	height: auto;
+    border: #000 1px solid;
 }
 .xz2jlb
 {
