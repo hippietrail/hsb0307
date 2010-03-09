@@ -58,6 +58,7 @@ namespace Foosun.Publish
         {
             SiteDomain = getUrl();
             NewsClass.Clear();
+            NoNavigationClass.Clear();
             NewsSpecial.Clear();
             NewsClass = CommonData.DalPublish.GetClassList();
             CHClass = CommonData.DalPublish.GetCHClassList();
