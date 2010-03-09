@@ -27,6 +27,7 @@ namespace Foosun.Publish
             if (mystyle.Trim().Equals(string.Empty))
                 return string.Empty;
 
+            string str_IsAdvertisement = this.GetParamValue("FS:IsAdver");
             string str_NewsType = this.GetParamValue("FS:NewsType");
             string str_SubNews = this.GetParamValue("FS:SubNews");
             string str_ClassID = this.GetParamValue("FS:ClassID");
@@ -123,6 +124,8 @@ namespace Foosun.Publish
                     break;
             }
 
+            
+
             //-------ÅÐ¶ÏÊÇ·ñµ÷ÓÃÍ¼Æ¬
             if (str_isPic == "true")
             {
@@ -159,6 +162,30 @@ namespace Foosun.Publish
             if (isConstr == "1")
             {
                 SqlCondition += " And [isConstr]=1";
+            }
+            string excludeClass = GetNovigationClassString();
+            if (str_IsAdvertisement != null && str_IsAdvertisement == "1")
+            {
+                if (SqlCondition.Length > 0)
+                {
+                    if (!String.IsNullOrEmpty(excludeClass) && excludeClass.Length > 2)
+                    {
+                        SqlCondition += " AND [ClassID] IN (" + excludeClass + ")";
+                    }
+                    //SqlCondition += GetNovigationClassString();
+                }
+            }
+            else
+            {
+                if (SqlCondition.Length > 0)
+                {
+                    
+                    if (!String.IsNullOrEmpty(excludeClass) && excludeClass.Length > 2)
+                    {
+                        SqlCondition += " AND [ClassID] NOT IN (" + excludeClass + ")";
+                    }
+                    //SqlCondition += GetNovigationClassString();
+                }
             }
 
             string SqlOrderBy = string.Empty;
@@ -250,6 +277,10 @@ namespace Foosun.Publish
                 if (str_isSub == "true")
                 {
                     SqlCondition += " And [ClassID] In (" + getChildClassID(str_ClassID) + ")";
+                }
+                else if (str_ClassID.IndexOf(',') > 0)
+                {
+                    SqlCondition += " And [ClassID]  IN '" + str_ClassID.Replace(",", "','")  + "'";
                 }
                 else
                 {
