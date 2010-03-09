@@ -11,7 +11,7 @@ BODY
 	
 	text-align:center;
 	
-	/*background: url(../image/2010fbg.jpg) center top repeat-x;*/
+	background: url(../image/2010fbg.jpg) center top repeat-x;
 	background-color:#fff;
 	font-family: HG_Tai_WB, Arial, 'ÐÂËÎÌå' , sans-serif;
 }
@@ -1764,9 +1764,10 @@ A:visited
 /*video*/
 .videoNews
 {
-	margin: 5px 0 0 2px;
+	margin: 0px 0 0 0px;
 	width: 580px;
 	color: #356aa0;
+	float:left;
 }
 
 .xuxian
@@ -1977,9 +1978,9 @@ a:hover
 .videoNewsText
 {
 	width: 382px;
-	margin: 0px 12px 0 2px;
+	margin: 0px 0px 0 5px;
 	padding: 0px;
-	float: right;
+	float:left;
 }
 .clear
 {
@@ -2001,7 +2002,7 @@ a:hover
 }
 .leftFlash
 {
-	margin: 5px 5px;
+	margin: 5px 5px 5px 3px;
 	padding: 0px;
 	border: #C1C6CB 2px solid;
 	padding: 5px;
@@ -2067,7 +2068,7 @@ a:hover
 	background-color:#fff;
 	/*background: url(/Templets/people_xxbn/image/xinendbg1.gif);*/
 	height: auto;
-    border: #000 1px solid;
+   
 }
 .xz2jlb
 {
@@ -2086,10 +2087,13 @@ a:hover
 }
 .xz2jlb_1
 {
-	margin: 0px auto 0px;
+	margin: 2px;
 	width: 310px;
 	height: auto;
 	clear: both;
+	margin-left:5px;
+    margin-top:5px;
+    margin-bottom:2px;
 }
 .xzline2
 {
@@ -2190,7 +2194,7 @@ a:hover
 .xz2jlb_right
 {
 	text-align:left;
-	width: 660px;
+	width: 650px;
 	float: right;
 	font-size: 24px;
 	 border:solid 1px #d4d4d4;
@@ -2266,7 +2270,7 @@ a:hover
 {  font-size:14px;}
 .content
 {
-	margin: 5px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	width: 980px;
 	background: url(images/endbg.gif) repeat-y;
 	height:auto;
