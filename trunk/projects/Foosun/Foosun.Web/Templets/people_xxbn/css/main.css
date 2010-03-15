@@ -13,7 +13,7 @@ BODY
 	
 	background: url(../image/2010fbg.jpg) center top repeat-x;
 	background-color:#fff;
-	font-family: HG_Tai_WB, Arial, '新宋体' , sans-serif;
+	font-family: HGTAIWH, Arial, '新宋体' , sans-serif;
 }
 *
 {
@@ -1773,14 +1773,14 @@ A:visited
 .xuxian
 {
 	background-attachment: fixed;
-	background-image: url(http://imgs.xinhuanet.com/icon/xuxian_090421.gif);
+	background-image: url(../image/xuxian_090421.gif);
 	background-repeat: repeat-x;
 	background-position: center center;
 }
 .xuxian_shu
 {
 	background-attachment: fixed;
-	background-image: url(http://imgs.xinhuanet.com/icon/zt/17da/czwg_xuxian_shu.gif);
+	background-image: url(../image/czwg_xuxian_shu.gif);
 	background-repeat: repeat-y;
 	background-position: center top;
 }
@@ -1949,7 +1949,7 @@ a:hover
 }
 .lan_dz
 {
-	background-image: url(http://imgs.xinhuanet.com/icon/video/2008/2008sp_d_1.jpg);
+	background-image: url(../image/2008sp_d_1.jpg);
 	background-repeat: repeat-x;
 	background-position: top;
 }
@@ -1971,7 +1971,7 @@ a:hover
 	background-color: #FFFFFF;
 	border: 1px #95C3E3 solid;
 	background-attachment: fixed;
-	background-image: url(http://imgs.xinhuanet.com/icon/video/2008/2009sp_dszb_bj.gif);
+	background-image: url(../image/2009sp_dszb_bj.gif);
 	background-repeat: repeat-x;
 	background-position: center bottom;
 }
