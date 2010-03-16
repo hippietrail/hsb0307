@@ -278,9 +278,9 @@ namespace Foosun.Publish
                 {
                     SqlCondition += " And [ClassID] In (" + getChildClassID(str_ClassID) + ")";
                 }
-                else if (str_ClassID.IndexOf(',') > 0)
+                else if (str_ClassID.IndexOf('|') > 0)
                 {
-                    SqlCondition += " And [ClassID]  IN '" + str_ClassID.Replace(",", "','")  + "'";
+                    SqlCondition += " And [ClassID]  IN ('" + str_ClassID.Replace("|", "','")  + "')";
                 }
                 else
                 {
