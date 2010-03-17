@@ -1421,10 +1421,10 @@ A:visited
 {
 	margin-top: 0px;
 	width: 430px;
-	height: 600px;
+	height: 300px;
 	margin-left: 0px;
 	text-align: left;
-	background: url(/Templets/people_xxbn/image/paihang1.gif) no-repeat 15px 8px;
+	background: url(/Templets/people_xxbn/image/paihang2.gif) no-repeat 15px 8px;
 }
 .paihang UL
 {
@@ -1432,7 +1432,7 @@ A:visited
 	margin: 7px 0px 0px 0px;
 	padding-left: 0px;
 	padding-right: 0px;
-	height: 306px;
+	height: 300px;
 	padding-top: 0px;
 }
 .paihang UL LI
@@ -2580,3 +2580,9 @@ EM
     font-family:ËÎÌו,Verdana,Tahoma; 
     font-size:12pt;
 }
+
+.cpc_a { width: 98%;	margin: 0 auto;	color: #00275B;	padding: 0px 0px 0 0;	text-align: left;	background: url(/Templets/people_xxbn/image/cpc_cbg.gif) repeat-x top;}
+.cpc_a ul {	margin: 0px;	padding: 0px;	margin-top: 15px;}
+.cpc_a ul li {	color: #680009;	font-size: 20px;	width: 100%;	margin: 0px;	padding: 0px 0px 0px 0px;	line-height: 32px;	background: url(/Templets/people_xxbn/image/sun.gif) no-repeat 6px 6px;}
+.cpc_a ul li a {	color: #680009;	margin-left: 35px;}
+.cpc_a ul li a:visited {	color: #680009;}

@@ -166,6 +166,8 @@ WHERE  ClassID IN (
 )
 
 GO
+
+
 UPDATE fs_sys_Label SET  LabelID = '325658182381' WHERE Id = 186
 UPDATE fs_sys_Label SET  LabelID = '308725562781' WHERE Id = 187
 UPDATE fs_sys_Label SET  LabelID = '660895525922' WHERE Id = 188
@@ -182,3 +184,27 @@ UPDATE fs_sys_Label SET  LabelID = '674829962647' WHERE Id = 198
 UPDATE fs_sys_Label SET  LabelID = '377053484730' WHERE Id = 199
 UPDATE fs_sys_Label SET  LabelID = '430624624878' WHERE Id = 200
 UPDATE fs_sys_Label SET  LabelID = '797490446086' WHERE Id = 201
+GO
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] ON
+
+INSERT INTO [dbo].[fs_sys_Label] (
+	[Id],
+	[LabelID],
+	[ClassID],
+	[Label_Name],
+	[Label_Content],
+	[Description],
+	[CreatTime],
+	[isBack],
+	[isRecyle],
+	[isSys],
+	[SiteID],
+	[isShare]
+)
+	
+	SELECT 214, '993197252155', '882324941476', '{FS_农业之窗栏目url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=665030062151,FS:ClassUrl=1][#FS:StyleID=794055574458][/FS:unLoop]', '', '2010-02-26 16:36:36.280', 0, 0, 0, '0', NULL UNION
+	SELECT 215, '743438153926', '932462318447', '{FS_people_栏目最新新闻列表_农业之窗}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=8,FS:NewsType=Last,FS:ClassID=665030062151,FS:TitleNumer=40,FS:isSub=true][#FS:StyleID=802049782202][/FS:Loop]', '', '09-01-2009 10:17:02.093', 0, 0, 0, '0', NULL 
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
+GO
