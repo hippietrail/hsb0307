@@ -756,7 +756,6 @@ namespace Foosun.Publish
                                     string PageContent = PageHead + ArrayCon[i] + PageEnd;
                                     PageContent = re.Replace(PageContent, "");
                                     string getFileContent = ReplaceResultPage(rd["NewsID"].ToString(), PageContent.Replace("FS:END->", "").Replace("<!-FS:STAR=", ""), getFileName, getFileEXName, n, (i + 1), 0);
-
                                     
                                     WriteHtml(getFileContent, filepath);
                                 }
