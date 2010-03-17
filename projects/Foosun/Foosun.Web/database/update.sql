@@ -211,3 +211,13 @@ INSERT INTO [dbo].[fs_sys_Label] (
 	SELECT 215, '743438153926', '932462318447', '{FS_people_栏目最新新闻列表_农业之窗}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=8,FS:NewsType=Last,FS:ClassID=665030062151,FS:TitleNumer=40,FS:isSub=true][#FS:StyleID=802049782202][/FS:Loop]', '', '09-01-2009 10:17:02.093', 0, 0, 0, '0', NULL 
 SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
 GO
+
+
+UPDATE fs_api_navi SET
+siteID = '0'
+WHERE     (Am_position = '00000') AND (siteID <> '0')
+
+UPDATE fs_api_navi SET
+isActive = 1
+WHERE     (isActive = 0)
+GO
