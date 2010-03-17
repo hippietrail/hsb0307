@@ -186,6 +186,9 @@ UPDATE fs_sys_Label SET  LabelID = '430624624878' WHERE Id = 200
 UPDATE fs_sys_Label SET  LabelID = '797490446086' WHERE Id = 201
 GO
 
+UPDATE fs_sys_Label SET Label_Content = '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=list,FS:ClassID=-1,FS:SubNews=false,FS:Desc=desc,FS:DescType=click,FS:TitleNumer=36,FS:isSub=false][#FS:StyleID=802049782202][/FS:Loop]'
+WHERE Id = 190
+GO
 
 SET IDENTITY_INSERT [dbo].[fs_sys_Label] ON
 
