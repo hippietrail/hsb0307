@@ -204,8 +204,8 @@ namespace Foosun.SQLServerDAL
         public int Update_4(int islock, string Commid)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@islock", islock), new SqlParameter("@Commid", Commid) };
-            string Sql = "update  " + Pre + "api_commentary set islock=@islock where Commid=Commid" + Foosun.Common.Public.getSessionStr() + "";
-            return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
+            string Sql = "update  " + Pre + "api_commentary set islock=@islock where Commid=@Commid" + Foosun.Common.Public.getSessionStr() + "";
+             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public string sel_9(string UserName)
         {
