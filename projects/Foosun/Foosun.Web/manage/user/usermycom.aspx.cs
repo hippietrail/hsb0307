@@ -81,6 +81,9 @@ public partial class user_mycom : Foosun.Web.UI.ManagePage
                 break;
         }
         #endregion
+        //是否需要审核的判断lsd changed 20100120
+
+
     }
     string SiteList(string SessionSiteID)
     {

@@ -91,7 +91,7 @@
 &nbsp;&nbsp;<asp:Button ID="TopTitle12" runat="server" Text="解固" Height="20px" Width="60px"  CssClass="form" OnClick="TopTitle12_Click"/>
 &nbsp;&nbsp;<asp:Button ID="GoodTitle" runat="server" Text="精华" Height="20px" Width="60px" CssClass="form" OnClick="GoodTitle_Click"/>
 &nbsp;&nbsp;<asp:Button ID="UNGoodTitle" runat="server" Text="取消精华" Height="20px" Width="60px" CssClass="form" OnClick="unGoodTitle_Click"/>
-<span style="display:none;">
+<span style="display:none;" runat="server" id="ShenHe_span">
 &nbsp;&nbsp;<asp:Button ID="CheckTtile" runat="server" Text="审核" Height="20px" Width="60px" CssClass="form" OnClick="CheckTtile_Click"/>
 &nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="取消审核" Height="20px" Width="60px" CssClass="form" OnClick="unCheckTtile_Click"/>
 </span>
