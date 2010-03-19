@@ -302,11 +302,11 @@ public partial class comment : Foosun.Web.UI.BasePage
                     if (CommentTemplet.IndexOf("{#Page_NewsURL}") > -1) { p_list = true; }
                 }
 
-                string tmpContent = "<table style=\"width:90%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td style=\"width:32%;text-align:right\">不知所云</td><td><img alt=\"不知所云\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\"></td><td style=\"width:70%\"><table width='100%'><tr><td style=\"height:15px;width:" + news.returnCommentGD(NewsID, 0) + "px;background-color:#0000FF\"></td><td>" + news.returnCommentGD(NewsID, 0) + "%</td></tr></table></td></tr>";
+                string tmpContent = "<div class=\"commentStat\"><table style=\"width:90%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td style=\"width:32%;text-align:right\">不知所云</td><td><img alt=\"不知所云\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\"></td><td style=\"width:70%\"><table width='100%'><tr><td style=\"height:15px;width:" + news.returnCommentGD(NewsID, 0) + "px;background-color:#0000FF\"></td><td>" + news.returnCommentGD(NewsID, 0) + "%</td></tr></table></td></tr>";
                 tmpContent += "<tr><td style=\"text-align:right\">不赞成</td><td><img alt=\"不赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 1) + "px;background-color:#990066\"></td><td>" + news.returnCommentGD(NewsID, 1) + "%</td></tr></table></td></tr>";
                 tmpContent += "<tr><td style=\"text-align:right\">中立</td><td><img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 2) + "px;background-color:#FF6600\"></td><td>" + news.returnCommentGD(NewsID, 2) + "%</td></tr></table></td></tr>";
                 tmpContent += "<tr><td style=\"text-align:right\">赞成</td><td><img alt=\"赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\"></td><td><table width='100%'><tr><td  style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 3) + "px;background-color:#FF0000\"></td><td>" + news.returnCommentGD(NewsID, 3) + "%</td></tr></table></td></tr>";
-                tmpContent += "<tr><td style=\"text-align:right\">堪为精典</td><td><img alt=\"堪为精典\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 4) + "px;background-color:#009900\"></td><td>" + news.returnCommentGD(NewsID, 4) + "%</td></tr></table></td></tr></table>";
+                tmpContent += "<tr><td style=\"text-align:right\">堪为精典</td><td><img alt=\"堪为精典\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 4) + "px;background-color:#009900\"></td><td>" + news.returnCommentGD(NewsID, 4) + "%</td></tr></table></td></tr></table></div>";
                 #region 循环条件
                 string goodTitle = "";
                 for (i = (page - 1) * pageSize, j = 1; i < Cnt && j <= pageSize; i++, j++)
@@ -614,30 +614,30 @@ public partial class comment : Foosun.Web.UI.BasePage
             str_CommForm += "<div style=\"text-align:left;height:25px;\">用户名 <input name=\"UserNum\" size=\"12\" type=\"text\" value=\"\">";
             str_CommForm += "   密码 <input name=\"UserPwd\" size=\"12\" type=\"password\"> " + UserExit + " </div>\r";
         }
-        str_CommForm += "<div style=\"text-align:left;height:25px;\">观点：<input type=\"radio\" name=\"commtype\" value=\"0\" />不知所云 <input type=\"radio\" name=\"commtype\" value=\"1\" />不赞成 <input type=\"radio\" checked=\"true\" name=\"commtype\" value=\"2\" />中立 <input type=\"radio\" name=\"commtype\" value=\"3\" />赞成 <input type=\"radio\" name=\"commtype\" value=\"4\" />堪为精品</div>\r";
-        str_CommForm += "<div style=\"text-align:left;height:110px;\">\r";
+        str_CommForm += "<div style=\"text-align:left;height:25px;width:90%;\">观点：<input type=\"radio\" name=\"commtype\" value=\"0\" />不知所云 <input type=\"radio\" name=\"commtype\" value=\"1\" />不赞成 <input type=\"radio\" checked=\"true\" name=\"commtype\" value=\"2\" />中立 <input type=\"radio\" name=\"commtype\" value=\"3\" />赞成 <input type=\"radio\" name=\"commtype\" value=\"4\" />堪为精品</div>\r";
+        str_CommForm += "<div style=\"text-align:left;height:128px;\">\r";
         if (tmstr == "getlist")
         {
-            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"6\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');}\"></textarea>\r";
+            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"8\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');}\"></textarea>\r";
         }
         else
         {
-            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"6\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmit(this.form);}\"></textarea>\r";
+            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"8\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmit(this.form);}\"></textarea>\r";
         }
-        str_CommForm += "</div>\r";
-        str_CommForm += "<div style=\"text-align:left;height:35px;\">\r";
+        str_CommForm += "</div>";
+        str_CommForm += "<div style=\"text-align:left;\">";
         if (tmstr == "getlist")
         {
-            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发表评论\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
+            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发表评论\" style=\"width:90px; height:26px;\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
         }
         else
         {
-            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发表评论\" onclick=\"javascript:CommandSubmit(this.form);\">\r";
+            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发 表 评 论\" style=\"width:90px; height:26px;font-size:13px;\" onclick=\"javascript:CommandSubmit(this.form);\">\r";
         }
-        str_CommForm += "<input type=\"reset\" name=\"B_CommandReset\" value=\"重新填写\">&nbsp;<span style=\"Color:Red;\">Ctrl+回车</span>&nbsp;提交评论.\r";
+        str_CommForm += "<input type=\"reset\" name=\"B_CommandReset\" value=\"重 新 填 写\" style=\"width:90px; height:26px;font-size:13px;\">&nbsp;<span style=\"Color:Red;font-size:13px;\">Ctrl+回车&nbsp;提交评论.</span>\r";
         str_CommForm += "<input name=\"IsQID\" type=\"hidden\" value=\"\">\r";
         str_CommForm += "</div>\r";
-        str_CommForm += "<div style=\"text-align:left;height:30px;\">请自觉遵守互联网相关政策法规,评论字数2-200字.请不要发广告。您发表的问题不代表本站观点。一切后果由发表者负责</div>\r";
+        str_CommForm += "<div style=\"text-align:left;height:30px;width:90%; margin-top:8px;\">请自觉遵守互联网相关政策法规,评论字数2-200字.请不要发广告。您发表的问题不代表本站观点。一切后果由发表者负责</div>\r";
         str_CommForm += "</form>\r";
         str_CommForm += "</div>\r";
 
