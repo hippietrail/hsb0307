@@ -81,7 +81,7 @@ namespace Foosun.PlugIn.Passport
             string filename = string.Empty;
             if (HttpContext.Current == null)
             {
-                filename= Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "configuration/config/Request.xml");
+                filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "configuration/config/Request.xml");
             }
             else
             {
@@ -224,7 +224,11 @@ namespace Foosun.PlugIn.Passport
 
         public  void RequestLogin(string username, string password, string returnUrl)
         {
-
+            //if (config == null)
+            //{
+            //    config = Foosun.Config.API.APIConfigs.GetConfig();
+            //    //E:\Projects\Discuz\dnt3\Discuz.Web\config\api.config
+            //}
             if (config.Enable == false)
             {
                 context.Response.Redirect("/user/index.aspx");

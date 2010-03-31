@@ -1,4 +1,4 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" Inherits="User_Login" Codebehind="Login.aspx.cs" %>
+<%@ Page Language="C#" AutoEventWireup="true" Inherits="User_Login" Debug="true" Codebehind="Login.aspx.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +15,7 @@
     <tr>
       <td style="height: 55px;width:10%;"></td>
       <td style="height: 55px;width:40%;">&nbsp;</td>
-      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hgzp.com" target="_blank" class="JH">å®˜æ–¹ç«™</a>&nbsp;â”Š&nbsp; <a href="http://www.hgzp.com">æŠ€æœ¯è®ºå›</a>&nbsp;â”Š&nbsp;<a href="http://www.hgzp.com">NewsCMS</a>&nbsp;â”Š&nbsp;<a href="www.hgzp.com" title="ä¸“ç”¨è™šæ‹Ÿä¸»æœº" target="_blank">èµ„è®¯æ•°æ®(IDC)</a>&nbsp;â”Š&nbsp;<a href="www.hgzp.com" target="_blank">åœ¨çº¿å¸®åŠ©</a>&nbsp;â”Š&nbsp;<a href="www.hgzp.com" target="_blank">å¼€å‘è€…ä¸­å¿ƒ</a></div></td>
+      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hgzp.com" target="_blank" class="JH">¹Ù·½Õ¾</a>&nbsp;©®&nbsp; <a href="http://www.hgzp.com">¼¼ÊõÂÛÌ³</a>&nbsp;©®&nbsp;<a href="http://www.hgzp.com">NewsCMS</a>&nbsp;©®&nbsp;<a href="www.hgzp.com" title="×¨ÓÃĞéÄâÖ÷»ú" target="_blank">×ÊÑ¶Êı¾İ(IDC)</a>&nbsp;©®&nbsp;<a href="www.hgzp.com" target="_blank">ÔÚÏß°ïÖú</a>&nbsp;©®&nbsp;<a href="www.hgzp.com" target="_blank">¿ª·¢ÕßÖĞĞÄ</a></div></td>
     </tr>
   </table>
 
@@ -34,7 +34,7 @@
           </tr>
           
           <tr>
-            <td ><div align="right"><a href="#"><font color="#666666">åœ¨çº¿å®¢æœ</font></a></div></td>
+            <td ><div align="right"><a href="#"><font color="#666666">ÔÚÏß¿Í·ş</font></a></div></td>
           </tr>
         </table>
         </div></td>
@@ -42,22 +42,22 @@
       <td style="width:508px;" valign="top">
         <table style="width:100%;" border="0" cellpadding="5" cellspacing="3">
           <tr>
-            <td colspan="2" style="height: 19px"><div align="left">ç”¨æˆ·å
+            <td colspan="2" style="height: 19px"><div align="left">ÓÃ»§Ãû
                 <asp:TextBox ID="TxtName" runat="server" CssClass="username" Width="129px" MaxLength="18"></asp:TextBox>
             </div></td>
           </tr>
           <tr>
-            <td colspan="2" style="height: 21px"><div align="left">å¯†ã€€ç 
+            <td colspan="2" style="height: 21px"><div align="left">ÃÜ¡¡Âë
                 <asp:TextBox ID="TxtPassword" CssClass="password" Width="129px" runat="server" TextMode="Password"></asp:TextBox></div></td>
           </tr>
           <tr id="safecodeTF" runat="server">
             <td colspan="2" style="height: 14px">
-            <div align="left">æ•ˆéªŒç 
+            <div align="left">Ğ§ÑéÂë
                 <asp:TextBox ID="TxtVerifyCode" runat="server" CssClass="vercode" Width="52px"></asp:TextBox>
                    <SCRIPT LANGUAGE="JavaScript">
                    var numkey = Math.random();
                    numkey = Math.round(numkey*10000);
-                   document.write("<img src=\"../comm/Image.aspx?k="+ numkey +"\" onClick=\"this.src+=Math.random()\" alt=\"å›¾ç‰‡çœ‹ä¸æ¸…ï¼Ÿç‚¹å‡»é‡æ–°å¾—åˆ°éªŒè¯ç \" style=\"cursor:pointer;\" width=\"70\" height=\"23\" hspace=\"4\"");
+                   document.write("<img src=\"../comm/Image.aspx?k="+ numkey +"\" onClick=\"this.src+=Math.random()\" alt=\"Í¼Æ¬¿´²»Çå£¿µã»÷ÖØĞÂµÃµ½ÑéÖ¤Âë\" style=\"cursor:pointer;\" width=\"70\" height=\"23\" hspace=\"4\"");
                 </SCRIPT>
             </div>
             </td>
@@ -67,7 +67,7 @@
                 <asp:HiddenField ID="HidUrl" runat="server" />
                 &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../sysImages/Login/signin.gif" OnClick="ImageButton1_Click" />&nbsp;&nbsp;<input type="image" onclick="javascript:window.close();" name="imageField2" src="../sysImages/Login/reset.gif" />
             </td>
-            <td width="65%"><a href="Register.aspx?SiteID=<%Response.Write(SiteID); %>">å…è´¹æ³¨å†Œ</a>&nbsp;&nbsp;&nbsp;<a href="info/getPassword.aspx">å¿˜è®°å¯†ç ï¼Ÿ</a></td>
+            <td width="65%"><a href="Register.aspx?SiteID=<%Response.Write(SiteID); %>">Ãâ·Ñ×¢²á</a>&nbsp;&nbsp;&nbsp;<a href="info/getPassword.aspx">Íü¼ÇÃÜÂë£¿</a></td>
           </tr>
         </table></td>
     </tr>

@@ -53,6 +53,8 @@ namespace Foosun.Web.UI
         }
         static internal void PageRender(string Msg, string Url, bool Succeed, bool returnUrl,bool noHistory)
         {
+            Msg = Msg.Replace(" 在 ", "<br /> 在 ");
+
             string cssDir = Foosun.Common.ServerInfo.GetRootURI() + "/sysImages/";
             string STitle = "操作结果!";
             string ReUrlStr = "";

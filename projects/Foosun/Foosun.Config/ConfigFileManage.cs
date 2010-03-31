@@ -73,10 +73,6 @@ namespace Foosun.Config
         
             return configinfo;
         }
-
-
-       
-
        
 
         /// <summary>
