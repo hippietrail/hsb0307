@@ -1,4 +1,4 @@
-ï»¿//=====================================================================
+//=====================================================================
 //==                  (C)2007 Foosun Inc.By doNetCMS1.0              ==
 //==                     Forum:bbs.foosun.net                        ==
 //==                     WebSite:www.foosun.net                      ==
@@ -58,7 +58,7 @@ public partial class User_Login : Foosun.Web.UI.BasePage
         string _dirdumm = Foosun.Config.UIConfig.dirDumm;
         if (_dirdumm.Trim() != "")
         { _dirdumm = "/" + _dirdumm; }
-        if (!File.Exists(Server.MapPath(_dirdumm + "/site.xml"))) { PageError("æ‰¾ä¸åˆ°é…ç½®æ–‡ä»¶(/site.xml).<li>è¯·ä¸ç³»ç»Ÿç®¡ç†å‘˜è”ç³»ã€‚</li>", ""); }
+        if (!File.Exists(Server.MapPath(_dirdumm + "/site.xml"))) { PageError("ÕÒ²»µ½ÅäÖÃÎÄ¼ş(/site.xml).<li>ÇëÓëÏµÍ³¹ÜÀíÔ±ÁªÏµ¡£</li>", ""); }
         string xmlPath = Server.MapPath(_dirdumm + "/site.xml");
         System.Xml.XmlDocument xdoc = new XmlDocument();
         xdoc.Load(xmlPath);
@@ -75,20 +75,20 @@ public partial class User_Login : Foosun.Web.UI.BasePage
         string PassWord = this.TxtPassword.Text;
         if (UserName.Trim() == string.Empty || PassWord.Trim() == string.Empty)
         {
-            PageError("è¯·è¾“å…¥ç”¨æˆ·åå’Œå¯†ç !", "login.aspx?" + Request.QueryString);
+            PageError("ÇëÊäÈëÓÃ»§ÃûºÍÃÜÂë!", "login.aspx?" + Request.QueryString);
         }
         if (pd.getUserLoginCode() != 0)
         {
             string SafeCode = this.TxtVerifyCode.Text;
             if (Session["CheckCode"] == null)
             {
-                PageError("éªŒè¯ç å·²è¿‡æœŸ,è¯·è¿”å›é‡æ–°ç™»å½•!", "login.aspx?" + Request.QueryString);
+                PageError("ÑéÖ¤ÂëÒÑ¹ıÆÚ,Çë·µ»ØÖØĞÂµÇÂ¼!", "login.aspx?" + Request.QueryString);
             }
             string _SafeCode = Session["CheckCode"].ToString().ToUpper();
             Session.Remove("CheckCode");
             if (SafeCode != _SafeCode)
             {
-                PageError("éªŒè¯ç è¾“å…¥ä¸æ­£ç¡®!", "login.aspx?" + Request.QueryString);
+                PageError("ÑéÖ¤ÂëÊäÈë²»ÕıÈ·!", "login.aspx?" + Request.QueryString);
             }
         }
         GlobalUserInfo info;
@@ -96,15 +96,15 @@ public partial class User_Login : Foosun.Web.UI.BasePage
         if (state == EnumLoginState.Succeed)
         {
             Foosun.Global.Current.Set(info);
-            
+
             if (info.uncert)
             {
                 LoginResultShow(EnumLoginState.Err_UnCert);
             }
             if (Request.QueryString["reurl"] != null && Request.QueryString["reurl"].Trim() != string.Empty)
             {
-                Response.Write("ç™»å½•æˆåŠŸï¼Œè‡ªåŠ¨è½¬æ¥ä¸­ï¼Œè¯·ç¨å€™â€¦â€¦");
-                //åŒæ­¥ç™»å½•
+                Response.Write("µÇÂ¼³É¹¦£¬×Ô¶¯×ª½ÓÖĞ£¬ÇëÉÔºò¡­¡­");
+                //Í¬²½µÇÂ¼
                 DPO_Request request = new DPO_Request(Context);
                 request.RequestLogin(UserName, System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(PassWord, "MD5").Substring(8, 16).ToLower(), Request.QueryString["reurl"]);
 
@@ -116,7 +116,7 @@ public partial class User_Login : Foosun.Web.UI.BasePage
                 request.RequestLogin(UserName, System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(PassWord, "MD5").Substring(8, 16).ToLower(), string.Format("{0}/user/index.aspx", Request.ApplicationPath == "/" ? string.Empty : Request.ApplicationPath));
                 Response.End();
                 /*
-                #region æ•´åˆDiscuz!NT
+                #region ÕûºÏDiscuz!NT
                 try
                 {
                     string xmlName = Server.MapPath("..\\api\\dz\\Adapt.config");

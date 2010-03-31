@@ -158,7 +158,6 @@
     <Content Include="user\info\userinfo_safe.aspx" />
     <Content Include="user\info\userinfo_update.aspx" />
     <Content Include="user\info\wap.aspx" />
-    <Content Include="user\Login.aspx" />
     <Content Include="user\main.aspx" />
     <Content Include="user\menu.aspx" />
     <Content Include="user\message\Message_box.aspx" />
@@ -2871,8 +2870,8 @@
       <DependentUpon>wap.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -4625,6 +4624,7 @@
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
     <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
     <Content Include="Templets\xxbn\Images\marqueePink.gif" />
+    <Content Include="user\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="database\update.sql" />

@@ -228,8 +228,8 @@ namespace Foosun.PlugIn.Passport
         //开始处理请求
         public void DoWork()
         {
-            
 
+            //Foosun.Common.Public.savePublicLogFiles("整合登录", "登录", context.Request.QueryString["username"]);
 
             string syskey = context.Request.QueryString["syskey"];
             if (string.IsNullOrEmpty(syskey))
