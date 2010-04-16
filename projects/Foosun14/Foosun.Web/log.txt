@@ -1,0 +1,38 @@
+﻿
+
+ALTER TABLE [dbo].[fs_api_navi] ADD isActive tinyint default 1 NOT NULL ;
+GO
+ALTER TABLE [dbo].[fs_api_qmenu] ADD isActive tinyint default 1 NOT NULL ;
+GO
+
+ALTER TABLE [dbo].[fs_news_class] ADD ClassCNameRefer nvarchar(1024) NULL ;
+GO
+ALTER TABLE [dbo].[fs_news] ADD NewsTitleRefer nvarchar(1024) NULL ;
+GO
+
+-- ===========================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[fs_news_Class_Map](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CpClassId] [varchar](50) NULL,
+	[CpClassName] [nvarchar](256) NULL,
+	[SiteClassId] [varchar](50) NULL,
+	[SiteClassName] [nvarchar](256) NULL,
+	[ClassDaiName] [nvarchar](256) NULL,
+	[Media] [nvarchar](256) NULL,
+ CONSTRAINT [PK_fs_news_Class_Map] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+-- =========================================================
+

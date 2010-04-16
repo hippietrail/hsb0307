@@ -1,0 +1,5 @@
+E:\Projects\CMS\Foosun14\Foosun.Model\bin\Debug\Foosun.Model.dll
+E:\Projects\CMS\Foosun14\Foosun.Model\bin\Debug\Foosun.Model.pdb
+E:\Projects\CMS\Foosun14\Foosun.Model\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\CMS\Foosun14\Foosun.Model\obj\Debug\Foosun.Model.dll
+E:\Projects\CMS\Foosun14\Foosun.Model\obj\Debug\Foosun.Model.pdb

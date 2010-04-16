@@ -1,0 +1,92 @@
+.topline
+{
+	margin: 10px auto 0px;
+	width: 1002px;
+	background: url(../images/mdy_cen_line.gif); HEIGHT: 1px;
+}
+
+.fabiao
+{
+	text-align: center;
+	line-height: 20px;
+	margin: 5px auto 0px;
+	width: 500px;
+}
+.fabiao DIV
+{
+	width: 90px;
+	display: inline;
+	margin-left: 10px;
+}
+.xian
+{
+	margin: 0px auto;
+	width: 590px;
+	background: #b9b9b9;
+	height: 1px;
+}
+.content
+{
+	padding-bottom: 20px;
+	line-height: 22px;
+	margin: 10px auto 0px;
+	width: 600px;
+	color: #000000;
+	font-size: 14px;
+}
+.content *
+{
+	line-height: 22px;
+	font-size: 14px;
+}
+.content A:link
+{
+	line-height: 22px;
+	color: #0000ff;
+	font-size: 14px;
+	text-decoration: underline;
+}
+.neixia
+{
+	border-bottom: #dbdbdb 1px solid;
+	border-left: #dbdbdb 1px solid;
+	padding-bottom: 10px;
+	margin: 10px auto 0px;
+	width: 630px;
+	border-top: #dbdbdb 1px solid;
+	border-right: #dbdbdb 1px solid;
+} 
+.neirong
+{
+	margin: 0px auto;
+	width: 1002px;
+	background: url(../images/mdy_cen_bg.gif);
+}
+.neirong
+{
+	width: 700px;
+	float: left;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+.neirong H1
+{
+	text-align: center;
+	line-height: 28px;
+	margin: 20px 0px 10px;
+	width: 100%;
+	color: #010101;
+	clear: both;
+	font-size: 26px;
+	font-weight: bold;
+}
+.laiyuan
+{
+	text-align: center;
+	line-height: 20px;
+	margin: 0px auto 10px;
+	width: 500px;
+	color: #000000;
+	overflow: hidden;
+}
