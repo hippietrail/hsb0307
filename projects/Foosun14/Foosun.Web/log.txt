@@ -36,3 +36,4 @@ SET ANSI_PADDING OFF
 GO
 -- =========================================================
 
+select top 1 NewsID,tl_SavePath from fs_news_topline  where NewsID=@NewsID  --313048219250
