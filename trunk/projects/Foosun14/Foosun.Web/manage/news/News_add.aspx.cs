@@ -52,8 +52,14 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 	protected String FontStyleArray = "{Regular:0,Bold:1,Italic:2,Underline:4,Strikeout:8}";
 	protected String fs_PicInfo = "";
 	protected string siteDomain = Foosun.Common.Public.readparamConfig("siteDomain");
+
+
 	//预留结束
 	//子新闻
+
+    private bool headlinePic = false;
+
+
 	#endregion 实例化
 	#region 页面初始化
 	protected void Page_Load(object sender, EventArgs e)
@@ -225,6 +231,8 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			{
 				Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "picExcute", "<script>ShowLink('pic')</script>");
 			}
+
+            headlinePic = this.PicTTTF.Checked;
 		}
 	}
 	#endregion 页面初始化
@@ -1332,7 +1340,15 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 							_tl_SavePath = "/{@dirFile}/topline/" + getDateTime.Year + "-" + getDateTime.Month + "/" + Foosun.Common.Rand.Number(15) + ".jpg";
 						}
 						uc1.tl_SavePath = _tl_SavePath;
-						rd.UpdateTT(uc1);
+
+                        if (!headlinePic)
+                        {
+                            rd.intsertTT(uc1);
+                        }
+                        else
+                        {
+                            rd.UpdateTT(uc1);
+                        }
 					}
 					else
 					{

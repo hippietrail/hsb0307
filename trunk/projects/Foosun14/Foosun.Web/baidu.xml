@@ -5,6 +5,153 @@
   <updatePeri>60</updatePeri>
   <item>
       <title></title>
+      <link>http://localhost:1511/html/2010-04/12.html</link>
+      <description></description>
+      <text>法国邮政总局15日在巴黎举行中国农历生肖纪念邮票&ldquo;虎票&rdquo;的首发仪式。该邮票1月18日起将在法国各地邮局发售。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;这是继发行鸡年、狗年、猪年、鼠年和牛年纪念邮票之后，法国第6次发行中国农历生肖纪念邮票。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;上述邮票都由旅法华人艺术家李中耀创作。在首发仪式上，李中耀应邀为中法集邮爱好者签名售票。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;与此同时，法国华文媒体《欧洲时报》社与李中耀先生合作，制作了一批&ldquo;虎票&rdquo;明信片，将在今年春节期间在法国发行。
+
+    
+        
+            &nbsp;
+        
+    
+
+（责任编辑：王惠绵）</text>
+      <image></image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 15:40:00</pubDate>
+  </item>
+  <item>
+      <title></title>
+      <link>http://localhost:1511/html/2010-04/11.html</link>
+      <description></description>
+      <text>澳大利亚国家网络安全运行中心15日在这里正式宣布落成。澳国防部长约翰&middot;福克纳当日称，该中心旨在保护信息安全，维护澳国家利益。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;据了解，澳国家网络安全运行中心提出的目标是不断占领和掌握高新科技，追踪和瓦解复杂的网络攻击。该中心将聘请约130名高水平的信息科技专家、工程师和分析师，其中一些人员来自澳国防部等单位。中心将能够使用国防部等机构的电脑资源和高级分析技术等。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;福克纳15日对当地媒体表示，在国防部框架下新建国家网络安全运行中心，是澳政府2009年国防白皮书中作出的承诺之一，将加强政府和公众对未来网络安全与威胁的全面了解和充分认识。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;他说，新落成的国家网络安全运行中心将在保护国家网络和信息安全方面发挥重大作用，为政府决策提供即时可靠的安全建议和协助。 
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+（责任编辑：杨海洋）</text>
+      <image></image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 15:39:00</pubDate>
+  </item>
+  <item>
+      <title></title>
+      <link>http://localhost:1511/html/2010-04/10.html</link>
+      <description></description>
+      <text>
+Yesterday, we celebrated the&nbsp;official release of Visual Studio 2010&nbsp;and .NET 4. Check out Bob Muglia&rsquo;s keynote&nbsp;here.
+One of the major changes in VS 2010 is the fact that its UI was built using WPF. We in the WPF team had to do a fair amount of work to support the migration of the VS UI to WPF. Paul Harrington&rsquo;s series on&nbsp;WPF in Visual Studio 2010&nbsp;has all the details.
+There is, however, a lot more that is new and fresh in WPF 4 in addition to VS-related improvements.
+Here is a list of a few blog posts that walk through the new features:
+Pete Brown, a Community PM of ours, has an excellent post called&nbsp;WPF 4 Release: A guide to the new features. See Scott Guthrie&rsquo;s&nbsp;post on WPF 4&nbsp;too.
+Jossef Goldberg, our Deployment and Performance PM, has a couple of posts on deployment (What&rsquo;s new in .NET Framework 4 Client Profile RTM) and performance (What&rsquo;s New for Performance in WPF in .NET 4).&nbsp;&nbsp;
+Chipalo Street, our Text PM, has several blog entries on text clarity &ndash; a big area of investment for WPF 4. I recommend starting with the&nbsp;Additional WPF Text Clarity Improvements&nbsp;post.
+Lester Lobo, the XAML SDET Lead for .NET 4, has a great&nbsp;series of posts on new WPF 4 features.
+</text>
+      <image>http://www.foosun.net/files/images/201003/162193734.jpg</image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 14:26:00</pubDate>
+  </item>
+  <item>
+      <title></title>
+      <link>http://localhost:1511/html/2010-04/9.html</link>
+      <description></description>
+      <text>
+Among its many new improvements, Visual Studio 2010 introduces the much-anticipated Entity Framework 4.0 and WCF Data Services 4.0 (formerly ADO.NET Data Services), which together simplify how you model, consume and produce data.
+Entity Framework 4.0 (EF 4.0) focuses on enabling and simplifying two primary scenarios: domain-centric application development and the traditional data-centric &ldquo;forms over data.&rdquo; It introduces features such as model first development, which allows you to create a model and have customized T-SQL generated for you; support for persistence ignorance; foreign keys; lazy loading and custom code generation for entities.
+WCF Data Services 4.0 focuses on enabling updates to the Open Data Protocol (odata.org) and on its new features, including two-way data binding for Windows Presentation Foundation (WPF) and Silverlight, row count, server-driven paging, enhanced binary large object support and support for projections.
+Using a sample weblog application (MyBlog), I will explore the new features in both EF and WCF Data Services and explain how the technologies work together to simplify the way data is modeled and consumed. This sample application will have both an ASP.NET Web application that provides a read-only view of blog posts, and a Silverlight blog administrator client that allows the blog owner to edit posts. I will begin the application using model first to create an Entity Data Model (EDM), and then generate a database and the code to interact with that database. This sample will also make use of the ADO.NET Data Services Update for Silverlight 3 CTP 3.
+Getting Started with EF 4.0
+I&rsquo;ll begin with the ASP.NET Web Application project. (My application is called BlogModel; you can download the accompanying code at&nbsp;code.msdn.microsoft.com/mag201004VSData.) To get started with EF, I use the Add New Item wizard to add an ADO.NET EDM, and select an Empty model that I&rsquo;ll call BlogModel as well. By right-clicking on the empty Designer surface and choosing Properties, you can see the default Entity Container name, BlogModelContainer, in this case. First I&rsquo;ll change the name to BlogContext, and then I&rsquo;ll create the model.
+MyBlog requires three Entities I&rsquo;ll call Blog, Post and Tag, as shown in&nbsp;Figure 1. To create them, I drag an Entity from the toolbox to the design surface, then right-click and select Properties to edit the entity properties. I&rsquo;ll also need a few scalar properties on each of the entities (right-click on the entity and select Add | Scalar Property).
+</text>
+      <image>http://www.foosun.net/files/images/201003/162125890.jpg</image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 14:22:00</pubDate>
+  </item>
+  <item>
+      <title></title>
+      <link>http://localhost:1511/html/2010-04/8.html</link>
+      <description></description>
+      <text>这个注册页面还很简单，很多该做的判断没有，请大家自行注意一下：
+1.帐号用 英文和数字
+2.邮箱填个真实邮箱
+3.注册后的使用
+
+a. 可转到 http://t2.hgzp.cn/ （手机也可使用） 发表内容
+b. 或用 微博工具(rtx索取或发放) 发表浏览
+
+由于协议符合 twitter 标准，实际其他支持设置第三方协议的网站也可使用如 http://dabr.nl/ 登陆方法是 用户名和口令使用刚注册的，API URL 设置为 &quot;http://wmz.hgzp.cn/api/MiniBlog/v1/&quot; 
+
+
+
+注册新用户
+
+    昵称:
+    帐号:
+    口令:
+    邮箱:
+      
+
+</text>
+      <image></image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 14:00:00</pubDate>
+  </item>
+  <item>
+      <title></title>
+      <link>http://localhost:1511/html/2010-04/7.html</link>
+      <description></description>
+      <text>twitese简介如果发现有错误 请先尝试下载SVN里的最新版本http://twitese.googlecode.com/svn/trunk/ 此下载方法可以保证下载的是最新的程序。 
+Twitese推特中文圈旨在帮助中国twitter使用者寻找国内优秀twitter用户，同时让大陆用户无需翻墙即可更新状态和浏览好友消息。 
+如果你有时间修改twitese的源程序，为它增加功能，并愿意开源，可以把修改过的程序发给我(bang590[在]gmail.com)，我传到这里~希望有热心人士一起改进twitese :&gt; 
+&nbsp;
+下载源文件： 
+方法一：通过SVN工具下载：
+方法二：进入项目主页http://code.google.com/p/twitese/ 点击右边的Featured downloads下载压缩后的源程序。此方法不保证下载到最新的程序。` 
+下载后，打开lib/config.php，按上面的说明修改一些参数（如果使用国外空间，可跳过此步）： 
+//twitter api地址，如果是国外空间，请用http://twitter.com，国内空间需要用第三方API proxy&nbsp;
+define('API_URL', 'http://twitter.com');&nbsp;
+//&ldquo;随便看看&rdquo;与&ldquo;排行榜&rdquo;的api地址，由架设在GAE的twitese提供&nbsp;
+define('TWITESE_API_URL', 'http://twiteseapi.appspot.com');&nbsp;
+//网站名称&nbsp;
+define('SITE_NAME', '推特中文圈');&nbsp;
+&nbsp;
+//加密用户名密码用的密匙，随便输入一字符串。&nbsp;
+//需要mcrypt模块支持，如果值为空则不加密。视空间支持情况选择开启与否&nbsp;
+define('SECURE_KEY', '');&nbsp;
+&nbsp;
+//附加密码，如果密码不为空，登录时会要求用户输入附加密码。&nbsp;
+define('TWITESE_PASSWORD', '');
+修改完后，传到php空间，就能使用了。 </text>
+      <image></image>
+      <keywords></keywords>
+      <author></author>
+      <source></source>
+      <pubDate>2010-4-16 13:59:00</pubDate>
+  </item>
+  <item>
+      <title></title>
       <link>http://localhost:1511/html/2010-04/6.html</link>
       <description></description>
       <text>1、周四两市大盘宽幅振荡，指数下探之后尾盘被权重股合力&ldquo;拉&rdquo;了回来，其中中石油、中石化作用最为突出，预演了股指期货时代的行情特点。股指期货周五正式上市，股指期货的根本目的就是通过双向交易平抑大盘&ldquo;暴涨暴跌&rdquo;，维持市场稳定。在行情单边下跌（上涨）时，为市场中处于弱市的多方（空方）提供一个有效的交易品种，抑制单边行情继续发展。从资金面来看，当前市场资金和交易品种是&ldquo;九个锅盖与十个锅&rdquo;的关系，股指期货推出，吸引了市场中最活跃的资金，创业板成为资金流出的主要品种，跌幅超过5%的创业板个股多达四十几家，海兰信、宝德股份等创出上市以来新低，短期内继续探底在所难免。股指期货对市场的存量资金分流明显，在资金优势不强的状况下，股指期货强力做多的能量有限；从股指期货的参与者结构看，主要是期货投资者和股市中的激进投资者，从创业板转出者较多，这部分投资者善于做多，在新品上市之初，习惯性的向上做多的可能性较大；同时周三美国股市三大股指均创自去年3月以来反弹新高，为A股市场上扬提高了想象空间。综上所述，股指期货上市初期，判断A股市场继续偏多。 
@@ -25,7 +172,7 @@
       <description></description>
       <text>图文：签约仪式现场与会嘉宾共饮香槟庆祝合作
 4月15日，在上海黄浦江招商银行号游轮上，招商银行与腾讯公司隆重举行主题为&ldquo;城市，因您而变得更美好&rdquo;的战略合作协议签约仪式。</text>
-      <image></image>
+      <image>http://www.foosun.net/files/images/201003/1621101746.jpg</image>
       <keywords></keywords>
       <author></author>
       <source></source>
@@ -68,7 +215,7 @@ CPI的低速运行一定程度上减轻了加息忧虑，但结合近期形势�
       <link>http://localhost:1511/html/2010-04/2.html</link>
       <description></description>
       <text>旅游城市旅游城市</text>
-      <image></image>
+      <image>http://www.foosun.net/files/images/201003/W020100113355096547299.png</image>
       <keywords></keywords>
       <author></author>
       <source></source>

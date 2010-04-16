@@ -13,8 +13,6 @@ if(self==top)
 </head>
 <body>
 
-
-
 <table width="165" height="29" border="0" cellpadding="0" cellspacing="0" class="menuq">
   <tr>
     <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif" width="8" height="11" border="0"  alt="展开/隐藏"  id="arrow_1"/></td>
