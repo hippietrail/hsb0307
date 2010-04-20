@@ -687,7 +687,7 @@ namespace Foosun.SQLServerDAL
                     break;
                 case "Class":
                     //Sql = "select top 1 ClassCName from " + Pre + "news_class where ClassID=@ID";
-                    Sql = "select top 1 ClassCNameRefer from " + Pre + "news_class where ClassID=@ID";
+                    Sql = "select top 1 NewsTitleRefer from " + Pre + "news_class where ClassID=@ID";
                     break;
                 case "Special":
                     Sql = "select top 1 SpecialCName from " + Pre + "news_special where SpecialID=@ID";

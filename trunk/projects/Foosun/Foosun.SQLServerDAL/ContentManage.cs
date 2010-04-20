@@ -22,7 +22,6 @@ namespace Foosun.SQLServerDAL
 {
     public class ContentManage : DbBase, IContentManage
     {
-
         /// <summary>
         /// 得到站点栏目列表结果  
         /// </summary>
@@ -33,11 +32,7 @@ namespace Foosun.SQLServerDAL
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
-
-
         #region 内容管理开始
-
-
 
         #region 新闻
         /// <summary>
@@ -965,7 +960,7 @@ namespace Foosun.SQLServerDAL
             return dt;
         }
 
-        
+
 
         public string getspecialCName(string ClassID)
         {
@@ -1621,7 +1616,7 @@ namespace Foosun.SQLServerDAL
             param[18].Value = uc.isPage;
             param[19] = new SqlParameter("@ClassCNameRefer", SqlDbType.NVarChar, 50);
             param[19].Value = uc.ClassCNameRefer;
-            
+
             return param;
         }
 
@@ -1896,7 +1891,7 @@ namespace Foosun.SQLServerDAL
         }
 
 
-        
+
         /// <summary>
         /// 得到站点列表
         /// </summary>
@@ -2073,15 +2068,15 @@ namespace Foosun.SQLServerDAL
             strSql.Append(";select @@IDENTITY");
             string sql = strSql.ToString();
             SqlParameter[] parameters = {
-					new SqlParameter("@JsID", SqlDbType.NVarChar,12),
-					new SqlParameter("@Njf_title", SqlDbType.NVarChar,100),
-					new SqlParameter("@NewsId", SqlDbType.NVarChar,12),
-					new SqlParameter("@NewsTable", SqlDbType.NVarChar,20),
-					new SqlParameter("@PicPath", SqlDbType.NVarChar,200),
-					new SqlParameter("@ClassId", SqlDbType.NVarChar,12),
-					new SqlParameter("@SiteID", SqlDbType.NVarChar,12),
-					new SqlParameter("@CreatTime", SqlDbType.DateTime),
-					new SqlParameter("@TojsTime", SqlDbType.DateTime)};
+		            new SqlParameter("@JsID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@Njf_title", SqlDbType.NVarChar,100),
+		            new SqlParameter("@NewsId", SqlDbType.NVarChar,12),
+		            new SqlParameter("@NewsTable", SqlDbType.NVarChar,20),
+		            new SqlParameter("@PicPath", SqlDbType.NVarChar,200),
+		            new SqlParameter("@ClassId", SqlDbType.NVarChar,12),
+		            new SqlParameter("@SiteID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@CreatTime", SqlDbType.DateTime),
+		            new SqlParameter("@TojsTime", SqlDbType.DateTime)};
             parameters[0].Value = JsID;
             parameters[1].Value = Njf_title;
             parameters[2].Value = NewsId;
@@ -2485,25 +2480,25 @@ namespace Foosun.SQLServerDAL
         {
             //string Sql = "INSERT INTO " + Pre + "News_unNews(unName,titleCSS,SubCSS,UnID,ONewsID,[Rows],unTitle,NewsTable,CreatTime,SiteID) VALUES('" + unName + "','" + titleCSS + "','" + SubCSS + "','" + unNewsid + "','" + Arr_OldNewsId + "'," + NewsRow + ",'" + NewsTitle + "','" + NewsTable + "',GETDATE(),'" + SiteID + "')";
             StringBuilder strSql = new StringBuilder();
-			strSql.Append("insert into fs_news_unNews(");
-			strSql.Append("UnID,unName,TitleCSS,SubCSS,ONewsID,Rows,unTitle,NewsTable,CreatTime,SiteID)");
-			strSql.Append(" values (");
+            strSql.Append("insert into fs_news_unNews(");
+            strSql.Append("UnID,unName,TitleCSS,SubCSS,ONewsID,Rows,unTitle,NewsTable,CreatTime,SiteID)");
+            strSql.Append(" values (");
             strSql.Append("@UnID,@unName,@TitleCSS,@SubCSS,@ONewsID,@Rows,@unTitle,@NewsTable,GETDATE(),@SiteID)");
             String Sql = strSql.ToString();
-			SqlParameter[] parameters = {
-					new SqlParameter("@UnID", SqlDbType.NVarChar,12),
-					new SqlParameter("@unName", SqlDbType.NVarChar,100),
-					new SqlParameter("@TitleCSS", SqlDbType.NVarChar,50),
-					new SqlParameter("@SubCSS", SqlDbType.NVarChar,50),
-					new SqlParameter("@ONewsID", SqlDbType.NVarChar,12),
-					new SqlParameter("@Rows", SqlDbType.Int,4),
-					new SqlParameter("@unTitle", SqlDbType.NVarChar,200),
-					new SqlParameter("@NewsTable", SqlDbType.NVarChar,20),
-					new SqlParameter("@SiteID", SqlDbType.NVarChar,12)};
+            SqlParameter[] parameters = {
+		            new SqlParameter("@UnID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@unName", SqlDbType.NVarChar,100),
+		            new SqlParameter("@TitleCSS", SqlDbType.NVarChar,50),
+		            new SqlParameter("@SubCSS", SqlDbType.NVarChar,50),
+		            new SqlParameter("@ONewsID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@Rows", SqlDbType.Int,4),
+		            new SqlParameter("@unTitle", SqlDbType.NVarChar,200),
+		            new SqlParameter("@NewsTable", SqlDbType.NVarChar,20),
+		            new SqlParameter("@SiteID", SqlDbType.NVarChar,12)};
             parameters[0].Value = unNewsid;
             parameters[1].Value = unName;
             parameters[2].Value = titleCSS;
-            parameters[3].Value = SubCSS ;
+            parameters[3].Value = SubCSS;
             parameters[4].Value = Arr_OldNewsId;
             parameters[5].Value = NewsRow;
             parameters[6].Value = NewsTitle;
@@ -2517,7 +2512,7 @@ namespace Foosun.SQLServerDAL
 
             //}
             parameters[7].Value = NewsTable;
-			parameters[8].Value = SiteID;
+            parameters[8].Value = SiteID;
 
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parameters);
         }
@@ -2543,14 +2538,14 @@ namespace Foosun.SQLServerDAL
             strSql.Append("@NewsID,@getNewsID,@NewsTitle,@DataLib,@TitleCSS,@colsNum,@SiteID,GETDATE())");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-					new SqlParameter("@NewsID", SqlDbType.NVarChar,12),
-					new SqlParameter("@getNewsID", SqlDbType.NVarChar,12),
-					new SqlParameter("@NewsTitle", SqlDbType.NVarChar,200),
-					new SqlParameter("@DataLib", SqlDbType.NVarChar,20),
-					new SqlParameter("@TitleCSS", SqlDbType.NVarChar,30),
-					new SqlParameter("@colsNum", SqlDbType.TinyInt,1),
-					new SqlParameter("@SiteID", SqlDbType.NVarChar,12)
-					};//new SqlParameter("@CreatTime", SqlDbType.DateTime)
+		            new SqlParameter("@NewsID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@getNewsID", SqlDbType.NVarChar,12),
+		            new SqlParameter("@NewsTitle", SqlDbType.NVarChar,200),
+		            new SqlParameter("@DataLib", SqlDbType.NVarChar,20),
+		            new SqlParameter("@TitleCSS", SqlDbType.NVarChar,30),
+		            new SqlParameter("@colsNum", SqlDbType.TinyInt,1),
+		            new SqlParameter("@SiteID", SqlDbType.NVarChar,12)
+		            };//new SqlParameter("@CreatTime", SqlDbType.DateTime)
             parameters[0].Value = unNewsid;
             parameters[1].Value = Arr_OldNewsId;
             parameters[2].Value = NewsTitle;
@@ -2755,7 +2750,7 @@ namespace Foosun.SQLServerDAL
                 }
                 dt.Clear(); dt.Dispose();
             }
-           
+
             //string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Foosun.Global.Current.SiteID + "')";
             string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID)" +
                           "VALUES (@DsNewsID ,@DsEName ,@DsNewsTable ,@DsType,@DsContent ,@DsApiID ,@SiteID)";
@@ -2787,42 +2782,42 @@ namespace Foosun.SQLServerDAL
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, TSql, null);
             if (dt != null)
             {
-                SqlParameter[] paramerters ;
-                
+                SqlParameter[] paramerters;
+
                 if (dt.Rows.Count > 0)
                 {
                     // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
                     // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
-                    Sql = "UPDATE " + Pre + "define_save "+ 
-                               " SET DsNewsTable =@DsNewsTable "+
-                                ",DsContent=@DsContent "+
-                             " where DsNewsID=@DsNewsID"+
-                             " and   DsEName=@DsEName"+ 
-                             " and   DsApiID=@DsApiID "+
+                    Sql = "UPDATE " + Pre + "define_save " +
+                               " SET DsNewsTable =@DsNewsTable " +
+                                ",DsContent=@DsContent " +
+                             " where DsNewsID=@DsNewsID" +
+                             " and   DsEName=@DsEName" +
+                             " and   DsApiID=@DsApiID " +
                              " and   SiteID=@SiteID";
                     paramerters = new SqlParameter[6];
-                    
-                    paramerters[0] = new SqlParameter("@DsNewsTable", SqlDbType.NVarChar,50);
+
+                    paramerters[0] = new SqlParameter("@DsNewsTable", SqlDbType.NVarChar, 50);
                     paramerters[0].Value = DsNewsTable;
                     //paramerters[3] = new SqlParameter("@DsType", SqlDbType.Int);
                     //paramerters[3].Value = DsType;
                     paramerters[1] = new SqlParameter("@DsContent", SqlDbType.NText);
                     paramerters[1].Value = DsContent;
-              
-                    paramerters[2] = new SqlParameter("@DsNewsID", SqlDbType.NVarChar,12);
+
+                    paramerters[2] = new SqlParameter("@DsNewsID", SqlDbType.NVarChar, 12);
                     paramerters[2].Value = DsNewsID;
-                    paramerters[3] = new SqlParameter("@DsEName", SqlDbType.NVarChar,50);
+                    paramerters[3] = new SqlParameter("@DsEName", SqlDbType.NVarChar, 50);
                     paramerters[3].Value = DsEName;
-                    paramerters[4] = new SqlParameter("@DsApiID", SqlDbType.NVarChar,30);
+                    paramerters[4] = new SqlParameter("@DsApiID", SqlDbType.NVarChar, 30);
                     paramerters[4].Value = DsApiID;
-                    paramerters[5] = new SqlParameter("@SiteID", SqlDbType.NVarChar,12);
+                    paramerters[5] = new SqlParameter("@SiteID", SqlDbType.NVarChar, 12);
                     paramerters[5].Value = Foosun.Common.Public.getSessionStr();
                     if (paramerters[5].Value.ToString() == string.Empty)
                     {
                         paramerters[5].Value = Foosun.Global.Current.SiteID;
- 
+
                     }
-                   
+
                 }
                 else
                 {
@@ -2830,21 +2825,21 @@ namespace Foosun.SQLServerDAL
                     Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID)" +
                           "VALUES (@DsNewsID ,@DsEName ,@DsNewsTable ,@DsType,@DsContent ,@DsApiID ,@SiteID)";
                     paramerters = new SqlParameter[7];
-                    paramerters[0] = new SqlParameter("@DsNewsID", SqlDbType.NVarChar,12);
+                    paramerters[0] = new SqlParameter("@DsNewsID", SqlDbType.NVarChar, 12);
                     paramerters[0].Value = DsNewsID;
-                    paramerters[1] = new SqlParameter("@DsEName", SqlDbType.NVarChar,50);
+                    paramerters[1] = new SqlParameter("@DsEName", SqlDbType.NVarChar, 50);
                     paramerters[1].Value = DsEName;
-                    paramerters[2] = new SqlParameter("@DsNewsTable", SqlDbType.NVarChar,50);
+                    paramerters[2] = new SqlParameter("@DsNewsTable", SqlDbType.NVarChar, 50);
                     paramerters[2].Value = DsNewsTable;
-                    paramerters[3] = new SqlParameter("@DsType", SqlDbType.TinyInt,1);
+                    paramerters[3] = new SqlParameter("@DsType", SqlDbType.TinyInt, 1);
                     paramerters[3].Value = DsType;
                     paramerters[4] = new SqlParameter("@DsContent", SqlDbType.NText);
                     paramerters[4].Value = DsContent;
-                    paramerters[5] = new SqlParameter("@DsApiID", SqlDbType.NVarChar,30);
+                    paramerters[5] = new SqlParameter("@DsApiID", SqlDbType.NVarChar, 30);
                     paramerters[5].Value = DsApiID;
-                    paramerters[6] = new SqlParameter("@SiteID", SqlDbType.NVarChar,12);
+                    paramerters[6] = new SqlParameter("@SiteID", SqlDbType.NVarChar, 12);
                     paramerters[6].Value = Foosun.Global.Current.SiteID;
-       
+
                 }
                 DbHelper.ExecuteNonQuery(CommandType.Text, Sql, paramerters);
                 dt.Clear(); dt.Dispose();
@@ -3173,7 +3168,7 @@ namespace Foosun.SQLServerDAL
                     }
                     dt.Close();
                 }
-                
+
             }
             else
             {
@@ -3570,7 +3565,7 @@ namespace Foosun.SQLServerDAL
         public const string ColumnMap_Insert = "INSERT INTO [fs_news_Class_Map] ([CpClassId] ,[CpClassName]  ,[SiteClassId] ,[SiteClassName] ,[ClassDaiName] ,[Media]) VALUES (@CpClassId, @CpClassName, @SiteClassId, @SiteClassName, @ClassDaiName, @Media)";
         public const string ColumnMap_SelectAll = "SELECT Id, CpClassId, CpClassName, SiteClassId, SiteClassName, ClassDaiName, Media FROM fs_news_Class_Map ORDER BY Media";
         public const string ColumnMap_Delete = "DELETE FROM [fs_news_Class_Map] WHERE CpClassId = @CpClassId AND  Media = @Media";
-        
+
         public void InsertColumnMap(SiteColumnMapInfo c)
         {
             //throw new Exception("The method or operation is not implemented.");
@@ -3582,7 +3577,7 @@ namespace Foosun.SQLServerDAL
         public DataTable GetAllColumnMap()
         {
             //throw new Exception("The method or operation is not implemented.");
-            
+
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, ColumnMap_SelectAll, null);
             return dt;
         }
@@ -3623,7 +3618,7 @@ namespace Foosun.SQLServerDAL
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@CpClassId", SqlDbType.VarChar, 50);
             param[0].Value = cpsnColumnId;
-            
+
             param[1] = new SqlParameter("@Media", SqlDbType.NVarChar, 256);
             param[1].Value = media;
 
