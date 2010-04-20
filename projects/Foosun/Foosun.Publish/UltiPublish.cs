@@ -973,7 +973,6 @@ namespace Foosun.Publish
         /// <returns></returns>
         public string getPagelist(string Numstr, int i, string getFileName, string getFileEXName, string postResult_color, string postResult_css, int n,string ID,string ContentType,int isPop)
         {
-
             string Pagestr = string.Empty;
             string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
             string classPageStyle="0";
@@ -986,6 +985,7 @@ namespace Foosun.Publish
             string weiye = "尾页";
             string shouye = "首页";
             string dangqiandi = "当前第";
+            #region 
             if (HttpContext.Current.Items["ClassPageStyle"] != null)
             {
                 classPageStyle = HttpContext.Current.Items["ClassPageStyle"].ToString();
@@ -1071,10 +1071,8 @@ namespace Foosun.Publish
                         continue;
                     }
                 }
-                
- 
             }
-
+            #endregion
 
             if (classPageStyle=="1")//新傣文
             {
@@ -1365,7 +1363,6 @@ namespace Foosun.Publish
                 }
                 #endregion
                 return Pagestr;
- 
             }
             if (classPageStyle == "2")//老傣文
             {
@@ -1656,7 +1653,6 @@ namespace Foosun.Publish
                 }
                 #endregion
                 return Pagestr;
- 
             }
             #region
             switch (Numstr)

@@ -62,7 +62,7 @@ namespace Foosun.PlugIn.Passport
         {
             if (config.Enable == false)
                 return;
-            if (config.ApplicationList != null)               
+            if (config.ApplicationList != null)
             {
                 foreach (Foosun.Config.API.ApplicationInfo app in config.ApplicationList)
                 {
@@ -72,7 +72,6 @@ namespace Foosun.PlugIn.Passport
                     }
                 }
             }
- 
         }
 
         //读取XML模板文件，当值为True时是请求信息模板，反之是返回信息模板
@@ -92,10 +91,7 @@ namespace Foosun.PlugIn.Passport
                 filename = System.Web.HttpContext.Current.Server.MapPath(applicationPath);
             }
 
-            XmlDoc.Load(filename);
-
-
-             
+            XmlDoc.Load(filename);             
         }
         void SendPost(string Url, string strType)
         {
