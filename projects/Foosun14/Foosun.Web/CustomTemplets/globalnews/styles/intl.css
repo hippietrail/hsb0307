@@ -1,4 +1,4 @@
-﻿/* CSS Document */
+﻿/* CSS Document reset */
 body{font-family:'宋体';margin:0 auto;padding:0;background:#FFF;font-size:12px;line-height:26px;color:#3A3A3A;}
 div,form,ul,ol,li,span,p,dl,dt,dd,form,select{margin:0;padding:0;border:0;}
 img,a img{border:0;margin:0;padding:0;}
@@ -114,6 +114,10 @@ a:hover{color:#3A3A3A;text-decoration:underline;}
 .con_r .gnq select { width:70px}
 .con_r .gnq .box_l { width:138px; height:27px; padding-top:3px; border-right:1px solid #DBDBDB; background:#D1B85C}
 .con_r .gnq .box_r { width:153px; height:27px; padding-top:3px; background:#C59459}
+
+.con_r .smallPictureText ul li { float :left;  width:145px;text-align:center}
+.con_r .smallPictureText ul li img { border:1px solid #A5C0E1; padding:3px; margin:3px auto}
+
 .firendlink { width:990px; padding:5px; margin:auto}
 .firendlink .link { width:22px; height:70px; padding:10px 0; line-height:18px; color:#fff; background:#DB5200}
 .firendlink .linktxt { width:968px}
