@@ -216,7 +216,12 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 								//实现水印、缩图
 								string[] PrintPicsizeStr = dt_sys.Rows[0]["PrintPicsize"].ToString().Split('|');
 								double a_picsizeHeight = Convert.ToDouble(PrintPicsizeStr[0]);
-								double a_picsizeWidth = Convert.ToDouble(PrintPicsizeStr[1]);
+                                //lsd change 20100421
+                                double a_picsizeWidth = a_picsizeHeight;
+                                if (PrintPicsizeStr.Length == 2)
+                                {
+                                     a_picsizeWidth= Convert.ToDouble(PrintPicsizeStr[1]);
+                                }
 								//double a_picsize = Convert.ToDouble(dt_sys.Rows[0]["PrintPicsize"]);
 								fd.Waterpos = dt_sys.Rows[0]["PrintPosition"].ToString();
 								fd.Height = Convert.ToInt32(a_picsizeHeight * 10);
