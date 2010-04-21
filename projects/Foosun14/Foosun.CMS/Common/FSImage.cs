@@ -510,20 +510,28 @@ namespace Foosun.CMS.Common
 				switch (_waterpos)
 				{
 					case "1":
-						xpos = 10;
-						ypos = 10;
+                        //xpos = 10;
+                        //ypos = 10;
+                        xpos = 0;
+                        ypos = 0;
 						break;
 					case "3":
-						xpos = (width - WatermarkWidth - 10);
-						ypos = 10;
+                        //xpos = (width - WatermarkWidth - 10);
+                        //ypos = 10;
+                        xpos = (width - WatermarkWidth);
+                        ypos = 0;
 						break;
 					case "4":
-						xpos = width - WatermarkWidth - 10;
-						ypos = height - WatermarkHeight - 10;
+                        //xpos = width - WatermarkWidth - 10;
+                        //ypos = height - WatermarkHeight - 10;
+                        xpos = width - WatermarkWidth;
+                        ypos = height - WatermarkHeight;
 						break;
 					case "2":
-						xpos = 10;
-						ypos = (height - WatermarkHeight - 10);
+						//xpos = 10;
+						//ypos = (height - WatermarkHeight - 10);
+                        xpos = 0;
+                        ypos = (height - WatermarkHeight );
 						break;
 					default:
 						xpos = Convert.ToInt32(width / 2) - (WatermarkWidth / 2);
