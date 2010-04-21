@@ -1,5 +1,4 @@
 ﻿
-
 ALTER TABLE [dbo].[fs_api_navi] ADD isActive tinyint default 1 NOT NULL ;
 GO
 ALTER TABLE [dbo].[fs_api_qmenu] ADD isActive tinyint default 1 NOT NULL ;
