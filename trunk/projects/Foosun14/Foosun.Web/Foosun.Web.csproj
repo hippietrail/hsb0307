@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -3870,6 +3870,8 @@
     <Content Include="Templets\Content\page.html" />
     <Content Include="Templets\Content\search.html" />
     <Content Include="Templets\Content\special.html" />
+    <Content Include="Templets\Content\T_class.htm" />
+    <Content Include="Templets\Content\T_news.htm" />
     <Content Include="Templets\css\news.css" />
     <Content Include="Templets\css\style.css" />
     <Content Include="Templets\css\style1.css" />
