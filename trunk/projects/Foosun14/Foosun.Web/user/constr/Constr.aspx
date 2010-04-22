@@ -104,7 +104,7 @@
                         </asp:RadioButtonList>
                     </td>
                       <td Width="25%" style="text-align: right;" id="site1">
-                          投稿给管理员：
+                          投稿到总站：
                       </td>
                       <td Width="75%"  id="site2">
         <asp:RadioButtonList ID="fbList1" runat="server" RepeatDirection="Horizontal" Width="103px">
