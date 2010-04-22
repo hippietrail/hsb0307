@@ -2,7 +2,7 @@
 {
 	margin: 10px auto 0px;
 	width: 1002px;
-	background: url(../images/mdy_cen_line.gif); HEIGHT: 1px;
+	/*background: url(../images/mdy_cen_line.gif); HEIGHT: 1px;*/
 }
 
 .fabiao
@@ -25,20 +25,7 @@
 	background: #b9b9b9;
 	height: 1px;
 }
-.content
-{
-	padding-bottom: 20px;
-	line-height: 22px;
-	margin: 10px auto 0px;
-	width: 600px;
-	color: #000000;
-	font-size: 14px;
-}
-.content *
-{
-	line-height: 22px;
-	font-size: 14px;
-}
+
 .content A:link
 {
 	line-height: 22px;
@@ -56,12 +43,19 @@
 	border-top: #dbdbdb 1px solid;
 	border-right: #dbdbdb 1px solid;
 } 
-.neirong
+
+.laiyuan
 {
-	margin: 0px auto;
-	width: 1002px;
-	background: url(../images/mdy_cen_bg.gif);
+	text-align: center;
+	line-height: 20px;
+	margin: 0px auto 10px;
+	width: 500px;
+	color: #000000;
+	overflow: hidden;
 }
+
+
+/*
 .neirong
 {
 	width: 700px;
@@ -69,8 +63,15 @@
 	margin-bottom:0px;
 	padding-bottom:0px;
 }
+*/
 
-.neirong H1
+.newsview .newstitle{
+	width:700px;
+	height:35px;*height:45px;_height:35px;
+	line-height:15px;
+}
+
+.newsview H1
 {
 	text-align: center;
 	line-height: 28px;
@@ -81,12 +82,78 @@
 	font-size: 26px;
 	font-weight: bold;
 }
-.laiyuan
-{
-	text-align: center;
-	line-height: 20px;
-	margin: 0px auto 10px;
-	width: 500px;
-	color: #000000;
-	overflow: hidden;
+
+
+.newsview{
+	width:700px;
+	border:solid 1px #cacaca;
+	/*border:1px #A6D8FB solid;*/
+	float:left;
+	 min-height:1066px;
+	background-color: #fefefa; /*#F7FCFF;*/
 }
+
+.newsview .newstitle{
+	width:691px;
+	height:35px;*height:45px;_height:35px;
+	line-height:15px;
+}
+.newsview .newstitle h1{
+	font-size:25px;
+	margin-top:15px;
+	text-align:center;
+}
+
+.newsview .info{
+	width:691px;
+	height:27px;
+	line-height:27px;
+	border-top:1px solid #EEE;
+	border-bottom:1px solid #EEE;
+	text-align:center;
+
+}
+.newsview .info strong{
+	color:#666;
+	margin-left:20px;
+}
+
+.newsview .content{
+	width:670px;
+	overflow:hidden;
+	margin:10px 10px;
+	color:#000;
+	font-size:14px;
+	line-height:25px;
+}
+/*
+.content
+{
+	padding-bottom: 20px;
+	margin: 10px auto 0px;
+	width: 600px;
+}
+.content *
+{
+	line-height: 22px;
+	font-size: 14px;
+}
+*/
+
+.commentinfo{
+
+	height:20px;
+	padding-top:10px;
+	padding-left:10px;
+	/*border-top:1px solid #ADD5F5;
+	border-bottom:1px solid #ADD5F5;*/
+	border-top: solid 1px #eee;
+	border-bottom:solid 1px #eee;
+	text-align:left;
+	background:url(../images/bg.jpg) 1px 1px repeat-x;
+	font-weight:bold;
+
+}
+.comment {
+		 padding:25px;
+ }
