@@ -150,7 +150,7 @@ public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePag
 
         int Money3 = Money1 + Money2;
         string GetUName = pd.getUserName(UNum);
-        if (con.Add3(NewsID, Title, PicURL, ClassID, Author, GetUName, Source, Contents, creatTime, site, Tags, DataLib, NewsTemplet, strSavePath, strfileName, strfileexName, strCheckInt) == 0 || con.Update4(ConIDp) == 0 || con.Update5(iPoint2, gPoint2, Money3, cPoint2, aPoint2, UserNum) == 0 || con.Add4(NewsID, gPoint, iPoint, Money1, CreatTime1, UserNum, content4) == 0)
+        if (con.Add3(NewsID, Title, PicURL, ClassID, Author, GetUName, Source, Contents, creatTime, site, Tags, DataLib, NewsTemplet, strSavePath, strfileName, strfileexName, strCheckInt) == 0 || con.Update4(ConIDp) == 0 || con.Update5(iPoint2, gPoint2, Money3, cPoint2, aPoint2, UNum) == 0 || con.Add4(NewsID, gPoint, iPoint, Money1, CreatTime1, UNum, content4) == 0)
         {
             rd.SaveUserAdminLogs(1, 1, UserNum, "直接审核", "审核错误");
             PageError("审核错误", "");
