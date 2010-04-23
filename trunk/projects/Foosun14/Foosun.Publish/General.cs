@@ -652,7 +652,11 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();// +"\\";
+                if(!SiteRootPath.EndsWith("\\"))
+                {
+                    SiteRootPath += "\\";
+                }
                 string strTempletDir = strgTemplet;
                 IDataReader rd = CommonData.DalPublish.GetNewsSavePath(newsID);
                 while (rd.Read())
@@ -666,6 +670,7 @@ namespace Foosun.Publish
                             TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
                             TempletPath = SiteRootPath.Trim('\\') + TempletPath;
                             saveNewsPath = "\\" + rd["SavePath1"].ToString().Trim('\\').Trim('/') + "\\" + rd["SaveClassframe"].ToString().Trim('\\').Trim('/') + "\\" + rd["SavePath"].ToString().Trim('\\').Trim('/') + "\\" + rd["FileName"].ToString().Trim('\\').Trim('/') + rd["FileEXName"].ToString().Trim('\\').Trim('/');
+                            saveNewsPath = saveNewsPath.Replace("\\\\", "\\");
                             Template newsTemplate = new Template(TempletPath, TempType.News);
                             newsTemplate.NewsID = newsID;
                             newsTemplate.ClassID = classID;
@@ -695,6 +700,7 @@ namespace Foosun.Publish
                                     for (int i = 0; i < n; i++)
                                     {
                                         string filepath = SiteRootPath + saveNewsPath;
+                                        filepath = filepath.Replace("\\\\", "\\");
                                         if (i > 0)
                                         {
                                             int laspot = filepath.LastIndexOf('.');
