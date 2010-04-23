@@ -125,6 +125,10 @@
 	color:#000;
 	font-size:14px;
 	line-height:25px;
+	text-indent: 21pt;
+}
+.newsview .content p{
+	text-indent: 21pt;
 }
 /*
 .content
