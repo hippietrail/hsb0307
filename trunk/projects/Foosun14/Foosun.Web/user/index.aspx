@@ -102,7 +102,7 @@
 	linkset[4][3]='<div><a class="menu_ctr" href="friend/friend_add.aspx" target="sys_main">添加好友</a>&nbsp;&nbsp;&nbsp;</div>'
 	
 	linkset[5]=new Array()
-	<%Response.Write(ChannelList); %>
+	<% Response.Write(ChannelList); %>
 	
 </script>
 <link href="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
