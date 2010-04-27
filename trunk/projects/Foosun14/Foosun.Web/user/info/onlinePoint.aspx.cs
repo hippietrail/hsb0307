@@ -17,6 +17,7 @@ using System.Text;
 public partial class user_info_onlinePoint : Foosun.Web.UI.UserPage
 {
     Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -65,7 +66,11 @@ public partial class user_info_onlinePoint : Foosun.Web.UI.UserPage
                     string key = dt.Rows[0]["o_key"].ToString();
                     string _text = pointnumber.ToString() + "CNY" + _tmp + dt.Rows[0]["o_userName"].ToString() + _urls + key; // 拼凑加密串
                     this.v_md5info.Value = MD5Util.getMD5(_text);
+                    //v_md5info.Value = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(_text, "md5").ToUpper();
+
+
                     this.postUrl.Value = dt.Rows[0]["o_sendurl"].ToString();
+                    
                 }
             }
 
@@ -85,33 +90,44 @@ public partial class user_info_onlinePoint : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string _md5 = this.v_md5info.Value;
-            string _v_mid = this.v_mid.Value;
-            string _v_oid = this.v_oid.Value;
-            string _v_amount = this.v_amount.Value;
-            string _v_moneytype = this.v_moneytype.Value;
-            string _urls =  this.v_url.Value;
-            Encoding encoding = Encoding.GetEncoding("GB2312");
+            //string _md5 = this.v_md5info.Value;
+            //string _v_mid = this.v_mid.Value;
+            //string _v_oid = this.v_oid.Value;
+            //string _v_amount = this.v_amount.Value;
+            //string _v_moneytype = this.v_moneytype.Value;
+            //string _urls =  this.v_url.Value;
+            //Encoding encoding = Encoding.GetEncoding("GB2312");
 
-            string postData = "v_md5info=" + _md5;
-            string strUrl = this.postUrl.Value;
-            postData += ("&v_mid=" + _v_mid);
-            postData += ("&v_oid=" + _v_oid);
-            postData += ("&v_amount=" + _v_amount);
-            postData += ("&v_moneytype=" + _v_moneytype);
-            postData += ("&v_url=" + _urls);
-            byte[] data = encoding.GetBytes(postData);
+            //string postData = "v_md5info=" + _md5;
+            //string strUrl = this.postUrl.Value;
+            //postData += ("&v_mid=" + _v_mid);
+            //postData += ("&v_oid=" + _v_oid);
+            //postData += ("&v_amount=" + _v_amount);
+            //postData += ("&v_moneytype=" + _v_moneytype);
+            //postData += ("&v_url=" + _urls);
+            //byte[] data = encoding.GetBytes(postData);
 
-            // 准备请求...
-            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(strUrl);
-            myRequest.Method = "POST";
-            myRequest.ContentType = "application/x-www-form-urlencoded";
-            myRequest.ContentLength = data.Length;
-            Stream newStream = myRequest.GetRequestStream();
-            // 发送数据
-            newStream.Write(data, 0, data.Length);
-            newStream.Close();
-            Response.Redirect(this.postUrl.Value);
+            //// 准备请求...
+            //HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(strUrl);
+            //myRequest.Method = "POST";
+            //myRequest.ContentType = "application/x-www-form-urlencoded";
+            //myRequest.ContentLength = data.Length;
+            //Stream newStream = myRequest.GetRequestStream();
+            //// 发送数据
+            //newStream.Write(data, 0, data.Length);
+            //newStream.Close();
+
+            ////// Get response   
+            ////HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+            ////StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.Default);
+            ////string content = reader.ReadToEnd();  
+
+            ////Response.Write(content);
+
+            //Response.Redirect(this.postUrl.Value);//这一句是错误的。
+            //lblScript.Text = "theForm.action = \"https://pay3.chinabank.com.cn/PayGate\";theForm.submit();";
+            
+            
         }
     }
 }
