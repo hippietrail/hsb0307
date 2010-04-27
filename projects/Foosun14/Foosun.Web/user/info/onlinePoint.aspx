@@ -61,9 +61,10 @@
                   <asp:HiddenField ID="v_moneytype" runat="server" />
                   <asp:HiddenField ID="v_url" runat="server" /> 
                   <asp:HiddenField ID="postUrl" runat="server" /> 
-                  <asp:Button ID="Button2" runat="server" CssClass="form" Text="转到在线银行进行冲值"  OnClientClick="{if(confirm('确认要开始冲值吗？')){return true;}return false;}" OnClick="Button2_Click" />
+                  <input type="button" value="转到在线银行进行冲值" onclick="{if(confirm('确认要开始冲值吗？')){ submitForm();} return false;}" />
+                 <%-- <asp:Button ID="Button2" runat="server" CssClass="form" Text="转到在线银行进行冲值"  OnClientClick="{if(confirm('确认要开始冲值吗？')){return true;}return false;}" OnClick="Button2_Click" />--%>
                    <span class="helpstyle" style="cursor:help"; title="点击查看帮助"  onclick="Help('H_onlinePoint_001',this)">如何冲值的?</span>
-                   &nbsp;<span class="helpstyle" style="cursor:help"; title="点击查看帮助"  onclick="Help('H_onlinePoint_002',this)">金币和冲值的金额关系?</span>
+                   &nbsp;<span class="helpstyle" style="cursor:help"; title="点击查看帮助"  onclick="Help('H_onlinePoint_002',this)">金币和冲值的金额关系?</span>          
                    </td>
                 </tr>          
             </table>
@@ -75,6 +76,22 @@
        <tr>
          <td align="center"><% Response.Write(CopyRight); %></td>
        </tr>
-     </table>    
+     </table>  
+     <script type="text/javascript">
+     
+     //document.forms[0].action="https://pay3.chinabank.com.cn/PayGate";
+     //theForm.action="https://pay3.chinabank.com.cn/PayGate";
+     //theForm.submit();
+     </script>  
+     
+     <script type="text/javascript">
+     function submitForm()
+     {
+         var txtSendUrl = document.getElementById("<%=postUrl.ClientID %>");
+         document.forms[0].action= txtSendUrl.value;
+         document.forms[0].submit();
+     }
+     
+     </script>  
 </body>
 </html>
