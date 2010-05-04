@@ -16,3 +16,9 @@ DIV.foosun_pagebox SPAN.foosun_pagebox_num_nonce {
 DIV.foosun_pagebox SPAN.foosun_pagebox_num {
 	BORDER-RIGHT: #929292 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #929292 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; BORDER-LEFT: #929292 1px solid; COLOR: #929292; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #929292 1px solid
 }
+.hr_dashed{ height:1px;border:none;BORDER-top: #afafb0 1px dotted;}/* lsd*/
+.toLogin {
+	CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}/* lsd*/
+.toLogin {	WIDTH: 76px;	HEIGHT: 24px}
+.toLogin {	BACKGROUND: url(/sysImages/commface/backgrounds1_2.png) no-repeat -77px -81px}

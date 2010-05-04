@@ -147,7 +147,7 @@
 .commentinfo{
 
 	height:20px;
-	padding-top:10px;
+	padding-top:10px;  
 	padding-left:10px;
 	/*border-top:1px solid #ADD5F5;
 	border-bottom:1px solid #ADD5F5;*/
@@ -161,4 +161,4 @@
 .comment {
 		 padding:25px;
  }
- .hr_dashed{ height:1px;border:none;border-top:1px dashed #1E90FF;}
+ .hr_dashed{ height:1px;border:none;BORDER-top: #afafb0 1px dotted;}
