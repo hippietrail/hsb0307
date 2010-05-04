@@ -32,7 +32,7 @@ public partial class manage_publish_siteTask : Foosun.Web.UI.ManagePage
         #endregion
         if (!IsPostBack)
         {
-            PageError("此版本没有此功能", "");
+            //PageError("此版本没有此功能", "");
             Response.CacheControl = "no-cache"; //设置页面无缓存
             copyright.InnerHtml = CopyRight;
             siteTask_Manage(1);

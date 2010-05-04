@@ -694,7 +694,7 @@ public partial class comment : Foosun.Web.UI.BasePage
                         {
                             str_UserName = ""  + " 网友  ";
                         }
-                        str_Clist += "<hr class=\"hr_dashed\" /><div style=\"height:30px;\"><span style=\"color:#990000;\">" + kfool + "楼</span>&nbsp;&nbsp;" + str_UserName;
+                        str_Clist += "<div style=\"height:30px;\"><span style=\"color:#990000;\">" + kfool + "楼</span>&nbsp;&nbsp;" + str_UserName;
                         str_Clist += "<span style=\"font-size:10px;\">" + dt.Rows[i]["creatTime"].ToString() + "&nbsp;&nbsp;&nbsp;" + TmpIP1 + "</span></div>\r";
 
                         if (!dt.Rows[i].IsNull("QID") && dt.Rows[i]["QID"].ToString() != "")
@@ -720,7 +720,7 @@ public partial class comment : Foosun.Web.UI.BasePage
                                 }
                                 sds.Clear(); sds.Dispose();
                             }
-                            str_Clist += "<div style=\"padding-left:25px;padding-bottom:6px;\">   " + str_Content + "</div>\r";
+                            str_Clist += "<div style=\"padding-left:25px;padding-bottom:6px;\">   " + str_Content + "</div><hr style=\"height:1px;border:none;BORDER-top: #afafb0 1px dotted;\" />\r";
                         }
                     }
                 }
@@ -728,15 +728,15 @@ public partial class comment : Foosun.Web.UI.BasePage
                 string str_CPage = "";
                 if (b_P) //显示分页
                 {
-                    str_CPage += "<div style=\"width:100%;padding-top:15px;\">\r";
+                    str_CPage += "<div style=\"width:100%;padding-top:15px;margin-bottom:8px;\">\r";
                     if (num == 1)
                     {
-                        str_CPage += "<span>" + ShowPageContent(NewsID, Foosun.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
+                        str_CPage += "<span style=\"float:right;\">" + ShowPageContent(NewsID, Foosun.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
                         CommentTemplet = CommentTemplet.Replace("{#Page_CommPages}", "");
                     }
                     else
                     {
-                        str_CPage += "<span>" + ShowPage(NewsID, page, Cnt, pageCount) + "</span>\r";
+                        str_CPage += "<span style=\"float:right;\">" + ShowPage(NewsID, page, Cnt, pageCount) + "</span>\r";
                         CommentTemplet = CommentTemplet.Replace("{#Page_CommPages}", str_CPage);
                     }
                     str_CPage += "</div>\r";
@@ -945,11 +945,11 @@ public partial class comment : Foosun.Web.UI.BasePage
         str_CommForm += "<div style=\"text-align:left;height:35px;\">\r";
         if (tmstr == "getlist")
         {
-            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发表评论\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
+            str_CommForm += "<input name=\"B_CommandSubmit\"  type=\"button\" value=\"提交评论\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
         }
         else
         {
-            str_CommForm += "<input name=\"B_CommandSubmit\" type=\"button\" value=\"发表评论\" onclick=\"javascript:CommandSubmit(this.form);\">\r";
+            str_CommForm += "<input name=\"B_CommandSubmit\"  type=\"button\" value=\"提交评论\" onclick=\"javascript:CommandSubmit(this.form);\">\r";
         }
         str_CommForm += "<input type=\"reset\" name=\"B_CommandReset\" value=\"重新填写\">&nbsp;<span style=\"Color:Red;\">Ctrl+回车</span>&nbsp;提交评论.\r";
         str_CommForm += "<input name=\"IsQID\" type=\"hidden\" value=\"\">\r";
