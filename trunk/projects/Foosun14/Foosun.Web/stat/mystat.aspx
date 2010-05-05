@@ -16,7 +16,7 @@
     public void Page_Load(Object src,EventArgs e)
     {
     //----------取得服务器变量集合---------------------------------------------------
-    System.Collections.Specialized.NameValueCollection ServerVariables = System.Web.HttpContext.Current.Request.ServerVariables; 
+    System.Collections.Specialized.NameValueCollection ServerVariables = System.Web.HttpContext.Current.Request.ServerVariables;
     //----------参数传递ID，判断统计时采取的方式-------------------------------------
     code = Request.QueryString["code"];
     statid = Request.QueryString["id"];
