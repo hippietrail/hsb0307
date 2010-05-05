@@ -54,10 +54,10 @@ a:hover{color:#3A3A3A;text-decoration:underline;}
 .pic_blue img { border:1px solid #A5C0E1; padding:3px; margin:3px auto}
 .pitch { height:8px; font-size:0; line-height:0; clear:both}
 
-/* 导航 */
+/* 导航DB5200 */
 .nav { margin:5px auto; height:77px}
 .nav .log { width:180px}
-.nav .con { width:802px; border-top:5px solid #DB5200}
+.nav .con { width:802px; border-top:5px solid #0089DB}
 .nav .con .line { border-bottom:1px solid #D6A19A; line-height:40px; color:#581100}
 .nav .con .line a { color:#581100}
 .nav .con .marq { line-height:30px;}
