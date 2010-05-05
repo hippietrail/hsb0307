@@ -164,7 +164,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
 
             #region 将各类浏览器放入数组进行传值管理等
 
-            string[,] arvsoft = new string[,] { { "NetCaptor", "NetCaptor" }, { "MSIE 6", "MSIE 6.x" }, { "MSIE 5", "MSIE 5.x" }, { "MSIE 4", "MSIE 4.x" }, { "Netscape", "Netscape" }, { "Opera", "Opera" } };
+            string[,] arvsoft = new string[,] { { "NetCaptor", "NetCaptor" }, { "MSIE 9", "MSIE 9.x" }, { "MSIE 7", "MSIE 7.x" }, { "MSIE 6", "MSIE 6.x" }, { "MSIE 5", "MSIE 5.x" }, { "MSIE 4", "MSIE 4.x" }, { "Netscape", "Netscape" }, { "Opera", "Opera" } };
             #endregion
             
             #region 获取浏览器的值
