@@ -3815,14 +3815,6 @@
     <Content Include="Install\SQL\Value\navi.sql" />
     <Content Include="Install\SQL\Value\site_param.sql" />
     <Content Include="Install\SQL\Value\stat.sql" />
-    <Content Include="database\AddressIp.mdb">
-    </Content>
-    <Content Include="database\dotnetcms.mdb">
-    </Content>
-    <Content Include="database\fs_collect.mdb">
-    </Content>
-    <Content Include="database\fs_help.mdb">
-    </Content>
     <Content Include="Install\css\styles.css" />
     <Content Include="Install\finishinstall.aspx" />
     <Content Include="Install\image\01.jpg" />

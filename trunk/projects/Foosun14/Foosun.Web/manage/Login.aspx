@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Copyright" content="www.foosun.net" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> _By Foosun Inc.</title>
+<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> _By Hgzp Inc.</title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 
 <link href="../sysImages/css/css.css" rel="stylesheet" type="text/css" />
