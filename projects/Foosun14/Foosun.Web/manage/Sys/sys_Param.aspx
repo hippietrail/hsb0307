@@ -26,7 +26,7 @@
       <span style="cursor:pointer;width:100px;" id="td_baseinfo"  onclick="javascript:ChangeDiv('baseinfo')">基本属性</span>&nbsp;┊ &nbsp;
       <span style="cursor:pointer;width:100px;" id="td_user" onclick="javascript:ChangeDiv('user')">会员参数</span>&nbsp;┊ &nbsp;
       <span id="td_upload" style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('upload')">上传.分组刷新</span>&nbsp;┊ &nbsp;
-      <span id="td_js" style="cursor:pointer;width:100px;" onclick=";//javascript:ChangeDiv('js')" title="此版本未开放">FTP设置</span>&nbsp;┊ &nbsp;
+      <span id="td_js" style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('js')">FTP设置</span>&nbsp;┊ &nbsp;
       <span id="td_water" style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('water')">水印缩图</span>&nbsp;┊ &nbsp;
       <span id="td_rssxmlwap"  style="cursor:pointer;width:100px;" onclick="javascript:ChangeDiv('rssxmlwap')">RSS.XML.WAP</span>&nbsp; &nbsp;
       <span id="td_api" style="cursor:pointer;display:none;" onclick="javascript:ChangeDiv('api')">API参数</span>
