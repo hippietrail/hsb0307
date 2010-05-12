@@ -107,9 +107,12 @@ namespace Foosun.Global
         }
         private static GlobalUserInfo GetInfo()
         {
+            WriteLog(ReadCookies());
+
             //查看用户是否存在
             if (HttpContext.Current.Request.Cookies["SITEINFO"] == null)
             {
+
                 throw new Exception("您没有登录系统或会话已过期,请重新登录");
             }
             else
@@ -199,5 +202,49 @@ namespace Foosun.Global
             return sr.ReadToEnd();
         }
         #endregion 数据加密解密
+
+        internal static String ReadCookies()
+        {
+            string s = "";
+            for (int i = 0; i < HttpContext.Current.Request.Cookies.Count; i++)
+            {
+                s += "Name:" + HttpContext.Current.Request.Cookies[i].Name + " Value:" + HttpContext.Current.Request.Cookies[i].Value;
+            }
+            return s;
+        }
+
+        public static void WriteLog(string text)
+        {
+            StreamWriter sw = null;
+            DateTime date = DateTime.Now;
+            string FileName = date.Year + "-" + date.Month + "-" + date.Day;
+            try
+            {
+                FileName = HttpContext.Current.Server.MapPath("~/Logs/" ) + FileName + "-s.log";
+
+                #region 检测日志目录是否存在
+                if (!Directory.Exists(HttpContext.Current.Server.MapPath("~/Logs")))
+                {
+                    Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/Logs"));
+                }
+
+                if (!File.Exists(FileName))
+                    sw = File.CreateText(FileName);
+                else
+                {
+                    sw = File.AppendText(FileName);
+                }
+                #endregion
+
+                sw.WriteLine("Time               :" + System.DateTime.Now);
+                sw.WriteLine("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\r");
+                sw.Flush();
+            }
+            finally
+            {
+                if (sw != null)
+                    sw.Close();
+            }
+        }
     }
 }

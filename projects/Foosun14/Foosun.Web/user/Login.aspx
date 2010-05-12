@@ -90,6 +90,7 @@
 					</tr>
 					<tr>
 						<td width="35%">
+						
 							<asp:HiddenField ID="HidUrl" runat="server" />
 							&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../sysImages/Login/signin.gif" OnClick="ImageButton1_Click" />&nbsp;&nbsp;<input type="image" onclick="javascript:window.close();" name="imageField2" src="../sysImages/Login/reset.gif" />
 						</td>
