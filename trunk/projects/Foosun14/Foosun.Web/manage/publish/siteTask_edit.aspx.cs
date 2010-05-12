@@ -229,7 +229,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                  string unhtml = "";
                  if (news.Split('|')[0] == "1")
                  {
-                     Response.Write("<script language=\"javascript\">DispChange(9);</script>\r");
+                     //Response.Write("<script language=\"javascript\">DispChange(9);</script>\r");
                      this.AllNews.Checked = true;
                  }
                  else

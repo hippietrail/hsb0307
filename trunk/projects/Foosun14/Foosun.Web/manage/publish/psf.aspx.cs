@@ -167,7 +167,7 @@ public partial class manage_publish_psf : Foosun.Web.UI.ManagePage
             }
             pd.SaveUserAdminLogs(1, 1, UserNum, "批量删除psf接点", "删除成功,保存在回收站中.ID:" + psf_checkbox + "");
             PageRight("删除数据成功,保存在回收站中,请返回继续操作!", "psf.aspx");
-        }
+        } 
     }
     #endregion
 }

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_publish_siteTask" Codebehind="siteTask.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_publish_siteTask" Codebehind="siteTask.aspx.cs" %>
 <%@ Register Src="~/controls/PageNavigator.ascx" TagName="PageNavigator" TagPrefix="uc1" %>
 <%@ Import Namespace="System.Data" %>
 
@@ -19,13 +19,13 @@
       <td height="1" colspan="2"></td>
     </tr>
     <tr>
-      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">ƻ</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">λõ<a href="../main.aspx" target="sys_main" class="list_link">ҳ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ƻ</div></td>
+      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">计划任务</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">位置导航:<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />计划任务</div></td>
     </tr>
   </table>
   <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="Navitable">
     <tr>
-      <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"><a href="siteTask.aspx" class="topnavichar">ҳ</a>  <a href="siteTask_add.aspx?type=base" class="topnavichar">½</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">¼:</font>&nbsp; <asp:LinkButton ID="Delall" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('ȷɾȫϢ?')){return true;}return false;}" OnClick="Delall_Click">ɾȫ</asp:LinkButton>  <asp:LinkButton ID="DelP" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('ȷɾѡϢ?')){return true;}return false;}" OnClick="DelP_Click">ɾ</asp:LinkButton></div>
+      <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"><a href="siteTask.aspx" class="topnavichar">管理首页</a>  <a href="siteTask_add.aspx?type=base" class="topnavichar">添加任务</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">事件:</font>&nbsp; <asp:LinkButton ID="Delall" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('确认全部删除吗?')){return true;}return false;}" OnClick="Delall_Click">全部删除</asp:LinkButton>  <asp:LinkButton ID="DelP" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('确认删除吗?')){return true;}return false;}" OnClick="DelP_Click">批量删除</asp:LinkButton></div>
       </td>
     </tr>
   </table>

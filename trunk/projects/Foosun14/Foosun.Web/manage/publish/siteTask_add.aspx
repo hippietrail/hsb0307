@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_publish_siteTask_add" Codebehind="siteTask_add.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_publish_siteTask_add" Codebehind="siteTask_add.aspx.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -17,13 +17,13 @@
       <td height="1" colspan="2"></td>
     </tr>
     <tr>
-      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">ƻ</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px"><div align="left">λõ<a href="../main.aspx" target="sys_main" class="list_link">ҳ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="siteTask.aspx" class="list_link">ƻ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /></div></td>
+      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">添加任务</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px"><div align="left">位置导航:<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="siteTask.aspx" class="list_link">任务管理首页</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />添加任务</div></td>
     </tr>
   </table>
  <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="Navitable">
     <tr>
-      <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"> <a href="siteTask.aspx" class="topnavichar">ҳ</a>  <a href="siteTask_add.aspx?type=base" class="topnavichar">½</a></div>
+      <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"> <a href="siteTask.aspx" class="topnavichar">任务管理</a>  <a href="siteTask_add.aspx?type=base" class="topnavichar">添加任务</a></div>
       </td>
     </tr>
   </table>
@@ -33,19 +33,19 @@
               <td align="left" colspan="2" class="list_link"><strong></strong></td>
     </tr>
     <tr class="TR_BG_list" id="base_name">
-      <td  align="right" style="width: 178px; height: 24px;" class="list_link">:</td>
+      <td  align="right" style="width: 178px; height: 24px;" class="list_link">任务名称:</td>
       <td align="Left" class="list_link" style="height: 24px" ><asp:TextBox ID="TaskName" MaxLength="50" runat="server" CssClass="form"/>
-        (<font color=red size=2>*</font>)<asp:RequiredFieldValidator ID="TaskNamee" runat="server" ControlToValidate="TaskName" Display="Dynamic" ErrorMessage="<span class=reshow>(*)ƲΪ!</span>"></asp:RequiredFieldValidator><span class="helpstyle" onclick="Help('H_task_0001',this)" style="cursor: help;" title="鿴"></span></td>
+        (<font color=red size=2>*</font>)<asp:RequiredFieldValidator ID="TaskNamee" runat="server" ControlToValidate="TaskName" Display="Dynamic" ErrorMessage="<span class=reshow>(*)名称必填!</span>"></asp:RequiredFieldValidator><span class="helpstyle" onclick="Help('H_task_0001',this)" style="cursor: help;" title="点击查看帮助">帮助</span></td>
     </tr>
     <tr class="TR_BG_list" id="base_index">
-      <td align="right"  class="list_link" style="width: 178px">ҳ</td>
+      <td align="right"  class="list_link" style="width: 178px">生成首页</td>
       <td  align="left" class="list_link"><asp:CheckBox ID="isIndex" runat="server" Checked="true"/>
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0002',this)"></span></td>
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0002',this)">帮助</span></td>
     </tr>
     <tr class="TR_BG_list" id="IsTimee">
-      <td align="right"  class="list_link" style="width: 178px">ʱ</td>
+      <td align="right"  class="list_link" style="width: 178px">定时发布</td>
       <td  align="left" class="list_link"><select name="TimeSet" id="TimeSet" runat="server" multiple="true" style="width: 100px; height: 100px">
-      <option value="0">ʱ</option>
+      <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -70,28 +70,28 @@
       <option value="22">22</option>
       <option value="23">23</option>
       <option value="24">24</option></select>
-      <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0012',this)"></span></td>
+      <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0012',this)">帮助</span></td>
     </tr>
      <tr class="TR_BG_list" id="base_time" style="display:none;">
-      <td align="right"  class="list_link" style="width: 178px"> ʱ䣺</td>
+      <td align="right"  class="list_link" style="width: 178px">创建时间</td>
       <td  align="left" class="list_link"><asp:TextBox ID="CreatTime" runat="server" Width="124px" CssClass="form" Enabled="false"/>
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0003',this)"></span></td>
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0003',this)">帮助</span></td>
     </tr>
      <tr class="TR_BG" id="class_tr">
-              <td align="left" colspan="2" class="list_link"><strong>Ŀ</strong></td>
+              <td align="left" colspan="2" class="list_link"><strong>栏目</strong></td>
     </tr>
     <% string str_publicType = Foosun.Config.verConfig.PublicType;
        if (str_publicType == "1")
        {
     %>
     <tr class="TR_BG_list" id="class_index1" >
-      <td align="right"  class="list_link" style="width: 178px">Ŀ</td>
-      <td  align="left" class="list_link"><asp:CheckBox ID="AllClass1" runat="server" />Ŀҳ
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0004',this)"></span><br />
-        <asp:CheckBox ID="EveryDayClass1" runat="server" />ÿһҳķʽĿ
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0005',this)"></span><br />
-        <asp:CheckBox ID="TodayClass1" runat="server" />ֻɽĿ
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0006',this)"></span></td>
+      <td align="right"  class="list_link" style="width: 178px">生成索引页</td>
+      <td  align="left" class="list_link"><asp:CheckBox ID="AllClass1" runat="server" />生成所有栏目的索引页
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0004',this)">帮助</span><br />
+        <asp:CheckBox ID="EveryDayClass1" runat="server" />每天一页的方式生成栏目索引
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0005',this)">帮助</span><br />
+        <asp:CheckBox ID="TodayClass1" runat="server" />只生成今天栏目的索引页
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0006',this)">帮助</span></td>
     </tr>
    <% 
         }
@@ -99,73 +99,73 @@
         {
    %>
    <tr class="TR_BG_list" id="class_index2" >
-      <td align="right"  class="list_link" style="width: 178px">Ŀ</td>
-      <td  align="left" class="list_link"><asp:CheckBox ID="AllClass0" runat="server" />Ŀҳ
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0004',this)"></span><br />
-        <asp:CheckBox ID="TodayClass0" runat="server" />ֻɽĿ
-        <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0006',this)"></span></td>
+      <td align="right"  class="list_link" style="width: 178px">生成索引页</td>
+      <td  align="left" class="list_link"><asp:CheckBox ID="AllClass0" runat="server" />生成所有栏目的索引页
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0004',this)">帮助</span><br />
+        <asp:CheckBox ID="TodayClass0" runat="server" />只生成今天栏目的索引页
+        <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0006',this)">帮助</span></td>
     </tr>
    <%
         }
    %>
     <tr class="TR_BG_list" id="class_class">
-      <td align="right"  class="list_link" style="width: 178px">Ŀ</td>
-      <td  align="left" class="list_link"><div id="divClassNews" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0007',this)"></span></div></td>
+      <td align="right"  class="list_link" style="width: 178px">选择栏目</td>
+      <td  align="left" class="list_link"><div id="divClassNews" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0007',this)">帮助</span></div></td>
     </tr>
      <tr class="TR_BG" id="news_tr">
               <td align="left" colspan="2" class="list_link"><strong></strong></td>
     </tr>
     
     <tr class="TR_BG_list" id="Tr1" >
-      <td align="right"  class="list_link" style="width: 178px">ŷʽ</td>
+      <td align="right"  class="list_link" style="width: 178px">所有新闻:</td>
       <td  align="left" class="list_link">
-      <input type="radio" runat="server" id="AllNews" checked="true" onclick="DispChange(9)"/>&nbsp;
+      <input type="radio" runat="server" id="AllNews"  onclick="DispChange(9)"/>&nbsp;
       <input type="radio" runat="server" id="NewsID" onclick="DispChange(0)"/>ID&nbsp;
       <input type="radio" runat="server" id="Data" onclick="DispChange(1)"/>&nbsp;
       <input type="radio" runat="server" id="LastNewsNum_checkbox" onclick="DispChange(2)"/>
           <asp:DropDownList ID="unHTML" runat="server">
-          <asp:ListItem Value="0" Text="״̬"></asp:ListItem>
-          <asp:ListItem Value="1" Text="δɵ"></asp:ListItem>
-          <asp:ListItem Value="2" Text="ɵ"></asp:ListItem>
+          <asp:ListItem Value="0" Text="生成所有的"></asp:ListItem>
+          <asp:ListItem Value="1" Text="没有生成的"></asp:ListItem>
+          <asp:ListItem Value="2" Text="已经生成的"></asp:ListItem>
           </asp:DropDownList>
       </td>
     </tr>
     <tr class="TR_BG_list" id="newsidd"  style="display:none" align="right">
-      <td align="right"  class="list_link" style="width: 178px">IDΧ</td>
-      <td  align="left" class="list_link"> <asp:TextBox ID="NewsID1" runat="server" CssClass="form" Width="66px"/>  <asp:TextBox ID="NewsID2" runat="server" CssClass="form" Width="66px"/><span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0009',this)"></span></td>
+      <td align="right"  class="list_link" style="width: 178px">ID:</td>
+      <td  align="left" class="list_link"> <asp:TextBox ID="NewsID1" runat="server" CssClass="form" Width="66px"/>  <asp:TextBox ID="NewsID2" runat="server" CssClass="form" Width="66px"/><span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0009',this)">帮助</span></td>
     </tr>
     
     <tr class="TR_BG_list" id="newsdata" style="display:none">
-      <td align="right"  class="list_link" style="width: 178px">ɣ</td>
+      <td align="right"  class="list_link" style="width: 178px">日期：</td>
       <td  align="left" class="list_link">
        <asp:TextBox ID="Data1" runat="server" CssClass="form" Width="120px" /> 
-      <img src="../../sysImages/folder/s.gif" alt="ѡԴ" border="0" style="cursor:pointer;" onclick="selectFile('date',document.form1.Data1,150,450);document.form1.Data1.focus();" /> 
+      <img src="../../sysImages/folder/s.gif" alt="开始日期" border="0" style="cursor:pointer;" onclick="selectFile('date',document.form1.Data1,150,450);document.form1.Data1.focus();" /> 
        <asp:TextBox ID="Data2" runat="server" CssClass="form" Width="120px" /> 
-      <img src="../../sysImages/folder/s.gif" alt="ѡԴ" border="0" style="cursor:pointer;" onclick="selectFile('date',document.form1.Data2,150,450);document.form1.Data2.focus();" /> 
-      <span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0010',this)"></span></td>
+      <img src="../../sysImages/folder/s.gif" alt="结束日期" border="0" style="cursor:pointer;" onclick="selectFile('date',document.form1.Data2,150,450);document.form1.Data2.focus();" /> 
+      <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0010',this)">帮助</span></td>
     </tr>
     
     <tr class="TR_BG_list" id="lastnumm" style="display:none" >
       <td align="right"  class="list_link" style="width: 178px"></td>
-      <td  align="left" class="list_link">ɵ:<asp:TextBox ID="LastNewsNum" runat="server" CssClass="form" Width="66px">10</asp:TextBox>&nbsp;<span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0011',this)"></span></td>
+      <td  align="left" class="list_link">新闻数量:<asp:TextBox ID="LastNewsNum" runat="server" CssClass="form" Width="66px">10</asp:TextBox>&nbsp;<span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0011',this)">帮助</span></td>
     </tr>
         
     <tr class="TR_BG_list" id="news_class" >
-      <td align="right"  class="list_link" style="width: 178px">Ŀ</td>
-      <td  align="left" class="list_link"><div id="divClassClass" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_0007',this)"></span></div></td>
+      <td align="right"  class="list_link" style="width: 178px">栏目</td>
+      <td  align="left" class="list_link"><div id="divClassClass" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_0007',this)">帮助</span></div></td>
     </tr>
      <tr class="TR_BG" id="special_tr">
-              <td align="left" colspan="2" class="list_link"><strong><span style="color: #000033">ר</span></strong></td>
+              <td align="left" colspan="2" class="list_link"><strong><span style="color: #000033">专题</span></strong></td>
     </tr>
          <tr class="TR_BG_list" id="special_sp" >
-      <td align="right"  class="list_link" style="width: 178px">רⷢ</td>
-      <td  align="left" class="list_link"><div id="DivSpecial" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="鿴" onClick="Help('H_task_00013',this)"></span></div></td>
+      <td align="right"  class="list_link" style="width: 178px">专题</td>
+      <td  align="left" class="list_link"><div id="DivSpecial" runat="server" style="padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;" align="left"></div><span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_task_00013',this)">帮助</span></div></td>
     </tr>
     <tr class="TR_BG_list" id="save">
        <td align="center" colspan="2" class="list_link"><label>
-         <input type="submit" name="Save" value="   " class="form" id="Savetask" runat="server" onserverclick="Savetask_ServerClick" /></label>
+         <input type="submit" name="Save" value="保存" class="form" id="Savetask" runat="server" onserverclick="Savetask_ServerClick" /></label>
                 &nbsp;&nbsp;<label>
-            <input type="reset" name="Clear" value="   " class="form" id="Cleartask" runat="server"/></label>
+            <input type="reset" name="Clear" value="重置" class="form" id="Cleartask" runat="server"/></label>
         </td>
      </tr>
     </table>
