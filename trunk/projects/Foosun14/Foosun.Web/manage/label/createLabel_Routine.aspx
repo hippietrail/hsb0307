@@ -652,7 +652,7 @@
             <asp:DropDownList ID="TodayPicID" runat="server" CssClass="form" Width="200px">
              </asp:DropDownList><span id="spanTodayPicID"></span>
              <br />
-             <asp:CheckBox ID="TCHECK" Text="选择图片头条的副新闻(条件，头条、推荐新闻)" runat="server" />
+             <asp:CheckBox ID="TCHECK" Text="选择图片头条的副新闻(副新闻并不是子新闻，副新闻条件:同时设置为头条和推荐的普遍新闻.)" runat="server" />
              <div id="todayIDdiv">
              调用数量<asp:TextBox ID="TNUM" runat="server" CssClass="form" Width="50px"></asp:TextBox> <br />
              
