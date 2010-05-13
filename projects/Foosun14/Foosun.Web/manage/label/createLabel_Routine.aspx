@@ -425,7 +425,7 @@
             <td width="79%" align="left" class="navi_link"><asp:TextBox ID="ShowDateNumer" runat="server" CssClass="form" Width="190px"></asp:TextBox><span id="spanShowDateNumer"></span></td>
           </tr>          
           <tr class="TR_BG_list" style="display:none;" id="TrisSub">
-            <td align="right" class="navi_link" style="width: 28%">是否调用子类</td>
+            <td align="right" class="navi_link" style="width: 28%">是否调用子栏目</td>
             <td width="79%" align="left" class="navi_link"><asp:DropDownList ID="isSub" runat="server" CssClass="form" Width="200px">
                 <asp:ListItem Value="">请选择是否调用</asp:ListItem>
                 <asp:ListItem Value="true">是</asp:ListItem>
