@@ -20,42 +20,41 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
     private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
     private string str_dirFile = "";  //获取图片或者文件路径
     private string str_FilePath = "";
-    private string str_FileType = "file";
     bool tf = false;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (hfSelectedFile.Value.Length > 0)
-        {
-            
-        }
-
-        //lsd modify20090824
-        if (!string.IsNullOrEmpty(Request.QueryString["FileType"]))
-        {
-            str_FileType = Request.QueryString["FileType"];
-        }
-        if (Request.QueryString["FileType"] == "pic")
+        string isRootParentPath = Request.QueryString["isRootParentPath"] != null ? Request.QueryString["isRootParentPath"].ToString() : "";
+        string _FileType = Request.QueryString["FileType"] != null ? Request.QueryString["FileType"].ToString() : "";
+        if (_FileType == "pic")
         {
             str_dirFile = Foosun.Config.UIConfig.dirFile;
+            if (!str_dirFile.Equals("files"))
+            {
+                str_dirFile = "files/" + str_dirFile;
+            }
             tf = true;
         }
-        else if (Request.QueryString["FileType"] == "file")
-        {
+        else if (_FileType == "file")
+        {            
             str_dirFile = Foosun.Config.UIConfig.dirFile;
+            if (!str_dirFile.Equals("files"))
+            {
+                str_dirFile = "files/" + str_dirFile;
+            }
             tf = false;
-        }
-        else if (Request.QueryString["FileType"]=="video")
-        {
-            str_dirFile = Foosun.Config.UIConfig.dirFile;
-            tf = true;
         }
         else
         {
             str_dirFile = Foosun.Config.UIConfig.dirTemplet;
             tf = false;
         }
-        
 
+        if (isRootParentPath.Equals("rootFile"))
+        {
+            str_dirFile = Request.QueryString["rootFile"] != null ? Request.QueryString["rootFile"].ToString() : "";
+            tf = true;
+        }
+        
         Response.CacheControl = "no-cache";
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)//判断虚拟路径是否为空,如果不是则加上//
             str_dirMana = "//" + str_dirMana;
@@ -72,6 +71,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
         }
         string Path = str_FilePath + Request.Form["Path"];
         string ParentPath = str_FilePath + Request.Form["ParentPath"]; //父级
+
         try
         {
             if (Path.IndexOf(str_FilePath, 0) == -1 || ParentPath.IndexOf(str_FilePath, 0) == -1)
@@ -135,6 +135,8 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
 
     protected string GetDirFile(string dir, string ParPath)
     {
+        string temPath = str_dirMana + "\\" + str_dirFile;//lsd change
+
         DirectoryInfo[] ChildDirectory;                         //子目录集
         FileInfo[] NewFileInfo;                                 //当前所有文件
 
@@ -152,7 +154,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
         string Str_TempParentstr;
         string TempParentPath = dir.Replace("\\", "\\\\");      //路径转意
 
-        //------------取得当前所在目录
+        //------------取得当前所在目录  ParPath起什么作用？
         if (ParPath == "" || ParPath == null || ParPath == string.Empty || ParPath == "undefined")
         {
             Str_TempParentstr = "当前目录:" + dir;
@@ -167,6 +169,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
             else
             {
                 _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID + "\\" + str_dirFile;
+                temPath = _str_dirFileTF;
             }
             if (dir == Server.MapPath(_str_dirFileTF))      //判断是否是模板目录,如果是则不显示返回上级目录
             {
@@ -186,9 +189,14 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
                 Str_TempParentstr = "<a href=\"javascript:ListGo('" + Str_strpath.Replace(str_FilePath.Replace("\\", "\\\\"), "") + "','" + TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "") + "');\" class=\"list_link\" title=\"点击回到上级目录\">返回上级目录</a>   |   当前目录:/" + dir.Replace(str_thispath, "").Replace("\\", "/");
             }
         }
+
+        string SelectFilePath = Request.Form["FilePath"];
+        if (SelectFilePath == null) SelectFilePath = "";
+        SelectFilePath = Server.UrlDecode(SelectFilePath);
+
         ShowAddfiledir(TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "")); //调用显示创建目录,导入文件函数
-        str_TempFileStr = "<div style=\"padding-left:10px;\">" + Str_TempParentstr + "</div>";
-        str_TempFileStr += "<div style=\"padding-left:10px;\">地址：<input type=\"text\" id=\"sUrl\" name=\"sUrl\" style=\"width:60%\" />&nbsp;<input type=\"button\" class=\"form\" name=\"Submit\" value=\"选择此文件\" onclick=\"ReturnValue(document.Templetslist.sUrl.value);closefDiv();\" /></div>";
+        str_TempFileStr = "<div style=\"padding-left:10px;\">" + Str_TempParentstr + "&nbsp;&nbsp;<a href='selectFiles.aspx?isRootParentPath=rootFile&rootFile=" + str_dirFile + "'>返回上级目录</a></div>";
+        str_TempFileStr += "<div style=\"padding-left:10px;\">地址：<input type=\"text\" value=\"" + SelectFilePath + "\" id=\"sUrl\" name=\"sUrl\" style=\"width:60%\" />&nbsp;<input type=\"button\" class=\"form\" name=\"Submit\" value=\"选择此文件\" onclick=\"ReturnValue(document.Templetslist.sUrl.value);closefDiv();\" /></div>";
 
         str_TempFileStr += "<table border=\"0\" class=\"table\" width=\"100%\" cellpadding=\"1\" cellspacing=\"1\">";
         //---------------获取目录信息
@@ -218,11 +226,14 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
                 //    str_replace = "{@dirfile}";
                 //else
                 //    str_replace = "{@dirTemplet}";
-                string str_picadress = str_dirMana + "/" + str_replace + "/" + str_parpath + "/" + DirFile.Name;
-                str_picadress = str_picadress.Replace("//", "/");
-
-                string str_picshowadress = str_dirMana + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
-                str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
+                //string str_picadress = str_dirMana + "/" + str_replace + "/" + str_parpath + "/" + DirFile.Name;//lsd change 20100524
+                string str_picadress = temPath + "\\" + DirFile.Name;
+                //str_picadress = str_picadress.Replace("//", "/");
+                str_picadress = str_picadress.Replace("\\", "/");
+                //string str_picshowadress = str_dirMana + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
+                string str_picshowadress = temPath + "\\" + DirFile.Name;
+                //str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
+                str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("\\", "/");
 
                 string str_showpic = "";
                 if (tf == true)
@@ -262,60 +273,6 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
     protected bool SelectFile(string Extension)
     {
         bool value = false;
-        //lsd modify 20090824
-        if (str_FileType == "video")
-        {
-            switch (Extension.ToLower())
-            {
-                case ".rm":
-                    value = true;
-                    break;
-                case ".rmvb":
-                    value = true;
-                    break;
-                case ".mp3":
-                    value = true;
-                    break;
-                case ".wma":
-                    value = true;
-                    break;
-                case ".asf":
-                    value = true;
-                    break;
-                case ".flv":
-                    value = true;
-                    break;
-                case ".avi":
-                    value = true;
-                    break;
-                case ".mpg":
-                    value = true;
-                    break;
-                case ".wmv":
-                    value = true;
-                    break;
-                case ".swf":
-                    value = true;
-                    break;
-                case ".dat":
-                    value = true;
-                    break;
-                case ".mov":
-                    value = true;
-                    break;
-                case ".mp4":
-                    value = true;
-                    break;
-                case ".3gp":
-                    value = true;
-                    break;
-                default:
-                    value = false;
-                    break;
-            }
-            return value;
- 
-        }
         if (tf == false)
         {
             switch (Extension.ToLower())

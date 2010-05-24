@@ -48,7 +48,9 @@ public partial class configuration_system_selectnewsclass_ajax : Foosun.Web.UI.D
             EnumLoginState state = EnumLoginState.Err_AdminTimeOut;
             if (Validate_Session())
             {
-                state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", "0", Foosun.Global.Current.adminLogined);
+                //state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", "0", Foosun.Global.Current.adminLogined);
+
+                state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", Foosun.Global.Current.SiteID.Trim(), Foosun.Global.Current.adminLogined);
             }
             if (state == EnumLoginState.Succeed)
             {
