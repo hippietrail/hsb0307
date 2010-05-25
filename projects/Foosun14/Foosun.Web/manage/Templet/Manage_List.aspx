@@ -165,7 +165,7 @@ function UpFile(path,type)
 {
     var WWidth = (window.screen.width-500)/2;
     var Wheight = (window.screen.height-150)/2;
-    window.open ("../../configuration/system/Upload.aspx?Path="+path+"&ch=<%Response.Write(Request.QueryString["ch"]); %>&UpfilesType="+type, '文件上传', 'height=150, width=500, top='+Wheight+', left='+WWidth+', toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no'); 
+    window.open ('../../configuration/system/Upload.aspx?Path='+path+'&ch=<%Response.Write(Request.QueryString["ch"]); %>&upfiletype='+type, '文件上传', 'height=150, width=500, top='+Wheight+', left='+WWidth+', toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no'); 
 }
 </script>
 </html>

@@ -33,7 +33,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
         }
         else
         {
-            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID.Trim() + "\\" + str_dirFile;
+            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
             if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
             str_FilePath = Server.MapPath(_sitePath);
         }
@@ -128,7 +128,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
             }
             else
             {
-                _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID.Trim() + "\\" + str_dirFile;
+                _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
             }
             if (dir == Server.MapPath(_str_dirFileTF))      //判断是否是模板目录,如果是则不显示返回上级目录
             {

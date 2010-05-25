@@ -36,7 +36,7 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 	{
 		Response.CacheControl = "no-cache";
 		string upfiletype = Request.QueryString["upfiletype"];
-		if (upfiletype == "templets") { this.isWater.Visible = false; }
+		//if (upfiletype == "templets") { this.isWater.Visible = false; }//lsd change
 
 		Foosun.CMS.sys Sys = new Foosun.CMS.sys();
 		DataTable dt_sys = Sys.WaterStart();
@@ -89,7 +89,20 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 			switch (upfiletype)
 			{
 				case "templets":
-					Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+					//Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+                    //lsd change 20100524
+                    if (Foosun.Global.Current.SiteID == "0")
+                    {
+                        Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+
+                    }
+                    else
+                    {
+                        Path = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localtemplet + "/" + Path;
+                        if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
+                        Path = Server.MapPath(Path);
+                        str_returnpath = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localtemplet + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                    }
 					break;
 				case "templet":
 					Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
@@ -106,10 +119,10 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
                     }
                     else
                     {
-                        Path = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteID + "/" + localSavedir + "/" + Path;
+                        Path = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Path;
                         if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
                         Path = Server.MapPath(Path);
-                        str_returnpath = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteID + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                        str_returnpath = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
                     }
 					break;
 			}
@@ -161,7 +174,7 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 						//{
 						if (Foosun.Global.Current.SiteID != "0")
 						{
-							UDir = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteID + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+							UDir = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
 						}
 						else
 						{

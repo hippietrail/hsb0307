@@ -20,6 +20,7 @@ namespace Foosun.SQLServerDAL
             public string adminGroupNumber;
             public int ID;
             public byte isChannel;
+            public byte isChSupper;
         }
         protected struct UserLoginSucceedInfo
         {
@@ -32,10 +33,10 @@ namespace Foosun.SQLServerDAL
         }
         private static readonly string SQL_SYS = "select islock,EmailATF,isMobile,isIDcard,UserGroupNumber from " + DBConfig.TableNamePrefix + "sys_User where UserNum=@UserNum";
         private static readonly string SQL_PRAM = "select top 1 IPLimt,returnemail,returnmobile,LoginLock,cPointParam,aPointparam from " + DBConfig.TableNamePrefix + "sys_PramUser";
-        private static readonly string SQL_ADMIN = "select Iplimited,isLock,isSuper,adminGroupNumber,[ID],[isChannel] from " + DBConfig.TableNamePrefix + "sys_admin where UserNum=@UserNum";
+        private static readonly string SQL_ADMIN = "select Iplimited,isLock,isSuper,adminGroupNumber,[ID],[isChannel],isChSupper from " + DBConfig.TableNamePrefix + "sys_admin where UserNum=@UserNum";
         private static readonly string SQL_USERGROUP = "select IsCert,LoginPoint,Rtime from " + DBConfig.TableNamePrefix + "user_Group where GroupNumber=@GroupNumber";
         private static readonly string SQL_DEFUSERGROUP = "select top 1 a.IsCert,a.LoginPoint,a.Rtime from " + DBConfig.TableNamePrefix + "user_Group a inner join " + DBConfig.TableNamePrefix + "sys_PramUser b on a.GroupNumber=b.RegGroupNumber";
-
+        private static readonly string SQL_Site = "SELECT * FROM " + DBConfig.TableNamePrefix + "news_site where ChannelID=@ChannelID";
         EnumLoginState IUserLogin.CheckUserLogin(string UserNum, bool IsCert)
         {
             SqlConnection cn = new SqlConnection(DBConfig.CmsConString);
@@ -131,6 +132,7 @@ namespace Foosun.SQLServerDAL
             info.ID = 0;
             info.isChannel = 0;
             info.isSuper = 0;
+            info.isChSupper = 0;
             string LimitedIP = string.Empty;
             bool bisLock = true;
             bool flag = true;
@@ -161,6 +163,8 @@ namespace Foosun.SQLServerDAL
                 info.ID = rd.GetInt32(4);
                 if (!rd.IsDBNull(5))
                     info.isChannel = rd.GetByte(5);
+                if (!rd.IsDBNull(6))
+                    info.isChSupper = rd.GetByte(6);
                 flag = false;
             }
             rd.Close();
@@ -258,7 +262,9 @@ namespace Foosun.SQLServerDAL
                 EnumLoginState state = CheckAdminLogin(cn, UserNum, out info);
                 if (state != EnumLoginState.Succeed)
                     return state;
-                if (info.isSuper == 0X01)
+                //if (info.isSuper == 0X01)
+                //超级管理员或者频道超级管理员都可以直接登录 lsd change 20100521
+                if ( info.isSuper == 0X01 || info.isChannel==0X01 && info.isChSupper == 0X01)
                     return EnumLoginState.Succeed;
                 string PopList = GetAdminPopList(cn, info.ID);
                 if (PopList.IndexOf(PopCode) < 0)
@@ -294,7 +300,8 @@ namespace Foosun.SQLServerDAL
         }
         EnumLoginState IUserLogin.PersonLogin(string UserName, string PassWord, out GlobalUserInfo info)
         {
-            info = new GlobalUserInfo(string.Empty, string.Empty, string.Empty, string.Empty);
+            //info = new GlobalUserInfo(string.Empty, string.Empty, string.Empty, string.Empty);
+            info = new GlobalUserInfo(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
             if (UserName == null || UserName.Trim() == string.Empty || PassWord == null || PassWord.Trim() == string.Empty)
             {
                 return EnumLoginState.Err_NameOrPwdError;
@@ -414,6 +421,14 @@ namespace Foosun.SQLServerDAL
                 {
                     return state;
                 }
+                Site site = new Site();
+                DataTable dtSite = site.GetSiteInfo(SiteID);
+                if (dtSite != null && dtSite.Rows.Count > 0)
+                {
+                    info.SiteCName = dtSite.Rows[0]["CName"].ToString();
+                    info.SiteEName = dtSite.Rows[0]["EName"].ToString();
+                }
+
                 #region 会员组超时
                 int nGroupExp = 0;
                 bool bgrp = false;
@@ -483,7 +498,7 @@ namespace Foosun.SQLServerDAL
         }
         EnumLoginState IUserLogin.AdminLogin(string UserName, string PassWord, out GlobalUserInfo info)
         {
-            info = new GlobalUserInfo(string.Empty, string.Empty, string.Empty,string.Empty);
+            info = new GlobalUserInfo(string.Empty, string.Empty, string.Empty,string.Empty,string.Empty,string.Empty);
             SqlConnection cn = new SqlConnection(DBConfig.CmsConString);
             try
             {
@@ -527,6 +542,13 @@ namespace Foosun.SQLServerDAL
                     info.UserName = UserName;
                     info.UserNum = UserNum;
                     info.adminLogined = "1";
+                }
+                Site site=new Site();
+                DataTable dtSite = site.GetSiteInfo(SiteID);
+                if (dtSite != null && dtSite.Rows.Count > 0)
+                {
+                    info.SiteCName = dtSite.Rows[0]["CName"].ToString();
+                    info.SiteEName = dtSite.Rows[0]["EName"].ToString();
                 }
                 try
                 {

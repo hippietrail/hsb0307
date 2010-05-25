@@ -124,7 +124,7 @@ function GetPositionHtml(obj)
 //-->
 </script>
 </head>
-<body onload="//DispChange();//Load();">
+<body onload="DispChange();Load();">
 <form id="Form1" runat="server">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="toptable">
         <tr>

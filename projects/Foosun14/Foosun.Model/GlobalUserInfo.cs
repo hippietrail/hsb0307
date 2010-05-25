@@ -12,12 +12,25 @@ namespace Foosun.Model
         private string _siteid;
         private string _adminLogined;
         private bool _UnCert;
+        private string _SiteEName;
+        private string _SiteCName;
+
         public GlobalUserInfo(string usernum, string username, string siteid, string adminLogined)
         {
             _usernum = usernum;
             _username = username;
             _siteid = siteid;
             _adminLogined = adminLogined;
+        }
+
+        public GlobalUserInfo(string usernum, string username, string siteid, string adminLogined,string siteEName,string siteCName)
+        {
+            _usernum = usernum;
+            _username = username;
+            _siteid = siteid;
+            _adminLogined = adminLogined;
+            _SiteEName = siteEName;
+            _SiteCName = siteCName;
         }
         public string UserNum
         {
@@ -74,6 +87,30 @@ namespace Foosun.Model
             set
             {
                 _UnCert = value;
+            }
+        }
+
+        public string SiteEName
+        {
+            get
+            {
+                return _SiteEName;
+            }
+            set
+            {
+                _SiteEName = value;
+            }
+        }
+
+        public string SiteCName
+        {
+            get
+            {
+                return _SiteCName;
+            }
+            set
+            {
+                _SiteCName = value;
             }
         }
     }
