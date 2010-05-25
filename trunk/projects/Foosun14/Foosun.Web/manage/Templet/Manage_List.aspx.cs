@@ -35,16 +35,16 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 			str_dirMana = "\\" + str_dirMana;
 		}
 		string type = Request.QueryString["Type"];
-		//if (SiteID == "0")
-		//{
-		str_FilePath = Server.MapPath(str_dirMana + "\\" + str_Templet);
-		//}
-		//else
-		//{
-		//    string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID + "\\" + str_Templet;
-		//    if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
-		//    str_FilePath = Server.MapPath(_sitePath);
-		//}
+        if (SiteID == "0")
+        {
+            str_FilePath = Server.MapPath(str_dirMana + "\\" + str_Templet);
+        }
+        else
+        {
+            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_Templet;
+            if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
+            str_FilePath = Server.MapPath(_sitePath);
+        }
 
 		string Path = str_FilePath + Request.QueryString["Path"];
 		string ParentPath = str_FilePath + Request.QueryString["ParentPath"]; //父级
@@ -159,7 +159,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 			}
 			else
 			{
-				_str_TempletTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID + "\\" + str_Templet;
+				_str_TempletTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_Templet;
 			}
 			if (dir == Server.MapPath(_str_TempletTF))      //判断是否是模板目录,如果是则不显示返回上级目录
 			{

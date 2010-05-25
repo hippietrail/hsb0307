@@ -37,7 +37,7 @@ public partial class manage_Templet_Txteditor : Foosun.Web.UI.ManagePage
             }
             else
             {
-                string _sitePath = str_dirMana + "\\" + str_Templet + "\\siteTemplets\\" + Foosun.Global.Current.SiteID;
+                string _sitePath = str_dirMana + "\\" + str_Templet + "\\siteTemplets\\" + Foosun.Global.Current.SiteEName;
                 if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
                 str_FilePath = Server.MapPath(_sitePath);
             }

@@ -170,7 +170,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
             else
             {
                 #region
-                PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
+               // PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
                 string _tmpSite = "";
                 string _dirSite ="";
                 if (SiteID != "0")
@@ -332,7 +332,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
             Foosun.CMS.Site site = new Foosun.CMS.Site();
             if (LblID.Text.Trim().Equals(string.Empty))
             {
-                PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
+                //PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
                 int nsite = site.Add(stsite);
                 this.LblID.Text = nsite.ToString();
                 PageRight("站群添加成功!", "site_list.aspx");

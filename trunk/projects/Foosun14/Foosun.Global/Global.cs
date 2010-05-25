@@ -96,7 +96,7 @@ namespace Foosun.Global
             //创建一个cookie对象实例 , 不设置cookie时间,表式为会话cookie
             HttpCookie cookie = new HttpCookie("SITEINFO");
             //设置值
-            string userInfo = info.UserNum + "," + info.UserName + "," + info.SiteID + "," + info.adminLogined + "," + info.uncert;
+            string userInfo = info.UserNum + "," + info.UserName + "," + info.SiteID + "," + info.adminLogined + "," + info.uncert+","+info.SiteEName+","+info.SiteCName;
             //将数据加密
             Current current = new Current();
             string strEncrypto = current.Encrypto(userInfo);
@@ -127,7 +127,7 @@ namespace Foosun.Global
                 //截取
                 string[] strInfo = strDecrypto.Split(',');
                 //创建GlobalUserInfo对象并赋值
-                GlobalUserInfo globalUserInfo = new GlobalUserInfo(strInfo[0], strInfo[1], strInfo[2], strInfo[3]);
+                GlobalUserInfo globalUserInfo = new GlobalUserInfo(strInfo[0], strInfo[1], strInfo[2], strInfo[3],strInfo[5],strInfo[6]);
                 //返回GlobalUserInfo对象
                 return globalUserInfo;
             }
@@ -245,6 +245,41 @@ namespace Foosun.Global
                 if (sw != null)
                     sw.Close();
             }
+        }
+        /// <summary>
+        /// 站点英文名称
+        /// </summary>
+        public static string SiteEName
+        {
+            get
+            {
+                try
+                {
+                    return GetInfo().SiteEName.Trim();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
+        /// <summary>
+        /// 站点中文名称
+        /// </summary>
+        public static string SiteCName
+        {
+            get
+            {
+                try
+                {
+                    return GetInfo().SiteCName.Trim();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+ 
         }
     }
 }

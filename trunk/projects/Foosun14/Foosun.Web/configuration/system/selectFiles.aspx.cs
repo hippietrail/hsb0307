@@ -20,6 +20,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
     private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
     private string str_dirFile = "";  //获取图片或者文件路径
     private string str_FilePath = "";
+   
     bool tf = false;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -65,7 +66,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
         }
         else
         {
-            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID + "\\" + str_dirFile;
+            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_dirFile;
             if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
             str_FilePath = Server.MapPath(_sitePath);
         }
@@ -135,8 +136,6 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
 
     protected string GetDirFile(string dir, string ParPath)
     {
-        string temPath = str_dirMana + "\\" + str_dirFile;//lsd change
-
         DirectoryInfo[] ChildDirectory;                         //子目录集
         FileInfo[] NewFileInfo;                                 //当前所有文件
 
@@ -165,12 +164,14 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
             if (Foosun.Global.Current.SiteID == "0")
             {
                 _str_dirFileTF = str_dirMana + "\\" + str_dirFile;
+               
             }
             else
             {
-                _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteID + "\\" + str_dirFile;
-                temPath = _str_dirFileTF;
+                _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_dirFile;
+                
             }
+            
             if (dir == Server.MapPath(_str_dirFileTF))      //判断是否是模板目录,如果是则不显示返回上级目录
             {
                 Str_TempParentstr = "当前目录:" + _str_dirFileTF.Replace("\\", "/");
@@ -195,7 +196,7 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
         SelectFilePath = Server.UrlDecode(SelectFilePath);
 
         ShowAddfiledir(TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "")); //调用显示创建目录,导入文件函数
-        str_TempFileStr = "<div style=\"padding-left:10px;\">" + Str_TempParentstr + "&nbsp;&nbsp;<a href='selectFiles.aspx?isRootParentPath=rootFile&rootFile=" + str_dirFile + "'>返回上级目录</a></div>";
+        str_TempFileStr = "<div style=\"padding-left:10px;\">" + Str_TempParentstr + "&nbsp;&nbsp;<a href='selectFiles.aspx?isRootParentPath=rootFile&rootFile=" + str_dirFile + "&FileType=" + Request.QueryString["FileType"]+ "'>返回顶级目录</a></div>";
         str_TempFileStr += "<div style=\"padding-left:10px;\">地址：<input type=\"text\" value=\"" + SelectFilePath + "\" id=\"sUrl\" name=\"sUrl\" style=\"width:60%\" />&nbsp;<input type=\"button\" class=\"form\" name=\"Submit\" value=\"选择此文件\" onclick=\"ReturnValue(document.Templetslist.sUrl.value);closefDiv();\" /></div>";
 
         str_TempFileStr += "<table border=\"0\" class=\"table\" width=\"100%\" cellpadding=\"1\" cellspacing=\"1\">";
@@ -226,15 +227,24 @@ public partial class configuration_system_selectFiles : Foosun.Web.UI.DialogPage
                 //    str_replace = "{@dirfile}";
                 //else
                 //    str_replace = "{@dirTemplet}";
-                //string str_picadress = str_dirMana + "/" + str_replace + "/" + str_parpath + "/" + DirFile.Name;//lsd change 20100524
-                string str_picadress = temPath + "\\" + DirFile.Name;
-                //str_picadress = str_picadress.Replace("//", "/");
-                str_picadress = str_picadress.Replace("\\", "/");
-                //string str_picshowadress = str_dirMana + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
-                string str_picshowadress = temPath + "\\" + DirFile.Name;
-                //str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
-                str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("\\", "/");
 
+                string str_picadress = str_dirMana + "/" + str_replace + "/" + str_parpath + "/" + DirFile.Name;
+                
+                str_picadress = str_picadress.Replace("//", "/");
+                
+                string str_picshowadress = str_dirMana + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
+               
+                str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
+
+
+                if (Foosun.Global.Current.SiteID != "0")
+                {
+                    str_picadress = str_dirMana + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
+                    str_picadress = str_picadress.Replace("//", "/");
+                    str_picshowadress = str_dirMana + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
+                    str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
+                }
+                
                 string str_showpic = "";
                 if (tf == true)
                     str_showpic = "onmouseover=\"javascript:ShowDivPic(this,'" + str_picshowadress + "','" + DirFile.Extension + "'," + DirFile.Length + ");\" onmouseout=\"javascript:hiddDivPic();\"";

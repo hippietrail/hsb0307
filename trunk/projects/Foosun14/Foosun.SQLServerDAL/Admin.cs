@@ -175,8 +175,8 @@ namespace Foosun.SQLServerDAL
                 str_adminSql += "SiteID=@SiteID Where UserNum='" + ac.UserNum + "'";
             }
             DbHelper.ExecuteNonQuery(CommandType.Text, str_adminSql, param);
-
-            if (ac.isChSupper == 0)
+            //if (ac.isChSupper == 0)
+            if (ac.isChSupper == 1)//lsd change 20100519 1:频道超级管理员
             {
                 str_userSql = "Update " + Pre + "sys_admin Set adminGroupNumber=@adminGroupNumber,";
                 str_userSql += "OnlyLogin=@OnlyLogin,isChannel=@isChannel,isLock=@isLock,";

@@ -26,7 +26,8 @@ public partial class manage_news_Site_List : Foosun.Web.UI.ManagePage
         {
             if (SiteID == "0")
             {
-                addsite.InnerHtml = "<a class=\"list_link\" href=\"site_add.aspx?id=1\">新建站群</a>";
+                //addsite.InnerHtml = "<a class=\"list_link\" href=\"site_add.aspx?id=1\">新建站群</a>";
+                addsite.InnerHtml = "<a class=\"list_link\" href=\"site_add.aspx\">新建站群</a>";
             }
             else
             {

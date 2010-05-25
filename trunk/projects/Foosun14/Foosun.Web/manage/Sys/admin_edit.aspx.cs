@@ -64,7 +64,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
             GetAdminGroupID(dt.Rows[0]["adminGroupNumber"].ToString());
             //--------------------------向前台输出管理员组列表结束-------------
             //--------------------------取得当前所属站点-----------------------
-            SiteList(dt.Rows[0]["SiteID"].ToString());
+            SiteList(dt.Rows[0]["SiteID"].ToString().Trim());
             //--------------------------取得当前所属站点结束-------------------
             //--------------------------向前台输出单选按钮---------------------
 

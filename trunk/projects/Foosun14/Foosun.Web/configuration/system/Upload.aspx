@@ -42,7 +42,7 @@
         {
             alert('请选择要上传的文件!');
         }
-        else if (document.getElementById("file").value.length>100)
+        else if (document.getElementById("file").value.length>300)
         {
             alert('文件名过长!请先修改文件名长度');
         }
@@ -52,7 +52,7 @@
             <% 
                 string Path=Server.UrlEncode(Request.QueryString["Path"]);
                 string ParentPath=Server.UrlEncode(Request.QueryString["ParentPath"]);
-                string upfiletype=Request.QueryString["UpfilesType"];
+                string upfiletype=Request.QueryString["upfiletype"];
             %>
             document.f_Upload.action="Upload.aspx?Type=Upload&Path=<% Response.Write(Path); %>&upfiletype=<% Response.Write(upfiletype); %>&ParentPath=<% Response.Write(ParentPath); %>";
             document.f_Upload.submit();
