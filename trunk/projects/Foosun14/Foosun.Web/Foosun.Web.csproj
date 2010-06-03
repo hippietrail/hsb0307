@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Web</RootNamespace>
-    <AssemblyName>Foosun.Web</AssemblyName>
+    <RootNamespace>Hg.Web</RootNamespace>
+    <AssemblyName>Hg.Web</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -3097,61 +3097,61 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.AccessDAL\Foosun.AccessDAL.csproj">
+    <ProjectReference Include="..\Hg.AccessDAL\Hg.AccessDAL.csproj">
       <Project>{B9DE552A-D7EB-4D57-A017-EA25FC047B5C}</Project>
-      <Name>Foosun.AccessDAL</Name>
+      <Name>Hg.AccessDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.CMS\Foosun.CMS.csproj">
+    <ProjectReference Include="..\Hg.CMS\Hg.CMS.csproj">
       <Project>{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}</Project>
-      <Name>Foosun.CMS</Name>
+      <Name>Hg.CMS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Common\Foosun.Common.csproj">
+    <ProjectReference Include="..\Hg.Common\Hg.Common.csproj">
       <Project>{F7309C46-B015-425B-B929-338F90A5B682}</Project>
-      <Name>Foosun.Common</Name>
+      <Name>Hg.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
+    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Foosun.Config</Name>
+      <Name>Hg.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Control\Foosun.Control.csproj">
+    <ProjectReference Include="..\Hg.Control\Hg.Control.csproj">
       <Project>{AFE6BB30-E0BD-4744-B0F4-23BC8EFCBFD8}</Project>
-      <Name>Foosun.Control</Name>
+      <Name>Hg.Control</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.DALFactory\Foosun.DALFactory.csproj">
+    <ProjectReference Include="..\Hg.DALFactory\Hg.DALFactory.csproj">
       <Project>{63D5B865-C045-4FBC-86AC-18E082006408}</Project>
-      <Name>Foosun.DALFactory</Name>
+      <Name>Hg.DALFactory</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.DALProfile\Foosun.DALProfile.csproj">
+    <ProjectReference Include="..\Hg.DALProfile\Hg.DALProfile.csproj">
       <Project>{A5B7599F-F0F5-44BF-8C8F-2E964B04C6BD}</Project>
-      <Name>Foosun.DALProfile</Name>
+      <Name>Hg.DALProfile</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Global\Foosun.Global.csproj">
+    <ProjectReference Include="..\Hg.Global\Hg.Global.csproj">
       <Project>{A48884A0-3E9C-466C-BB5C-39E68AA884A9}</Project>
-      <Name>Foosun.Global</Name>
+      <Name>Hg.Global</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Install\Foosun.Install.csproj">
+    <ProjectReference Include="..\Hg.Install\Hg.Install.csproj">
       <Project>{452962D5-8118-488B-AF7E-C02575017D31}</Project>
-      <Name>Foosun.Install</Name>
+      <Name>Hg.Install</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Model\Foosun.Model.csproj">
+    <ProjectReference Include="..\Hg.Model\Hg.Model.csproj">
       <Project>{5A4717F3-8A33-46E4-B14A-EF382425C64D}</Project>
-      <Name>Foosun.Model</Name>
+      <Name>Hg.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.PlugIn\Foosun.PlugIn.csproj">
+    <ProjectReference Include="..\Hg.PlugIn\Hg.PlugIn.csproj">
       <Project>{7988E626-1FB5-460D-87AE-CA61625CFAFB}</Project>
-      <Name>Foosun.PlugIn</Name>
+      <Name>Hg.PlugIn</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Publish\Foosun.Publish.csproj">
+    <ProjectReference Include="..\Hg.Publish\Hg.Publish.csproj">
       <Project>{6612F705-1EAE-401B-A530-75EFFF5A93D9}</Project>
-      <Name>Foosun.Publish</Name>
+      <Name>Hg.Publish</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.SQLServerDAL\Foosun.SQLServerDAL.csproj">
+    <ProjectReference Include="..\Hg.SQLServerDAL\Hg.SQLServerDAL.csproj">
       <Project>{783B233A-2516-44BE-9457-0A23949DB407}</Project>
-      <Name>Foosun.SQLServerDAL</Name>
+      <Name>Hg.SQLServerDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Web.UI\Foosun.Web.UI.csproj">
+    <ProjectReference Include="..\Hg.Web.UI\Hg.Web.UI.csproj">
       <Project>{B976AA98-7B72-453B-8D9E-BA2D0003AB8C}</Project>
-      <Name>Foosun.Web.UI</Name>
+      <Name>Hg.Web.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

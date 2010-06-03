@@ -33,7 +33,7 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            ReloadURL = "http://passport.foosun.net/libary/dotnetcms/reloadlabel/label.aspx?type=reload";
+            ReloadURL = "http://passport.hg.net/libary/dotnetcms/reloadlabel/label.aspx?type=reload";
             if (Hg.Global.Current.SiteID == "0")
             {
                 string getSiteID = Request.QueryString["SiteID"];

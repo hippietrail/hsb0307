@@ -556,7 +556,7 @@ namespace Hg.Publish
             switch (str_TopNewsType)
             {
                 case "Hour":
-                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "hg.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('d',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }
@@ -566,7 +566,7 @@ namespace Hg.Publish
                     }
                     break;
                 case "YesDay":
-                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "hg.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('d',[CreatTime] ,now())=1 Order By [CreatTime]";
                     }
@@ -577,7 +577,7 @@ namespace Hg.Publish
                     break;
                 case "Week":
 
-                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "hg.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('ww',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }
@@ -588,7 +588,7 @@ namespace Hg.Publish
                     break;
                 case "Month":
 
-                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "hg.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('m',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }

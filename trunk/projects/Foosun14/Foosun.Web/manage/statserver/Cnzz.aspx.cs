@@ -32,7 +32,7 @@ public partial class Manage_statserver_Cnzz : Hg.Web.UI.ManagePage
             string s_XMLPath = "xml/sys/Cnzz.Config";
             if (OpenTF.Text == "1")
             {
-                string s_Url = "http://intf.cnzz.com/user/companion/foosun.php?domain=" + Domain.Text.Trim() + "&" +
+                string s_Url = "http://intf.cnzz.com/user/companion/hg.php?domain=" + Domain.Text.Trim() + "&" +
                                "key=" + Hg.Common.Input.MD5(Domain.Text.Trim() + "CdfW9gQa", false) + "";
                 string s_result = Request(s_Url);
 

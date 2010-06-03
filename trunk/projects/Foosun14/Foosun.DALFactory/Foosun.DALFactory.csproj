@@ -7,8 +7,8 @@
     <ProjectGuid>{63D5B865-C045-4FBC-86AC-18E082006408}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.DALFactory</RootNamespace>
-    <AssemblyName>Foosun.DALFactory</AssemblyName>
+    <RootNamespace>Hg.DALFactory</RootNamespace>
+    <AssemblyName>Hg.DALFactory</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -100,13 +100,13 @@
     <Compile Include="IUserMisc.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
+    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Foosun.Config</Name>
+      <Name>Hg.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Model\Foosun.Model.csproj">
+    <ProjectReference Include="..\Hg.Model\Hg.Model.csproj">
       <Project>{5A4717F3-8A33-46E4-B14A-EF382425C64D}</Project>
-      <Name>Foosun.Model</Name>
+      <Name>Hg.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

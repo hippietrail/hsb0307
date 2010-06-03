@@ -7,8 +7,8 @@
     <ProjectGuid>{F7309C46-B015-425B-B929-338F90A5B682}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Common</RootNamespace>
-    <AssemblyName>Foosun.Common</AssemblyName>
+    <RootNamespace>Hg.Common</RootNamespace>
+    <AssemblyName>Hg.Common</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -58,13 +58,13 @@
     <Compile Include="ServerInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
+    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Foosun.Config</Name>
+      <Name>Hg.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Global\Foosun.Global.csproj">
+    <ProjectReference Include="..\Hg.Global\Hg.Global.csproj">
       <Project>{A48884A0-3E9C-466C-BB5C-39E68AA884A9}</Project>
-      <Name>Foosun.Global</Name>
+      <Name>Hg.Global</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

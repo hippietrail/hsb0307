@@ -442,7 +442,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
                     break;
 
                 case "2":		//ICON显示一小图标，鼠标放上去自动显示出系统统计到的相关信息
-                    str_fs_outstr = "<a href='http://www.foosun.net' title='" + dv[0].Row["SystemName"].ToString() + "\\n总量: " + str_fs_all1 + "\\n最高访问量: " + inthigh1 + "\\n最高访问量日期: " + strhightime1 + "\\n今日访问: " + str_fs_today1 + "\\n昨日访问: " + str_fs_yesterday1 + "\\n您的访问量: " + str_fs_user_visit;
+                    str_fs_outstr = "<a href='http://www.hg.net' title='" + dv[0].Row["SystemName"].ToString() + "\\n总量: " + str_fs_all1 + "\\n最高访问量: " + inthigh1 + "\\n最高访问量日期: " + strhightime1 + "\\n今日访问: " + str_fs_today1 + "\\n昨日访问: " + str_fs_yesterday1 + "\\n您的访问量: " + str_fs_user_visit;
                     if (int.Parse(dv[0].Row["isOnlinestat"].ToString()) == 1) str_fs_outstr += "\\n在线人数: " + str_fs_online_person;
                     str_fs_outstr += "' target='_blank'><img border='0' src='" + str_fs_url + "/sysImages/folder/stat.gif'></a>";
                     break;
@@ -452,7 +452,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
                     str_fs_outstr = "总量:" + str_fs_all1.ToString() + ",最高日期:" + strhightime1 + ",今日:" + str_fs_today1 + ",昨日:" + str_fs_yesterday1 + ",您的访问量:" + str_fs_user_visit + "";
                     break;
                 default:        //默认
-                    str_fs_outstr = "<a href='http://www.foosun.net' title='" + dv[0].Row["SystemName"].ToString() + "\\n总量: " + str_fs_all1 + "\\n最高访问量: " + inthigh1 + "\\n最高访问量日期: " + strhightime1 + "\\n今日访问: " + str_fs_today1 + "\\n昨日访问: " + str_fs_yesterday1 + "\\n您的访问量: " + str_fs_user_visit;
+                    str_fs_outstr = "<a href='http://www.hg.net' title='" + dv[0].Row["SystemName"].ToString() + "\\n总量: " + str_fs_all1 + "\\n最高访问量: " + inthigh1 + "\\n最高访问量日期: " + strhightime1 + "\\n今日访问: " + str_fs_today1 + "\\n昨日访问: " + str_fs_yesterday1 + "\\n您的访问量: " + str_fs_user_visit;
                     if (int.Parse(dv[0].Row["isOnlinestat"].ToString()) == 1) str_fs_outstr += "\\n在线人数: " + str_fs_online_person;
                     str_fs_outstr += "' target='_blank'><img border='0' src='" + str_fs_url + "/sysImages/folder/stat.gif'></a>";
                     break;

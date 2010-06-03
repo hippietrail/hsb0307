@@ -1,7 +1,7 @@
 ﻿//===========================================================
 //==     (c)2007 Foosun Inc. by dotNETCMS 1.0              ==
-//==             Forum:bbs.foosun.net                      ==
-//==            website:www.foosun.net                     ==
+//==             Forum:bbs.hg.net                      ==
+//==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
 //==         TEL:86-28-85098980/66026180                   ==
 //==         TEL:86-28-85098980/66026180                   ==

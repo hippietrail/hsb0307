@@ -73,12 +73,12 @@ public partial class manage_Sys_skinChange : Hg.Web.UI.ManagePage
         string StrChar = Request.Form["styleDir"];
         //if (Hg.Common.Public.constReadOnly(0))
         //    Hg.Common.Public.constReadOnly(2);
-        if (Hg.Common.Public.constReadOnly(0, "xml/sys/foosun.config"))
-            Hg.Common.Public.constReadOnly(2, "xml/sys/foosun.config");
+        if (Hg.Common.Public.constReadOnly(0, "xml/sys/hg.config"))
+            Hg.Common.Public.constReadOnly(2, "xml/sys/hg.config");
         //Hg.Common.Public.SaveXmlElementValue("manner", StrChar);
-        Hg.Common.Public.SaveXmlConfig("manner", StrChar, "xml/sys/foosun.config");
+        Hg.Common.Public.SaveXmlConfig("manner", StrChar, "xml/sys/hg.config");
         //Hg.Common.Public.constReadOnly(1);
-        //Hg.Common.Public.constReadOnly(1, "xml/sys/foosun.config");
+        //Hg.Common.Public.constReadOnly(1, "xml/sys/hg.config");
         Response.Write("<script language=\"JavaScript\" type=\"text/javascript\">top.location.href=\"../index.aspx\"</script>");
     }
 }

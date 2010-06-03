@@ -7,8 +7,8 @@
     <ProjectGuid>{AFE6BB30-E0BD-4744-B0F4-23BC8EFCBFD8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Control</RootNamespace>
-    <AssemblyName>Foosun.Control</AssemblyName>
+    <RootNamespace>Hg.Control</RootNamespace>
+    <AssemblyName>Hg.Control</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -54,9 +54,9 @@
     <Compile Include="HTextProgressBar.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
+    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Foosun.Config</Name>
+      <Name>Hg.Config</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿//===========================================================
 //==     (c)2007 Foosun Inc. by dotNETCMS 1.0              ==
-//==             Forum:bbs.foosun.net                      ==
-//==            website:www.foosun.net                     ==
+//==             Forum:bbs.hg.net                      ==
+//==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
 //==         TEL:86-28-85098980/66026180                   ==
 //==         qq:655071,MSN:ikoolls@gmail.com               ==
@@ -423,7 +423,7 @@ namespace Hg.AccessDAL
         /// <returns></returns>
         public string SiteEmail()
         {
-            string gflg = "service@foosun.cn";
+            string gflg = "service@hg.cn";
             string Sql = "Select Email From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)

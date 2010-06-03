@@ -28,7 +28,7 @@ namespace Hg.Install
 						  "<p>感谢您选择 Foosun dotNETCMS 产品。希望我们的努力能为您提供一个高效快速和功能强大的大型门户网站解决方案。" +
 						  "<p>dotNETCMS 是 Foosun 基于微软最新的Web开发技术ASP.NET的新一代网站内容管理系统，以下简称dotNETCMS。" +
 						  "<p>四川风讯科技发展有限公司为 Foosun dotNETCMS 产品的开发商，依法独立拥有 dotNETCMS 产品著作权（中国国家版权局" +
-						  "著作权登记号 2008SR12575）。公司网址为 http://www.foosun.net，dotNETCMS 官方站为 http://www.foosun.net，dotNETCMS 官方讨论区为 http://bbs.foosun.net。" +
+						  "著作权登记号 2008SR12575）。公司网址为 http://www.hg.net，dotNETCMS 官方站为 http://www.hg.net，dotNETCMS 官方讨论区为 http://bbs.hg.net。" +
 						  "<p>dotNETCMS 著作权已在中华人民共和国国家版权局注册，著作权受到法律和国际公约保护。使用者：无论个人或组织、盈利" +
 						  "与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，在理解、同意、并遵守本协议的全部条款后，" +
 						  "方可开始使用 dotNETCMS 软件。<p>本授权协议适用且仅适用于 dotNETCMS 1.x 版本，四川风讯科技发展有限" +
@@ -92,7 +92,7 @@ namespace Hg.Install
 						  "width='16' height='16'></td><td bgcolor='#ffffff' width='95%'>系统配置文件 Web.config 验证通过!</td></tr>");
 			}
 
-			string path = HttpContext.Current.Server.MapPath("~/xml/sys/foosun.config");
+			string path = HttpContext.Current.Server.MapPath("~/xml/sys/hg.config");
 			System.Xml.XmlDocument xdoc = new System.Xml.XmlDocument();
 			xdoc.Load(path);
 			System.Xml.XmlElement root = xdoc.DocumentElement;

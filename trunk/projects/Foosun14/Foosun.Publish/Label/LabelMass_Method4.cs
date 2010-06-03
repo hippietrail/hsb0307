@@ -478,7 +478,7 @@ namespace Hg.Publish
 
             //string SqlFields = " [NewsID],[NewsTitle],[TitleColor],[TitleITF],[TitleBTF],[PicURL],[SPicURL],[ClassID],[SavePath],[FileName],[FileEXName],[DataLib] ";
             string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And SubString([NewsProperty],7,1)='1'";
-            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
             {
                 SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And mid([NewsProperty],7,1)='1'";
             }
@@ -678,7 +678,7 @@ namespace Hg.Publish
                 str_FlashBG = "FFF";
 
             string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And ([NewsType]=1 or [NewsType]=2 or [NewsType]=3) And SubString([NewsProperty],7,1)='1'";
-            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
             {
                 SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And ([NewsType]=1 or [NewsType]=2 or [NewsType]=3) And mid([NewsProperty],7,1)='1'";
             }
@@ -2293,7 +2293,7 @@ namespace Hg.Publish
             string str_WCSS = this.GetParamValue("FS:WCSS");
 
             string SqlCondition = " Where substring(NewsProperty,9,1)='1' and islock=0 and isRecyle=0";
-            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
             {
                 SqlCondition = " Where mid(NewsProperty,9,1)='1' and islock=0 and isRecyle=0";
             }

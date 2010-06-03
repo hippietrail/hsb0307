@@ -18,17 +18,17 @@ namespace Hg.Config
             return string.Empty;
         }
         /// <summary>
-        /// 读foosun.config取配置文件
+        /// 读hg.config取配置文件
         /// </summary>
         /// <param name="Target"></param>
         /// <returns></returns>
         static internal string GetConfigValue(string Target)
         {
-            string path = HttpContext.Current.Server.MapPath("~/xml/sys/foosun.config");
+            string path = HttpContext.Current.Server.MapPath("~/xml/sys/hg.config");
             return GetConfigValue(Target, path);
         }
         /// <summary>
-        /// 读foosun.config取配置文件
+        /// 读hg.config取配置文件
         /// </summary>
         /// <param name="Target"></param>
         /// <param name="ConfigPathName"></param>

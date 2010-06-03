@@ -1,11 +1,11 @@
 //=====================================================================
 //==                  (C)2007 Foosun Inc.By doNetCMS1.0              ==
-//==                     Forum:bbs.foosun.net                        ==
-//==                     WebSite:www.foosun.net                      ==
+//==                     Forum:bbs.hg.net                        ==
+//==                     WebSite:www.hg.net                      ==
 //==                 Address:No.109 HuiMin ST,.ChengDu,China         ==
 //==                   Tel:86-28-85098980/66026180                   ==
 //==                   QQ:655071,MSN:ikoolls@gmail.com               ==
-//==                   Email:Service@foosun.cn                       ==
+//==                   Email:Service@hg.cn                       ==
 //==                      Code By WangZhenjiang                      ==
 //=====================================================================
 using System;

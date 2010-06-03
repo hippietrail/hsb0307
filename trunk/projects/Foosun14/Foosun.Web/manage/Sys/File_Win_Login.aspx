@@ -19,7 +19,7 @@
     <br />
     <table width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
       <tr>
-        <td class="reshow" style="height: 29px"> 注意：如果您不是具有该文件浏览权限的管理员，将不能进入文件管理.默认密码：foosun.net</td>
+        <td class="reshow" style="height: 29px"> 注意：如果您不是具有该文件浏览权限的管理员，将不能进入文件管理.默认密码：hg.net</td>
       </tr>
     </table>
     <form id="form2" runat="server">

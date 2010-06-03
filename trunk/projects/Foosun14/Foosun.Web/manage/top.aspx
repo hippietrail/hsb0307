@@ -82,7 +82,7 @@ function logout()
                                     <a href="sys/skinChange.aspx" title="设置系统皮肤" target="sys_main" class="Lion_1">风格</a>&nbsp;┊&nbsp;
                                     <a href="ver/about.aspx" target="sys_main" class="Lion_1" title="关于产品">关于</a>&nbsp;┊&nbsp;
                                     <a href="../help/HelpList.aspx" target="sys_main" class="Lion_1" title="系统帮助">帮助</a>&nbsp;┊&nbsp;
-                                    <a href="http://www.foosun.net" target="sys_main" class="Lion_1" title="风讯官方站">Hg.NET</a>&nbsp;&nbsp;
+                                    <a href="http://www.hg.net" target="sys_main" class="Lion_1" title="风讯官方站">Hg.NET</a>&nbsp;&nbsp;
                                 </td>
                             </tr>
                         </table>

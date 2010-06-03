@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Copyright" content="www.foosun.net" />
+<meta name="Copyright" content="www.hg.net" />
 <title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %> _By Hgzp Inc.</title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 
@@ -15,7 +15,7 @@
     <tr>
       <td style="height: 55px;width:10%;"></td>
       <td style="height: 55px;width:40%;">&nbsp;</td>
-      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.foosun.net" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.foosun.net" target="_blank">技术论坛</a>&nbsp;┊&nbsp;<a href="http://www.newsCMS.com" target="_blank">NewsCMS</a>&nbsp;┊&nbsp;<a href="http://www.NewsIDC.com" title="专用虚拟主机" target="_blank">资讯数据(IDC)</a>&nbsp;┊&nbsp;<a href="http://help.foosun.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.foosun.net" target="_blank">开发者中心</a></div></td>
+      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hg.net" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.hg.net" target="_blank">技术论坛</a>&nbsp;┊&nbsp;<a href="http://www.newsCMS.com" target="_blank">NewsCMS</a>&nbsp;┊&nbsp;<a href="http://www.NewsIDC.com" title="专用虚拟主机" target="_blank">资讯数据(IDC)</a>&nbsp;┊&nbsp;<a href="http://help.hg.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.hg.net" target="_blank">开发者中心</a></div></td>
     </tr>
   </table>
 
@@ -57,7 +57,7 @@
          <tr runat="server" id="safeCodeVerify_1">
             <td colspan="2"><div align="left">安全码&nbsp;
                 <asp:TextBox ID="TxtSafeCode" runat="server"  CssClass="password" TextMode="Password" Width="129px" MaxLength="80"></asp:TextBox>&nbsp;
-                区分大小写，默认为:foosun.net&nbsp;
+                区分大小写，默认为:hg.net&nbsp;
                 <asp:RequiredFieldValidator ID="f_safeCodeVerify" runat="server" ControlToValidate="TxtSafeCode" ErrorMessage="请填写安全码"></asp:RequiredFieldValidator>
                 </div></td>
           </tr>

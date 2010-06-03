@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B976AA98-7B72-453B-8D9E-BA2D0003AB8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Web.UI</RootNamespace>
-    <AssemblyName>Foosun.Web.UI</AssemblyName>
+    <RootNamespace>Hg.Web.UI</RootNamespace>
+    <AssemblyName>Hg.Web.UI</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,25 +57,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.CMS\Foosun.CMS.csproj">
+    <ProjectReference Include="..\Hg.CMS\Hg.CMS.csproj">
       <Project>{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}</Project>
-      <Name>Foosun.CMS</Name>
+      <Name>Hg.CMS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Common\Foosun.Common.csproj">
+    <ProjectReference Include="..\Hg.Common\Hg.Common.csproj">
       <Project>{F7309C46-B015-425B-B929-338F90A5B682}</Project>
-      <Name>Foosun.Common</Name>
+      <Name>Hg.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
+    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Foosun.Config</Name>
+      <Name>Hg.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Global\Foosun.Global.csproj">
+    <ProjectReference Include="..\Hg.Global\Hg.Global.csproj">
       <Project>{A48884A0-3E9C-466C-BB5C-39E68AA884A9}</Project>
-      <Name>Foosun.Global</Name>
+      <Name>Hg.Global</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosun.Model\Foosun.Model.csproj">
+    <ProjectReference Include="..\Hg.Model\Hg.Model.csproj">
       <Project>{5A4717F3-8A33-46E4-B14A-EF382425C64D}</Project>
-      <Name>Foosun.Model</Name>
+      <Name>Hg.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

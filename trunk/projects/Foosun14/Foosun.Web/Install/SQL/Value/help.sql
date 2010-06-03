@@ -26,7 +26,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_0
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_003','是否禁用','此项如选是，则您添加的管理员是锁定状态，如选否，则是正常状态。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_004','频道管理员','此项如选是，则添加的是频道管理员，否则不是。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_005','管理员姓名','填写管理员的真实姓名，最大长度为20个字符。');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_006','电子邮件','管理员的电子邮件，格式为：admin@foosun.cn！');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_006','电子邮件','管理员的电子邮件，格式为：admin@hg.cn！');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_007','管理员组','可以为此管理员选择所属的管理员组。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_008','频道超级管理员','可以选择此管理员是否是频道超级管理员，超级频道管理员可以在自已的后台添加自已所属的管理员。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_adminAdd_009','多人登录','如选是，则可以用一个管理员同时登录后台进行操作，否则则不能同时登录。');
@@ -53,7 +53,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_ChangePass
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_ChangePass_0003','确认密码','必须和新密码一致！');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_sysParamtop0001','系统参数设置','对整个站点系统的参数设置，包括基本属性，会员部分，上传，JS，FTP，RSS，水印，以及第三方开发的API的系统参数设置。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0001','站点名称','<DIV>用于填写前台主页站点名称，如：风讯官方站</DIV><DIV><FONT color=#ff0000>后台程序标题名称请在config文件中配置</FONT></DIV>');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0002','站点域名','此处填写站点主域名，格式如:<FONT color=blue><A href="http://www.foosun.net">www.foosun.net</A></FONT>。系统提示:不允许填写"<FONT color=red>http://" </FONT>以及在后面带"<FONT color=red>/"</FONT>');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0002','站点域名','此处填写站点主域名，格式如:<FONT color=blue><A href="http://www.hg.net">www.hg.net</A></FONT>。系统提示:不允许填写"<FONT color=red>http://" </FONT>以及在后面带"<FONT color=red>/"</FONT>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0003','首页生成的文件名','<DIV>首页生成的文件名，如：index.html。</DIV><DIV><FONT color=#ff0000>如果开启了动态调用，此项不起作用。默认首页文件为defalut.aspx</FONT></DIV>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0004','默认的扩展名为（主站）','html,shtml,shtm(第一个为：生成栏目扩展名，第2个为：新闻生成的扩展名，第3个为专题生成的扩展名)。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0005','后台登陆过期时间','后台管理员登陆过期。单位为秒。必须为正整数。大于600小于6000.');
@@ -203,7 +203,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_friendClas
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0001','选择类别','选择您在添加连接的时候相应连接所属的类别，以便进行分类管理。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0002','站点名称','填写您添加友情连接时的站点连接名称。如风讯科技。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0003','连接类型','选择您添加连接时的连接类型，类型有文字与图片两种类型，默认为文字连接类型。根据需要选择您所喜欢的连接方式。');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0004','连接地址','连接地址就是指您在添加相应连接时的转向连接地址，如：我添加一个文字连接，其连接地址为：htp：//www.foosun.net。');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0004','连接地址','连接地址就是指您在添加相应连接时的转向连接地址，如：我添加一个文字连接，其连接地址为：htp：//www.hg.net。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0005','站点说明','站点说明就是指对您添加的连接站点的一个简要介绍，大致说明。如：我的文字连接为：风讯科技，其说明可以是：网站建设，程序开发等等。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0006','图片地址','若您选择的是图片连接，则在该处选择添加时的图片连接地址。<br><font color=''red''>注意：该项只对图片连接有效。</font>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink_0007','是否锁定','该项表示对您所添加的连接是否锁定，选择是则前台不能调用，请谨慎使用。');
@@ -217,7 +217,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_FriendLink
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0001','选择类别','选择申请的友情连接的类别，以便可以分类添加您需要的连接类型。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0002','站点名称','填写您申请的友情连接的站点名称。如：风讯科技。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0003','连接类型','提供文字连接与图片连接两种。');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0004','连接地址','填写您添加的友情连接的连接地址，如http://www.foosun.net');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0004','连接地址','填写您添加的友情连接的连接地址，如http://www.hg.net');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0006','申请人编号','继承您的会员编号。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0007','申请人邮件','继承您的电子邮件。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_UFriendLink_0020','查看申请','点击复选框，查看申请协议。取消则隐藏。');
@@ -240,7 +240,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_004
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_005','左图(动画)宽高','为你所添加的广告填写宽高，格式为200|200.');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_006','右图(动画)地址','为你添加的广告填写右图(动画)地址。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_007','右图(动画)宽高','为你添加的广告填写右图(动画)宽高，格式200|200.');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_008','链接地址','为你添加的广告填写链接地址，格式为http://www.foosun.net');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_008','链接地址','为你添加的广告填写链接地址，格式为http://www.hg.net');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_009','循环广告位','为当前的循环广告选择与那个广告一起循环。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_010','循环速度','为你添加的循环广告填写循环速度。只能为正整数。');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_AdsAdd_011','循环方向','为你添加的循环广告选择循环方向。');

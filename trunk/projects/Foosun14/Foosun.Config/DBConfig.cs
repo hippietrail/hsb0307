@@ -15,7 +15,7 @@ namespace Hg.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["foosun"].ConnectionString;
-                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
                 {
                     return getConnectionString(tstr);
                 }
@@ -30,7 +30,7 @@ namespace Hg.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["HelpKey"].ConnectionString;
-                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
                 {
                     return getConnectionString(tstr);
                 }
@@ -45,7 +45,7 @@ namespace Hg.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["Collect"].ConnectionString;
-                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
                 {
                     return getConnectionString(tstr);
                 }

@@ -27,7 +27,7 @@
 	<table width="98%" border="0" cellspacing="0" cellpadding="5" align="center">
 		<tr>
 			<td class="reshow" style="height: 29px">
-				注意：配置文件密码默认为<font color="blue">foosun.net</font>,管理员请进入配置文件,修改密码。
+				注意：配置文件密码默认为<font color="blue">hg.net</font>,管理员请进入配置文件,修改密码。
 			</td>
 		</tr>
 	</table>

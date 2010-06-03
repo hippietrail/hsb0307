@@ -7,8 +7,8 @@
     <ProjectGuid>{1327A138-9082-4480-B612-94A1FB4521FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Config</RootNamespace>
-    <AssemblyName>Foosun.Config</AssemblyName>
+    <RootNamespace>Hg.Config</RootNamespace>
+    <AssemblyName>Hg.Config</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>

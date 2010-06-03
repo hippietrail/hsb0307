@@ -1,7 +1,7 @@
 ﻿//===========================================================
 //==     (c)2007 Foosun Inc. by dotNETCMS 1.0              ==
-//==             Forum:bbs.foosun.net                      ==
-//==            website:www.foosun.net                     ==
+//==             Forum:bbs.hg.net                      ==
+//==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
 //==         TEL:86-28-85098980/66026180                   ==
 //==         qq:655071,MSN:ikoolls@gmail.com               ==
@@ -53,9 +53,9 @@ namespace Hg.CMS.Collect
         /// 构造函数
         /// </summary>
         /// <param name="Content">包含要获取远程资源的内容</param>
-        /// <param name="LocalURLDirectory">要将文件保存到本地服务器的虚拟目录，用于替换原来的远程链接地址，如：http://www.foosun.com/remoteres,可以为空,也可以为../一个或多个。</param>
+        /// <param name="LocalURLDirectory">要将文件保存到本地服务器的虚拟目录，用于替换原来的远程链接地址，如：http://www.hg.com/remoteres,可以为空,也可以为../一个或多个。</param>
         /// <param name="LocalPhysicalDirectory">要将文件保存到本地服务器的磁盘路径，如：C:\Inetpub\wwwroot\remoteres,如果不存在可以创建</param>
-        /// <param name="RemoteUrl">用于处理相对路径（如src="../images/foosun.gif"）的资源，如果为空，则只取完整路径的资源，以http(或https,ftp,rtsp,mms)://开头</param>
+        /// <param name="RemoteUrl">用于处理相对路径（如src="../images/hg.gif"）的资源，如果为空，则只取完整路径的资源，以http(或https,ftp,rtsp,mms)://开头</param>
         /// <param name="RenameFile">是否要重命名资源文件，如为false则自动覆盖重名文件</param>
         public RemoteResource(string Content,string LocalURLDirectory,string LocalPhysicalDirectory,string RemoteUrl,bool RenameFile)
         {

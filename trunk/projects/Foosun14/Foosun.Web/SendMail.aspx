@@ -31,7 +31,7 @@ body {
 </head>
 <body>
 <form action="" method="post" id="form1" runat="server">
-<div style="background-color:#EEEEEE;"><a href="http://www.foosun.net" target="_blank"><img src="sysImages/normal/logo.jpg" alt="powered by Foosun Inc." width="207" border="0" /></a></div>
+<div style="background-color:#EEEEEE;"><a href="http://www.hg.net" target="_blank"><img src="sysImages/normal/logo.jpg" alt="powered by Foosun Inc." width="207" border="0" /></a></div>
 <div style="padding-left:15px;padding-top:100px;padding-bottom:200px;">
   <table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#EEEEEE">
     <tr>
@@ -54,6 +54,6 @@ body {
   </table>
 </div>
 </form>
-<div style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;height:50px;text-align:center;"> Powered by dotNETCMS v1.0 for Foosun Inc. website:www.foosun.net </div>
+<div style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;height:50px;text-align:center;"> Powered by dotNETCMS v1.0 for Foosun Inc. website:www.hg.net </div>
 </body>
 </html>
