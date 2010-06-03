@@ -97,8 +97,8 @@ public partial class manage_Sys_const : Hg.Web.UI.ManagePage
     protected void btn_const_Click(object sender, EventArgs e)
     {
         #region 检测web.config是否只读
-        if (Public.constReadOnly(0,"xml/sys/foosun.config"))
-            Public.constReadOnly(2, "xml/sys/foosun.config");
+        if (Public.constReadOnly(0,"xml/sys/hg.config"))
+            Public.constReadOnly(2, "xml/sys/hg.config");
         #endregion
 
         //文件上传目录是否被修改
@@ -128,14 +128,14 @@ public partial class manage_Sys_const : Hg.Web.UI.ManagePage
                         {
                             tb.Text = Hg.CMS.FSSecurity.FDESEncrypt(tb.Text, 1);
                         }
-                        Public.SaveXmlConfig(tb.ID, tb.Text.ToString().Trim(), "xml/sys/foosun.config");
+                        Public.SaveXmlConfig(tb.ID, tb.Text.ToString().Trim(), "xml/sys/hg.config");
                         break;
                     }
                 case "RadioButtonList":
                     {
                         RadioButtonList rbl = new RadioButtonList();
                         rbl = (RadioButtonList)this.FindControl(ctl.ID);
-                        Public.SaveXmlConfig(rbl.ID, rbl.Text.ToString().Trim(), "xml/sys/foosun.config");
+                        Public.SaveXmlConfig(rbl.ID, rbl.Text.ToString().Trim(), "xml/sys/hg.config");
                         break;
                     }
                 default: 
@@ -143,7 +143,7 @@ public partial class manage_Sys_const : Hg.Web.UI.ManagePage
             }
         }
         #endregion
-        //Public.constReadOnly(1, "xml/sys/foosun.config");
+        //Public.constReadOnly(1, "xml/sys/hg.config");
         StartPage();
         //刷新
         Hg.Config.UIConfig.RefurbishCatch();

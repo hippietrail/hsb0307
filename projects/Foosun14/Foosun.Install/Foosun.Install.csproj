@@ -7,8 +7,8 @@
     <ProjectGuid>{452962D5-8118-488B-AF7E-C02575017D31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Install</RootNamespace>
-    <AssemblyName>Foosun.Install</AssemblyName>
+    <RootNamespace>Hg.Install</RootNamespace>
+    <AssemblyName>Hg.Install</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -54,9 +54,9 @@
     <Compile Include="Config.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foosun.DALProfile\Foosun.DALProfile.csproj">
+    <ProjectReference Include="..\Hg.DALProfile\Hg.DALProfile.csproj">
       <Project>{A5B7599F-F0F5-44BF-8C8F-2E964B04C6BD}</Project>
-      <Name>Foosun.DALProfile</Name>
+      <Name>Hg.DALProfile</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

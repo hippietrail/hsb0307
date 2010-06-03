@@ -124,7 +124,7 @@ namespace Hg.Config
         /// </summary>
         private string getCatchParam(string Target)
         {
-            string path = System.Web.HttpContext.Current.Server.MapPath("~/xml/sys/foosun.config");
+            string path = System.Web.HttpContext.Current.Server.MapPath("~/xml/sys/hg.config");
             System.Xml.XmlDocument xdoc = new XmlDocument();
             xdoc.Load(path);
             XmlElement root = xdoc.DocumentElement;

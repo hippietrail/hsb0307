@@ -1,11 +1,11 @@
 ﻿//=====================================================================
 //==                  (C)2007 Foosun Inc.By doNetCMS1.0              ==
-//==                     Forum:bbs.foosun.net                        ==
-//==                     WebSite:www.foosun.net                      ==
+//==                     Forum:bbs.hg.net                        ==
+//==                     WebSite:www.hg.net                      ==
 //==                 Address:No.109 HuiMin ST,.ChengDu,China         ==
 //==                   Tel:86-28-85098980/66026180                   ==
 //==                   QQ:655071,MSN:ikoolls@gmail.com               ==
-//==                   Email:Service@foosun.cn                       ==
+//==                   Email:Service@hg.cn                       ==
 //==                      Code By ChenZhaoHui                        ==
 //=====================================================================
 using System;
@@ -785,11 +785,11 @@ public partial class sys_Param : Hg.Web.UI.ManagePage
             {
                 isAutoPageSplit = "false";
             }
-            Hg.Common.Public.SaveXmlConfig("enableAutoPage", isAutoPageSplit, "xml/sys/foosun.config");
+            Hg.Common.Public.SaveXmlConfig("enableAutoPage", isAutoPageSplit, "xml/sys/hg.config");
 
             //设置字数
             string txt_pageSplitCount = this.txt_pageSplitCount.Text;
-            Hg.Common.Public.SaveXmlConfig("splitPageCount", txt_pageSplitCount, "xml/sys/foosun.config");
+            Hg.Common.Public.SaveXmlConfig("splitPageCount", txt_pageSplitCount, "xml/sys/hg.config");
             //刷新
             Hg.Config.UIConfig.RefurbishCatch();
             #endregion 

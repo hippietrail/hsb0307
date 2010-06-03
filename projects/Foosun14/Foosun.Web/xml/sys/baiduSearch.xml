@@ -11,9 +11,9 @@
     <!--新闻的更新频率。单位分钟-->
     <updatePeri>60</updatePeri>
     <!--站点地址,不带http://,不带虚拟目录-->
-    <website>www.foosun.net</website>
+    <website>www.hg.net</website>
     <!--管理员信箱-->
-    <webmaster>service@foosun.cn</webmaster>
+    <webmaster>service@hg.cn</webmaster>
   </item>
 </foosun>
 </rss>

@@ -69,7 +69,7 @@ namespace Hg.Publish
             //-------判断显示最近多少天内信息
             if (str_ShowDateNumer != null && str_ShowDateNumer != "")
             {
-                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "hg.accessdal")
                 {
                     SqlCondition += " And DateDiff('d',[CreatTime] ,now()) < " + int.Parse(str_ShowDateNumer);
                 }
