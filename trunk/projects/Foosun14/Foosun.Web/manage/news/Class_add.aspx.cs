@@ -1,4 +1,4 @@
-﻿//***Code by Simplt.Xie (C)2007 Foosun INC.
+﻿//***Code by Simplt.Xie (C)2007 Hg INC.
 using System;
 using System.Data;
 using System.Configuration;

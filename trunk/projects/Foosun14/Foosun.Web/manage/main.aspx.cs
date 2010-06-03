@@ -97,7 +97,7 @@ public partial class Manage_main : Hg.Web.UI.ManagePage
         }
         catch
         {
-            checkveriframe.Text = "<span style=\"padding-left:12px;padding-top:8px;height:20px;\" class=\"reshow\">！访问Foosun Inc.官方站失败,无法获取最新补丁及版本信息，<a href=\"http://www.hg.cn\" target=\"_blank\" class=\"reshow\">点击这里获取最新信息.</a></span>";
+            checkveriframe.Text = "<span style=\"padding-left:12px;padding-top:8px;height:20px;\" class=\"reshow\">！访问Hg Inc.官方站失败,无法获取最新补丁及版本信息，<a href=\"http://www.hg.cn\" target=\"_blank\" class=\"reshow\">点击这里获取最新信息.</a></span>";
         }
 
         #endregion

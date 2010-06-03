@@ -17,17 +17,17 @@ namespace Hg.Install
 
 		static Config()
 		{
-			title = "Foosun dotNETCMS v1.0sp4 Build 100331 安装程序";
+			title = "Hg dotNETCMS v1.0sp4 Build 100331 安装程序";
 			corpRight = "<div align=\"center\" style=\"position:relative ; padding-top:20px;font-size:14px; font-family: Arial\">" +
-						"<hr style=\"height:1; width:600; height:1; color:#CCCCCC\" />Powered by Foosun dotNETCMS 1.0_sp4 Build 100331 (.net Framework 2.x/3.x)" +
-						" <br />© 2002-2010 <a href=\"http://www.foosu.net\" target=\"_blank\"><b>Foosun Inc.</b></a></div>";
+						"<hr style=\"height:1; width:600; height:1; color:#CCCCCC\" />Powered by Hg dotNETCMS 1.0_sp4 Build 100331 (.net Framework 2.x/3.x)" +
+						" <br />© 2002-2010 <a href=\"http://www.foosu.net\" target=\"_blank\"><b>Hg Inc.</b></a></div>";
 			style = "<LINK rev=\"stylesheet\" media=\"all\" href=\"css/styles.css\" type=\"text/css\" rel=\"stylesheet\">";
 			logo = "<img border=\"0\" src=\"image/logo.jpg\">";
-			producename = "Foosun dotNETCMS v1.0sp4 Build 100331";
+			producename = "Hg dotNETCMS v1.0sp4 Build 100331";
 			regprotocol = "<p>版权所有 (c) 2002-2010，四川风讯科技发展有限公司<br />保留所有权利。" +
-						  "<p>感谢您选择 Foosun dotNETCMS 产品。希望我们的努力能为您提供一个高效快速和功能强大的大型门户网站解决方案。" +
-						  "<p>dotNETCMS 是 Foosun 基于微软最新的Web开发技术ASP.NET的新一代网站内容管理系统，以下简称dotNETCMS。" +
-						  "<p>四川风讯科技发展有限公司为 Foosun dotNETCMS 产品的开发商，依法独立拥有 dotNETCMS 产品著作权（中国国家版权局" +
+						  "<p>感谢您选择 Hg dotNETCMS 产品。希望我们的努力能为您提供一个高效快速和功能强大的大型门户网站解决方案。" +
+						  "<p>dotNETCMS 是 Hg 基于微软最新的Web开发技术ASP.NET的新一代网站内容管理系统，以下简称dotNETCMS。" +
+						  "<p>四川风讯科技发展有限公司为 Hg dotNETCMS 产品的开发商，依法独立拥有 dotNETCMS 产品著作权（中国国家版权局" +
 						  "著作权登记号 2008SR12575）。公司网址为 http://www.hg.net，dotNETCMS 官方站为 http://www.hg.net，dotNETCMS 官方讨论区为 http://bbs.hg.net。" +
 						  "<p>dotNETCMS 著作权已在中华人民共和国国家版权局注册，著作权受到法律和国际公约保护。使用者：无论个人或组织、盈利" +
 						  "与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，在理解、同意、并遵守本协议的全部条款后，" +

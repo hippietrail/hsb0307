@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Foosun Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -19,7 +19,7 @@ using System.Text;
 namespace Hg.CMS
 {
 /// <summary>
-/// Foosun 的摘要说明
+/// Hg 的摘要说明
 /// </summary>
     public class FSSecurity
     {
