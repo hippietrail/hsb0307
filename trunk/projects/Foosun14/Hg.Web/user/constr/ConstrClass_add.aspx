@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -17,30 +17,30 @@
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >╖╓└р╣▄└э</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">╬╗╓├╡╝║╜г║<a href="../main.aspx" target="sys_main" class="list_link">╩╫╥│</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">╬─╒┬╣▄└э</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />╖╓└р╣▄└э</div></td>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">я┐╜╬╗я┐╜├╡я┐╜я┐╜я┐╜я┐╜я┐╜<a href="../main.aspx" target="sys_main" class="list_link">я┐╜я┐╜╥│</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">я┐╜я┐╜я┐╜┬╣я┐╜я┐╜</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable"> 
          <tr>
           <td style="padding-left:14px;">          
-          <a href="Constr.aspx" class="menulist">╖в▒э╬─╒┬</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >╦∙╙╨═╦╕х</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">╬─╒┬╣▄└э</a>&nbsp; &nbsp;<a href="#" class="menulist">┤┤╜и╖╓└р</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">╖╓└р╣▄└э</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">╒╦║┼╣▄└э</a></td>
+          <a href="Constr.aspx" class="menulist">э╖вя┐╜я┐╜я┐╜я┐╜я┐╜</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╦╕</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">я┐╜я┐╜я┐╜я┐╜┬╣я┐╜я┐╜</a>&nbsp; &nbsp;<a href="#" class="menulist">э┤┤я┐╜я┐╜я┐╜я┐╜я┐╜</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">я┐╜я┐╜╦║┼╣я┐╜я┐╜</a></td>
         </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
   <tr class="TR_BG_list">
-    <td class="list_link" width="25%">╖╓└р├√│╞</td>
+    <td class="list_link" width="25%">я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</td>
     <td class="list_link" width="75%">
-        <asp:TextBox ID="cNameBox" runat="server" Width="325px" CssClass="form" MaxLength="14"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="╡у╗ў▓щ┐┤░я╓·" onClick="Help('H_ConstrClass_up_0001',this)">░я╓·</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cNameBox" ErrorMessage="╟ы╩ф╚ы╖╓└р├√│╞"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="cNameBox" runat="server" Width="325px" CssClass="form" MaxLength="14"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="╞╡я┐╜я┐╜щ┐┤я┐╜я┐╜я┐╜" onClick="Help('H_ConstrClass_up_0001',this)">я┐╜я┐╜я┐╜</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cNameBox" ErrorMessage="я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜"></asp:RequiredFieldValidator></td>
   </tr>
   <tr class="TR_BG_list">
-    <td class="list_link">╖╓└р├ш╩Ў</td>
-    <td class="list_link"><asp:TextBox ID="ContentBox" runat="server" Height="107px" TextMode="MultiLine" Width="325px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="╡у╗ў▓щ┐┤░я╓·" onClick="Help('H_ConstrClass_up_0002',this)">░я╓·</span></td>
+    <td class="list_link">╞╖я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</td>
+    <td class="list_link"><asp:TextBox ID="ContentBox" runat="server" Height="107px" TextMode="MultiLine" Width="325px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="я┐╜я┐╜я┐╜щ┐┤я┐╜я┐╜я┐╜" onClick="Help('H_ConstrClass_up_0002',this)">я┐╜я┐╜я┐╜</span></td>
   </tr>
    <tr class="TR_BG_list">
     <td class="list_link"></td>
-    <td class="list_link">&nbsp; &nbsp;<asp:Button ID="Button1" runat="server" Text="╠с ╜╗" OnClick="Button1_Click" CssClass="form"/>&nbsp; &nbsp;<input type="reset" name="Submit3" value="╓╪ ╓├" class="form">
+    <td class="list_link">&nbsp; &nbsp;<asp:Button ID="Button1" runat="server" Text="я┐╜я┐╜ с╜╗" OnClick="Button1_Click" CssClass="form"/>&nbsp; &nbsp;<input type="reset" name="Submit3" value="я┐╜ я┐╜я┐╜" class="form">
     </td>
   </tr>
 </table>

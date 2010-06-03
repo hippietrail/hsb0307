@@ -20,14 +20,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
-using Foosun.Config;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
+using Hg.Config;
 using System.Net;
-using Foosun.PlugIn.Passport;
+using Hg.PlugIn.Passport;
 
-public partial class User_Login : Foosun.Web.UI.BasePage
+public partial class User_Login : Hg.Web.UI.BasePage
 {
     user rot = new user();
     rootPublic pd = new rootPublic();
@@ -42,7 +42,7 @@ public partial class User_Login : Foosun.Web.UI.BasePage
             string TmUrl = Request.QueryString["urls"];
             if (TmUrl != null && TmUrl != "")
             {
-                string tmDir = Foosun.Config.UIConfig.dirUser.Trim() + "/index.aspx";
+                string tmDir = Hg.Config.UIConfig.dirUser.Trim() + "/index.aspx";
                 if ((TmUrl.ToString().ToLower()).IndexOf(tmDir.ToLower()) == -1) { this.HidUrl.Value = TmUrl.ToString(); }
             }
             if (pd.getUserLoginCode() != 1) { safecodeTF.Visible = false; }
@@ -55,7 +55,7 @@ public partial class User_Login : Foosun.Web.UI.BasePage
     protected string getSiteID()
     {
         string _Str = "";
-        string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+        string _dirdumm = Hg.Config.UIConfig.dirDumm;
         if (_dirdumm.Trim() != "")
         { _dirdumm = "/" + _dirdumm; }
         if (!File.Exists(Server.MapPath(_dirdumm + "/site.xml"))) { PageError("找不到配置文件(/site.xml).<li>请与系统管理员联系。</li>", ""); }
@@ -95,7 +95,7 @@ public partial class User_Login : Foosun.Web.UI.BasePage
         EnumLoginState state = Login(UserName, PassWord, out info);
         if (state == EnumLoginState.Succeed)
         {
-            Foosun.Global.Current.Set(info);
+            Hg.Global.Current.Set(info);
             
             if (info.uncert)
             {

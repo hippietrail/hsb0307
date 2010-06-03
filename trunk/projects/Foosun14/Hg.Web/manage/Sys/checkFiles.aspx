@@ -73,7 +73,7 @@ function Hint()
             <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
                 <tr>
                     <td style="padding-left: 12px;">
-                        <a href="javascript:getDownfilexml();" class="list_link">从风讯官方站下载文件包</a>
+                        <a href="javascript:getDownfilexml();" class="list_link">从华光官方站下载文件包</a>
                         <asp:LinkButton runat="server" CssClass="list_link" Text="重新生成文件包" ID="LnkDownload" OnClick="LnkDownload_Click"></asp:LinkButton>
                         <a href="CreateCheckfile.aspx" target="_blank" onclick="Hint();" class="list_link"></a>
                      </td>
@@ -82,7 +82,7 @@ function Hint()
             <table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" class="table">
                 <tr class="TR_BG_list">
                     <td style="padding-left: 12px;">
-                        <asp:CheckBox ID="ChbIsLocal" onclick="sLocal(this);" Text="选择本地的包(XML包,请使用风讯规定的格式的xml文件)"
+                        <asp:CheckBox ID="ChbIsLocal" onclick="sLocal(this);" Text="选择本地的包(XML包,请使用华光规定的格式的xml文件)"
                             runat="server" /><font color="red">为了安全,请将对比文件与网站分开,存放于本地!</font>
                         <br />
                         <br />

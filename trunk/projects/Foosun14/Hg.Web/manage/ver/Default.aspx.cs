@@ -13,11 +13,11 @@ public partial class manage_ver_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Foosun.Common.HtmlProgressBar.Start();
+        Hg.Common.HtmlProgressBar.Start();
         for (int i = 1; i < 11; i++)
         {
             System.Threading.Thread.Sleep(600);
-            Foosun.Common.HtmlProgressBar.Roll("已完成"+ i.ToString(),i*10);
+            Hg.Common.HtmlProgressBar.Roll("已完成"+ i.ToString(),i*10);
         }
     }
 }

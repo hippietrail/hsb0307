@@ -19,10 +19,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussphotoclass : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphotoclass : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     Photo pho = new Photo();
@@ -39,7 +39,7 @@ public partial class user_discuss_discussphotoclass : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -59,10 +59,10 @@ public partial class user_discuss_discussphotoclass : Foosun.Web.UI.UserPage
     }
     protected void Show_jrlist(int PageIndex1)
     {
-        string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         int ia, ja;
         SQLConditionInfo st = new SQLConditionInfo("@DisID", DisID);
-        DataTable jrlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out ia, out ja, st);
+        DataTable jrlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out ia, out ja, st);
 
         this.PageNavigator1.PageCount = ja;
         this.PageNavigator1.PageIndex = PageIndex1;
@@ -122,7 +122,7 @@ public partial class user_discuss_discussphotoclass : Foosun.Web.UI.UserPage
             {
                 if (chSplit[i] != "on")
                 {
-                    if (dis.sel_32(Foosun.Global.Current.UserNum, chSplit[i]) != 0)
+                    if (dis.sel_32(Hg.Global.Current.UserNum, chSplit[i]) != 0)
                     {
                         DataTable pl = pho.sel_15(chSplit[i]);
                         int plcut = pl.Rows.Count;
@@ -148,7 +148,7 @@ public partial class user_discuss_discussphotoclass : Foosun.Web.UI.UserPage
     }
     protected void del(string ID)
     {
-        if (dis.sel_32(Foosun.Global.Current.UserNum, ID) != 0)
+        if (dis.sel_32(Hg.Global.Current.UserNum, ID) != 0)
         {
             DataTable pl = pho.sel_15(ID);
             int plcut = pl.Rows.Count;

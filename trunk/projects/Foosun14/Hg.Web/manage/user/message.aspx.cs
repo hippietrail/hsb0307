@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_user_message : Foosun.Web.UI.ManagePage
+public partial class manage_user_message : Hg.Web.UI.ManagePage
 {
     public manage_user_message()
     {
@@ -29,7 +29,7 @@ public partial class manage_user_message : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid)
         {
-            Foosun.CMS.Message rd = new Foosun.CMS.Message();
+            Hg.CMS.Message rd = new Hg.CMS.Message();
             int delNum = rd.clearmessage();
             if (this.CheckBox22.Checked)
             {

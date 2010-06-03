@@ -19,9 +19,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_photo_Photoalbumlist : Foosun.Web.UI.UserPage
+public partial class user_photo_Photoalbumlist : Hg.Web.UI.UserPage
 {
 
     Photo pho = new Photo();
@@ -39,7 +39,7 @@ public partial class user_photo_Photoalbumlist : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -66,7 +66,7 @@ public partial class user_photo_Photoalbumlist : Foosun.Web.UI.UserPage
             {
                 ClassID = Request.QueryString["ClassID"].ToString();
             }
-            string UserNum=Foosun.Global.Current.UserNum;
+            string UserNum=Hg.Global.Current.UserNum;
             int ib, jb;
             DataTable cjlistdts = pho.GetPage(UserNum, ClassID, PageIndex2, 20, out ib, out jb, null);
             this.PageNavigator3.PageCount = jb;
@@ -79,7 +79,7 @@ public partial class user_photo_Photoalbumlist : Foosun.Web.UI.UserPage
                 cjlistdts.Columns.Add("UserNames", typeof(string));
                 cjlistdts.Columns.Add("picnum", typeof(string));
                 cjlistdts.Columns.Add("Pwd", typeof(string));
-                string _dirDumm = Foosun.Config.UIConfig.dirDumm;
+                string _dirDumm = Hg.Config.UIConfig.dirDumm;
                 if (_dirDumm.Trim() != "")
                 {
                     _dirDumm = "/" + _dirDumm;

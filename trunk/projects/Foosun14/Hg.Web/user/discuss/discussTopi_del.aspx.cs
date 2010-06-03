@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussTopi_del : Foosun.Web.UI.UserPage
+public partial class user_discussTopi_del : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ public partial class user_discussTopi_del : Foosun.Web.UI.UserPage
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            string ID = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+            string ID = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
             int vote=dis.sel_59(ID);
             if (vote == 0)
             {

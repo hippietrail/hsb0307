@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_up_discussManage : Foosun.Web.UI.UserPage
+public partial class user_up_discussManage : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -38,9 +38,9 @@ public partial class user_up_discussManage : Foosun.Web.UI.UserPage
             ClassIDList2.Items.Insert(0, new ListItem("请选择", "0"));
             //-----------------绑定讨论组结束-------------------------------
 
-            string DID = Foosun.Common.Input.Filter(Request["DisID"].ToString());
+            string DID = Hg.Common.Input.Filter(Request["DisID"].ToString());
             HiddenField1.Value = DID;
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             string UserName = dis.sel_57(UserNum);
             DataTable u_upDis = dis.sel_58(DID, UserName);
             this.CnameBox.Text = u_upDis.Rows[0]["Cname"].ToString();
@@ -121,12 +121,12 @@ public partial class user_up_discussManage : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string Did = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-            string Cname = Foosun.Common.Input.Htmls(Request.Form["CnameBox"].ToString());
+            string Did = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string Cname = Hg.Common.Input.Htmls(Request.Form["CnameBox"].ToString());
             DateTime Creatime = DateTime.Now;
 
-            string D_Content = Foosun.Common.Input.Htmls(Request.Form["D_ContentBox"].ToString());
-            string D_anno = Foosun.Common.Input.Filter(Request.Form["D_annoBox"].ToString());
+            string D_Content = Hg.Common.Input.Htmls(Request.Form["D_ContentBox"].ToString());
+            string D_anno = Hg.Common.Input.Filter(Request.Form["D_annoBox"].ToString());
             string Authority = "";
             if (this.AuthorityList1.Items[0].Selected == true)
             {
@@ -165,13 +165,13 @@ public partial class user_up_discussManage : Foosun.Web.UI.UserPage
             {
                 isAuthority = "2";
             }
-            string gPoint = Foosun.Common.Input.Filter(Request.Form["gPointBox"].ToString());
-            string iPoint = Foosun.Common.Input.Filter(Request.Form["iPointBox"].ToString());
+            string gPoint = Hg.Common.Input.Filter(Request.Form["gPointBox"].ToString());
+            string iPoint = Hg.Common.Input.Filter(Request.Form["iPointBox"].ToString());
             string Authoritymoney = isAuthority + "|" + gPoint + "|" + iPoint;
             string classid1 = this.ClassIDList1.SelectedValue.ToString();
             string classid2 = this.ClassIDList2.SelectedValue.ToString();
             string ClassID = classid1 + "|" + classid2;
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             string UserName1 = dis.sel_57(UserNum);
             if (dis.Update_10(Cname, Authority, Authoritymoney, D_Content, D_anno, Creatime, ClassID, Did, UserName1) == 0)
             {

@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_friend_friendlist : Foosun.Web.UI.UserPage
+public partial class user_friend_friendlist : Hg.Web.UI.UserPage
 {
 
     Friend fri = new Friend();
@@ -38,7 +38,7 @@ public partial class user_friend_friendlist : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -60,29 +60,29 @@ public partial class user_friend_friendlist : Foosun.Web.UI.UserPage
 
     protected void Showu_friendmanage(int PageIndex)
     {
-        string UserNUm = Foosun.Global.Current.UserNum;
+        string UserNUm = Hg.Global.Current.UserNum;
         string ReadUser = fri.sel_ReadUser(fri.sel_GroupNumber(UserNUm));
         int i, j;
         string HailFellow = "";
         string FCID = Request.QueryString["FCID"];
         if (FCID != null && FCID != string.Empty)
         {
-            HailFellow = Foosun.Common.Input.Filter(FCID.ToString());
+            HailFellow = Hg.Common.Input.Filter(FCID.ToString());
         }
         DataTable dts = null;
 
         if (HailFellow != null && HailFellow != "")
         {
             SQLConditionInfo[] st = new SQLConditionInfo[2];
-            st[0] = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
+            st[0] = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
             st[1] = new SQLConditionInfo("@HailFellow", HailFellow);
-            dts = Foosun.CMS.Pagination.GetPage("user_friend_friendlist_1_aspx", PageIndex, 10, out i, out j, st);
+            dts = Hg.CMS.Pagination.GetPage("user_friend_friendlist_1_aspx", PageIndex, 10, out i, out j, st);
         }
         else
         {
-            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
+            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
 
-            dts = Foosun.CMS.Pagination.GetPage("user_friend_friendlist_2_aspx", PageIndex, 10, out i, out j, sts);
+            dts = Hg.CMS.Pagination.GetPage("user_friend_friendlist_2_aspx", PageIndex, 10, out i, out j, sts);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;

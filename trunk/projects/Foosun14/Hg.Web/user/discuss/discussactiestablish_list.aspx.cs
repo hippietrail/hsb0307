@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussactiestablish_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussactiestablish_list : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     /// <summary>
@@ -44,7 +44,7 @@ public partial class user_discuss_discussactiestablish_list : Foosun.Web.UI.User
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -73,9 +73,9 @@ public partial class user_discuss_discussactiestablish_list : Foosun.Web.UI.User
     protected void Show_cjlist(int PageIndex2)
     {
         int i, j;
-        string cjUserName = Foosun.Global.Current.UserName;
+        string cjUserName = Hg.Global.Current.UserName;
         SQLConditionInfo sts = new SQLConditionInfo("@cjUserName", cjUserName);
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out i, out j, sts);
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out i, out j, sts);
         this.PageNavigator3.PageCount = j;
         this.PageNavigator3.PageIndex = PageIndex2;
         this.PageNavigator3.RecordCount = i;

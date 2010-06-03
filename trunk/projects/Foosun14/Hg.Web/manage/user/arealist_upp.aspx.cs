@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_arealist_upp : Foosun.Web.UI.ManagePage
+public partial class user_arealist_upp : Hg.Web.UI.ManagePage
 {
     public user_arealist_upp()
     {
@@ -34,7 +34,7 @@ public partial class user_arealist_upp : Foosun.Web.UI.ManagePage
         {
             Response.CacheControl = "no-cache";
             
-            string Cid = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string Cid = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             DataTable dt = ali.sel_7(Cid);
             if (dt != null)
             {
@@ -52,14 +52,14 @@ public partial class user_arealist_upp : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             rootPublic rd = new rootPublic();
-            string cityName = Foosun.Common.Input.Filter(Request.Form["cityName"].ToString());
+            string cityName = Hg.Common.Input.Filter(Request.Form["cityName"].ToString());
             string OrderID = this.OrderID.Text;
-            if (!Foosun.Common.Input.IsInteger(OrderID))
+            if (!Hg.Common.Input.IsInteger(OrderID))
             {
                 PageError("排序号请用0-100的数字。数字越大，越靠前。", "arealist.aspx");
             }
             DateTime creatTime = DateTime.Now;
-            string Cids = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string Cids = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             if (ali.Update_1(cityName, creatTime, Cids, int.Parse(OrderID)) == 0)
             {
                 rd.SaveUserAdminLogs(1, 1, UserNum, "修改小类", "修改错误");

@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_Manageadd : Foosun.Web.UI.UserPage
+public partial class user_discuss_Manageadd : Hg.Web.UI.UserPage
 {
     //连接数据库
     Discuss dis = new Discuss();
@@ -33,12 +33,12 @@ public partial class user_discuss_Manageadd : Foosun.Web.UI.UserPage
     #region 初始化
     protected void Page_Load(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         //验证用户是否登录
         
 
         //讨论组编号
-        string DisID=Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisID=Hg.Common.Input.Filter(Request.QueryString["DisID"]);
 
         //会员自己的基金       
         DataTable selectig = dis.sel_7(UserNum);
@@ -50,8 +50,8 @@ public partial class user_discuss_Manageadd : Foosun.Web.UI.UserPage
         int Authority3 = int.Parse(Authority[2].ToString());
 
         //产生12位随机字符
-        string GhID = Foosun.Common.Rand.Number(12);
-        string Member = Foosun.Common.Rand.Number(12);
+        string GhID = Hg.Common.Rand.Number(12);
+        string Member = Hg.Common.Rand.Number(12);
         //当前系统时间
         DateTime Creatime = DateTime.Now;
 

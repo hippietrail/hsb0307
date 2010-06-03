@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_Exchange : Foosun.Web.UI.UserPage
+public partial class user_Exchange : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     public string type = null;
@@ -28,11 +28,11 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
     {
         #region  初始化
         
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         string UserGroupNumber = inf.sel_3(UserNum);
         string[] GIChange = inf.sel_4(UserGroupNumber).Split('|');
         string[] GTChageRate = inf.sel_6(UserGroupNumber).Split('|');
-        Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+        Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
         string[] UserGI = pd.getGIPoint(UserNum).Split('|');
         string d1 = "";
         string dd1 = "";
@@ -89,7 +89,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
     #region  G币兑换积分
     protected void Gexchange(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         DataTable dt = inf.sel_5(UserNum);
         string[] GTChageRate = inf.sel_6(dt.Rows[0]["UserGroupNumber"].ToString()).Split('|');
 
@@ -105,7 +105,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
         {
             PageError("G币数不能为空", "Exchange.aspx");
         }
-        int gPoint = int.Parse(Foosun.Common.Input.Filter(Request.Form["gPointBox"].ToString()));
+        int gPoint = int.Parse(Hg.Common.Input.Filter(Request.Form["gPointBox"].ToString()));
         int ipoint1 = int.Parse(dt.Rows[0]["iPoint"].ToString());
         int gpoint1 = int.Parse(dt.Rows[0]["gPoint"].ToString());
         int i = gPoint * 1;
@@ -118,7 +118,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
         string content3 = "积分兑换";
         int ghtype = 0;
         int ghtype1 = 1;
-        Foosun.Model.STGhistory Gh = new Foosun.Model.STGhistory();
+        Hg.Model.STGhistory Gh = new Hg.Model.STGhistory();
         Gh.Gpoint = gPoint;
         Gh.iPoint = i;
         if ((inf.Update1(ipoint2, gpoint2, UserNum) == 0) || (inf.Add(Gh, ghtype, UserNum, content3)==0) || (inf.Add(Gh, ghtype1, UserNum, content3)==0))
@@ -134,7 +134,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
     #region  积分兑换G币
     protected void Iexchange(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         DataTable dt = inf.sel_5(UserNum);
         string[] GTChageRate = inf.sel_6(dt.Rows[0]["UserGroupNumber"].ToString()).Split('|');
         int iPoints = int.Parse(GTChageRate[0]);
@@ -142,7 +142,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
         {
             PageError("积分数不能空", "Exchange.aspx");
         }
-        int iPoint = int.Parse(Foosun.Common.Input.Filter(Request.Form["iPointBox"].ToString()));
+        int iPoint = int.Parse(Hg.Common.Input.Filter(Request.Form["iPointBox"].ToString()));
         int ipoint1=int.Parse(dt.Rows[0]["iPoint"].ToString());
         int gpoint1=int.Parse(dt.Rows[0]["gPoint"].ToString());
         int g = (int)iPoint / iPoints;
@@ -156,7 +156,7 @@ public partial class user_Exchange : Foosun.Web.UI.UserPage
         string content3="积分兑换";
         int ghtype = 0;
         int ghtype1 = 1;
-        Foosun.Model.STGhistory Gh = new Foosun.Model.STGhistory();
+        Hg.Model.STGhistory Gh = new Hg.Model.STGhistory();
         Gh.Gpoint = g;
         Gh.iPoint = i;
         if ((inf.Update1(ipoint2, gpoint2, UserNum) == 0) || (inf.Add(Gh, ghtype, UserNum, content3)==0) || (inf.Add(Gh, ghtype1, UserNum, content3)==0))

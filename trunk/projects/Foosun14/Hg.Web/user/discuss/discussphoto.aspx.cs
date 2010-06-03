@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphoto : Hg.Web.UI.UserPage
 {
     //数据库连接
     Photo pho = new Photo();
@@ -38,13 +38,13 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
         Response.CacheControl = "no-cache";
 
         this.PageNavigator2.OnPageChange += new PageChangeHandler(PageNavigator2_PageChange);
-        string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         if (!Page.IsPostBack)
         {
             string PhotoalbumID = "";
-            if (Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]) != null)
+            if (Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]) != null)
             {
-                PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+                PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
             }
             else
             {
@@ -57,7 +57,7 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
                 PageError("错误", "discussPhotoalbumlist.aspx?DisID=" + DisID + "");
 
             }
-            if (dt_phopwd.Rows[0][0].ToString() != "" && Foosun.Global.Current.UserNum != dt_phopwd.Rows[0][1].ToString())
+            if (dt_phopwd.Rows[0][0].ToString() != "" && Hg.Global.Current.UserNum != dt_phopwd.Rows[0][1].ToString())
             {
                 this.Panel1.Visible = true;
                 this.Panel2.Visible = false;
@@ -84,16 +84,16 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
     }
     protected void Show_cjlist(int PageIndex2)
     {
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         DisIDq = DisIDs;
         int i, j;
         SQLConditionInfo st = new SQLConditionInfo("@PhotoalbumID", PhotoalbumID);
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out i, out j, st);
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out i, out j, st);
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex2;
         this.PageNavigator2.RecordCount = i;
-        string dirDumm = Foosun.Config.UIConfig.dirDumm.Trim();
+        string dirDumm = Hg.Config.UIConfig.dirDumm.Trim();
         if (dirDumm != string.Empty)
         {
             dirDumm = "/" + dirDumm;
@@ -107,7 +107,7 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
             {
                 r["UserNamess"] = dis.sel_60(r["UserNum"].ToString());
                 r["PhotoalbumName"] = dis.sel_61(r["PhotoalbumID"].ToString());
-                r["PhotoUrls"] = (r["PhotoUrl"].ToString().ToLower().Replace("{@userdirfile}", dirDumm + "/" + Foosun.Config.UIConfig.UserdirFile)).Replace("discuss/","").Replace("//","/");
+                r["PhotoUrls"] = (r["PhotoUrl"].ToString().ToLower().Replace("{@userdirfile}", dirDumm + "/" + Hg.Config.UIConfig.UserdirFile)).Replace("discuss/","").Replace("//","/");
             }
             if (this.Panel2.Visible == true)
             {
@@ -137,11 +137,11 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
     #region 验证相册秘密
     protected void open_Click(object sender, EventArgs e)
     {
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
-        string PhotoalbumIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
-        string pwd = Foosun.Common.Input.Filter(Request.Form["pwd"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
+        string PhotoalbumIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+        string pwd = Hg.Common.Input.Filter(Request.Form["pwd"]);
         DataTable dt = pho.sel(PhotoalbumIDs);
-        if (dt.Rows[0][0].ToString() != Foosun.Common.Input.MD5(pwd, true))
+        if (dt.Rows[0][0].ToString() != Hg.Common.Input.MD5(pwd, true))
         {
             PageError("密码错误", "discussPhotoalbumlist.aspx?DisID=" + DisIDs + "");
         }
@@ -193,7 +193,7 @@ public partial class user_discuss_discussphoto : Foosun.Web.UI.UserPage
     }
     protected string getPhotoURL(string url)
     {
-        string s_URL = Foosun.Publish.CommonData.getUrl() + url.Replace("//", "/");
+        string s_URL = Hg.Publish.CommonData.getUrl() + url.Replace("//", "/");
         return s_URL;
     }
     #endregion

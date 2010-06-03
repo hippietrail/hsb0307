@@ -18,12 +18,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_photo_add : Foosun.Web.UI.UserPage
+public partial class user_photo_add : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
-    public string dirDumm = Foosun.Config.UIConfig.dirDumm;
+    public string dirDumm = Hg.Config.UIConfig.dirDumm;
     public string UdirDumm = "";
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,7 +32,7 @@ public partial class user_photo_add : Foosun.Web.UI.UserPage
         if (!IsPostBack)
         {
             if (dirDumm.Trim() != ""){UdirDumm = dirDumm + "/";}
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             DataTable dts1 = pho.sel_2(UserNum);
             this.Photoalbum.DataSource = dts1;
             this.Photoalbum.DataTextField = "PhotoalbumName";
@@ -56,9 +56,9 @@ public partial class user_photo_add : Foosun.Web.UI.UserPage
     }
     protected void server_Click(object sender, EventArgs e)
     {
-        string PhotoUrl1 = Foosun.Common.Input.Htmls(this.pic_p_1url.Text);
-        string PhotoUrl2 = Foosun.Common.Input.Htmls(this.pic_p_1ur2.Text);
-        string PhotoUrl3 = Foosun.Common.Input.Htmls(this.pic_p_1ur3.Text);
+        string PhotoUrl1 = Hg.Common.Input.Htmls(this.pic_p_1url.Text);
+        string PhotoUrl2 = Hg.Common.Input.Htmls(this.pic_p_1ur2.Text);
+        string PhotoUrl3 = Hg.Common.Input.Htmls(this.pic_p_1ur3.Text);
         bool flg = false;
 
         if (PhotoUrl1 != String.Empty && PhotoUrl1 != null)
@@ -89,17 +89,17 @@ public partial class user_photo_add : Foosun.Web.UI.UserPage
 
     protected bool add_phtoto(string PValue)
     {
-        string PhotoName = Foosun.Common.Input.Htmls(Request.Form["PhotoName"].ToString());
+        string PhotoName = Hg.Common.Input.Htmls(Request.Form["PhotoName"].ToString());
 
         string PhotoalbumID = this.Photoalbum.SelectedValue;
 
-        string PhotoContent = Foosun.Common.Input.Htmls(Request.Form["PhotoContent"].ToString());
+        string PhotoContent = Hg.Common.Input.Htmls(Request.Form["PhotoContent"].ToString());
 
-        string PhotoID = Foosun.Common.Rand.Number(12);
+        string PhotoID = Hg.Common.Rand.Number(12);
 
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
 
-        Foosun.Model.STPhoto ph = new Foosun.Model.STPhoto();
+        Hg.Model.STPhoto ph = new Hg.Model.STPhoto();
         ph.PhotoContent = PhotoContent;
         ph.PhotoName = PhotoName;
 

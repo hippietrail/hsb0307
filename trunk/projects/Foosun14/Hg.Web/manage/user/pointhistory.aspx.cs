@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_pointhistory : Foosun.Web.UI.ManagePage
+public partial class manage_user_pointhistory : Hg.Web.UI.ManagePage
 {
     public manage_user_pointhistory()
     {
@@ -29,7 +29,7 @@ public partial class manage_user_pointhistory : Foosun.Web.UI.ManagePage
     UserList UL = new UserList();
     Info inf = new Info();
     UserMisc rd = new UserMisc();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";  
@@ -52,7 +52,7 @@ public partial class manage_user_pointhistory : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    channelList.InnerHtml = SiteList(Foosun.Global.Current.SiteID);
+                    channelList.InnerHtml = SiteList(Hg.Global.Current.SiteID);
                 }
             }
             StartLoad(1, type, "");
@@ -65,7 +65,7 @@ public partial class manage_user_pointhistory : Foosun.Web.UI.ManagePage
             case "del":          //删除
                 this.Authority_Code = "U029";
                 this.CheckAdminAuthority();
-                del(Foosun.Common.Input.Filter(ID.ToString()));
+                del(Hg.Common.Input.Filter(ID.ToString()));
                 break;
             case "PDel":            //批量删除
                 this.Authority_Code = "U029";
@@ -148,13 +148,13 @@ public partial class manage_user_pointhistory : Foosun.Web.UI.ManagePage
                 int cuts1 = des.Rows.Count;
                 if (cuts1!=0)
                 {
-                    dt.Rows[k]["UserName"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + des.Rows[0]["UserName"].ToString() + ".aspx\" target=\"_blank\" class=\"list_link\">" + des.Rows[0]["UserName"].ToString() + "</a>";
+                    dt.Rows[k]["UserName"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + des.Rows[0]["UserName"].ToString() + ".aspx\" target=\"_blank\" class=\"list_link\">" + des.Rows[0]["UserName"].ToString() + "</a>";
                 }
                 else 
                 {
                     dt.Rows[k]["UserName"] = "会员已被删除";
                 }
-                dt.Rows[k]["op"] = "<a href=\"#\" onclick=\"javascript:del('" + dt.Rows[k]["GhID"].ToString() + "');\" title=\"删除\");\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["GhID"].ToString() + "  runat=\"server\" /></td>";
+                dt.Rows[k]["op"] = "<a href=\"#\" onclick=\"javascript:del('" + dt.Rows[k]["GhID"].ToString() + "');\" title=\"删除\");\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["GhID"].ToString() + "  runat=\"server\" /></td>";
             }
             userlists.Visible = true;
         }      

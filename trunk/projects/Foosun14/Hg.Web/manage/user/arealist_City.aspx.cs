@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class manage_user_arealist_City : Foosun.Web.UI.ManagePage
+public partial class manage_user_arealist_City : Hg.Web.UI.ManagePage
 {
     public manage_user_arealist_City()
     {
@@ -42,7 +42,7 @@ public partial class manage_user_arealist_City : Foosun.Web.UI.ManagePage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -64,10 +64,10 @@ public partial class manage_user_arealist_City : Foosun.Web.UI.ManagePage
     }
       protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
       {
-            string Cid = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string Cid = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             int ig, js;
             SQLConditionInfo st = new SQLConditionInfo("@Cid", Cid);
-            DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, st);
+            DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, st);
             this.PageNavigator1.PageCount = js;
             this.PageNavigator1.PageIndex = PageIndex;
             this.PageNavigator1.RecordCount = ig;

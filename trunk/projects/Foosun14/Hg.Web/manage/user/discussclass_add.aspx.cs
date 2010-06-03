@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussclass_add : Foosun.Web.UI.ManagePage
+public partial class user_discussclass_add : Hg.Web.UI.ManagePage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -35,9 +35,9 @@ public partial class user_discussclass_add : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid)
         {
-            string Cname = Foosun.Common.Input.Filter(Request.Form["Cname"].ToString());
-            string Content = Foosun.Common.Input.Filter(Request.Form["Content"].ToString());
-            string DcID = Foosun.Common.Rand.Number(12);
+            string Cname = Hg.Common.Input.Filter(Request.Form["Cname"].ToString());
+            string Content = Hg.Common.Input.Filter(Request.Form["Content"].ToString());
+            string DcID = Hg.Common.Rand.Number(12);
             string indexnumber = "0";
             string site = dis.sel_3(UserNum);
             //创建讨论组

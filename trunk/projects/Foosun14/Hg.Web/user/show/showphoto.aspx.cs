@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_show_showphoto : Foosun.Web.UI.BasePage
+public partial class user_show_showphoto : Hg.Web.UI.BasePage
 {
     Photo pho = new Photo();
     Discuss dis = new Discuss();
@@ -26,8 +26,8 @@ public partial class user_show_showphoto : Foosun.Web.UI.BasePage
                 PageError("错误参数", "");
             }
 
-            DataTable dt_phopwd = pho.sel(Foosun.Common.Input.Filter(PhotoalbumID.ToString()));
-            if (dt_phopwd.Rows[0][0].ToString() != "" && Foosun.Global.Current.UserNum != dt_phopwd.Rows[0][1].ToString())
+            DataTable dt_phopwd = pho.sel(Hg.Common.Input.Filter(PhotoalbumID.ToString()));
+            if (dt_phopwd.Rows[0][0].ToString() != "" && Hg.Global.Current.UserNum != dt_phopwd.Rows[0][1].ToString())
             {
                 this.Panel1.Visible = true;
                 this.Panel2.Visible = false;
@@ -51,10 +51,10 @@ public partial class user_show_showphoto : Foosun.Web.UI.BasePage
     }
     protected void Show_cjlist(int PageIndex2)
     {
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
         int ib, jb;
         SQLConditionInfo st = new SQLConditionInfo("@PhotoalbumID", PhotoalbumID);
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out ib, out jb, st);
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out ib, out jb, st);
 
         this.PageNavigator2.PageCount = jb;
         this.PageNavigator2.PageIndex = PageIndex2;
@@ -65,13 +65,13 @@ public partial class user_show_showphoto : Foosun.Web.UI.BasePage
             cjlistdts.Columns.Add("UserNamess", typeof(string));
             cjlistdts.Columns.Add("PhotoalbumName", typeof(string));
             cjlistdts.Columns.Add("PhotoUrls", typeof(string));
-            string _dirDumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirDumm = Hg.Config.UIConfig.dirDumm;
             if (_dirDumm.Trim() != ""){_dirDumm = _dirDumm + "/";}
             foreach (DataRow r in cjlistdts.Rows)
             {
                 r["UserNamess"] = dis.sel_60(r["UserNum"].ToString());
                 r["PhotoalbumName"] = dis.sel_61(r["PhotoalbumID"].ToString());
-                r["PhotoUrls"] = r["PhotoUrl"].ToString().Replace("{@userdirfile}", _dirDumm + Foosun.Config.UIConfig.UserdirFile);
+                r["PhotoUrls"] = r["PhotoUrl"].ToString().Replace("{@userdirfile}", _dirDumm + Hg.Config.UIConfig.UserdirFile);
             }
             DataList1.DataSource = cjlistdts;
             DataList1.DataBind();
@@ -85,10 +85,10 @@ public partial class user_show_showphoto : Foosun.Web.UI.BasePage
 
     protected void open_Click(object sender, EventArgs e)
     {
-        string PhotoalbumIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
-        string pwd = Foosun.Common.Input.Filter(Request.Form["pwd"]);
+        string PhotoalbumIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+        string pwd = Hg.Common.Input.Filter(Request.Form["pwd"]);
         DataTable dt = pho.sel(PhotoalbumIDs);
-        if (dt.Rows[0][0].ToString() != Foosun.Common.Input.MD5(pwd, true))
+        if (dt.Rows[0][0].ToString() != Hg.Common.Input.MD5(pwd, true))
         {
             PageError("密码错误", "Photoalbumlist.aspx");
         }

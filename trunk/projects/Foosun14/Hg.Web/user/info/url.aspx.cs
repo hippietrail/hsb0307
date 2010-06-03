@@ -8,15 +8,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_info_url : Foosun.Web.UI.UserPage
+public partial class user_info_url : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
     public string fURL = "";
-    public string dirDumm = Foosun.Config.UIConfig.dirDumm;
-    public string dirUser = Foosun.Config.UIConfig.dirUser;
+    public string dirDumm = Hg.Config.UIConfig.dirDumm;
+    public string dirUser = Hg.Config.UIConfig.dirUser;
     public string myUID = "";
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,9 +27,9 @@ public partial class user_info_url : Foosun.Web.UI.UserPage
             Response.Expires = 0;
             Response.CacheControl = "no-cache";
             string tmpDir = "/";
-            myUID = Foosun.Common.Input.EncryptString(Foosun.Global.Current.UserNum);
+            myUID = Hg.Common.Input.EncryptString(Hg.Global.Current.UserNum);
             if (dirDumm.Trim() != string.Empty) { tmpDir = "/" + dirDumm + "/"; }
-            fURL = "http://" + Request.ServerVariables["SERVER_NAME"] + tmpDir + dirUser + "/url.aspx?uid=" + Foosun.Common.Input.EncryptString(Foosun.Global.Current.UserNum) + ""; ;
+            fURL = "http://" + Request.ServerVariables["SERVER_NAME"] + tmpDir + dirUser + "/url.aspx?uid=" + Hg.Common.Input.EncryptString(Hg.Global.Current.UserNum) + ""; ;
             URLClassList.InnerHtml = getClassList();
             if (Request.QueryString["action"] != null && Request.QueryString["action"] != string.Empty)
             {
@@ -54,7 +54,7 @@ public partial class user_info_url : Foosun.Web.UI.UserPage
     protected string getClassList()
     {
         string ReturnList = "";
-        DataTable dt = rd.getClassList(Foosun.Global.Current.UserNum);
+        DataTable dt = rd.getClassList(Hg.Global.Current.UserNum);
         if (dt != null && dt.Rows.Count > 0)
         {
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -78,11 +78,11 @@ public partial class user_info_url : Foosun.Web.UI.UserPage
         if (Request.QueryString["ClassID"] != null && Request.QueryString["ClassID"] != string.Empty)
         {
             SQLConditionInfo sts = new SQLConditionInfo("@ClassID", int.Parse(Request.QueryString["ClassID"].ToString()));
-            dt = Foosun.CMS.Pagination.GetPage("user_info_url_1_aspx", PageIndex, 20, out i, out j, sts);
+            dt = Hg.CMS.Pagination.GetPage("user_info_url_1_aspx", PageIndex, 20, out i, out j, sts);
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;

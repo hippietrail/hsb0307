@@ -9,16 +9,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_discuss_discussTopi_commentaryEdit : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussTopi_commentaryEdit : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.Discuss rd = new Foosun.CMS.Discuss();
+    Hg.CMS.Discuss rd = new Hg.CMS.Discuss();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             
-            string DtID = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+            string DtID = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
             if (DisID != null && DisID != "")
             {
                 sc.InnerHtml = Show_sc(DtID, DisID);
@@ -58,7 +58,7 @@ public partial class user_discuss_discussTopi_commentaryEdit : Foosun.Web.UI.Use
     protected void subset_Click(object sender, EventArgs e)
     {
         string title = this.title.Text;
-        string Content = Foosun.Common.Input.Htmls(this.contentBox.Value);
+        string Content = Hg.Common.Input.Htmls(this.contentBox.Value);
         Content += "<div style=\"width:100%;text-align:right;\"><font color=\"#999999\">此帖子已经被作者于" + DateTime.Now + "编辑过</font></div>";
         string dtID = this.DtIDs.Value;
         if (Content == "")

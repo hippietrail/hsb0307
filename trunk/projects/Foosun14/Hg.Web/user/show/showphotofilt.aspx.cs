@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_show_showphotofilt : Foosun.Web.UI.BasePage
+public partial class user_show_showphotofilt : Hg.Web.UI.BasePage
 {
     Photo pho = new Photo();
     protected string sImgUrl = "";
@@ -25,10 +25,10 @@ public partial class user_show_showphotofilt : Foosun.Web.UI.BasePage
 
     protected void getPhoto()
     {
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
         string pwd = pho.sel_1(PhotoalbumID);
         string UserNum = pho.sel_20(PhotoalbumID);
-        if (pwd != "" && pwd != null && UserNum != Foosun.Global.Current.UserNum)
+        if (pwd != "" && pwd != null && UserNum != Hg.Global.Current.UserNum)
         {
             PageError("你密码不正确","");
         }
@@ -38,7 +38,7 @@ public partial class user_show_showphotofilt : Foosun.Web.UI.BasePage
             DataTable dt = pho.sel_18(PhotoalbumID);
             if (dt != null)
             {
-                string dirDumm = Foosun.Config.UIConfig.dirDumm;
+                string dirDumm = Hg.Config.UIConfig.dirDumm;
                 if (dirDumm.Trim() != "")
                 {
                     dirDumm = "/" + dirDumm;
@@ -49,7 +49,7 @@ public partial class user_show_showphotofilt : Foosun.Web.UI.BasePage
                     {
                         if (n > 0)
                             sImgUrl += "\t";
-                        sImgUrl += r[0].ToString().Replace("{@userdirfile}", dirDumm + Foosun.Config.UIConfig.UserdirFile);
+                        sImgUrl += r[0].ToString().Replace("{@userdirfile}", dirDumm + Hg.Config.UIConfig.UserdirFile);
                         n++;
                     }
                 }

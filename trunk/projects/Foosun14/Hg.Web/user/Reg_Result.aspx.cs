@@ -18,13 +18,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS.Common;
+using Hg.CMS.Common;
 
-public partial class user_Reg_Result : Foosun.Web.UI.BasePage
+public partial class user_Reg_Result : Hg.Web.UI.BasePage
 {   
     protected void Page_Load(object sender, EventArgs e)
     {
             rootPublic rd = new rootPublic ();
-            this.username.Text = rd.getUserName(Foosun.Global.Current.UserNum);
+            this.username.Text = rd.getUserName(Hg.Global.Current.UserNum);
     }
 }

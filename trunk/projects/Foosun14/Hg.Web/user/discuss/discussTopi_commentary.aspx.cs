@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussTopi_commentary : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     rootPublic pd = new rootPublic();
@@ -34,8 +34,8 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
         string Dtd = Request.QueryString["DtID"];
         if ((DisIDs != "") && (Dtd != ""))
         {
-            DisIDs = Foosun.Common.Input.Filter(DisIDs.ToString());
-            Dtd = Foosun.Common.Input.Filter(Dtd.ToString());
+            DisIDs = Hg.Common.Input.Filter(DisIDs.ToString());
+            Dtd = Hg.Common.Input.Filter(Dtd.ToString());
         }
         else
         {
@@ -100,11 +100,11 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
     }
     protected void Show_cjlist(int PageIndex1)
     {
-        string DtIDs = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+        string DtIDs = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
         int ib, jb;
 
         SQLConditionInfo sts = new SQLConditionInfo("@DtIDs", DtIDs);
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 20, out ib, out jb, sts);
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 20, out ib, out jb, sts);
         this.PageNavigator1.PageCount = jb;
         this.PageNavigator1.PageIndex = PageIndex1;
         this.PageNavigator1.RecordCount = ib;
@@ -140,7 +140,7 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
                     {
                         _Tmpls = userflag + _Tmpls;
                     }
-                    s["UserName"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + dt2.Rows[0]["UserName"].ToString() + "\" target=\"_blank\" class=\"list_link\" title=\"点击查看" + dt2.Rows[0]["UserName"].ToString() + "的资料.\">" + _Tmpls + "</a>";//用户名
+                    s["UserName"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + dt2.Rows[0]["UserName"].ToString() + "\" target=\"_blank\" class=\"list_link\" title=\"点击查看" + dt2.Rows[0]["UserName"].ToString() + "的资料.\">" + _Tmpls + "</a>";//用户名
                     s["iPoint"] = dt2.Rows[0]["iPoint"].ToString();
                     s["aPoint"] = dt2.Rows[0]["aPoint"].ToString();
                     s["cPoint"] = dt2.Rows[0]["cPoint"].ToString();
@@ -163,7 +163,7 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
                     string[] tmpsize = _userfacesize.Split('|');
                     string _height = tmpsize[1];
                     string _width = tmpsize[0];
-                    s["userfaces"] = "<img src=\"" + _userface.Replace("{@UserdirFile}", Foosun.Config.UIConfig.dirUser) + "\" border=\"0\" style=\"width:" + _width + "px;height:" + _height + ";\" title=\"用户未设置头像\" />";
+                    s["userfaces"] = "<img src=\"" + _userface.Replace("{@UserdirFile}", Hg.Config.UIConfig.dirUser) + "\" border=\"0\" style=\"width:" + _width + "px;height:" + _height + ";\" title=\"用户未设置头像\" />";
                 }
                 else 
                 {
@@ -183,7 +183,7 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
                     if (dt.Rows.Count > 0)
                     {
                         string editTF = "";
-                        if ((dt.Rows[0]["UserNum"].ToString()).ToUpper() == (Foosun.Global.Current.UserNum).ToUpper())
+                        if ((dt.Rows[0]["UserNum"].ToString()).ToUpper() == (Hg.Global.Current.UserNum).ToUpper())
                         {
                             editTF = "<a href=\"discussTopi_commentaryEdit.aspx?DtID=" + dt.Rows[0]["DtID"].ToString() + "&DisID=" + Request.QueryString["DisID"] + "\" class=\"list_link\"><img src=\"../../sysImages/folder/re.gif\" border=\"0\"></a>&nbsp;&nbsp;";
                         }
@@ -239,13 +239,13 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
     /// <param name="e"></param>
     protected void subset_Click(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
-        string DisIDx = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-        string DtIDa = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+        string UserNum = Hg.Global.Current.UserNum;
+        string DisIDx = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+        string DtIDa = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
         string Titles = "";
-        //Titles = Foosun.Common.Input.Filter(Request.Form["titlesd"].ToString());
-        string Contentss = Foosun.Common.Input.Htmls(contentBox.Value);
-        string DtsID = Foosun.Common.Rand.Number(12);
+        //Titles = Hg.Common.Input.Filter(Request.Form["titlesd"].ToString());
+        string Contentss = Hg.Common.Input.Htmls(contentBox.Value);
+        string DtsID = Hg.Common.Rand.Number(12);
         DataTable dtd = dis.sel_35();
         int cut = dtd.Rows.Count;
         string DtIDda = "";
@@ -257,7 +257,7 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
         int cut_um = dt_usd.Rows.Count;
         if (cut_um == 0)
         {
-            if (dis.sel_30(DisIDx).ToUpper() == Foosun.Global.Current.UserName.ToUpper())
+            if (dis.sel_30(DisIDx).ToUpper() == Hg.Global.Current.UserName.ToUpper())
             {
 
                 if (DtIDda != DtsID)
@@ -346,7 +346,7 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
 
     protected void vot_Click(object sender, EventArgs e)
     {
-        string Dtsid = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+        string Dtsid = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
         DateTime nowtime = DateTime.Now;
         DateTime timesy = nowtime;
         DataTable dt1 = dis.sel_38(Dtsid);
@@ -415,8 +415,8 @@ public partial class user_discuss_discussTopi_commentary : Foosun.Web.UI.UserPag
     }
     protected void view_Click(object sender, EventArgs e)
     {
-        string DisIDvis = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-        string Dtsidview = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+        string DisIDvis = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+        string Dtsidview = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
         Response.Redirect("discussTopi_view.aspx?DtID=" + Dtsidview + "&DisID=" + DisIDvis + "");
     }
 

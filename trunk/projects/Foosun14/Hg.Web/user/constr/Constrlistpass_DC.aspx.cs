@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_Constrlistpass_DC : Foosun.Web.UI.UserPage
+public partial class user_Constrlistpass_DC : Hg.Web.UI.UserPage
 {
     Constr con = new Constr();
     protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ public partial class user_Constrlistpass_DC : Foosun.Web.UI.UserPage
          Response.CacheControl = "no-cache";
          if (!IsPostBack)
          {
-             string ConID = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+             string ConID = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
              DataTable da = con.sel8(ConID);
              int cut = da.Rows.Count;
              if (cut==0)

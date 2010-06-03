@@ -8,19 +8,19 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class user_show_info : Foosun.Web.UI.BasePage
+public partial class user_show_info : Hg.Web.UI.BasePage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
     Constr con = new Constr();
     Discuss dis = new Discuss();
-    public string tmpDir = Foosun.Config.UIConfig.UserdirFile;
-    public string tmpDir1 = Foosun.Config.UIConfig.dirFile;
-    public string dirdumm = Foosun.Config.UIConfig.dirDumm;
+    public string tmpDir = Hg.Config.UIConfig.UserdirFile;
+    public string tmpDir1 = Hg.Config.UIConfig.dirFile;
+    public string dirdumm = Hg.Config.UIConfig.dirDumm;
     protected void Page_Load(object sender, EventArgs e)
     {
         copyright.InnerHtml = CopyRight;
@@ -30,8 +30,8 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         ePointName.InnerHtml = pd.getgPointName();
         if (dirdumm.Trim() != string.Empty)
         {
-            tmpDir = dirdumm + "/" + Foosun.Config.UIConfig.UserdirFile;
-            tmpDir1 = dirdumm + "/" + Foosun.Config.UIConfig.dirFile;
+            tmpDir = dirdumm + "/" + Hg.Config.UIConfig.UserdirFile;
+            tmpDir1 = dirdumm + "/" + Hg.Config.UIConfig.dirFile;
         }
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChange);
         this.PageNavigator2.OnPageChange += new PageChangeHandler(PageNavigator2_PageChange);
@@ -40,7 +40,7 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         {
             if (u_name != "" && u_name != null)
             {
-                uID = pd.getUserNameUserNum(Foosun.Common.Input.Filter(u_name.ToString()));
+                uID = pd.getUserNameUserNum(Hg.Common.Input.Filter(u_name.ToString()));
                 if (uID == "0")
                 {
                     PageError("找不到用户 [" + u_name.ToString() + "] 的信息.<li>原因：此用户未注册或者被管理员删除!</li>", "");
@@ -115,7 +115,7 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
                     string isOpen = dt.Rows[0]["isOpen"].ToString();
                     if (isOpen == "0")
                     {
-                        if ((u_name.ToString()).ToUpper() != (Foosun.Global.Current.UserName).ToUpper())
+                        if ((u_name.ToString()).ToUpper() != (Hg.Global.Current.UserName).ToUpper())
                         {
                             marriTF.Visible = false;
                             mobileTF.Visible = false;
@@ -272,7 +272,7 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         string UserNumID = "";
         if (UserNum != "" && UserNum != null)
         {
-            UserNumID = pd.getUserNameUserNum(Foosun.Common.Input.Filter(UserNum.ToString()));
+            UserNumID = pd.getUserNameUserNum(Hg.Common.Input.Filter(UserNum.ToString()));
         }
         int i, j;
         DataTable dt = null;
@@ -280,13 +280,13 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         {
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@UserNum", UserNumID);
-            st[1] = new SQLConditionInfo("@ClassID", Foosun.Common.Input.Filter(ClassID));
-            dt = Foosun.CMS.Pagination.GetPage("user_ShowUser_1_aspx", PageIndex, 20, out i, out j, st);
+            st[1] = new SQLConditionInfo("@ClassID", Hg.Common.Input.Filter(ClassID));
+            dt = Hg.CMS.Pagination.GetPage("user_ShowUser_1_aspx", PageIndex, 20, out i, out j, st);
         }
         else
         {
             SQLConditionInfo st = new SQLConditionInfo("@UserNum", UserNumID);
-            dt = Foosun.CMS.Pagination.GetPage("user_ShowUser_1_1_aspx", PageIndex, 20, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("user_ShowUser_1_1_aspx", PageIndex, 20, out i, out j, st);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -330,11 +330,11 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         string UserNumID = "";
         if (UserNum != "" && UserNum != null)
         {
-            UserNumID = pd.getUserNameUserNum(Foosun.Common.Input.Filter(UserNum.ToString()));
+            UserNumID = pd.getUserNameUserNum(Hg.Common.Input.Filter(UserNum.ToString()));
         }
         SQLConditionInfo st = new SQLConditionInfo("@UserNum", UserNumID);
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage("user_ShowUser_2_aspx", PageIndex, 30, out i, out j, st);
+        DataTable dt = Hg.CMS.Pagination.GetPage("user_ShowUser_2_aspx", PageIndex, 30, out i, out j, st);
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex;
         this.PageNavigator2.RecordCount = i;
@@ -350,10 +350,10 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
                 int sel_picnumber = rd.sel_picnum(dt.Rows[s]["PhotoalbumID"].ToString());
                 if (sel_picnumber != 0)
                 {
-                    string _dirDumm = Foosun.Config.UIConfig.dirDumm;
+                    string _dirDumm = Hg.Config.UIConfig.dirDumm;
                     if (_dirDumm.Trim() != ""){_dirDumm = _dirDumm + "/";}
                     dt.Rows[s]["picnum"] = "(" + sel_picnumber + ")";
-                    PicURL = rd.sel_pic(dt.Rows[s]["PhotoalbumID"].ToString()).Replace("{@userdirfile}", _dirDumm + Foosun.Config.UIConfig.UserdirFile);
+                    PicURL = rd.sel_pic(dt.Rows[s]["PhotoalbumID"].ToString()).Replace("{@userdirfile}", _dirDumm + Hg.Config.UIConfig.UserdirFile);
                 }
                 else
                 {
@@ -386,8 +386,8 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
     {
         string UserNum = Request.QueryString["uid"];
         int i, j;
-        SQLConditionInfo sts = new SQLConditionInfo("@UserName", Foosun.Common.Input.Filter(UserNum.ToString()));
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage("user_discuss_discussManageestablish_list_aspx", PageIndex, 20, out i, out j, sts);
+        SQLConditionInfo sts = new SQLConditionInfo("@UserName", Hg.Common.Input.Filter(UserNum.ToString()));
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage("user_discuss_discussManageestablish_list_aspx", PageIndex, 20, out i, out j, sts);
         this.PageNavigator3.PageCount = j;
         this.PageNavigator3.PageIndex = PageIndex;
         this.PageNavigator3.RecordCount = i;
@@ -416,7 +416,7 @@ public partial class user_show_info : Foosun.Web.UI.BasePage
         string listSTR = "<div style=\"padding-top:10px;font-weight:bold;height:20px;\">文字连接</div>";
         if (_uid != null && _uid != "")
         {
-            string userNum = pd.getUserNameUserNum(Foosun.Common.Input.Filter(_uid.ToString()));
+            string userNum = pd.getUserNameUserNum(Hg.Common.Input.Filter(_uid.ToString()));
             DataTable dt = ud.getflist(1, userNum);
             if (dt != null && dt.Rows.Count > 0)
             {

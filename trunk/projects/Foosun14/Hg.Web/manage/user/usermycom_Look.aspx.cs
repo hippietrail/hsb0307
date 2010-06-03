@@ -18,17 +18,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class usermycom_Look : Foosun.Web.UI.ManagePage
+public partial class usermycom_Look : Hg.Web.UI.ManagePage
 {
     Mycom myc = new Mycom();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         
         Response.CacheControl = "no-cache";
-        string Commid = Foosun.Common.Input.Filter(Request.QueryString["Commid"]);
+        string Commid = Hg.Common.Input.Filter(Request.QueryString["Commid"]);
         DataTable dt = myc.sel(Commid);
         if (dt != null)
         {
@@ -36,7 +36,7 @@ public partial class usermycom_Look : Foosun.Web.UI.ManagePage
             {
                 TitleBox.InnerHtml = dt.Rows[0]["Title"].ToString();
                 ContentBox.InnerHtml = dt.Rows[0]["Content"].ToString();
-                strUserNum.InnerHtml = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + pd.getUserName(dt.Rows[0]["UserNum"].ToString()) + "\" target=\"_blank\"><font color=\"red\">" + pd.getUserName(dt.Rows[0]["UserNum"].ToString()) +"</font></a>";
+                strUserNum.InnerHtml = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + pd.getUserName(dt.Rows[0]["UserNum"].ToString()) + "\" target=\"_blank\"><font color=\"red\">" + pd.getUserName(dt.Rows[0]["UserNum"].ToString()) +"</font></a>";
                 ipstr.InnerHtml = dt.Rows[0]["IP"].ToString();
                 creatTime.InnerHtml = dt.Rows[0]["creatTime"].ToString();
             }

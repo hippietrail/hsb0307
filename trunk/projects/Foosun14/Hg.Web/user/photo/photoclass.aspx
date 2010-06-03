@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -16,13 +16,13 @@
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >Ïà²á¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx" class="menulist">Ïà²á¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />Ïà²á·ÖÀà</div></td>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">Ïà²áÊ×Ò³</a>&nbsp;©®&nbsp;<a href="photoclass.aspx" class="menulist">Ïà²á·ÖÀà</a>&nbsp;©®&nbsp;<a href="photoclass_add.aspx" class="menulist">Ìí¼Ó·ÖÀà</a>&nbsp;©®&nbsp;</span><span id="sc" runat="server"></span></td>
+     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>&nbsp;ï¿½ï¿½&nbsp;<a href="photoclass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;à©®&nbsp;<a href="photoclass_add.aspx" class="menulist">ï¿½ï¿½Ó·ï¿½ï¿½</a>&nbsp;à©®&nbsp;</span><span id="sc" runat="server"></span></td>
   </tr>
 </table>
 <div id="no" runat="server"></div>
@@ -33,10 +33,10 @@
     <HeaderTemplate>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
     <tr class="TR_BG">
-    <td class="sys_topBg" align="center" width="40%">·ÖÀàÃû³Æ</td>
-    <td class="sys_topBg" align="center" width="15%">´´½¨ÈÕÆÚ</td>
-    <td class="sys_topBg" align="center" width="15%">ÓµÓÐÈË</td>
-    <td class="sys_topBg" align="center" width="30%">²Ù×÷&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
+    <td class="sys_topBg" align="center" width="40%">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="15%">Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="15%">ï¿½Óµï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="30%">Ë²ï¿½ï¿½&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
     </tr>
     <div id="tnzlist" runat="server"></div>
     </HeaderTemplate>
@@ -68,14 +68,14 @@
 <script language="javascript" type="text/javascript">
 function del(ID)
 {
-   if(confirm("É¾³ý´Ë·ÖÀà½«É¾³ý´Ë·ÖÀàÏÂµÄËùÓÐÏà²á£¬ÄãÈ·¶¨ÒªÉ¾³ýÂð?"))
+   if(confirm("ï¿½É¾ï¿½ï¿½Ë·ï¿½ï¿½à½«É¾ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á£¬ï¿½ï¿½È·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½?"))
    { 
         self.location="?Type=del&ID="+ID;
    }
 }
 function PDel()
 {
-    if(confirm("É¾³ý´Ë·ÖÀà½«É¾³ý´Ë·ÖÀàÏÂµÄËùÓÐÏà²á£¬ÄãÈ·¶¨Òª³¹µ×É¾³ýÂð?"))
+    if(confirm("ï¿½É¾ï¿½ï¿½Ë·ï¿½ï¿½à½«É¾ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á£¬ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½?"))
     {
 	    document.form1.action="?Type=PDel";
 	    document.form1.submit();

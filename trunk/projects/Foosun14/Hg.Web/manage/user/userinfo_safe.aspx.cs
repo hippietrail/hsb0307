@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userinfo_safe : Foosun.Web.UI.ManagePage
+public partial class manage_user_userinfo_safe : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -23,7 +23,7 @@ public partial class manage_user_userinfo_safe : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            string uids = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+            string uids = Hg.Common.Input.Filter(Request.QueryString["id"]);
             int uid = 0;
             try
             {
@@ -53,7 +53,7 @@ public partial class manage_user_userinfo_safe : Foosun.Web.UI.ManagePage
             string oldpassword = this.oldpassword.Text;;
             string PassKey = this.PassKey.Text;
             string password = this.password.Text;
-            int suid = int.Parse(Foosun.Common.Input.Filter(Request.Form["suid"]));
+            int suid = int.Parse(Hg.Common.Input.Filter(Request.Form["suid"]));
             if ((PassQuestion != null && PassQuestion != "") && (PassKey != null && PassKey != "") && (password != null && password != ""))
             {
                 if (password.ToString() != oldpassword.ToString())
@@ -63,9 +63,9 @@ public partial class manage_user_userinfo_safe : Foosun.Web.UI.ManagePage
                 else
                 {
                     //同步更新用户信息
-                    Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+                    Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
                     request.PassWord = password;
-                    request.UserName = Foosun.Global.Current.UserName;
+                    request.UserName = Hg.Global.Current.UserName;
                     request.ProcessMultiPing("update");
 
                     if (request.FoundErr)

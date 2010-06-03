@@ -20,8 +20,8 @@
         }
     }
 </script>
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>__зЂВсНсЪј</title>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>__зЂВсНсЪј</title>
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="setTimeout('leavePage()', 1000)">
 <form id="form1" name="form1" method="post" action="" runat="server">

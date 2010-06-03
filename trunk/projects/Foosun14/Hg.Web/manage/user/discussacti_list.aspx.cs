@@ -18,15 +18,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS.Common;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS.Common;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class manage_user_discussacti_list : Foosun.Web.UI.ManagePage
+public partial class manage_user_discussacti_list : Hg.Web.UI.ManagePage
 {
     Discuss dis = new Discuss();
     UserList UL = new UserList();
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -54,7 +54,7 @@ public partial class manage_user_discussacti_list : Foosun.Web.UI.ManagePage
             string ID = "";
             if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
             {
-                ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+                ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
             }
 
             switch (Type)
@@ -115,12 +115,12 @@ public partial class manage_user_discussacti_list : Foosun.Web.UI.ManagePage
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@titlem", "%" + titlem + "%");
             st[1] = new SQLConditionInfo("@RequestSiteId", RequestSiteIds);
-            dts = Foosun.CMS.Pagination.GetPage("manage_user_discussacti_list_1_aspx", PageIndex, 10, out ig, out js, st);
+            dts = Hg.CMS.Pagination.GetPage("manage_user_discussacti_list_1_aspx", PageIndex, 10, out ig, out js, st);
         }
         else
         {
             SQLConditionInfo sts = new SQLConditionInfo("@titlem", "%" + titlem + "%");
-            dts = Foosun.CMS.Pagination.GetPage("manage_user_discussacti_list_2_aspx", PageIndex, 10, out ig, out js, sts);
+            dts = Hg.CMS.Pagination.GetPage("manage_user_discussacti_list_2_aspx", PageIndex, 10, out ig, out js, sts);
         }
         this.PageNavigator1.PageCount = js;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -220,7 +220,7 @@ public partial class manage_user_discussacti_list : Foosun.Web.UI.ManagePage
         string nm = "";
         if (Request.Form["dicname"] != "" && Request.Form["dicname"] != null)
         {
-            nm = Foosun.Common.Input.Filter(Request.Form["dicname"]);
+            nm = Hg.Common.Input.Filter(Request.Form["dicname"]);
         }
         Showu_discusslist(1, nm);
     }

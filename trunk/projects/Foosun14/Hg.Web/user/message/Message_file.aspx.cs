@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
-public partial class user_message_Message_file : Foosun.Web.UI.UserPage
+public partial class user_message_Message_file : Hg.Web.UI.UserPage
 {
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     Message mes = new Message();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,7 +25,7 @@ public partial class user_message_Message_file : Foosun.Web.UI.UserPage
                 string FileName = files.Rows[0]["FileName"].ToString();
                 string FileUrl = files.Rows[0]["FileUrl"].ToString();
                 FileUrl = FileUrl.Replace("/", "\\");
-                FileUrl = FileUrl.Replace("~\\", Foosun.Common.ServerInfo.GetRootPath() + "\\");
+                FileUrl = FileUrl.Replace("~\\", Hg.Common.ServerInfo.GetRootPath() + "\\");
                 FileInfo finfo = new FileInfo(FileUrl);
                 if (finfo.Exists)
                 {

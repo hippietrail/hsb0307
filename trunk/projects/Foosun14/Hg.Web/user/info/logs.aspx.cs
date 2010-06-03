@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_manage_logs : Foosun.Web.UI.ManagePage
+public partial class user_manage_logs : Hg.Web.UI.ManagePage
 {
     public user_manage_logs()
     {
@@ -32,7 +32,7 @@ public partial class user_manage_logs : Foosun.Web.UI.ManagePage
                 case "del":            //锁定管理员
                     this.Authority_Code = "Q023";
                     this.CheckAdminAuthority();
-                    int ID = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["ID"]));  //取得需要操作的管理员ID
+                    int ID = int.Parse(Hg.Common.Input.Filter(Request.QueryString["ID"]));  //取得需要操作的管理员ID
                     Del(ID);
                     break;
                 default:
@@ -50,8 +50,8 @@ public partial class user_manage_logs : Foosun.Web.UI.ManagePage
     {
         int i, j;
         DataTable dt = null;
-        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-        dt = Foosun.CMS.Pagination.GetPage("user_manage_logs_1_aspx", PageIndex, 20, out i, out j, st);
+        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+        dt = Hg.CMS.Pagination.GetPage("user_manage_logs_1_aspx", PageIndex, 20, out i, out j, st);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

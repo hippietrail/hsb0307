@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_usergroup : Foosun.Web.UI.ManagePage
+public partial class manage_user_usergroup : Hg.Web.UI.ManagePage
 {
     public manage_user_usergroup()
     {
@@ -32,7 +32,7 @@ public partial class manage_user_usergroup : Foosun.Web.UI.ManagePage
             int gId = 0;
             try
             {
-                gId = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"]));
+                gId = int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"]));
             }
             catch (Exception gus)
             {
@@ -94,7 +94,7 @@ public partial class manage_user_usergroup : Foosun.Web.UI.ManagePage
                 {
                     liststr += "<td align=\"center\">0</td>";
                 }
-                liststr += "<td align=\"center\"><a href=\"UserGroupEdit.aspx?id=" + dt.Rows[i]["id"] + "\" class=\"list_link\"><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"UserGroup.aspx?id=" + dt.Rows[i]["id"] + "&Action=del\" onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\" class=\"list_link\"><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'></a></td>";
+                liststr += "<td align=\"center\"><a href=\"UserGroupEdit.aspx?id=" + dt.Rows[i]["id"] + "\" class=\"list_link\"><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"UserGroup.aspx?id=" + dt.Rows[i]["id"] + "&Action=del\" onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\" class=\"list_link\"><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'></a></td>";
                 liststr += "</tr>";
                 dts.Clear(); dts.Dispose();
             }

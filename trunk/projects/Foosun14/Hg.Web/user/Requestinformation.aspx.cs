@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_Requestinformation : Foosun.Web.UI.UserPage
+public partial class user_Requestinformation : Hg.Web.UI.UserPage
 {
     public string quname = null;
     Friend fir = new Friend();
@@ -48,7 +48,7 @@ public partial class user_Requestinformation : Foosun.Web.UI.UserPage
     protected void StartLoad(int PageIndex)
     {
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

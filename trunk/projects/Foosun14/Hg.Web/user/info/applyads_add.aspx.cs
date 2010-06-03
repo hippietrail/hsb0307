@@ -11,13 +11,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS.Common;
+using Hg.CMS.Common;
 
-public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
+public partial class user_info_applyads_add : Hg.Web.UI.UserPage
 {
     public DataTable TbClass;
     rootPublic rd = new rootPublic();
-    public string str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+    public string str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";                        //设置页面无缓存
@@ -44,7 +44,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
 
     protected void getClassInfo()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         TbClass = ac.getAdsClassList();
         if (TbClass != null)
             ClassRender("0", 0);
@@ -60,7 +60,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
 
     protected void getAdsList()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         CycID.Items.Clear();
         TbClass = ac.getAdsList(null);
         if (TbClass != null)
@@ -117,7 +117,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
 
     protected void AdsAdd()
     {
-        Foosun.Model.AdsInfo ai = new Foosun.Model.AdsInfo();
+        Hg.Model.AdsInfo ai = new Hg.Model.AdsInfo();
         ai.AdID = "";
         ai.adName = Request.Form["adName"];
 
@@ -150,7 +150,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
             ai.CycDic = 0;
         }
 
-        ai.CusID = Foosun.Global.Current.UserNum;
+        ai.CusID = Hg.Global.Current.UserNum;
         ai.AdTxtContent = Request.Form["AdTxtContent"];
         ai.AdTxtCss = Request.Form["AdTxtCss"];
         ai.AdTxtLink = Request.Form["AdTxtLink"];
@@ -165,9 +165,9 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
         ai.TimeOutDay = DateTime.Parse("3000-1-1");
         ai.maxClick = 0;
         ai.creatTime = DateTime.Now;
-        ai.SiteID = Foosun.Global.Current.SiteID;
+        ai.SiteID = Hg.Global.Current.SiteID;
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         int resutl = ac.adsAdd(ai);
         if (resutl == 1)
         {
@@ -189,7 +189,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
     protected int classAdprice(string classID)
     {
         int int_Adprice = 0;
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getClassAdprice(classID);
         if (dt != null)
         {
@@ -209,7 +209,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
     protected int userG()
     {
         int int_G = 0;
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getuserG();
         if (dt != null)
         {
@@ -227,7 +227,7 @@ public partial class user_info_applyads_add : Foosun.Web.UI.UserPage
 
     protected void DelUserG(int Gnum)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.DelUserG(Gnum);
     }
 }

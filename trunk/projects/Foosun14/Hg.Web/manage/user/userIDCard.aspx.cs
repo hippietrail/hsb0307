@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userIDCard : Foosun.Web.UI.ManagePage
+public partial class manage_user_userIDCard : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,7 @@ public partial class manage_user_userIDCard : Foosun.Web.UI.ManagePage
             
             copyright.InnerHtml = CopyRight;
         }
-        string uid = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string uid = Hg.Common.Input.Filter(Request.QueryString["id"]);
         int suid = 0;
         try
         {
@@ -107,7 +107,7 @@ public partial class manage_user_userIDCard : Foosun.Web.UI.ManagePage
             if (dt.Rows.Count > 0)
             {
 
-                idfiles = dt.Rows[0]["IDcardFiles"].ToString().Replace("{@userdirfile}", Foosun.Config.UIConfig.UserdirFile);
+                idfiles = dt.Rows[0]["IDcardFiles"].ToString().Replace("{@userdirfile}", Hg.Config.UIConfig.UserdirFile);
                 if (dt.Rows[0]["isIDcard"].ToString() == "1")
                 {
                     isCerts = "&nbsp;&nbsp;&nbsp;&nbsp;<a class=\"list_link\" href=\"userIDCard.aspx?Action=Lock&Id=" + dt.Rows[0]["id"] + "\" title=\"点击取消认证\" onclick=\"{if(confirm('确认取消认证吗？')){return true;}return false;}\">取消认证</a>";
@@ -124,16 +124,16 @@ public partial class manage_user_userIDCard : Foosun.Web.UI.ManagePage
         }
         string filsPath = "";
         string filshref = "";
-        if (Foosun.Config.UIConfig.dirDumm.Trim() != null && Foosun.Config.UIConfig.dirDumm.Trim() != "")
+        if (Hg.Config.UIConfig.dirDumm.Trim() != null && Hg.Config.UIConfig.dirDumm.Trim() != "")
         {
             if (idfiles == "" || idfiles == string.Empty || idfiles == null)
             {
-                filsPath = "/" + Foosun.Config.UIConfig.dirDumm + "/sysImages/folder/nofiles.gif";
+                filsPath = "/" + Hg.Config.UIConfig.dirDumm + "/sysImages/folder/nofiles.gif";
                 filshref += "无附件";
             }
             else
             {
-                filsPath = "/" + Foosun.Config.UIConfig.dirDumm + idfiles;
+                filsPath = "/" + Hg.Config.UIConfig.dirDumm + idfiles;
                 filshref += "<a class=\"list_link\" href=\"" + filsPath + "\" target=\"_blank\">查看附件</a>" + isCerts + "";
             }
         }

@@ -8,17 +8,17 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript">
 function Constrclass(sa)
     {
         switch(sa)
         {
-            case 0://▓╬╩¤╔ш╓├
+            case 0://я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
             document.getElementById("all").style.display="";
             document.getElementById("insert").style.display="none";
             break;
-            case 1://▓╬╩¤╔ш╓├
+            case 1://├▓я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
             document.getElementById("all").style.display="none";
             document.getElementById("insert").style.display="";
             break;
@@ -32,15 +32,15 @@ function Constrclass(sa)
           <td colspan="2" style="height: 1px"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >╒╦║┼╣▄└э</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">╬╗╓├╡╝║╜г║<a href="../main.aspx" target="sys_main" class="list_link">╩╫╥│</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">╬─╒┬╣▄└э</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />╒╦║┼╣▄└э</div>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >я┐╜я┐╜╦║┼╣я┐╜я┐╜</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">я┐╜╬╗я┐╜├╡я┐╜я┐╜я┐╜я┐╜я┐╜<a href="../main.aspx" target="sys_main" class="list_link">я┐╜я┐╜╥│</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">я┐╜я┐╜я┐╜┬╣я┐╜я┐╜</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />я┐╜я┐╜╦║┼╣я┐╜я┐╜</div>
           </td>
         </tr>
 </table>
       <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
         <tr>
           <td style="padding-left:14px;">
-          <a href="Constr.aspx" class="menulist">╖в▒э╬─╒┬</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >╦∙╙╨═╦╕х</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">╬─╒┬╣▄└э</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">╖╓└р╣▄└э</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">╒╦║┼╣▄└э</a>&nbsp; &nbsp;<a href="Constraccount_add.aspx" class="menulist">╠э╝╙╒╦║┼</a>
+          <a href="Constr.aspx" class="menulist">э╖вя┐╜я┐╜я┐╜я┐╜я┐╜</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╦╕</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">я┐╜я┐╜я┐╜я┐╜┬╣я┐╜я┐╜</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">я┐╜я┐╜╦║┼╣я┐╜я┐╜</a>&nbsp; &nbsp;<a href="Constraccount_add.aspx" class="menulist">я┐╜я┐╜я┐╜я┐╜я┐╜╦║</a>
           </td>
           <td align="right" style="padding-right:28px;"><span id="addcount" runat="server"></span></td>
         </tr>
@@ -50,11 +50,11 @@ function Constrclass(sa)
     <HeaderTemplate>
     <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
     <tr class="TR_BG">
-    <td class="sys_topBg" align="center" width="15%">┐к╗з├√</td>
-    <td class="sys_topBg" align="center" width="25%">┐к╗з╥°╨╨</td>
-    <td class="sys_topBg" align="center" width="25%">╥°╨╨╒╦║┼</td>
-    <td class="sys_topBg" align="center" width="15%">┐и║┼</td>
-    <td class="sys_topBg" align="center" width="20%">▓┘╫ў</td>
+    <td class="sys_topBg" align="center" width="15%">┼┐я┐╜я┐╜я┐╜я┐╜</td>
+    <td class="sys_topBg" align="center" width="25%">я┐╜я┐╜я┐╜я┐╜</td>
+    <td class="sys_topBg" align="center" width="25%">я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╦║</td>
+    <td class="sys_topBg" align="center" width="15%">┼┐я┐╜я┐╜</td>
+    <td class="sys_topBg" align="center" width="20%">┼▓я┐╜я┐╜</td>
     </tr>
     <div id="tnzlist" runat="server"></div>
     </HeaderTemplate>
@@ -86,7 +86,7 @@ function Constrclass(sa)
 <script language="javascript" type="text/javascript">
 function del(ID)
 {
-   if(confirm("─у╚╖╢и╥к╔╛│¤┬Ё?"))
+   if(confirm("я┐╜я┐╜я┐╜╚╖я┐╜я┐╜╥к╔╛я┐╜я┐╜я┐╜?"))
    { 
         self.location="?Type=del&ID="+ID;
    }

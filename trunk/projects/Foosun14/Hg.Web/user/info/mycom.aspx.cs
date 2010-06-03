@@ -18,17 +18,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_mycom : Foosun.Web.UI.UserPage
+public partial class user_info_mycom : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     Mycom my = new Mycom();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Init(object sernder, EventArgs e)
     {
         #region   初始化
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChange);
         Response.CacheControl = "no-cache";
         
@@ -84,7 +84,7 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null && Request.QueryString["ID"] != "")
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -113,9 +113,9 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
         {
             string getName = pd.getUserName(UserNum);
             UserNum = Request.QueryString["UserNum"].ToString();
-            if (getName != Foosun.Global.Current.UserName)
+            if (getName != Hg.Global.Current.UserName)
             {
-                UserNum = Foosun.Global.Current.UserName;
+                UserNum = Hg.Global.Current.UserName;
             }
             else
             {
@@ -124,9 +124,9 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
         }
         else
         {
-            UserNum = Foosun.Global.Current.UserName;
+            UserNum = Hg.Global.Current.UserName;
         }
-        string UserNums1 = Foosun.Global.Current.UserNum;
+        string UserNums1 = Hg.Global.Current.UserNum;
         DataTable dt4 = inf.sel_17(UserNums1);
         DataTable dt2 = inf.sel_18(dt4.Rows[0]["UserGroupNumber"].ToString());
         int DelSelfTitle = int.Parse(dt2.Rows[0]["DelSelfTitle"].ToString());
@@ -201,7 +201,7 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
                 del1="<a href=\"#\" onclick=\"javascript:del('" + h["Commid"].ToString() + "');\" class=\"list_link\">删除</a>┆<input name=\"Checkbox1\" type=\"checkbox\" value=" + h["Commid"].ToString() + "  runat=\"server\" />";
                 delEdit = "<a href=\"mycom_up.aspx?Commid=" + h["Commid"].ToString() + "\" class=\"list_link\">编辑</a>┆<a href=\"#\" onclick=\"javascript:del('" + h["Commid"].ToString() + "');\" class=\"list_link\">删除</a>┆<input name=\"Checkbox1\" type=\"checkbox\" value=" + h["Commid"].ToString() + "  runat=\"server\" />";
 
-                if ((h["UserNum"].ToString() == Foosun.Global.Current.UserName))
+                if ((h["UserNum"].ToString() == Hg.Global.Current.UserName))
                 {
                     if (EditSelfTitle == 1 && DelSelfTitle != 1)
                     {
@@ -241,7 +241,7 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
         }      
         else
         {
-            string UserNums = Foosun.Global.Current.UserNum;
+            string UserNums = Hg.Global.Current.UserNum;
             string sel_GroupNumberp = inf.sel_15(UserNums);
             DataTable dts1 = inf.sel_16(sel_GroupNumberp);
             int TopTitles = int.Parse(dts1.Rows[0]["TopTitle"].ToString());
@@ -292,7 +292,7 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
     #region  删除
     protected void PDel()
     {
-        DataTable dt3 = my.sel_4(my.sel_3(Foosun.Global.Current.UserNum).ToString());
+        DataTable dt3 = my.sel_4(my.sel_3(Hg.Global.Current.UserNum).ToString());
         string checkboxq = Request.Form["Checkbox1"];
         if (checkboxq == null || checkboxq == String.Empty)
         {
@@ -334,12 +334,12 @@ public partial class user_info_mycom : Foosun.Web.UI.UserPage
     #endregion
     string Show_scs()
     {
-        string scs = "<a href=\"mycom.aspx\" class=\"topnavichar\">全部评论</a>&nbsp;&nbsp;&nbsp;<a href=\"mycom.aspx?UserNum=" + Foosun.Global.Current.UserNum + "\" class=\"topnavichar\">我的评论</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:opencats()\" class=\"topnavichar\">搜　索</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:PDel();\" class=\"topnavichar\">批量删除</a>";
+        string scs = "<a href=\"mycom.aspx\" class=\"topnavichar\">全部评论</a>&nbsp;&nbsp;&nbsp;<a href=\"mycom.aspx?UserNum=" + Hg.Global.Current.UserNum + "\" class=\"topnavichar\">我的评论</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:opencats()\" class=\"topnavichar\">搜　索</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:PDel();\" class=\"topnavichar\">批量删除</a>";
         return scs;
     }
     string Show_sc()
     {
-        string sc = "<a href=\"mycom.aspx\" class=\"topnavichar\">全部评论</a>&nbsp;&nbsp;&nbsp;<a href=\"mycom.aspx?UserNum=" + Foosun.Global.Current.UserNum + "\" class=\"topnavichar\">我的评论</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:opencats()\" class=\"topnavichar\">搜　索</a>";
+        string sc = "<a href=\"mycom.aspx\" class=\"topnavichar\">全部评论</a>&nbsp;&nbsp;&nbsp;<a href=\"mycom.aspx?UserNum=" + Hg.Global.Current.UserNum + "\" class=\"topnavichar\">我的评论</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:opencats()\" class=\"topnavichar\">搜　索</a>";
         return sc;
     }
     /// <summary>

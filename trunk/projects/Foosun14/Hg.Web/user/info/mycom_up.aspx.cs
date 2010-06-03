@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class mycom_up : Foosun.Web.UI.UserPage
+public partial class mycom_up : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     sys sd = new sys();
@@ -28,7 +28,7 @@ public partial class mycom_up : Foosun.Web.UI.UserPage
     {
         
         Response.CacheControl = "no-cache";
-        string Commid = Foosun.Common.Input.Filter(Request.QueryString["Commid"]);
+        string Commid = Hg.Common.Input.Filter(Request.QueryString["Commid"]);
         DataTable dt = inf.sel_19(Commid);
         this.TitleBox.Text=dt.Rows[0]["Title"].ToString();
         this.ContentBox.Text=dt.Rows[0]["Content"].ToString();
@@ -37,19 +37,19 @@ public partial class mycom_up : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)//判断是否通过验证
         {
-            string Title=Foosun.Common.Input.Filter(Request.Form["TitleBox"]);
-            string Contents=Foosun.Common.Input.Filter(Request.Form["ContentBox"]);
+            string Title=Hg.Common.Input.Filter(Request.Form["TitleBox"]);
+            string Contents=Hg.Common.Input.Filter(Request.Form["ContentBox"]);
             if (Contents.Length > 200)
             {
                 PageError("评论内容最多200个字符。", "mycom.aspx");
             }
             DateTime CreatTime = DateTime.Now;
-            string Commid = Foosun.Common.Input.Filter(Request.QueryString["Commid"]);
+            string Commid = Hg.Common.Input.Filter(Request.QueryString["Commid"]);
             int islocks = 0;
             DataTable isl = sd.UserPram();
             if (isl != null && isl.Rows.Count > 0)
             {
-                if (Foosun.Common.Input.IsInteger(isl.Rows[0]["CommCheck"].ToString()))
+                if (Hg.Common.Input.IsInteger(isl.Rows[0]["CommCheck"].ToString()))
                 {
                     islocks = int.Parse(isl.Rows[0]["CommCheck"].ToString());
                 }

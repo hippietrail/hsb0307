@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
-public partial class user_Message_write : Foosun.Web.UI.UserPage
+public partial class user_Message_write : Hg.Web.UI.UserPage
 {
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     Message mes = new Message();
     #region  初始化
     protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
         {
             
             Response.CacheControl = "no-cache";
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             this.UserNameBox.Text = Request.QueryString["uid"];
             DataTable dts1 = mes.sel_9(UserNum);
             this.DropDownList1.DataSource = dts1;
@@ -94,8 +94,8 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
     //}
     protected void add()
     {
-        string UserNum = Foosun.Global.Current.UserNum;
-        string MfID = Foosun.Common.Rand.Number(12);//产生14位随机字符
+        string UserNum = Hg.Global.Current.UserNum;
+        string MfID = Hg.Common.Rand.Number(12);//产生14位随机字符
         //查找会员所属会员组
         string u_meGroupNumber1 = mes.sel_10(UserNum);
         //是否可以群发
@@ -111,11 +111,11 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
         }
         DateTime CreatTime = DateTime.Now;//邮件撰写时间
         DateTime Send_DateTime = DateTime.Now;//邮件发送时间
-        string Mid = Foosun.Common.Rand.Number(12,true);//产生12位随机字符
-        string Title = Foosun.Common.Input.Htmls(Request.Form["TitleBox"].ToString());
-        string Content = Foosun.Common.Input.Htmls(ContentBox.Value);
+        string Mid = Hg.Common.Rand.Number(12,true);//产生12位随机字符
+        string Title = Hg.Common.Input.Htmls(Request.Form["TitleBox"].ToString());
+        string Content = Hg.Common.Input.Htmls(ContentBox.Value);
         int LevelFlag = this.LevelFlagList.SelectedIndex;
-        string UserNumfile = Foosun.Global.Current.UserNum;
+        string UserNumfile = Hg.Global.Current.UserNum;
         int SortType = 0;
         if(this.CheckBox1.Checked){SortType = 1;}
         if (!Directory.Exists("~/" + Userfiles + "/" + UserNumfile + "/")){CreateFolder(UserNumfile);}
@@ -125,7 +125,7 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
         //{ 
         //    fileOK = true;
         //}
-        string fileName = Foosun.Common.Input.MD5(MfID) + MessFilesUpload.FileName;
+        string fileName = Hg.Common.Input.MD5(MfID) + MessFilesUpload.FileName;
         string FileUrl = "~/" + Userfiles + "/" + UserNumfile + "/" + fileName;
 
         int FileTF = 0;
@@ -141,12 +141,12 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
             string[] i = this.UserNameBox.Text.Split(',');
             for (int s = 0; s < i.Length; s++)
             {
-                string str_MID = Foosun.Common.Rand.Number(12, true);
+                string str_MID = Hg.Common.Rand.Number(12, true);
                 DataTable dts = mes.sel_15(i[s]);
                 int cuts = dts.Rows.Count;
                 if (cuts==0){continue;}
                 string Rec_UserNum = dts.Rows[0]["UserNum"].ToString();
-                Foosun.Model.message uc = new Foosun.Model.message();
+                Hg.Model.message uc = new Hg.Model.message();
                 uc.Mid = str_MID;
                 uc.UserNum = UserNum;
                 uc.Title = Title;
@@ -181,7 +181,7 @@ public partial class user_Message_write : Foosun.Web.UI.UserPage
             int cuts = dts.Rows.Count;
             if (cuts == 0){PageError("收件用户不存在。", "Message_box.aspx?Id=1");}
             string Rec_UserNum = dts.Rows[0]["UserNum"].ToString();
-            Foosun.Model.message uc = new Foosun.Model.message();
+            Hg.Model.message uc = new Hg.Model.message();
             uc.Mid = Mid;
             uc.UserNum = UserNum;
             uc.Title = Title;

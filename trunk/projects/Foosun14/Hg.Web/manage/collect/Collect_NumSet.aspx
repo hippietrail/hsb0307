@@ -56,7 +56,7 @@
             <tr class="TR_BG_list">
                 <td class="list_link" align="center" colspan="2">
                     <br/>欢迎使用Hg Inc. Collect System V1.0 For .Net<br/>
-	                如果涉及到版权问题与四川风讯科技发展有限公司无关<br/>
+	                如果涉及到版权问题与潍坊北大青鸟华光照排有限公司无关<br/>
 	                您同意非要使用吗？如果同意，请输入采集数量!<br/>
                 </td>
             </tr>

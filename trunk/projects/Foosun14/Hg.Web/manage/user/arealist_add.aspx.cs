@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-public partial class user_arealist_add : Foosun.Web.UI.ManagePage
+using Hg.CMS;
+using Hg.CMS.Common;
+public partial class user_arealist_add : Hg.Web.UI.ManagePage
 {
     public user_arealist_add()
     {
@@ -40,14 +40,14 @@ public partial class user_arealist_add : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             rootPublic rd = new rootPublic();
-            string cityName = Foosun.Common.Input.Filter(Request.Form["cityName"].ToString());
+            string cityName = Hg.Common.Input.Filter(Request.Form["cityName"].ToString());
             if (ali.sel_nameTF(cityName) == 1){PageError("此名称已经存在!", "arealist.aspx");}
             string OrderID = this.OrderID.Text;
-            if (!Foosun.Common.Input.IsInteger(OrderID))
+            if (!Hg.Common.Input.IsInteger(OrderID))
             {
                 PageError("排序号请用0-100的数字。数字越大，越靠前。", "arealist.aspx");
             }
-            string Cid = Foosun.Common.Rand.Number(12);
+            string Cid = Hg.Common.Rand.Number(12);
             DateTime creatTime=DateTime.Now;
             DataTable dt = ali.sel_2();
             int cutb = dt.Rows.Count;

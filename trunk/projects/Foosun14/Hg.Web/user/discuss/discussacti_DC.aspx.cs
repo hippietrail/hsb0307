@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussacti_DC : Foosun.Web.UI.UserPage
+public partial class user_discussacti_DC : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ public partial class user_discussacti_DC : Foosun.Web.UI.UserPage
         if(!this.IsPostBack)
         {
             
-            string Aid=Foosun.Common.Input.Filter(Request.QueryString["Aid"].ToString());
+            string Aid=Hg.Common.Input.Filter(Request.QueryString["Aid"].ToString());
             DataTable sle_Actives = dis.sel_15(Aid);
             Activesubject.Text = sle_Actives.Rows[0]["Activesubject"].ToString();
             ActivePlace.Text = sle_Actives.Rows[0]["ActivePlace"].ToString();

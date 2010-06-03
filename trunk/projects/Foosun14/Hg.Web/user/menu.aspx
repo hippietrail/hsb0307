@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %></title>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %></title>
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Public.js"></script>
 </head>
 <body>

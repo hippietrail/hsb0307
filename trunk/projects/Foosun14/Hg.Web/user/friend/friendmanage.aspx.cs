@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_friend_friendmanage : Foosun.Web.UI.UserPage
+public partial class user_friend_friendmanage : Hg.Web.UI.UserPage
 {
     Friend fri = new Friend();
     protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ public partial class user_friend_friendmanage : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -58,8 +58,8 @@ public partial class user_friend_friendmanage : Foosun.Web.UI.UserPage
     protected void Showu_friendmanage(int PageIndex)
     {
         int i, j;
-        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, sts);
+        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, sts);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

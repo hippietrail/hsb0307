@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class usermycom_up : Foosun.Web.UI.ManagePage
+public partial class usermycom_up : Hg.Web.UI.ManagePage
 {
     public usermycom_up()
     {
@@ -31,7 +31,7 @@ public partial class usermycom_up : Foosun.Web.UI.ManagePage
     {
         
         Response.CacheControl = "no-cache";
-        string Commid = Foosun.Common.Input.Filter(Request.QueryString["Commid"]);
+        string Commid = Hg.Common.Input.Filter(Request.QueryString["Commid"]);
         DataTable dt = myc.sel(Commid);
         this.TitleBox.Text=dt.Rows[0]["Title"].ToString();
         this.ContentBox.Text=dt.Rows[0]["Content"].ToString();
@@ -41,13 +41,13 @@ public partial class usermycom_up : Foosun.Web.UI.ManagePage
         if (Page.IsValid)//判断是否通过验证
         {
             string Title = string.Empty;//Request.Form["TitleBox"];
-            string Contents=Foosun.Common.Input.Filter(Request.Form["ContentBox"]);
+            string Contents=Hg.Common.Input.Filter(Request.Form["ContentBox"]);
             if (Contents.Length > 200)
             {
                 PageError("内容最多200个字符", "javascript:history()");
             }
             DateTime CreatTime = DateTime.Now;
-            string Commid = Foosun.Common.Input.Filter(Request.QueryString["Commid"]);
+            string Commid = Hg.Common.Input.Filter(Request.QueryString["Commid"]);
             if (myc.Update(Title, Contents, CreatTime, Commid) == 0)
             {
                 PageError("修改错误", "usermycom.aspx");

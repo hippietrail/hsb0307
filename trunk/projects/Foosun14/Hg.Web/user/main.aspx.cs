@@ -18,12 +18,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 using System.Xml;
 
-public partial class user_main : Foosun.Web.UI.UserPage
+public partial class user_main : Hg.Web.UI.UserPage
 {
     rootPublic pd = new rootPublic();
     UserMisc rd = new UserMisc();
@@ -33,7 +33,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            welcome.InnerHtml = "欢迎您：<strong>" + pd.getUserName(Foosun.Global.Current.UserNum) + "</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"showuser-" + Foosun.Global.Current.UserName + ".aspx\" target=\"_blank\"><font color=\"red\">浏览我的资料</font></a>&nbsp;&nbsp;&nbsp;" + getDate() + "";
+            welcome.InnerHtml = "欢迎您：<strong>" + pd.getUserName(Hg.Global.Current.UserNum) + "</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"showuser-" + Hg.Global.Current.UserName + ".aspx\" target=\"_blank\"><font color=\"red\">浏览我的资料</font></a>&nbsp;&nbsp;&nbsp;" + getDate() + "";
             copyright.InnerHtml = CopyRight;
             Todaydate.InnerHtml = mytodays();
             ContentList.InnerHtml = getContentlist();
@@ -51,7 +51,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
     {
         user rot = new user();
         string flg = "";
-        DataTable dt = rot.getContent(Foosun.Global.Current.UserNum);
+        DataTable dt = rot.getContent(Hg.Global.Current.UserNum);
         if (dt != null && dt.Rows.Count > 0)
         {
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -69,7 +69,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
                 string picFlg = "";
                 if (dt.Rows[i]["PicURL"].ToString().Length > 3){ picFlg = "<font color=\"red\">[图]</font>";}
                 else { picFlg = ""; }
-                flg += sCheck + "&nbsp;<a href=\"show/showcontent.aspx?ConID=" + dt.Rows[i]["ConID"].ToString() + "&uid=" + pd.getUserName(Foosun.Global.Current.UserNum) + "&ClassID=" + dt.Rows[i]["ClassID"].ToString() + "\" title=\"" + Foosun.Common.Input.HtmlEncode(dt.Rows[i]["Content"].ToString()) + "\" class=\"list_link\">" + dt.Rows[i]["Title"].ToString() + "</a>" + picFlg + "&nbsp;<span style=\"font-size:11.5px\">(" + DateTime.Parse(dt.Rows[i]["creatTime"].ToString()).ToShortDateString() + ")</span><br />\r";  
+                flg += sCheck + "&nbsp;<a href=\"show/showcontent.aspx?ConID=" + dt.Rows[i]["ConID"].ToString() + "&uid=" + pd.getUserName(Hg.Global.Current.UserNum) + "&ClassID=" + dt.Rows[i]["ClassID"].ToString() + "\" title=\"" + Hg.Common.Input.HtmlEncode(dt.Rows[i]["Content"].ToString()) + "\" class=\"list_link\">" + dt.Rows[i]["Title"].ToString() + "</a>" + picFlg + "&nbsp;<span style=\"font-size:11.5px\">(" + DateTime.Parse(dt.Rows[i]["creatTime"].ToString()).ToShortDateString() + ")</span><br />\r";  
             }
             dt.Clear(); dt.Dispose();
         }
@@ -84,12 +84,12 @@ public partial class user_main : Foosun.Web.UI.UserPage
     {
         user rot = new user();
         string flg = "";
-        DataTable dt = rot.getGroup(Foosun.Global.Current.UserName);
+        DataTable dt = rot.getGroup(Hg.Global.Current.UserName);
         if (dt != null && dt.Rows.Count > 0)
         {
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                flg += "    <li><a href=\"discuss/discussTopi_list.aspx?DisID=" + dt.Rows[i]["DisID"].ToString() + "\" title=\"" + Foosun.Common.Input.HtmlEncode(dt.Rows[i]["D_Content"].ToString()) + "\" class=\"list_link\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;<span style=\"font-size:11.5px\">(" + dt.Rows[i]["Creatime"].ToString() + ")</span></li>\r";
+                flg += "    <li><a href=\"discuss/discussTopi_list.aspx?DisID=" + dt.Rows[i]["DisID"].ToString() + "\" title=\"" + Hg.Common.Input.HtmlEncode(dt.Rows[i]["D_Content"].ToString()) + "\" class=\"list_link\">" + dt.Rows[i]["Cname"].ToString() + "</a>&nbsp;<span style=\"font-size:11.5px\">(" + dt.Rows[i]["Creatime"].ToString() + ")</span></li>\r";
             }
             dt.Clear(); dt.Dispose();
         }
@@ -104,7 +104,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
     {
         Friend rds = new Friend();
         string flg = "";
-        DataTable dt = rds.getFriendList(Foosun.Global.Current.UserNum);
+        DataTable dt = rds.getFriendList(Hg.Global.Current.UserNum);
         if (dt != null && dt.Rows.Count > 0)
         {
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -124,10 +124,10 @@ public partial class user_main : Foosun.Web.UI.UserPage
     {
         string getDateStr = "";
         user rot = new user();
-        int Rtime = rot.sel_Rtime(rot.sel_UserGroupNumber(Foosun.Global.Current.UserNum));
+        int Rtime = rot.sel_Rtime(rot.sel_UserGroupNumber(Hg.Global.Current.UserNum));
         if (Rtime != 0)
         {
-            DateTime RegTime = DateTime.Parse(rot.getRegTime(Foosun.Global.Current.UserNum));
+            DateTime RegTime = DateTime.Parse(rot.getRegTime(Hg.Global.Current.UserNum));
             DateTime dateNow = DateTime.Now;
             TimeSpan ts = dateNow - RegTime;
             int days = Rtime-((int)ts.TotalDays);
@@ -145,7 +145,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
     protected string mytodays()
     {
         string listDay = "";
-        DataTable dt = rd.calendar(Foosun.Global.Current.UserNum);
+        DataTable dt = rd.calendar(Hg.Global.Current.UserNum);
         if (dt != null)
         {
             if (dt.Rows.Count > 0)
@@ -171,21 +171,21 @@ public partial class user_main : Foosun.Web.UI.UserPage
     protected string messageChar()
     {
         string liststr = "";
-        DataTable dt = rd.messageChar(Foosun.Global.Current.UserNum);
+        DataTable dt = rd.messageChar(Hg.Global.Current.UserNum);
         if (dt != null)
         {
             if (dt.Rows.Count > 0)
             {
-                liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"_self\">[新短消息(" + dt.Rows.Count + ")]</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />";
+                liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"_self\">[新短消息(" + dt.Rows.Count + ")]</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />";
             }
             else
             {
-                liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"list_link\" target=\"_self\">[短消息(0)]</a>";
+                liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"list_link\" target=\"_self\">[短消息(0)]</a>";
             }
         }
         else
         {
-            liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"list_link\" target=\"_self\">[短消息(0)]</a>";
+            liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"list_link\" target=\"_self\">[短消息(0)]</a>";
         }
         return liststr;
     }
@@ -218,7 +218,7 @@ public partial class user_main : Foosun.Web.UI.UserPage
     //    string _Str = "";
     //    try
     //    {
-    //        string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+    //        string _dirdumm = Hg.Config.UIConfig.dirDumm;
     //        if (_dirdumm.Trim() != "")
     //        { _dirdumm = "/" + _dirdumm; }
     //        if (!File.Exists(Server.MapPath(_dirdumm + "/xml/products/weather.xml"))) { PageError("找不到配置文件(/xml/products/weather.xml).<li>请与系统管理员联系。</li>", ""); }

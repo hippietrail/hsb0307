@@ -18,15 +18,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class user_add_discussManage : Foosun.Web.UI.UserPage
+public partial class user_add_discussManage : Hg.Web.UI.UserPage
 {
     //连接数据库
     Discuss dis = new Discuss();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     /// <summary>
     /// 初始化
     /// </summary>
@@ -41,7 +41,7 @@ public partial class user_add_discussManage : Foosun.Web.UI.UserPage
             Response.CacheControl = "no-cache";
             
 
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             //DataTable dt6 = dis.sel_51(UserNum);
             string UserGroupNumber = pd.getUserGroupNumber(UserNum);
             DataTable dt7 = dis.sel_52(UserGroupNumber);
@@ -91,7 +91,7 @@ public partial class user_add_discussManage : Foosun.Web.UI.UserPage
         if (Page.IsValid)
         {
             DateTime Creatime = DateTime.Now;//获取当前系统时间
-            string DisID = Foosun.Common.Rand.Number(12);
+            string DisID = Hg.Common.Rand.Number(12);
 
             string Cname = Request.Form["CnameBox"].ToString();
             //判断重复
@@ -146,7 +146,7 @@ public partial class user_add_discussManage : Foosun.Web.UI.UserPage
             string classid2 = this.ClassIDList2.SelectedValue.ToString();
             string ClassID = classid1 + "|" + classid2;
             //查询会员属于那个会员组
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             string UserGroupNumber = pd.getUserGroupNumber(UserNum);
             string UserName = pd.getUserName(UserNum);
             //查询允许最大建立数量
@@ -188,7 +188,7 @@ public partial class user_add_discussManage : Foosun.Web.UI.UserPage
             int cPoint2 = cPoint + cPoint1;
             int aPoint2 = aPoint + aPoint1;            
             //创建讨论组  
-            Foosun.Model.STDiscuss stcn;
+            Hg.Model.STDiscuss stcn;
             stcn.DisID = DisID;
             stcn.Cname = Cname;
             stcn.Authority = Authority;

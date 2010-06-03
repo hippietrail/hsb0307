@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_friend_add : Foosun.Web.UI.UserPage
+public partial class user_friend_add : Hg.Web.UI.UserPage
 {
     Friend fri = new Friend();
     protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ public partial class user_friend_add : Foosun.Web.UI.UserPage
         {
             
             Response.CacheControl = "no-cache";
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             this.usernameBox.Text = Request.QueryString["uid"];
             DataTable Q_dfriend = fri.sel_1(UserNum);
             this.friendmanageList.DataTextField = "FriendName";
@@ -57,13 +57,13 @@ public partial class user_friend_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
 
             //查询自己的用户名
             string qUserName = fri.sel_2(UserNum);
 
             //获取请求信息
-            string Contentx = Foosun.Common.Input.Filter(Request.Form["AddfriendContent"]);
+            string Contentx = Hg.Common.Input.Filter(Request.Form["AddfriendContent"]);
 
             //好友分类编号
             string Hail_Fellow = this.friendmanageList.SelectedValue;
@@ -72,7 +72,7 @@ public partial class user_friend_add : Foosun.Web.UI.UserPage
             DateTime CreatTime = DateTime.Now;
 
             //获取被添加的好友用户名
-            string bUserName = Foosun.Common.Input.Filter(Request.Form["usernameBox"].ToString());
+            string bUserName = Hg.Common.Input.Filter(Request.Form["usernameBox"].ToString());
             if (bUserName == qUserName)
             {
                 PageError("对不起自己不能添加自己为好友", "friendList.aspx");
@@ -92,12 +92,12 @@ public partial class user_friend_add : Foosun.Web.UI.UserPage
                     int Addfriendbs = int.Parse(dt.Rows[0]["Addfriendbs"].ToString());
                     string bdUserName = dt.Rows[0]["UserNum"].ToString();
 
-                    Foosun.Model.STRequestinformation Req;
+                    Hg.Model.STRequestinformation Req;
                     Req.qUsername = qUserName;
                     Req.bUsername = bUserName;
                     Req.Content = Contentx;
 
-                    Foosun.Model.STFriend Fri;
+                    Hg.Model.STFriend Fri;
                     Fri.UserName = bUserName;
                     Fri.bUserNum = bdUserName;
                     Fri.HailFellow = Hail_Fellow;

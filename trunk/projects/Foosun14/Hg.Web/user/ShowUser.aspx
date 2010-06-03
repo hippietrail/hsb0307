@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>_查看用户资料</title>
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>_查看用户资料</title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Public.js"></script>
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Prototype.js"></script>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/divcss.css" rel="stylesheet" type="text/css" />
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/divcss.css" rel="stylesheet" type="text/css" />
 </head>
 <body scrolling="no">
 <form id="form1" runat = "Server">

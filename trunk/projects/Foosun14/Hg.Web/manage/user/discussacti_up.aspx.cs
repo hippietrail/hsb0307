@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_discussacti_up : Foosun.Web.UI.ManagePage
+public partial class manage_discussacti_up : Hg.Web.UI.ManagePage
 {
     //连接数据库
     Discuss dis = new Discuss();
@@ -31,7 +31,7 @@ public partial class manage_discussacti_up : Foosun.Web.UI.ManagePage
             string AId = "";
             if (Request.QueryString["AId"] != "" && Request.QueryString["AId"] != null)
             {
-                AId = Foosun.Common.Input.Filter(Request.QueryString["AId"].ToString());
+                AId = Hg.Common.Input.Filter(Request.QueryString["AId"].ToString());
             }
             else 
             {
@@ -66,14 +66,14 @@ public partial class manage_discussacti_up : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid)//判断是否通过验证
         {
-            string AIds = Foosun.Common.Input.Filter(Request.QueryString["AId"].ToString());
-            string Activesubject = Foosun.Common.Input.Filter(Request.Form["ActivesubjectBox"].ToString());
-            string ActivePlace = Foosun.Common.Input.Filter(Request.Form["ActivePlaceBox"].ToString());
-            int Anum = int.Parse(Foosun.Common.Input.Filter(Request.Form["AnumBox"].ToString()));
-            string ActivePlan = Foosun.Common.Input.Filter(Request.Form["ActivePlanBox"].ToString());
-            string Contactmethod = Foosun.Common.Input.Filter(Request.Form["ContactmethodBox"].ToString());
-            DateTime Cutofftime = DateTime.Parse(Foosun.Common.Input.Filter(Request.Form["CutofftimeBox"].ToString()));
-            string ActiveExpense = Foosun.Common.Input.Filter(Request.Form["ActiveExpenseBox"].ToString());
+            string AIds = Hg.Common.Input.Filter(Request.QueryString["AId"].ToString());
+            string Activesubject = Hg.Common.Input.Filter(Request.Form["ActivesubjectBox"].ToString());
+            string ActivePlace = Hg.Common.Input.Filter(Request.Form["ActivePlaceBox"].ToString());
+            int Anum = int.Parse(Hg.Common.Input.Filter(Request.Form["AnumBox"].ToString()));
+            string ActivePlan = Hg.Common.Input.Filter(Request.Form["ActivePlanBox"].ToString());
+            string Contactmethod = Hg.Common.Input.Filter(Request.Form["ContactmethodBox"].ToString());
+            DateTime Cutofftime = DateTime.Parse(Hg.Common.Input.Filter(Request.Form["CutofftimeBox"].ToString()));
+            string ActiveExpense = Hg.Common.Input.Filter(Request.Form["ActiveExpenseBox"].ToString());
             int ALabel = this.ALabelList.SelectedIndex;
             DateTime CreaTime = DateTime.Now;//获取当前系统时间
             if (dis.Update_2(Activesubject, ActivePlace, ActiveExpense, Anum, ActivePlan, Contactmethod, Cutofftime, CreaTime, ALabel, AIds) != 0)

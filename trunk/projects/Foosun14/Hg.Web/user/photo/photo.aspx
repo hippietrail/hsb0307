@@ -8,11 +8,11 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../configuration/js/jquery-compressed.js"></script>
 <script type="text/javascript" src="../../configuration/js/thickbox_zh.js"></script>
 <!--可以自定义样式-->
-<link rel="stylesheet" href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/thickbox.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/thickbox.css" type="text/css" media="screen" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">

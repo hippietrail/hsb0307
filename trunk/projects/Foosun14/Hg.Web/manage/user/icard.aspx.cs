@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_icard : Foosun.Web.UI.ManagePage
+public partial class manage_user_icard : Hg.Web.UI.ManagePage
 {
     public manage_user_icard()
     {
@@ -42,7 +42,7 @@ public partial class manage_user_icard : Foosun.Web.UI.ManagePage
             #endregion 获得频道列表结束
             if (Request.QueryString["Type"] == "Del")
             {
-                dels(Foosun.Common.Input.Filter(Request.QueryString["id"]));
+                dels(Hg.Common.Input.Filter(Request.QueryString["id"]));
             }
             #region 获得状态参数
             string islock = Request.QueryString["islock"];
@@ -310,10 +310,10 @@ public partial class manage_user_icard : Foosun.Web.UI.ManagePage
                 {
                     if (dt.Rows[k]["UserNum"].ToString().Trim() != "")
                     {
-                        Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
-                        dt.Rows[k]["UserNums"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"此点卡已经被" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "使用或者购买\"><font color=\"red\">[*]</font></a>";
+                        Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
+                        dt.Rows[k]["UserNums"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"此点卡已经被" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "使用或者购买\"><font color=\"red\">[*]</font></a>";
                     }
-                    dt.Rows[k]["op"] = "<a href=\"iCardEdit.aspx?Id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"iCard.aspx?Type=Del&id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除' onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"></a><input type=\"checkbox\" name=\"cid\" value=\"" + dt.Rows[k]["id"] + "\" />";
+                    dt.Rows[k]["op"] = "<a href=\"iCardEdit.aspx?Id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"iCard.aspx?Type=Del&id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除' onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"></a><input type=\"checkbox\" name=\"cid\" value=\"" + dt.Rows[k]["id"] + "\" />";
                     string Pstr = dt.Rows[k]["CardPassWord"].ToString();
                     dt.Rows[k]["CardPassWords"] = FSSecurity.FDESEncrypt(Pstr, 0);
                     if (dt.Rows[k]["islock"].ToString() == "1")

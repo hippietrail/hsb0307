@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_info_userinfo_safe : Foosun.Web.UI.UserPage
+public partial class user_info_userinfo_safe : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -23,7 +23,7 @@ public partial class user_info_userinfo_safe : Foosun.Web.UI.UserPage
         {
             
             copyright.InnerHtml = CopyRight;
-            DataTable dt = rd.getPassWord(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+            DataTable dt = rd.getPassWord(pd.getUserName_uid(Hg.Global.Current.UserNum));
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
@@ -58,9 +58,9 @@ public partial class user_info_userinfo_safe : Foosun.Web.UI.UserPage
                     {
 
                         //同步更新用户信息
-                        Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+                        Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
                         request.PassWord = newpassword;
-                        request.UserName = Foosun.Global.Current.UserName;
+                        request.UserName = Hg.Global.Current.UserName;
                         request.ProcessMultiPing("update");
 
                         if (request.FoundErr)
@@ -69,7 +69,7 @@ public partial class user_info_userinfo_safe : Foosun.Web.UI.UserPage
                         }
 
 
-                        rd.UpdateUserSafe(pd.getUserName_uid(Foosun.Global.Current.UserNum), PassQuestion, PassKey, newpassword);
+                        rd.UpdateUserSafe(pd.getUserName_uid(Hg.Global.Current.UserNum), PassQuestion, PassKey, newpassword);
                         PageRight("安全资料成功！", "userinfo_safe.aspx");
                     }
                 }

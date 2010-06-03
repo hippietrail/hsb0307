@@ -5,9 +5,9 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
     <title>
-        <%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>
+        <%Response.Write(Hg.Config.UIConfig.HeadTitle); %>
     </title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css"
         rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>		
     <script language="javascript">			

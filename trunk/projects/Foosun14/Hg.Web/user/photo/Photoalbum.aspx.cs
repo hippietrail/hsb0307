@@ -18,18 +18,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class user_Photoalbum : Foosun.Web.UI.UserPage
+public partial class user_Photoalbum : Hg.Web.UI.UserPage
 {
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     Photo pho = new Photo();
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";
         
-        DataTable dts = pho.sel_7(Foosun.Global.Current.UserNum);
+        DataTable dts = pho.sel_7(Hg.Global.Current.UserNum);
         this.Photoalbum.DataSource = dts;
         this.Photoalbum.DataTextField = "ClassName";
         this.Photoalbum.DataValueField = "ClassID";
@@ -40,7 +40,7 @@ public partial class user_Photoalbum : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             int isDisPhotoalbum = 0;
             string DisID = "";
 
@@ -49,14 +49,14 @@ public partial class user_Photoalbum : Foosun.Web.UI.UserPage
             string pwds = Request.Form["pwd"].ToString();
             if (pwds != "")
             {
-                pwd = Foosun.Common.Input.MD5(Request.Form["pwd"].ToString(), true);
+                pwd = Hg.Common.Input.MD5(Request.Form["pwd"].ToString(), true);
             }
             string ClassID = this.Photoalbum.SelectedValue.ToString();
             string Jurisdiction1 = "";
             string Jurisdiction2 = "";
             string PhotoalbumJurisdiction = "";
 
-            string UserNumfiles = Foosun.Global.Current.UserNum;
+            string UserNumfiles = Hg.Global.Current.UserNum;
             string PhotoalbumUrl = "~/" + Userfiles + "/" + UserNumfiles + "/" + PhotoalbumName;
             if (this.Radio1.Checked)
             {
@@ -70,7 +70,7 @@ public partial class user_Photoalbum : Foosun.Web.UI.UserPage
                 Jurisdiction2 = "0";
                 PhotoalbumJurisdiction = Jurisdiction1 + "|" + Jurisdiction2;
             }
-            Foosun.Model.STPhotoalbum Pb = new Foosun.Model.STPhotoalbum();
+            Hg.Model.STPhotoalbum Pb = new Hg.Model.STPhotoalbum();
             Pb.ClassID = ClassID;
             Pb.DisID = DisID;
             Pb.isDisPhotoalbum = isDisPhotoalbum;
@@ -108,7 +108,7 @@ public partial class user_Photoalbum : Foosun.Web.UI.UserPage
     }
     public void CreateFolder(string FolderPathName)
     {
-        string UserNumfile = Foosun.Global.Current.UserNum;
+        string UserNumfile = Hg.Global.Current.UserNum;
         if (FolderPathName.Trim().Length > 0)
         {
             try

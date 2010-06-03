@@ -18,24 +18,24 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class user_Photoalbum_up : Foosun.Web.UI.UserPage
+public partial class user_Photoalbum_up : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";
         
-        DataTable dts = pho.sel_7(Foosun.Global.Current.UserNum);
+        DataTable dts = pho.sel_7(Hg.Global.Current.UserNum);
         this.Photoalbum.DataSource = dts;
         this.Photoalbum.DataTextField = "ClassName";
         this.Photoalbum.DataValueField = "ClassID";
         this.Photoalbum.DataBind();
 
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
         
         DataTable dt_sel = pho.sel_8(PhotoalbumID);
         PhotoalbumName.Text=dt_sel.Rows[0]["PhotoalbumName"].ToString();
@@ -76,8 +76,8 @@ public partial class user_Photoalbum_up : Foosun.Web.UI.UserPage
         if (Page.IsValid)
         {
         DateTime Creatime = DateTime.Now;
-        string PhotoalbumIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
-        string PhotoalbumName = Foosun.Common.Input.Filter(Request.Form["PhotoalbumName"].ToString());
+        string PhotoalbumIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string PhotoalbumName = Hg.Common.Input.Filter(Request.Form["PhotoalbumName"].ToString());
 
         string ClassID = this.Photoalbum.SelectedValue.ToString();
         string Jurisdiction1="";
@@ -136,12 +136,12 @@ public partial class user_Photoalbum_up : Foosun.Web.UI.UserPage
         }
         string oldpwds = "";
         string newpwds = "";
-        string PhotoalbumIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string PhotoalbumIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
         if (Request.Form["oldpwd"].ToString() != "")
         {
-            oldpwds = Foosun.Common.Input.MD5(Foosun.Common.Input.Filter(Request.Form["oldpwd"].ToString()), true);
+            oldpwds = Hg.Common.Input.MD5(Hg.Common.Input.Filter(Request.Form["oldpwd"].ToString()), true);
         }
-        newpwds = Foosun.Common.Input.MD5(Foosun.Common.Input.Filter(Request.Form["newpwd"].ToString()), true);      
+        newpwds = Hg.Common.Input.MD5(Hg.Common.Input.Filter(Request.Form["newpwd"].ToString()), true);      
         if (oldpwds != pho.sel_10())
         {
             if (pho.Update_2(newpwds, PhotoalbumIDs) != 0)
@@ -174,11 +174,11 @@ public partial class user_Photoalbum_up : Foosun.Web.UI.UserPage
             PageError("两次密码不一致", "Photoalbumlist.aspx");
         }
 
-        string PhotoalbumIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
+        string PhotoalbumIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"].ToString());
         string newpwds = "";
         if (Request.Form["pwd"].ToString() != "")
         {
-            newpwds = Foosun.Common.Input.MD5(Foosun.Common.Input.Filter(Request.Form["pwd"].ToString()), true);
+            newpwds = Hg.Common.Input.MD5(Hg.Common.Input.Filter(Request.Form["pwd"].ToString()), true);
         }
         if (pho.Update_2(newpwds, PhotoalbumIDs) != 0)
         {

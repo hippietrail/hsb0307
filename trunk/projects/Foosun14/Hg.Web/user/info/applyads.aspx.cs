@@ -11,9 +11,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class user_info_applyads : Foosun.Web.UI.UserPage
+public partial class user_info_applyads : Hg.Web.UI.UserPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -41,8 +41,8 @@ public partial class user_info_applyads : Foosun.Web.UI.UserPage
     protected void StartLoad(int PageIndex)
     {
         int i, j;
-        SQLConditionInfo st = new SQLConditionInfo("@CusID", Foosun.Global.Current.UserNum);
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
+        SQLConditionInfo st = new SQLConditionInfo("@CusID", Hg.Global.Current.UserNum);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
 
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;

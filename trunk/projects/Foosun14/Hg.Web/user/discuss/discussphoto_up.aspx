@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <div id="sc" runat="server"></div>
@@ -92,7 +92,7 @@ new Form.Element.Observer($('pic_p_1url'),1,pics_1);
 			}
 			else
 			{
-			    $('pic_p_1').src="<% Response.Write(Foosun.Publish.CommonData.getUrl()); %>"+$('pic_p_1url').value.replace('{@UserdirFile}','<% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>')
+			    $('pic_p_1').src="<% Response.Write(Hg.Publish.CommonData.getUrl()); %>"+$('pic_p_1url').value.replace('{@UserdirFile}','<% Response.Write(Hg.Config.UIConfig.UserdirFile); %>')
 			}
 		} 
 function dels_1()

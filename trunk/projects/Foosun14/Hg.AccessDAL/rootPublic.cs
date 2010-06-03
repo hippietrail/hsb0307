@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -277,7 +277,7 @@ namespace Hg.AccessDAL
         /// <returns></returns>
         public string getgPointName()
         {
-            string gflg = "风讯币";
+            string gflg = "风币";
             string Sql = "Select GpointName From " + Pre + "sys_PramUser";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
@@ -296,7 +296,7 @@ namespace Hg.AccessDAL
         /// </summary>
         public string siteName()
         {
-            string gflg = "风讯网站内容管理系统";
+            string gflg = "华光网站内容管理系统";
             string Sql = "Select SiteName From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)
@@ -316,7 +316,7 @@ namespace Hg.AccessDAL
         /// <returns></returns>
         public string siteCopyRight()
         {
-			string gflg = "(c)2007 Hg Inc. by dotNETCMS 1.0 Build 100331";
+			string gflg = "(c)2007 Hg Inc. by WebFastCMS 1.0 Build 100331";
             string Sql = "Select CopyRight From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)

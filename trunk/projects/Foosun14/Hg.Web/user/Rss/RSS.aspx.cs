@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_RSS : Foosun.Web.UI.BasePage
+public partial class user_RSS : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

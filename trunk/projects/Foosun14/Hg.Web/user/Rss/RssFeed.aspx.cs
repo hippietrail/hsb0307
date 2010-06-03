@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_Rss_RssFeed : Foosun.Web.UI.BasePage
+public partial class user_Rss_RssFeed : Hg.Web.UI.BasePage
 {
     Rss rs = new Rss();
     protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ public partial class user_Rss_RssFeed : Foosun.Web.UI.BasePage
         if (!IsPostBack)
         {
            Showu_friendmanage(1);
-           string Str_dirMana = Foosun.Config.UIConfig.dirDumm;//虚拟目录
+           string Str_dirMana = Hg.Config.UIConfig.dirDumm;//虚拟目录
 
            if (Str_dirMana != "" && Str_dirMana != null && Str_dirMana != string.Empty)//判断虚拟路径是否为空
            {
@@ -52,7 +52,7 @@ public partial class user_Rss_RssFeed : Foosun.Web.UI.BasePage
     }
     protected void Showu_friendmanage(int PageIndex)
     {
-        string Str_dirMana = Foosun.Config.UIConfig.dirDumm;//虚拟目录
+        string Str_dirMana = Hg.Config.UIConfig.dirDumm;//虚拟目录
         
         if (Str_dirMana != "" && Str_dirMana != null && Str_dirMana != string.Empty)//判断虚拟路径是否为空
         {
@@ -78,14 +78,14 @@ public partial class user_Rss_RssFeed : Foosun.Web.UI.BasePage
         if (ParentID == "0" || ParentID == null)
         {
             SQLConditionInfo st1 = new SQLConditionInfo("@SiteID", SiteID);
-            dts = Foosun.CMS.Pagination.GetPage("user_Rss_RssFeed_1_aspx", PageIndex, 20, out i, out j, st1);
+            dts = Hg.CMS.Pagination.GetPage("user_Rss_RssFeed_1_aspx", PageIndex, 20, out i, out j, st1);
         }
         else 
         {
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@ParentID", ParentID.ToString());
             st[1] = new SQLConditionInfo("@SiteID", SiteID);
-            dts = Foosun.CMS.Pagination.GetPage("user_Rss_RssFeed_2_aspx", PageIndex, 20, out i, out j, st);
+            dts = Hg.CMS.Pagination.GetPage("user_Rss_RssFeed_2_aspx", PageIndex, 20, out i, out j, st);
         }
 
         this.PageNavigator1.PageCount = j;

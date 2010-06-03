@@ -18,12 +18,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussTopi_add : Foosun.Web.UI.UserPage
+public partial class user_discussTopi_add : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["timetoadd"] != null)
@@ -41,7 +41,7 @@ public partial class user_discussTopi_add : Foosun.Web.UI.UserPage
         {
             Response.CacheControl = "no-cache";
             
-            string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
             DataTable dt_usd = dis.sel_29(DisIDs);
             int cut_um = dt_usd.Rows.Count;
              int tu=0;
@@ -50,7 +50,7 @@ public partial class user_discussTopi_add : Foosun.Web.UI.UserPage
                  //<--修改者：吴静岚 时间：2008-06-23 
                  for (int i = 0; i < cut_um; i++)
                  {
-                     if (dt_usd.Rows[i]["UserNum"].ToString() == Foosun.Global.Current.UserNum)
+                     if (dt_usd.Rows[i]["UserNum"].ToString() == Hg.Global.Current.UserNum)
                      {
                          tu = 1;
                          break;
@@ -60,7 +60,7 @@ public partial class user_discussTopi_add : Foosun.Web.UI.UserPage
             }
             string[] Authority = dis.sel_34(DisIDs).Split('|');
             int Authority1 = int.Parse(Authority[1].ToString());
-            if (dis.sel_30(DisIDs) != pd.getUserName(Foosun.Global.Current.UserNum))
+            if (dis.sel_30(DisIDs) != pd.getUserName(Hg.Global.Current.UserNum))
             {
                 if (Authority1 == 0)
                 {
@@ -81,15 +81,15 @@ public partial class user_discussTopi_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-            string Title = Foosun.Common.Input.Htmls(Request.Form["Title"].ToString());
+            string UserNum = Hg.Global.Current.UserNum;
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string Title = Hg.Common.Input.Htmls(Request.Form["Title"].ToString());
             DateTime creatTime = DateTime.Now;//获取当前系统时间
-            string DtID = Foosun.Common.Rand.Number(12);
+            string DtID = Hg.Common.Rand.Number(12);
 
-            string Content = Foosun.Common.Input.Htmls(ContentBox.Value);
+            string Content = Hg.Common.Input.Htmls(ContentBox.Value);
             DateTime voteTime = DateTime.Now;
-            if (Foosun.Common.Input.IsDate(this.voteTime.Text))
+            if (Hg.Common.Input.IsDate(this.voteTime.Text))
             {
                 voteTime = DateTime.Parse(Request.Form["voteTime"]);
             }

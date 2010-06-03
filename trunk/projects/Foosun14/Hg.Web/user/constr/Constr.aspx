@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <script type="text/javascript" src="../../editor/fckeditor.js"></script>
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="DispChange('<%= ConstrTF %>')"><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -62,8 +62,8 @@
            
               function insertHTMLEdit(url)
             {
-                var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
-               urls = url.replace('{@UserdirFile}','<% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>') 
+                var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
+               urls = url.replace('{@UserdirFile}','<% Response.Write(Hg.Config.UIConfig.UserdirFile); %>') 
                 var oEditor = FCKeditorAPI.GetInstance("ContentBox");
                 if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
                 {

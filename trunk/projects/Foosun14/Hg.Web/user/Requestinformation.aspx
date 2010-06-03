@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Public.js"></script>
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Prototype.js"></script>
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %></title>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %></title>
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
  <form id="form1" name="form1" method="post" action="" runat="server">

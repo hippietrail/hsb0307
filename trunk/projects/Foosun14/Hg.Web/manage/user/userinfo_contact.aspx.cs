@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
+public partial class manage_user_userinfo_contact : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -23,7 +23,7 @@ public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            string uids = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+            string uids = Hg.Common.Input.Filter(Request.QueryString["id"]);
             int uid = 0;
             try
             {
@@ -73,14 +73,14 @@ public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
             string getUserNum = pd.getUidUserNum(suid);
 
             //同步更新用户信息
-            Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+            Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
             request.Province = province;
             request.City = City;
             request.address = Address;
             request.TelePhone = FaTel;
             request.QQ = QQ;
             request.MSN = MSN;
-            request.UserName = Foosun.Global.Current.UserName;
+            request.UserName = Hg.Global.Current.UserName;
             request.ProcessMultiPing("update");
 
             if (request.FoundErr)
@@ -93,7 +93,7 @@ public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
             {
                 if (sdt.Rows.Count > 0)
                 {
-                    Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
+                    Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
                     uc1.UserNum = getUserNum;
                     uc1.province = province;
                     uc1.City = City;
@@ -108,7 +108,7 @@ public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
+                    Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
                     uc1.UserNum = getUserNum;
                     uc1.province = province;
                     uc1.City = City;
@@ -124,7 +124,7 @@ public partial class manage_user_userinfo_contact : Foosun.Web.UI.ManagePage
             }
             else
             {
-                Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
+                Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
                 uc1.UserNum = getUserNum;
                 uc1.province = province;
                 uc1.City = City;

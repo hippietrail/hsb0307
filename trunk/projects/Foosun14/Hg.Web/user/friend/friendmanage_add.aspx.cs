@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_friendmanage_add : Foosun.Web.UI.UserPage
+public partial class user_friendmanage_add : Hg.Web.UI.UserPage
 {
     Friend fri = new Friend();
     protected void Page_Load(object sender, EventArgs e)
@@ -33,17 +33,17 @@ public partial class user_friendmanage_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)//判断是否通过验证
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string FriendName = Foosun.Common.Input.Filter(Request.Form["FriendNameBox"]);
-            string Contents = Foosun.Common.Input.Htmls(Request.Form["ContentBox"]);
+            string UserNum = Hg.Global.Current.UserNum;
+            string FriendName = Hg.Common.Input.Filter(Request.Form["FriendNameBox"]);
+            string Contents = Hg.Common.Input.Htmls(Request.Form["ContentBox"]);
 
-            string Hail_Fellow = Foosun.Common.Rand.Number(12);
+            string Hail_Fellow = Hg.Common.Rand.Number(12);
 
             int cut = fri.sel_7(UserNum);
 
             string selHail_Fellow = fri.sel_8();
 
-            Foosun.Model.STFriendClass Fic;
+            Hg.Model.STFriendClass Fic;
             Fic.Content = Contents;
             Fic.FriendName = FriendName;
             Fic.HailFellow = Hail_Fellow;

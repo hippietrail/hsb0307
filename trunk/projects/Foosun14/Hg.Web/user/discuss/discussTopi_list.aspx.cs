@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussTopi_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussTopi_list : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     public string D_anno = null;
@@ -38,21 +38,21 @@ public partial class user_discuss_discussTopi_list : Foosun.Web.UI.UserPage
             {
                 PageError("错误的参数", "");
             }
-            dis.Update_3(Foosun.Common.Input.Filter(DisIDs.ToString()));
-            DataTable dt_dts = dis.sel_40(Foosun.Common.Input.Filter(DisIDs.ToString()));
+            dis.Update_3(Hg.Common.Input.Filter(DisIDs.ToString()));
+            DataTable dt_dts = dis.sel_40(Hg.Common.Input.Filter(DisIDs.ToString()));
             int cut_dts = dt_dts.Rows.Count;
             if (cut_dts > 0)
             {
-                if (dt_dts.Rows[0]["UserNum"].ToString() == Foosun.Global.Current.UserNum)
+                if (dt_dts.Rows[0]["UserNum"].ToString() == Hg.Global.Current.UserNum)
                 {
-                    sc.InnerHtml = Show_sc(Foosun.Common.Input.Filter(DisIDs.ToString()));
+                    sc.InnerHtml = Show_sc(Hg.Common.Input.Filter(DisIDs.ToString()));
                 }
             }
             else
             {
-                sc.InnerHtml = Show_scs(Foosun.Common.Input.Filter(DisIDs.ToString()));
+                sc.InnerHtml = Show_scs(Hg.Common.Input.Filter(DisIDs.ToString()));
             }
-            D_anno = dis.sel_41(Foosun.Common.Input.Filter(DisIDs.ToString()));
+            D_anno = dis.sel_41(Hg.Common.Input.Filter(DisIDs.ToString()));
             Showu_discusslist(1);            
         }
         string Type = Request.QueryString["Type"];  //取得操作类型
@@ -72,10 +72,10 @@ public partial class user_discuss_discussTopi_list : Foosun.Web.UI.UserPage
     }
       protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
       {
-          string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+          string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
           SQLConditionInfo st = new SQLConditionInfo("@DisID", DisID);
             int ig, js;
-            DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, st);
+            DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, st);
 
             this.PageNavigator1.PageCount = js;
             this.PageNavigator1.PageIndex = PageIndex;
@@ -94,7 +94,7 @@ public partial class user_discuss_discussTopi_list : Foosun.Web.UI.UserPage
                     string AUT="";
                     if (cutsd>0)
                     {
-                        if (s["UserNum"].ToString() == Foosun.Global.Current.UserNum)
+                        if (s["UserNum"].ToString() == Hg.Global.Current.UserNum)
                         {
                             AUT = "<a href=\"discussTopi_del.aspx?DtID=" + s["DtID"].ToString() + "&VoteTF=" + s["VoteTF"].ToString() + "\"  class=\"list_link\">删除</a>┆<input name=\"Checkbox1\" type=\"checkbox\" value=" + s["DtID"].ToString() + "  runat=\"server\" />";
                         }
@@ -102,7 +102,7 @@ public partial class user_discuss_discussTopi_list : Foosun.Web.UI.UserPage
                         {
                             AUT = "无操作";
                         }
-                        s["UserName"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + dtsd.Rows[0]["UserName"].ToString() + "\" target=\"_blank\" class=\"list_link\">" + dtsd.Rows[0]["UserName"].ToString() + "</a>";
+                        s["UserName"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + dtsd.Rows[0]["UserName"].ToString() + "\" target=\"_blank\" class=\"list_link\">" + dtsd.Rows[0]["UserName"].ToString() + "</a>";
                     }
                     else
                     {

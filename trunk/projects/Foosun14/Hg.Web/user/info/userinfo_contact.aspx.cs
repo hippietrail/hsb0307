@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
+public partial class user_info_userinfo_contact : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -23,7 +23,7 @@ public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
         {
             
             copyright.InnerHtml = CopyRight;
-            DataTable dt = rd.getUserInfoContact(Foosun.Global.Current.UserNum);
+            DataTable dt = rd.getUserInfoContact(Hg.Global.Current.UserNum);
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
@@ -46,26 +46,26 @@ public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid == true)                       //判断是否验证成功
         {
-            string province = Foosun.Common.Input.Htmls(this.province.Text);
-            string City = Foosun.Common.Input.Htmls(this.City.Text);
-            string Address = Foosun.Common.Input.Htmls(this.Address.Text);
-            string Postcode = Foosun.Common.Input.Htmls(this.Postcode.Text);
-            string FaTel = Foosun.Common.Input.Htmls(this.FaTel.Text);
-            string WorkTel = Foosun.Common.Input.Htmls(this.WorkTel.Text);
-            string Fax = Foosun.Common.Input.Htmls(this.Fax.Text);
-            string QQ = Foosun.Common.Input.Htmls(this.QQ.Text);
-            string MSN = Foosun.Common.Input.Htmls(this.MSN.Text);
+            string province = Hg.Common.Input.Htmls(this.province.Text);
+            string City = Hg.Common.Input.Htmls(this.City.Text);
+            string Address = Hg.Common.Input.Htmls(this.Address.Text);
+            string Postcode = Hg.Common.Input.Htmls(this.Postcode.Text);
+            string FaTel = Hg.Common.Input.Htmls(this.FaTel.Text);
+            string WorkTel = Hg.Common.Input.Htmls(this.WorkTel.Text);
+            string Fax = Hg.Common.Input.Htmls(this.Fax.Text);
+            string QQ = Hg.Common.Input.Htmls(this.QQ.Text);
+            string MSN = Hg.Common.Input.Htmls(this.MSN.Text);
 
 
             //同步更新用户信息
-            Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+            Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
             request.Province = province;
             request.City = City;
             request.address = Address;
             request.TelePhone = FaTel;
             request.QQ = QQ;
             request.MSN = MSN;
-            request.UserName = Foosun.Global.Current.UserName;
+            request.UserName = Hg.Global.Current.UserName;
             request.ProcessMultiPing("update");
 
             if (request.FoundErr)
@@ -74,13 +74,13 @@ public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
             }
 
 
-            DataTable sdt = rd.getUserContactRecord(Foosun.Global.Current.UserNum);
+            DataTable sdt = rd.getUserContactRecord(Hg.Global.Current.UserNum);
             if (sdt != null)
             {
                 if (sdt.Rows.Count > 0)
                 {
-                    Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
-                    uc1.UserNum = Foosun.Global.Current.UserNum;
+                    Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
+                    uc1.UserNum = Hg.Global.Current.UserNum;
                     uc1.province = province;
                     uc1.City = City;
                     uc1.Address = Address;
@@ -94,8 +94,8 @@ public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
                 }
                 else
                 {
-                    Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
-                    uc1.UserNum = Foosun.Global.Current.UserNum;
+                    Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
+                    uc1.UserNum = Hg.Global.Current.UserNum;
                     uc1.province = province;
                     uc1.City = City;
                     uc1.Address = Address;
@@ -110,8 +110,8 @@ public partial class user_info_userinfo_contact : Foosun.Web.UI.UserPage
             }
             else
             {
-                Foosun.Model.UserInfo2 uc1 = new Foosun.Model.UserInfo2();
-                uc1.UserNum = Foosun.Global.Current.UserNum;
+                Hg.Model.UserInfo2 uc1 = new Hg.Model.UserInfo2();
+                uc1.UserNum = Hg.Global.Current.UserNum;
                 uc1.province = province;
                 uc1.City = City;
                 uc1.Address = Address;

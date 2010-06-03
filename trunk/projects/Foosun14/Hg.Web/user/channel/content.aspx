@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <title>频道</title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .reshows{height:28px;background-color: #FFFFB5;TEXT-DECORATION: none;COLOR: #FF0000;}
 </style>
@@ -196,7 +196,7 @@ function NaviClick(obj)
  
     function insertHTMLEdit(url)
     {
-        var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+        var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
         IDContent.insertHTML('<img src=\"'+urls+'\" border=\"0\" />')
 
         return;

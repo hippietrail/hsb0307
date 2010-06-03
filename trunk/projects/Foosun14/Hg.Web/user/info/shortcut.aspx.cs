@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_shortcut : Foosun.Web.UI.UserPage
+public partial class user_info_shortcut : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ public partial class user_info_shortcut : Foosun.Web.UI.UserPage
             string qID = Request.QueryString["id"];
              if (qID != null)
                 {
-                    int qIDs = int.Parse(Foosun.Common.Input.Filter(qID.ToString()));
+                    int qIDs = int.Parse(Hg.Common.Input.Filter(qID.ToString()));
                     editAction(qIDs);
                 }
         }
@@ -52,13 +52,13 @@ public partial class user_info_shortcut : Foosun.Web.UI.UserPage
         if (Page.IsValid == true)                       //判断是否验证成功
         {
             //------------------获取表单值-----------------------------------------
-            string Str_qName = Foosun.Common.Input.Htmls(Request.Form["qName"]);
-            string Str_FilePath = Foosun.Common.Input.Htmls(Request.Form["FilePath"]);
+            string Str_qName = Hg.Common.Input.Htmls(Request.Form["qName"]);
+            string Str_FilePath = Hg.Common.Input.Htmls(Request.Form["FilePath"]);
             string Str_orderID = Request.Form["orderID"];
             string Str_action = Request.Form["action_edit"];
             string str_ID =  Request.Form["action_id"];
             string Str_QmID;
-            Str_QmID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            Str_QmID = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dt = rd.QGetRecord(0);
             if(dt.Rows.Count>20)
             {
@@ -68,7 +68,7 @@ public partial class user_info_shortcut : Foosun.Web.UI.UserPage
             {
                 if (Str_action == "edit")
                 {
-                    Foosun.Model.UserInfo8 uc = new Foosun.Model.UserInfo8();
+                    Hg.Model.UserInfo8 uc = new Hg.Model.UserInfo8();
                     uc.qName = Str_qName;
                     uc.Id = int.Parse(str_ID);
                     uc.FilePath = Str_FilePath;
@@ -87,14 +87,14 @@ public partial class user_info_shortcut : Foosun.Web.UI.UserPage
                         }
                         else
                         {
-                            Foosun.Model.UserInfo8 uc = new Foosun.Model.UserInfo8();
+                            Hg.Model.UserInfo8 uc = new Hg.Model.UserInfo8();
                             uc.QmID = Str_QmID;
                             uc.qName = Str_qName;
                             uc.FilePath = Str_FilePath;
                             uc.Ismanage = 0;
                             uc.OrderID = int.Parse(Str_orderID);
-                            uc.usernum = Foosun.Global.Current.UserNum;
-                            uc.SiteID = Foosun.Global.Current.SiteID;
+                            uc.usernum = Hg.Global.Current.UserNum;
+                            uc.SiteID = Hg.Global.Current.SiteID;
                             rd.InsertQMenu(uc);
                             PageRight("添加快捷方式成功。", "shortcut_list.aspx");
                         }

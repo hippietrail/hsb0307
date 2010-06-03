@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_info_UpdateGroup : Foosun.Web.UI.UserPage
+public partial class user_info_UpdateGroup : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();

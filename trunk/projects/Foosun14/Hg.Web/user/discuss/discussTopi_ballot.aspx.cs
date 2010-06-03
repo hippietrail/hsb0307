@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussTopi_ballot : Foosun.Web.UI.UserPage
+public partial class user_discussTopi_ballot : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();    
     protected void Page_Load(object sender, EventArgs e)
@@ -47,7 +47,7 @@ public partial class user_discussTopi_ballot : Foosun.Web.UI.UserPage
         {
             Response.CacheControl = "no-cache";
                     
-            string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
             DataTable dt_usd = dis.sel_29(DisIDs);
             int cut_um = dt_usd.Rows.Count;
              int tu=0;
@@ -56,7 +56,7 @@ public partial class user_discussTopi_ballot : Foosun.Web.UI.UserPage
                 //<--修改者：吴静岚 时间：2008-06-24 解决加入组后仍然不能发起投票问题
                 for (int i = 0; i < cut_um; i++)
                 {
-                    if (dt_usd.Rows[i]["UserNum"].ToString() == Foosun.Global.Current.UserNum)
+                    if (dt_usd.Rows[i]["UserNum"].ToString() == Hg.Global.Current.UserNum)
                     {
                         tu = 1;
                         break;
@@ -84,19 +84,19 @@ public partial class user_discussTopi_ballot : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string tbhead = Foosun.Config.UIConfig.dataRe;
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-            string Title = Foosun.Common.Input.Filter(Request.Form["Title"].ToString());
+            string UserNum = Hg.Global.Current.UserNum;
+            string tbhead = Hg.Config.UIConfig.dataRe;
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string Title = Hg.Common.Input.Filter(Request.Form["Title"].ToString());
             DateTime creatTime = DateTime.Now;//获取当前系统时间
-            string DtID = Foosun.Common.Rand.Number(12);
-            string Content = Foosun.Common.Input.Htmls(ContentBox.Value);
+            string DtID = Hg.Common.Rand.Number(12);
+            string Content = Hg.Common.Input.Htmls(ContentBox.Value);
             string Votit = Request.Form["Voteitem"].ToString();
             string[] Voteitem = Votit.Split('\n');
             DateTime voteTime = DateTime.Now;
             if (this.voteTime.Text.Trim() != "")
             {
-                voteTime = DateTime.Parse(Foosun.Common.Input.Filter(Request.Form["voteTime"].ToString()));
+                voteTime = DateTime.Parse(Hg.Common.Input.Filter(Request.Form["voteTime"].ToString()));
             }
             else
             {
@@ -120,10 +120,10 @@ public partial class user_discussTopi_ballot : Foosun.Web.UI.UserPage
                 {
                     for (int x = 0; x < Voteitem.Length; x++)
                     {
-                        string VoteID = Foosun.Common.Rand.Number(12);
+                        string VoteID = Hg.Common.Rand.Number(12);
                         while (dis.sel_36(VoteID) > 0)
                         {
-                            VoteID = Foosun.Common.Rand.Number(12);
+                            VoteID = Hg.Common.Rand.Number(12);
                         }
                         bool flag = dis.Add_8(DtID, VoteID, votegenre, Voteitem[x].ToString());
                     }

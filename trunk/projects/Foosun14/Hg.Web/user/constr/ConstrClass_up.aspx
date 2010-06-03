@@ -6,7 +6,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -14,36 +14,36 @@
       <td height="1" colspan="2"></td>
     </tr>
     <tr>
-      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >·ÖÀà¹ÜÀí</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">ÎÄÕÂ¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />·ÖÀà¹ÜÀí</div></td>
+      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
     </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable"> 
     <tr>
       <td style="padding-left:14px;">          
-      <a href="Constr.aspx" class="menulist">·¢±íÎÄÕÂ</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ËùÓÐÍË¸å</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ÎÄÕÂ¹ÜÀí</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">·ÖÀà¹ÜÀí</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ÕËºÅ¹ÜÀí</a></td>
-      <td align="right" style="padding-right:28px;">¡¡<a href="#" class="menulist" onclick="Constrclass(1);">´´½¨·ÖÀà</a></td>
+      <a href="Constr.aspx" class="menulist">í·¢ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ï¿½ï¿½ËºÅ¹ï¿½ï¿½</a></td>
+      <td align="right" style="padding-right:28px;">í¡¡<a href="#" class="menulist" onclick="Constrclass(1);">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></td>
     </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table" >
   <tr class="TR_BG_list">
-    <td class="list_link" width="25%">·ÖÀàÃû³Æ</td>
+    <td class="list_link" width="25%">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="list_link" width="75%">
-        <asp:TextBox ID="cNameBox" runat="server" Width="325px" CssClass="form" MaxLength="14"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_ConstrClass_up_0001',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cNameBox" ErrorMessage="ÇëÊäÈë·ÖÀàÃû³Æ"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="cNameBox" runat="server" Width="325px" CssClass="form" MaxLength="14"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="Æµï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_ConstrClass_up_0001',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cNameBox" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"></asp:RequiredFieldValidator></td>
   </tr>
   <tr class="TR_BG_list">
-    <td class="list_link">·ÖÀàÃèÊö</td>
+    <td class="list_link">Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="list_link">
         <asp:TextBox ID="ContentBox" runat="server" Height="107px" TextMode="MultiLine" Width="325px" CssClass="form"></asp:TextBox>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_ConstrClass_up_0002',this)">°ïÖú</span>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_ConstrClass_up_0002',this)">ï¿½ï¿½ï¿½</span>
     </td>
   </tr>
    <tr class="TR_BG_list">
     <td class="list_link"></td>
     <td class="list_link">&nbsp; &nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Ìá ½»" OnClick="Button1_Click" CssClass="form" />&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="·µ »Ø" CssClass="form"/>
+        <asp:Button ID="Button1" runat="server" Text="ï¿½ï¿½ á½»" OnClick="Button1_Click" CssClass="form" />&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="ï¿½ï¿½ ï¿½" CssClass="form"/>
     </td>
   </tr>
 </table>

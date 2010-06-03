@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_getPassword : Foosun.Web.UI.BasePage
+public partial class user_getPassword : Hg.Web.UI.BasePage
 {
     Info inf = new Info();
     protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ public partial class user_getPassword : Foosun.Web.UI.BasePage
     {
         if (Page.IsValid)
         {
-            string UserName = Foosun.Common.Input.Filter(Request.Form["firstnameBox"].ToString());
+            string UserName = Hg.Common.Input.Filter(Request.Form["firstnameBox"].ToString());
             DataTable selectUserName = inf.sel_7(UserName);
             if (selectUserName != null)
             {
@@ -68,10 +68,10 @@ public partial class user_getPassword : Foosun.Web.UI.BasePage
         if (Page.IsValid)
         {
             string u_un = this.nms.Text;
-            DataTable dt = inf.sel_8(Foosun.Common.Input.Filter(u_un.ToString()));
+            DataTable dt = inf.sel_8(Hg.Common.Input.Filter(u_un.ToString()));
             string u_PassKey = dt.Rows[0]["PassKey"].ToString();
             string u_Email = dt.Rows[0]["Email"].ToString();
-            string passkey = Foosun.Common.Input.MD5(Request.Form["pwdBox2"].ToString(), true);
+            string passkey = Hg.Common.Input.MD5(Request.Form["pwdBox2"].ToString(), true);
             string email = Request.Form["emailBox"].ToString();
             if ((u_PassKey == passkey.ToLower()) && (u_Email.ToLower() == email.ToLower()))
             {
@@ -90,7 +90,7 @@ public partial class user_getPassword : Foosun.Web.UI.BasePage
         if (Page.IsValid)
         {
             string u_nmss = this.nms2.Text;
-            string u_pwd = Foosun.Common.Input.MD5(Foosun.Common.Input.Filter(Request.Form["newpwdBox1"].ToString()),true);
+            string u_pwd = Hg.Common.Input.MD5(Hg.Common.Input.Filter(Request.Form["newpwdBox1"].ToString()),true);
             if (inf.Update2(u_pwd, u_nmss) == 0)
             {
                 PageError("对不起，找回密码失败", "getPassword.aspx");

@@ -7,8 +7,8 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>__幻灯</title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>__幻灯</title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <script language="javascript" type="text/javascript">
 var mid=0;

@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_arealist_upc : Foosun.Web.UI.ManagePage
+public partial class user_arealist_upc : Hg.Web.UI.ManagePage
 {
     public user_arealist_upc()
     {
@@ -39,7 +39,7 @@ public partial class user_arealist_upc : Foosun.Web.UI.ManagePage
             this.DropDownList1.DataTextField = "cityName";
             this.DropDownList1.DataValueField = "Cid";
             this.DropDownList1.DataBind();
-            string pname = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string pname = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             DataTable dtc = ali.sel_6(pname);
             if (dtc.Rows[0]["Pid"].ToString() != "")
             {
@@ -61,10 +61,10 @@ public partial class user_arealist_upc : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             rootPublic rd = new rootPublic();
-            string cityName = Foosun.Common.Input.Filter(Request.Form["cityName"].ToString());
-            string cids = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string cityName = Hg.Common.Input.Filter(Request.Form["cityName"].ToString());
+            string cids = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             string OrderID = this.OrderID.Text;
-            if (!Foosun.Common.Input.IsInteger(OrderID))
+            if (!Hg.Common.Input.IsInteger(OrderID))
             {
                 PageError("排序号请用0-100的数字。数字越大，越靠前。", "arealist.aspx");
             }

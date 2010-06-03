@@ -18,13 +18,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
-public partial class user_Message_read : Foosun.Web.UI.UserPage
+public partial class user_Message_read : Hg.Web.UI.UserPage
 {
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     Message mes = new Message();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
      protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -33,7 +33,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
             MidID.Value = Mids;
             
             Response.CacheControl = "no-cache";
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             DataTable dts1 = mes.sel_9(UserNum);
             this.DropDownList1.DataSource = dts1;
             this.DropDownList1.DataTextField = "UserName";
@@ -59,7 +59,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                     this.FileTFLabel.Text = "本站不支持群发";
                 }
 
-            string Mid = Foosun.Common.Input.Filter(Request.QueryString["Mid"].ToString());
+            string Mid = Hg.Common.Input.Filter(Request.QueryString["Mid"].ToString());
             if (mes.sel_16(Mid)==0)
             {
                 PageError("参数错误", "Message_box.aspx?Id=1");
@@ -104,7 +104,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             string u_meGroupNumbero = mes.sel_10(UserNum);
             //可以发送多少条
             DataTable u_MGo = mes.sel_11(u_meGroupNumbero);
@@ -133,8 +133,8 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                     FileUrl = reada.Rows[0]["FileUrl"].ToString();
                 }
                 string copyfilelist = FileUrl.Substring(FileUrl.LastIndexOf(".") + 1).ToUpper();
-                string filenum = Foosun.Common.Rand.Number(12);//产生12位随机字符
-                string UserNumfile = Foosun.Global.Current.UserNum;
+                string filenum = Hg.Common.Rand.Number(12);//产生12位随机字符
+                string UserNumfile = Hg.Global.Current.UserNum;
                 string Dir = System.Web.HttpContext.Current.Server.MapPath("~/" + Userfiles + "/" + UserNumfile + "/").ToString();
                 string copyFileUrl = Dir + filenum + "." + copyfilelist;
                 //查找会员所属会员组
@@ -147,10 +147,10 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                 DateTime CreatTime = DateTime.Now;//邮件撰写时间
                 DateTime Send_DateTime = DateTime.Now;//邮件发送时间
 
-                string Midp = Foosun.Common.Rand.Number(12,true);//产生12位随机字符
+                string Midp = Hg.Common.Rand.Number(12,true);//产生12位随机字符
                 int SortType = 0;
                 string Title = Request.Form["TitleBox"].ToString();
-                string Content = Foosun.Common.Input.Htmls(this.ContentBox.Value);
+                string Content = Hg.Common.Input.Htmls(this.ContentBox.Value);
                 int LevelFlagp = 0;
                 if (this.LevelFlagLabel.Text == "加急"){LevelFlagp = 1;}
                 else if (this.LevelFlagLabel.Text == "紧急"){LevelFlagp = 2;}
@@ -164,7 +164,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                         int cuts = dts.Rows.Count;
                         if (cuts == 0){continue;}
                         string Rec_UserNum = dts.Rows[0]["UserNum"].ToString();
-                        Foosun.Model.message uc = new Foosun.Model.message();
+                        Hg.Model.message uc = new Hg.Model.message();
                         uc.Mid = Midp;
                         uc.UserNum = UserNum;
                         uc.Title = Title;
@@ -179,7 +179,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                     }
                     if (FileTF == 1)
                     {
-                        string MfID = Foosun.Common.Rand.Number(12,true);//产生12位随机字符
+                        string MfID = Hg.Common.Rand.Number(12,true);//产生12位随机字符
                         if (mes.Add_1(MfID, Midp, UserNum, fileName, FileUrl, CreatTime) != 0){sc = true;}
                         else{sc = false;}
                     }
@@ -189,7 +189,7 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                 else
                 {
                     string Rec_UserNuma = this.Rec_UserNumBox.Text;
-                    if (Rec_UserNuma == Foosun.Global.Current.UserName)
+                    if (Rec_UserNuma == Hg.Global.Current.UserName)
                     {
                         PageError("不能给自己转发信息!", "Message_box.aspx?Id=1");
                     }
@@ -197,8 +197,8 @@ public partial class user_Message_read : Foosun.Web.UI.UserPage
                     int cuts = dts.Rows.Count;
                     if (cuts == 0){PageError("收件用户不存在", "Message_box.aspx?Id=1");}
                     string Rec_UserNum = dts.Rows[0]["UserNum"].ToString();
-                    string MfID = Foosun.Common.Rand.Number(12,true);//产生12位随机字符
-                    Foosun.Model.message uc = new Foosun.Model.message();
+                    string MfID = Hg.Common.Rand.Number(12,true);//产生12位随机字符
+                    Hg.Model.message uc = new Hg.Model.message();
                     uc.Mid = Midp;
                     uc.UserNum = UserNum;
                     uc.Title = Title;

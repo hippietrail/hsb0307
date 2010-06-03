@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_url_add : Foosun.Web.UI.UserPage
+public partial class user_info_url_add : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ public partial class user_info_url_add : Foosun.Web.UI.UserPage
                         }
                     }
                 }
-                DataTable dts = rd.getClassList(Foosun.Global.Current.UserNum);
+                DataTable dts = rd.getClassList(Hg.Global.Current.UserNum);
                 if (dts != null)
                 {
                     this.ClassID.DataSource = dts;
@@ -58,7 +58,7 @@ public partial class user_info_url_add : Foosun.Web.UI.UserPage
             }
             else
             {
-                DataTable dts = rd.getClassList(Foosun.Global.Current.UserNum);
+                DataTable dts = rd.getClassList(Hg.Global.Current.UserNum);
                 if (dts != null)
                 {
                     this.ClassID.DataSource = dts;
@@ -75,11 +75,11 @@ public partial class user_info_url_add : Foosun.Web.UI.UserPage
     {
         if (IsPostBack)
         {
-            string URLName = Foosun.Common.Input.Htmls(this.URLName.Text);
+            string URLName = Hg.Common.Input.Htmls(this.URLName.Text);
             string URL = this.URL.Text;
             string URLColor = this.URLColor.SelectedValue;
             string ClassID = this.ClassID.SelectedValue;
-            string Content = Foosun.Common.Input.Htmls(this.Content.Text);
+            string Content = Hg.Common.Input.Htmls(this.Content.Text);
             string ID = Request.QueryString["id"];
             if (URLName == string.Empty  || URL == string.Empty || ClassID == string.Empty)
             {

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_info_Receive : Foosun.Web.UI.UserPage
+public partial class user_info_Receive : Hg.Web.UI.UserPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

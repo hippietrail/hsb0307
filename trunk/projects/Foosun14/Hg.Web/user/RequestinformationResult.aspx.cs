@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_RequestinformationResult : Foosun.Web.UI.UserPage
+public partial class user_RequestinformationResult : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.Friend fir = new Foosun.CMS.Friend();
+    Hg.CMS.Friend fir = new Hg.CMS.Friend();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -20,7 +20,7 @@ public partial class user_RequestinformationResult : Foosun.Web.UI.UserPage
             Response.Expires = 0;
             Response.CacheControl = "no-cache";
         }
-        DataTable Q_dfriend = fir.sel_9(Foosun.Global.Current.UserNum);
+        DataTable Q_dfriend = fir.sel_9(Hg.Global.Current.UserNum);
         this.infomationDownList.DataTextField = "FriendName";
         this.infomationDownList.DataValueField = "HailFellow";
         this.infomationDownList.DataSource = Q_dfriend;
@@ -39,30 +39,30 @@ public partial class user_RequestinformationResult : Foosun.Web.UI.UserPage
         {
             if (this.isCheck.Checked)
             {
-                fir.Delete_2(Foosun.Global.Current.UserName, int.Parse(_ID.ToString()));
+                fir.Delete_2(Hg.Global.Current.UserName, int.Parse(_ID.ToString()));
                 Response.Write("<script>alert('拒绝用户添加您为好友成功。');window.opener.location.reload();window.close();</script>");
             }
             else
             {
-                string u_menume = Foosun.Global.Current.UserName;
+                string u_menume = Hg.Global.Current.UserName;
                 string qUsername = fir.sel_10(u_menume);
                 string qUserNum = fir.sel_11(qUsername);
-                string u_meNume = Foosun.Global.Current.UserName;
+                string u_meNume = Hg.Global.Current.UserName;
                 string bUserName = fir.sel_10(u_meNume);
                 string bdUserName = fir.sel_11(bUserName);
                 string Hail_Fellow = this.infomationDownList.SelectedValue;
-                string FriendUserNum = Foosun.Common.Rand.Number(12);
+                string FriendUserNum = Hg.Common.Rand.Number(12);
                 DateTime CreatTime = DateTime.Now;
                 int se = this.infomationDownList.SelectedIndex;
                 if (se == 0)
                 {
-                    fir.Add_6(FriendUserNum, Foosun.Global.Current.UserNum, bUserName, bdUserName, Hail_Fellow, CreatTime);
+                    fir.Add_6(FriendUserNum, Hg.Global.Current.UserNum, bUserName, bdUserName, Hail_Fellow, CreatTime);
                     fir.Update_1(u_meNume, qUsername);
-                    fir.Update_2(Foosun.Global.Current.UserNum, qUserNum);
+                    fir.Update_2(Hg.Global.Current.UserNum, qUserNum);
                 }
                 else
                 {
-                    fir.Delete_2(Foosun.Global.Current.UserName, int.Parse(_ID.ToString()));
+                    fir.Delete_2(Hg.Global.Current.UserName, int.Parse(_ID.ToString()));
                 }
                 Response.Write("<script>alert('同意用户成为好友操作成功。');window.opener.location.reload();window.close();</script>");
             }

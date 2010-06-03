@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_info_wap : Foosun.Web.UI.UserPage
+public partial class user_info_wap : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.user rd = new Foosun.CMS.user();
-    Foosun.CMS.ContentManage nd = new Foosun.CMS.ContentManage();
+    Hg.CMS.user rd = new Hg.CMS.user();
+    Hg.CMS.ContentManage nd = new Hg.CMS.ContentManage();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -51,7 +51,7 @@ public partial class user_info_wap : Foosun.Web.UI.UserPage
         {
             if (WapDomain.Length < 5)
             {
-                string dirdumm = Foosun.Config.UIConfig.dirDumm;
+                string dirdumm = Hg.Config.UIConfig.dirDumm;
                 string wapDir = "";
                 if (dirdumm.Trim() != "")
                 {

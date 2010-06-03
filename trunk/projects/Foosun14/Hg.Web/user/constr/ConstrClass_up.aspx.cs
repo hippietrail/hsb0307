@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_ConstrClass_up : Foosun.Web.UI.UserPage
+public partial class user_ConstrClass_up : Hg.Web.UI.UserPage
 {
     Constr con = new Constr();
     /// <summary>
@@ -35,7 +35,7 @@ public partial class user_ConstrClass_up : Foosun.Web.UI.UserPage
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            string Ccids = Foosun.Common.Input.Filter(Request.QueryString["Ccid"].ToString());
+            string Ccids = Hg.Common.Input.Filter(Request.QueryString["Ccid"].ToString());
             DataTable dt = con.sel7(Ccids);
             int cut = dt.Rows.Count;
             cNameBox.Text = dt.Rows[0]["cName"].ToString();
@@ -58,10 +58,10 @@ public partial class user_ConstrClass_up : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string Ccid1 = Foosun.Common.Input.Filter(Request.QueryString["Ccid"].ToString());
-            string cName = Foosun.Common.Input.Htmls(Request.Form["cNameBox"].ToString());
-            string Content = Foosun.Common.Input.Htmls(Request.Form["ContentBox"].ToString());
-            Foosun.Model.STConstrClass stcn;
+            string Ccid1 = Hg.Common.Input.Filter(Request.QueryString["Ccid"].ToString());
+            string cName = Hg.Common.Input.Htmls(Request.Form["cNameBox"].ToString());
+            string Content = Hg.Common.Input.Htmls(Request.Form["ContentBox"].ToString());
+            Hg.Model.STConstrClass stcn;
             stcn.cName = cName;
             stcn.Content = Content;
 

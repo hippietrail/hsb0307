@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class user_discussManage_add : Foosun.Web.UI.ManagePage
+public partial class user_discussManage_add : Hg.Web.UI.ManagePage
 {
     public user_discussManage_add()
     {
@@ -29,8 +29,8 @@ public partial class user_discussManage_add : Foosun.Web.UI.ManagePage
     }
     //连接数据库
     Discuss dis = new Discuss();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
-    public string Userfiles = Foosun.Config.UIConfig.UserdirFile;
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
+    public string Userfiles = Hg.Config.UIConfig.UserdirFile;
     /// <summary>
     /// 初始化
     /// </summary>
@@ -80,7 +80,7 @@ public partial class user_discussManage_add : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             DateTime Creatime = DateTime.Now;//获取当前系统时间
-            string DisID = Foosun.Common.Rand.Number(12);
+            string DisID = Hg.Common.Rand.Number(12);
 
             string Cname = Request.Form["CnameBox"].ToString();
             string D_Content = Request.Form["D_ContentBox"].ToString();
@@ -171,7 +171,7 @@ public partial class user_discussManage_add : Foosun.Web.UI.ManagePage
             int cPoint2 = cPoint + cPoint1;
             int aPoint2 = aPoint + aPoint1;
             //创建讨论组  
-            Foosun.Model.STDiscuss stcn;
+            Hg.Model.STDiscuss stcn;
             stcn.DisID = DisID;
             stcn.Cname = Cname;
             stcn.Authority = Authority;

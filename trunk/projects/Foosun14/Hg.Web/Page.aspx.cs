@@ -8,17 +8,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Publish;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Publish;
+using Hg.Model;
 using System.Text.RegularExpressions;
 
-namespace Foosun.Web
+namespace Hg.Web
 {
-    public partial class Page : Foosun.Web.UI.BasePage
+    public partial class Page : Hg.Web.UI.BasePage
     {
-        protected string dimm = Foosun.Config.UIConfig.dirDumm;
-        protected string TempletDir = Foosun.Config.UIConfig.dirTemplet;
+        protected string dimm = Hg.Config.UIConfig.dirDumm;
+        protected string TempletDir = Hg.Config.UIConfig.dirTemplet;
         public static string gInstallDir = "{$InstallDir}";
         public static string gTempletDir = "{$TempletDir}";
         protected void Page_Load(object sender, EventArgs e)
@@ -29,13 +29,13 @@ namespace Foosun.Web
             int ChID = 0;
             if (gChID != null && gChID != string.Empty)
             {
-                if (Foosun.Common.Input.IsInteger(gChID.ToString()))
+                if (Hg.Common.Input.IsInteger(gChID.ToString()))
                 {
                     ChID = int.Parse(gChID.ToString());
                 }
             }
             string TempletPath = string.Empty;
-            string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+            string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
             string strTempletDir = TempletDir;
             string finallyContent = string.Empty;
             if (dimm.Trim() != string.Empty) { dimm = "/" + dimm; }
@@ -102,14 +102,14 @@ namespace Foosun.Web
             {
                 finallyContent = getjs() + finallyContent;
             }
-            finallyContent = (finallyContent.Replace(gInstallDir, Foosun.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
+            finallyContent = (finallyContent.Replace(gInstallDir, Hg.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
             Response.Write(finallyContent);
         }
 
         protected string getjs()
         {
-            string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
-            getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
+            string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
+            getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
             getajaxJS += "<!--Created by dotNETCMS v1.0 For Hg Inc. at " + DateTime.Now + "-->\r\n";
             return getajaxJS;
         }

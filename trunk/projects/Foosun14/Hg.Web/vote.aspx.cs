@@ -9,22 +9,22 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web
+namespace Hg.Web
 {
-    public partial class vote : Foosun.Web.UI.BasePage
+    public partial class vote : Hg.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string NewsID = Request.QueryString["NewsID"];
-            Foosun.CMS.News news = new Foosun.CMS.News();
+            Hg.CMS.News news = new Hg.CMS.News();
             string votelist = "";
             if (NewsID != string.Empty && NewsID != null)
             {
                 DataTable dt = news.getvote(NewsID.ToString());
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    string RandStr = Foosun.Common.Rand.Number(3);
-                    votelist += "<form id=\"VoteForm" + RandStr + "\" name=\"VoteForm\" method=\"post\" action=\"" + Foosun.Publish.CommonData.getUrl() + "/vote.aspx\">";
+                    string RandStr = Hg.Common.Rand.Number(3);
+                    votelist += "<form id=\"VoteForm" + RandStr + "\" name=\"VoteForm\" method=\"post\" action=\"" + Hg.Publish.CommonData.getUrl() + "/vote.aspx\">";
                     string voteTitle = dt.Rows[0]["voteTitle"].ToString();
                     string voteContent = dt.Rows[0]["voteContent"].ToString();
                     string creattime = dt.Rows[0]["creattime"].ToString();
@@ -89,7 +89,7 @@ namespace Foosun.Web
                     votelist += "                        }\r";
                     votelist += "                    }\r";
                     votelist += "                 };\r";
-                    votelist += "     new  Ajax.Request('" + Foosun.Publish.CommonData.getUrl() + "/vote.aspx?no-cache='+Math.random(),options);\r";
+                    votelist += "     new  Ajax.Request('" + Hg.Publish.CommonData.getUrl() + "/vote.aspx?no-cache='+Math.random(),options);\r";
                     votelist += "    }\r";
                     votelist += "}\r";
                     votelist += "</script>\r";

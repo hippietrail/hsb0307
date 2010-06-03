@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class manage_user_discussclass : Foosun.Web.UI.ManagePage
+public partial class manage_user_discussclass : Hg.Web.UI.ManagePage
 {
     public manage_user_discussclass()
     {
@@ -62,7 +62,7 @@ public partial class manage_user_discussclass : Foosun.Web.UI.ManagePage
         switch (Type)
         {
             case "del":          //删除
-                del(Foosun.Common.Input.Filter(ID.ToString()));
+                del(Hg.Common.Input.Filter(ID.ToString()));
                 break;
             case "PDel":            //批量删除
                 PDel();
@@ -112,12 +112,12 @@ public partial class manage_user_discussclass : Foosun.Web.UI.ManagePage
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@titlem", "%" + titlem + "%");
             st[1] = new SQLConditionInfo("@RequestSiteId", RequestSiteIds);
-            dts = Foosun.CMS.Pagination.GetPage("manage_user_discussclass_1_aspx", PageIndex, 10, out ig, out js, st);
+            dts = Hg.CMS.Pagination.GetPage("manage_user_discussclass_1_aspx", PageIndex, 10, out ig, out js, st);
         }
         else
         {
             SQLConditionInfo sts = new SQLConditionInfo("@titlem", "%" + titlem + "%");
-            dts = Foosun.CMS.Pagination.GetPage("manage_user_discussclass_2_aspx", PageIndex, 10, out ig, out js, sts);
+            dts = Hg.CMS.Pagination.GetPage("manage_user_discussclass_2_aspx", PageIndex, 10, out ig, out js, sts);
         }
 
 
@@ -216,7 +216,7 @@ public partial class manage_user_discussclass : Foosun.Web.UI.ManagePage
     }
     protected void selss_Click(object sender, EventArgs e)
     {
-        string nm = Foosun.Common.Input.Filter(Request.Form["dicname"]);
+        string nm = Hg.Common.Input.Filter(Request.Form["dicname"]);
         Showu_discusslist(1, nm);
     }
 }

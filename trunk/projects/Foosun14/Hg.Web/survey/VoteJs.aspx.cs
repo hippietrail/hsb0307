@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class survey_VoteJs : Foosun.Web.UI.BasePage
+public partial class survey_VoteJs : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

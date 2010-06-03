@@ -4,9 +4,9 @@
 <head>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>__ндуб</title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/divcss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>__ндуб</title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/divcss.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="margin-top:6px;">
 <form id="form1" runat = "Server">

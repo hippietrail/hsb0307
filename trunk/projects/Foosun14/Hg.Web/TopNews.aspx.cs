@@ -9,15 +9,15 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web
+namespace Hg.Web
 {
-    public partial class TopNews : Foosun.Web.UI.BasePage
+    public partial class TopNews : Hg.Web.UI.BasePage
     {
         protected string newLine = "\r\n";
-        protected string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-        protected string str_Templet = Foosun.Config.UIConfig.dirTemplet;  //获取模板路径
+        protected string str_dirMana = Hg.Config.UIConfig.dirDumm;
+        protected string str_Templet = Hg.Config.UIConfig.dirTemplet;  //获取模板路径
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,8 +33,8 @@ namespace Foosun.Web
             int str_currentchnewsid = int.Parse(Request.QueryString["currentchnewsid"].ToString());
             string str_templatetype = Request.QueryString["TemplateType"].ToString();
 
-            Foosun.Publish.LabelMass labelmass = new Foosun.Publish.LabelMass(str_masscontent, str_currentclassid, str_currentspecialid, str_currentnewsid, str_ChID, str_currentchclassid, str_currentchspecialid, str_currentchnewsid);
-            labelmass.TemplateType = (Foosun.Publish.TempType)(int.Parse(str_templatetype));
+            Hg.Publish.LabelMass labelmass = new Hg.Publish.LabelMass(str_masscontent, str_currentclassid, str_currentspecialid, str_currentnewsid, str_ChID, str_currentchclassid, str_currentchspecialid, str_currentchnewsid);
+            labelmass.TemplateType = (Hg.Publish.TempType)(int.Parse(str_templatetype));
             labelmass.ParseContent();
             string str_newslist = labelmass.Parse();  
             Response.Write("Suc$$$" + str_newslist);

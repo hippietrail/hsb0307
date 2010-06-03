@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_userinfo_idcard : Foosun.Web.UI.UserPage
+public partial class user_info_userinfo_idcard : Hg.Web.UI.UserPage
 {
     public user_info_userinfo_idcard()
     {
@@ -57,7 +57,7 @@ public partial class user_info_userinfo_idcard : Foosun.Web.UI.UserPage
                     if (typestr.ToString() == "reviewCert")
                     {
                         f1 = "1";
-                        isCertstat.InnerHtml = "<table width=\"98%\" border=\"0\" cellpadding=\"8\" cellspacing=\"0\" class=\"table\" align=\"center\"><tr><td align=\"center\"><img src=\"" + dt.Rows[0]["IDcardFiles"].ToString().ToLower().Replace("{@userdirfile}", Foosun.Config.UIConfig.UserdirFile) + "\" border=\"0\" /></td></tr></table>";
+                        isCertstat.InnerHtml = "<table width=\"98%\" border=\"0\" cellpadding=\"8\" cellspacing=\"0\" class=\"table\" align=\"center\"><tr><td align=\"center\"><img src=\"" + dt.Rows[0]["IDcardFiles"].ToString().ToLower().Replace("{@userdirfile}", Hg.Config.UIConfig.UserdirFile) + "\" border=\"0\" /></td></tr></table>";
                     }
                     else
                     {
@@ -89,7 +89,7 @@ public partial class user_info_userinfo_idcard : Foosun.Web.UI.UserPage
     /// </summary>
     protected void savedata()
     {
-        string f_IDcardFiles = Foosun.Common.Input.Htmls(Request.Form["f_IDcardFiles"]);
+        string f_IDcardFiles = Hg.Common.Input.Htmls(Request.Form["f_IDcardFiles"]);
         if (f_IDcardFiles == null || f_IDcardFiles == string.Empty)
         {
             PageError("正确填写图片地址", "javascript:history.back();");

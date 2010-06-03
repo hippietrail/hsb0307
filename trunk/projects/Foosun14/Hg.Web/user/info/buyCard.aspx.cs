@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_info_buyCard : Foosun.Web.UI.UserPage
+public partial class user_info_buyCard : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -32,7 +32,7 @@ public partial class user_info_buyCard : Foosun.Web.UI.UserPage
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    _Str += "<option value=\"" + double.Parse(dt.Rows[i]["Money"].ToString()) * (pd.getDiscount(Foosun.Global.Current.UserNum)) + "\">" + String.Format("{0:C}", (double.Parse(dt.Rows[i]["Money"].ToString())) * (pd.getDiscount(Foosun.Global.Current.UserNum))) + " (原价：￥" + double.Parse(dt.Rows[i]["Money"].ToString()) + "，折扣率:" + pd.getDiscount(Foosun.Global.Current.UserNum) + ") </option>\r";
+                    _Str += "<option value=\"" + double.Parse(dt.Rows[i]["Money"].ToString()) * (pd.getDiscount(Hg.Global.Current.UserNum)) + "\">" + String.Format("{0:C}", (double.Parse(dt.Rows[i]["Money"].ToString())) * (pd.getDiscount(Hg.Global.Current.UserNum))) + " (原价：￥" + double.Parse(dt.Rows[i]["Money"].ToString()) + "，折扣率:" + pd.getDiscount(Hg.Global.Current.UserNum) + ") </option>\r";
                 }
             }
             else

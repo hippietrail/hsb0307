@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Common;
+using Hg.CMS;
+using Hg.Common;
 
-public partial class manage_user_usergroupadd : Foosun.Web.UI.ManagePage
+public partial class manage_user_usergroupadd : Hg.Web.UI.ManagePage
 {
     public manage_user_usergroupadd()
     {
@@ -111,9 +111,9 @@ public partial class manage_user_usergroupadd : Foosun.Web.UI.ManagePage
                     udt.Clear(); udt.Dispose();
                 }
                 DateTime dateNowstr = System.DateTime.Now;
-                string SessionSiteID = Foosun.Global.Current.SiteID;
+                string SessionSiteID = Hg.Global.Current.SiteID;
 
-                Foosun.Model.UserInfo4 uc1 = new Foosun.Model.UserInfo4();
+                Hg.Model.UserInfo4 uc1 = new Hg.Model.UserInfo4();
                 uc1.SiteID=SessionSiteID;
                 uc1.GroupNumber=ramGroupNumber;
                 uc1.GroupName=TxtGroupName;
