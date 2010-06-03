@@ -42,6 +42,7 @@ public partial class manage_Sys_admin_GroupAdd : Foosun.Web.UI.ManagePage
         Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
         DataTable dt = agc.getClassList("ClassID,ClassCName,ParentID", "news_Class", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
         DataTable dv = agc.getClassList("ChannelID,CName,ParentID", "news_site", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
+        //DataTable dv = agc.getClassList("ChannelID,CName,ParentID", "news_site", " Where isLock=0 And isRecyle=0 And ChannelID='" + SiteID + "' ");
         DataTable dc = agc.getClassList("SpecialID,SpecialCName,ParentID", "news_special", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
         listShow(dt, "0", 0, NewsClassList);
         listShow(dv, "0", 0, Site1);
