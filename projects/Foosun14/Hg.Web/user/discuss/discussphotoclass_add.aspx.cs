@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussphotoclass_add : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphotoclass_add : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     Photo pho = new Photo();
@@ -30,18 +30,18 @@ public partial class user_discuss_discussphotoclass_add : Foosun.Web.UI.UserPage
         
         if (!IsPostBack)
         {
-            string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+            string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
             sc.InnerHtml = Show_scs(DisIDs);
         }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
-        string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+        string UserNum = Hg.Global.Current.UserNum;
+        string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
         int isDisclass = 1;     
         DateTime Creatime = DateTime.Now;
-        string ClassID = Foosun.Common.Rand.Number(12);
-        string ClassName = Foosun.Common.Input.Htmls(Request.Form["ClassName"].ToString());
+        string ClassID = Hg.Common.Rand.Number(12);
+        string ClassName = Hg.Common.Input.Htmls(Request.Form["ClassName"].ToString());
 
         if (Page.IsValid)
         {

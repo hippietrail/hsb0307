@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -16,59 +16,59 @@
       <td height="1" colspan="2"></td>
     </tr>
     <tr>
-      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >Ïà²á¹ÜÀí</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbum.aspx" target="sys_main" class="list_link">Ïà²á¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />Ïà²á¹ÜÀí</div></td>
+      <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbum.aspx" target="sys_main" class="list_link">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
     </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">Ïà²áÊ×Ò³</a>¡¡<a href="photo_add.aspx" class="menulist">Ìí¼ÓÍ¼Æ¬</a>&nbsp;&nbsp;<a href="photoclass.aspx" class="menulist">Ïà²á·ÖÀà</a> &nbsp;&nbsp; <a href="Photoalbum.aspx" class="menulist">Ìí¼ÓÏà²á</a></span></td>
+     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>ï¿½ï¿½<a href="photo_add.aspx" class="menulist">ï¿½ï¿½ï¿½Í¼Æ¬</a>&nbsp;&nbsp;<a href="photoclass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a> &nbsp;&nbsp; <a href="Photoalbum.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></span></td>
   </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table" id="insert">
   <tr class="TR_BG_list">
     <td class="list_link" width="25%" style="text-align: right">
-        Ïà²áÃû³Æ£º</td>
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="list_link" width="75%">
         <asp:TextBox ID="PhotoalbumName" runat="server" Width="241px" CssClass="form" MaxLength="14"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="PhotoalbumName"
-            ErrorMessage="Ïà²áÃû²»ÄÜÎª¿Õ"></asp:RequiredFieldValidator>
+            ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½"></asp:RequiredFieldValidator>
     </td>
   </tr>
   <tr class="TR_BG_list">
-    <td class="list_link" width="25%" style="text-align: right">Ïà²áÈ¨ÏÞ£º</td>
+    <td class="list_link" width="25%" style="text-align: right">ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½</td>
     <td class="list_link" width="75%">
-        &nbsp;<input id="Radio1" type="radio" onclick="DispChanges()" runat="server" />ËùÓÐÈË¿ÉÒÔÉÏ´« &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<input id="Radio2" type="radio" runat="server" onclick="DispChanges()" checked="true"/>Ö»ÓÐÎÒÄÜÉÏ´«</td>
+        &nbsp;<input id="Radio1" type="radio" onclick="DispChanges()" runat="server" />ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<input id="Radio2" type="radio" runat="server" onclick="DispChanges()" checked="true"/>Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½</td>
   </tr>
   <tr class="TR_BG_list" style="display:none" id="numbers">
-    <td class="list_link" width="25%" style="text-align: right">×î´óÉÏ´«Í¼Æ¬ÊýÄ¿£º</td>
+    <td class="list_link" width="25%" style="text-align: right">ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Í¼Æ¬ï¿½ï¿½Ä¿ï¿½ï¿½</td>
     <td class="list_link" width="75%">&nbsp;<asp:TextBox ID="number" runat="server" Width="235px" CssClass="form">0</asp:TextBox>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="number" ErrorMessage="ÄãÊäÈëµÄ¸ñÊ½²»¶Ô" ValidationExpression="^[1-9]\d*|0$"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="number" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½" ValidationExpression="^[1-9]\d*|0$"></asp:RegularExpressionValidator>
     </td>
   </tr>
     <tr class="TR_BG_list">
-    <td class="list_link" width="25%" style="text-align: right">Ïà²áÀàÐÍ£º</td>
-    <td class="list_link" width="75%">&nbsp;<asp:DropDownList ID="Photoalbum" runat="server" Width="141px"></asp:DropDownList>&nbsp; &nbsp;<input type="checkbox" id="chkAdvance" onclick="DispChange()" />ÃÜÂë±£»¤
+    <td class="list_link" width="25%" style="text-align: right">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
+    <td class="list_link" width="75%">&nbsp;<asp:DropDownList ID="Photoalbum" runat="server" Width="141px"></asp:DropDownList>&nbsp; &nbsp;<input type="checkbox" id="chkAdvance" onclick="DispChange()" />ï¿½ï¿½ï¿½ë±£ï¿½ï¿½
     </td>
   </tr>
     <tr class="TR_BG_list" id="pwd" style="display:none">
-    <td class="list_link" width="25%" style="text-align: right" >ÃÜÂë£º</td>
+    <td class="list_link" width="25%" style="text-align: right" >ï¿½ï¿½ï¿½ë£º</td>
     <td class="list_link" width="75%">
         <asp:TextBox ID="pwd" runat="server" Width="242px" Height="18px" CssClass="form" TextMode="Password"></asp:TextBox>
     </td>
   </tr>
   <tr class="TR_BG_list" id="pwds" style="display:none">
-    <td class="list_link" width="25%" style="text-align: right">È·ÈÏÃÜÂë£º</td>
+    <td class="list_link" width="25%" style="text-align: right">È·ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="list_link" width="75%"><asp:TextBox ID="pwds" runat="server" Width="242px" Height="18px" CssClass="form" TextMode="Password"></asp:TextBox>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="pwd" ControlToValidate="pwds" ErrorMessage="Á½´ÎÃÜÂë²»Ò»ÖÂ"></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="pwd" ControlToValidate="pwds" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½"></asp:CompareValidator>
     </td>
   </tr>
   <tr class="TR_BG_list">
     <td class="list_link"></td>
     <td class="list_link">
-        <asp:Button ID="Button1" runat="server" Text="´´ ½¨" Width="75px" OnClick="Button1_Click"  CssClass="form"/>
+        <asp:Button ID="Button1" runat="server" Text="Â´ï¿½ ï¿½ï¿½" Width="75px" OnClick="Button1_Click"  CssClass="form"/>
         &nbsp;&nbsp;&nbsp;
-        <input name="reset" type="reset" value=" ÖØ ÖÃ "  class="form"/>
+        <input name="reset" type="reset" value=" ï¿½ ï¿½ï¿½ "  class="form"/>
     </td>
   </tr>
 </table>

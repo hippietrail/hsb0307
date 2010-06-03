@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_getPoint : Foosun.Web.UI.UserPage
+public partial class user_getPoint : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     protected void Page_Load(object sender, EventArgs e)
@@ -39,9 +39,9 @@ public partial class user_getPoint : Foosun.Web.UI.UserPage
             int isLock = 0;
             DateTime creatTimes = DateTime.Now;
 
-            string Number = Foosun.Common.Input.Filter(Request.Form["CardNumber"].ToString());
+            string Number = Hg.Common.Input.Filter(Request.Form["CardNumber"].ToString());
 
-            string passwords = Foosun.Common.Input.Filter(Request.Form["CardPassWord"].ToString());
+            string passwords = Hg.Common.Input.Filter(Request.Form["CardPassWord"].ToString());
             string password = FSSecurity.FDESEncrypt(passwords, 1);
             DateTime CreatTime1 = DateTime.Now;
 
@@ -88,7 +88,7 @@ public partial class user_getPoint : Foosun.Web.UI.UserPage
                                     this.Panel1.Visible = false;
                                     this.Panel2.Visible = true;
                                     this.Money.Text = (String.Format("{0:C}", Money));
-                                    this.cz.Text = Foosun.Common.Input.Filter(Request.Form["CardNumber"]);
+                                    this.cz.Text = Hg.Common.Input.Filter(Request.Form["CardNumber"]);
                                     this.Pion.Text = u_CardNm.Rows[0]["Point"].ToString();
                                 }
                             }
@@ -101,7 +101,7 @@ public partial class user_getPoint : Foosun.Web.UI.UserPage
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         string cnm = this.cz.Text;
 
         DataTable u_CardNm1 = inf.sel_10(cnm);
@@ -118,7 +118,7 @@ public partial class user_getPoint : Foosun.Web.UI.UserPage
 
         string contents="点卡充值";
 
-        string GhID = Foosun.Common.Rand.Number(12);
+        string GhID = Hg.Common.Rand.Number(12);
 
         DateTime CreatTime = DateTime.Now;
 

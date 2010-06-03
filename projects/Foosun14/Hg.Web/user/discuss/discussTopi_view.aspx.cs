@@ -18,20 +18,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussTopi_view : Foosun.Web.UI.UserPage
+public partial class user_discussTopi_view : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
     {
         
         Response.CacheControl = "no-cache";
-        string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+        string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
         sc.InnerHtml = Show_sc(DisID);
         if (!IsPostBack)
         {            
-            string DtID = Foosun.Common.Input.Filter(Request.QueryString["DtID"].ToString());
+            string DtID = Hg.Common.Input.Filter(Request.QueryString["DtID"].ToString());
             view.InnerHtml = Show_view(DtID);
          }
     }

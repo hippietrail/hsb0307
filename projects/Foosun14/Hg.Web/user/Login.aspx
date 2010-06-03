@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>
-		<%Response.Write(Foosun.Config.UIConfig.HeadTitle); %></title>
+		<%Response.Write(Hg.Config.UIConfig.HeadTitle); %></title>
 	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 	<link href="../sysImages/css/css.css" rel="stylesheet" type="text/css" />

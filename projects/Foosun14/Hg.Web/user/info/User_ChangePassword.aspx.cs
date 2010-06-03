@@ -8,14 +8,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.Xml;
-using Foosun.Config;
+using Hg.Config;
 using System.Net;
 using System.IO;
-using Foosun.PlugIn.Passport;
+using Hg.PlugIn.Passport;
 
-public partial class User_ChangePassword : Foosun.Web.UI.UserPage
+public partial class User_ChangePassword : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     protected void Page_Load(object sender, EventArgs e)
@@ -33,12 +33,12 @@ public partial class User_ChangePassword : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string oldpass = Foosun.Common.Input.Filter(Request.Form["oPass"]);
+            string UserNum = Hg.Global.Current.UserNum;
+            string oldpass = Hg.Common.Input.Filter(Request.Form["oPass"]);
             string newPass = Request.Form["newPass"];
             string pnewPass = Request.Form["pnewPass"];
-            string MD = Foosun.Common.Input.MD5(oldpass,true);
-            string MD2 = Foosun.Common.Input.MD5(newPass, true);
+            string MD = Hg.Common.Input.MD5(oldpass,true);
+            string MD2 = Hg.Common.Input.MD5(newPass, true);
             if (oldpass == "" || newPass == "" || newPass.Length<3)
             {
                 PageError("填写完整。<li>或者密码太短密码不能小于3位</li>", "");
@@ -57,7 +57,7 @@ public partial class User_ChangePassword : Foosun.Web.UI.UserPage
                 {
                     //同步用户密码
                     DPO_Request request = new DPO_Request(Context);
-                    request.UserName = Foosun.Global.Current.UserName;
+                    request.UserName = Hg.Global.Current.UserName;
                     request.PassWord = newPass;
                     request.ProcessMultiPing("update");
                     if (request.FoundErr)
@@ -86,7 +86,7 @@ public partial class User_ChangePassword : Foosun.Web.UI.UserPage
                             if (adConfig.isAdapt)
                             {
                                 string adaptePath = adConfig.adaptPath;
-                                adaptePath += "?username=" + Foosun.Global.Current.UserName + "&password=" + newPass + "&tag=change";
+                                adaptePath += "?username=" + Hg.Global.Current.UserName + "&password=" + newPass + "&tag=change";
                                 //PageRight("修改密码成功", "ChangePassword.aspx", adaptePath, adaptPrams);
 
                                 Uri uri = new Uri(adaptePath);

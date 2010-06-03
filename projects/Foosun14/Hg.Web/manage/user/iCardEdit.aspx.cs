@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_iCardEdit : Foosun.Web.UI.ManagePage
+public partial class manage_user_iCardEdit : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -93,7 +93,7 @@ public partial class manage_user_iCardEdit : Foosun.Web.UI.ManagePage
             int isuse = int.Parse(this.isUse.SelectedValue);
             int cId = int.Parse(this.cId.Value);
 
-            Foosun.Model.IDCARD uc = new Foosun.Model.IDCARD();
+            Hg.Model.IDCARD uc = new Hg.Model.IDCARD();
             uc.CardPassWord = FSSecurity.FDESEncrypt(CardPassWord, 1);
             uc.Id = cId;
             uc.Money = Money;

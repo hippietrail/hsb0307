@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_onlinepay : Foosun.Web.UI.ManagePage
+public partial class manage_user_onlinepay : Hg.Web.UI.ManagePage
 {
     public manage_user_onlinepay()
     {
@@ -64,7 +64,7 @@ public partial class manage_user_onlinepay : Foosun.Web.UI.ManagePage
             string O_other1 = this.O_other1.Text;
             string O_other2 = this.O_other2.Text;
             string O_other3 = this.O_other3.Text;
-            Foosun.Model.UserInfo6 uc = new Foosun.Model.UserInfo6();
+            Hg.Model.UserInfo6 uc = new Hg.Model.UserInfo6();
             uc.onpayType = onpayType;
             uc.O_userName = O_userName;
             uc.O_key = O_key;

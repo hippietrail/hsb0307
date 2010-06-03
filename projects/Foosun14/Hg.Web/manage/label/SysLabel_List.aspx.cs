@@ -170,7 +170,7 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
                         if (dt.Rows[k]["ClassID"].ToString() == "99999999")
                         {
                             dt.Rows[k]["Type"] = "<a class=\"list_link\" href=\"SysLabel_List.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&SiteID=" + Request.QueryString["SiteID"] + "\" title=\"点击查看此分类下的标签\"><img src=\"../../sysImages/folder/review.gif\" border=\"0\" /><font color=\"red\">" + dt.Rows[k]["ClassName"].ToString() + "</font></a><span class=\"reshow\" style=\"font-size:10px;\" title=\"此栏目下标签数\">(" + getCount + ")</span>";
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:reload();\" class='list_link'><img src=\"../../sysImages/folder/downlabel.gif\" border=\"0\" title=\"从风讯(Hg.net)官方重新获取完整的系统标签\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:reload();\" class='list_link'><img src=\"../../sysImages/folder/downlabel.gif\" border=\"0\" title=\"从华光(Hg.net)官方重新获取完整的系统标签\" /></a>";
                         }
                         else
                         {

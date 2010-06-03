@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.PlugIn.Passport;
+using Hg.PlugIn.Passport;
 
-namespace Foosun.Web.user
+namespace Hg.Web.user
 {
     public partial class ConformityInterface : System.Web.UI.Page
     {

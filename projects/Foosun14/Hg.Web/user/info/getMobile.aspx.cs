@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 using System.Xml;
 
-public partial class user_info_getMobile : Foosun.Web.UI.UserPage
+public partial class user_info_getMobile : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -55,7 +55,7 @@ public partial class user_info_getMobile : Foosun.Web.UI.UserPage
         string _Str = "";
         try
         {
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "")
             { _dirdumm = "/" + _dirdumm; }
             if (!File.Exists(Server.MapPath(_dirdumm + "/xml/sys/mobileBindTF.xml"))) { PageError("找不到配置文件(/xml/sys/mobileBindTF.xml).<li>请与系统管理员联系。</li>", ""); }
@@ -86,7 +86,7 @@ public partial class user_info_getMobile : Foosun.Web.UI.UserPage
             }
             if (this.bindTF.Checked)
             {
-                //向风讯网信通端口发送手机号码.并向手机返回验证码
+                //向网信通端口发送手机号码.并向手机返回验证码
 
                 Response.Redirect("getMobile.aspx?MobileNumber=" + MobileNumber + "&bindTF=1");
             }
@@ -107,7 +107,7 @@ public partial class user_info_getMobile : Foosun.Web.UI.UserPage
             //开始验证输入的手机号是否被别人捆绑
 
 
-            //向风讯网信通端口发送手机号码,并发送验证码.返回true,false
+            //向网信通端口发送手机号码,并发送验证码.返回true,false
             rd.updateMobile(MobileNumber,1);
             PageRight("捆绑手机成功。", "userinfo.aspx");
         }

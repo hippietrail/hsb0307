@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_discussphotofilt : Foosun.Web.UI.UserPage
+public partial class user_discussphotofilt : Hg.Web.UI.UserPage
 {
     protected string sImgUrl = "";
     Photo pho = new Photo();
@@ -31,18 +31,18 @@ public partial class user_discussphotofilt : Foosun.Web.UI.UserPage
     {
         Response.CacheControl = "no-cache";
         
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         sc.InnerHtml = Show_scs(DisIDs);
         getPhoto();
 
     }
     protected void getPhoto()
     {
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         string pwd = pho.sel_1(PhotoalbumID);
         string UserNum = pho.sel_20(PhotoalbumID);
-        if (pwd != "" && pwd != null && UserNum != Foosun.Global.Current.UserNum)
+        if (pwd != "" && pwd != null && UserNum != Hg.Global.Current.UserNum)
         {
             Response.Redirect("discussPhotoalbumlist.aspx?DisID='" + DisIDs + "'");
         }
@@ -57,18 +57,18 @@ public partial class user_discussphotofilt : Foosun.Web.UI.UserPage
             //    {
             //        if (n > 0)
             //            sImgUrl += "\t";
-            //        sImgUrl += r[0].ToString().Replace("{@UserdirFile}", Foosun.Config.UIConfig.dirDumm + "/" + Foosun.Config.UIConfig.UserdirFile);
+            //        sImgUrl += r[0].ToString().Replace("{@UserdirFile}", Hg.Config.UIConfig.dirDumm + "/" + Hg.Config.UIConfig.UserdirFile);
             //        n++;
             //    }
             //}
-            string dirDumm = Foosun.Config.UIConfig.dirDumm;
+            string dirDumm = Hg.Config.UIConfig.dirDumm;
             if (dirDumm.Trim() != "")
                 dirDumm = "/" + dirDumm;
 
             photostr += "ImgName = new ImgArray(" + photocount + ");\n";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                photostr += "ImgName[" + i + "] =\"" + (dt.Rows[i][0].ToString().ToLower().Replace("{@userdirfile}", dirDumm + Foosun.Config.UIConfig.UserdirFile)).Replace("discuss/", "").Replace("//", "/") + "\";\n";
+                photostr += "ImgName[" + i + "] =\"" + (dt.Rows[i][0].ToString().ToLower().Replace("{@userdirfile}", dirDumm + Hg.Config.UIConfig.UserdirFile)).Replace("discuss/", "").Replace("//", "/") + "\";\n";
             }
             dt.Dispose();
         }

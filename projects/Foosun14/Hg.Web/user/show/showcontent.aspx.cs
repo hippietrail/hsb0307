@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_show_showcontent : Foosun.Web.UI.BasePage
+public partial class user_show_showcontent : Hg.Web.UI.BasePage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -21,14 +21,14 @@ public partial class user_show_showcontent : Foosun.Web.UI.BasePage
         {
             copyright.InnerHtml = CopyRight;
             string u_name = Request.QueryString["uid"];
-            string uID = pd.getUserNameUserNum(Foosun.Common.Input.Filter(u_name.ToString()));
+            string uID = pd.getUserNameUserNum(Hg.Common.Input.Filter(u_name.ToString()));
             string ConID = Request.QueryString["ConID"];
             contentClass.InnerHtml = cclass(uID);
             if (ConID != null && ConID != "")
             {
                 if (u_name != null && u_name != "")
                 {
-                    DataTable dt = rd.getConstrID(Foosun.Common.Input.Filter(ConID.ToString()), uID);
+                    DataTable dt = rd.getConstrID(Hg.Common.Input.Filter(ConID.ToString()), uID);
                     if (dt != null)
                     {
                         if (dt.Rows.Count > 0)

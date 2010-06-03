@@ -18,14 +18,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussphoto_add : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphoto_add : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     Photo pho = new Photo();
-    public string dimm = Foosun.Config.UIConfig.dirDumm;
-    public string UserdirFile = Foosun.Config.UIConfig.UserdirFile;
+    public string dimm = Hg.Config.UIConfig.dirDumm;
+    public string UserdirFile = Hg.Config.UIConfig.UserdirFile;
     protected void Page_Load(object sender, EventArgs e)
     {
         
@@ -36,7 +36,7 @@ public partial class user_discuss_discussphoto_add : Foosun.Web.UI.UserPage
             {
                 dimm = dimm + "/";
             }
-            string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+            string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
             DataTable dts1 = dis.sel_23(DisIDs);
             this.DropDownList1.DataSource = dts1;
             this.DropDownList1.DataTextField = "PhotoalbumName";
@@ -47,11 +47,11 @@ public partial class user_discuss_discussphoto_add : Foosun.Web.UI.UserPage
     }
     protected void server_Click(object sender, EventArgs e)
     {
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
 
-        string PhotoUrl1 = Foosun.Common.Input.Htmls(this.pic_p_1url.Text);
-        string PhotoUrl2 = Foosun.Common.Input.Htmls(this.pic_p_1ur2.Text);
-        string PhotoUrl3 = Foosun.Common.Input.Htmls(this.pic_p_1ur3.Text);
+        string PhotoUrl1 = Hg.Common.Input.Htmls(this.pic_p_1url.Text);
+        string PhotoUrl2 = Hg.Common.Input.Htmls(this.pic_p_1ur2.Text);
+        string PhotoUrl3 = Hg.Common.Input.Htmls(this.pic_p_1ur3.Text);
         bool flg = false;
         if (PhotoUrl1 != String.Empty && PhotoUrl1 != null)
         {
@@ -86,11 +86,11 @@ public partial class user_discuss_discussphoto_add : Foosun.Web.UI.UserPage
         string PhotoContent = Request.Form["TextBox2"].ToString();
 
         System.Threading.Thread.Sleep(10);
-        string PhotoID = Foosun.Common.Rand.Number(12);
+        string PhotoID = Hg.Common.Rand.Number(12);
 
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
 
-        Foosun.Model.STPhoto ph = new Foosun.Model.STPhoto();
+        Hg.Model.STPhoto ph = new Hg.Model.STPhoto();
         ph.PhotoContent = PhotoContent;
         ph.PhotoName = PhotoName;
 

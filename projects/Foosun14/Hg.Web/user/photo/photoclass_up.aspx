@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -17,32 +17,32 @@
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >Ïà²á¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">Ïà²á¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />Ïà²á·ÖÀà</div></td>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">Ïà²áÊ×Ò³</a>&nbsp;©®&nbsp;<a href="photoclass.aspx" class="menulist">Ïà²á·ÖÀà</a>&nbsp;©®&nbsp;<a href="photoclass_add.aspx" class="menulist">Ìí¼Ó·ÖÀà</a></span></td>
+     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>&nbsp;ï¿½ï¿½&nbsp;<a href="photoclass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;à©®&nbsp;<a href="photoclass_add.aspx" class="menulist">ï¿½ï¿½Ó·ï¿½ï¿½</a></span></td>
   </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table" id="insert">
 
   <tr class="TR_BG_list">
     <td class="list_link" width="25%" style="text-align: right">
-        ·ÖÀàÃû³Æ£º</td>
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="list_link" width="75%">
         <asp:TextBox ID="ClassName" runat="server" Width="241px" CssClass="form"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ClassName"
-            ErrorMessage="ÇëÊäÈë·ÖÀàÃû³Æ"></asp:RequiredFieldValidator></td>
+            ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"></asp:RequiredFieldValidator></td>
   </tr>
 
   <tr class="TR_BG_list">
     <td class="list_link"></td>
     <td class="list_link">
-        <asp:Button ID="Button1" runat="server" Text="±£  ´æ"  OnClick="Button1_Click"  CssClass="form"/>
+        <asp:Button ID="Button1" runat="server" Text="Æ±ï¿½  ï¿½"  OnClick="Button1_Click"  CssClass="form"/>
         &nbsp;&nbsp;&nbsp;
-        <input name="reset" type="reset" value=" ÖØ ÖÃ "  class ="form"/>
+        <input name="reset" type="reset" value=" ï¿½ï¿½ ï¿½ï¿½ "  class ="form"/>
     </td>
   </tr>
 </table>

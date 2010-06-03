@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_friend_Establishment : Foosun.Web.UI.UserPage
+public partial class user_friend_Establishment : Hg.Web.UI.UserPage
 {
     Friend fri = new Friend();
     protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ public partial class user_friend_Establishment : Foosun.Web.UI.UserPage
         if (!this.IsPostBack)
         {
             
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             int fE = 0;
             if (fri.sel_6(UserNum) != null && fri.sel_6(UserNum) != "")
             {
@@ -50,7 +50,7 @@ public partial class user_friend_Establishment : Foosun.Web.UI.UserPage
     }
     protected void addfriend_Click(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         int FE = int.Parse(this.RadioButtonList1.SelectedValue);
         if (fri.Update(FE, UserNum)==0)
         {

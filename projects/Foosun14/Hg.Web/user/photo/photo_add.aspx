@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -14,28 +14,28 @@
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >Ïà²á¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">Ïà²á¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />Ìí¼ÓÍ¼Æ¬</div></td>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½Í¼Æ¬</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">Ïà²áÊ×Ò³</a>&nbsp;©®&nbsp;<a href="photo_add.aspx" class="menulist">Ìí¼ÓÍ¼Æ¬</a>&nbsp;©®&nbsp;<a href="photoclass.aspx" class="menulist">Ïà²á·ÖÀà</a>&nbsp;©®&nbsp;<a href="Photoalbum.aspx" class="menulist">Ìí¼ÓÏà²á</a></span></td>
+     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>&nbsp;ï¿½ï¿½&nbsp;<a href="photo_add.aspx" class="menulist">ï¿½ï¿½ï¿½Í¼Æ¬</a>&nbsp;ï¿½ï¿½&nbsp;<a href="photoclass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;à©®&nbsp;<a href="Photoalbum.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a></span></td>
   </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table" id="insert">
 
   <tr class="TR_BG_list">
     <td class="list_link" style="text-align: right; width: 179px;">
-        ÏàÆ¬±êÌâ£º</td>
+        ï¿½ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½â£º</td>
     <td class="list_link" style="width: 707px">
-        <asp:TextBox ID="PhotoName" runat="server" Width="350px" CssClass="form"></asp:TextBox>&nbsp;Ïà²á£º<asp:DropDownList ID="Photoalbum" runat="server" Width="133px">
+        <asp:TextBox ID="PhotoName" runat="server" Width="350px" CssClass="form"></asp:TextBox>&nbsp;ï¿½ï¿½á£º<asp:DropDownList ID="Photoalbum" runat="server" Width="133px">
         </asp:DropDownList></td>
   </tr>
 
   <tr class="TR_BG_list">
     <td class="list_link" style="text-align: right; width: 179px;">
-        Í¼Æ¬£º</td>
+        Í¼Æ¬ï¿½ï¿½</td>
     <td class="list_link" style="width: 707px">  
     <table width="81%" border="0" cellspacing="1" cellpadding="1">
                 <tr> 
@@ -75,12 +75,12 @@
                </td>
                </tr> 
                 <tr> 
-                  <td class="list_link" style="width: 176px"><div align="center"><input  class="form" type="button" value="ÉÏ ´«"  onclick="selectFile('user_pic',
-document.form1.pic_p_1url,300,500);" />&nbsp;&nbsp;<input id="Button2" type="button" value="É¾ ³ý" class="form" onClick="dels_1();"/>
+                  <td class="list_link" style="width: 176px"><div align="center"><input  class="form" type="button" value="ï¿½ Ï´ï¿½"  onclick="selectFile('user_pic',
+document.form1.pic_p_1url,300,500);" />&nbsp;&nbsp;<input id="Button2" type="button" value="É¾ ï¿½" class="form" onClick="dels_1();"/>
                     </div></td>
-                  <td class="list_link" style="display:none;" ><div align="center"><input  class="form" type="button" value="ÉÏ ´«"  onclick="selectFile('user_pic',document.form1.pic_p_1ur2,300,500);" />&nbsp;&nbsp;<input id="Button3" type="button" value="É¾ ³ý" class="form" onClick="dels_2();"/>
+                  <td class="list_link" style="display:none;" ><div align="center"><input  class="form" type="button" value="ï¿½ï¿½ Ï´ï¿½"  onclick="selectFile('user_pic',document.form1.pic_p_1ur2,300,500);" />&nbsp;&nbsp;<input id="Button3" type="button" value="É¾ ï¿½" class="form" onClick="dels_2();"/>
                     </div></td>
-                  <td class="list_link"  style="display:none;" ><div align="center"><input  class="form" type="button" value="ÉÏ ´«"  onclick="selectFile('user_pic',document.form1.pic_p_1ur3,300,500);" /> &nbsp;&nbsp;<input id="Button4" type="button" value="É¾ ³ý"  class="form" onClick="dels_3();"/>
+                  <td class="list_link"  style="display:none;" ><div align="center"><input  class="form" type="button" value="ï¿½ï¿½ Ï´ï¿½"  onclick="selectFile('user_pic',document.form1.pic_p_1ur3,300,500);" /> &nbsp;&nbsp;<input id="Button4" type="button" value="É¾ ï¿½"  class="form" onClick="dels_3();"/>
                     </div></td>
                 </tr>
               </table>
@@ -88,7 +88,7 @@ document.form1.pic_p_1url,300,500);" />&nbsp;&nbsp;<input id="Button2" type="but
   </tr>
      <tr class="TR_BG_list">
     <td class="list_link" style="text-align: right; width: 179px;">
-        Í¼Æ¬ËµÃ÷£º</td>
+        ï¿½Í¼Æ¬Ëµï¿½</td>
     <td class="list_link" style="width: 707px">
         <asp:TextBox ID="PhotoContent" runat="server" Height="130px" TextMode="MultiLine" Width="480px" CssClass="form"></asp:TextBox></td>
   </tr>
@@ -96,7 +96,7 @@ document.form1.pic_p_1url,300,500);" />&nbsp;&nbsp;<input id="Button2" type="but
     <td class="list_link" style="text-align: right; width: 179px;">
         </td>
     <td class="list_link" style="width: 707px">
-        <asp:Button ID="server" runat="server" Text="±£´æµ½Ïà²á" Width="115px" OnClick="server_Click" CssClass="form"/></td>
+        <asp:Button ID="server" runat="server" Text="ï¿½ï¿½ï¿½æµ½ï¿½ï¿½" Width="115px" OnClick="server_Click" CssClass="form"/></td>
         </tr>
            
 </table>
@@ -120,7 +120,7 @@ new Form.Element.Observer($('pic_p_1url'),1,pics_1);
 			}
 			else
 			{
-			$('pic_p_1').src=$('pic_p_1url').value.replace('{@UserdirFile}','<% Response.Write(UdirDumm); %><% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>');
+			$('pic_p_1').src=$('pic_p_1url').value.replace('{@UserdirFile}','<% Response.Write(UdirDumm); %><% Response.Write(Hg.Config.UIConfig.UserdirFile); %>');
 			}
 		} 
 new Form.Element.Observer($('pic_p_1ur2'),1,pics_2);
@@ -132,7 +132,7 @@ new Form.Element.Observer($('pic_p_1ur2'),1,pics_2);
 			}
 			else
 			{
-			$('pic_p_2').src=$('pic_p_1ur2').value.replace('{@UserdirFile}','/<% Response.Write(Foosun.Config.UIConfig.dirDumm); %>/<% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>');
+			$('pic_p_2').src=$('pic_p_1ur2').value.replace('{@UserdirFile}','/<% Response.Write(Hg.Config.UIConfig.dirDumm); %>/<% Response.Write(Hg.Config.UIConfig.UserdirFile); %>');
 			}
 		}
 new Form.Element.Observer($('pic_p_1ur3'),1,pics_3);
@@ -144,7 +144,7 @@ new Form.Element.Observer($('pic_p_1ur3'),1,pics_3);
 			}
 			else
 			{
-			$('pic_p_3').src=$('pic_p_1ur3').value.replace('{@UserdirFile}','/<% Response.Write(Foosun.Config.UIConfig.dirDumm); %>/<% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>');
+			$('pic_p_3').src=$('pic_p_1ur3').value.replace('{@UserdirFile}','/<% Response.Write(Hg.Config.UIConfig.dirDumm); %>/<% Response.Write(Hg.Config.UIConfig.UserdirFile); %>');
 			}
 		} 
 		

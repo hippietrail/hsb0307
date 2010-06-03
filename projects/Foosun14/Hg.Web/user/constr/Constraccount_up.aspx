@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
         <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -17,14 +17,14 @@
                   <td colspan="2" style="height: 1px"></td>
                 </tr>
                 <tr>
-                  <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ÕËºÅ¹ÜÀí</td>
-                  <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">¸å¼þ¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ÐÞ¸ÄÕËºÅ</div></td>
+                  <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ËºÅ¹ï¿½ï¿½</td>
+                  <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½Þ¸ï¿½ï¿½Ëº</div></td>
                 </tr>
         </table>
       <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
         <tr>
           <td style="padding-left:14px;">          
-          <a href="Constr.aspx" class="menulist">·¢±íÎÄÕÂ</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ËùÓÐÍË¸å</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ÎÄÕÂ¹ÜÀí</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">·ÖÀà¹ÜÀí</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ÕËºÅ¹ÜÀí</a>&nbsp; &nbsp;<a href="Constraccount_add.aspx" class="menulist">Ìí¼ÓÕËºÅ</a></td>
+          <a href="Constr.aspx" class="menulist">Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ï¿½ï¿½ËºÅ¹ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constraccount_add.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½Ëº</a></td>
         </tr>
         </table>
         <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
@@ -32,64 +32,64 @@
  
     <tr class="TR_BG_list">
     <td class="list_link">
-        ÕæÊµÐÕÃû£º</td>
+        ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½</td>
     <td class="list_link">
-        <asp:TextBox ID="RealNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0001',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ÕæÊµÐÕÃû²»ÄÜÎª¿Õ" ControlToValidate="RealNameBox"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="RealNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0001',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="RealNameBox"></asp:RequiredFieldValidator></td>
   </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        ¿ª»§ÒøÐÐ£º</td>
+        Õ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½</td>
     <td class="list_link">
-        <asp:TextBox ID="bankNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0002',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="¿ª»§ÒøÐÐ²»ÄÜÎª¿Õ" ControlToValidate="bankNameBox"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="bankNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0002',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="bankNameBox"></asp:RequiredFieldValidator></td>
         
   </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        ¿ª»§Ãû£º</td>
+        Õ¿ï¿½ï¿½ï¿½ï¿½</td>
     <td class="list_link">
-        <asp:TextBox ID="bankRealNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0003',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="¿ª»§Ãû²»ÄÜÎª¿Õ" ControlToValidate="bankRealNameBox"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="bankRealNameBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0003',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="bankRealNameBox"></asp:RequiredFieldValidator></td>
   </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        ÒøÐÐÕËºÅ£º</td>
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½</td>
     <td class="list_link">
-        <asp:TextBox ID="bankaccountBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0004',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="ÒøÐÐÕËºÅ²»ÄÜÎª¿Õ" ControlToValidate="bankaccountBox"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="bankaccountBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0004',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅ²ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="bankaccountBox"></asp:RequiredFieldValidator></td>
   </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        ¿¨ºÅ£º</td>
+        Õ¿ï¿½ï¿½Å£ï¿½</td>
     <td class="list_link">
-        <asp:TextBox ID="bankcardBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0005',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="¿¨ºÅ²»ÄÜÎª¿Õ" ControlToValidate="bankcardBox"></asp:RequiredFieldValidator></td>
+        <asp:TextBox ID="bankcardBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0005',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="ï¿½Å²ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="bankcardBox"></asp:RequiredFieldValidator></td>
   </tr>
    <tr class="TR_BG_list">
     <td class="list_link" width="25%">
-        µØÖ·£º</td>
+        Õµï¿½Ö·ï¿½ï¿½</td>
     <td class="list_link" width="75%">
-       <asp:TextBox ID="addressBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0006',this)">°ïÖú</span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="µØÖ·²»ÄÜÎª¿Õ" ControlToValidate="addressBox"></asp:RequiredFieldValidator></td>
+       <asp:TextBox ID="addressBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0006',this)">ï¿½ï¿½ï¿½</span>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Îªï¿½" ControlToValidate="addressBox"></asp:RequiredFieldValidator></td>
   </tr>
 
   <tr class="TR_BG_list">
     <td class="list_link">
-        ÓÊÕþ±àÂë£º</td>
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="list_link">
-        <asp:TextBox ID="postcodeBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_Constraccount_add_0007',this)">°ïÖú</span>
+        <asp:TextBox ID="postcodeBox" runat="server" Width="349px" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_Constraccount_add_0007',this)">ï¿½ï¿½ï¿½</span>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Display="Dynamic"
-            ErrorMessage="ÓÊÕþ±àÂë²»ÄÜÎª¿Õ" ControlToValidate="postcodeBox"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="ÓÊÕþ±àÂë²»¶Ô"
+            ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Îªï¿½" ControlToValidate="postcodeBox"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ï¿½"
             ValidationExpression="\d{6}" ControlToValidate="postcodeBox"></asp:RegularExpressionValidator></td>
   </tr>
    <tr class="TR_BG_list">
     <td class="list_link"></td>
     <td class="list_link">
         &nbsp; &nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Ìá ½»" OnClick="Button1_Click" CssClass="form"/>
-        &nbsp; &nbsp;<input type="reset" name="Submit3"  class="form" value="ÖØ ÖÃ">
+        <asp:Button ID="Button1" runat="server" Text="ï¿½ï¿½ á½»" OnClick="Button1_Click" CssClass="form"/>
+        &nbsp; &nbsp;<input type="reset" name="Submit3"  class="form" value="ï¿½ ï¿½ï¿½">
     </td>
   </tr>
 </table>

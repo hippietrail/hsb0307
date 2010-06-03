@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <script type="text/javascript" src="../../editor/fckeditor.js"></script>
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="DispChange('<%= ConstrTF %>')"><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -139,7 +139,7 @@
 <br />
 <table width="100%" height="74" border="0" cellpadding="0" cellspacing="0" class="copyright_bg">
   <tr>
-    <td><div align="center"><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> </div></td>
+    <td><div align="center"><%Response.Write(Hg.Config.UIConfig.HeadTitle); %> </div></td>
   </tr>
 </table>
 </form>

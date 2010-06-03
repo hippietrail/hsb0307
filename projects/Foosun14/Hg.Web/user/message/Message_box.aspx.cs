@@ -19,10 +19,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_message_Message_box : Foosun.Web.UI.UserPage
+public partial class user_message_Message_box : Hg.Web.UI.UserPage
 {
     Message mes = new Message();
     #region 初始化
@@ -57,23 +57,23 @@ public partial class user_message_Message_box : Foosun.Web.UI.UserPage
         }
         if (xs == "1")
         {
-            SQLConditionInfo st = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dts = Foosun.CMS.Pagination.GetPage("user_message_Message_box_1_aspx", PageIndex, 20, out i, out j, st);
+            SQLConditionInfo st = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dts = Hg.CMS.Pagination.GetPage("user_message_Message_box_1_aspx", PageIndex, 20, out i, out j, st);
         }
         else if (xs == "2")
         {
-            SQLConditionInfo st2 = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dts = Foosun.CMS.Pagination.GetPage("user_message_Message_box_2_aspx", PageIndex, 20, out i, out j, st2);
+            SQLConditionInfo st2 = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dts = Hg.CMS.Pagination.GetPage("user_message_Message_box_2_aspx", PageIndex, 20, out i, out j, st2);
         }
         else if (xs == "3")
         {
-            SQLConditionInfo st3 = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dts = Foosun.CMS.Pagination.GetPage("user_message_Message_box_3_aspx", PageIndex, 20, out i, out j, st3);
+            SQLConditionInfo st3 = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dts = Hg.CMS.Pagination.GetPage("user_message_Message_box_3_aspx", PageIndex, 20, out i, out j, st3);
         }
         else
         {
-            SQLConditionInfo st4 = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dts = Foosun.CMS.Pagination.GetPage("user_message_Message_box_4_aspx", PageIndex, 20, out i, out j, st4);
+            SQLConditionInfo st4 = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dts = Hg.CMS.Pagination.GetPage("user_message_Message_box_4_aspx", PageIndex, 20, out i, out j, st4);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -90,7 +90,7 @@ public partial class user_message_Message_box : Foosun.Web.UI.UserPage
             dts.Columns.Add("btf2", typeof(string));
             dts.Columns.Add("links", typeof(string));
 
-            Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+            Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
             foreach (DataRow s in dts.Rows)
             {
                 s["links"] = "Message_read.aspx?Mid=" + s["Mid"].ToString() + "";
@@ -153,7 +153,7 @@ public partial class user_message_Message_box : Foosun.Web.UI.UserPage
     #region 删除到废件箱
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
-      int xs = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["Id"].ToString()));
+      int xs = int.Parse(Hg.Common.Input.Filter(Request.QueryString["Id"].ToString()));
 
         string checkboxq = Request.Form["Checkbox1"];
         if (checkboxq == null || checkboxq == String.Empty)
@@ -203,8 +203,8 @@ public partial class user_message_Message_box : Foosun.Web.UI.UserPage
     #region 删除短消息
     protected void LinkButton2_Click(object sender, EventArgs e)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
-        int xq = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["Id"].ToString()));
+        string UserNum = Hg.Global.Current.UserNum;
+        int xq = int.Parse(Hg.Common.Input.Filter(Request.QueryString["Id"].ToString()));
         string checkbox = Request.Form["Checkbox1"];
         if (checkbox == null || checkbox == String.Empty)
         {

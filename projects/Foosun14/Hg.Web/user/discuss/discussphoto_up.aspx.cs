@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussphoto_up : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphoto_up : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     Photo pho = new Photo();
@@ -29,12 +29,12 @@ public partial class user_discuss_discussphoto_up : Foosun.Web.UI.UserPage
         
         if (!IsPostBack)
         {
-            string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+            string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
             sc.InnerHtml = Show_scs(DisIDs);
-            string PhotoID = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+            string PhotoID = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
             DataTable dt_photo = dis.sel_24(PhotoID);
 
-            if (dt_photo.Rows[0]["UserNum"].ToString() != Foosun.Global.Current.UserNum)
+            if (dt_photo.Rows[0]["UserNum"].ToString() != Hg.Global.Current.UserNum)
             {
                 PageError("这张图片不是你的你无权修改", "discussPhotoalbumlist.aspx?DisID=" + DisIDs + "");
             }
@@ -58,14 +58,14 @@ public partial class user_discuss_discussphoto_up : Foosun.Web.UI.UserPage
                 }
 
             }
-            no.InnerHtml = Show_no(dt_photo.Rows[0]["PhotoUrl"].ToString().Replace("{@UserdirFile}", Foosun.Config.UIConfig.dirDumm + "/" + Foosun.Config.UIConfig.UserdirFile));
+            no.InnerHtml = Show_no(dt_photo.Rows[0]["PhotoUrl"].ToString().Replace("{@UserdirFile}", Hg.Config.UIConfig.dirDumm + "/" + Hg.Config.UIConfig.UserdirFile));
         }
     }
     protected void server_Click(object sender, EventArgs e)
     {
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
 
-        string PhotoIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+        string PhotoIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
         string PhotoUrl1 = "";
         if (this.pic_p_1url.Value == "")
         {
@@ -76,10 +76,10 @@ public partial class user_discuss_discussphoto_up : Foosun.Web.UI.UserPage
         {
             PhotoUrl1 = pic_p_1url.Value;
         }
-        string PhotoIDsa = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
-        string PhotoName = Foosun.Common.Input.Filter(Request.Form["PhotoName"].ToString());
+        string PhotoIDsa = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+        string PhotoName = Hg.Common.Input.Filter(Request.Form["PhotoName"].ToString());
         string PhotoalbumID = this.Photoalbum.SelectedValue;
-        string PhotoContent = Foosun.Common.Input.Filter(Request.Form["PhotoContent"].ToString());
+        string PhotoContent = Hg.Common.Input.Filter(Request.Form["PhotoContent"].ToString());
 
         if (PhotoIDsa == null) 
             PhotoIDsa = "";
@@ -108,7 +108,7 @@ public partial class user_discuss_discussphoto_up : Foosun.Web.UI.UserPage
     }
     string Show_no(string pURL)
     {
-        string nos = "<td class=\"list_link\" ><img src=\"" + Foosun.Publish.CommonData.getUrl() + pURL + "\" width=\"90\" height=\"90\" id=\"pic_p_1\" /></td>";
+        string nos = "<td class=\"list_link\" ><img src=\"" + Hg.Publish.CommonData.getUrl() + pURL + "\" width=\"90\" height=\"90\" id=\"pic_p_1\" /></td>";
         return nos;
     }
     string Show_scs(string DisID)

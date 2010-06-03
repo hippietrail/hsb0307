@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_channel_list : Foosun.Web.UI.UserPage
+public partial class user_channel_list : Hg.Web.UI.UserPage
 {
     Channel rd = new Channel();
     public static string itemname = string.Empty;
@@ -64,12 +64,12 @@ public partial class user_channel_list : Foosun.Web.UI.UserPage
                             }
                             else
                             {
-                                rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 1, Foosun.Global.Current.UserName);
+                                rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 1, Hg.Global.Current.UserName);
                                 OpStr = "锁定成功";
                             }
                             break;
                         case "0":
-                            rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 0, Foosun.Global.Current.UserName);
+                            rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 0, Hg.Global.Current.UserName);
                             OpStr = "解锁成功";
                             break;
                         case "2":
@@ -79,7 +79,7 @@ public partial class user_channel_list : Foosun.Web.UI.UserPage
                             }
                             else
                             {
-                                rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 2, Foosun.Global.Current.UserName);
+                                rd.updateUserInfo(int.Parse(id.ToString()), int.Parse(ChID.ToString()), 2, Hg.Global.Current.UserName);
                                 OpStr = "删除成功";
                             }
                             break;
@@ -159,7 +159,7 @@ public partial class user_channel_list : Foosun.Web.UI.UserPage
     protected void StartLoad(int PageIndex,string Keywords,string ClassID)
     {
         int i, j;
-        string Author = Foosun.Global.Current.UserName;
+        string Author = Hg.Global.Current.UserName;
         DataTable dt = rd.GetUserChannelPage(Author,Keywords, ClassID, int.Parse(Request.QueryString["ChID"].ToString()), PageIndex, 20, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -234,7 +234,7 @@ public partial class user_channel_list : Foosun.Web.UI.UserPage
                 {
                     if (dr["islock"].ToString() == "1")
                     {
-                        rd.updateUserInfo(int.Parse(gIDARR[i].ToString()), int.Parse(ChID.ToString()), 2, Foosun.Global.Current.UserName);
+                        rd.updateUserInfo(int.Parse(gIDARR[i].ToString()), int.Parse(ChID.ToString()), 2, Hg.Global.Current.UserName);
                     }
                 }
                 dr.Close();

@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class survey_Vote_Show : Foosun.Web.UI.BasePage
+public partial class survey_Vote_Show : Hg.Web.UI.BasePage
 {
     public string dc = null;
     public string strtheurl = null;
@@ -51,9 +51,9 @@ public partial class survey_Vote_Show : Foosun.Web.UI.BasePage
         string SiteID = "0";
         if (Validate_Session())
         {
-            SiteID = Foosun.Global.Current.SiteID;
+            SiteID = Hg.Global.Current.SiteID;
         }
-        string Str_dirMana = Foosun.Config.UIConfig.dirDumm;
+        string Str_dirMana = Hg.Config.UIConfig.dirDumm;
         if (Str_dirMana != "" && Str_dirMana != null && Str_dirMana != string.Empty)//判断虚拟路径是否为空,如果不是则加上//
         {
             Str_dirMana = "/" + Str_dirMana;

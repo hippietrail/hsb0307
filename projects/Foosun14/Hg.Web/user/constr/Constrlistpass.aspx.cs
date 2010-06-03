@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,10 +17,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_constr_Constrlistpass : Foosun.Web.UI.UserPage
+public partial class user_constr_Constrlistpass : Hg.Web.UI.UserPage
 {
     //联接数据库
     Constr con = new Constr();
@@ -44,7 +44,7 @@ public partial class user_constr_Constrlistpass : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -71,9 +71,9 @@ public partial class user_constr_Constrlistpass : Foosun.Web.UI.UserPage
     }
     protected void Showu_constrlist(int PageIndex)
     {
-        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
+        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, st);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, st);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

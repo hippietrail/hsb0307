@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_Constr_up : Foosun.Web.UI.UserPage
+public partial class user_Constr_up : Hg.Web.UI.UserPage
 {
     /// <summary>
     /// 初始化信息
@@ -35,7 +35,7 @@ public partial class user_Constr_up : Foosun.Web.UI.UserPage
          ConstrTF = con.ConstrTF();
          string _ConID = Request.QueryString["ConID"];
          if (_ConID == "" && _ConID == null){PageError("参数错误", "");}
-         string ConID = Foosun.Common.Input.Filter(_ConID.ToString());
+         string ConID = Hg.Common.Input.Filter(_ConID.ToString());
          if (!IsPostBack)
          {
              DataTable dt = con.sel1(ConID);
@@ -63,7 +63,7 @@ public partial class user_Constr_up : Foosun.Web.UI.UserPage
                  }
 
                  //加载稿件分类
-                 DataTable tb1 = con.selConstrClass(Foosun.Global.Current.UserNum);
+                 DataTable tb1 = con.selConstrClass(Hg.Global.Current.UserNum);
                  this.ConstrClass.DataSource = tb1;
                  this.ConstrClass.DataTextField = "cName";
                  this.ConstrClass.DataValueField = "Ccid";
@@ -123,18 +123,18 @@ public partial class user_Constr_up : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string ConIDs = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
-            string Contents = Foosun.Common.Input.Htmls(Contentbox.Value);
+            string ConIDs = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+            string Contents = Hg.Common.Input.Htmls(Contentbox.Value);
             string ClassID = this.ConstrClass.SelectedValue.ToString();
-            string Title = Foosun.Common.Input.Htmls(Request.Form["Title"].ToString());
-            string Author = Foosun.Common.Input.Htmls(Request.Form["Author"].ToString());
+            string Title = Hg.Common.Input.Htmls(Request.Form["Title"].ToString());
+            string Author = Hg.Common.Input.Htmls(Request.Form["Author"].ToString());
             string SiteID = this.site.SelectedValue.ToString();
             string Source = this.lxList1.SelectedValue.ToString();
             string Contrflg = "";
             Contrflg = this.inList1.SelectedValue.ToString() + "|" + fbList1.SelectedValue.ToString() + "|" + Locking.SelectedValue.ToString() + "|" + Recommendation.SelectedValue.ToString();
-            string PicURL = Foosun.Common.Input.Htmls(Request.Form["photo"].ToString());
+            string PicURL = Hg.Common.Input.Htmls(Request.Form["photo"].ToString());
             string Tags = this.Tags.Text;
-            Foosun.Model.STConstr stcn;
+            Hg.Model.STConstr stcn;
             stcn.Content = Contents;
             stcn.ClassID = ClassID;
             stcn.Title = Title;
@@ -144,7 +144,7 @@ public partial class user_Constr_up : Foosun.Web.UI.UserPage
             stcn.Author = Author;
             stcn.PicURL = PicURL;
             stcn.SiteID = SiteID;
-            stcn.UserNum = Foosun.Global.Current.UserNum;
+            stcn.UserNum = Hg.Global.Current.UserNum;
             if (con.Update(stcn, ConIDs) == 0)
             {
                 PageError("更新错误", "Constrlist.aspx");

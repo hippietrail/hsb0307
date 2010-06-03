@@ -6,7 +6,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <script type="text/javascript" src="../../editor/fckeditor.js"></script>
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #ffffff">
 <form id="form1" name="form1" method="post" action="" runat="server">

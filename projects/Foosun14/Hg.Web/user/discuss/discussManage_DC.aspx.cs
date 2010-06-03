@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussManage_DC : Foosun.Web.UI.UserPage
+public partial class user_discussManage_DC : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ public partial class user_discussManage_DC : Foosun.Web.UI.UserPage
         if (!this.IsPostBack)
         {
             
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
             dis.Update_3(DisID);
             DataTable sel_DC = dis.sel_19(DisID);
             if (sel_DC != null)

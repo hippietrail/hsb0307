@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussacti : Foosun.Web.UI.UserPage
+public partial class user_discussacti : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ public partial class user_discussacti : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)//判断是否通过验证
         {
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             string Activesubject = Request.Form["ActivesubjectBox"].ToString();
             string ActivePlace = Request.Form["ActivePlaceBox"].ToString();
             int Anum = int.Parse(Request.Form["AnumBox"].ToString());
@@ -42,11 +42,11 @@ public partial class user_discussacti : Foosun.Web.UI.UserPage
             int ALabel = this.ALabelList.SelectedIndex;
             string ActiveExpense = Request.Form["ActiveExpenseBox"].ToString();
             DateTime CreaTime = DateTime.Now;//获取当前系统时间
-            string AId = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            string AId = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dt1 = dis.sel(UserNum);
             string UserName1 = dt1.Rows[0]["UserName"].ToString();
             string siteID = dt1.Rows[0]["SiteID"].ToString();
-            Foosun.Model.STDiscussActive DA = new Foosun.Model.STDiscussActive();
+            Hg.Model.STDiscussActive DA = new Hg.Model.STDiscussActive();
             DA.ActiveExpense = ActiveExpense;
             DA.ActivePlace = ActivePlace;
             DA.ActivePlan = ActivePlan;

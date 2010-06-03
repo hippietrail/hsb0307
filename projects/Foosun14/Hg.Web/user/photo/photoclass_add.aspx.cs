@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_photo_photoclass_add : Foosun.Web.UI.UserPage
+public partial class user_photo_photoclass_add : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
     protected void Page_Load(object sender, EventArgs e)
@@ -33,9 +33,9 @@ public partial class user_photo_photoclass_add : Foosun.Web.UI.UserPage
         int isDisclass = 0;
         string DisID = "";       
         DateTime Creatime = DateTime.Now;
-        string ClassID = Foosun.Common.Rand.Number(12);
-        string ClassName = Foosun.Common.Input.Htmls(Request.Form["ClassName"].ToString());
-        string UserNum = Foosun.Global.Current.UserNum;
+        string ClassID = Hg.Common.Rand.Number(12);
+        string ClassName = Hg.Common.Input.Htmls(Request.Form["ClassName"].ToString());
+        string UserNum = Hg.Global.Current.UserNum;
 
         if (Page.IsValid)
         {

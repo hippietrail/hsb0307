@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_disFundwarehouse : Foosun.Web.UI.UserPage
+public partial class user_disFundwarehouse : Hg.Web.UI.UserPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -33,17 +33,17 @@ public partial class user_disFundwarehouse : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
+            string UserNum = Hg.Global.Current.UserNum;
             Discuss dis = new Discuss();
-            if (!Foosun.Common.Input.IsInteger(this.FHTextBox1.Text) ||! Foosun.Common.Input.IsInteger(this.FHTextBox2.Text))
+            if (!Hg.Common.Input.IsInteger(this.FHTextBox1.Text) ||! Hg.Common.Input.IsInteger(this.FHTextBox2.Text))
             {
                 PageError("正确填写G币和点数!", "");
             }
             int iPoint1 = int.Parse(this.FHTextBox1.Text);
             int gPoint1 = int.Parse(this.FHTextBox2.Text);
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
             DateTime Creatime = DateTime.Now;
-            string GhID = Foosun.Common.Rand.Number(12);//产生12位随机字符         
+            string GhID = Hg.Common.Rand.Number(12);//产生12位随机字符         
             //讨论组原有基金
             DataTable selFundwarehouse1 = dis.sel_44(DisID);
             string[] Fund = selFundwarehouse1.Rows[0]["Fundwarehouse"].ToString().Split('|');

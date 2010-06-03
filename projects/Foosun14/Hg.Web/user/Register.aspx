@@ -9,9 +9,9 @@
     <script language="JavaScript" type="text/javascript" src="../configuration/js/Public.js"></script>
      
     <title>
-        <%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>
+        <%Response.Write(Hg.Config.UIConfig.HeadTitle); %>
         __»áÔ±×¢²á</title>
-    <link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css"
+    <link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css"
         rel="stylesheet" type="text/css" />
 </head>
 <body onload="GetRootClass()">

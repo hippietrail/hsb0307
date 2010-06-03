@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_discuss_discussubsclass : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussubsclass : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.Discuss rd = new Foosun.CMS.Discuss();
+    Hg.CMS.Discuss rd = new Hg.CMS.Discuss();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -20,13 +20,13 @@ public partial class user_discuss_discussubsclass : Foosun.Web.UI.UserPage
             sysClass.InnerHtml = showsysClass();
             string _ClassID = Request.QueryString["ClassID"];
             string _action = Request.QueryString["Action"];
-            if (_ClassID != "" && _ClassID != null) { classLists.InnerHtml = getsClasslist(Foosun.Common.Input.Filter(_ClassID.ToString())); }
+            if (_ClassID != "" && _ClassID != null) { classLists.InnerHtml = getsClasslist(Hg.Common.Input.Filter(_ClassID.ToString())); }
             else { classLists.InnerHtml = getsClasslist(""); }
             if (_action != "" && _action != null)
             {
                 if (_action.ToString() == "del")
                 {
-                    rd.getsClassDel(Foosun.Common.Input.Filter(Request.QueryString["ID"].ToString()));
+                    rd.getsClassDel(Hg.Common.Input.Filter(Request.QueryString["ID"].ToString()));
                     PageRight("删除成功", "discusssubsclass.aspx");
                 }
             }

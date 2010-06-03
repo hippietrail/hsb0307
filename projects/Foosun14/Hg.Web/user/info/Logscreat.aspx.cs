@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Logscreat : Foosun.Web.UI.ManagePage
+public partial class manage_Logscreat : Hg.Web.UI.ManagePage
 {
     public manage_Logscreat()
     {
@@ -44,13 +44,13 @@ public partial class manage_Logscreat : Foosun.Web.UI.ManagePage
         if (Page.IsValid == true)                       //判断是否验证成功
         {
             //------------------获取表单值-----------------------------------------
-            string title = Foosun.Common.Input.Htmls(this.title.Text);
-            string content = Foosun.Common.Input.Htmls(this.Content.Text);
+            string title = Hg.Common.Input.Htmls(this.title.Text);
+            string content = Hg.Common.Input.Htmls(this.Content.Text);
             DateTime LogDateTime = DateTime.Parse(this.LogDateTime.Text);
             int dateNum = int.Parse(this.dateNum.Text);
             DateTime creatDate = System.DateTime.Now;
             string ramAID;
-            ramAID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            ramAID = Hg.Common.Rand.Number(12);//产生12位随机字符
             if (Request.Form["log_id"] == "")
             {
                 DataTable dt = rd.getUserLogsRecord(ramAID);
@@ -60,14 +60,14 @@ public partial class manage_Logscreat : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    Foosun.Model.UserLog1 uc = new Foosun.Model.UserLog1();
+                    Hg.Model.UserLog1 uc = new Hg.Model.UserLog1();
                     uc.LogID = ramAID;
                     uc.title = title;
                     uc.content = content;
                     uc.creatTime = creatDate;
                     uc.dateNum = dateNum;
                     uc.LogDateTime = LogDateTime;
-                    uc.usernum = Foosun.Global.Current.UserNum;
+                    uc.usernum = Hg.Global.Current.UserNum;
                     rd.InsertUserLogs(uc); 
                     PageRight("添加日历成功。", "logs.aspx");
                 }
@@ -75,7 +75,7 @@ public partial class manage_Logscreat : Foosun.Web.UI.ManagePage
             else
             {
                 int id = int.Parse(Request.Form["log_id"]);
-                Foosun.Model.UserLog1 uc = new Foosun.Model.UserLog1();
+                Hg.Model.UserLog1 uc = new Hg.Model.UserLog1();
                 uc.Id = id;
                 uc.title = title;
                 uc.content = content;

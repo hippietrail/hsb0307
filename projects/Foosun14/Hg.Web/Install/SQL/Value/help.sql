@@ -52,7 +52,7 @@ insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_ChangePass
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_ChangePass_0002','新密码','输入您的新密码。密码长度为3-18位；请尽量使用比较复杂的用户名和密码！');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_ChangePass_0003','确认密码','必须和新密码一致！');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_sysParamtop0001','系统参数设置','对整个站点系统的参数设置，包括基本属性，会员部分，上传，JS，FTP，RSS，水印，以及第三方开发的API的系统参数设置。');
-insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0001','站点名称','<DIV>用于填写前台主页站点名称，如：风讯官方站</DIV><DIV><FONT color=#ff0000>后台程序标题名称请在config文件中配置</FONT></DIV>');
+insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0001','站点名称','<DIV>用于填写前台主页站点名称，如：华光官方站</DIV><DIV><FONT color=#ff0000>后台程序标题名称请在config文件中配置</FONT></DIV>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0002','站点域名','此处填写站点主域名，格式如:<FONT color=blue><A href="http://www.hg.net">www.hg.net</A></FONT>。系统提示:不允许填写"<FONT color=red>http://" </FONT>以及在后面带"<FONT color=red>/"</FONT>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0003','首页生成的文件名','<DIV>首页生成的文件名，如：index.html。</DIV><DIV><FONT color=#ff0000>如果开启了动态调用，此项不起作用。默认首页文件为defalut.aspx</FONT></DIV>');
 insert into [FS_Sys_Help] ([HelpID],[TitleCN],[ContentCN]) values ('H_BaseParam_0004','默认的扩展名为（主站）','html,shtml,shtm(第一个为：生成栏目扩展名，第2个为：新闻生成的扩展名，第3个为专题生成的扩展名)。');

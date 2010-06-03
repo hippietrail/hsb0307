@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussphoto_del : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussphoto_del : Hg.Web.UI.UserPage
 {
 
     Discuss dis = new Discuss();
@@ -30,9 +30,9 @@ public partial class user_discuss_discussphoto_del : Foosun.Web.UI.UserPage
         
         if (!Page.IsPostBack)
         {
-            string PhotoID = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
-            string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"].ToString());
-            if (dis.sel_62(PhotoID) == Foosun.Global.Current.UserNum)
+            string PhotoID = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+            string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"].ToString());
+            if (dis.sel_62(PhotoID) == Hg.Global.Current.UserNum)
             {
                 if (dis.Delete_16(PhotoID) == 0)
                 {

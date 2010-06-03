@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class vplay : Foosun.Web.UI.BasePage
+public partial class vplay : Hg.Web.UI.BasePage
 {
     protected string newLine = "\r\n";
     protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ public partial class vplay : Foosun.Web.UI.BasePage
     /// </summary>
     protected void getVideoInfo()
     {
-        string NewsID = Foosun.Common.Input.Filter(Request.QueryString["NewsID"]);
+        string NewsID = Hg.Common.Input.Filter(Request.QueryString["NewsID"]);
         string vtype = Request.QueryString["vtype"];
         string widthstr = "500";
         string heightstr = "500";
@@ -43,7 +43,7 @@ public partial class vplay : Foosun.Web.UI.BasePage
             }
             catch { i_type = 0; }
 
-            Foosun.CMS.ContentManage news = new Foosun.CMS.ContentManage();
+            Hg.CMS.ContentManage news = new Hg.CMS.ContentManage();
             IDataReader dr = news.getNewsID(NewsID);
             if (dr.Read())
             {
@@ -73,7 +73,7 @@ public partial class vplay : Foosun.Web.UI.BasePage
     protected void getPlay(int vtype, string vURL, string heightstr, string widthstr)
     {
         string str = "";
-        vURL = vURL.Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
+        vURL = vURL.Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
         if (vtype == 0)
         {
             str = "<object id=\"nstv\" classid=\"CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6\" width=\""+widthstr+"\" height=\""+heightstr+"\" codebase=\"http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#\" Version=\"5,1,52,701standby=Loading Microsoft? Windows Media? Player components...\" type=\"application/x-oleobject\">" + newLine;
@@ -122,7 +122,7 @@ public partial class vplay : Foosun.Web.UI.BasePage
         }
         else if (vtype == 2)
         {
-            str = "<embed src=\"" + Foosun.Publish.CommonData.getUrl() + "/FlvPlayer.swf?id=" + vURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" width=\""+widthstr+"\" height=\""+heightstr+"\" autostart=\"true\"></embed>" + newLine;
+            str = "<embed src=\"" + Hg.Publish.CommonData.getUrl() + "/FlvPlayer.swf?id=" + vURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" width=\""+widthstr+"\" height=\""+heightstr+"\" autostart=\"true\"></embed>" + newLine;
         }
         else if (vtype == 3)
         {

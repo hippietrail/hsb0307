@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class survey_Vote_Ajax : Foosun.Web.UI.BasePage
+public partial class survey_Vote_Ajax : Hg.Web.UI.BasePage
 {
     Survey sur = new Survey();
     protected void Page_Load(object sender, EventArgs e)
@@ -42,7 +42,7 @@ public partial class survey_Vote_Ajax : Foosun.Web.UI.BasePage
         DateTime nowtime = DateTime.Now;
         DateTime timesy = nowtime;
         DataTable dtp = sur.sel_17(tid);
-        if (IsReg == 1 && Foosun.Global.Current.IsTimeout())//是否注册判断
+        if (IsReg == 1 && Hg.Global.Current.IsTimeout())//是否注册判断
         {
             Response.Write("对不起，您需要注册后才能投票");
             Response.End();
@@ -50,9 +50,9 @@ public partial class survey_Vote_Ajax : Foosun.Web.UI.BasePage
         else
         {
             string VuserNum = "";
-            if (!Foosun.Global.Current.IsTimeout())
+            if (!Hg.Global.Current.IsTimeout())
             {
-                VuserNum = Foosun.Global.Current.UserNum;
+                VuserNum = Hg.Global.Current.UserNum;
             }
             else
             {

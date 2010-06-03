@@ -14,9 +14,9 @@ using System.Net;
 using System.IO;
 using System.Text;
 
-public partial class user_info_onlinePoint : Foosun.Web.UI.UserPage
+public partial class user_info_onlinePoint : Hg.Web.UI.UserPage
 {
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -31,7 +31,7 @@ public partial class user_info_onlinePoint : Foosun.Web.UI.UserPage
         {
             pointNumber_1.InnerHtml = Request.QueryString["pointNumber"].ToString();
             this.getpointNumber.Value = Request.QueryString["pointNumber"].ToString();
-            string _tmp = Foosun.Common.Rand.Number(12);
+            string _tmp = Hg.Common.Rand.Number(12);
             orderNumber_1.InnerHtml = _tmp;
             this.getorderNumber.Value = _tmp;
             //这里输入ISP商信息，准备开始支付

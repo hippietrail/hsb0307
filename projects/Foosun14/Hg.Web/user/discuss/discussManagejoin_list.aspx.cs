@@ -18,14 +18,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussManagejoin_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussManagejoin_list : Hg.Web.UI.UserPage
 {
     //联接数据库
     Discuss dis = new Discuss();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     /// <summary>
     /// 初始化
     /// </summary>
@@ -46,7 +46,7 @@ public partial class user_discuss_discussManagejoin_list : Foosun.Web.UI.UserPag
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -75,8 +75,8 @@ public partial class user_discuss_discussManagejoin_list : Foosun.Web.UI.UserPag
     protected void Show_jrlist(int PageIndex1)    //显示我加入的讨论组列表
     {
         int i, j;
-        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-        DataTable jrlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out i, out j, sts);
+        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+        DataTable jrlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out i, out j, sts);
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex1;
         this.PageNavigator2.RecordCount = i;
@@ -92,14 +92,14 @@ public partial class user_discuss_discussManagejoin_list : Foosun.Web.UI.UserPag
                 int n = (int)jrid.Compute("Count(DisID)", "DisID='" + r["DisID"].ToString() + "'");
                 r["cutDisID1"] = n;
                 string delTF = "";
-                if (r["UserName"].ToString().ToUpper() == Foosun.Global.Current.UserName.ToUpper())
+                if (r["UserName"].ToString().ToUpper() == Hg.Global.Current.UserName.ToUpper())
                 {
                     delTF = "<a href=\"javascript:del('" + r["Member"].ToString() + "');\" class=\"list_link\">删除</a>┆";
                 }
                 //r["idc1"] = "<a class=\"list_link\" href=\"disFundwarehouse.aspx?DisID=" + r["DisID"].ToString() + "\">捐献</a>┆<a class=\"list_link\" href=\"discussPhotoalbumlist.aspx?DisID=" + r["DisID"].ToString() + "\">相册</a>┆" + delTF + "<input name=\"Checkbox1\" type=\"checkbox\" value=" + r["Member"].ToString() + "  runat=\"server\" />";
                 r["idc1"] = "<a class=\"list_link\" href=\"disFundwarehouse.aspx?DisID=" + r["DisID"].ToString() + "\">捐献</a>┆" + delTF + "<input name=\"Checkbox1\" type=\"checkbox\" value=" + r["Member"].ToString() + "  runat=\"server\" />";
                 r["Cnames"] = "<a title=\"点击进入.\" class=\"list_link\" href=\"discussTopi_list.aspx?DisID=" + r["DisID"].ToString() + "\">" + r["Cname"].ToString() + "</a>";
-                r["userNames"] = "<a title=\"点击查看此用户的资料。\" class=\"list_link\" target=\"_blank\" href=\"../../" + Foosun.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + r["UserName"].ToString() + "\">" + r["UserName"].ToString() + "</a>";
+                r["userNames"] = "<a title=\"点击查看此用户的资料。\" class=\"list_link\" target=\"_blank\" href=\"../../" + Hg.Config.UIConfig.dirUser + "/ShowUser.aspx?uid=" + r["UserName"].ToString() + "\">" + r["UserName"].ToString() + "</a>";
             }
             sc.InnerHtml = Show_sc();
             Repeater1.DataSource = jrlistdts;

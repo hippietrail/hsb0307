@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussManage_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussManage_list : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     /// <summary>
@@ -55,7 +55,7 @@ public partial class user_discuss_discussManage_list : Foosun.Web.UI.UserPage
       protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
       {   
             int i, j;
-            DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
+            DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
             this.PageNavigator1.PageCount = j;
             this.PageNavigator1.PageIndex = PageIndex;
             this.PageNavigator1.RecordCount = i;

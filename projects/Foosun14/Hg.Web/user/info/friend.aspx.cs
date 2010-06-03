@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-public partial class user_friend_friend : Foosun.Web.UI.UserPage
+using Hg.CMS;
+using Hg.CMS.Common;
+public partial class user_friend_friend : Hg.Web.UI.UserPage
 {
     public DataTable dt_class;
     Info fl = new Info();
@@ -50,7 +50,7 @@ public partial class user_friend_friend : Foosun.Web.UI.UserPage
     protected void FriendLinkManage(int PageIndex)//显示链接管理页面
     {
         int i, j; 
-        DataTable dt = Foosun.CMS.Pagination.GetPage("user_friend_friend_aspx", PageIndex, PAGESIZE, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage("user_friend_friend_aspx", PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -206,7 +206,7 @@ public partial class user_friend_friend : Foosun.Web.UI.UserPage
         DataTable dt_pram = fl.PramValue();
         if (dt_pram.Rows.Count > 0)
         {
-            string Str_Content = Foosun.Common.Input.ToTxt(dt_pram.Rows[0]["Content"].ToString());
+            string Str_Content = Hg.Common.Input.ToTxt(dt_pram.Rows[0]["Content"].ToString());
             Know.InnerHtml = Str_Content;
         }
         else

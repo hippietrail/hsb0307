@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userinfo_base : Foosun.Web.UI.ManagePage
+public partial class manage_user_userinfo_base : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,7 @@ public partial class manage_user_userinfo_base : Foosun.Web.UI.ManagePage
             
             copyright.InnerHtml = CopyRight;
         }
-        string uid = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string uid = Hg.Common.Input.Filter(Request.QueryString["id"]);
         int suid = 0;
         try
         {
@@ -134,7 +134,7 @@ public partial class manage_user_userinfo_base : Foosun.Web.UI.ManagePage
         {
             if (udt.Rows.Count > 0)
             {
-                Foosun.CMS.Common.rootPublic rp = new Foosun.CMS.Common.rootPublic();
+                Hg.CMS.Common.rootPublic rp = new Hg.CMS.Common.rootPublic();
                 IDataReader dr = rp.GetGroupList();
                 while (dr.Read())
                 {
@@ -211,7 +211,7 @@ public partial class manage_user_userinfo_base : Foosun.Web.UI.ManagePage
             string lastIP = Request.Form["lastIP"];
             string ReqSite = Request.Form["TxtSite"];
 
-            Foosun.Model.UserInfo3 uc = new Foosun.Model.UserInfo3();
+            Hg.Model.UserInfo3 uc = new Hg.Model.UserInfo3();
             uc.Id = UserID;
             uc.UserGroupNumber = GroupList;
             uc.islock = lockTF;

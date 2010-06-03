@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
+public partial class manage_user_userinfo : Hg.Web.UI.ManagePage
 {
     public manage_user_userinfo()
     {
@@ -26,7 +26,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
         {
 
             copyright.InnerHtml = CopyRight;
-            string uids = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+            string uids = Hg.Common.Input.Filter(Request.QueryString["id"]);
             int uid = 0;
             try
             {
@@ -62,7 +62,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
                     }
 
                     this.RealName.Text = dt.Rows[0]["RealName"].ToString();
-                    this.Userinfo.Text = Foosun.Common.Input.ToTxt(dt.Rows[0]["Userinfo"].ToString());
+                    this.Userinfo.Text = Hg.Common.Input.ToTxt(dt.Rows[0]["Userinfo"].ToString());
                     this.UserFace.Text = dt.Rows[0]["UserFace"].ToString();
                     this.userFacesize.Text = dt.Rows[0]["userFacesize"].ToString();
                     this.email.Text = dt.Rows[0]["email"].ToString();
@@ -109,7 +109,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
     string sexlist()
     {
         string _Str = "";
-        DataTable dt = rd.sexlist(int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"])));
+        DataTable dt = rd.sexlist(int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"])));
         if (dt != null)
         {
             _Str += "<select name=\"sex\"  Class=\"form\">";
@@ -154,7 +154,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
     string marriagelist()
     {
         string _Str = "";
-        DataTable dt = rd.marriagelist(int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"])));
+        DataTable dt = rd.marriagelist(int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"])));
         if (dt != null)
         {
             _Str += "<select name=\"marriage\">";
@@ -199,7 +199,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
     string isopenlist()
     {
         string _Str = "";
-        DataTable dt = rd.isopenlist(int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"])));
+        DataTable dt = rd.isopenlist(int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"])));
         if (dt != null)
         {
             _Str += "<select name=\"isopen\">";
@@ -286,7 +286,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
                     }
                     if (dt.Rows[0]["CharHTML"].ToString() == "0")
                     {
-                        Userinfo = Foosun.Common.Input.ToHtml(Userinfo);
+                        Userinfo = Hg.Common.Input.ToHtml(Userinfo);
                     }
                 }
                 else
@@ -306,7 +306,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
             }
 
             ///更新基本表
-            Foosun.Model.UserInfo uc = new Foosun.Model.UserInfo();
+            Hg.Model.UserInfo uc = new Hg.Model.UserInfo();
             uc.Id = suid;
             uc.NickName = NickName;
             uc.RealName = RealName;
@@ -329,7 +329,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
             rd.UpdateUserInfoBase(uc);
 
             //同步更新用户信息
-            Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+            Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
             request.Birthday = uc.birthday.ToString("yyyy-MM-dd");
             switch (uc.sex)
             {
@@ -344,7 +344,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
                     break;
             }
             request.TrueName = uc.RealName;
-            request.UserName = Foosun.Global.Current.UserName;
+            request.UserName = Hg.Global.Current.UserName;
             request.ProcessMultiPing("update");
 
             if (request.FoundErr)
@@ -373,7 +373,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
             {
                 if (sdt.Rows.Count > 0)
                 {
-                    Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                    Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                     uc1.UserNum = strUsernum;
                     uc1.Nation = Nation;
                     uc1.nativeplace = nativeplace;
@@ -387,7 +387,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                    Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                     uc1.UserNum = strUsernum;
                     uc1.Nation = Nation;
                     uc1.nativeplace = nativeplace;
@@ -404,7 +404,7 @@ public partial class manage_user_userinfo : Foosun.Web.UI.ManagePage
             }
             else
             {
-                Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                 uc1.UserNum = strUsernum;
                 uc1.Nation = Nation;
                 uc1.nativeplace = nativeplace;

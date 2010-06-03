@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_photofilt : Foosun.Web.UI.UserPage
+public partial class user_photofilt : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
     protected string sImgUrl = "";
@@ -35,10 +35,10 @@ public partial class user_photofilt : Foosun.Web.UI.UserPage
     }
     protected void getPhoto()
     {
-        string PhotoalbumID = Foosun.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
+        string PhotoalbumID = Hg.Common.Input.Filter(Request.QueryString["PhotoalbumID"]);
         string pwd = pho.sel_1(PhotoalbumID);
         string UserNum = pho.sel_20(PhotoalbumID);
-        if (pwd != "" && pwd != null && UserNum != Foosun.Global.Current.UserNum)
+        if (pwd != "" && pwd != null && UserNum != Hg.Global.Current.UserNum)
         {
             Response.Redirect("Photoalbumlist.aspx");
         }
@@ -48,14 +48,14 @@ public partial class user_photofilt : Foosun.Web.UI.UserPage
             photocount = dt.Rows.Count;
             if (dt != null)
             {
-                string dirDumm = Foosun.Config.UIConfig.dirDumm;
+                string dirDumm = Hg.Config.UIConfig.dirDumm;
                 if (dirDumm.Trim() != "")
                     dirDumm = "/" + dirDumm;
 
                 photostr += "ImgName = new ImgArray(" + photocount + ");\n";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    photostr += "ImgName[" + i + "] =\"" + dt.Rows[i][0].ToString().Replace("{@userdirfile}", dirDumm + Foosun.Config.UIConfig.UserdirFile) + "\";\n";
+                    photostr += "ImgName[" + i + "] =\"" + dt.Rows[i][0].ToString().Replace("{@userdirfile}", dirDumm + Hg.Config.UIConfig.UserdirFile) + "\";\n";
                 }
 
                 //foreach (DataRow r in dt.Rows)
@@ -64,7 +64,7 @@ public partial class user_photofilt : Foosun.Web.UI.UserPage
                 //    {
                 //        if (n > 0)
                 //            sImgUrl += "\t";
-                //        sImgUrl += r[0].ToString().Replace("{@UserdirFile}", dirDumm + Foosun.Config.UIConfig.UserdirFile);
+                //        sImgUrl += r[0].ToString().Replace("{@UserdirFile}", dirDumm + Hg.Config.UIConfig.UserdirFile);
                 //        n++;
 
                 //    }

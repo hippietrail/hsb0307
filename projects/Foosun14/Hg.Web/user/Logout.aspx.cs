@@ -9,19 +9,19 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml;
-using Foosun.Config;
+using Hg.Config;
 using System.Net;
 using System.IO;
-using Foosun.PlugIn.Passport;
+using Hg.PlugIn.Passport;
 
-namespace Foosun.Web.user
+namespace Hg.Web.user
 {
-    public partial class Logout : Foosun.Web.UI.BasePage
+    public partial class Logout : Hg.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.AppendHeader("P3P", "CP=CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR");
-            string tmpUserName = Foosun.Global.Current.UserName;
+            string tmpUserName = Hg.Global.Current.UserName;
             Logout();
             DPO_Request request = new DPO_Request(Context);
             request.RequestLogout(tmpUserName, Request.ApplicationPath);
@@ -54,7 +54,7 @@ namespace Foosun.Web.user
                     //}
                     //else
                     //{
-                    //    checkveriframe.InnerHtml = "<iframe style=\"width:98%;height:20px;\" frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" src=\"" + Foosun.Config.verConfig.getfoosunURL + "\"></iframe>";
+                    //    checkveriframe.InnerHtml = "<iframe style=\"width:98%;height:20px;\" frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" src=\"" + Hg.Config.verConfig.getfoosunURL + "\"></iframe>";
                     //}
 
                     //Response.Write("<script type=\"text/javascript\" language=\"javascript\">window.open(\"" + adaptePath + "\",\"\",\"left=5000,top=5000\");</script>");

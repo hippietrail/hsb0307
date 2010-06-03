@@ -13,9 +13,9 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Web.SessionState;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class stat_stat : Foosun.Web.UI.BasePage
+public partial class stat_stat : Hg.Web.UI.BasePage
 {
     Stat sta = new Stat();
     #region 定义public参数变量
@@ -265,7 +265,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
                 {
                     statid = Request.QueryString["statid"];//取得传递过来的统计ID号
                 }
-                Foosun.Model.stat_Info info = new Foosun.Model.stat_Info();
+                Hg.Model.stat_Info info = new Hg.Model.stat_Info();
 
                 info.vyear = str_fs_year;
                 info.vmonth = str_fs_month;
@@ -282,7 +282,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
                 info.vOS = str_fs_Os;
                 info.vwidth = str_fs_width;
                 info.classid = statid;
-                info.SiteID = Foosun.Global.Current.SiteID;
+                info.SiteID = Hg.Global.Current.SiteID;
                 //info.SiteID = "0";
                 #region 执行数据操作语句，返回更新数据
                 sta.Add(info);
@@ -306,7 +306,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
                     string highttimee = DateTime.Now.AddHours(0).Date.ToShortDateString();
 
                     #region 向数据表中插入的初始数据
-                    sta.Add_1(vdatee, starttimee, highttimee, statidz, Foosun.Global.Current.SiteID);//数据语句，返回数据表中
+                    sta.Add_1(vdatee, starttimee, highttimee, statidz, Hg.Global.Current.SiteID);//数据语句，返回数据表中
                     #endregion
                 }
                 else
@@ -358,7 +358,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
 
                     #region 对指定的数据表进行更新
 
-                    sta.Update(str_fs_today, str_fs_yesterday, str_fs_content_data, str_fs_all, str_fs_heigh, str_fs_heightime, strclassid, Foosun.Global.Current.SiteID, strclassid); 
+                    sta.Update(str_fs_today, str_fs_yesterday, str_fs_content_data, str_fs_all, str_fs_heigh, str_fs_heightime, strclassid, Hg.Global.Current.SiteID, strclassid); 
                     #endregion
 
                 }
@@ -411,7 +411,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
            
             code = Request.QueryString["code"].ToString();
 
-            string Str_dirMana = Foosun.Config.UIConfig.dirDumm;//虚拟目录
+            string Str_dirMana = Hg.Config.UIConfig.dirDumm;//虚拟目录
             
             if (Str_dirMana != "" && Str_dirMana != null && Str_dirMana != string.Empty)//判断虚拟路径是否为空
             {
@@ -500,7 +500,7 @@ public partial class stat_stat : Foosun.Web.UI.BasePage
     protected DataTable stat_AcDb(string sql)
     {
         OleDbConnection conn = new OleDbConnection();
-        string str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+        string str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)
         {
             str_dirMana = @"/" + str_dirMana;

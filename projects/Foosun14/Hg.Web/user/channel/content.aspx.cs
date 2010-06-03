@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class user_channel_content : Foosun.Web.UI.UserPage
+public partial class user_channel_content : Hg.Web.UI.UserPage
 {
     public string UDir = string.Empty;
     Channel rd = new Channel();
@@ -38,7 +38,7 @@ public partial class user_channel_content : Foosun.Web.UI.UserPage
                     IDataReader dr = rd.getContentAll(int.Parse(ChID.ToString()), int.Parse(id.ToString()));
                     if (dr.Read())
                     {
-                        if (dr["author"].ToString() != Foosun.Global.Current.UserName)
+                        if (dr["author"].ToString() != Hg.Global.Current.UserName)
                         {
                             PageError("您不能修改别人的信息", "javascript:history.back()", true);
                         }
@@ -386,20 +386,20 @@ public partial class user_channel_content : Foosun.Web.UI.UserPage
 
             int ClassID = int.Parse(this.ClassID.SelectedValue);
             string SpecialID = string.Empty;
-            string title = Foosun.Common.Input.Htmls(this.title.Text);
+            string title = Hg.Common.Input.Htmls(this.title.Text);
             if (title == string.Empty || title == null)
             {
                 PageError("请填写信息标题", "javascript:history.back();", true);
             }
             int TitleITF = 0;
             int TitleBTF = 0;
-            string PicURL = Foosun.Common.Input.Htmls(this.PicURL.Text);
-            string NaviContent = Foosun.Common.Input.Htmls(this.naviContent.Text);
-            string Content = Foosun.Common.Input.Htmls(this.Content.Value);
-            string Author = Foosun.Global.Current.UserName;
-            string Souce = Foosun.Common.Input.Htmls(this.Souce.Text);
+            string PicURL = Hg.Common.Input.Htmls(this.PicURL.Text);
+            string NaviContent = Hg.Common.Input.Htmls(this.naviContent.Text);
+            string Content = Hg.Common.Input.Htmls(this.Content.Value);
+            string Author = Hg.Global.Current.UserName;
+            string Souce = Hg.Common.Input.Htmls(this.Souce.Text);
             int OrderID = 0;
-            string Tags = Foosun.Common.Input.Htmls(this.Tags.Text);
+            string Tags = Hg.Common.Input.Htmls(this.Tags.Text);
             int Click = 0;
             int isHTML = 0;
             int isConstr = 1;
@@ -453,7 +453,7 @@ public partial class user_channel_content : Foosun.Web.UI.UserPage
                 uc.Click = Click;
                 uc.isHTML = isHTML;
                 uc.ContentProperty = ContentProperty;
-                uc.Editor = Foosun.Global.Current.UserName;
+                uc.Editor = Hg.Global.Current.UserName;
             }
             uc.title = title;
             uc.PicURL = PicURL;

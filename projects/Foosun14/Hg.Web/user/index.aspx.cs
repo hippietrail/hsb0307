@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
 
-public partial class User_index : Foosun.Web.UI.UserPage
+public partial class User_index : Hg.Web.UI.UserPage
 { 
     user us = new user();
     UserMisc rd = new UserMisc();
@@ -40,7 +40,7 @@ public partial class User_index : Foosun.Web.UI.UserPage
             reURL();
 
             rootPublic rd = new rootPublic();
-            string u_bUserName = rd.getUserName(Foosun.Global.Current.UserNum);
+            string u_bUserName = rd.getUserName(Hg.Global.Current.UserNum);
             int isFriendNum = us.GetUncheckFriendsCount(u_bUserName);
             if (isFriendNum > 0)
             {
@@ -94,7 +94,7 @@ public partial class User_index : Foosun.Web.UI.UserPage
         UserMisc rd = new UserMisc();
         if (rd.getisAdmin() == 1)
         {
-            _STR += "<a href=\"../" + Foosun.Config.UIConfig.dirMana + "/index.aspx\" class=\"Lion_1\" target=\"_blank\">管理中心</a>&nbsp;&nbsp;┊";
+            _STR += "<a href=\"../" + Hg.Config.UIConfig.dirMana + "/index.aspx\" class=\"Lion_1\" target=\"_blank\">管理中心</a>&nbsp;&nbsp;┊";
         }
         return _STR;
     }
@@ -106,21 +106,21 @@ public partial class User_index : Foosun.Web.UI.UserPage
     string messageChar()
     {
         string liststr = "";
-        DataTable dt = rd.messageChar(Foosun.Global.Current.UserNum);
+        DataTable dt = rd.messageChar(Hg.Global.Current.UserNum);
         if (dt != null)
         {
             if (dt.Rows.Count > 0)
             {
-                liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"sys_main\">新短消息(" + dt.Rows.Count + ")</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />";
+                liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"sys_main\">新短消息(" + dt.Rows.Count + ")</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />";
             }
             else
             {
-                liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"Lion_1\" target=\"sys_main\">短消息(0)</a>";
+                liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"Lion_1\" target=\"sys_main\">短消息(0)</a>";
             }
         }
         else
         {
-            liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"Lion_1\" target=\"_self\">短消息(0)</a>";
+            liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"Lion_1\" target=\"_self\">短消息(0)</a>";
         }
         return liststr;
     }

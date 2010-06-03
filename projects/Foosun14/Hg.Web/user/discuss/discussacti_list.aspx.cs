@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussacti_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussacti_list : Hg.Web.UI.UserPage
 {
     //联接数据库
     Discuss dis = new Discuss();
@@ -57,7 +57,7 @@ public partial class user_discuss_discussacti_list : Foosun.Web.UI.UserPage
     protected void Showu_discusslist(int PageIndex)
     {
         int ig, js;
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
 
         this.PageNavigator1.PageCount = js;
         this.PageNavigator1.PageIndex = PageIndex;

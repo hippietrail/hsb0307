@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_info_reviewGroup : Foosun.Web.UI.UserPage
+public partial class user_info_reviewGroup : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -22,7 +22,7 @@ public partial class user_info_reviewGroup : Foosun.Web.UI.UserPage
         if (Request.QueryString["UserGroupNumber"].Trim() != null || Request.QueryString["UserGroupNumber"].Trim() != "")
         {
             string UserGroupNumber = "";
-            UserGroupNumber = Foosun.Common.Input.Filter(Request.QueryString["UserGroupNumber"].Trim());
+            UserGroupNumber = Hg.Common.Input.Filter(Request.QueryString["UserGroupNumber"].Trim());
             DataTable dt = rd.getGroupEdit(int.Parse(pd.getIDGroupNumber(UserGroupNumber)));
             if (dt != null)
             {

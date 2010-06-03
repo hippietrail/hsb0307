@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_ConstrClass_add : Foosun.Web.UI.UserPage
+public partial class user_ConstrClass_add : Hg.Web.UI.UserPage
 {
     //连接数据库
     Constr con = new Constr();
@@ -47,9 +47,9 @@ public partial class user_ConstrClass_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string cName = Foosun.Common.Input.Htmls(Request.Form["cNameBox"].ToString());
-            string Content = Foosun.Common.Input.Htmls(Request.Form["ContentBox"].ToString());
-            string Ccid = Foosun.Common.Rand.Number(12);
+            string cName = Hg.Common.Input.Htmls(Request.Form["cNameBox"].ToString());
+            string Content = Hg.Common.Input.Htmls(Request.Form["ContentBox"].ToString());
+            string Ccid = Hg.Common.Rand.Number(12);
             DataTable dt = con.sel6();
             int cut = dt.Rows.Count;
             string Ccids = "";
@@ -57,8 +57,8 @@ public partial class user_ConstrClass_add : Foosun.Web.UI.UserPage
             {
                 Ccids = dt.Rows[0]["Ccid"].ToString();
             }
-            string UserNum = Foosun.Global.Current.UserNum;
-            Foosun.Model.STConstrClass stcn;
+            string UserNum = Hg.Global.Current.UserNum;
+            Hg.Model.STConstrClass stcn;
             stcn.cName = cName;
             stcn.Content = Content;
 

@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 
@@ -22,13 +22,13 @@
         </tr>
         <tr>
           <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              ндуб╧эюМ</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">н╩жц╣╪╨╫ё╨<a href="../main.aspx" target="sys_main" class="list_link">йврЁ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">ндуб╧эюМ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />╦ЕЁЙ╪гб╪</div></td>
+              О©╫О©╫О©╫б╧О©╫О©╫</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">О©╫н╩О©╫ц╣О©╫О©╫О©╫О©╫О©╫<a href="../main.aspx" target="sys_main" class="list_link">О©╫О©╫рЁ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" class="menulist">О©╫О©╫О©╫б╧О©╫О©╫</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />О©╫О©╫О©╫О©╫б╪</div></td>
         </tr>
 </table>
       <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
         <tr>
-          <td style="padding-left:14px;"><a href="Constr.aspx" class="menulist">╥╒╠Мндуб</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >кЫспмк╦Е</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ндуб╧эюМ</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">╥жюЮ╧эюМ</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ук╨е╧эюМ</a></td>
+          <td style="padding-left:14px;"><a href="Constr.aspx" class="menulist">О©╫О©╫О©╫О©╫О©╫О©╫О©╫</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >О©╫О©╫О©╫О©╫О©╫О©╫к╦</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">О©╫О©╫О©╫О©╫б╧О©╫О©╫</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">О©╫О©╫О©╫О©╫О©╫О©╫</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">О©╫О©╫к╨е╧О©╫О©╫</a></td>
         </tr>
 </table>
 <div id="no" runat="server"></div>
@@ -39,9 +39,9 @@
     <HeaderTemplate>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
     <tr class="TR_BG">
-    <td class="sys_topBg" align="center" width="15%">╦ЕЁЙ╠Ю╨е</td>
-    <td class="sys_topBg" align="center" width="15%">╦ЕЁЙйЩд©</td>
-    <td class="sys_topBg" align="center" width="15%">ж╖╦╤й╠╪Д</td>
+    <td class="sys_topBg" align="center" width="15%">О©╫О©╫О©╫О©╫</td>
+    <td class="sys_topBg" align="center" width="15%">е╦О©╫О©╫О©╫О©╫д©</td>
+    <td class="sys_topBg" align="center" width="15%">ж╖О©╫О©╫й╠О©╫</td>
     </tr>
     <div id="tnzlist" runat="server"></div>
     </HeaderTemplate>

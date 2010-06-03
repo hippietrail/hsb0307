@@ -19,10 +19,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_photo_photoclass : Foosun.Web.UI.UserPage
+public partial class user_photo_photoclass : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
     protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ public partial class user_photo_photoclass : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -59,8 +59,8 @@ public partial class user_photo_photoclass : Foosun.Web.UI.UserPage
     protected void Show_jrlist(int PageIndex1)
     {
         int ia, ja;
-        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-        DataTable jrlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out ia, out ja, st);
+        SQLConditionInfo st = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+        DataTable jrlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out ia, out ja, st);
 
         this.PageNavigator1.PageCount = ja;
         this.PageNavigator1.PageIndex = PageIndex1;

@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_info_collection : Foosun.Web.UI.UserPage
+public partial class user_info_collection : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
     Mycom rd = new Mycom();
@@ -31,7 +31,7 @@ public partial class user_info_collection : Foosun.Web.UI.UserPage
         string APIID = "";
         if (Request.QueryString["APIID"]!=null && Request.QueryString["APIID"]!="")
         {
-            APIID = Foosun.Common.Input.Filter(Request.QueryString["APIID"]);
+            APIID = Hg.Common.Input.Filter(Request.QueryString["APIID"]);
         }
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
@@ -54,10 +54,10 @@ public partial class user_info_collection : Foosun.Web.UI.UserPage
         string ID = null;
         if(Request.QueryString["ID"]!=null&&Request.QueryString["ID"]!="")
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         int ChID = 0;
-        if (_ChID != null && _ChID != string.Empty && Foosun.Common.Input.IsInteger(_ChID))
+        if (_ChID != null && _ChID != string.Empty && Hg.Common.Input.IsInteger(_ChID))
         {
             ChID = int.Parse(_ChID);
         }
@@ -88,7 +88,7 @@ public partial class user_info_collection : Foosun.Web.UI.UserPage
         string APIID = null;
         if (Request.QueryString["APIID"] != null && Request.QueryString["APIID"] != "")
         {
-            APIID = Foosun.Common.Input.Filter(Request.QueryString["APIID"]);
+            APIID = Hg.Common.Input.Filter(Request.QueryString["APIID"]);
         }     
         StartLoad(PageIndex, APIID);
     }
@@ -99,10 +99,10 @@ public partial class user_info_collection : Foosun.Web.UI.UserPage
         DataTable dt = null;
         if (Api != "0" && Api != null&& Api != "")
         {
-            dt = Foosun.CMS.Pagination.GetPage("user_info_collection_1_aspx", PageIndex, 10, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage("user_info_collection_1_aspx", PageIndex, 10, out i, out j, null);
         }
-        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-        dt = Foosun.CMS.Pagination.GetPage("user_info_collection_2_aspx", PageIndex, 10, out i, out j, sts);
+        SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+        dt = Hg.CMS.Pagination.GetPage("user_info_collection_2_aspx", PageIndex, 10, out i, out j, sts);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -120,7 +120,7 @@ public partial class user_info_collection : Foosun.Web.UI.UserPage
                 }
                 else
                 {
-                    h["titleUrl"] = rd.sel_2(h["FID"].ToString(), "" + Foosun.Config.UIConfig.dataRe + "news");
+                    h["titleUrl"] = rd.sel_2(h["FID"].ToString(), "" + Hg.Config.UIConfig.dataRe + "news");
                 }
                 h["Operation"] = "<a href=\"javascript:del('" + h["FID"].ToString() + "');\" class=\"list_link\">删除</a>┆<input name=\"Checkbox1\" type=\"checkbox\" value=\"" + h["ID"].ToString() + "\" /></td>";
             }

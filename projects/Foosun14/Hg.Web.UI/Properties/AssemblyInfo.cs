@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Hg.Web.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("风讯科技")]
+[assembly: AssemblyCompany("华光科技")]
 [assembly: AssemblyProduct("Hg.Web.UI")]
-[assembly: AssemblyCopyright("Copyright © 风讯科技 2010")]
+[assembly: AssemblyCopyright("Copyright © 华光科技 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

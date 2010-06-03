@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>发送给好友</title>
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>发送给好友</title>
 <script language="javascript" type="text/javascript" src="configuration/js/Prototype.js"></script>
 <style type="text/css">
 /* CSS Document */

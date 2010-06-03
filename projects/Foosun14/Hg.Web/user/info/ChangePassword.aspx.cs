@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.Xml;
-using Foosun.Config;
+using Hg.Config;
 using System.Net;
 using System.IO;
 
-public partial class manage_ChangePassword : Foosun.Web.UI.ManagePage
+public partial class manage_ChangePassword : Hg.Web.UI.ManagePage
 {
     public manage_ChangePassword()
     {
@@ -36,12 +36,12 @@ public partial class manage_ChangePassword : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string oldpass = Foosun.Common.Input.Filter(Request.Form["oPass"]);
+            string UserNum = Hg.Global.Current.UserNum;
+            string oldpass = Hg.Common.Input.Filter(Request.Form["oPass"]);
             string newPass = Request.Form["newPass"];
             string pnewPass = Request.Form["pnewPass"];
-            string MD = Foosun.Common.Input.MD5(oldpass,true);
-            string MD2 = Foosun.Common.Input.MD5(newPass, true);
+            string MD = Hg.Common.Input.MD5(oldpass,true);
+            string MD2 = Hg.Common.Input.MD5(newPass, true);
             if (oldpass == "" || newPass == "" || newPass.Length<3)
             {
                 PageError("填写完整。<li>或者密码太短密码不能小于3位</li>", "");
@@ -75,7 +75,7 @@ public partial class manage_ChangePassword : Foosun.Web.UI.ManagePage
                             if (adConfig.isAdapt)
                             {
                                 string adaptePath = adConfig.adaptPath;
-                                adaptePath += "?username=" + Foosun.Global.Current.UserName + "&password=" + newPass + "&tag=change";
+                                adaptePath += "?username=" + Hg.Global.Current.UserName + "&password=" + newPass + "&tag=change";
                                 //PageRight("修改密码成功", "ChangePassword.aspx", adaptePath, adaptPrams);
 
                                 Uri uri = new Uri(adaptePath);

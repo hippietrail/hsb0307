@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_userlist : Foosun.Web.UI.ManagePage
+public partial class manage_user_userlist : Hg.Web.UI.ManagePage
 {
     public manage_user_userlist()
     {
@@ -31,7 +31,7 @@ public partial class manage_user_userlist : Foosun.Web.UI.ManagePage
             string getGroupNumber = Request.QueryString["GroupNumber"];
             if (getGroupNumber != null && getGroupNumber != "") { groupList.InnerHtml = groups(getGroupNumber); }
             else { groupList.InnerHtml = groups(""); }
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             {
                 string getSiteID = Request.QueryString["SiteID"];
                 if (getSiteID != null && getSiteID != "") { channelList.InnerHtml = SiteList(getSiteID); }
@@ -159,7 +159,7 @@ public partial class manage_user_userlist : Foosun.Web.UI.ManagePage
                         continue;
                     }
                     //结束  by wjl-->
-                    dt.Rows[k]["op"] = "<a href=\"userinfo.aspx?id=" + dt.Rows[k]["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改此会员'></a><a href=\"usermycom.aspx?UserNum=" + dt.Rows[k]["UserNum"] + "\" class=\"list_link\"><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/comm.gif\" border=\"0\" alt='会员评论'></a>";
+                    dt.Rows[k]["op"] = "<a href=\"userinfo.aspx?id=" + dt.Rows[k]["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改此会员'></a><a href=\"usermycom.aspx?UserNum=" + dt.Rows[k]["UserNum"] + "\" class=\"list_link\"><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/comm.gif\" border=\"0\" alt='会员评论'></a>";
 
                     //修改者：吴静岚 时间：2008-07-21
                     //修改会员列表超级管理员信息显示问题 
@@ -171,7 +171,7 @@ public partial class manage_user_userlist : Foosun.Web.UI.ManagePage
                         //<--开始
                         if (dt.Rows[k]["isAdmin"].ToString().Equals("0"))
                         {
-                            dt.Rows[k]["op"] += "<a href=\"userlist.aspx?id=" + dt.Rows[k]["id"] + "&type=del\" class=\"list_link\" onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"> <img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'></a>";
+                            dt.Rows[k]["op"] += "<a href=\"userlist.aspx?id=" + dt.Rows[k]["id"] + "&type=del\" class=\"list_link\" onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"> <img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'></a>";
                         }//结束  by wjl-->
                     }
                     //修改者：吴静岚 时间：2008-07-21
@@ -191,7 +191,7 @@ public partial class manage_user_userlist : Foosun.Web.UI.ManagePage
                         _TmpAdmin = "管理员";
                         _classTF = "<span class=\"reshow\">" + dt.Rows[k]["username"].ToString() + "</span>";
                     }
-                    dt.Rows[k]["userNames"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[k]["username"].ToString() + ".aspx\" target=\"_blank\" title=\"" + _TmpAdmin + "&#13;点击查看[" + dt.Rows[k]["username"].ToString() + "]的信息.\" class=\"list_link\">" + _classTF + "</a>";
+                    dt.Rows[k]["userNames"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[k]["username"].ToString() + ".aspx\" target=\"_blank\" title=\"" + _TmpAdmin + "&#13;点击查看[" + dt.Rows[k]["username"].ToString() + "]的信息.\" class=\"list_link\">" + _classTF + "</a>";
                 }
             }
         }

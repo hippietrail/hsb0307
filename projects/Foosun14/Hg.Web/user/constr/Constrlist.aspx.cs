@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,12 +17,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_constr_Constrlist : Foosun.Web.UI.UserPage
+public partial class user_constr_Constrlist : Hg.Web.UI.UserPage
 {
     Constr con = new Constr();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     /// <summary>
     /// 初始化
     /// </summary>
@@ -43,7 +43,7 @@ public partial class user_constr_Constrlist : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -83,7 +83,7 @@ public partial class user_constr_Constrlist : Foosun.Web.UI.UserPage
     }
     protected void Showu_constrlist(int PageIndex)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         string ClassID = "";
         if (Request.QueryString["ClassID"] != null && Request.QueryString["ClassID"] != "")
         {

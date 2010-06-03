@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
  <title></title>
-<link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -82,7 +82,7 @@ if(f1tf=="foosun")
 			    }
 			    else
 			    {
-			    $('imgsrc').src=$('f_IDcardFiles').value.toLowerCase().replace('{@userdirfile}','<% Response.Write(Foosun.Config.UIConfig.UserdirFile); %>');
+			    $('imgsrc').src=$('f_IDcardFiles').value.toLowerCase().replace('{@userdirfile}','<% Response.Write(Hg.Config.UIConfig.UserdirFile); %>');
 			    }
 		    } 
 }

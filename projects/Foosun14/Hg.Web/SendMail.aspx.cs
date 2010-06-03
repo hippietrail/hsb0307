@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Net.Mail;
 
-public partial class SendMail : Foosun.Web.UI.UserPage
+public partial class SendMail : Hg.Web.UI.UserPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,24 +23,24 @@ public partial class SendMail : Foosun.Web.UI.UserPage
     /// </summary>
     protected void getNewsInfo()
     {
-        string NewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string NewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
         if (NewsID != "" && NewsID != null)
         {
-            Foosun.CMS.UserMisc user = new Foosun.CMS.UserMisc();
-            DataTable dt = user.getUserUserNumRecord(Foosun.Global.Current.UserNum);
+            Hg.CMS.UserMisc user = new Hg.CMS.UserMisc();
+            DataTable dt = user.getUserUserNumRecord(Hg.Global.Current.UserNum);
             if (dt != null && dt.Rows.Count > 0)
             {
                 FROM.Text = dt.Rows[0]["Email"].ToString();
                 dt.Clear(); dt.Dispose();
             }
-            Foosun.CMS.ContentManage news = new Foosun.CMS.ContentManage();
+            Hg.CMS.ContentManage news = new Hg.CMS.ContentManage();
             IDataReader dr = news.getNewsID(NewsID);
             if (dr.Read())
             {
                 NewsTitle.InnerHtml = dr["NewsTitle"].ToString();
                 Title.Value = dr["NewsTitle"].ToString();
                 if (dr["Content"] != DBNull.Value)
-                    Content.Value = Foosun.Common.Input.GetSubString(dr["Content"].ToString(), 500);
+                    Content.Value = Hg.Common.Input.GetSubString(dr["Content"].ToString(), 500);
 
                 if (dr["NewsType"].ToString() == "2")
                     NewsLinkURL.Value = dr["URLaddress"].ToString();
@@ -54,7 +54,7 @@ public partial class SendMail : Foosun.Web.UI.UserPage
                         dc.Clear(); dc.Dispose();
                         SaveClassframe = SaveClassframe.Replace("//", "/");
                     }
-                    NewsLinkURL.Value = Foosun.Publish.CommonData.getUrl() + SaveClassframe + "/" + dr["SavePath"].ToString() + "/" + dr["FileName"].ToString() + dr["FileEXName"].ToString();
+                    NewsLinkURL.Value = Hg.Publish.CommonData.getUrl() + SaveClassframe + "/" + dr["SavePath"].ToString() + "/" + dr["FileName"].ToString() + dr["FileEXName"].ToString();
                 }
                 dr.Close();
             }
@@ -76,16 +76,16 @@ public partial class SendMail : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string smtpserver = Foosun.Config.UIConfig.smtpserver;
-            string userName = Foosun.Config.UIConfig.emailuserName;
-            string pwd = Foosun.Config.UIConfig.emailuserpwd;
-            string strfrom = Foosun.Config.UIConfig.emailfrom;
+            string smtpserver = Hg.Config.UIConfig.smtpserver;
+            string userName = Hg.Config.UIConfig.emailuserName;
+            string pwd = Hg.Config.UIConfig.emailuserpwd;
+            string strfrom = Hg.Config.UIConfig.emailfrom;
             string strto = TO.Text;
             string subj = FROM.Text + " 给你发送了一篇精彩新闻";
             string bodys = "<div><a href=\"" + NewsLinkURL.Value + "\">" + Title.Value + "</a><div>";
             bodys += "<br /><br />";
             bodys += "<div>" + Content.Value + "</div>";
-            Foosun.Common.Public.sendMail(smtpserver, userName, pwd, strfrom, strto, subj, bodys);
+            Hg.Common.Public.sendMail(smtpserver, userName, pwd, strfrom, strto, subj, bodys);
             PageRight("发送成功！", "");
         }
     }

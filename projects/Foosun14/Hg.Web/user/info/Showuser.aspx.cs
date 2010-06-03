@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class user_info_Showuser : Foosun.Web.UI.BasePage
+public partial class user_info_Showuser : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

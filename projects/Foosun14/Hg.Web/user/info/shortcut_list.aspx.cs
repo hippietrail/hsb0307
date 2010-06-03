@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_shortcut_list : Foosun.Web.UI.UserPage
+public partial class user_info_shortcut_list : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ public partial class user_info_shortcut_list : Foosun.Web.UI.UserPage
         string action = Request.QueryString["action"];
         if (action == "del")
         {
-            int qID = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["ID"].ToString()));
+            int qID = int.Parse(Hg.Common.Input.Filter(Request.QueryString["ID"].ToString()));
             Shortcutdel(qID);
         }
     }

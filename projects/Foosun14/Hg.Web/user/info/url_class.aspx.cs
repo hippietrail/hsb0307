@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_info_url_class : Foosun.Web.UI.UserPage
+public partial class user_info_url_class : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)

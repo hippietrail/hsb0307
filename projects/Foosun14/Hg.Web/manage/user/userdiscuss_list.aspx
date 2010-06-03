@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 </head>
 <body style="background-color: #ffffff">
@@ -43,8 +43,8 @@
     </HeaderTemplate>
     <ItemTemplate>
         <tr class="TR_BG_list">
-        <td class="list_link" align="left" width="40%"><a class="list_link" target="_blank" href="../../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/discuss/discussTopi_list.aspx?DisID=<%#((DataRowView)Container.DataItem)["DisID"]%>"><%#((DataRowView)Container.DataItem)[2]%></a></td>
-        <td class="list_link" align="center" width="15%"><a href="../../<%Response.Write(Foosun.Config.UIConfig.dirUser); %>/showuser-<%#((DataRowView)Container.DataItem)[3]%>.aspx" class="list_link" target="_blank"><%#((DataRowView)Container.DataItem)[3]%></a></td>
+        <td class="list_link" align="left" width="40%"><a class="list_link" target="_blank" href="../../<%Response.Write(Hg.Config.UIConfig.dirUser); %>/discuss/discussTopi_list.aspx?DisID=<%#((DataRowView)Container.DataItem)["DisID"]%>"><%#((DataRowView)Container.DataItem)[2]%></a></td>
+        <td class="list_link" align="center" width="15%"><a href="../../<%Response.Write(Hg.Config.UIConfig.dirUser); %>/showuser-<%#((DataRowView)Container.DataItem)[3]%>.aspx" class="list_link" target="_blank"><%#((DataRowView)Container.DataItem)[3]%></a></td>
         <td class="list_link" align="center" width="15%"><%#((DataRowView)Container.DataItem)[8]%></td>
         <td class="list_link" align="center" width="15%"><%#((DataRowView)Container.DataItem)[6]%></td>
         <td class="list_link" align="center" width="15%"><%#((DataRowView)Container.DataItem)[7]%></td>            

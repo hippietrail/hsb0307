@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_userinfo : Foosun.Web.UI.UserPage
+public partial class user_userinfo : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
@@ -22,8 +22,8 @@ public partial class user_userinfo : Foosun.Web.UI.UserPage
         copyright.InnerHtml = CopyRight;
         string u_sql = Request.QueryString["UserNum"];
         string strUserNum = "";
-        if (u_sql != "" && u_sql != null){strUserNum = Foosun.Common.Input.Filter(u_sql.ToString());}
-        else{strUserNum = Foosun.Global.Current.UserNum;}
+        if (u_sql != "" && u_sql != null){strUserNum = Hg.Common.Input.Filter(u_sql.ToString());}
+        else{strUserNum = Hg.Global.Current.UserNum;}
         DataTable dt = rd.getUserUserNumRecord(strUserNum);
         string geGroup=rd.getUserGChange(dt.Rows[0]["UserGroupNumber"].ToString());
         if (geGroup == string.Empty)
@@ -37,7 +37,7 @@ public partial class user_userinfo : Foosun.Web.UI.UserPage
             if (dt.Rows.Count > 0)
             {
                 #region 基本资料--------------------------------------
-                string userflag = pd.getGroupNameFlag(Foosun.Global.Current.UserNum);
+                string userflag = pd.getGroupNameFlag(Hg.Global.Current.UserNum);
                 string _Tmpls = dt.Rows[0]["UserName"].ToString();
                 Reviewmyfinfo.InnerHtml = "<a href=\"../ShowUser.aspx?uid=" + _Tmpls + "\" target=\"_blank\"><font color=\"red\">预览我的资料</a>";
                 if (userflag.IndexOf("|") != -1)
@@ -79,7 +79,7 @@ public partial class user_userinfo : Foosun.Web.UI.UserPage
                 //-------------------------------------------------------------
                 if (dt.Rows[0]["UserFace"].ToString() != "")
                 {
-                    this.UserFacex.ImageUrl = dt.Rows[0]["UserFace"].ToString().Replace("{@userdirfile}", Foosun.Config.UIConfig.UserdirFile);//头像 
+                    this.UserFacex.ImageUrl = dt.Rows[0]["UserFace"].ToString().Replace("{@userdirfile}", Hg.Config.UIConfig.UserdirFile);//头像 
                     string str_userHeadSize = dt.Rows[0]["userFacesize"].ToString();
                     string[] arr_userheadSize = str_userHeadSize.Split('|');
 

@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -18,14 +18,14 @@
         </tr>
         <tr>
           <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              ндуб╧эюМ</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">н╩жц╣╪╨╫ё╨<a href="../main.aspx" target="sys_main" class="list_link">йврЁ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" target="sys_main" class="list_link">ндуб╧эюМ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />мк╦Едзхщ</div></td>
+              О©╫О©╫О©╫б╧О©╫О©╫</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">О©╫н╩О©╫ц╣О©╫О©╫О©╫О©╫О©╫<a href="../main.aspx" target="sys_main" class="list_link">О©╫О©╫рЁ</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" target="sys_main" class="list_link">О©╫О©╫О©╫б╧О©╫О©╫</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />О©╫О©╫к╦О©╫О©╫О©╫О©╫</div></td>
         </tr>
 </table>
       <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
         <tr>
           <td style="padding-left:14px;">          
-          <a href="Constr.aspx" class="menulist">╥╒╠Мндуб</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >кЫспмк╦Е</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ндуб╧эюМ</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">╥жюЮ╧эюМ</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ук╨е╧эюМ</a></td>
+          <a href="Constr.aspx" class="menulist">щ╥О©╫О©╫О©╫О©╫О©╫О©╫</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >О©╫О©╫О©╫О©╫О©╫О©╫к╦</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">О©╫О©╫О©╫О©╫б╧О©╫О©╫</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">О©╫О©╫О©╫О©╫О©╫О©╫</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">О©╫О©╫к╨е╧О©╫О©╫</a></td>
         </tr>
 </table>
 
@@ -33,24 +33,24 @@
 
   <tr class="TR_BG_list">
     <td class="list_link" width="20%">
-        ндубцШЁфё╨</td>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫фёО©╫</td>
     <td class="list_link" width="80%"><asp:Label ID="Title" runat="server" Width="100%"></asp:Label></td>
   </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        ндуб╥жюЮё╨</td>
+        О©╫О©╫О©╫б╥О©╫О©╫Юё╨</td>
     <td class="list_link">
         <asp:Label ID="Class" runat="server" Width="100%"></asp:Label></td>
         </tr>
             <tr class="TR_BG_list">
     <td class="list_link">
-        лМ╪сй╠╪Дё╨</td>
+        О©╫О©╫О©╫й╠О©╫Дё╨</td>
     <td class="list_link">
         <asp:Label ID="creatTime" runat="server" Width="100%"></asp:Label></td>
         </tr>
     <tr class="TR_BG_list">
     <td class="list_link">
-        мк╦Ет╜рРё╨</td>
+        О©╫к╦О©╫т╜О©╫</td>
     <td class="list_link">
         <font color="Red"><asp:Label ID="passcontent" runat="server" Width="100%" Height="123px"></asp:Label></font></td>
     </tr>

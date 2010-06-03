@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_info_announce : Foosun.Web.UI.UserPage
+public partial class user_info_announce : Hg.Web.UI.UserPage
 {
     Info inf = new Info();
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChange);
@@ -34,13 +34,13 @@ public partial class user_info_announce : Foosun.Web.UI.UserPage
 
     protected void StartLoad(int PageIndex)
     {
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         string[] UserGI = pd.getGIPoint(UserNum).Split('|');
         int cPoint = pd.getcPoint(UserNum);
         string SiteID = inf.sel_1(UserNum);
         int i, j;
         SQLConditionInfo sts = new SQLConditionInfo("@SiteID", SiteID);
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, sts);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, sts);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -60,7 +60,7 @@ public partial class user_info_announce : Foosun.Web.UI.UserPage
                     string gGnumber =dt.Rows[k]["GroupNumber"].ToString();
                     if (gGnumber.Trim() != "")
                     {
-                        if (gGnumber.ToUpper() != pd.getUserGroupNumber(Foosun.Global.Current.UserNum).ToUpper())
+                        if (gGnumber.ToUpper() != pd.getUserGroupNumber(Hg.Global.Current.UserNum).ToUpper())
                         {
                             continue;
                         }

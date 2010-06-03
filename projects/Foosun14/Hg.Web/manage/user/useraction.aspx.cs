@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_useraction : Foosun.Web.UI.ManagePage
+public partial class manage_user_useraction : Hg.Web.UI.ManagePage
 {
 
     UserList UL = new UserList();
@@ -100,7 +100,7 @@ public partial class manage_user_useraction : Foosun.Web.UI.ManagePage
             PageError(bi.ToString(), "");
         }
 
-        if (UL.bIpoint(Foosun.Common.Input.Filter(uid), intPoint) == 0)
+        if (UL.bIpoint(Hg.Common.Input.Filter(uid), intPoint) == 0)
         {
             PageError("增加积分失败", "UserList.aspx");
         }

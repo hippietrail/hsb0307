@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discuss_discussactijoin_list : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussactijoin_list : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     /// <summary>
@@ -43,7 +43,7 @@ public partial class user_discuss_discussactijoin_list : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null && Request.QueryString["ID"] != "")
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -72,7 +72,7 @@ public partial class user_discuss_discussactijoin_list : Foosun.Web.UI.UserPage
     protected void Show_jrlist(int PageIndex1)
     {
         int i, j;
-        DataTable jrlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out i, out j, null);
+        DataTable jrlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex1, 10, out i, out j, null);
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex1;
         this.PageNavigator2.RecordCount = i;

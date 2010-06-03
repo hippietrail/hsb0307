@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -17,30 +17,30 @@
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
-          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >Ïà²á¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">Ïà²á¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />»ÃµÆÆ¬²¥·Å</div></td>
+          <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Photoalbumlist.aspx"  class="list_link">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½Ãµï¿½Æ¬ï¿½ï¿½ï¿½</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">Ïà²áÊ×Ò³</a>&nbsp;©®&nbsp;<a href="photo_add.aspx" class="menulist">Ìí¼ÓÍ¼Æ¬</a>&nbsp;©®&nbsp;<a href="#" class="menulist">»ÃµÆ²¥·Å</a>&nbsp;©®&nbsp;<a href="photoclass.aspx" class="menulist">Ïà²á·ÖÀà</a>&nbsp;©®&nbsp;<a href="Photoalbum.aspx" class="menulist">Ìí¼ÓÏà²á</a></span></td>
+     <td><span class="topnavichar" style="PADDING-LEFT: 14px"><a href="Photoalbumlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>&nbsp;ï¿½ï¿½&nbsp;<a href="photo_add.aspx" class="menulist">ï¿½ï¿½ï¿½Í¼Æ¬</a>&nbsp;ï¿½ï¿½&nbsp;<a href="#" class="menulist">ï¿½ÃµÆ²ï¿½ï¿½</a>&nbsp;Å©ï¿½&nbsp;<a href="photoclass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;à©®&nbsp;<a href="Photoalbum.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½</a></span></td>
   </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" style="border-collapse: collapse" class="table">
   <%--<form name="player" method="post" action="">--%>
     <tr class="TR_BG">
-      <td><div align="center">ÆµÂÊ£º
+      <td><div align="center">ï¿½Æµï¿½Ê£ï¿½
         <select class="form" name="intsec">
-                <option value="1000">1Ãë</option>
-                <option value="3000" selected="selected">3Ãë</option>
-                <option value="5000">5Ãë</option>
-                <option value="8000">8Ãë</option>
-                <option value="10000">10Ãë</option>
+                <option value="1000">1ï¿½</option>
+                <option value="3000" selected="selected">3ï¿½ï¿½</option>
+                <option value="5000">5ï¿½ï¿½</option>
+                <option value="8000">8ï¿½ï¿½</option>
+                <option value="10000">10ï¿½ï¿½</option>
               </select>
-              <input name="button" type="button" class="form" onclick="javascipt:go(1);" value="¿ªÊ¼" />
+              <input name="button" type="button" class="form" onclick="javascipt:go(1);" value="ë¿ªÊ¼" />
               <input name="button" type="button" class="form" onclick="javascipt:go(2);" value="Í£Ö¹" />
-              <input name="button" type="button" class="form" onclick="javascipt:go(3);" value="ÉÏÒ»ÕÅ" />
-              <input name="button" type="button" class="form" onclick="javascipt:go(4);" value="ÏÂÒ»ÕÅ" />
+              <input name="button" type="button" class="form" onclick="javascipt:go(3);" value="ï¿½ï¿½Ò»ï¿½" />
+              <input name="button" type="button" class="form" onclick="javascipt:go(4);" value="ï¿½ï¿½ï¿½Ò»ï¿½" />
       </div></td>
     </tr>
 <%--    </form>--%>

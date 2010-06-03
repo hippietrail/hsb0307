@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_discussacti_add : Foosun.Web.UI.UserPage
+public partial class user_discussacti_add : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     DateTime CreaTime = DateTime.Now;//获取当前系统时间    
@@ -36,7 +36,7 @@ public partial class user_discussacti_add : Foosun.Web.UI.UserPage
         if (!IsPostBack)
         {
             
-            string AId=Foosun.Common.Input.Filter(Request.QueryString["AId"].ToString());
+            string AId=Hg.Common.Input.Filter(Request.QueryString["AId"].ToString());
             DataTable dt = dis.sel_12(AId);
             DateTime Cutofftime1 = DateTime.Parse(dt.Rows[0]["Cutofftime"].ToString());
             int An = int.Parse(dt.Rows[0]["Anum"].ToString());
@@ -65,12 +65,12 @@ public partial class user_discussacti_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)//判断是否通过验证
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string AIds = Foosun.Common.Input.Filter(Request.QueryString["AId"].ToString());
-            string Telephone = Foosun.Common.Input.Htmls(Request.Form["TelephoneBox"].ToString());
-            int ParticipationNum = int.Parse(Foosun.Common.Input.Filter(Request.Form["ParticipationNumBox"].ToString()));
+            string UserNum = Hg.Global.Current.UserNum;
+            string AIds = Hg.Common.Input.Filter(Request.QueryString["AId"].ToString());
+            string Telephone = Hg.Common.Input.Htmls(Request.Form["TelephoneBox"].ToString());
+            int ParticipationNum = int.Parse(Hg.Common.Input.Filter(Request.Form["ParticipationNumBox"].ToString()));
             int isCompanion = this.isCompanionList.SelectedIndex;
-            string  PId = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            string  PId = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dta = dis.sel_14();
             int cutb = dta.Rows.Count;
             string PIda = "";

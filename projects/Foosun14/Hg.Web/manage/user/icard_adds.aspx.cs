@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_icard_adds : Foosun.Web.UI.ManagePage
+public partial class manage_user_icard_adds : Hg.Web.UI.ManagePage
 {
     public manage_user_icard_adds()
     {
@@ -59,25 +59,25 @@ public partial class manage_user_icard_adds : Foosun.Web.UI.ManagePage
             //{
                 for (int k=0; k < cNumber; k++)
                 {
-                    string CaID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+                    string CaID = Hg.Common.Rand.Number(12);//产生12位随机字符
                     string cardlenID;
                     if (isChar_num == 1)
                     {
-                        cardlenID = recard + Foosun.Common.Rand.Str(cardlen - recard.Length,true);
+                        cardlenID = recard + Hg.Common.Rand.Str(cardlen - recard.Length,true);
                     }
                     else
                     {
-                        cardlenID = recard + Foosun.Common.Rand.Number(cardlen - recard.Length, true);
+                        cardlenID = recard + Hg.Common.Rand.Number(cardlen - recard.Length, true);
                     }
 
                     string passlenID;
                     if (pass_card_num == 1)
                     {
-                        passlenID = Foosun.Common.Rand.Str(passlen, true);
+                        passlenID = Hg.Common.Rand.Str(passlen, true);
                     }
                     else
                     {
-                        passlenID = Foosun.Common.Rand.Number(passlen, true);
+                        passlenID = Hg.Common.Rand.Number(passlen, true);
                     }
                     //判断卡号是否重复
                     DataTable dtc = rd.getCardNumberTF(cardlenID);
@@ -88,7 +88,7 @@ public partial class manage_user_icard_adds : Foosun.Web.UI.ManagePage
                     }
                     if (rd.getCardPassTF(FSSecurity.FDESEncrypt(passlenID, 1)) == true) { continue; }
                     carNums = carNums + 1;
-                    Foosun.Model.IDCARD uc = new Foosun.Model.IDCARD();
+                    Hg.Model.IDCARD uc = new Hg.Model.IDCARD();
                     uc.CaID = CaID;
                     uc.CardNumber = cardlenID;
                     uc.CardPassWord = FSSecurity.FDESEncrypt(passlenID, 1);

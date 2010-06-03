@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Common;
+using Hg.CMS;
+using Hg.Common;
 
-public partial class manage_user_UserGroupEdit : Foosun.Web.UI.ManagePage
+public partial class manage_user_UserGroupEdit : Hg.Web.UI.ManagePage
 {
     public manage_user_UserGroupEdit()
     {
@@ -31,7 +31,7 @@ public partial class manage_user_UserGroupEdit : Foosun.Web.UI.ManagePage
             int gid = 0;
             try
             {
-                gid = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"].Trim()));
+                gid = int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"].Trim()));
                 DataTable dt = rd.getGroupEdit(gid);
                 if (dt != null)
                 {
@@ -275,7 +275,7 @@ public partial class manage_user_UserGroupEdit : Foosun.Web.UI.ManagePage
                 #endregion 获取表单值
                 #region 更新数据
 
-                Foosun.Model.UserInfo4 uc1 = new Foosun.Model.UserInfo4();
+                Hg.Model.UserInfo4 uc1 = new Hg.Model.UserInfo4();
                 uc1.gID = gids;
                 uc1.GroupName = TxtGroupName;
                 uc1.iPoint = intiPoint;

@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_user_icard_add : Foosun.Web.UI.ManagePage
+public partial class manage_user_icard_add : Hg.Web.UI.ManagePage
 {
     public manage_user_icard_add()
     {
@@ -61,8 +61,8 @@ public partial class manage_user_icard_add : Foosun.Web.UI.ManagePage
             int isbuy = int.Parse(this.isBuy.SelectedValue);
             int isuse = int.Parse(this.isUse.SelectedValue);
 
-            string CaID = Foosun.Common.Rand.Number(12);//产生12位随机字符
-            Foosun.Model.IDCARD uc = new Foosun.Model.IDCARD();
+            string CaID = Hg.Common.Rand.Number(12);//产生12位随机字符
+            Hg.Model.IDCARD uc = new Hg.Model.IDCARD();
             uc.CaID = CaID;
             uc.CardNumber = CardNumber;
             uc.CardPassWord =  FSSecurity.FDESEncrypt(CardPassWord,1);

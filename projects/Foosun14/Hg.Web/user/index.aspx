@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>_会员中心</title>
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>_会员中心</title>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> 
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Public.js"></script>
@@ -105,7 +105,7 @@
 	<% Response.Write(ChannelList); %>
 	
 </script>
-<link href="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <form id="form1" runat="server">
@@ -113,22 +113,22 @@
   <tr>
     <td><table width="100%" border="0" cellpadding="0" cellspacing="0" class="indexq">
       <tr>
-        <td align=left><img alt="" src="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/logo.jpg" /></td>
+        <td align=left><img alt="" src="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/logo.jpg" /></td>
         <td align="center">&nbsp;</td>
         <td align="right" style="padding-right:10px;"><label id="isManage" runat="server" />&nbsp;&nbsp;<a href="friend/friendList.aspx" class="Lion_1" target="sys_main">好友</a><label id="isFriendPass" runat="server" />&nbsp;&nbsp;┊&nbsp;&nbsp;<label id="messageID" runat="server" />&nbsp;&nbsp;┊&nbsp;&nbsp;<a class="Lion_1" href="info/userinfo.aspx" target="sys_main">资料</a>&nbsp;┊&nbsp;<a href="info/User_ChangePassword.aspx" target="sys_main" class="Lion_1"  title="修改密码">密码</a>&nbsp;┊&nbsp;<a href="Logout.aspx" class="Lion_1">退出</a></td>
       </tr>
     </table></td>
   </tr>
 </table>                                
-<table width="100%" border="0" cellpadding="0" cellspacing="0" style="cursor:pointer;" background="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="cursor:pointer;" background="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg">
   <tr>
-    <td id="IDC_DownedBUtton" class="button_down" onclick="CheckBTNu('menuid','menu.aspx');" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;"><label id="fontchar">隐藏菜单</label></td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="控制面板" onclick="CheckBTN(this,'info/userinfo.aspx');" onmouseover="showmenu(event,0,1,false)" onmouseout="delayhidemenu()">控制面板</td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="短消息" onclick="CheckBTN(this,'message/Message_box.aspx?Id=1');" onmouseover="showmenu(event,1,1,false)" onmouseout="delayhidemenu()">站内消息</td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="文章管理" onclick="CheckBTN(this,'Constr/Constrlist.aspx');" onmouseover="showmenu(event,2,1,false)" onmouseout="delayhidemenu()">文章管理</td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="信息管理" onclick="javascript:void(0);" onmouseover="showmenu(event,5,1,false)" onmouseout="delayhidemenu()">发布信息</td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="社群管理" onclick="CheckBTN(this,'discuss/discussManage_list.aspx');" onmouseover="showmenu(event,3,1,false)" onmouseout="delayhidemenu()">社群/讨论</td>
-    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="好友管理" onclick="CheckBTN(this,'friend/friendlist.aspx');" onmouseover="showmenu(event,4,1,false)" onmouseout="delayhidemenu()">好友管理</td>
+    <td id="IDC_DownedBUtton" class="button_down" onclick="CheckBTNu('menuid','menu.aspx');" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;"><label id="fontchar">隐藏菜单</label></td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="控制面板" onclick="CheckBTN(this,'info/userinfo.aspx');" onmouseover="showmenu(event,0,1,false)" onmouseout="delayhidemenu()">控制面板</td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="短消息" onclick="CheckBTN(this,'message/Message_box.aspx?Id=1');" onmouseover="showmenu(event,1,1,false)" onmouseout="delayhidemenu()">站内消息</td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="文章管理" onclick="CheckBTN(this,'Constr/Constrlist.aspx');" onmouseover="showmenu(event,2,1,false)" onmouseout="delayhidemenu()">文章管理</td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="信息管理" onclick="javascript:void(0);" onmouseover="showmenu(event,5,1,false)" onmouseout="delayhidemenu()">发布信息</td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="社群管理" onclick="CheckBTN(this,'discuss/discussManage_list.aspx');" onmouseover="showmenu(event,3,1,false)" onmouseout="delayhidemenu()">社群/讨论</td>
+    <td class="button_down" style="width:10%;text-align:left;padding-left:10px;background-repeat:no-repeat;background-image:../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg;cursor:pointer;" title="好友管理" onclick="CheckBTN(this,'friend/friendlist.aspx');" onmouseover="showmenu(event,4,1,false)" onmouseout="delayhidemenu()">好友管理</td>
     <td style="width:10%;height:38px;"></td>
     <td style="width:10%;height:38px;"></td>
     <td style="width:10%;height:38px;"></td>

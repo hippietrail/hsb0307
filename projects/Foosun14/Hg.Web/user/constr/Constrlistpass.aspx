@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="toptable">
@@ -18,15 +18,15 @@
         </tr>
         <tr>
           <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              ÎÄÕÂ¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" target="sys_main" class="list_link">ÎÄÕÂ¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ËùÓÐÍË¸å</div></td>
+              ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constrlist.aspx" target="sys_main" class="list_link">ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸</div></td>
         </tr>
 </table>
       <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
               <tr>
           <td style="padding-left:14px;">          
-          <a href="Constr.aspx" class="menulist">·¢±íÎÄÕÂ</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ËùÓÐÍË¸å</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ÎÄÕÂ¹ÜÀí</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">·ÖÀà¹ÜÀí</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ÕËºÅ¹ÜÀí</a></td>
-          <td align="right" style="padding-right:28px;"><a href="javascript:PDel();" class="topnavichar">ÅúÁ¿É¾³ý</a></td>
+          <a href="Constr.aspx" class="menulist">å·¢ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constrlistpass.aspx" class="topnavichar" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸</a>&nbsp; &nbsp;<a href="Constrlist.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½</a>&nbsp; &nbsp;<a href="ConstrClass.aspx" class="menulist">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constraccount.aspx" class="menulist">ï¿½ï¿½ËºÅ¹ï¿½ï¿½</a></td>
+          <td align="right" style="padding-right:28px;"><a href="javascript:PDel();" class="topnavichar">ï¿½ï¿½ï¿½ï¿½É¾ï¿½</a></td>
         </tr>
 </table>
 <div id="no" runat="server"></div>
@@ -37,11 +37,11 @@
     <HeaderTemplate>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
     <tr class="TR_BG">
-    <td class="sys_topBg" align="center" width="40%">±êÌâ</td>
-    <td class="sys_topBg" align="center" width="15%">·ÖÀà</td>
-    <td class="sys_topBg" align="center" width="15%">Ìí¼ÓÊ±¼ä</td>
-    <td class="sys_topBg" align="center" width="15%">ÍË¸å</td>
-    <td class="sys_topBg" align="center" width="15%">²Ù×÷&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
+    <td class="sys_topBg" align="center" width="40%">ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="15%">ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="15%">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½</td>
+    <td class="sys_topBg" align="center" width="15%">ï¿½ï¿½Ë¸</td>
+    <td class="sys_topBg" align="center" width="15%">ï¿½ï¿½ï¿½&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
     </tr>
     <div id="tnzlist" runat="server"></div>
     </HeaderTemplate>
@@ -78,28 +78,28 @@
 <script language="javascript" type="text/javascript">
 function Lock(ID)
 {
-   if(confirm("ÄãÈ·¶¨ÒªËø¶¨Âð?"))
+   if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½?"))
    { 
     self.location="?Type=Lock&ID="+ID;
    }
 }
 function UnLock(ID)
 {
-   if(confirm("ÄãÈ·¶¨Òª½â³ýËø¶¨Âð?"))
+   if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?"))
    { 
     self.location="?Type=UnLock&ID="+ID;
    }
 }
 function del(ID)
 {
-   if(confirm("ÄãÈ·¶¨ÒªÉ¾³ýÂð?"))
+   if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½?"))
    { 
         self.location="?Type=del&ID="+ID;
    }
 }
 function PDel()
 {
-    if(confirm("ÄãÈ·¶¨Òª³¹µ×É¾³ýÂð?"))
+    if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½?"))
     {
 	    document.form1.action="?Type=PDel";
 	    document.form1.submit();
@@ -107,7 +107,7 @@ function PDel()
 }
 function PUnlock()
 {
-    if(confirm("ÄãÈ·¶¨ÒªÅúÁ¿½âËøÂð?"))
+    if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?"))
     {
         document.form1.action="?Type=PUnlock";
 	    document.form1.submit();
@@ -115,7 +115,7 @@ function PUnlock()
 }
 function Plock()
 {
-    if(confirm("ÄãÈ·¶¨ÒªÅúÁ¿Ëø¶¨Âð"))
+    if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"))
     {
 	    document.form1.action="?Type=Plock";
 	    document.form1.submit();

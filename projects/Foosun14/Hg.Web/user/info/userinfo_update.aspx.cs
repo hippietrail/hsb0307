@@ -8,15 +8,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
+public partial class user_info_userinfo_update : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     rootPublic pd = new rootPublic();
-    public static string dirDumm = Foosun.Config.UIConfig.dirDumm;
-    public static string UserdirFile = Foosun.Config.UIConfig.UserdirFile;
+    public static string dirDumm = Hg.Config.UIConfig.dirDumm;
+    public static string UserdirFile = Hg.Config.UIConfig.UserdirFile;
     public static string Rdir = UserdirFile;
     public static string gEmaill = "";
     protected void Page_Load(object sender, EventArgs e)
@@ -28,14 +28,14 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             
             if (dirDumm.Trim() != "")
             {
-                Rdir = Foosun.Config.UIConfig.dirDumm + "/" + UserdirFile;
+                Rdir = Hg.Config.UIConfig.dirDumm + "/" + UserdirFile;
             }
             copyright.InnerHtml = CopyRight;
             sex.InnerHtml = sexlist();
             marriage.InnerHtml = marriagelist();
             isopen.InnerHtml = isopenlist();
 
-            DataTable dt = rd.getUserInfobase1_user(Foosun.Global.Current.UserNum);
+            DataTable dt = rd.getUserInfobase1_user(Hg.Global.Current.UserNum);
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
@@ -45,9 +45,9 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
                     {
                         this.birthday.Text = ((DateTime)dt.Rows[0]["birthday"]).ToString("yyyy-MM-dd");
                     }
-                    if (pd.getUserUserInfo(Foosun.Global.Current.UserNum) == 1)
+                    if (pd.getUserUserInfo(Hg.Global.Current.UserNum) == 1)
                     {
-                        this.Userinfo.Text = Foosun.Common.Input.ToTxt(dt.Rows[0]["Userinfo"].ToString());
+                        this.Userinfo.Text = Hg.Common.Input.ToTxt(dt.Rows[0]["Userinfo"].ToString());
                     }
                     else
                     {
@@ -67,7 +67,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
                 }
             }
 
-            DataTable dt1 = rd.getUserInfobase2_user(Foosun.Global.Current.UserNum);
+            DataTable dt1 = rd.getUserInfobase2_user(Hg.Global.Current.UserNum);
             if (dt1 != null)
             {
                 if (dt1.Rows.Count > 0)
@@ -88,7 +88,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
     protected string sexlist()
     {
         string liststr = "";
-        DataTable dt = rd.sexlist(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+        DataTable dt = rd.sexlist(pd.getUserName_uid(Hg.Global.Current.UserNum));
         if (dt != null)
         {
             liststr += "<select name=\"sex\">";
@@ -133,7 +133,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
     protected string marriagelist()
     {
         string liststr = "";
-        DataTable dt = rd.marriagelist(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+        DataTable dt = rd.marriagelist(pd.getUserName_uid(Hg.Global.Current.UserNum));
         if (dt != null)
         {
             liststr += "<select name=\"marriage\">";
@@ -178,7 +178,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
     protected string isopenlist()
     {
         string liststr = "";
-        DataTable dt = rd.isopenlist(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+        DataTable dt = rd.isopenlist(pd.getUserName_uid(Hg.Global.Current.UserNum));
         if (dt != null)
         {
             liststr += "<select name=\"isopen\">";
@@ -225,23 +225,23 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             string sex = Request.Form["sex"];
             string birthday = this.birthday.Text;
             string Nation = this.Nation.Text;
-            string nativeplace = Foosun.Common.Input.Htmls(this.nativeplace.Text);
+            string nativeplace = Hg.Common.Input.Htmls(this.nativeplace.Text);
             string Userinfo = "";
             if (this.Userinfo.Text != "")
             {
-                Userinfo = Foosun.Common.Input.Htmls(this.Userinfo.Text); 
+                Userinfo = Hg.Common.Input.Htmls(this.Userinfo.Text); 
             }
-            string UserFace = Foosun.Common.Input.Htmls(this.UserFace.Text);
-            string userFacesize = Foosun.Common.Input.Htmls(this.userFacesize.Text);
-            string character =  Foosun.Common.Input.Htmls(this.character.Text);
-            string UserFan = Foosun.Common.Input.Htmls(this.UserFan.Text);
-            string orgSch = Foosun.Common.Input.Htmls(this.orgSch.Text);
+            string UserFace = Hg.Common.Input.Htmls(this.UserFace.Text);
+            string userFacesize = Hg.Common.Input.Htmls(this.userFacesize.Text);
+            string character =  Hg.Common.Input.Htmls(this.character.Text);
+            string UserFan = Hg.Common.Input.Htmls(this.UserFan.Text);
+            string orgSch = Hg.Common.Input.Htmls(this.orgSch.Text);
             string job = this.job.Text;
             string education = this.education.Text;
-            string Lastschool = Foosun.Common.Input.Htmls(this.Lastschool.Text);
+            string Lastschool = Hg.Common.Input.Htmls(this.Lastschool.Text);
             string marriage = Request.Form["marriage"];
             string isopen = Request.Form["isopen"];
-            string RealName = Foosun.Common.Input.Htmls(this.RealName.Text);
+            string RealName = Hg.Common.Input.Htmls(this.RealName.Text);
             string[] userFacesizes = userFacesize.Split('|');
             int uf = 0, uf1 = 0;
             try
@@ -262,7 +262,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             {
                 PageError("头像高度不能超过120px", "userinfo_update.aspx");
             }
-            DataTable dt = rd.getUserInfoParam(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+            DataTable dt = rd.getUserInfoParam(pd.getUserName_uid(Hg.Global.Current.UserNum));
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
@@ -280,7 +280,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
                         }
                         if (dt.Rows[0]["CharHTML"].ToString() == "0")
                         {
-                            Userinfo = Foosun.Common.Input.ToHtml(Userinfo);
+                            Userinfo = Hg.Common.Input.ToHtml(Userinfo);
                         }
                     }
                 }
@@ -301,8 +301,8 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             }
             
             ///更新基本表
-            Foosun.Model.UserInfo uc = new Foosun.Model.UserInfo();
-            uc.Id = pd.getUserName_uid(Foosun.Global.Current.UserNum);
+            Hg.Model.UserInfo uc = new Hg.Model.UserInfo();
+            uc.Id = pd.getUserName_uid(Hg.Global.Current.UserNum);
             uc.NickName = NickName;
             uc.RealName = RealName;
             uc.email = Request.Form["gEmaill"];
@@ -313,10 +313,10 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             uc.userFacesize = userFacesize;
             uc.marriage = int.Parse(marriage);
             uc.isopen = int.Parse(isopen);
-            uc.UserGroupNumber = pd.getUserGroupNumber(Foosun.Global.Current.UserNum);
+            uc.UserGroupNumber = pd.getUserGroupNumber(Hg.Global.Current.UserNum);
 
             //同步更新用户信息
-            Foosun.PlugIn.Passport.DPO_Request request = new Foosun.PlugIn.Passport.DPO_Request(Context);
+            Hg.PlugIn.Passport.DPO_Request request = new Hg.PlugIn.Passport.DPO_Request(Context);
             request.Birthday = uc.birthday.ToString("yyyy-MM-dd");
             switch (uc.sex)
             {
@@ -331,7 +331,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
                     break;
             }
             request.TrueName = uc.RealName;
-            request.UserName = Foosun.Global.Current.UserName;
+            request.UserName = Hg.Global.Current.UserName;
             request.ProcessMultiPing("update");
 
             if (request.FoundErr)
@@ -343,7 +343,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             //获得UserID
 
 
-            DataTable getdt = rd.getUserInfoNum(pd.getUserName_uid(Foosun.Global.Current.UserNum));
+            DataTable getdt = rd.getUserInfoNum(pd.getUserName_uid(Hg.Global.Current.UserNum));
             string strUsernum = "";
             if (getdt != null)
             {
@@ -361,7 +361,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             {
                 if (sdt.Rows.Count > 0)
                 {
-                    Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                    Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                     uc1.UserNum = strUsernum;
                     uc1.Nation = Nation;
                     uc1.nativeplace = nativeplace;
@@ -375,7 +375,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
                 }
                 else
                 {
-                    Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                    Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                     uc1.UserNum = strUsernum;
                     uc1.Nation = Nation;
                     uc1.nativeplace = nativeplace;
@@ -392,7 +392,7 @@ public partial class user_info_userinfo_update : Foosun.Web.UI.UserPage
             }
             else
             {
-                Foosun.Model.UserInfo1 uc1 = new Foosun.Model.UserInfo1();
+                Hg.Model.UserInfo1 uc1 = new Hg.Model.UserInfo1();
                 uc1.UserNum = strUsernum;
                 uc1.Nation = Nation;
                 uc1.nativeplace = nativeplace;

@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_Constraccount_add : Foosun.Web.UI.UserPage
+public partial class user_Constraccount_add : Hg.Web.UI.UserPage
 {
     Constr con = new Constr();
 
@@ -33,7 +33,7 @@ public partial class user_Constraccount_add : Foosun.Web.UI.UserPage
     {
           //判断是否登录
         Response.CacheControl = "no-cache";  //清除缓存
-        string UserNum = Foosun.Global.Current.UserNum;
+        string UserNum = Hg.Global.Current.UserNum;
         int cut = con.sel3(UserNum);
         if (cut > 0)
         {
@@ -52,15 +52,15 @@ public partial class user_Constraccount_add : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string address = Foosun.Common.Input.Htmls(Request.Form["addressBox"].ToString());
-            string postcode = Foosun.Common.Input.Htmls(Request.Form["postcodeBox"].ToString());
-            string RealName = Foosun.Common.Input.Htmls(Request.Form["RealNameBox"].ToString());
-            string bankName = Foosun.Common.Input.Htmls(Request.Form["bankNameBox"].ToString());
-            string bankaccount = Foosun.Common.Input.Htmls(Request.Form["bankaccountBox"].ToString());
-            string bankcard = Foosun.Common.Input.Htmls(Request.Form["bankcardBox"].ToString());
-            string bankRealName = Foosun.Common.Input.Htmls(Request.Form["bankRealNameBox"].ToString());
-            string UserNum = Foosun.Global.Current.UserNum;
-            Foosun.Model.STuserother stcn;
+            string address = Hg.Common.Input.Htmls(Request.Form["addressBox"].ToString());
+            string postcode = Hg.Common.Input.Htmls(Request.Form["postcodeBox"].ToString());
+            string RealName = Hg.Common.Input.Htmls(Request.Form["RealNameBox"].ToString());
+            string bankName = Hg.Common.Input.Htmls(Request.Form["bankNameBox"].ToString());
+            string bankaccount = Hg.Common.Input.Htmls(Request.Form["bankaccountBox"].ToString());
+            string bankcard = Hg.Common.Input.Htmls(Request.Form["bankcardBox"].ToString());
+            string bankRealName = Hg.Common.Input.Htmls(Request.Form["bankRealNameBox"].ToString());
+            string UserNum = Hg.Global.Current.UserNum;
+            Hg.Model.STuserother stcn;
             stcn.address = address;
             stcn.postcode = postcode;
             stcn.RealName = RealName;

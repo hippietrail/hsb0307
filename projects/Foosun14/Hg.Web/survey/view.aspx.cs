@@ -14,10 +14,10 @@ using System.Web.UI.HtmlControls;
 using System.ComponentModel;
 using System.Drawing;
 using System.Web.SessionState;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class vote_vview : Foosun.Web.UI.BasePage
+public partial class vote_vview : Hg.Web.UI.BasePage
 {
     Survey sur = new Survey();
     protected void Page_Load(object sender, EventArgs e)

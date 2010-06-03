@@ -19,10 +19,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
+public partial class user_discuss_discussPhotoalbumlist : Hg.Web.UI.UserPage
 {
     Discuss dis = new Discuss();
     Photo pho = new Photo();
@@ -36,7 +36,7 @@ public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -51,8 +51,8 @@ public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
                 break;
         }
 
-        string DisID = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
-        DataTable dt = dis.sel(Foosun.Global.Current.UserNum);
+        string DisID = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
+        DataTable dt = dis.sel(Hg.Global.Current.UserNum);
         DataTable dt_selDiscussMember = dis.sel_29(DisID);
         int cut_selDiscussMember = dt_selDiscussMember.Rows.Count;
         if (dis.sel_30(DisID) != dt.Rows[0]["UserName"].ToString())
@@ -74,10 +74,10 @@ public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
     }
     protected void Show_cjlist(int PageIndex2)
     {
-        string DisIDs = Foosun.Common.Input.Filter(Request.QueryString["DisID"]);
+        string DisIDs = Hg.Common.Input.Filter(Request.QueryString["DisID"]);
         int ib, jb;
         SQLConditionInfo st = new SQLConditionInfo("@DisID", DisIDs);
-        DataTable cjlistdts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out ib, out jb, st);
+        DataTable cjlistdts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex2, 10, out ib, out jb, st);
 
         this.PageNavigator3.PageCount = jb;
         this.PageNavigator3.PageIndex = PageIndex2;
@@ -175,7 +175,7 @@ public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
                 {
                     DataTable dt_pu = dis.sel_31(chSplit[i]);
                     DeleParentFolder(dt_pu.Rows[0]["PhotoalbumUrl"].ToString());
-                    if (dt_pu.Rows[0]["UserName"].ToString() == Foosun.Global.Current.UserNum)
+                    if (dt_pu.Rows[0]["UserName"].ToString() == Hg.Global.Current.UserNum)
                     {
                         if (pho.sel_19(chSplit[i]) != 0)
                         {
@@ -210,7 +210,7 @@ public partial class user_discuss_discussPhotoalbumlist : Foosun.Web.UI.UserPage
     {
         DataTable dt_pu = dis.sel_31(ID);
         DeleParentFolder(dt_pu.Rows[0]["PhotoalbumUrl"].ToString());
-        if (dt_pu.Rows[0]["UserName"].ToString() == Foosun.Global.Current.UserNum)
+        if (dt_pu.Rows[0]["UserName"].ToString() == Hg.Global.Current.UserNum)
         {
             if (pho.sel_19(ID) != 0)
             {

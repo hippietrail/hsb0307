@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_discussacti : Foosun.Web.UI.ManagePage
+public partial class manage_user_discussacti : Hg.Web.UI.ManagePage
 {
     Discuss dis = new Discuss();
     protected void Page_Load(object sender, EventArgs e)
@@ -49,7 +49,7 @@ public partial class manage_user_discussacti : Foosun.Web.UI.ManagePage
 
             DateTime CreaTime = DateTime.Now;//获取当前系统时间
 
-            string AId = Foosun.Common.Rand.Number(12);
+            string AId = Hg.Common.Rand.Number(12);
 
             int ALabel = this.ALabelList.SelectedIndex;
 
@@ -60,7 +60,7 @@ public partial class manage_user_discussacti : Foosun.Web.UI.ManagePage
             string UName1 = dt1.Rows[0]["UserName"].ToString();
             string site = dt1.Rows[0]["SiteID"].ToString();
 
-            Foosun.Model.STDiscussActive DA = new Foosun.Model.STDiscussActive();
+            Hg.Model.STDiscussActive DA = new Hg.Model.STDiscussActive();
             DA.ActiveExpense = ActiveExpense;
             DA.ActivePlace = ActivePlace;
             DA.ActivePlan = ActivePlan;

@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_menu : Foosun.Web.UI.UserPage
+public partial class user_menu : Hg.Web.UI.UserPage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ public partial class user_menu : Foosun.Web.UI.UserPage
     protected string ShortcutList()//显示快捷菜单
     {
         string _Str = "";
-        IDataReader dr = rd.ShortcutList(Foosun.Global.Current.UserNum, 0);
+        IDataReader dr = rd.ShortcutList(Hg.Global.Current.UserNum, 0);
         int i = 0;
         while (dr.Read())
         {
@@ -44,7 +44,7 @@ public partial class user_menu : Foosun.Web.UI.UserPage
             string FilePath = dr["FilePath"].ToString();
             string usernum = dr["usernum"].ToString();
             _Str += "<tr>";
-            _Str += " <td width=\"2\"><img src=\"../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_user_21.gif\" alt=\"\" border=\"0\" align=\"right\"></td>";
+            _Str += " <td width=\"2\"><img src=\"../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_user_21.gif\" alt=\"\" border=\"0\" align=\"right\"></td>";
             _Str += " <td align=\"left\"><a class=\"menulist\" href=\"" + FilePath + "\" target=\"sys_main\">" + qName + "</a></td>";
             _Str += "</tr>";
             i++;

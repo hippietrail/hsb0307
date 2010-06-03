@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Common;
+using Hg.CMS;
+using Hg.Common;
 
-public partial class user_url : Foosun.Web.UI.BasePage
+public partial class user_url : Hg.Web.UI.BasePage
 {
     UserMisc rd = new UserMisc();
     public string fURL = "";
@@ -36,7 +36,7 @@ public partial class user_url : Foosun.Web.UI.BasePage
     {
         string list = "<table width=\"70%\" border=\"0\" align=\"center\" cellpadding=\"6\" cellspacing=\"1\" class=\"table\">\r";
         list += "<tr align=\"center\" class=\"TR_BG\"><td style=\"font-size:14px;\"><strong>网址分类</strong></td><td style=\"font-size:14px;\"><strong>相关联接</strong></td></tr>";
-        string UserNum = Foosun.Common.Input.NcyString(uid);
+        string UserNum = Hg.Common.Input.NcyString(uid);
         DataTable dt = rd.getClassList(UserNum);
         if (dt != null && dt.Rows.Count > 0)
         {

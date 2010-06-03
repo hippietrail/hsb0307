@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-public partial class user_arealist_cadd : Foosun.Web.UI.ManagePage
+using Hg.CMS;
+using Hg.CMS.Common;
+public partial class user_arealist_cadd : Hg.Web.UI.ManagePage
 {
     public user_arealist_cadd()
     {
@@ -39,7 +39,7 @@ public partial class user_arealist_cadd : Foosun.Web.UI.ManagePage
             {
                 ClassRender("0", 0);
             }
-            string pname = Foosun.Common.Input.Filter(Request.QueryString["Cid"].ToString());
+            string pname = Hg.Common.Input.Filter(Request.QueryString["Cid"].ToString());
             for (int r = 0; r < this.DropDownList1.Items.Count; r++)
             {
                 if (this.DropDownList1.Items[r].Value == pname)
@@ -83,10 +83,10 @@ public partial class user_arealist_cadd : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             rootPublic rd = new rootPublic();
-            string cityName = Foosun.Common.Input.Filter(Request.Form["cityName"].ToString());
-            string Cid = Foosun.Common.Rand.Number(12);
+            string cityName = Hg.Common.Input.Filter(Request.Form["cityName"].ToString());
+            string Cid = Hg.Common.Rand.Number(12);
             string OrderID = this.OrderID.Text;
-            if (!Foosun.Common.Input.IsInteger(OrderID))
+            if (!Hg.Common.Input.IsInteger(OrderID))
             {
                 PageError("排序号请用0-100的数字。数字越大，越靠前。", "arealist.aspx");
             }

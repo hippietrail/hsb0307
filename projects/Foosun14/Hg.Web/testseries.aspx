@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="testseries.aspx.cs" Inherits="Foosun.Web.testseries" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="testseries.aspx.cs" Inherits="Hg.Web.testseries" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

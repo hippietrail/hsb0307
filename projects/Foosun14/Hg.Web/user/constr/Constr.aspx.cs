@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -17,9 +17,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_Constr : Foosun.Web.UI.UserPage
+public partial class user_Constr : Hg.Web.UI.UserPage
 {
     Constr con = new Constr();
     Site st = new Site();
@@ -32,13 +32,13 @@ public partial class user_Constr : Foosun.Web.UI.UserPage
             
             Response.CacheControl = "no-cache";
             ConstrTF = con.ConstrTF();
-            string UM = Foosun.Global.Current.UserNum;
+            string UM = Hg.Global.Current.UserNum;
             if (con.selGroupNumber(UM)==1)
             {
                 PageRight("对不起.你所投稿的数目已经大于你所能投稿的数目!<li>请联系管理员</li>", "");
             }
             ContentManage rd = new ContentManage();
-            this.Author.Text = Foosun.Global.Current.UserName;
+            this.Author.Text = Hg.Global.Current.UserName;
             DataTable SiteTB = rd.getSiteList();            
             if (SiteTB != null)
             {
@@ -60,27 +60,27 @@ public partial class user_Constr : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string Contents = Foosun.Common.Input.Htmls(ContentBox.Value);
+            string UserNum = Hg.Global.Current.UserNum;
+            string Contents = Hg.Common.Input.Htmls(ContentBox.Value);
             string ClassID = this.ConstrClass.SelectedValue.ToString();
-            string Title = Foosun.Common.Input.Htmls(Request.Form["Title"].ToString());
+            string Title = Hg.Common.Input.Htmls(Request.Form["Title"].ToString());
             string Author = "";
             if (Request.Form["Author"].ToString() == "")
             {
-                Author = Foosun.Global.Current.UserName;
+                Author = Hg.Global.Current.UserName;
             }
             else
             {
-                Author = Foosun.Common.Input.Htmls(Request.Form["Author"].ToString());
+                Author = Hg.Common.Input.Htmls(Request.Form["Author"].ToString());
             }
             string SiteID = this.site.SelectedValue.ToString();
             string Source = this.lxList1.SelectedValue.ToString();
             string Contrflg = "";
             Contrflg = this.inList1.SelectedValue.ToString() + "|" + fbList1.SelectedValue.ToString() + "|" + Locking.SelectedValue.ToString() + "|" + Recommendation.SelectedValue.ToString();
             string Tags = this.Tags.Text;
-            string PicURL = Foosun.Common.Input.Htmls(Request.Form["photo"].ToString());
+            string PicURL = Hg.Common.Input.Htmls(Request.Form["photo"].ToString());
             PicURL = photo.Text.Trim();
-            Foosun.Model.STConstr stcn;
+            Hg.Model.STConstr stcn;
             stcn.Content = Contents;
             stcn.ClassID = ClassID;
             stcn.Title = Title;
@@ -89,7 +89,7 @@ public partial class user_Constr : Foosun.Web.UI.UserPage
             stcn.Contrflg = Contrflg;
             stcn.Author = Author;
             stcn.PicURL = PicURL;
-            stcn.SiteID = Foosun.Global.Current.SiteID;
+            stcn.SiteID = Hg.Global.Current.SiteID;
             stcn.UserNum = UserNum;
             if (con.Add(stcn)!=0)
             {

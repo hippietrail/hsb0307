@@ -11,13 +11,13 @@ using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Xml;
 
-public partial class user_info_MobileValidate : Foosun.Web.UI.UserPage
+public partial class user_info_MobileValidate : Hg.Web.UI.UserPage
 {
     public user_info_MobileValidate()
     {
         UserCertificate = false;
     }
-    Foosun.CMS.user rd = new Foosun.CMS.user();
+    Hg.CMS.user rd = new Hg.CMS.user();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -70,7 +70,7 @@ public partial class user_info_MobileValidate : Foosun.Web.UI.UserPage
         string _Str = "";
         try
         {
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "")
             { _dirdumm = "/" + _dirdumm; }
             if (!File.Exists(Server.MapPath(_dirdumm + "/xml/sys/mobileBindTF.xml"))) { PageError("找不到配置文件(/xml/sys/mobileBindTF.xml).<li>请与系统管理员联系。</li>", ""); }
@@ -111,7 +111,7 @@ public partial class user_info_MobileValidate : Foosun.Web.UI.UserPage
                 PageError("找不到用户,或许您并非注册用户,或者您未填写手机号码!", "");
             }
 
-            if (MCode.ToLower() != Foosun.CMS.FSSecurity.FDESEncrypt(mbcode, 0).ToLower())
+            if (MCode.ToLower() != Hg.CMS.FSSecurity.FDESEncrypt(mbcode, 0).ToLower())
             {
                 PageError("输入的验证码不正确.", "");
             }

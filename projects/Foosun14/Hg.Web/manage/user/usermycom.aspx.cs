@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_mycom : Foosun.Web.UI.ManagePage
+public partial class user_mycom : Hg.Web.UI.ManagePage
 {
     public user_mycom()
     {
@@ -63,7 +63,7 @@ public partial class user_mycom : Foosun.Web.UI.ManagePage
         string ID = "";
         if (Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Type)
         {
@@ -157,7 +157,7 @@ public partial class user_mycom : Foosun.Web.UI.ManagePage
                 }
                 if (h["UserNum"].ToString() != "匿名")
                 {
-                    h["UserNames"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + h["UserNum"].ToString() + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"查看此用户信息\">" + h["UserNum"].ToString() + "</a>";
+                    h["UserNames"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + h["UserNum"].ToString() + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"查看此用户信息\">" + h["UserNum"].ToString() + "</a>";
                 }
                 else
                 {
@@ -194,7 +194,7 @@ public partial class user_mycom : Foosun.Web.UI.ManagePage
                 }
                 h["Titles"] = "<a href=\"usermycom_Look.aspx?Commid=" + h["Commid"].ToString() + "\" class=\"list_link\">" + h["Title"].ToString() + "</a>";
                 string delEdit = null;
-                delEdit = "<a href=\"usermycom_up.aspx?Commid=" + h["Commid"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"编辑\" /></a>&nbsp;<a href=\"#\" onclick=\"javascript:del('" + h["Commid"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'\"></a>&nbsp;<input name=\"Checkbox1\" type=\"checkbox\" value=" + h["Commid"].ToString() + "  runat=\"server\" />";
+                delEdit = "<a href=\"usermycom_up.aspx?Commid=" + h["Commid"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"编辑\" /></a>&nbsp;<a href=\"#\" onclick=\"javascript:del('" + h["Commid"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除'\"></a>&nbsp;<input name=\"Checkbox1\" type=\"checkbox\" value=" + h["Commid"].ToString() + "  runat=\"server\" />";
                 h["Operation"] = delEdit;             
             }
             DataList1.Visible = true;

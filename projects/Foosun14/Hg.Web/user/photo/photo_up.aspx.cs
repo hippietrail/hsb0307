@@ -18,23 +18,23 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class user_photo_up : Foosun.Web.UI.UserPage
+public partial class user_photo_up : Hg.Web.UI.UserPage
 {
     Photo pho = new Photo();
-    public string dirPic = Foosun.Config.UIConfig.UserdirFile;
+    public string dirPic = Hg.Config.UIConfig.UserdirFile;
     protected void Page_Load(object sender, EventArgs e)
     {
         
         if (!IsPostBack)
         {
-            if (Foosun.Config.UIConfig.dirDumm.Trim() != "")
+            if (Hg.Config.UIConfig.dirDumm.Trim() != "")
             {
-                dirPic = Foosun.Config.UIConfig.dirDumm + "/" + Foosun.Config.UIConfig.UserdirFile;
+                dirPic = Hg.Config.UIConfig.dirDumm + "/" + Hg.Config.UIConfig.UserdirFile;
             }
-            string UserNum = Foosun.Global.Current.UserNum;
-            string PhotoID = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+            string UserNum = Hg.Global.Current.UserNum;
+            string PhotoID = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
             DataTable dt_photo = pho.sel_4(PhotoID);
             DataTable dts1 = pho.sel_2(UserNum); ;
             this.Photoalbum.DataSource = dts1;
@@ -63,13 +63,13 @@ public partial class user_photo_up : Foosun.Web.UI.UserPage
     {
         if (Page.IsValid)
         {
-            string PhotoIDs = Foosun.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
+            string PhotoIDs = Hg.Common.Input.Filter(Request.QueryString["PhotoID"].ToString());
 
             string PhotoUrl1 = "";
             PhotoUrl1 = this.pic_p_1url.Value;
-            string PhotoName = Foosun.Common.Input.Filter(Request.Form["PhotoName"].ToString());
+            string PhotoName = Hg.Common.Input.Filter(Request.Form["PhotoName"].ToString());
             string PhotoalbumID = this.Photoalbum.SelectedValue;
-            string PhotoContent = Foosun.Common.Input.Filter(Request.Form["PhotoContent"].ToString());
+            string PhotoContent = Hg.Common.Input.Filter(Request.Form["PhotoContent"].ToString());
 
             DateTime PhotoTime = DateTime.Now;
 

@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class user_ShowUser : Foosun.Web.UI.BasePage
+public partial class user_ShowUser : Hg.Web.UI.BasePage
 {
     public string URL = "";
     public string UserName = "";
@@ -28,7 +28,7 @@ public partial class user_ShowUser : Foosun.Web.UI.BasePage
             string u_name = Request.QueryString["uid"];
             if (u_name != null && u_name != "")
             {
-                string uID = pd.getUserNameUserNum(Foosun.Common.Input.Filter(u_name.ToString()));
+                string uID = pd.getUserNameUserNum(Hg.Common.Input.Filter(u_name.ToString()));
                 if (uID == "0")
                 {
                     PageError("找不到用户 [" + u_name.ToString() + "] 的信息.<li>原因：此用户未注册或者被管理员删除!</li>", "");
@@ -46,13 +46,13 @@ public partial class user_ShowUser : Foosun.Web.UI.BasePage
     {
         string _STR = "";
         string manageControl = "";
-        if (Foosun.Global.Current.UserNum != "" && Foosun.Global.Current.UserNum != null)
+        if (Hg.Global.Current.UserNum != "" && Hg.Global.Current.UserNum != null)
         {
             if (rd.getisAdmin() == 1)
             {
-                manageControl = "&nbsp;&nbsp;┊&nbsp;&nbsp;<a href=\"../" + Foosun.Config.UIConfig.dirMana + "/index.aspx\" target=\"_top\" class=\"list_link\">管理中心</a>";
+                manageControl = "&nbsp;&nbsp;┊&nbsp;&nbsp;<a href=\"../" + Hg.Config.UIConfig.dirMana + "/index.aspx\" target=\"_top\" class=\"list_link\">管理中心</a>";
             }
-            _STR += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您!&nbsp;<font color=\"red\">" + Foosun.Global.Current.UserName + "</font>&nbsp;&nbsp;┊&nbsp;&nbsp;" + messageChar() + "&nbsp;&nbsp;┊&nbsp;&nbsp;<a href=\"index.aspx\" class=\"list_link\" target=\"_top\">会员中心</a>" + manageControl;
+            _STR += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您!&nbsp;<font color=\"red\">" + Hg.Global.Current.UserName + "</font>&nbsp;&nbsp;┊&nbsp;&nbsp;" + messageChar() + "&nbsp;&nbsp;┊&nbsp;&nbsp;<a href=\"index.aspx\" class=\"list_link\" target=\"_top\">会员中心</a>" + manageControl;
         }
         else
         {
@@ -85,7 +85,7 @@ public partial class user_ShowUser : Foosun.Web.UI.BasePage
     string messageChar()
     {
         string liststr = "";
-        DataTable dt = rd.messageChar(Foosun.Global.Current.UserNum);
+        DataTable dt = rd.messageChar(Hg.Global.Current.UserNum);
         if (dt != null)
         {
             if (dt.Rows.Count > 0)

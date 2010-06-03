@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class user_info_history : Foosun.Web.UI.UserPage
+public partial class user_info_history : Hg.Web.UI.UserPage
 {
     #region  初始化
     Info inf = new Info();
@@ -42,7 +42,7 @@ public partial class user_info_history : Foosun.Web.UI.UserPage
         string ID = "";
         if (Request.QueryString["ID"] != null && Request.QueryString["ID"] != "")
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
         switch (Types)
         {
@@ -71,25 +71,25 @@ public partial class user_info_history : Foosun.Web.UI.UserPage
         int i, j;
         if (ghtype2 == "1")
         {
-            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dt = Foosun.CMS.Pagination.GetPage("user_info_history_1_aspx", PageIndex, 10, out i, out j, sts);
+            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dt = Hg.CMS.Pagination.GetPage("user_info_history_1_aspx", PageIndex, 10, out i, out j, sts);
         }
         else if(ghtype2 == "2")
         {
-            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dt = Foosun.CMS.Pagination.GetPage("user_info_history_2_aspx", PageIndex, 10, out i, out j, sts);           
+            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dt = Hg.CMS.Pagination.GetPage("user_info_history_2_aspx", PageIndex, 10, out i, out j, sts);           
         }
         else if(typep != "0" && typep != null)
         {
             SQLConditionInfo[] sts = new SQLConditionInfo[2];
-            sts[0] = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
+            sts[0] = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
             sts[1] = new SQLConditionInfo("@gtype", int.Parse(typep));
-            dt = Foosun.CMS.Pagination.GetPage("user_info_history_3_aspx", PageIndex, 10, out i, out j, sts);
+            dt = Hg.CMS.Pagination.GetPage("user_info_history_3_aspx", PageIndex, 10, out i, out j, sts);
         }
         else 
         {
-            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Foosun.Global.Current.UserNum);
-            dt = Foosun.CMS.Pagination.GetPage("user_info_history_4_aspx", PageIndex, 10, out i, out j, sts);           
+            SQLConditionInfo sts = new SQLConditionInfo("@UserNum", Hg.Global.Current.UserNum);
+            dt = Hg.CMS.Pagination.GetPage("user_info_history_4_aspx", PageIndex, 10, out i, out j, sts);           
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
