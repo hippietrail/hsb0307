@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class UserList : DbBase, IUserList
     {
@@ -33,7 +33,7 @@ namespace Foosun.SQLServerDAL
             rootPublic pd = new rootPublic();
             string _user = pd.getUidUserNum(id);
             pd.delUserAllInfo(_user);
-            string Sql = "delete from " + Pre + "sys_user where id = " + id + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "delete from " + Pre + "sys_user where id = " + id + Hg.Common.Public.getSessionStr() + "";
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null));
         }
 
@@ -54,21 +54,21 @@ namespace Foosun.SQLServerDAL
                     pd.delUserAllInfo(_user);
                 }
             }
-            string Sql = "delete from " + Pre + "sys_user where id in (" + id + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "delete from " + Pre + "sys_user where id in (" + id + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
 
         public int isLock(string id)
         {
-            string Sql = "update " + Pre + "sys_user set islock=1 where id in (" + id.Trim() + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set islock=1 where id in (" + id.Trim() + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
 
         public int unLock(string id)
         {
-            string Sql = "update " + Pre + "sys_user set islock=0 where id in (" + id.Trim() + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set islock=0 where id in (" + id.Trim() + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
@@ -76,35 +76,35 @@ namespace Foosun.SQLServerDAL
 
         public DataTable GroupList()
         {
-            string Sql = "select ID,GroupNumber,GroupName from " + Pre + "user_group where SiteID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "select ID,GroupNumber,GroupName from " + Pre + "user_group where SiteID='" + Hg.Global.Current.SiteID + "' order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public int bIpoint(string uid, int sPoint)
         {
-            string Sql = "update " + Pre + "sys_user set iPoint=iPoint+" + sPoint + " where id in (" + uid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set iPoint=iPoint+" + sPoint + " where id in (" + uid + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
 
         public int sIpoint(string uid, int sPoint)
         {
-            string Sql = "update " + Pre + "sys_user set iPoint=iPoint-" + sPoint + " where id in (" + uid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set iPoint=iPoint-" + sPoint + " where id in (" + uid + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
 
         public int bGpoint(string uid, int sPoint)
         {
-            string Sql = "update " + Pre + "sys_user set gPoint=gPoint+" + sPoint + " where id in (" + uid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set gPoint=gPoint+" + sPoint + " where id in (" + uid + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
 
         public int sGpoint(string uid, int sPoint)
         {
-            string Sql = "update " + Pre + "sys_user set gPoint=gPoint-" + sPoint + " where id in (" + uid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "sys_user set gPoint=gPoint-" + sPoint + " where id in (" + uid + ") " + Hg.Common.Public.getSessionStr() + "";
             object result = DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             return (int)result;
         }
@@ -168,7 +168,7 @@ namespace Foosun.SQLServerDAL
             }
 
             if (_SiteID != "" && _SiteID != null) { QSQL += " and SiteID='" + _SiteID + "'"; }
-            else { QSQL += " and SiteID='" + Foosun.Global.Current.SiteID + "'"; }
+            else { QSQL += " and SiteID='" + Hg.Global.Current.SiteID + "'"; }
             string AllFields = "id,userNum,username,RealName,UserGroupNumber,islock,RegTime,ipoint,gPoint,LastLoginTime,LastIP,isIDcard,isAdmin";
             string Condition = "" + Pre + "sys_user where  1=1 " + QSQL + "";
             string IndexField = "ID";

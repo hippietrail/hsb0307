@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Foosun.Web.manage {
+namespace Hg.Web.manage {
     
     
     public partial class top {

@@ -20,9 +20,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
 {
     ContentManage td = new ContentManage();
     private DataTable TbClass;
@@ -102,10 +102,10 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
     private void BindNews()
     {
         this.LstOriginal.Items.Clear();
-        string id = Foosun.Common.Input.Filter(this.LblIDs.Text.Trim());
+        string id = Hg.Common.Input.Filter(this.LblIDs.Text.Trim());
         if (!id.Equals(""))
         {
-            string s = Foosun.Common.Input.Filter(this.LblIDs.Text);
+            string s = Hg.Common.Input.Filter(this.LblIDs.Text);
             string sfilter = this.LblNewsTable.Text;
             DataTable tb = null;
             if (s.IndexOf(",") > 0)
@@ -143,7 +143,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
     }
     private void ClassRender(ListBox lst, string PID, int Layer)
     {
-        Foosun.CMS.Common.rootPublic rp = new Foosun.CMS.Common.rootPublic();
+        Hg.CMS.Common.rootPublic rp = new Hg.CMS.Common.rootPublic();
         DataTable dts = rp.getClassListPublic(PID);
         if (dts.Rows.Count < 1)
             return;
@@ -271,7 +271,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
         for (int i = 0; i < sNews.Length; i++)
         {
         ID:
-            string NewsID = Foosun.Common.Rand.Number(12);
+            string NewsID = Hg.Common.Rand.Number(12);
             if (td.sel_NewsID(NewsID) != 0) { goto ID; }
             string _FileName = td.getFileNameInfo(sNews[i], sTb);
             td.Copy_news(sclassid, DataLib, sNews[i], sTb, NewsID, _FileName);
@@ -294,7 +294,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                 str += this.LstOriginal.Items[l].Value + ",";
             }
         }
-        string[] soclass = Foosun.Common.Public.Lost(str).Split(',');
+        string[] soclass = Hg.Common.Public.Lost(str).Split(',');
         string stclass = this.LstTarget.SelectedValue.Trim();
         string sclasstext = td.sel_sclasstext(stclass);
         string DataLibs = td.sel_copy_clsaa(stclass);
@@ -315,7 +315,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
             for (int i = 0; i < dts6.Rows.Count; i++)
             {
             ID:
-                string NewsID = Foosun.Common.Rand.Number(12);
+                string NewsID = Hg.Common.Rand.Number(12);
                 if (td.sel_NewsID(NewsID) != 0) { goto ID; }
                 string _FileName = td.getFileNameInfo(dts6.Rows[i]["NewsID"].ToString(), DataLib);
                 td.Copy_ClassNews(stclass, DataLibs, dts6.Rows[i]["NewsID"].ToString(), DataLib, NewsID, _FileName);
@@ -345,7 +345,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
         for (int i = 0; i < sNews.Length; i++)
         {
         ID:
-            string NewsID = Foosun.Common.Rand.Number(12);
+            string NewsID = Hg.Common.Rand.Number(12);
             if (td.sel_NewsID(NewsID) != 0) { goto ID; }
             td.Copy_news(sclassid, DataLib, sNews[i], sTb, NewsID, "");
             if (td.del_move(sTb, sNews[i]) == 0)
@@ -371,7 +371,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                 str += this.LstOriginal.Items[l].Value + ",";
             }
         }
-        string[] soclass = Foosun.Common.Public.Lost(str).Split(',');
+        string[] soclass = Hg.Common.Public.Lost(str).Split(',');
         string stclass = this.LstTarget.SelectedValue.Trim();
         string sclasstext = td.sel_sclasstext(stclass);
         string DataLibs = td.sel_copy_clsaa(stclass);
@@ -392,7 +392,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
             for (int i = 0; i < dts1.Rows.Count; i++)
             {
             ID:
-                string NewsID = Foosun.Common.Rand.Number(12);
+                string NewsID = Hg.Common.Rand.Number(12);
                 if (td.sel_NewsID(NewsID) != 0) { goto ID; }
                 td.Copy_ClassNews(stclass, DataLibs, dts1.Rows[i]["Newsid"].ToString(), DataLib, NewsID, "");
                 if (td.del_classmove(DataLib, dts1.Rows[i]["Newsid"].ToString()) == 0)
@@ -518,20 +518,20 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                 str += this.LstOriginal.Items[l].Value + ",";
             }
         }
-        string[] soclass = Foosun.Common.Public.Lost(str).Split(',');
+        string[] soclass = Hg.Common.Public.Lost(str).Split(',');
 
         Tags = this.Tags.Text;
         souce = this.Souce.Text;
         if (this.CheckBox1.Checked)
         {
             Templet = this.Templet.Text;
-            if (!Foosun.Common.Input.IsInteger(this.OrderIDDropDownList.SelectedValue))
+            if (!Hg.Common.Input.IsInteger(this.OrderIDDropDownList.SelectedValue))
             {
                 PageError("请正确填写权重!", "News_List.aspx");
             }
             OrderID = int.Parse(this.OrderIDDropDownList.SelectedValue);
             if (this.CommLinkTF.Checked) { CommLinkTF = 1; }
-            if (!Foosun.Common.Input.IsInteger(this.Click.Text))
+            if (!Hg.Common.Input.IsInteger(this.Click.Text))
             {
                 PageError("请正确填写点击!", "News_List.aspx");
             }
@@ -692,7 +692,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsPro(Prostr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -741,7 +741,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewstemplet(templetstr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -794,7 +794,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsOrder(orderstr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -847,7 +847,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsComm(commTF, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -896,7 +896,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsTAG(tagstr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -951,7 +951,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsClick(Clickstr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -1000,7 +1000,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsSouce(Soucestr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }
@@ -1049,7 +1049,7 @@ public partial class manage_news_News_Manage : Foosun.Web.UI.ManagePage
                     str += "'" + this.LstOriginal.Items[l].Value + "',";
                 }
             }
-            string soclass = Foosun.Common.Public.Lost(str);
+            string soclass = Hg.Common.Public.Lost(str);
             td.updateNewsFileEXstr(FileEXstr, soclass, 1);
             PageRight("更新成功", "news_list.aspx");
         }

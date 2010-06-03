@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
+public partial class manage_survey_setClass : Hg.Web.UI.ManagePage
 {
     public manage_survey_setClass()
     {
@@ -137,7 +137,7 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
     {
         #region 查询分类开始
 
-        string Keywrd = Foosun.Common.Input.Filter(this.KeyWord.Text.Trim());
+        string Keywrd = Hg.Common.Input.Filter(this.KeyWord.Text.Trim());
 
         int i = 0, j = 0;
         int num = PAGESIZE;//从参数设置里取得每页显示记录的条数
@@ -147,19 +147,19 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
             switch (this.DdlKwdType.SelectedValue)
             {
                 case "choose":
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setClass_1_aspx", PageIndex, num, out i, out j, null);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setClass_1_aspx", PageIndex, num, out i, out j, null);
                     break;
                 case "number":
                     SQLConditionInfo st = new SQLConditionInfo("@VID", "%" + Keywrd + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setClass_2_aspx", PageIndex, num, out i, out j, st);//按照id查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setClass_2_aspx", PageIndex, num, out i, out j, st);//按照id查询
                     break;
                 case "classname":
                     SQLConditionInfo sts = new SQLConditionInfo("@ClassName", "%" + Keywrd + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setClass_3_aspx", PageIndex, num, out i, out j, sts);//按照类名查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setClass_3_aspx", PageIndex, num, out i, out j, sts);//按照类名查询
                     break;
                 case "description":
                     SQLConditionInfo stss = new SQLConditionInfo("@Description", "%" + Keywrd + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setClass_4_aspx", PageIndex, num, out i, out j, stss);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setClass_4_aspx", PageIndex, num, out i, out j, stss);
                     break;
                 default:
                     break;
@@ -167,7 +167,7 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setClass_1_aspx", PageIndex, num, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage("manage_survey_setClass_1_aspx", PageIndex, num, out i, out j, null);
         }
         #endregion
         this.PageNavigator1.PageCount = j;
@@ -184,7 +184,7 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
                 {
                     int id = int.Parse(dt.Rows[k]["vid"].ToString());
                     dt.Rows[k]["ClassName"] = "<a href='setClass.aspx?type=edit&id=" + id + "' class='list_link' title='点击查看详情或修改'>" + dt.Rows[k]["ClassName"].ToString() + "</a>";
-                    dt.Rows[k]["oPerate"] = "<a href=\"setClass.aspx?type=edit&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setClass.aspx?type=delone&id=" + id + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + id + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a href=\"setClass.aspx?type=edit&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setClass.aspx?type=delone&id=" + id + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + id + "\"/>";
                 }
             }
             else
@@ -226,8 +226,8 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
         if (Page.IsValid)//判断页面是否通过验证
         {
             //取得投票参数设置添加中的表单信息
-            string Str_ClassName = Foosun.Common.Input.Filter(this.ClassName.Text.Trim());//类别名称
-            string Str_Description = Foosun.Common.Input.Filter(this.Description.Value.Trim());//描述
+            string Str_ClassName = Hg.Common.Input.Filter(this.ClassName.Text.Trim());//类别名称
+            string Str_Description = Hg.Common.Input.Filter(this.Description.Value.Trim());//描述
 
             //检查是否有已经存在的类别名称
             if (sur.sel_1(Str_ClassName) != 0)
@@ -313,8 +313,8 @@ public partial class manage_survey_setClass : Foosun.Web.UI.ManagePage
         {
             int VID = int.Parse(Request.QueryString["ID"]);
             //取得添加中的表单信息
-            string Str_ClassNameE = Foosun.Common.Input.Filter(this.ClassNameEdit.Text.Trim());//类别名称
-            string Str_DescriptionE = Foosun.Common.Input.Filter(this.DescriptionE.Value.Trim());//描述
+            string Str_ClassNameE = Hg.Common.Input.Filter(this.ClassNameEdit.Text.Trim());//类别名称
+            string Str_DescriptionE = Hg.Common.Input.Filter(this.DescriptionE.Value.Trim());//描述
 
             //判断类别名称是否为空
             if (Str_ClassNameE == null || Str_ClassNameE == string.Empty)

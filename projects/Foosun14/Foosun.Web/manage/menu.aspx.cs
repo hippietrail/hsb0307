@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_menu : Foosun.Web.UI.ManagePage
+public partial class manage_menu : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     public string stype = "";
@@ -40,7 +40,7 @@ public partial class manage_menu : Foosun.Web.UI.ManagePage
             string qName = rd["qName"].ToString();
             string FilePath = rd["FilePath"].ToString();
             string usernum = rd["usernum"].ToString();
-            qflg = qflg + " <li style=\"padding-left:5px;\"><img src='../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt=\"\" border=\"0\">";
+            qflg = qflg + " <li style=\"padding-left:5px;\"><img src='../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt=\"\" border=\"0\">";
             qflg = qflg + "<a class=\"menulist\" href=\"" + FilePath + "\" target=\"sys_main\">" + qName + "</a></li>";
             i++;
         }
@@ -73,17 +73,17 @@ public partial class manage_menu : Foosun.Web.UI.ManagePage
                     }
                     else
                     {
-                        liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
+                        liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
                     }
                 }
                 else
                 {
-                    liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
+                    liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
                 }
             }
             else
             {
-                liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
+                liststr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href='" + dr["am_FilePath"].ToString() + "' target='" + dr["am_target"].ToString() + "'>" + dr["am_Name"].ToString() + "</a></li>\r";
             }
         }
         dr.Close();
@@ -98,7 +98,7 @@ public partial class manage_menu : Foosun.Web.UI.ManagePage
         string channeStr = string.Empty;
         while (drs.Read())
         {
-            channeStr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href=\"channel/read.aspx?ChID=" + drs["ID"].ToString() + "\" target=\"menu\" >" + drs["channelName"].ToString() + "</a></li>\r";
+            channeStr += "<li style=\"padding-left:5px;\"><img src='../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt='' border='0'><a class='menulist' href=\"channel/read.aspx?ChID=" + drs["ID"].ToString() + "\" target=\"menu\" >" + drs["channelName"].ToString() + "</a></li>\r";
         }
         return channeStr;
     }

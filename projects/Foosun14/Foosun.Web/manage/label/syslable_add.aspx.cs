@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_syslable_add : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslable_add : Hg.Web.UI.ManagePage
 {
     public manage_label_syslable_add()
     {
@@ -35,7 +35,7 @@ public partial class manage_label_syslable_add : Foosun.Web.UI.ManagePage
 
     protected void showInfo()
     {
-        Foosun.CMS.Label lbc = new Foosun.CMS.Label();
+        Hg.CMS.Label lbc = new Hg.CMS.Label();
         DataTable dt = lbc.GetLabelClassList();
         if (dt != null)
         {
@@ -77,7 +77,7 @@ public partial class manage_label_syslable_add : Foosun.Web.UI.ManagePage
         {
             int result = 0;
 
-            Foosun.Model.LabelInfo lbc = new Foosun.Model.LabelInfo();
+            Hg.Model.LabelInfo lbc = new Hg.Model.LabelInfo();
             string TmplabelName = this.LabelName.Text;
             string TmplabelName_1 = "{FS_" + TmplabelName.Replace("{", "").Replace("}", "").Replace("S_", "").Replace("Page_", "") + "}";
             if (TmplabelName.ToLower().IndexOf("free_") >=0)
@@ -98,10 +98,10 @@ public partial class manage_label_syslable_add : Foosun.Web.UI.ManagePage
             lbc.CreatTime = DateTime.Now;
             lbc.SiteID = SiteID;
 
-            Foosun.CMS.Label labelc = new Foosun.CMS.Label();
+            Hg.CMS.Label labelc = new Hg.CMS.Label();
             result = labelc.LabelAdd(lbc);
             //清除标签缓存
-            Foosun.Publish.CustomLabel._lableTableInfo.Clear();
+            Hg.Publish.CustomLabel._lableTableInfo.Clear();
             if (result==1)
                 PageRight("添加标签成功!", "SysLabel_List.aspx?ClassID=" + LabelClass.Text);
             else

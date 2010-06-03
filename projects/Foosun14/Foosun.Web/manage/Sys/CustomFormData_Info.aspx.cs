@@ -9,16 +9,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomFormData_Info : Foosun.Web.UI.ManagePage
+    public partial class CustomFormData_Info : Hg.Web.UI.ManagePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string customID = Request.QueryString["customID"];
             string FormID = Request.QueryString["FormID"];
 
-            Foosun.CMS.CustomForm cf = new Foosun.CMS.CustomForm();
+            Hg.CMS.CustomForm cf = new Hg.CMS.CustomForm();
             string fname = string.Empty;
             string tablenm = string.Empty;
 

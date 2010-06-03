@@ -11,11 +11,11 @@ using System.Web.UI.HtmlControls;
 using System.ComponentModel;
 using System.Drawing;
 using System.Web.SessionState;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
+public partial class Manage_Stat_View : Hg.Web.UI.ManagePage
 {
     public Manage_Stat_View()
     {
@@ -126,7 +126,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
             strlist += "<table width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\" class=\"Navitable\">\n";
             strlist += "<tr class=\"menulist\"><td height=\"18\" style=\"width: 45%\" colspan=\"2\" >\n";
             string _tmplet = "";
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             {
                 _tmplet = "<a href=\"View.aspx?type=pram\" class=\"menulist\">参数设置</a>&nbsp;┊&nbsp; ";
             }
@@ -217,7 +217,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
             {
                 PageError("没有权限", "");
             }
-            string Str_SystemNameE = Foosun.Common.Input.Filter(this.SystemNameE.Text);//统计系统英文名称
+            string Str_SystemNameE = Hg.Common.Input.Filter(this.SystemNameE.Text);//统计系统英文名称
             if (Str_SystemNameE == null || Str_SystemNameE == string.Empty)
             {
                 PageError("对不起，系统英文名称不能为空", "View.aspx?type=pram");
@@ -256,7 +256,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         {
             num = 20;
         }
-        DataTable dt = Foosun.CMS.Pagination.GetPage("Manage_Stat_View_1_aspx", PageIndex, num, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage("Manage_Stat_View_1_aspx", PageIndex, num, out i, out j, null);
 
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex;
@@ -274,7 +274,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
                     string statid = dt.Rows[k]["statid"].ToString();
 
                     dt.Rows[k]["ClassName"] = "<a href=\"View.aspx?act=edit&id=" + statid + "\"  class=\"list_link\" title=\"点击查看详情或修改\">" + dt.Rows[k]["ClassName"].ToString() + "</a>";
-                    dt.Rows[k]["oPerate"] = "<a href=\"View.aspx?act=edit&id=" + statid + "\"  class=\"list_link\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此类\" /></a><a href=\"View.aspx?act=delone&id=" + statid + "\"  class=\"list_link\" title=\"点击删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此类\" /></a><a href=\"View.aspx?type=zonghe&Navi=view&id=" + statid + "\" class=\"list_link\" title=\"查看该分类下统计信息\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review1.gif\" border=\"0\" alt=\"查看该分类下统计信息\" /></a><input type='checkbox' name='stat_checkbox' id='stat_checkbox' value=\"" + statid + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a href=\"View.aspx?act=edit&id=" + statid + "\"  class=\"list_link\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此类\" /></a><a href=\"View.aspx?act=delone&id=" + statid + "\"  class=\"list_link\" title=\"点击删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此类\" /></a><a href=\"View.aspx?type=zonghe&Navi=view&id=" + statid + "\" class=\"list_link\" title=\"查看该分类下统计信息\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review1.gif\" border=\"0\" alt=\"查看该分类下统计信息\" /></a><input type='checkbox' name='stat_checkbox' id='stat_checkbox' value=\"" + statid + "\"/>";
 
                 }
             }
@@ -405,10 +405,10 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         if (Page.IsValid)//判断页面是否通过验证
         {
             //取得设置添加中的表单信息
-            string Str_Classname = Foosun.Common.Input.Filter(this.ClassName.Text.Trim());//类别
+            string Str_Classname = Hg.Common.Input.Filter(this.ClassName.Text.Trim());//类别
             #region 检查重复数据
 
-        check: string Str_statid = Foosun.Common.Rand.Number(12);
+        check: string Str_statid = Hg.Common.Rand.Number(12);
             if (sta.sel_1(Str_statid) != 0)
                 goto check;
             #endregion
@@ -454,7 +454,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         {
             string id = Request.QueryString["id"];
             //取得设置修改中的表单信息
-            string Str_ClassnameE = Foosun.Common.Input.Filter(this.classnameEdit.Text.Trim());//类别
+            string Str_ClassnameE = Hg.Common.Input.Filter(this.classnameEdit.Text.Trim());//类别
             //检查类别名是否为空
             if (Str_ClassnameE == null || Str_ClassnameE == string.Empty)
             {
@@ -531,7 +531,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         /// Code By ChenZhaoHui
 
         DataView dv1 = new DataView();
-        DataTable dt = sta.sel_2(viewid, Foosun.Global.Current.SiteID);
+        DataTable dt = sta.sel_2(viewid, Hg.Global.Current.SiteID);
         dv1 = dt.DefaultView; //按照指定ID查处相应数据
         dv1.Table.AcceptChanges();//提交更改的数据
         //判断有没有开始统计，有没有数据存在
@@ -552,14 +552,14 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
 
             //在线人数//从统计信息表中取得值，通过ip数来统计在线人数
             DateTime newtime = DateTime.Now.AddHours(0).AddMinutes(-20);
-            DataTable dt1 = sta.sel_3(newtime, viewid, Foosun.Global.Current.SiteID);
+            DataTable dt1 = sta.sel_3(newtime, viewid, Hg.Global.Current.SiteID);
             dv1 = dt1.DefaultView;
             dv1.Table.AcceptChanges();
             onlinePerson = dv1.Count; OnlinePeopleNum.Text = onlinePerson.ToString();//赋值
             dv1.Dispose();
 
             //今日访问量、昨日访问量//从统计综合内容表中取得值
-            DataTable dt2 = sta.sel_New(viewid, Foosun.Global.Current.SiteID);
+            DataTable dt2 = sta.sel_New(viewid, Hg.Global.Current.SiteID);
             dv1 = dt2.DefaultView;
             dv1.Table.AcceptChanges();
             if (dv1.Count != 0)
@@ -576,7 +576,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
 
             //今年访问量//从统计信息表中取得值
             int year = int.Parse(DateTime.Now.AddHours(0).Year.ToString());
-            DataTable dt3 = sta.sel_Year(year, viewid, Foosun.Global.Current.SiteID);
+            DataTable dt3 = sta.sel_Year(year, viewid, Hg.Global.Current.SiteID);
             dv1 = dt3.DefaultView;
             dv1.Table.AcceptChanges();
             intthisyear = dv1.Count; ThisYearViewNum.Text = intthisyear.ToString();//赋值
@@ -584,7 +584,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
 
             //本月访问量
             int Month = int.Parse(DateTime.Now.AddHours(0).Month.ToString());
-            DataTable dt4 = sta.sel_Month(Month, viewid, Foosun.Global.Current.SiteID);
+            DataTable dt4 = sta.sel_Month(Month, viewid, Hg.Global.Current.SiteID);
             dv1 = dt4.DefaultView;
             dv1.Table.AcceptChanges();
             intthismonth = dv1.Count; ThisMonthViewNum.Text = intthismonth.ToString();//赋值
@@ -635,7 +635,7 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
         SQLConditionInfo[] sts = new SQLConditionInfo[2];
         sts[0] = new SQLConditionInfo("@viewid", viewid);
         sts[1] = new SQLConditionInfo("@SiteID", SiteID);
-        DataTable dt = Foosun.CMS.Pagination.GetPage("Manage_Stat_View_2_aspx", PageIndex, num, out i, out j, sts);
+        DataTable dt = Hg.CMS.Pagination.GetPage("Manage_Stat_View_2_aspx", PageIndex, num, out i, out j, sts);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -1898,17 +1898,17 @@ public partial class Manage_Stat_View : Foosun.Web.UI.ManagePage
 
         liststr = liststr + "<tr class=\"TR_BG_list\">\r";
         liststr = liststr + "<td width='12%' class=\"list_link\" valign=\"middle\" align=\"center\">滚动统计样式</td>\r";
-        liststr = liststr + "<td width=\"88%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Foosun.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=1&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
+        liststr = liststr + "<td width=\"88%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Hg.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=1&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
         liststr = liststr + "</tr>\r";
 
         liststr = liststr + "<tr class=\"TR_BG_list\">\r";
         liststr = liststr + "<td width='12%'class=\"list_link\" valign=\"middle\"><div align=\"center\">图标统计样式</div></td>\r";
-        liststr = liststr + "<td width=\"89%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Foosun.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=2&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
+        liststr = liststr + "<td width=\"89%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Hg.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=2&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
         liststr = liststr + "</tr>\r";
 
         liststr = liststr + "<tr class=\"TR_BG_list\">\r";
         liststr = liststr + "<td width='12%'class=\"list_link\" valign=\"middle\"><div align=\"center\">文字统计样式</div></td>\r";
-        liststr = liststr + "<td width=\"88%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Foosun.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=0&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
+        liststr = liststr + "<td width=\"88%\" valign=\"middle\" class=\"list_link\"><SPAN class=\"small2\">&lt;script language=&quot;JavaScript&quot; src=&quot;" + Hg.Publish.CommonData.getUrl() + "/stat/mystat.aspx?code=0&id=" + statid + "&quot; type=&quot;text/JavaScript&quot;&gt;&lt;/script&gt;</SPAN></td>\r";
         liststr = liststr + "</tr>\r";
         liststr = liststr + "</table>";
         return liststr;

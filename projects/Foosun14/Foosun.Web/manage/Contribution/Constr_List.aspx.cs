@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_List : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_List : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_Constr_List()
     {
@@ -41,7 +41,7 @@ public partial class manage_Contribution_Constr_List : Foosun.Web.UI.ManagePage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -65,7 +65,7 @@ public partial class manage_Contribution_Constr_List : Foosun.Web.UI.ManagePage
     protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
     {
         int i, j;
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

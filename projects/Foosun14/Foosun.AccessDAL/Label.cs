@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Label : DbBase, ILabel
     {
@@ -20,7 +20,7 @@ namespace Foosun.AccessDAL
             {
                 string checkSql = string.Empty;
                 int recordCount = 0;
-                string LabelID = Foosun.Common.Rand.Number(12);
+                string LabelID = Hg.Common.Rand.Number(12);
                 while (true)
                 {
                     checkSql = "select count(*) from " + Pre + "sys_Label where LabelID='" + LabelID + "'";
@@ -28,7 +28,7 @@ namespace Foosun.AccessDAL
                     if (recordCount < 1)
                         break;
                     else
-                        LabelID = Foosun.Common.Rand.Number(12, true);
+                        LabelID = Hg.Common.Rand.Number(12, true);
                 }
                 checkSql = "select count(*) from " + Pre + "sys_Label where Label_Name='" + lbc.Label_Name + "'";
                 recordCount = (int)DbHelper.ExecuteScalar(Conn, CommandType.Text, checkSql, null);
@@ -70,7 +70,7 @@ namespace Foosun.AccessDAL
                     throw new Exception("标签名称重复,请重新修改!");
                 }
                 string Sql = "Update " + Pre + "sys_Label Set " + Database.getModifyParam(param) + " ";
-                Sql += "Where LabelID='" + lbc.LabelID + "' " + Foosun.Common.Public.getSessionStr() + "";
+                Sql += "Where LabelID='" + lbc.LabelID + "' " + Hg.Common.Public.getSessionStr() + "";
                 result = Convert.ToInt32(DbHelper.ExecuteNonQuery(Conn, CommandType.Text, Sql, param));
             }
             finally
@@ -82,22 +82,22 @@ namespace Foosun.AccessDAL
         }
         public void LabelDel(string id)
         {
-            string str_sql = "Update " + Pre + "sys_Label Set isRecyle=1 Where LabelID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Update " + Pre + "sys_Label Set isRecyle=1 Where LabelID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
         public void LabelDels(string id)
         {
-            string str_sql = "Delete From " + Pre + "sys_Label Where LabelID='" + id + "'" + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Delete From " + Pre + "sys_Label Where LabelID='" + id + "'" + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
         public void LabelBackUp(string id)
         {
-            string str_sql = "Update " + Pre + "sys_Label Set isBack=1 Where LabelID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Update " + Pre + "sys_Label Set isBack=1 Where LabelID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
         public DataTable GetLabelInfo(string id)
         {
-            string str_Sql = "Select ClassID,Label_Name,Label_Content,Description,isBack From " + Pre + "sys_Label Where LabelID='" + id + "'" + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select ClassID,Label_Name,Label_Content,Description,isBack From " + Pre + "sys_Label Where LabelID='" + id + "'" + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
@@ -110,7 +110,7 @@ namespace Foosun.AccessDAL
             {
                 string checkSql = "";
                 int recordCount = 0;
-                string ClassID = Foosun.Common.Rand.Number(12);
+                string ClassID = Hg.Common.Rand.Number(12);
                 while (true)
                 {
                     checkSql = "select count(*) from " + Pre + "sys_LabelClass where ClassID='" + ClassID + "'";
@@ -118,7 +118,7 @@ namespace Foosun.AccessDAL
                     if (recordCount < 1)
                         break;
                     else
-                        ClassID = Foosun.Common.Rand.Number(12, true);
+                        ClassID = Hg.Common.Rand.Number(12, true);
                 }
                 checkSql = "select count(*) from " + Pre + "sys_LabelClass where ClassName='" + lbcc.ClassName + "'";
                 recordCount = (int)DbHelper.ExecuteScalar(Conn, CommandType.Text, checkSql, null);
@@ -156,7 +156,7 @@ namespace Foosun.AccessDAL
                     throw new Exception("标签分类名称重复,请重新修改!");
                 }
                 string Sql = "Update " + Pre + "sys_LabelClass Set ClassName=@ClassName,Content=@Content ";
-                Sql += "Where ClassID='" + lbcc.ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+                Sql += "Where ClassID='" + lbcc.ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
                 OleDbParameter[] param = GetLabelClassParameters(lbcc);
                 result = Convert.ToInt32(DbHelper.ExecuteNonQuery(Conn, CommandType.Text, Sql, param));
             }
@@ -174,9 +174,9 @@ namespace Foosun.AccessDAL
             OleDbTransaction tran = Conn.BeginTransaction();
             try
             {
-                string str_Label = "Update " + Pre + "sys_Label Set isRecyle=1 Where ClassID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+                string str_Label = "Update " + Pre + "sys_Label Set isRecyle=1 Where ClassID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
                 DbHelper.ExecuteNonQuery(tran, CommandType.Text, str_Label, null);
-                string str_LabelClass = "Update " + Pre + "sys_LabelClass Set isRecyle=1 Where ClassID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+                string str_LabelClass = "Update " + Pre + "sys_LabelClass Set isRecyle=1 Where ClassID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
                 DbHelper.ExecuteNonQuery(tran, CommandType.Text, str_LabelClass, null);
                 tran.Commit();
                 Conn.Close();
@@ -195,9 +195,9 @@ namespace Foosun.AccessDAL
             OleDbTransaction tran = Conn.BeginTransaction();
             try
             {
-                string str_Label = "Delete From " + Pre + "sys_Label Where ClassID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+                string str_Label = "Delete From " + Pre + "sys_Label Where ClassID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
                 DbHelper.ExecuteNonQuery(tran, CommandType.Text, str_Label, null);
-                string str_LabelClass = "Delete From " + Pre + "sys_LabelClass Where ClassID='" + id + "'" + Foosun.Common.Public.getSessionStr() + "";
+                string str_LabelClass = "Delete From " + Pre + "sys_LabelClass Where ClassID='" + id + "'" + Hg.Common.Public.getSessionStr() + "";
                 DbHelper.ExecuteNonQuery(tran, CommandType.Text, str_LabelClass, null);
                 tran.Commit();
                 Conn.Close();
@@ -211,83 +211,83 @@ namespace Foosun.AccessDAL
         }
         public DataTable GetLabelClassInfo(string id)
         {
-            string str_Sql = "Select ClassName,Content From " + Pre + "sys_LabelClass Where ClassID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select ClassName,Content From " + Pre + "sys_LabelClass Where ClassID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable GetLabelClassList()
         {
-            string str_Sql = "Select ClassID,ClassName From " + Pre + "sys_LabelClass Where isRecyle=0 And ClassID<>'99999999' and ClassID<>'88888888' and SiteID ='" + Foosun.Global.Current.SiteID + "'";
+            string str_Sql = "Select ClassID,ClassName From " + Pre + "sys_LabelClass Where isRecyle=0 And ClassID<>'99999999' and ClassID<>'88888888' and SiteID ='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable GetLabelinClassList()
         {
-            string str_Sql = "Select ClassID,ClassName From " + Pre + "sys_LabelClass Where isRecyle=0 " + Foosun.Common.Public.getSessionStr() + " order by id desc";
+            string str_Sql = "Select ClassID,ClassName From " + Pre + "sys_LabelClass Where isRecyle=0 " + Hg.Common.Public.getSessionStr() + " order by id desc";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public void LabelToResume(string id)
         {
-            string str_sql = "Update " + Pre + "sys_Label Set isBack=0 Where LabelID='" + id + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Update " + Pre + "sys_Label Set isBack=0 Where LabelID='" + id + "' " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
 
         public DataTable getRuleID()
         {
-            string str_Sql = "Select DISTINCT UnID,(Select top 1 UnName from [" + Pre + "News_unNews] where unid=a.unid order by [rows],id desc) as UnName From " + Pre + "News_unNews a Where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select DISTINCT UnID,(Select top 1 UnName from [" + Pre + "News_unNews] where unid=a.unid order by [rows],id desc) as UnName From " + Pre + "News_unNews a Where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getTodayPicID()
         {
-            string str_Sql = "Select NewsID,NewsTitle From " + Pre + "News Where isRecyle=0 And isLock=0 And Mid(NewsProperty,9,1)='1' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select NewsID,NewsTitle From " + Pre + "News Where isRecyle=0 And isLock=0 And Mid(NewsProperty,9,1)='1' " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getfreeJSInfo()
         {
-            string str_Sql = "Select JsID,JSName From " + Pre + "News_JS Where jsType=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select JsID,JSName From " + Pre + "News_JS Where jsType=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getsysJSInfo()
         {
-            string str_Sql = "Select JsID,JSName From " + Pre + "News_JS Where jsType=0 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select JsID,JSName From " + Pre + "News_JS Where jsType=0 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getadsJsInfo()
         {
-            string str_Sql = "Select AdID,adName From " + Pre + "ads Where isLock=0 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select AdID,adName From " + Pre + "ads Where isLock=0 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getsurveyJSInfo()
         {
-            string str_Sql = "Select TID,Title From " + Pre + "vote_Title Where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select TID,Title From " + Pre + "vote_Title Where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getstatJSInfo()
         {
-            string str_Sql = "Select Statid,classname From " + Pre + "stat_class Where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select Statid,classname From " + Pre + "stat_class Where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
         public DataTable getDiscussInfo()
         {
-            string str_Sql = "Select DisID,Cname From " + Pre + "user_Discuss Where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select DisID,Cname From " + Pre + "user_Discuss Where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
@@ -326,12 +326,12 @@ namespace Foosun.AccessDAL
 
         public DataTable getFreeLabelInfo()
         {
-            string str_Sql = "Select LabelName From " + Pre + "sys_LabelFree Where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select LabelName From " + Pre + "sys_LabelFree Where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
 
-        private OleDbParameter[] GetLabelClassParameters(Foosun.Model.LabelClassInfo lbcc)
+        private OleDbParameter[] GetLabelClassParameters(Hg.Model.LabelClassInfo lbcc)
         {
             OleDbParameter[] param = new OleDbParameter[5];
             param[0] = new OleDbParameter("@ClassName", OleDbType.VarWChar, 30);
@@ -347,7 +347,7 @@ namespace Foosun.AccessDAL
             return param;
         }
 
-        private OleDbParameter[] GetLabelParameters(Foosun.Model.LabelInfo lbc)
+        private OleDbParameter[] GetLabelParameters(Hg.Model.LabelInfo lbc)
         {
             OleDbParameter[] param = new OleDbParameter[9];
             param[0] = new OleDbParameter("@ClassID", OleDbType.VarWChar, 12);
@@ -379,7 +379,7 @@ namespace Foosun.AccessDAL
             string sysTF = "";
             if (Num != 2) { sysTF = " and isSys=" + Num + ""; }
             // else { sysTF = " and isSys=0"; }
-            string str_Sql = "Select LabelID,ClassID,Label_Name,Label_Content,Description,CreatTime,isSys,SiteID From " + Pre + "sys_Label Where 1=1 " + Foosun.Common.Public.getSessionStr() + sysTF + "";
+            string str_Sql = "Select LabelID,ClassID,Label_Name,Label_Content,Description,CreatTime,isSys,SiteID From " + Pre + "sys_Label Where 1=1 " + Hg.Common.Public.getSessionStr() + sysTF + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
@@ -393,7 +393,7 @@ namespace Foosun.AccessDAL
         {
             string _LabelID = LabelID;
             if (LabelID.IndexOf(",") > 0) { _LabelID = LabelID.Replace(",", ""); }
-            string str_Sql = "Select LabelID,ClassID,Label_Name,Label_Content,Description,CreatTime,isSys,SiteID From " + Pre + "sys_Label Where LabelID in ('" + _LabelID + "') " + Foosun.Common.Public.getSessionStr() + "";
+            string str_Sql = "Select LabelID,ClassID,Label_Name,Label_Content,Description,CreatTime,isSys,SiteID From " + Pre + "sys_Label Where LabelID in ('" + _LabelID + "') " + Hg.Common.Public.getSessionStr() + "";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
@@ -424,14 +424,14 @@ namespace Foosun.AccessDAL
             DataTable dt1 = DbHelper.ExecuteTable(CommandType.Text, SQLTF1, null);
             if (dt1 != null&&dt1.Rows.Count > 0)
             {
-                _LabelID = Foosun.Common.Rand.Number(12, true);
+                _LabelID = Hg.Common.Rand.Number(12, true);
                 dt1.Clear(); dt1.Dispose();
             }
             if (isSystem == "1") { Classid = "99999999"; }
             string Sql = "insert into " + Pre + "sys_Label (";
             Sql += "LabelID,ClassID,Label_Name,Label_Content,Description,CreatTime,isBack,isRecyle,isSys,SiteID";
             Sql += ") values (";
-            Sql += "'" + _LabelID + "','" + Classid + "','" + _Label_Name + "','" + Label_Content + "','" + Description + "','" + DateTime.Now + "',0,0," + int.Parse(isSystem) + ",'" + Foosun.Global.Current.SiteID + "')";
+            Sql += "'" + _LabelID + "','" + Classid + "','" + _Label_Name + "','" + Label_Content + "','" + Description + "','" + DateTime.Now + "',0,0," + int.Parse(isSystem) + ",'" + Hg.Global.Current.SiteID + "')";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -456,11 +456,11 @@ namespace Foosun.AccessDAL
             string Sql = "";
             if (num == 0)
             {
-                Sql = "Select count(id) From " + Pre + "sys_Label Where ClassID=@ClassID and isBack=0 and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                Sql = "Select count(id) From " + Pre + "sys_Label Where ClassID=@ClassID and isBack=0 and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             else
             {
-                Sql = "Select count(id) From " + Pre + "sys_LabelStyle Where ClassID=@ClassID and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                Sql = "Select count(id) From " + Pre + "sys_LabelStyle Where ClassID=@ClassID and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             return Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }

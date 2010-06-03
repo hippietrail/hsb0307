@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IFsLog
     {

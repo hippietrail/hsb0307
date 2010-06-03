@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -12,7 +12,7 @@
 <form id="form1" runat="server">
   <table width="90%" border="0" align="center" cellpadding="0" cellspacing="1">
     <tr class="TR_BG_list">
-      <td colspan="2" class="list_link">¸ÃJSµ÷ÓÃ´úÂëÎª:</td>
+      <td colspan="2" class="list_link">ï¿½JSÃµï¿½ï¿½Ã´ï¿½ï¿½ï¿½Îª:</td>
     </tr>
     <tr class="TR_BG_list">
       <td colspan="2" class="list_link">
@@ -21,10 +21,10 @@
     </tr>
     <tr class="TR_BG_list">
       <td class="list_link" style="padding-top:14px;padding-bottom:14px;"><div align="center">
-          <input type="button" name="Submit" value=" ¹Ø ±Õ " onClick="window.close();" class="form">
+          <input type="button" name="Submit" value=" ï¿½ Ø± " onClick="window.close();" class="form">
         </div></td>
       <td class="list_link" style="padding-top:14px;padding-bottom:14px;"><div align="center">
-          <input type="button" name="copy" value=" ¸´ ÖÆ " onClick="copyToClipBoard();"  class="form">
+          <input type="button" name="copy" value=" Õ¸ï¿½ ï¿½ " onClick="copyToClipBoard();"  class="form">
         </div></td>
     </tr>
   </table>
@@ -38,12 +38,12 @@
 <script  language="JavaScript">   
 function copyToClipBoard()
 { 
-    if(confirm("È·¶¨¸´ÖÆµ½¼ôÌù°åÂð?\nÈç¹ûÄãÊÇ»ðºü(FireFox)ä¯ÀÀÆ÷ÓÃ»§£¬ÇëÖ±½Ó¸´ÖÆÒÔÉÏ´úÂë!"))
+    if(confirm("ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç»ï¿½(FireFox)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½!"))
     {
         var clipBoardContent=document.getElementById("CodePath").value;
         window.clipboardData.setData("Text",clipBoardContent);
 	}
-		alert("¸´ÖÆ³É¹¦");
+		alert("ë¸´ï¿½Æ³É¹ï¿½");
 }
 </script>
 </html>

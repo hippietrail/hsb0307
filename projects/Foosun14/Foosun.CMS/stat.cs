@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Stat
     {
         private IStat dal;
         public Stat()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateStat();
+            dal = Hg.DALFactory.DataAccess.CreateStat();
         }
         public DataTable sel()
         {

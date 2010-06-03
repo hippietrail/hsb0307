@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_Stat : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_Stat : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_Constr_Stat()
     {
@@ -48,7 +48,7 @@ public partial class manage_Contribution_Constr_Stat : Foosun.Web.UI.ManagePage
       protected void Showu_discusslist(int PageIndex)
       {   
             int i, j;
-            //DataTable dts = Foosun.CMS.Pagination.GetPage("manage_Contribution_Constr_Stat_1_aspx", PageIndex, 20, out i, out j, null);
+            //DataTable dts = Hg.CMS.Pagination.GetPage("manage_Contribution_Constr_Stat_1_aspx", PageIndex, 20, out i, out j, null);
             DataTable dts = con.GetPage1(PageIndex, 20, out i, out j, null);
             this.PageNavigator1.PageCount = j;
             this.PageNavigator1.PageIndex = PageIndex;

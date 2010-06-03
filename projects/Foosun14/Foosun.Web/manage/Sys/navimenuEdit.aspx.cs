@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_navimenuEdit : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_navimenuEdit : Hg.Web.UI.ManagePage
 {
     public manage_Sys_navimenuEdit()
     {
@@ -161,7 +161,7 @@ public partial class manage_Sys_navimenuEdit : Foosun.Web.UI.ManagePage
             string popCode = this.popCode.Text;
             if (issys.ToString() == "1")
             {
-                Foosun.Model.UserInfo7 uc = new Foosun.Model.UserInfo7();
+                Hg.Model.UserInfo7 uc = new Hg.Model.UserInfo7();
                 uc.am_Name = am_Name;
                 uc.am_orderID = orderID;
                 uc.am_ID = am_id;
@@ -175,7 +175,7 @@ public partial class manage_Sys_navimenuEdit : Foosun.Web.UI.ManagePage
                 string am_target = Request.Form["f_target"];
                 string am_ParentID = Request.Form["parentID"];
                 int am_type = int.Parse(Request.Form["type"]);
-                Foosun.Model.UserInfo7 uc = new Foosun.Model.UserInfo7();
+                Hg.Model.UserInfo7 uc = new Hg.Model.UserInfo7();
                 uc.Am_position = Am_position;
                 uc.am_Name = am_Name;
                 uc.am_FilePath = am_FilePath;

@@ -18,12 +18,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class configuration_system_xml : Foosun.Web.UI.DialogPage
+public partial class configuration_system_xml : Hg.Web.UI.DialogPage
 {
-    public string Str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+    public string Str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
     public string str_dirFile = "xml/label/";//获取文件目录
     public configuration_system_xml()
     {
@@ -46,7 +46,7 @@ public partial class configuration_system_xml : Foosun.Web.UI.DialogPage
         if (!IsPostBack)
         {
             Response.CacheControl = "no-cache";
-            str_dirFile = str_dirFile + Foosun.Global.Current.SiteID;
+            str_dirFile = str_dirFile + Hg.Global.Current.SiteID;
         }
         string pathtype = Request.QueryString["pathtype"];
         string type = Request.QueryString["Type"];
@@ -105,7 +105,7 @@ public partial class configuration_system_xml : Foosun.Web.UI.DialogPage
         }
         if (filetype == "" || filetype == null)
         {
-            filetype = "xml/label/" + Foosun.Global.Current.SiteID;
+            filetype = "xml/label/" + Hg.Global.Current.SiteID;
         }
         File_List.InnerHtml = GetDirFile(subdirpath1, parentdirpath1, filetype, subdirpath, parentdirpath);
     }
@@ -176,10 +176,10 @@ public partial class configuration_system_xml : Foosun.Web.UI.DialogPage
             }
         }
 
-        str_dirinfo = Foosun.Common.Public.Lost(str_dirinfo);
-        str_dirinfo1 = Foosun.Common.Public.Lost(str_dirinfo1);
-        str_fileinfo = Foosun.Common.Public.Lost(str_fileinfo);
-        str_fileinfo1 = Foosun.Common.Public.Lost(str_fileinfo1);
+        str_dirinfo = Hg.Common.Public.Lost(str_dirinfo);
+        str_dirinfo1 = Hg.Common.Public.Lost(str_dirinfo1);
+        str_fileinfo = Hg.Common.Public.Lost(str_fileinfo);
+        str_fileinfo1 = Hg.Common.Public.Lost(str_fileinfo1);
 
 
         string[] arr_dirinfo = str_dirinfo.Split(',');

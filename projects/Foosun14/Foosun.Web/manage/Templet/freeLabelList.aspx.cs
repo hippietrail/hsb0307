@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_Templet_freeLabelList : Foosun.Web.UI.ManagePage
+public partial class manage_Templet_freeLabelList : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,7 +23,7 @@ public partial class manage_Templet_freeLabelList : Foosun.Web.UI.ManagePage
 
     protected void getLabelList()
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getfreeLableList();
 
         string str_tempList = "<table width=\"98%\" border=\"0\" align=\"center\" cellpadding=\"2\" cellspacing=\"1\" bgcolor=\"#FFFFFF\" class=\"table\">";

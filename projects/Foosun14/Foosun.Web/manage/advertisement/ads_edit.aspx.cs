@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_ads_edit : Hg.Web.UI.ManagePage
 {
     public manage_advertisement_ads_edit()
     {
@@ -34,7 +34,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
             string str_ID = Request.QueryString["AdsID"];
             if (str_ID != null && str_ID != "" && str_ID != string.Empty)
             {
-                str_ID = Foosun.Common.Input.checkID(str_ID);
+                str_ID = Hg.Common.Input.checkID(str_ID);
                 GetAdsInfo(str_ID);
             }
         }
@@ -55,7 +55,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
 
     protected void GetAdsInfo(string adsID)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsInfo(adsID);
         if (dt != null)
         {
@@ -116,7 +116,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
 
     protected void getClassInfo(string classid)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         TbClass = ac.getAdsClassList();
 
         if (TbClass != null)
@@ -246,7 +246,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
     protected void getCycList(string Cyc_ID,string adsID)
     {
         CycID.Items.Clear();
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         TbClass = ac.getAdsList(adsID);
         if (TbClass != null)
         {
@@ -274,7 +274,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
 
     protected void getTxtList(string adsID,string txtNum)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsPicInfo("AdTxt,AdCss,AdLink", "adstxt", adsID);
         string str_Temp = "";
         bool tf = false;
@@ -363,8 +363,8 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
 
     protected void UpdateAds()
     {
-        Foosun.Model.AdsInfo ai = new Foosun.Model.AdsInfo();
-        ai.AdID = Foosun.Common.Input.checkID(Request.Form["H_AdsID"]);
+        Hg.Model.AdsInfo ai = new Hg.Model.AdsInfo();
+        ai.AdID = Hg.Common.Input.checkID(Request.Form["H_AdsID"]);
         ai.adName = Request.Form["adName"];
         ai.ClassID = Request.Form["ClassID"];
         ai.OldClass = Request.Form["OldClass"];
@@ -427,7 +427,7 @@ public partial class manage_advertisement_ads_edit : Foosun.Web.UI.ManagePage
         ai.CusID = UserNum;
 
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         int result = ac.adsEdit(ai);
 
         if (result == 1)

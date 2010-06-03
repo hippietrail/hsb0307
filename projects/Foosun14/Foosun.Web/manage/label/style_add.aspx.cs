@@ -14,7 +14,7 @@ using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Xml;
 
-public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
+public partial class manage_label_style_add : Hg.Web.UI.ManagePage
 {
     public manage_label_style_add()
     {
@@ -27,11 +27,11 @@ public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;        //获取版权信息
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != ""){ _dirdumm = "/" + _dirdumm; }
-            style_base.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
-            style_class.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
-            style_special.InnerHtml = Foosun.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
+            style_base.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
+            style_class.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
+            style_special.InnerHtml = Hg.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
             showInfo();
             getDefine();
         }
@@ -45,7 +45,7 @@ public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
 
     protected void showInfo()
     {
-        //Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        //Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         //DataTable dt = stClass.styleClassList();
         //if (dt != null)
         //{
@@ -66,7 +66,7 @@ public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
         //styleClass.Items.Insert(0,itm);
         //itm = null;
 
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styleClassList();
         if (dt != null)
         {
@@ -99,7 +99,7 @@ public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
 
     protected void getDefine()
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styledefine();
 
         if (dt != null)
@@ -140,23 +140,23 @@ public partial class manage_label_style_add : Foosun.Web.UI.ManagePage
         else if (Page.IsValid)
         {
             int result = 0;
-            Foosun.Model.StyleInfo stClass = new Foosun.Model.StyleInfo();
+            Hg.Model.StyleInfo stClass = new Hg.Model.StyleInfo();
             stClass.StyleName = styleName.Text;
             stClass.ClassID = styleClass.Text;
             string StContent = ContentTextBox.Value;
             if (StContent.ToLower().IndexOf("<p>") > -1 && StContent.IndexOf("</p>") > -1)
             {
-                StContent = Foosun.Common.Input.RemovePor(StContent);
+                StContent = Hg.Common.Input.RemovePor(StContent);
             }
             stClass.Content = StContent;
             stClass.Description = Description.Text;
             stClass.CreatTime = DateTime.Now;
             stClass.isRecyle = 0;
-            Foosun.CMS.Style.Style style_Class = new Foosun.CMS.Style.Style();
+            Hg.CMS.Style.Style style_Class = new Hg.CMS.Style.Style();
             
             result = style_Class.styleAdd(stClass);
             //清除样式缓存
-            Foosun.Publish.LabelStyle.CatchClear();
+            Hg.Publish.LabelStyle.CatchClear();
             if (result == 1)
             {
                 PageRight("添加样式成功!", "style.aspx");

@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_FreeLabel_List : Foosun.Web.UI.ManagePage
+public partial class manage_label_FreeLabel_List : Hg.Web.UI.ManagePage
 {
     public manage_label_FreeLabel_List()
     {
@@ -33,7 +33,7 @@ public partial class manage_label_FreeLabel_List : Foosun.Web.UI.ManagePage
             this.Authority_Code = "T009";
             this.CheckAdminAuthority();
             int id = int.Parse(Request.Form["ID"]);
-            Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+            Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
             try
             {
                 if (fb.Delete(id))
@@ -65,7 +65,7 @@ public partial class manage_label_FreeLabel_List : Foosun.Web.UI.ManagePage
     private void ListDataBind(int PageIndex)
     {
         int nRCount, nPCount;
-        DataTable tb = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out nRCount, out nPCount);
+        DataTable tb = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out nRCount, out nPCount);
         this.PageNavigator1.PageCount = nPCount;
         this.PageNavigator1.RecordCount = nRCount;
         this.PageNavigator1.PageIndex = PageIndex;

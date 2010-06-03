@@ -4,7 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace Foosun.DALProfile
+namespace Hg.DALProfile
 {
     public interface IDbBase
     {

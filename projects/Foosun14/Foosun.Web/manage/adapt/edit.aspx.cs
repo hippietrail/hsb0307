@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.adapt
+namespace Hg.Web.manage.adapt
 {
-    public partial class edit : Foosun.Web.UI.ManagePage
+    public partial class edit : Hg.Web.UI.ManagePage
     {
         public edit()
         {
@@ -21,11 +21,11 @@ namespace Foosun.Web.manage.adapt
         {
             if (this.IsPostBack) return;
             string appid = Request.QueryString["appid"];
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
-            Foosun.Config.API.ApplicationInfo _appInfo=null;
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.ApplicationInfo _appInfo=null;
             if (config.ApplicationList != null)
             {
-                foreach (Foosun.Config.API.ApplicationInfo appInfo in config.ApplicationList)
+                foreach (Hg.Config.API.ApplicationInfo appInfo in config.ApplicationList)
                 {
                     if (appInfo.AppID == appid)
                     {
@@ -50,11 +50,11 @@ namespace Foosun.Web.manage.adapt
             if (!this.IsValid)
                 return;
             string appid = Request.QueryString["appid"];
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
-            Foosun.Config.API.ApplicationInfo _appInfo = null;
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.ApplicationInfo _appInfo = null;
             if (config.ApplicationList != null)
             {
-                foreach (Foosun.Config.API.ApplicationInfo appInfo in config.ApplicationList)
+                foreach (Hg.Config.API.ApplicationInfo appInfo in config.ApplicationList)
                 {
                     if (appInfo.AppID == appid)
                     {
@@ -66,7 +66,7 @@ namespace Foosun.Web.manage.adapt
                 {
                     _appInfo.AppID = this.TextBoxAppID.Text;
                     _appInfo.AppUrl = this.Api_Url.Text;
-                    Foosun.Config.API.APIConfigs.SaveConfig(config);
+                    Hg.Config.API.APIConfigs.SaveConfig(config);
                 }
             }
 
@@ -78,10 +78,10 @@ namespace Foosun.Web.manage.adapt
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             string appid = Request.QueryString["appid"];
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
             if (config.ApplicationList == null)
-                config.ApplicationList = new Foosun.Config.API.ApplicaitonCollection();
-            foreach (Foosun.Config.API.ApplicationInfo _appInfo in config.ApplicationList)
+                config.ApplicationList = new Hg.Config.API.ApplicaitonCollection();
+            foreach (Hg.Config.API.ApplicationInfo _appInfo in config.ApplicationList)
             {
                 if (_appInfo.AppID.ToLower() == this.TextBoxAppID.Text.ToLower() && appid.ToLower() != this.TextBoxAppID.Text.ToLower())
                 {

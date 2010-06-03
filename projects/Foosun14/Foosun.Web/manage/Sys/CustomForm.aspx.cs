@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomForm : Foosun.Web.UI.ManagePage
+    public partial class CustomForm : Hg.Web.UI.ManagePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace Foosun.Web.manage.Sys
                     try
                     {
                         int id = int.Parse(Request.Form["ID"]);
-                        Foosun.CMS.CustomForm cf = new Foosun.CMS.CustomForm();
+                        Hg.CMS.CustomForm cf = new Hg.CMS.CustomForm();
                         cf.DeleteForm(id);
                         Response.Write("1%操作成功!");
                     }
@@ -44,7 +44,7 @@ namespace Foosun.Web.manage.Sys
         private void DataListBind(int PageIndex)
         {
             int nRCount, nPCount;
-            DataTable tb = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out nRCount, out nPCount);
+            DataTable tb = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out nRCount, out nPCount);
             this.PageNavigator1.PageCount = nPCount;
             this.PageNavigator1.PageIndex = PageIndex;
             this.PageNavigator1.RecordCount = nRCount;

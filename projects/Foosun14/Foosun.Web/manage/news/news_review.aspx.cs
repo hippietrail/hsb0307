@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_news_news_review : Foosun.Web.UI.ManagePage
+public partial class manage_news_news_review : Hg.Web.UI.ManagePage
 {
-    Foosun.CMS.ContentManage rd = new Foosun.CMS.ContentManage();
+    Hg.CMS.ContentManage rd = new Hg.CMS.ContentManage();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)

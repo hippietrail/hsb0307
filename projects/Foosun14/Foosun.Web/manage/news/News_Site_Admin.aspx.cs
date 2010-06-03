@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-namespace Foosun.Web.manage.news
+namespace Hg.Web.manage.news
 {
-	public partial class News_Site_Admin : Foosun.Web.UI.ManagePage
+	public partial class News_Site_Admin : Hg.Web.UI.ManagePage
 	{
-		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Foosun Inc. By " + Foosun.Config.verConfig.Productversion + "</span>";
+		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Foosun Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)

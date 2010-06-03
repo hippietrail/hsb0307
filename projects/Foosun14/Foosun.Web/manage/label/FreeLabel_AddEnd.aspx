@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css"
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
     rel="stylesheet" type="text/css" />
 <style type="text/css">
 p{padding-left:20px;padding-top:0px;padding-bottom:0px;margin-top:3px;margin-bottom:0px;}

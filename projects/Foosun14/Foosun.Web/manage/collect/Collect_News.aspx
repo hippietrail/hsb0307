@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>FoosunCMS For .NET v1.0.0</title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet"
         type="text/css" />
 
     <script language="JavaScript" type="text/javascript" charset="utf-8" src="../../configuration/js/Prototype.js"></script>
@@ -216,7 +216,7 @@ function ChooseAll(obj)
                         <td class="list_link" align="center">
                             <a href="Collect_NewsModify.aspx?ID=<%# DataBinder.Eval(Container.DataItem, "ID")%>"
                                 class="list_link">
-                                <img src="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a> <a href="javascript:DeleteCllNews(<%# DataBinder.Eval(Container.DataItem, "ID")%>);"
+                                <img src="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a> <a href="javascript:DeleteCllNews(<%# DataBinder.Eval(Container.DataItem, "ID")%>);"
                                     class="list_link">
                                     <img src="../../sysImages/folder/dels.gif" border="0" alt="彻底删除" /></a></td>
                     </tr>

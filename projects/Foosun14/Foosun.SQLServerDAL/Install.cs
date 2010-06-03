@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Install : DbBase, IInstall
     {
@@ -19,8 +19,8 @@ namespace Foosun.SQLServerDAL
             countTF = Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, gsql, null));
             if (countTF == 0)
             {
-                string s_adminpwd = Foosun.Common.Input.MD5(Password, true);
-                string s_usernum = Foosun.Common.Rand.Number(12);
+                string s_adminpwd = Hg.Common.Input.MD5(Password, true);
+                string s_usernum = Hg.Common.Rand.Number(12);
                 string s_Addadmin = "insert into [" + Pre + "sys_User] ([UserNum],[UserName],[UserPassword],[NickName]," +
                                     "[RealName],[isAdmin],[UserGroupNumber],[PassQuestion],[PassKey],[CertType],[CertNumber]," +
                                     "[Email],[mobile],[Sex],[birthday],[Userinfo],[UserFace],[userFacesize],[marriage],[iPoint]," +

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -15,21 +15,21 @@
 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table" id="Frame">
   <tr class="TR_BG_list" runat="server" id="js">
       <td class="list_link" align="center">
-          JSÃû³Æ
+          JSï¿½ï¿½
           <asp:DropDownList ID="DropDownList1" runat="server" Width="270px">
           </asp:DropDownList></td>
     </tr>
   <tr class="TR_BG_list" runat="server" id="dspecial">
       <td class="list_link" align="center" valign="top">
-          ×¨ÌâÃû³Æ
+          ï¿½×¨ï¿½ï¿½ï¿½ï¿½
           <select id="Special" name="Special" style="width:250px;height:150px"  runat="server" class="form" multiple></select>
           </td>
   </tr>
   <tr class="TR_BG_list">
       <td align="center" class="list_link">
-      <asp:Button ID="Button1" runat="server" Text="È· ¶¨" OnClick="Button1_Click" CssClass="form"/>
+      <asp:Button ID="Button1" runat="server" Text="ï¿½È· ï¿½ï¿½" OnClick="Button1_Click" CssClass="form"/>
       &nbsp; &nbsp;&nbsp;
-      <asp:Button ID="Button2" runat="server" Text="È¡ Ïû" OnClientClick="javascript:window.close();"  CssClass="form"/></td>
+      <asp:Button ID="Button2" runat="server" Text="È¡ ï¿½" OnClientClick="javascript:window.close();"  CssClass="form"/></td>
   </tr>
 </table>
     </form>

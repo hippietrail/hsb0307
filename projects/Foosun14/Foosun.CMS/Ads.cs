@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     class ads
     {

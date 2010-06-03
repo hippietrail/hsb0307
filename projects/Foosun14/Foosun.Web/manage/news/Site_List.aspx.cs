@@ -15,13 +15,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_news_Site_List : Foosun.Web.UI.ManagePage
+public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
 {
-    private Foosun.CMS.Site site;
+    private Hg.CMS.Site site;
     protected void Page_Load(object sender, EventArgs e)
     {
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChage);
-        site = new Foosun.CMS.Site();
+        site = new Hg.CMS.Site();
         if (!IsPostBack)
         {
             if (SiteID == "0")
@@ -36,7 +36,7 @@ public partial class manage_news_Site_List : Foosun.Web.UI.ManagePage
             if (Request.Form["Option"] != null && !Request.Form["Option"].Trim().Equals("")
                 && Request.Form["SiteID"] != null && !Request.Form["SiteID"].Trim().Equals(""))
             {
-                string id = Foosun.Common.Input.Filter(Request.Form["SiteID"].Trim());
+                string id = Hg.Common.Input.Filter(Request.Form["SiteID"].Trim());
                 try
                 {
                     if (id.ToString() == "0")
@@ -83,7 +83,7 @@ public partial class manage_news_Site_List : Foosun.Web.UI.ManagePage
     private void DataListBind(int PageIndex)
     {
         int nRCount, nPCount;
-        DataTable tb = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out nRCount, out nPCount);
+        DataTable tb = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out nRCount, out nPCount);
         this.PageNavigator1.PageCount = nPCount;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = nRCount;

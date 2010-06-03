@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_Edit : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_Edit : Hg.Web.UI.ManagePage
 {
     Constr con = new Constr();
     protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ public partial class manage_Contribution_Constr_Edit : Foosun.Web.UI.ManagePage
         {
             this.Authority_Code = "C043";
             this.CheckAdminAuthority();
-            string ConIDs = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+            string ConIDs = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
             DataTable dtx = con.sel11(ConIDs);
             ContentBox.Value = dtx.Rows[0]["Content"].ToString();
             this.Title.Text = dtx.Rows[0]["Title"].ToString();
@@ -56,9 +56,9 @@ public partial class manage_Contribution_Constr_Edit : Foosun.Web.UI.ManagePage
         {
             rootPublic rd = new rootPublic();
             string Contents = ContentBox.Value;
-            string Title = Foosun.Common.Input.Filter(Request.Form["Title"].ToString());
+            string Title = Hg.Common.Input.Filter(Request.Form["Title"].ToString());
             string Author = this.Author.Text;
-            string ConIDp = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+            string ConIDp = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
             DataTable dt = con.sel13(ConIDp);
             string Source = dt.Rows[0]["Source"].ToString();
             string PicURL = dt.Rows[0]["PicURL"].ToString();
@@ -71,7 +71,7 @@ public partial class manage_Contribution_Constr_Edit : Foosun.Web.UI.ManagePage
             string DataLib = con.sel18(ClassID);
             string NewsTemplet = "/{@dirTemplet}/Content/news.html";
             string strSavePath = "{@year04}-{@month}-{@day}";
-            string strfileName = "constr-" + Foosun.Common.Rand.Number(5) + "";
+            string strfileName = "constr-" + Hg.Common.Rand.Number(5) + "";
             string strfileexName = ".html";
             string strCheckInt = "0|0|0|0";
             int NewsType = 0;
@@ -79,7 +79,7 @@ public partial class manage_Contribution_Constr_Edit : Foosun.Web.UI.ManagePage
             {
                 NewsType = 1;
             }
-            string NewsID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            string NewsID = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dts = con.getClassInfo(ClassID);
             if (dts != null)
             {

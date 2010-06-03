@@ -5,16 +5,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml;
-using Foosun.Common;
+using Hg.Common;
 using System.IO;
 
-public partial class manage_Sys_const : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_const : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         
         Response.CacheControl = "no-cache";         //设置页面无缓存
-        string str = Foosun.Config.UIConfig.constPass;
+        string str = Hg.Config.UIConfig.constPass;
         string Idinfo = "";
         if (Session["tb_"] == null)
         {
@@ -51,21 +51,21 @@ public partial class manage_Sys_const : Foosun.Web.UI.ManagePage
     /// </summary>
     void StartPage()
     {
-        dirMana.Text = Foosun.Config.UIConfig.dirMana;
-        dirTemplet.Text = Foosun.Config.UIConfig.dirTemplet;
-        dirDumm.Text = Foosun.Config.UIConfig.dirDumm;
-        dirFile.Text = Foosun.Config.UIConfig.dirFile;
-        filePass.Text = Foosun.CMS.FSSecurity.FDESEncrypt(Foosun.Config.UIConfig.filePass, 0);
-        constPass.Text = Foosun.CMS.FSSecurity.FDESEncrypt(Foosun.Config.UIConfig.constPass, 0);
-        protRand.Text = Foosun.Config.UIConfig.protRand;
-        filePath.Text = Foosun.Config.UIConfig.filePath;
-        dirPige.Text = Foosun.Config.UIConfig.dirPige;
-        sqlConnData.Text = Foosun.Config.UIConfig.sqlConnData;
-        manner.Text = Foosun.Config.UIConfig.CssPath();
+        dirMana.Text = Hg.Config.UIConfig.dirMana;
+        dirTemplet.Text = Hg.Config.UIConfig.dirTemplet;
+        dirDumm.Text = Hg.Config.UIConfig.dirDumm;
+        dirFile.Text = Hg.Config.UIConfig.dirFile;
+        filePass.Text = Hg.CMS.FSSecurity.FDESEncrypt(Hg.Config.UIConfig.filePass, 0);
+        constPass.Text = Hg.CMS.FSSecurity.FDESEncrypt(Hg.Config.UIConfig.constPass, 0);
+        protRand.Text = Hg.Config.UIConfig.protRand;
+        filePath.Text = Hg.Config.UIConfig.filePath;
+        dirPige.Text = Hg.Config.UIConfig.dirPige;
+        sqlConnData.Text = Hg.Config.UIConfig.sqlConnData;
+        manner.Text = Hg.Config.UIConfig.CssPath();
         //检测是否开启密码保护功能
-        protPass.Text = Foosun.Config.UIConfig.protPass;
+        protPass.Text = Hg.Config.UIConfig.protPass;
         //检测统计是否采用独立数据库
-        CheckStat(int.Parse(Foosun.Config.UIConfig.indeData));
+        CheckStat(int.Parse(Hg.Config.UIConfig.indeData));
     }
 
     /// <summary>
@@ -121,12 +121,12 @@ public partial class manage_Sys_const : Foosun.Web.UI.ManagePage
                         tb = (TextBox)this.FindControl(ctl.ID);
                         if (tb.ID == "filePass")
                         {
-                            tb.Text =  Foosun.CMS.FSSecurity.FDESEncrypt(tb.Text, 1);
+                            tb.Text =  Hg.CMS.FSSecurity.FDESEncrypt(tb.Text, 1);
                         }
 
                         if (tb.ID == "constPass")
                         {
-                            tb.Text = Foosun.CMS.FSSecurity.FDESEncrypt(tb.Text, 1);
+                            tb.Text = Hg.CMS.FSSecurity.FDESEncrypt(tb.Text, 1);
                         }
                         Public.SaveXmlConfig(tb.ID, tb.Text.ToString().Trim(), "xml/sys/foosun.config");
                         break;
@@ -146,8 +146,8 @@ public partial class manage_Sys_const : Foosun.Web.UI.ManagePage
         //Public.constReadOnly(1, "xml/sys/foosun.config");
         StartPage();
         //刷新
-        Foosun.Config.UIConfig.RefurbishCatch();
-        PageRight("配置文件更新成功！", "const.aspx?ID=" + Foosun.CMS.FSSecurity.FDESEncrypt(this.constPass.Text,1) + "");
+        Hg.Config.UIConfig.RefurbishCatch();
+        PageRight("配置文件更新成功！", "const.aspx?ID=" + Hg.CMS.FSSecurity.FDESEncrypt(this.constPass.Text,1) + "");
         
     }
 
@@ -175,7 +175,7 @@ public partial class manage_Sys_const : Foosun.Web.UI.ManagePage
     /// </summary>
     protected void showjs()
     {
-        int stat_pram = int.Parse(Foosun.Config.UIConfig.indeData);
+        int stat_pram = int.Parse(Hg.Config.UIConfig.indeData);
         Response.Write("<script language=\"javascript\">Change("+ stat_pram +");</script>");
     }
 

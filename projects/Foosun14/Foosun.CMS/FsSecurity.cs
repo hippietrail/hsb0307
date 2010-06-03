@@ -16,7 +16,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
 /// <summary>
 /// Foosun 的摘要说明
@@ -103,7 +103,7 @@ namespace Foosun.CMS
         /// <returns></returns>
         public static string CopyRightInfo(int VersionNUm)
         {
-            string CrI = "<span style=\"line-height:20px;font-size:11.5px;font-family:Arial;\">" + Foosun.Config.UIConfig.copyright + "</span>";
+            string CrI = "<span style=\"line-height:20px;font-size:11.5px;font-family:Arial;\">" + Hg.Config.UIConfig.copyright + "</span>";
             if (VersionNUm != 999)
             {
                 CrI += "<br />" + gCopyRightInfo();
@@ -113,9 +113,9 @@ namespace Foosun.CMS
 
         public static string gCopyRightInfo()
         {
-            string isTryversion = Foosun.Config.verConfig.isTryversion;
-            string helpcenterStr =Foosun.Config.verConfig.helpcenterStr;
-            string ForumStr = Foosun.Config.verConfig.ForumStr;
+            string isTryversion = Hg.Config.verConfig.isTryversion;
+            string helpcenterStr =Hg.Config.verConfig.helpcenterStr;
+            string ForumStr = Hg.Config.verConfig.ForumStr;
             string CrI = isTryversion + ",&nbsp;&nbsp;" + helpcenterStr + ",&nbsp;&nbsp;" + ForumStr + "";
             return CrI;
         }

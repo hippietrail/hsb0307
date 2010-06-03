@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
         rel="stylesheet" type="text/css" />
 
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
@@ -259,7 +259,7 @@ function zhitie(obj)
     
     function insertHTMLEdit(url)
     {
-        var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+        var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
         var oEditor = FCKeditorAPI.GetInstance("Content");
         if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
         {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface ISearch
     {
-        DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Foosun.Model.Search si);
+        DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Hg.Model.Search si);
         string getSaveClassframe(string ClassID);
     }
     public sealed partial class DataAccess

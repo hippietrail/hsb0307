@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_publish_logs : Foosun.Web.UI.ManagePage
+public partial class manage_publish_logs : Hg.Web.UI.ManagePage
 {
     public manage_publish_logs()
     {

@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_paymentannals : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_paymentannals : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_paymentannals()
     {
@@ -42,7 +42,7 @@ public partial class manage_Contribution_paymentannals : Foosun.Web.UI.ManagePag
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -66,7 +66,7 @@ public partial class manage_Contribution_paymentannals : Foosun.Web.UI.ManagePag
     protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
     {
         int i, j;
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -81,7 +81,7 @@ public partial class manage_Contribution_paymentannals : Foosun.Web.UI.ManagePag
             foreach (DataRow s in dts.Rows)
             {
                 string gUName = pd.getUserName(s["userNum"].ToString());
-                s["gusername"] = "<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + gUName + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"点己差看用户信息\">" + gUName + "</a>";
+                s["gusername"] = "<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + gUName + ".aspx\" target=\"_blank\" class=\"list_link\" title=\"点己差看用户信息\">" + gUName + "</a>";
                 int Money1 = int.Parse(s["Money"].ToString());
                 s["moneys"] = (String.Format("{0:C}", Money1));
 

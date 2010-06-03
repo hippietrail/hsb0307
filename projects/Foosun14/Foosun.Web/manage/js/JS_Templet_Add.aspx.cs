@@ -9,27 +9,27 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_js_JS_Templet_Add : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_Templet_Add : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_Templet_Add()
     {
         Authority_Code = "C056";
     }
-    private Foosun.CMS.JSTemplet jt;
+    private Hg.CMS.JSTemplet jt;
     public string APIID = "0";
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache"; //清除缓存
         APIID = SiteID;
-        jt = new Foosun.CMS.JSTemplet();
+        jt = new Hg.CMS.JSTemplet();
         if (!IsPostBack)
         {
             
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }
-            style_base.InnerHtml = Foosun.Common.Public.getxmlstylelist("DdlViewStyle", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
-            style_class.InnerHtml = Foosun.Common.Public.getxmlstylelist("DdlFixStyle", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
-            style_special.InnerHtml = Foosun.Common.Public.getxmlstylelist("DdlSpcStyle", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
+            style_base.InnerHtml = Hg.Common.Public.getxmlstylelist("DdlViewStyle", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
+            style_class.InnerHtml = Hg.Common.Public.getxmlstylelist("DdlFixStyle", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
+            style_special.InnerHtml = Hg.Common.Public.getxmlstylelist("DdlSpcStyle", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
             this.HidID.Value = "-1";
             getDefine();
             DataTable tb = jt.ClassList();
@@ -59,7 +59,7 @@ public partial class manage_js_JS_Templet_Add : Foosun.Web.UI.ManagePage
 
     protected void getDefine()
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styledefine();
 
         if (dt != null)

@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_News_saveAjax : Foosun.Web.UI.ManagePage
+public partial class manage_news_News_saveAjax : Hg.Web.UI.ManagePage
 {
     ContentManage rd = new ContentManage();
     protected void Page_Load(object sender, EventArgs e)

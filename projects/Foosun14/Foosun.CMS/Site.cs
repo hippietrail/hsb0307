@@ -12,10 +12,10 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Xml;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     /// <summary>
     /// 频道管理类
@@ -39,7 +39,7 @@ namespace Foosun.CMS
         {
             string SiteID;
             site = FieldsHandle(site);
-            int n = dal.Add(site,Foosun.Global.Current.SiteID,out SiteID);
+            int n = dal.Add(site,Hg.Global.Current.SiteID,out SiteID);
             CreateSiteFile(SiteID, site.EName, site.CName);
             return n;
         }
@@ -51,7 +51,7 @@ namespace Foosun.CMS
         {
             Exception e;
             string[] DelsPath;
-            string rootpath = Foosun.Common.ServerInfo.GetRootPath();
+            string rootpath = Hg.Common.ServerInfo.GetRootPath();
             bool flag = dal.Delete(id, out e, out DelsPath);
             if (!flag)
             {
@@ -178,7 +178,7 @@ namespace Foosun.CMS
         /// <param name="cname">频道中文名称</param>
         private void CreateSiteFile(string siteid,string ename,string cname)
         {
-            string pathroot = Foosun.Common.ServerInfo.GetRootPath() + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + ename;
+            string pathroot = Hg.Common.ServerInfo.GetRootPath() + "\\" + Hg.Config.UIConfig.dirSite + "\\" + ename;
             if (!Directory.Exists(pathroot))
                 Directory.CreateDirectory(pathroot);
             string filepath = pathroot +"\\site.xml";

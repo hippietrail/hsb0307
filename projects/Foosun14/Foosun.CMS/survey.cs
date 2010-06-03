@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Survey
     {
         private ISurvey dal;
         public Survey()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateSurvey();
+            dal = Hg.DALFactory.DataAccess.CreateSurvey();
         }
         #region ManageVote.aspx
         public string VoteTitle_Sql(int idt)

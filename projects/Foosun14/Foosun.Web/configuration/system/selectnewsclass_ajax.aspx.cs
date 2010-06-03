@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class configuration_system_selectnewsclass_ajax : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectnewsclass_ajax : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectnewsclass_ajax()
     {
@@ -48,9 +48,9 @@ public partial class configuration_system_selectnewsclass_ajax : Foosun.Web.UI.D
             EnumLoginState state = EnumLoginState.Err_AdminTimeOut;
             if (Validate_Session())
             {
-                //state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", "0", Foosun.Global.Current.adminLogined);
+                //state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", "0", Hg.Global.Current.adminLogined);
 
-                state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", Foosun.Global.Current.SiteID.Trim(), Foosun.Global.Current.adminLogined);
+                state = _UserLogin.CheckAdminAuthority("C019", rd["ClassID"].ToString(), "", Hg.Global.Current.SiteID.Trim(), Hg.Global.Current.adminLogined);
             }
             if (state == EnumLoginState.Succeed)
             {

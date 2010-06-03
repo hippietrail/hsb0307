@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class News : DbBase, INews
     {
@@ -77,10 +77,10 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ci">实体类</param>
         /// <returns>如果添加成功返回1</returns>
-        public int AddComment(Foosun.Model.Comment ci)
+        public int AddComment(Hg.Model.Comment ci)
         {
             SqlParameter[] param = GetCommentParameters(ci);
-            string Commid = Foosun.Common.Rand.Number(12);
+            string Commid = Hg.Common.Rand.Number(12);
             while (true)
             {
                 string checkSql = "select count(ID) from " + Pre + "api_commentary where Commid='" + Commid + "'";
@@ -88,7 +88,7 @@ namespace Foosun.SQLServerDAL
                 if (recordCount < 1)
                     break;
                 else
-                    Commid = Foosun.Common.Rand.Number(12, true);
+                    Commid = Hg.Common.Rand.Number(12, true);
             }
 
             string Sql = "Insert Into " + Pre + "api_commentary(Commid,InfoID,APIID,DataLib,Title,Content,creatTime,IP,QID,UserNum,isRecyle,islock,OrderID,GoodTitle,isCheck,SiteID,commtype) Values('" + Commid + "',@InfoID,@APIID,@DataLib,@Title,@Content,@creatTime,@IP,@QID,@UserNum,@isRecyle,@islock,@OrderID,@GoodTitle,@isCheck,@SiteID,@commtype)";
@@ -101,7 +101,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ci"></param>
         /// <returns></returns>
-        private SqlParameter[] GetCommentParameters(Foosun.Model.Comment ci)
+        private SqlParameter[] GetCommentParameters(Hg.Model.Comment ci)
         {
             SqlParameter[] param = new SqlParameter[18];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);

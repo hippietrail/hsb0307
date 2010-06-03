@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Search : DbBase, ISearch
     {
@@ -19,7 +19,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="PageCount">页数</param>
         /// <param name="si">实体类</param>
         /// <returns>返回数据表</returns>
-        public DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Foosun.Model.Search si)
+        public DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Hg.Model.Search si)
         {
             string allFields = "*";
             string tablesAndWhere = " " + Pre + "News Where isLock=0 And isRecyle=0";

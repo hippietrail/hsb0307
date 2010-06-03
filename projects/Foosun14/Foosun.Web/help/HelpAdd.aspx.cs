@@ -12,10 +12,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class Help_HelpAdd : Foosun.Web.UI.BasePage
+public partial class Help_HelpAdd : Hg.Web.UI.BasePage
 {
     Help help = new Help();
     protected void Page_Load(object sender, EventArgs e)

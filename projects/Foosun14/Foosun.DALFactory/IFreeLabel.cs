@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
 using System.Data;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IFreeLabel
     {

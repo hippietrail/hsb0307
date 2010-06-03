@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class User : DbBase, IUser
     {
         public DataTable CheckUser(string UserName, string Pwd)
         {
-            string md5Pwd = Foosun.Common.Input.MD5(Pwd);
+            string md5Pwd = Hg.Common.Input.MD5(Pwd);
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@UserName", UserName), new SqlParameter("@Pwd", md5Pwd) };
             string Sql = "select userName,UserPassword,isAdmin,islock,UserNum,SiteID from " + Pre + "sys_User where UserName=@UserName and UserPassword=@Pwd";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
@@ -122,13 +122,13 @@ namespace Foosun.SQLServerDAL
         #region 日历
         public void UserLogsDels(int LId)
         {
-            string Sql = "Delete From  " + Pre + "user_userlogs where id=" + LId + " and UserNum = '" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "Delete From  " + Pre + "user_userlogs where id=" + LId + " and UserNum = '" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
         public DataTable getUserLogsValue(int LID)
         {
-            string Sql = "Select id,title,Content,LogDateTime,dateNum From " + Pre + "user_userlogs Where ID=" + LID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "Select id,title,Content,LogDateTime,dateNum From " + Pre + "user_userlogs Where ID=" + LID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
 
@@ -164,12 +164,12 @@ namespace Foosun.SQLServerDAL
         /// 则插入新记录日历
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertUserLogs(Foosun.Model.UserLog1 uc2)
+        public void InsertUserLogs(Hg.Model.UserLog1 uc2)
         {
             string Sql = "insert into " + Pre + "user_userlogs(";
             Sql += "LogID,title,content,creatTime,dateNum,LogDateTime,usernum,SiteID";
             Sql += ") values (";
-            Sql += "@LogID,@title,@content,@creatTime,@dateNum,@LogDateTime,@usernum,'" + Foosun.Global.Current.SiteID + "')";
+            Sql += "@LogID,@title,@content,@creatTime,@dateNum,@LogDateTime,@usernum,'" + Hg.Global.Current.SiteID + "')";
 
             SqlParameter[] parm = InsertUserLogsParameters(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
@@ -180,7 +180,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private SqlParameter[] InsertUserLogsParameters(Foosun.Model.UserLog1 uc1)
+        private SqlParameter[] InsertUserLogsParameters(Hg.Model.UserLog1 uc1)
         {
             SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@LogID", SqlDbType.NVarChar, 12);
@@ -207,9 +207,9 @@ namespace Foosun.SQLServerDAL
         /// 则更新记录日历
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateUserLogs(Foosun.Model.UserLog1 uc2)
+        public void UpdateUserLogs(Hg.Model.UserLog1 uc2)
         {
-            string Sql = "update " + Pre + "user_userlogs set title=@title,content=@content,dateNum=@dateNum,LogDateTime=@LogDateTime where Id=" + uc2.Id + " and userNum='" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "update " + Pre + "user_userlogs set title=@title,content=@content,dateNum=@dateNum,LogDateTime=@LogDateTime where Id=" + uc2.Id + " and userNum='" + Hg.Global.Current.UserNum + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             SqlParameter[] parm = UpdateUserLogsParameters(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -219,7 +219,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private SqlParameter[] UpdateUserLogsParameters(Foosun.Model.UserLog1 uc1)
+        private SqlParameter[] UpdateUserLogsParameters(Hg.Model.UserLog1 uc1)
         {
             SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@title", SqlDbType.NVarChar, 50);
@@ -403,7 +403,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="su"></param>
         /// <returns></returns>
-        public int Add_User(Foosun.Model.User ui)
+        public int Add_User(Hg.Model.User ui)
         {
             SqlParameter[] param = getUserInfo(ui);
             string Sql = "Insert Into " + Pre + "sys_User (UserNum,UserName,UserPassword,NickName,RealName,isAdmin," +
@@ -426,7 +426,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="suf"></param>
         /// <param name="UserNum"></param>
         /// <returns></returns>
-        public int Add_userfields(Foosun.Model.UserFields ufi)
+        public int Add_userfields(Hg.Model.UserFields ufi)
         {
             SqlParameter[] param = getUuserfields(ufi);
             string Sql = "insert into " + Pre + "sys_userfields (UserNum,province,City,Address,Postcode,FaTel,WorkTel," +
@@ -441,7 +441,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ugi"></param>
         /// <returns></returns>
-        public int Add_Ghistory(Foosun.Model.UserGhistory ugi)
+        public int Add_Ghistory(Hg.Model.UserGhistory ugi)
         {
             SqlParameter[] param = getUserGhistory(ugi);
             string Sql = "insert into " + Pre + "User_Ghistory(GhID,ghtype,Gpoint,iPoint,Money,CreatTime,UserNUM,gtype," +
@@ -449,7 +449,7 @@ namespace Foosun.SQLServerDAL
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private SqlParameter[] getUserGhistory(Foosun.Model.UserGhistory ugi)
+        private SqlParameter[] getUserGhistory(Hg.Model.UserGhistory ugi)
         {
             SqlParameter[] parm = new SqlParameter[11];
             parm[0] = new SqlParameter("@id", SqlDbType.Int, 4);
@@ -480,7 +480,7 @@ namespace Foosun.SQLServerDAL
             return parm;
         }
 
-        private SqlParameter[] getUuserfields(Foosun.Model.UserFields ufi)
+        private SqlParameter[] getUuserfields(Hg.Model.UserFields ufi)
         {
             SqlParameter[] parm = new SqlParameter[19];
             parm[0] = new SqlParameter("@id", SqlDbType.Int, 4);
@@ -637,7 +637,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ui">会员实体类</param>
         /// <returns></returns>
-        public SqlParameter[] getUserInfo(Foosun.Model.User ui)
+        public SqlParameter[] getUserInfo(Hg.Model.User ui)
         {
             SqlParameter[] parm = new SqlParameter[46];
             parm[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -756,7 +756,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="UserNum">会员随机编号</param>
         /// <param name="ID">会员自动编号</param>
         /// <returns></returns>
-        public Foosun.Model.User UserInfo(string UserNum, int ID)
+        public Hg.Model.User UserInfo(string UserNum, int ID)
         {
             SqlParameter param = new SqlParameter("@UserNum", UserNum);
             string Sql = "";
@@ -765,7 +765,7 @@ namespace Foosun.SQLServerDAL
             else
                 Sql = "Select * From " + Pre + "SYS_USER Where UserNum=@UserNum";
 
-            Foosun.Model.User ui = new Foosun.Model.User();
+            Hg.Model.User ui = new Hg.Model.User();
 
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, param);
             while (rd.Read())
@@ -826,11 +826,11 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="UserNum">用户编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserFields UserFields(string UserNum)
+        public Hg.Model.UserFields UserFields(string UserNum)
         {
             SqlParameter param = new SqlParameter("@UserNum", UserNum);
             string Sql = "Select * From " + Pre + "sys_userfields Where UserNum=@UserNum";
-            Foosun.Model.UserFields ui = new Foosun.Model.UserFields();
+            Hg.Model.UserFields ui = new Hg.Model.UserFields();
 
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, param);
             while (rd.Read())
@@ -865,11 +865,11 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="GroupNumber">会员组随机编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserGroup UserGroup(string GroupNumber)
+        public Hg.Model.UserGroup UserGroup(string GroupNumber)
         {
             SqlParameter param = new SqlParameter("@GroupNumber", GroupNumber);
             string Sql = "Select * From " + Pre + "user_Group Where GroupNumber=@GroupNumber";
-            Foosun.Model.UserGroup ugi = new Foosun.Model.UserGroup();
+            Hg.Model.UserGroup ugi = new Hg.Model.UserGroup();
 
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, param);
             while (rd.Read())
@@ -938,11 +938,11 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="SiteID">站点编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserParam UserParam(string SiteID)
+        public Hg.Model.UserParam UserParam(string SiteID)
         {
             SqlParameter param = new SqlParameter("@SiteID", SiteID);
             string Sql = "Select * From " + Pre + "sys_PramUser Where SiteID='0'";
-            Foosun.Model.UserParam upi = new Foosun.Model.UserParam();
+            Hg.Model.UserParam upi = new Hg.Model.UserParam();
 
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, param);
             while (rd.Read())

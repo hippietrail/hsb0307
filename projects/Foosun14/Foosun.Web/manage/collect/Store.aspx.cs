@@ -21,9 +21,9 @@ using System.Web.UI.HtmlControls;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.CMS.Collect;
+using Hg.CMS.Collect;
 
-public partial class manage_collect_Store : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Store : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

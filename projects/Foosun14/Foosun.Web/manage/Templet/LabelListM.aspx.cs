@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_Templet_LabelListM : Foosun.Web.UI.ManagePage
+public partial class manage_Templet_LabelListM : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,7 +23,7 @@ public partial class manage_Templet_LabelListM : Foosun.Web.UI.ManagePage
 
     protected string getLabelList(string ParentID, string Tmp)
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getLableListM(0, ParentID);
         string str_tempList = "<table class=\"table\" style=\"width:98%\" align=\"center\">";
         if (dt != null)
@@ -46,7 +46,7 @@ public partial class manage_Templet_LabelListM : Foosun.Web.UI.ManagePage
 
     protected string getchildLabelList(string ParentID, string Tmp)
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getLableListM(0, ParentID);
         string str_tempList = "";
         Tmp += "┉";
@@ -75,7 +75,7 @@ public partial class manage_Templet_LabelListM : Foosun.Web.UI.ManagePage
     /// <returns></returns>
     protected string getLabelList1(string ParentID, string Tmp)
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getLableListM(1, ParentID);
         string str_tempList = "<table class=\"table\" style=\"width:98%\" align=\"center\">";
         if (dt != null)
@@ -98,7 +98,7 @@ public partial class manage_Templet_LabelListM : Foosun.Web.UI.ManagePage
 
     protected string getchildLabelList1(string ParentID, string Tmp)
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getLableListM(1, ParentID);
         string str_tempList = "";
         Tmp += "┉";

@@ -10,16 +10,16 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Special
     {
         private ISpecial sc;
-        private string str_dirDumm = Foosun.Config.UIConfig.dirDumm;
-        private string str_rootpath = Foosun.Common.ServerInfo.GetRootPath();
+        private string str_dirDumm = Hg.Config.UIConfig.dirDumm;
+        private string str_rootpath = Hg.Common.ServerInfo.GetRootPath();
 
         public Special()
         {
@@ -64,7 +64,7 @@ namespace Foosun.CMS
 
                     string FilePath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath + "\\" + filename + "." + fileexname;
                     string DirPath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath;
-                    Foosun.Common.Public.DelFile(DirPath, FilePath);
+                    Hg.Common.Public.DelFile(DirPath, FilePath);
                 }
                 dt.Clear();
                 dt.Dispose();
@@ -93,12 +93,12 @@ namespace Foosun.CMS
             return newsNum;
         }
 
-        public string Add(Foosun.Model.Special sci)
+        public string Add(Hg.Model.Special sci)
         {
             return sc.Add(sci);
         }
 
-        public int Edit(Foosun.Model.Special sci)
+        public int Edit(Hg.Model.Special sci)
         {
             DataTable dt = sc.getSpeacilInfo(sci.SpecialID);
             if (dt != null)
@@ -111,7 +111,7 @@ namespace Foosun.CMS
 
                 string FilePath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath + "\\" + filename + "." + fileexname;
                 string DirPath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath;
-                Foosun.Common.Public.DelFile(DirPath, FilePath);
+                Hg.Common.Public.DelFile(DirPath, FilePath);
                 dt.Clear();
                 dt.Dispose();
             }

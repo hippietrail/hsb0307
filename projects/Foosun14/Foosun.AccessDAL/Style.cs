@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Style : DbBase, IStyle
     {
         private string SiteID;
         public Style()
         {
-            SiteID = Foosun.Global.Current.SiteID;
+            SiteID = Hg.Global.Current.SiteID;
         }
-        public int sytleClassAdd(Foosun.Model.StyleClassInfo sc)
+        public int sytleClassAdd(Hg.Model.StyleClassInfo sc)
         {
             int result = 0;
 
@@ -26,7 +26,7 @@ namespace Foosun.AccessDAL
             {
                 string checkSql = "";
                 int recordCount = 0;
-                string ClassID = Foosun.Common.Rand.Number(12);
+                string ClassID = Hg.Common.Rand.Number(12);
                 while (true)
                 {
                     checkSql = "select count(*) from " + Pre + "sys_styleclass where ClassID='" + ClassID + "'";
@@ -34,7 +34,7 @@ namespace Foosun.AccessDAL
                     if (recordCount < 1)
                         break;
                     else
-                        ClassID = Foosun.Common.Rand.Number(12, true);
+                        ClassID = Hg.Common.Rand.Number(12, true);
                 }
                 checkSql = "select count(*) from " + Pre + "sys_styleclass where Sname='" + sc.Sname + "'";
                 recordCount = (int)DbHelper.ExecuteScalar(Conn, CommandType.Text, checkSql, null);
@@ -63,7 +63,7 @@ namespace Foosun.AccessDAL
             int recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
             return recordCount;
         }
-        public int styleClassEdit(Foosun.Model.StyleClassInfo sc)
+        public int styleClassEdit(Hg.Model.StyleClassInfo sc)
         {
             int result = 0;
             OleDbConnection Conn = new OleDbConnection(Database.FoosunConnectionString);
@@ -132,7 +132,7 @@ namespace Foosun.AccessDAL
                 throw e;
             }
         }
-        public int styleAdd(Foosun.Model.StyleInfo sc)
+        public int styleAdd(Hg.Model.StyleInfo sc)
         {
             int result = 0;
             OleDbConnection Conn = new OleDbConnection(Database.FoosunConnectionString);
@@ -141,7 +141,7 @@ namespace Foosun.AccessDAL
             {
                 string checkSql = "";
                 int recordCount = 0;
-                string styleID = Foosun.Common.Rand.Number(12);
+                string styleID = Hg.Common.Rand.Number(12);
                 while (true)
                 {
                     checkSql = "select count(*) from " + Pre + "sys_LabelStyle where styleID='" + styleID + "'";
@@ -149,7 +149,7 @@ namespace Foosun.AccessDAL
                     if (recordCount < 1)
                         break;
                     else
-                        styleID = Foosun.Common.Rand.Number(12, true);
+                        styleID = Hg.Common.Rand.Number(12, true);
                 }
                 checkSql = "select count(*) from " + Pre + "sys_LabelStyle where StyleName='" + sc.StyleName + "' and isRecyle=0";
                 recordCount = (int)DbHelper.ExecuteScalar(Conn, CommandType.Text, checkSql, null);
@@ -172,7 +172,7 @@ namespace Foosun.AccessDAL
             }
             return result;
         }
-        public int styleEdit(Foosun.Model.StyleInfo sc)
+        public int styleEdit(Hg.Model.StyleInfo sc)
         {
             int result = 0;
             OleDbConnection Conn = new OleDbConnection(Database.FoosunConnectionString);
@@ -237,7 +237,7 @@ namespace Foosun.AccessDAL
             return dt;
         }
 
-        private OleDbParameter[] GetstyleParameters(Foosun.Model.StyleInfo sc)
+        private OleDbParameter[] GetstyleParameters(Hg.Model.StyleInfo sc)
         {
             OleDbParameter[] param = new OleDbParameter[6];
             param[0] = new OleDbParameter("@ClassID", OleDbType.VarWChar, 12);
@@ -255,7 +255,7 @@ namespace Foosun.AccessDAL
             return param;
         }
 
-        private OleDbParameter[] GetstyleClassParameters(Foosun.Model.StyleClassInfo sc)
+        private OleDbParameter[] GetstyleClassParameters(Hg.Model.StyleClassInfo sc)
         {
             OleDbParameter[] param = new OleDbParameter[3];
             param[0] = new OleDbParameter("@Sname", OleDbType.VarWChar, 30);

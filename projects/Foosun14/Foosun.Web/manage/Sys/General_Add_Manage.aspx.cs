@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Sys_General_Add_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_General_Add_Manage : Hg.Web.UI.ManagePage
 {
     public manage_Sys_General_Add_Manage()
     {
@@ -40,10 +40,10 @@ public partial class manage_Sys_General_Add_Manage : Foosun.Web.UI.ManagePage
         if (Page.IsValid == true)//判断页面是否通过验证
         {
             #region 取得常规添加中的表单信息
-            string Str_Sel_Type = Foosun.Common.Input.Filter(this.Sel_Type.Text.Trim());//类型
-            string Str_Txt_Name = Foosun.Common.Input.Filter(this.Txt_Name.Text.Trim());//标题
-            string Str_Txt_LinkUrl = Foosun.Common.Input.Filter(this.Txt_LinkUrl.Text.Trim());//链接地址
-            string Str_Txt_Email = Foosun.Common.Input.Filter(this.Txt_Email.Text.Trim());//电子邮件
+            string Str_Sel_Type = Hg.Common.Input.Filter(this.Sel_Type.Text.Trim());//类型
+            string Str_Txt_Name = Hg.Common.Input.Filter(this.Txt_Name.Text.Trim());//标题
+            string Str_Txt_LinkUrl = Hg.Common.Input.Filter(this.Txt_LinkUrl.Text.Trim());//链接地址
+            string Str_Txt_Email = Hg.Common.Input.Filter(this.Txt_Email.Text.Trim());//电子邮件
             #endregion
 
             #region 判断数据库中是否存在已经添加了的标题

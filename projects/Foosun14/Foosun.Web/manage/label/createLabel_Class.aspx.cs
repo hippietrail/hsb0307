@@ -9,21 +9,21 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.label
+namespace Hg.Web.manage.label
 {
-    public partial class createLabel_Class : Foosun.Web.UI.ManagePage
+    public partial class createLabel_Class : Hg.Web.UI.ManagePage
     {
         public string APIID = "0";
-        Foosun.CMS.Label rd = new Foosun.CMS.Label();
+        Hg.CMS.Label rd = new Hg.CMS.Label();
         protected void Page_Load(object sender, EventArgs e)
         {
             APIID = SiteID;
             if (!IsPostBack)
             {
 
-                string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+                string _dirdumm = Hg.Config.UIConfig.dirDumm;
                 if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }
-                style_class.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent2", _dirdumm + "/xml/cuslabeStyle/cstyleClassInfo.xml");
+                style_class.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent2", _dirdumm + "/xml/cuslabeStyle/cstyleClassInfo.xml");
                 GetStyleList(this.StyleClassID); ;
             }
         }

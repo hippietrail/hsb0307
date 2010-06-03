@@ -10,15 +10,15 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
 	public class ContentManage : DbBase, IContentManage
 	{
@@ -41,7 +41,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="Num">1为已生成，0表示未生成</param>
 		public void updateClassStat(int Num, string ClassID)
 		{
-			string str_sql = "update " + Pre + "news_Class set isunHTML=" + Num + " where ClassId='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "update " + Pre + "news_Class set isunHTML=" + Num + " where ClassId='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -51,7 +51,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="Num">1为已生成，0表示未生成</param>
 		public void updateNewsHTML(int Num, string NewsID)
 		{
-			string str_sql = "update " + Pre + "news set isHtml=" + Num + " where NewsID='" + NewsID + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "update " + Pre + "news set isHtml=" + Num + " where NewsID='" + NewsID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -62,7 +62,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public IDataReader getNaviClass(string ClassID)
 		{
-            string Sql = "select ClassCName,ClassCNameRefer,ClassEName,ParentID,ClassID,DataLib,SavePath,SaveClassframe,ClassSaveRule from " + Pre + "news_class where ClassID=@ClassID " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select ClassCName,ClassCNameRefer,ClassEName,ParentID,ClassID,DataLib,SavePath,SaveClassframe,ClassSaveRule from " + Pre + "news_class where ClassID=@ClassID " + Hg.Common.Public.getSessionStr() + "";
 			SqlParameter Param = new SqlParameter("@ClassID", ClassID);
 			return DbHelper.ExecuteReader(CommandType.Text, Sql, Param);
 		}
@@ -104,7 +104,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="Tablename"></param>
 		public void del_all(int nID, string Tablename)
 		{
-			string str_sql = "delete from " + Tablename + " where Id=" + nID + " and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "delete from " + Tablename + " where Id=" + nID + " and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -115,7 +115,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="Tablename"></param>
 		public void del_Recyle(string nID, string Tablename)
 		{
-			string str_sql = "update " + Tablename + " set isRecyle=1 where Id in (" + nID + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "update " + Tablename + " set isRecyle=1 where Id in (" + nID + ") " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -126,7 +126,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="Tablename"></param>
 		public void del_Lock(string nID, string Tablename)
 		{
-			string str_sql = "update " + Tablename + " set isLock=1 where Id in (" + nID + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "update " + Tablename + " set isLock=1 where Id in (" + nID + ") " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -210,7 +210,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="_num"></param>
 		public void iGen(string _TempStr, string _URL, string _EmailURL, int _num)
 		{
-			string SQLTF = "select id from " + Pre + "News_Gen where Cname='" + _TempStr.Trim() + "' and gType=" + _num + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string SQLTF = "select id from " + Pre + "News_Gen where Cname='" + _TempStr.Trim() + "' and gType=" + _num + " and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, SQLTF, null);
 			if (rdr != null)
 			{
@@ -219,7 +219,7 @@ namespace Foosun.SQLServerDAL
 					string Sql = "insert into " + Pre + "News_Gen(";
 					Sql += "Cname,gType,URL,EmailURL,isLock,SiteID";
 					Sql += ") values (";
-					Sql += "'" + _TempStr + "'," + _num + ",'" + _URL + "','" + _EmailURL + "',0,'" + Foosun.Global.Current.SiteID + "')";
+					Sql += "'" + _TempStr + "'," + _num + ",'" + _URL + "','" + _EmailURL + "',0,'" + Hg.Global.Current.SiteID + "')";
 					DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 				}
 				rdr.Clear(); rdr.Dispose();
@@ -260,7 +260,7 @@ namespace Foosun.SQLServerDAL
 		/// 插入栏目新记录
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void insertNewsContent(Foosun.Model.NewsContent uc)
+		public void insertNewsContent(Hg.Model.NewsContent uc)
 		{
 			string Sql = "insert into " + uc.DataLib + "(";
             Sql += "NewsID,NewsType,OrderID,NewsTitle,sNewsTitle,NewsTitleRefer,TitleColor,TitleITF,TitleBTF,CommLinkTF,SubNewsTF,URLaddress,PicURL,SPicURL,ClassID,SpecialID,Author,Souce,Tags,NewsProperty,NewsPicTopline,Templet,Content,vURL,naviContent,Click,CreatTime,EditTime,SavePath,FileName,FileEXName,ContentPicTF,ContentPicURL,ContentPicSize,CommTF,DiscussTF,TopNum,VoteTF,CheckStat,isLock,isRecyle,SiteID,DataLib,DefineID,isVoteTF,Editor,isHtml,isDelPoint,Gpoint,iPoint,GroupNumber,Metakeywords,Metadesc,isConstr,isFiles";
@@ -291,9 +291,9 @@ namespace Foosun.SQLServerDAL
 		/// 更新记录
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void UpdateNewsContent(Foosun.Model.NewsContent uc)
+		public void UpdateNewsContent(Hg.Model.NewsContent uc)
 		{
-            string Sql = "Update " + uc.DataLib + " set CreatTime=@CreatTime,NewsType=@NewsType,OrderID=@OrderID,NewsTitle=@NewsTitle,sNewsTitle=@sNewsTitle,NewsTitleRefer=@NewsTitleRefer,TitleColor=@TitleColor,TitleITF=@TitleITF,TitleBTF=@TitleBTF,CommLinkTF=@CommLinkTF,SubNewsTF=@SubNewsTF,URLaddress=@URLaddress,PicURL=@PicURL,SPicURL=@SPicURL,ClassID=@ClassID,SpecialID=@SpecialID,Author=@Author,Souce=@Souce,Tags=@Tags,NewsProperty=@NewsProperty,NewsPicTopline=@NewsPicTopline,Templet=@Templet,Content=@Content,vURL=@vURL,naviContent=@naviContent,Click=@Click,EditTime='" + uc.EditTime.ToString() + "',ContentPicTF=@ContentPicTF,ContentPicURL=@ContentPicURL,ContentPicSize=@ContentPicSize,CommTF=@CommTF,DiscussTF=@DiscussTF,TopNum=@TopNum,VoteTF=@VoteTF,CheckStat=@CheckStat,DefineID=@DefineID,isVoteTF=@isVoteTF,Editor=@Editor,isHtml=@isHtml,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,Metakeywords=@Metakeywords,Metadesc=@Metadesc,isFiles=@isFiles where NewsId='" + uc.NewsID + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + uc.DataLib + " set CreatTime=@CreatTime,NewsType=@NewsType,OrderID=@OrderID,NewsTitle=@NewsTitle,sNewsTitle=@sNewsTitle,NewsTitleRefer=@NewsTitleRefer,TitleColor=@TitleColor,TitleITF=@TitleITF,TitleBTF=@TitleBTF,CommLinkTF=@CommLinkTF,SubNewsTF=@SubNewsTF,URLaddress=@URLaddress,PicURL=@PicURL,SPicURL=@SPicURL,ClassID=@ClassID,SpecialID=@SpecialID,Author=@Author,Souce=@Souce,Tags=@Tags,NewsProperty=@NewsProperty,NewsPicTopline=@NewsPicTopline,Templet=@Templet,Content=@Content,vURL=@vURL,naviContent=@naviContent,Click=@Click,EditTime='" + uc.EditTime.ToString() + "',ContentPicTF=@ContentPicTF,ContentPicURL=@ContentPicURL,ContentPicSize=@ContentPicSize,CommTF=@CommTF,DiscussTF=@DiscussTF,TopNum=@TopNum,VoteTF=@VoteTF,CheckStat=@CheckStat,DefineID=@DefineID,isVoteTF=@isVoteTF,Editor=@Editor,isHtml=@isHtml,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,Metakeywords=@Metakeywords,Metadesc=@Metadesc,isFiles=@isFiles where NewsId='" + uc.NewsID + "' " + Hg.Common.Public.getSessionStr() + "";
 			SqlParameter[] parm = insertNewsContentParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
 			string usql = "update " + uc.DataLib + " set islock=1 where NewsID='" + uc.NewsID + "' and substring(CheckStat,3,5)!='0|0|0'";
@@ -335,7 +335,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] UpdateNewsContentParameters(Foosun.Model.NewsContent uc)
+		private SqlParameter[] UpdateNewsContentParameters(Hg.Model.NewsContent uc)
 		{
 			SqlParameter[] param = new SqlParameter[46];
 			param[0] = new SqlParameter("@NewsType", SqlDbType.TinyInt, 1);
@@ -438,7 +438,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] insertNewsContentParameters(Foosun.Model.NewsContent uc)
+		private SqlParameter[] insertNewsContentParameters(Hg.Model.NewsContent uc)
 		{
 			SqlParameter[] param = new SqlParameter[53];
 			param[0] = new SqlParameter("@NewsID", SqlDbType.NVarChar, 12);
@@ -567,7 +567,7 @@ namespace Foosun.SQLServerDAL
 			string Sql = "insert into " + Pre + "news_sub(";
 			Sql += "NewsID,getNewsID,NewsTitle,DataLib,TitleColor,TitleBTF,TitleITF,colsNum,SiteID";
 			Sql += ") values (";
-			Sql += "'" + NewsID + "','" + getNewsID + "','" + NewsTitle + "','" + DataLib + "','" + TitleColor + "'," + TitleBTF + "," + TitleITF + "," + colsNum + ",'" + Foosun.Global.Current.SiteID + "')";
+			Sql += "'" + NewsID + "','" + getNewsID + "','" + NewsTitle + "','" + DataLib + "','" + TitleColor + "'," + TitleBTF + "," + TitleITF + "," + colsNum + ",'" + Hg.Global.Current.SiteID + "')";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -577,7 +577,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="NewsID"></param>
 		public void delNewsContent(string NewsID)
 		{
-			string Sql = "delete from " + Pre + "news_sub where NewsId = '" + NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "delete from " + Pre + "news_sub where NewsId = '" + NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -585,7 +585,7 @@ namespace Foosun.SQLServerDAL
 		/// 插入头条
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void intsertTT(Foosun.Model.NewsContentTT uc)
+		public void intsertTT(Hg.Model.NewsContentTT uc)
 		{
 			string Sql = "insert into " + Pre + "news_topline(";
 			Sql += "NewsTF,NewsID,DataLib,tl_font,tl_style,tl_size,tl_color,tl_space,tl_PicColor,tl_SavePath,Creattime,tl_Title,tl_Width,SiteID";
@@ -599,9 +599,9 @@ namespace Foosun.SQLServerDAL
 		/// 更新头条
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void UpdateTT(Foosun.Model.NewsContentTT uc)
+		public void UpdateTT(Hg.Model.NewsContentTT uc)
 		{
-			string Sql = "update " + Pre + "news_topline set NewsTF=@NewsTF,NewsID=@NewsID,DataLib=@DataLib,tl_font=@tl_font,tl_style=@tl_style,tl_size=@tl_size,tl_color=@tl_color,tl_space=@tl_space,tl_PicColor=@tl_PicColor,tl_SavePath=@tl_SavePath,Creattime=@Creattime,tl_Title=@tl_Title,tl_Width=@tl_Width,SiteID=@SiteID where NewsID='" + uc.NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "update " + Pre + "news_topline set NewsTF=@NewsTF,NewsID=@NewsID,DataLib=@DataLib,tl_font=@tl_font,tl_style=@tl_style,tl_size=@tl_size,tl_color=@tl_color,tl_space=@tl_space,tl_PicColor=@tl_PicColor,tl_SavePath=@tl_SavePath,Creattime=@Creattime,tl_Title=@tl_Title,tl_Width=@tl_Width,SiteID=@SiteID where NewsID='" + uc.NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			SqlParameter[] parm = intsertTTParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
 		}
@@ -611,7 +611,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] intsertTTParameters(Foosun.Model.NewsContentTT uc)
+		private SqlParameter[] intsertTTParameters(Hg.Model.NewsContentTT uc)
 		{
 			SqlParameter[] param = new SqlParameter[14];
 			param[0] = new SqlParameter("@NewsTF", SqlDbType.TinyInt, 1);
@@ -781,7 +781,7 @@ namespace Foosun.SQLServerDAL
 		/// 插入投票
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void intsertVote(Foosun.Model.VoteContent uc)
+		public void intsertVote(Hg.Model.VoteContent uc)
 		{
 			string Sql = "insert into " + Pre + "news_vote(";
 			Sql += "voteNum,voteTitle,voteContent,creattime,ismTF,isMember,NewsID,DataLib,SiteID,isTimeOutTime";
@@ -795,9 +795,9 @@ namespace Foosun.SQLServerDAL
 		/// 更新投票
 		/// </summary>
 		/// <param name="uc"></param>
-		public void UpdateVote(Foosun.Model.VoteContent uc)
+		public void UpdateVote(Hg.Model.VoteContent uc)
 		{
-			string Sql = "Update " + Pre + "news_vote set voteTitle=@voteTitle,voteContent=@voteContent,creattime=@creattime,ismTF=@ismTF,isMember=@isMember,isTimeOutTime=@isTimeOutTime where NewsId='" + uc.NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "Update " + Pre + "news_vote set voteTitle=@voteTitle,voteContent=@voteContent,creattime=@creattime,ismTF=@ismTF,isMember=@isMember,isTimeOutTime=@isTimeOutTime where NewsId='" + uc.NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			SqlParameter[] parm = updateVoteParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
 		}
@@ -807,7 +807,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] intsertVoteParameters(Foosun.Model.VoteContent ucv)
+		private SqlParameter[] intsertVoteParameters(Hg.Model.VoteContent ucv)
 		{
 			SqlParameter[] param = new SqlParameter[10];
 			param[0] = new SqlParameter("@voteNum", SqlDbType.NVarChar, 20);
@@ -838,7 +838,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] updateVoteParameters(Foosun.Model.VoteContent ucv)
+		private SqlParameter[] updateVoteParameters(Hg.Model.VoteContent ucv)
 		{
 			SqlParameter[] param = new SqlParameter[7];
 			param[0] = new SqlParameter("@voteTitle", SqlDbType.NVarChar, 100);
@@ -866,7 +866,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getVoteID(string NewsID, string DataLib)
 		{
-			string Sql = "select voteNum,NewsID,voteContent,ismTF,isMember,SiteID,isTimeOutTime from " + Pre + "news_vote where NewsID='" + NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "' and DataLib='" + DataLib + "'";
+			string Sql = "select voteNum,NewsID,voteContent,ismTF,isMember,SiteID,isTimeOutTime from " + Pre + "news_vote where NewsID='" + NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "' and DataLib='" + DataLib + "'";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 
@@ -878,7 +878,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getTopline(string NewsID, string DataLib, int NewsTFNum)
 		{
-			string Sql = "select NewsTF,NewsID,DataLib,tl_style,tl_font,tl_size,tl_color,tl_space,tl_PicColor,tl_Title,tl_Width,SiteID,tl_SavePath from " + Pre + "news_topline where NewsID='" + NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "' and DataLib='" + DataLib + "' and NewsTF=" + NewsTFNum + "";
+			string Sql = "select NewsTF,NewsID,DataLib,tl_style,tl_font,tl_size,tl_color,tl_space,tl_PicColor,tl_Title,tl_Width,SiteID,tl_SavePath from " + Pre + "news_topline where NewsID='" + NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "' and DataLib='" + DataLib + "' and NewsTF=" + NewsTFNum + "";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -890,7 +890,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getDefineID(string _Str)
 		{
-			string Sql = "Select defineCname,defineType,IsNull,defineValue,defineExpr From " + Pre + "define_data Where defineInfoId in(" + _Str + ") and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "Select defineCname,defineType,IsNull,defineValue,defineExpr From " + Pre + "define_data Where defineInfoId in(" + _Str + ") and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -906,7 +906,7 @@ namespace Foosun.SQLServerDAL
 			string SqlTemp = "delete from " + Pre + "news_temp where CreatTime<>" + DateTime.Now.ToShortDateString() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, SqlTemp, null);
 
-			string _RandStr = Foosun.Common.Rand.Number(12);
+			string _RandStr = Hg.Common.Rand.Number(12);
 			string Sql = "insert into " + Pre + "news_temp(";
 			Sql += "randNum,Content,CreatTime";
 			Sql += ") values (";
@@ -963,7 +963,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         public DataTable GetAllClass()
         {
-            string sql = "SELECT  Id, ClassID AS ColumnId, ClassCNameRefer AS ChineseName, ClassCName AS ColumnName, ParentID AS ParentId  FROM " + Pre + "news_Class WHERE  (isRecyle = 0) AND (NaviShowtf = 1) AND SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string sql = "SELECT  Id, ClassID AS ColumnId, ClassCNameRefer AS ChineseName, ClassCName AS ColumnName, ParentID AS ParentId  FROM " + Pre + "news_Class WHERE  (isRecyle = 0) AND (NaviShowtf = 1) AND SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, sql, null);
             return dt;
         }
@@ -994,7 +994,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getClassList_Show(string ParentID)
 		{
-			string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_class where ParentID='" + ParentID + "' " + Foosun.Common.Public.getSessionStr() + " and isUrl=0 and isLock=0 and isRecyle=0 and isPage=0 order by OrderID desc,id desc";
+			string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_class where ParentID='" + ParentID + "' " + Hg.Common.Public.getSessionStr() + " and isUrl=0 and isLock=0 and isRecyle=0 and isPage=0 order by OrderID desc,id desc";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1006,7 +1006,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getClassContent(string ClassID)
 		{
-            string Sql = "Select ClassID,ClassCName,ClassCNameRefer,ClassEName,ParentID,IsURL,Checkint,OrderID,Urladdress,Domain,ClassTemplet,ReadNewsTemplet,SavePath,SaveClassframe,ClassSaveRule,ClassIndexRule,NewsSavePath,NewsFileRule,PicDirPath,ContentPicTF,ContentPICurl,ContentPicSize,InHitoryDay,DataLib,SiteID,NaviShowtf,NaviPIC,NaviContent,MetaKeywords,MetaDescript,isDelPoint,Gpoint,iPoint,GroupNumber,FileName,isComm,NaviPosition,NewsPosition,Defineworkey From " + Pre + "news_class where ClassID='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Select ClassID,ClassCName,ClassCNameRefer,ClassEName,ParentID,IsURL,Checkint,OrderID,Urladdress,Domain,ClassTemplet,ReadNewsTemplet,SavePath,SaveClassframe,ClassSaveRule,ClassIndexRule,NewsSavePath,NewsFileRule,PicDirPath,ContentPicTF,ContentPICurl,ContentPicSize,InHitoryDay,DataLib,SiteID,NaviShowtf,NaviPIC,NaviContent,MetaKeywords,MetaDescript,isDelPoint,Gpoint,iPoint,GroupNumber,FileName,isComm,NaviPosition,NewsPosition,Defineworkey From " + Pre + "news_class where ClassID='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1041,7 +1041,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getParentClass(string ClassID)
 		{
-			string Sql = "Select ClassID From " + Pre + "News_Class Where ClassID='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "Select ClassID From " + Pre + "News_Class Where ClassID='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1052,7 +1052,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getdefineTable()
 		{
-			string Sql = "Select id,defineInfoId,defineCname From " + Pre + "Define_Data where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "Select id,defineInfoId,defineCname From " + Pre + "Define_Data where 1=1 " + Hg.Common.Public.getSessionStr() + "";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1085,7 +1085,7 @@ namespace Foosun.SQLServerDAL
 		/// 插入栏目新记录
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void insertClassContent(Foosun.Model.ClassContent uc)
+		public void insertClassContent(Hg.Model.ClassContent uc)
 		{
 			string Sql = "insert into " + Pre + "News_Class(";
             Sql += "ClassID,ClassCName,ClassEName,ClassCNameRefer,URLaddress,ParentID,IsURL,OrderID,NaviShowtf,NaviContent,NaviPIC,MetaKeywords,MetaDescript,SiteID,isLock,isRecyle,NaviPosition,Domain,ClassTemplet,ReadNewsTemplet,SavePath,SaveClassframe,Checkint,ClassSaveRule,ClassIndexRule,NewsSavePath,NewsFileRule,PicDirPath,ContentPicTF,ContentPICurl,ContentPicSize,InHitoryDay,isDelPoint,Gpoint,iPoint,GroupNumber,FileName,isComm,NewsPosition,Defineworkey,CreatTime,isPage,ModelID,isunHTML,DataLib";
@@ -1100,9 +1100,9 @@ namespace Foosun.SQLServerDAL
 		/// 更新栏目新记录
 		/// </summary>
 		/// <param name="uc2"></param>
-		public void UpdateClassContent(Foosun.Model.ClassContent uc)
+		public void UpdateClassContent(Hg.Model.ClassContent uc)
 		{
-            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ClassCNameRefer=@ClassCNameRefer,ClassEName=@ClassEName,URLaddress=@URLaddress,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,NaviContent=@NaviContent,NaviPIC=@NaviPIC,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,isLock=@isLock,isRecyle=@isRecyle,NaviPosition=@NaviPosition,Domain=@Domain,ClassTemplet=@ClassTemplet,ReadNewsTemplet=@ReadNewsTemplet,SavePath=@SavePath,SaveClassframe=@SaveClassframe,Checkint=@Checkint,ClassSaveRule=@ClassSaveRule,ClassIndexRule=@ClassIndexRule,NewsSavePath=@NewsSavePath,NewsFileRule=@NewsFileRule,PicDirPath=@PicDirPath,ContentPicTF=@ContentPicTF,ContentPICurl=@ContentPICurl,ContentPicSize=@ContentPicSize,InHitoryDay=@InHitoryDay,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,FileName=@FileName,isComm=@isComm,NewsPosition=@NewsPosition,Defineworkey=@Defineworkey,isPage=0,ModelID='0' where ClassID='" + uc.ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ClassCNameRefer=@ClassCNameRefer,ClassEName=@ClassEName,URLaddress=@URLaddress,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,NaviContent=@NaviContent,NaviPIC=@NaviPIC,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,isLock=@isLock,isRecyle=@isRecyle,NaviPosition=@NaviPosition,Domain=@Domain,ClassTemplet=@ClassTemplet,ReadNewsTemplet=@ReadNewsTemplet,SavePath=@SavePath,SaveClassframe=@SaveClassframe,Checkint=@Checkint,ClassSaveRule=@ClassSaveRule,ClassIndexRule=@ClassIndexRule,NewsSavePath=@NewsSavePath,NewsFileRule=@NewsFileRule,PicDirPath=@PicDirPath,ContentPicTF=@ContentPicTF,ContentPICurl=@ContentPICurl,ContentPicSize=@ContentPicSize,InHitoryDay=@InHitoryDay,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,FileName=@FileName,isComm=@isComm,NewsPosition=@NewsPosition,Defineworkey=@Defineworkey,isPage=0,ModelID='0' where ClassID='" + uc.ClassID.ToString() + "' " + Hg.Common.Public.getSessionStr() + "";
 
 			SqlParameter[] parm = insertClassContentParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
@@ -1113,7 +1113,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] insertClassContentParameters(Foosun.Model.ClassContent uc)
+		private SqlParameter[] insertClassContentParameters(Hg.Model.ClassContent uc)
 		{
 			SqlParameter[] param = new SqlParameter[42];
 			param[0] = new SqlParameter("@Defineworkey", SqlDbType.NVarChar, 255);
@@ -1209,8 +1209,8 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void del_recyleClass(string ClassID)
 		{
-            string str_sql = "DELETE FROM fs_news_Class_Map WHERE SiteClassId = '" + ClassID.ToString() + "'; Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
-			//string str_sql = "Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "DELETE FROM fs_news_Class_Map WHERE SiteClassId = '" + ClassID.ToString() + "'; Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Hg.Common.Public.getSessionStr() + "";
+			//string str_sql = "Update " + Pre + "news_Class Set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 			updateClass_News(ClassID);
 		}
@@ -1221,7 +1221,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void del_Class(string ClassID)
 		{
-			string str_sql = "Delete From " + Pre + "news_Class Where ClassID ='" + ClassID.ToString() + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "Delete From " + Pre + "news_Class Where ClassID ='" + ClassID.ToString() + "' " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 			delClass_News(ClassID);
 		}
@@ -1254,7 +1254,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getSubNewsID(string NewsID)
 		{
-			string Sql = "Select NewsID,getNewsID,NewsTitle,DataLib,TitleColor,TitleBTF,TitleITF,colsNum From " + Pre + "news_sub Where NewsID='" + NewsID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "Select NewsID,getNewsID,NewsTitle,DataLib,TitleColor,TitleBTF,TitleITF,colsNum From " + Pre + "news_sub Where NewsID='" + NewsID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1294,7 +1294,7 @@ namespace Foosun.SQLServerDAL
 			//{
 			//    for (int i = 0; i < dt.Rows.Count; i++)
 			//    {
-			string NewsSQL = "Delete From " + Pre + "news Where ClassID ='" + ClassID.ToString() + "' and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string NewsSQL = "Delete From " + Pre + "news Where ClassID ='" + ClassID.ToString() + "' and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, NewsSQL, null);
 			//    }
 			//    dt.Clear(); dt.Dispose();
@@ -1314,7 +1314,7 @@ namespace Foosun.SQLServerDAL
 			//{
 			//    for (int i = 0; i < dt.Rows.Count; i++)
 			//    {
-			string NewsSQL = "Update " + Pre + "news set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string NewsSQL = "Update " + Pre + "news set isRecyle=1 Where ClassID ='" + ClassID.ToString() + "' and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, NewsSQL, null);
 			//    }
 			//    dt.Clear(); dt.Dispose();
@@ -1339,7 +1339,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public void ChangeLock(string ClassID, int NUM)
 		{
-			string str_sql = "Update " + Pre + "news_Class Set isLock=" + NUM + "  Where ClassID='" + ClassID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "news_Class Set isLock=" + NUM + "  Where ClassID='" + ClassID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1349,7 +1349,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getLock(string ClassID)
 		{
-			string Sql = "Select isLock From " + Pre + "news_Class Where ClassID='" + ClassID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "Select isLock From " + Pre + "news_Class Where ClassID='" + ClassID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1360,7 +1360,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void resetClass()
 		{
-			string str_sql = "Update " + Pre + "news_Class Set ParentID=0 Where isLock=0 and isRecyle=0 and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "news_Class Set ParentID=0 Where isLock=0 and isRecyle=0 and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1370,7 +1370,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID">栏目ID</param>
 		public void resetOrder(int OrderID, string ClassID)
 		{
-			string str_sql = "Update " + Pre + "news_Class Set OrderID=" + OrderID + " Where ClassID='" + ClassID + "' and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "news_Class Set OrderID=" + OrderID + " Where ClassID='" + ClassID + "' and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1380,7 +1380,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getSouceClass()
 		{
-            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_Class where SiteID='" + Foosun.Global.Current.SiteID + "' and IsURL=0 AND isRecyle <> 1 AND isPage=0";
+            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "news_Class where SiteID='" + Hg.Global.Current.SiteID + "' and IsURL=0 AND isRecyle <> 1 AND isPage=0";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1391,7 +1391,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void delSouce(string ClassID)
 		{
-            string str_sql = "delete From fs_news_Class_Map; Delete From " + Pre + "news_Class Where ClassID='" + ClassID + "' and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+            string str_sql = "delete From fs_news_Class_Map; Delete From " + Pre + "news_Class Where ClassID='" + ClassID + "' and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1407,7 +1407,7 @@ namespace Foosun.SQLServerDAL
 			//{
 			string usql = "update " + Pre + "news_class set ParentID='" + tClassID + "' where ParentID='" + sClassID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, usql, null);
-			string str_sql = "Update " + Pre + "News Set ClassID='" + tClassID + "' Where ClassID='" + sClassID + "' and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "News Set ClassID='" + tClassID + "' Where ClassID='" + sClassID + "' and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 			//    dt.Clear(); dt.Dispose();
 			//}
@@ -1419,7 +1419,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void updateSouce1(string sClassID, string tClassID)
 		{
-			string str_sql = "Update " + Pre + "News Set ClassID='" + tClassID + "' Where ClassID='" + sClassID + "'  and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "News Set ClassID='" + tClassID + "' Where ClassID='" + sClassID + "'  and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1429,7 +1429,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void changeParent(string sClassID, string tClassID)
 		{
-			string str_sql = "Update " + Pre + "News_Class Set ParentID='" + tClassID + "' Where ClassID='" + sClassID + "'  and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "Update " + Pre + "News_Class Set ParentID='" + tClassID + "' Where ClassID='" + sClassID + "'  and SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 		}
 
@@ -1439,7 +1439,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void delClassAll()
 		{
-			string str_sql = "delete From " + Pre + "News_Class Where SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql = "delete From " + Pre + "News_Class Where SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 
 			//string Sql2 = "Select TableName From " + Pre + "sys_newsIndex order by id desc";
@@ -1450,7 +1450,7 @@ namespace Foosun.SQLServerDAL
 			//    {
 			//        for (int i = 0; i < rdr.Rows.Count; i++)
 			//        {
-			string str_sql1 = "delete From " + Pre + "news Where SiteID = '" + Foosun.Global.Current.SiteID + "'";
+			string str_sql1 = "delete From " + Pre + "news Where SiteID = '" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql1, null);
 			//        }
 			//        rdr.Clear(); rdr.Dispose();
@@ -1464,7 +1464,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="ClassID"></param>
 		public void clearNewsInfo(string ClassId)
 		{
-			string str_sql = "delete From " + Pre + "News where ClassID='" + ClassId.ToString() + "'" + Foosun.Common.Public.getSessionStr() + "";
+			string str_sql = "delete From " + Pre + "News where ClassID='" + ClassId.ToString() + "'" + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
 
 			//string Sql2 = "Select TableName From " + Pre + "sys_newsIndex order by id desc";
@@ -1475,7 +1475,7 @@ namespace Foosun.SQLServerDAL
 			//    {
 			//        for (int i = 0; i < rdr.Rows.Count; i++)
 			//        {
-			//            string str_sql1 = "delete From " + rdr.Rows[i]["TableName"].ToString() + " Where ClassID='" + ClassId.ToString() + "'" + Foosun.Common.Public.getSessionStr() + "";
+			//            string str_sql1 = "delete From " + rdr.Rows[i]["TableName"].ToString() + " Where ClassID='" + ClassId.ToString() + "'" + Hg.Common.Public.getSessionStr() + "";
 			//            DbHelper.ExecuteNonQuery(CommandType.Text, str_sql1, null);
 			//        }
 			//        rdr.Clear(); rdr.Dispose();
@@ -1489,7 +1489,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getClassInfo_Templet()
 		{
-			string Sql = "Select ClassID,ClassCname,ParentID From " + Pre + "News_Class where SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "Select ClassID,ClassCname,ParentID From " + Pre + "News_Class where SiteID='" + Hg.Global.Current.SiteID + "'";
 			DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			return rdr;
 		}
@@ -1501,7 +1501,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="_str"></param>
 		public void UpdateClassInfo(string strUpdate, string _str)
 		{
-			string Sql = "update " + Pre + "News_Class Set " + strUpdate + " where ClassID in (" + _str + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News_Class Set " + strUpdate + " where ClassID in (" + _str + ") " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -1518,7 +1518,7 @@ namespace Foosun.SQLServerDAL
 			//{
 			//    for (int i = 0; i < dt.Rows.Count; i++)
 			//    {
-			string Sql = "update " + Pre + "news Set Templet = '" + templet + "' where ClassID in (" + _str + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "news Set Templet = '" + templet + "' where ClassID in (" + _str + ") " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 			//    }
 			//    dt.Clear(); dt.Dispose();
@@ -1532,7 +1532,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="OrderID"></param>
 		public void updateOrderP(string ClassID, int OrderID)
 		{
-			string Sql = "update " + Pre + "News_Class Set OrderID=" + OrderID + " where ClassID ='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News_Class Set OrderID=" + OrderID + " where ClassID ='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -1552,7 +1552,7 @@ namespace Foosun.SQLServerDAL
 		/// 添加单页面
 		/// </summary>
 		/// <param name="uc"></param>
-		public void insertPage(Foosun.Model.PageContent uc)
+		public void insertPage(Hg.Model.PageContent uc)
 		{
 			string Sql = "insert into " + Pre + "News_Class(";
 			Sql += "ClassID,ClassCName,ClassEName,ParentID,IsURL,OrderID,NaviShowtf,MetaKeywords,MetaDescript,SiteID,isLock,isRecyle,ClassTemplet,SavePath,isDelPoint,Gpoint,iPoint,GroupNumber,CreatTime,isPage,PageContent,InHitoryDay,ContentPicTF,Checkint,ModelID,isunHTML,DataLib";
@@ -1566,9 +1566,9 @@ namespace Foosun.SQLServerDAL
 		/// 更新单页面
 		/// </summary>
 		/// <param name="uc"></param>
-		public void updatePage(Foosun.Model.PageContent uc)
+		public void updatePage(Hg.Model.PageContent uc)
 		{
-            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ClassCNameRefer=@ClassCNameRefer,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,ClassTemplet=@ClassTemplet,SavePath=@SavePath,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,isPage=@isPage,PageContent=@Content,InHitoryDay=0,ContentPicTF=0,Checkint=0,ModelID='0' where ClassID='" + uc.ClassID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "News_Class set ClassCName=@ClassCName,ClassCNameRefer=@ClassCNameRefer,ParentID=@ParentID,IsURL=@IsURL,OrderID=@OrderID,NaviShowtf=@NaviShowtf,MetaKeywords=@MetaKeywords,MetaDescript=@MetaDescript,ClassTemplet=@ClassTemplet,SavePath=@SavePath,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,isPage=@isPage,PageContent=@Content,InHitoryDay=0,ContentPicTF=0,Checkint=0,ModelID='0' where ClassID='" + uc.ClassID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 
 			SqlParameter[] parm = insertPageContentParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
@@ -1579,7 +1579,7 @@ namespace Foosun.SQLServerDAL
 		/// </summary>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		private SqlParameter[] insertPageContentParameters(Foosun.Model.PageContent uc)
+		private SqlParameter[] insertPageContentParameters(Hg.Model.PageContent uc)
 		{
 			SqlParameter[] param = new SqlParameter[20];
 			param[0] = new SqlParameter("@ClassID", SqlDbType.NVarChar, 12);
@@ -1722,7 +1722,7 @@ namespace Foosun.SQLServerDAL
 					sFilter += " and SUBSTRING(NewsProperty,7,1)='1'";
 					break;
 				case "my":
-					sFilter += " and Editor='" + Foosun.Global.Current.UserName + "'";
+					sFilter += " and Editor='" + Hg.Global.Current.UserName + "'";
 					break;
 				case "isHtml":
 					sFilter += " and a.isHtml=1";
@@ -1758,7 +1758,7 @@ namespace Foosun.SQLServerDAL
 			}
 			else
 			{
-				sFilter += " and a.SiteID='" + Foosun.Global.Current.SiteID + "'";
+				sFilter += " and a.SiteID='" + Hg.Global.Current.SiteID + "'";
 			}
 
 			if (Editor != "")
@@ -1858,7 +1858,7 @@ namespace Foosun.SQLServerDAL
             //        sFilter += " and SUBSTRING(NewsProperty,7,1)='1'";
             //        break;
             //    case "my":
-            //        sFilter += " and Editor='" + Foosun.Global.Current.UserName + "'";
+            //        sFilter += " and Editor='" + Hg.Global.Current.UserName + "'";
             //        break;
             //    case "isHtml":
             //        sFilter += " and a.isHtml=1";
@@ -1894,7 +1894,7 @@ namespace Foosun.SQLServerDAL
             //}
             //else
             //{
-            //    sFilter += " and a.SiteID='" + Foosun.Global.Current.SiteID + "'";
+            //    sFilter += " and a.SiteID='" + Hg.Global.Current.SiteID + "'";
             //}
 
             //if (Editor != "")
@@ -1937,7 +1937,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public int Del_news(string id)
 		{
-			string Sql = "update " + Pre + "News set isRecyle=1 where Id in (" + id + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set isRecyle=1 where Id in (" + id + ") " + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		/// <summary>
@@ -1964,7 +1964,7 @@ namespace Foosun.SQLServerDAL
 			{
 				delSubID(obj.ToString());
 			}
-			string Sql = "delete from " + Pre + "News where Id=" + Id + " " + Foosun.Common.Public.getSessionStr();
+			string Sql = "delete from " + Pre + "News where Id=" + Id + " " + Hg.Common.Public.getSessionStr();
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		/// <summary>
@@ -1976,7 +1976,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public int Update_Lock(string id, int nums)
 		{
-			string Sql = "update " + Pre + "News set isLock=" + nums + " where Id in (" + id + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set isLock=" + nums + " where Id in (" + id + ") " + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		/// <summary>
@@ -1987,7 +1987,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public int Update_ResetOrde(string id)
 		{
-			string Sql = "update " + Pre + "News set OrderID=0 where Id in (" + id + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set OrderID=0 where Id in (" + id + ") " + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -2031,46 +2031,46 @@ namespace Foosun.SQLServerDAL
 		}
 		public int del_new_News(string id)
 		{
-			string Sql = "delete from " + Pre + "News where Id in (" + id + ") " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "delete from " + Pre + "News where Id in (" + id + ") " + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		public int settop(string id)
 		{
-			string Sql = "update " + Pre + "News set OrderID=10 where  Id=" + id + " " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set OrderID=10 where  Id=" + id + " " + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		public int unsettop(string id)
 		{
-			string Sql = "update " + Pre + "News set OrderID=0 where Id=" + id + "" + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set OrderID=0 where Id=" + id + "" + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
 		public int delNumber(string ClassID)
 		{
-			int delCount = int.Parse(Foosun.Common.Public.readparamConfig("delinfoNumber", "refresh"));
+			int delCount = int.Parse(Hg.Common.Public.readparamConfig("delinfoNumber", "refresh"));
 			string whereStr = "";
 			if (delCount != 0)
 			{
-				string cSQL = "select count(id) from " + Pre + "News where ClassID='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + "";
+				string cSQL = "select count(id) from " + Pre + "News where ClassID='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + "";
 				int tCount = Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, cSQL, null));
 				if (delCount < tCount)
 				{
-					string gSQL = "select top " + delCount + " id from " + Pre + "News where ClassID='" + ClassID + "' " + Foosun.Common.Public.getSessionStr() + " order by id desc";
+					string gSQL = "select top " + delCount + " id from " + Pre + "News where ClassID='" + ClassID + "' " + Hg.Common.Public.getSessionStr() + " order by id desc";
 					int gCount = Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, gSQL, null));
 					whereStr = " and id>=" + gCount + "";
 				}
 			}
-			string Sql = "delete from " + Pre + "News where ClassID='" + ClassID + "' " + whereStr + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "delete from " + Pre + "News where ClassID='" + ClassID + "' " + whereStr + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		public DataTable sel_JS()
 		{
-			string Sql = "select JsID,JSName from " + Pre + "News_JS where SiteID='" + Foosun.Global.Current.SiteID + "' and jsType=1";
+			string Sql = "select JsID,JSName from " + Pre + "News_JS where SiteID='" + Hg.Global.Current.SiteID + "' and jsType=1";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 		public DataTable sel_JSNews(string NewsID)
 		{
-			string Sql = "select NewsID,NewsTitle,PicURL,ClassID,CreatTime from " + Pre + "News where SiteID='" + Foosun.Global.Current.SiteID + "' and Id='" + NewsID + "'";
+			string Sql = "select NewsID,NewsTitle,PicURL,ClassID,CreatTime from " + Pre + "News where SiteID='" + Hg.Global.Current.SiteID + "' and Id='" + NewsID + "'";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
         public int Add_JSFile(string JsID, string Njf_title, string NewsId, string PicPath, string ClassId, string SiteID, DateTime CreatTime, DateTime TojsTime)
@@ -2107,7 +2107,7 @@ namespace Foosun.SQLServerDAL
         }
 		public DataTable sel_News_Class()
 		{
-			string Sql = "select ClassID,ClassCName,ParentID from " + Pre + "News_Class where isURL=0 and isLock=0 and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "select ClassID,ClassCName,ParentID from " + Pre + "News_Class where isURL=0 and isLock=0 and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "'";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 		public DataTable sel_LblNewsTable(string LblNewsTable, string s)
@@ -2117,7 +2117,7 @@ namespace Foosun.SQLServerDAL
 		}
 		public DataTable sel_PID(string PID)
 		{
-			string Sql = "select ClassID,ClassCName,ParentID from " + Pre + "News_Class where ParentID='" + PID + "' and isURL=0 and isLock=0 and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "select ClassID,ClassCName,ParentID from " + Pre + "News_Class where ParentID='" + PID + "' and isURL=0 and isLock=0 and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "'";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 		public int del_move(string sTb, string sOrgNews)
@@ -2163,7 +2163,7 @@ namespace Foosun.SQLServerDAL
 
 		public string getFileNameInfo(string NewsID, string DataLib)
 		{
-			string flg = Foosun.Common.Rand.Number(5);
+			string flg = Hg.Common.Rand.Number(5);
 			NewsID = NewsID.Replace("'", "");
 			string Sql = "select FileName from " + DataLib + " where NewsID ='" + NewsID + "'";
 			DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
@@ -2259,7 +2259,7 @@ namespace Foosun.SQLServerDAL
 				{
 					Sql += "FileEXName='" + FileEXName + "'";
 				}
-				Sql = Foosun.Common.Public.Lost(Sql) + " where NewsID in (" + sOrgNews + ")";
+				Sql = Hg.Common.Public.Lost(Sql) + " where NewsID in (" + sOrgNews + ")";
 				return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 			}
 
@@ -2337,7 +2337,7 @@ namespace Foosun.SQLServerDAL
 			}
 			string Sql = "update " + Pre + "news SET checkstat = CASE WHEN checkstat IS NULL THEN '0|0|0|0' ";
 			Sql += "when checkstat<>'0|0|0|0' then SUBSTRING(checkstat,1,1)+'|0|0|0' else '0|0|0|0' END,islock=0";
-			Sql += " where Id in (" + ids.TrimEnd(',') + ") " + Foosun.Common.Public.getSessionStr();
+			Sql += " where Id in (" + ids.TrimEnd(',') + ") " + Hg.Common.Public.getSessionStr();
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -2373,7 +2373,7 @@ namespace Foosun.SQLServerDAL
 			}
 
 			string RCheckStat = cSTR1 + "|" + cSTR2 + "|" + cSTR3 + "|" + cSTR4;
-			string Sql = "update " + Pre + "News set CheckStat='" + RCheckStat + "' where Id = " + getID + " " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "update " + Pre + "News set CheckStat='" + RCheckStat + "' where Id = " + getID + " " + Hg.Common.Public.getSessionStr() + "";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 
 			string gSQL = "select NewsProperty,CheckStat,islock,NewsID,NewsType,CreatTime,DataLib,NewsType,isConstr,ClassID from " + Pre + "News where ID=" + getID + "";
@@ -2387,10 +2387,10 @@ namespace Foosun.SQLServerDAL
 				if (Tmp1 == "0|0|0")
 				{
 					//int intisConstr = 0;
-					//if (Foosun.Common.Input.IsInteger(dts.Rows[0]["isConstr"].ToString())) { intisConstr = int.Parse(dts.Rows[0]["isConstr"].ToString()); }
+					//if (Hg.Common.Input.IsInteger(dts.Rows[0]["isConstr"].ToString())) { intisConstr = int.Parse(dts.Rows[0]["isConstr"].ToString()); }
 					//insertFormTB(dts.Rows[0]["NewsProperty"].ToString(), dts.Rows[0]["NewsID"].ToString(), DateTime.Parse(dts.Rows[0]["CreatTime"].ToString()), TableName, int.Parse(dts.Rows[0]["NewsType"].ToString()), intisConstr, 3000, 0, dts.Rows[0]["ClassID"].ToString());
 					//更新状态
-					string Sqls = "update " + Pre + "News set islock=0 where Id = " + getID + " " + Foosun.Common.Public.getSessionStr() + "";
+					string Sqls = "update " + Pre + "News set islock=0 where Id = " + getID + " " + Hg.Common.Public.getSessionStr() + "";
 					DbHelper.ExecuteNonQuery(CommandType.Text, Sqls, null);
 				}
 				dts.Clear(); dts.Dispose();
@@ -2413,11 +2413,11 @@ namespace Foosun.SQLServerDAL
 			string Sql = "";
 			if (UserName == "0")
 			{//0|0|0|0
-				Sql = "select TOP 5 NewsId,NewsTitle,CheckStat,CreatTime,ClassID from " + Pre + "news where substring(CheckStat,3,5)!='0|0|0' and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "' order by Id desc";
+				Sql = "select TOP 5 NewsId,NewsTitle,CheckStat,CreatTime,ClassID from " + Pre + "news where substring(CheckStat,3,5)!='0|0|0' and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "' order by Id desc";
 			}
 			else
 			{
-				Sql = "select TOP 5 NewsId,NewsTitle,CheckStat,CreatTime,ClassID from " + Pre + "news where isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "' and Editor='" + UserName + "' order by Id desc";
+				Sql = "select TOP 5 NewsId,NewsTitle,CheckStat,CreatTime,ClassID from " + Pre + "news where isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "' and Editor='" + UserName + "' order by Id desc";
 			}
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
@@ -2438,7 +2438,7 @@ namespace Foosun.SQLServerDAL
 		public DataTable GetPages(int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
 		{
 			string AllFields = "*";
-			string Condition = "(SELECT DISTINCT Unid,(Select top 1 UnName from [" + Pre + "News_unNews] where unid=a.unid order by [rows],id desc) as UnName from [" + Pre + "News_unNews] a where 1=1" + Foosun.Common.Public.getSessionStr() + ") Unnews";
+			string Condition = "(SELECT DISTINCT Unid,(Select top 1 UnName from [" + Pre + "News_unNews] where unid=a.unid order by [rows],id desc) as UnName from [" + Pre + "News_unNews] a where 1=1" + Hg.Common.Public.getSessionStr() + ") Unnews";
 			string IndexField = "Unid";
 			string OrderFields = "order by Unid Desc";
 			return DbHelper.ExecutePage(AllFields, Condition, IndexField, OrderFields, PageIndex, PageSize, out RecordCount, out PageCount, null);
@@ -2451,7 +2451,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public int Str_DelSql(string UnID)
 		{
-			string Sql = "delete " + Pre + "news_unNews WHERE UnID='" + UnID + "'" + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "delete " + Pre + "news_unNews WHERE UnID='" + UnID + "'" + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -2462,7 +2462,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable sel(string unNewsid)
 		{
-			string Sql = "Select unName,titleCSS,SubCSS,UnID,ONewsID,[Rows],unTitle,NewsTable From [" + Pre + "news_unNews] where UnID='" + unNewsid + "'" + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "Select unName,titleCSS,SubCSS,UnID,ONewsID,[Rows],unTitle,NewsTable From [" + Pre + "news_unNews] where UnID='" + unNewsid + "'" + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 
@@ -2480,7 +2480,7 @@ namespace Foosun.SQLServerDAL
 
 		public int sel_unNewsid(string unNewsid)
 		{
-			string Sql = "Select count(id) From [" + Pre + "News_unNews] where UnID='" + unNewsid + "'" + Foosun.Common.Public.getSessionStr();
+			string Sql = "Select count(id) From [" + Pre + "News_unNews] where UnID='" + unNewsid + "'" + Hg.Common.Public.getSessionStr();
 			return (int)DbHelper.ExecuteScalar(CommandType.Text, Sql, null);
 		}
 
@@ -2493,7 +2493,7 @@ namespace Foosun.SQLServerDAL
 
 		public void delUnID(string UnID)
 		{
-			string Sql = "delete from  " + Pre + "News_unNews where UnID='" + UnID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "delete from  " + Pre + "News_unNews where UnID='" + UnID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 
@@ -2595,7 +2595,7 @@ namespace Foosun.SQLServerDAL
 		/// <returns></returns>
 		public DataTable getUNews(string unNewsid)
 		{
-			string Sql = "Select NewsID,NewsTitle,getNewsID,colsNum,DataLib,titleCSS From [" + Pre + "news_Sub] where NewsID='" + unNewsid + "'" + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "Select NewsID,NewsTitle,getNewsID,colsNum,DataLib,titleCSS From [" + Pre + "news_Sub] where NewsID='" + unNewsid + "'" + Hg.Common.Public.getSessionStr() + "";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 
@@ -2605,7 +2605,7 @@ namespace Foosun.SQLServerDAL
 		/// <param name="UnID"></param>
 		public void delSubID(string UnID)
 		{
-			string Sql = "delete from " + Pre + "News_Sub where NewsID='" + UnID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+			string Sql = "delete from " + Pre + "News_Sub where NewsID='" + UnID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
 		}
 		public DataTable sel_TbClass()
@@ -2754,7 +2754,7 @@ namespace Foosun.SQLServerDAL
 		public string modifyNewsDefineValue(string defineColumns, string NewsID, string DataLib, string DsApiID)
 		{
 			string _STR = " | ";
-			string Sql = "select DsEname,DsContent from " + Pre + "define_save where DsEname='" + defineColumns + "' and DsNewsID='" + NewsID + "' and DsNewsTable='" + DataLib + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
+			string Sql = "select DsEname,DsContent from " + Pre + "define_save where DsEname='" + defineColumns + "' and DsNewsID='" + NewsID + "' and DsNewsTable='" + DataLib + "' and DsApiID='" + DsApiID + "' " + Hg.Common.Public.getSessionStr() + "";
 			DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 			if (dt != null)
 			{
@@ -2780,9 +2780,9 @@ namespace Foosun.SQLServerDAL
 				}
 				dt.Clear(); dt.Dispose();
 			}
-            //string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Foosun.Global.Current.SiteID + "')";
+            //string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Hg.Global.Current.SiteID + "')";
             //DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
-            //string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Foosun.Global.Current.SiteID + "')";
+            //string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Hg.Global.Current.SiteID + "')";
             string Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID)" +
                           "VALUES (@DsNewsID ,@DsEName ,@DsNewsTable ,@DsType,@DsContent ,@DsApiID ,@SiteID)";
             SqlParameter[] paramerters = new SqlParameter[7];
@@ -2799,7 +2799,7 @@ namespace Foosun.SQLServerDAL
             paramerters[5] = new SqlParameter("@DsApiID", SqlDbType.NVarChar, 30);
             paramerters[5].Value = DsApiID;
             paramerters[6] = new SqlParameter("@SiteID", SqlDbType.NVarChar, 12);
-            paramerters[6].Value = Foosun.Global.Current.SiteID;
+            paramerters[6].Value = Hg.Global.Current.SiteID;
 
 
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, paramerters);
@@ -2815,19 +2815,19 @@ namespace Foosun.SQLServerDAL
 			{
                 //if (dt.Rows.Count > 0)
                 //{
-                //    Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
+                //    Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Hg.Common.Public.getSessionStr() + "";
                 //}
                 //else
                 //{
-                //    Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Foosun.Global.Current.SiteID + "')";
+                //    Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Hg.Global.Current.SiteID + "')";
                 //}
                 //DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
                 SqlParameter[] paramerters;
 
                 if (dt.Rows.Count > 0)
                 {
-                    // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
-                    // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Foosun.Common.Public.getSessionStr() + "";
+                    // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Hg.Common.Public.getSessionStr() + "";
+                    // Sql = "update " + Pre + "define_save set DsNewsTable='" + DsNewsTable + "',DsContent='" + DsContent + "' where DsNewsID='" + DsNewsID + "' and DsEName='" + DsEName + "' and DsApiID='" + DsApiID + "' " + Hg.Common.Public.getSessionStr() + "";
                     Sql = "UPDATE " + Pre + "define_save " +
                                " SET DsNewsTable =@DsNewsTable " +
                                 ",DsContent=@DsContent " +
@@ -2851,17 +2851,17 @@ namespace Foosun.SQLServerDAL
                     paramerters[4] = new SqlParameter("@DsApiID", SqlDbType.NVarChar, 30);
                     paramerters[4].Value = DsApiID;
                     paramerters[5] = new SqlParameter("@SiteID", SqlDbType.NVarChar, 12);
-                    paramerters[5].Value = Foosun.Common.Public.getSessionStr();
+                    paramerters[5].Value = Hg.Common.Public.getSessionStr();
                     if (paramerters[5].Value.ToString() == string.Empty)
                     {
-                        paramerters[5].Value = Foosun.Global.Current.SiteID;
+                        paramerters[5].Value = Hg.Global.Current.SiteID;
 
                     }
 
                 }
                 else
                 {
-                    //Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Foosun.Global.Current.SiteID + "')";
+                    //Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID) VALUES ('" + DsNewsID + "','" + DsEName + "','" + DsNewsTable + "'," + DsType + ",'" + DsContent + "','" + DsApiID + "','" + Hg.Global.Current.SiteID + "')";
                     Sql = "insert into " + Pre + "define_save (DsNewsID,DsEname,DsNewsTable,DsType,DsContent,DsApiID,SiteID)" +
                           "VALUES (@DsNewsID ,@DsEName ,@DsNewsTable ,@DsType,@DsContent ,@DsApiID ,@SiteID)";
                     paramerters = new SqlParameter[7];
@@ -2878,7 +2878,7 @@ namespace Foosun.SQLServerDAL
                     paramerters[5] = new SqlParameter("@DsApiID", SqlDbType.NVarChar, 30);
                     paramerters[5].Value = DsApiID;
                     paramerters[6] = new SqlParameter("@SiteID", SqlDbType.NVarChar, 12);
-                    paramerters[6].Value = Foosun.Global.Current.SiteID;
+                    paramerters[6].Value = Hg.Global.Current.SiteID;
 
                 }
                 DbHelper.ExecuteNonQuery(CommandType.Text, Sql, paramerters);
@@ -2939,7 +2939,7 @@ namespace Foosun.SQLServerDAL
 
 		public DataTable getLastFormTB()
 		{
-			string Sql = "select id,NewsID,DataLib,NewsType from " + Pre + "news where islock=0 and isRecyle=0 and siteID='" + Foosun.Global.Current.SiteID + "' order by CreatTime desc,id desc";
+			string Sql = "select id,NewsID,DataLib,NewsType from " + Pre + "news where islock=0 and isRecyle=0 and siteID='" + Hg.Global.Current.SiteID + "' order by CreatTime desc,id desc";
 			return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
 		}
 
@@ -2959,7 +2959,7 @@ namespace Foosun.SQLServerDAL
 			//{
 			//    if (nID[i].Trim() != "")
 			//    {
-			//        if (Foosun.Common.Input.IsInteger(nID[i]) == false){continue;}
+			//        if (Hg.Common.Input.IsInteger(nID[i]) == false){continue;}
 			//        else
 			//        {
 			//            string gSQL = "select NewsID from " + Pre + "News where ID='" + int.Parse(nID[i]) + "'";
@@ -3110,8 +3110,8 @@ namespace Foosun.SQLServerDAL
 			string newspath = string.Empty;
 			string newspath1 = string.Empty;
 			string sql = string.Empty;
-			string dim = Foosun.Config.UIConfig.dirDumm.Trim();
-			string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+			string dim = Hg.Config.UIConfig.dirDumm.Trim();
+			string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
 			if (dim != string.Empty) { dim = "/" + dim; }
 			SqlParameter param = new SqlParameter("@ID", ID);
 			if (gType != "special")
@@ -3252,7 +3252,7 @@ namespace Foosun.SQLServerDAL
 				cn.Open();
 				string NewsPosition = "";
 				string url = "";
-				string dim = Foosun.Config.UIConfig.dirDumm;
+				string dim = Hg.Config.UIConfig.dirDumm;
 				if (dim.Trim() != string.Empty)
 				{
 					dim = "/" + dim;
@@ -3659,7 +3659,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="uc"></param>
         /// <returns></returns>
-        private SqlParameter[] InsertColumnMapParameters(Foosun.Model.SiteColumnMapInfo ucv)
+        private SqlParameter[] InsertColumnMapParameters(Hg.Model.SiteColumnMapInfo ucv)
         {
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@CpClassId", SqlDbType.VarChar, 50);

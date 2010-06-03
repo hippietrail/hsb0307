@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.customform
+namespace Hg.Web.customform
 {
-    public partial class CustomFormJS : Foosun.Web.UI.BasePage
+    public partial class CustomFormJS : Hg.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace Foosun.Web.customform
                 try
                 {
                     int id = int.Parse(Request.QueryString["CustomFormID"]);
-                    Foosun.CMS.CustomForm cf = new Foosun.CMS.CustomForm();
+                    Hg.CMS.CustomForm cf = new Hg.CMS.CustomForm();
                     string s = cf.GetHtmlCode(id);
                     s = s.Replace(@"'", @"\'");
                     s = s.Replace("\r\n", " ");

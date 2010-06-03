@@ -13,7 +13,7 @@ public partial class controls_UserPop : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
-            Foosun.CMS.Common.rootPublic rp = new Foosun.CMS.Common.rootPublic();
+            Hg.CMS.Common.rootPublic rp = new Hg.CMS.Common.rootPublic();
             IDataReader rd = rp.GetGroupList();
             while (rd.Read())
             {

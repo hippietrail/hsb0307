@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
         rel="stylesheet" type="text/css" />
 
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
@@ -165,7 +165,7 @@ function Hint()
 <script language="javascript" type="text/javascript">
 function getDownfilexml()
 {
-    if(confirm('您确认要重新从风讯(Foosun.net)下载 [文件包] 吗?\n如果您确认。请点[确定]按钮'))
+    if(confirm('您确认要重新从风讯(Hg.net)下载 [文件包] 吗?\n如果您确认。请点[确定]按钮'))
     {
 	    var ifm = document.getElementById("downloadfromfoosun");
 	    ifm.src = "<%Response.Write(ReloadURL);%>";

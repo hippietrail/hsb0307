@@ -4,11 +4,11 @@
 <head>
 <title>∞Ô÷˙π‹¿Ì</title>
 <script type="text/javascript" src="../editor/fckeditor.js"></script>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <form id="HelpAdd" runat="server" action="HelpAdd.aspx" method="post">
-  <table width="98%" align="center" height="32" border="0" cellpadding="0" cellspacing="0" background="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
+  <table width="98%" align="center" height="32" border="0" cellpadding="0" cellspacing="0" background="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
     <tr>
       <td Height="1" colspan="2"></td>
     </tr>

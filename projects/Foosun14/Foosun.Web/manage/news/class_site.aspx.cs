@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_class_site : Foosun.Web.UI.ManagePage
+public partial class manage_news_class_site : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ public partial class manage_news_class_site : Foosun.Web.UI.ManagePage
             string QMID = dr["QMID"].ToString();
             string qName = dr["qName"].ToString();
             string FilePath = dr["FilePath"].ToString();
-            qflg = qflg + " <li style=\"list-style:none;padding-left:5px;\"><img src='../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt=\"\" border=\"0\">";
+            qflg = qflg + " <li style=\"list-style:none;padding-left:5px;\"><img src='../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_dot_21.gif' alt=\"\" border=\"0\">";
             qflg = qflg + "<a class=\"menulist\" href=\"" + FilePath + "\" target=\"sys_main\">" + qName + "</a></li>";
             i++;
         }

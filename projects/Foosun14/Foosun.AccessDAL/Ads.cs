@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Ads : DbBase, IAds
     {
         private string SiteID;
         public Ads()
         {
-            SiteID = Foosun.Global.Current.SiteID;
+            SiteID = Hg.Global.Current.SiteID;
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="ali"></param>
         /// <returns></returns>
-        public DataTable list(Foosun.Model.AdsListInfo ali)
+        public DataTable list(Hg.Model.AdsListInfo ali)
         {
             string tempselect = string.Empty;
             string str_Sql = "";
@@ -255,11 +255,11 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="aci"></param>
         /// <returns></returns>
-        public int AddClass(Foosun.Model.AdsClassInfo aci)
+        public int AddClass(Hg.Model.AdsClassInfo aci)
         {
             string checkSql = "";
             int recordCount = 0;
-            string AcID = Foosun.Common.Rand.Number(12);
+            string AcID = Hg.Common.Rand.Number(12);
             while (true)
             {
                 checkSql = "select count(*) from " + Pre + "ads_class where AcID='" + AcID + "'";
@@ -267,7 +267,7 @@ namespace Foosun.AccessDAL
                 if (recordCount < 1)
                     break;
                 else
-                    AcID = Foosun.Common.Rand.Number(12, true);
+                    AcID = Hg.Common.Rand.Number(12, true);
             }
             checkSql = "select count(*) from " + Pre + "ads_class where Cname='" + aci.Cname + "'";
             recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
@@ -287,7 +287,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="aci"></param>
         /// <returns></returns>
-        public int EditClass(Foosun.Model.AdsClassInfo aci)
+        public int EditClass(Hg.Model.AdsClassInfo aci)
         {
             string checkSql = "select count(*) from " + Pre + "ads_class Where AcID<>'" + aci.AcID + "' And Cname='" + aci.Cname + "'";
             int recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
@@ -337,12 +337,12 @@ namespace Foosun.AccessDAL
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
         }
 
-        public string adsAdd(Foosun.Model.AdsInfo ai)
+        public string adsAdd(Hg.Model.AdsInfo ai)
         {
             string AdID = "";
             string checkSql = "";
             int recordCount = 0;
-            AdID = Foosun.Common.Rand.Number(15);
+            AdID = Hg.Common.Rand.Number(15);
             while (true)
             {
                 checkSql = "select count(*) from " + Pre + "ads where AdID='" + AdID + "'";
@@ -350,7 +350,7 @@ namespace Foosun.AccessDAL
                 if (recordCount < 1)
                     break;
                 else
-                    AdID = Foosun.Common.Rand.Number(15, true);
+                    AdID = Hg.Common.Rand.Number(15, true);
             }
             checkSql = "select count(*) from " + Pre + "ads where adName='" + ai.adName + "'";
             recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
@@ -380,7 +380,7 @@ namespace Foosun.AccessDAL
             return AdID;
         }
 
-        public int adsEdit(Foosun.Model.AdsInfo ai)
+        public int adsEdit(Hg.Model.AdsInfo ai)
         {
             string checkSql = "";
             int recordCount = 0;
@@ -561,16 +561,16 @@ namespace Foosun.AccessDAL
         }
         public DataTable getuserG()
         {
-            string str_Sql = "Select gPoint From " + Pre + "sys_User Where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string str_Sql = "Select gPoint From " + Pre + "sys_User Where UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
         }
         public void DelUserG(int Gnum)
         {
-            string str_Sql = "Update " + Pre + "sys_User Set gPoint=gPoint-" + Gnum + " Where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string str_Sql = "Update " + Pre + "sys_User Set gPoint=gPoint-" + Gnum + " Where UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_Sql, null);
         }
 
-        private OleDbParameter[] GetAdsParameters(Foosun.Model.AdsInfo ai)
+        private OleDbParameter[] GetAdsParameters(Hg.Model.AdsInfo ai)
         {
             OleDbParameter[] param = new OleDbParameter[24];
             param[0] = new OleDbParameter("@AdID", OleDbType.VarWChar, 15);
@@ -634,7 +634,7 @@ namespace Foosun.AccessDAL
         }
 
 
-        private OleDbParameter[] GetClassParameters(Foosun.Model.AdsClassInfo aci)
+        private OleDbParameter[] GetClassParameters(Hg.Model.AdsClassInfo aci)
         {
             OleDbParameter[] param = new OleDbParameter[6];
             param[0] = new OleDbParameter("@AcID", OleDbType.VarWChar, 12);

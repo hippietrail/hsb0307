@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
     public class FileCompare
     {

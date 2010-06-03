@@ -8,19 +8,19 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Publish;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Publish;
+using Hg.Model;
 using System.Text.RegularExpressions;
 
 
-namespace Foosun.Web
+namespace Hg.Web
 {
-    public partial class list : Foosun.Web.UI.BasePage
+    public partial class list : Hg.Web.UI.BasePage
     {
-        protected static string dimm = Foosun.Config.UIConfig.dirDumm;
-        protected static string TempletDir = Foosun.Config.UIConfig.dirTemplet;
-        protected static string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+        protected static string dimm = Hg.Config.UIConfig.dirDumm;
+        protected static string TempletDir = Hg.Config.UIConfig.dirTemplet;
+        protected static string SiteRootPath = Hg.Common.ServerInfo.GetRootPath();
         public static string gInstallDir = "{$InstallDir}";
         public static string gTempletDir = "{$TempletDir}";
         protected void Page_Load(object sender, EventArgs e)
@@ -31,14 +31,14 @@ namespace Foosun.Web
             int ChID = 0;
             if (gChID != null && gChID != string.Empty)
             {
-                if (Foosun.Common.Input.IsInteger(gChID.ToString()))
+                if (Hg.Common.Input.IsInteger(gChID.ToString()))
                 {
                     ChID = int.Parse(gChID.ToString());
                 }
             }
             int strPage = 1;
             if (dimm.Trim() != string.Empty) { dimm = "/" + dimm; }
-            if (gPage != string.Empty && gPage != null && Foosun.Common.Input.IsInteger(gPage))
+            if (gPage != string.Empty && gPage != null && Hg.Common.Input.IsInteger(gPage))
             {
                 strPage = int.Parse(gPage);
             }
@@ -52,8 +52,8 @@ namespace Foosun.Web
                 PubCHClassInfo chinfo = CommonData.GetCHClassById(int.Parse(ClassID));
                 if (chinfo != null)
                 {
-                    string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-                    dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                    string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+                    dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                     TMPSavePath = chinfo.SavePath.Trim();
                     if (TMPSavePath.Substring(0, 1) != "/") { TMPSavePath = "\\" + TMPSavePath; }
                     saveClassPath = (dirHTML + TMPSavePath + "\\" + chinfo.FileName.Trim()).Replace("/", @"\\");
@@ -95,7 +95,7 @@ namespace Foosun.Web
             {
                 getContent = getjs() + getContent;
             }
-            getContent = (getContent.Replace(gInstallDir, Foosun.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
+            getContent = (getContent.Replace(gInstallDir, Hg.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
             Response.Write(getContent);
         }
 
@@ -103,14 +103,14 @@ namespace Foosun.Web
         {
             #region 扣点
             string getContent = string.Empty;
-            if (Foosun.Global.Current.IsTimeout())
+            if (Hg.Global.Current.IsTimeout())
             {
-                string Url = Foosun.Common.Input.URLEncode(Request.Url.ToString());
-                Response.Redirect(Foosun.Config.UIConfig.dirUser + "/login.aspx?reurl=1&urls=" + Url + "", true);
+                string Url = Hg.Common.Input.URLEncode(Request.Url.ToString());
+                Response.Redirect(Hg.Config.UIConfig.dirUser + "/login.aspx?reurl=1&urls=" + Url + "", true);
             }
             else
             {
-                string UserNum = Foosun.Global.Current.UserNum;
+                string UserNum = Hg.Global.Current.UserNum;
                 string IP = Request.ServerVariables["REMOTE_ADDR"];
                 int PointType = isPop;
                 //新闻的参数
@@ -258,7 +258,7 @@ namespace Foosun.Web
 
         protected bool getGroup(string uGroup, string nGroup)
         {
-            return Foosun.Common.Public.CommgetGroup(uGroup, nGroup);
+            return Hg.Common.Public.CommgetGroup(uGroup, nGroup);
         }
 
 
@@ -293,7 +293,7 @@ namespace Foosun.Web
                     Match match = reg.Match(PageMid);
                     if (match.Success)
                     {
-                        if (Foosun.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass)
+                        if (Hg.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass)
                         {
                             string PageStr = match.Value;
                             int posPage = PageStr.IndexOf("}{Page:");
@@ -347,8 +347,8 @@ namespace Foosun.Web
 
         protected static string getjs()
         {
-            string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
-            getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
+            string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
+            getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
             getajaxJS += "<!--Created by dotNETCMS v1.0 For Foosun Inc. at " + DateTime.Now + "-->\r\n";
             return getajaxJS;
         }

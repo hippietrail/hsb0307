@@ -18,9 +18,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
-public partial class manage_news_Frame : Foosun.Web.UI.ManagePage
+using Hg.CMS;
+using Hg.Model;
+public partial class manage_news_Frame : Hg.Web.UI.ManagePage
 {
     ContentManage rd = new ContentManage();
     protected void Page_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ public partial class manage_news_Frame : Foosun.Web.UI.ManagePage
             }
             else
             {
-                Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+                Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
                 DataTable dc = agc.getClassList("SpecialID,SpecialCName,ParentID", "news_special", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
                 listShow(dc, "0", 0, Special);
                 dc.Clear(); dc.Dispose();

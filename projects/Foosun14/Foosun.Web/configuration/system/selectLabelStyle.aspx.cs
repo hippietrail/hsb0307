@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.Text.RegularExpressions;
 
-public partial class configuration_system_selectLabelStyle : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectLabelStyle : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectLabelStyle()
     {
@@ -61,7 +61,7 @@ public partial class configuration_system_selectLabelStyle : Foosun.Web.UI.Dialo
                     {
                         string tmContent = ldt.Rows[k]["Content"].ToString();
                         tmContent = Regex.Replace(tmContent, @"<img(.+?){(.+?)}(.+?)>", "<img src=\"../../SysImages/folder/spic.png\" border=\"0\" title=\"样式中的标签\" />", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                        liststr += "<img src=\"../../sysImages/folder/folderup.gif\" border=\"0\" class=\"SubItems\" /><a href=\"javascript:void(0);\" onclick=\"getReview1('s" + ldt.Rows[k]["styleID"].ToString() + "')\"><img src=\"../../SysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" title=\"预览\" border=\"0\"></a> <span id=\"" + ldt.Rows[k]["styleID"] + "\" class=\"LableItem\" ondblclick=\"ReturnValue(document.form1.styleID.value);\" onClick=\"SelectLable(this);sFiles('" + ldt.Rows[k]["styleID"] + "');\" title=\"双击选择||描述：" + ldt.Rows[k]["Description"] + "\">" + ldt.Rows[k]["StyleName"] + "</span><div style=\"background-color:#FFFAE2;\" id=\"s" + ldt.Rows[k]["styleID"].ToString() + "\" style=\"display:none;\">" + tmContent + "</div><br />";
+                        liststr += "<img src=\"../../sysImages/folder/folderup.gif\" border=\"0\" class=\"SubItems\" /><a href=\"javascript:void(0);\" onclick=\"getReview1('s" + ldt.Rows[k]["styleID"].ToString() + "')\"><img src=\"../../SysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" title=\"预览\" border=\"0\"></a> <span id=\"" + ldt.Rows[k]["styleID"] + "\" class=\"LableItem\" ondblclick=\"ReturnValue(document.form1.styleID.value);\" onClick=\"SelectLable(this);sFiles('" + ldt.Rows[k]["styleID"] + "');\" title=\"双击选择||描述：" + ldt.Rows[k]["Description"] + "\">" + ldt.Rows[k]["StyleName"] + "</span><div style=\"background-color:#FFFAE2;\" id=\"s" + ldt.Rows[k]["styleID"].ToString() + "\" style=\"display:none;\">" + tmContent + "</div><br />";
                     }
                 }
                 ldt.Clear();

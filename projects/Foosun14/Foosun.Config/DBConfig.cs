@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 using System.Web;
-namespace Foosun.Config
+namespace Hg.Config
 {
     public class DBConfig
     {
@@ -15,7 +15,7 @@ namespace Foosun.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["foosun"].ConnectionString;
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     return getConnectionString(tstr);
                 }
@@ -30,7 +30,7 @@ namespace Foosun.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["HelpKey"].ConnectionString;
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     return getConnectionString(tstr);
                 }
@@ -45,7 +45,7 @@ namespace Foosun.Config
             get
             {
                 string tstr = ConfigurationManager.ConnectionStrings["Collect"].ConnectionString;
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     return getConnectionString(tstr);
                 }
@@ -88,6 +88,6 @@ namespace Foosun.Config
             return conns;
         }
 
-        public static readonly string TableNamePrefix = Foosun.Config.UIConfig.dataRe;
+        public static readonly string TableNamePrefix = Hg.Config.UIConfig.dataRe;
     }
 }

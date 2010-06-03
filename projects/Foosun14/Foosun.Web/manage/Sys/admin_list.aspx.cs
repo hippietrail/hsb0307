@@ -11,16 +11,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_admin_list : Hg.Web.UI.ManagePage
 {
     public manage_Sys_admin_list()
     {
         Authority_Code = "Q010";
     }
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -32,7 +32,7 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
             {
                 string getSiteID = Request.QueryString["SiteID"];
                 if (getSiteID != null && getSiteID != "") { channelList.InnerHtml = SiteList(getSiteID); }
-                else { channelList.InnerHtml = SiteList(Foosun.Global.Current.SiteID); }
+                else { channelList.InnerHtml = SiteList(Hg.Global.Current.SiteID); }
             }
             StartLoad(1);
         }
@@ -43,17 +43,17 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
             case "Lock":            //锁定管理员
                 this.Authority_Code = "Q014";
                 this.CheckAdminAuthority();
-                Lock(Foosun.Common.Input.checkID(ID));
+                Lock(Hg.Common.Input.checkID(ID));
                 break;
             case "UnLock":          //解锁管理员
                 this.Authority_Code = "Q014";
                 this.CheckAdminAuthority();
-                UnLock(Foosun.Common.Input.checkID(ID));
+                UnLock(Hg.Common.Input.checkID(ID));
                 break;
             case "Del":             //删除管理员
                 this.Authority_Code = "Q013";
                 this.CheckAdminAuthority();
-                Del(Foosun.Common.Input.checkID(ID));
+                Del(Hg.Common.Input.checkID(ID));
                 break;
             default:
                 break;
@@ -104,11 +104,11 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
         if (site != "" && site != null)
         {
             SQLConditionInfo st = new SQLConditionInfo("@SiteID", site);
-            dt = Foosun.CMS.Pagination.GetPage("manage_Sys_admin_list_1_aspx", PageIndex, 20, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("manage_Sys_admin_list_1_aspx", PageIndex, 20, out i, out j, st);
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -129,14 +129,14 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
                     if (dt.Rows[k]["isLock"].ToString() == "1") { dt.Rows[k]["Lock"] = "<font color=\"red\">锁定</font>"; } else { dt.Rows[k]["Lock"] = "正常"; }
                     if (dt.Rows[k]["isSuper"].ToString() == "0")    //判断是否超级管理员,如果是超管,则不显示锁定,解锁,删除功能.
                     {
-                        dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"javascript:Del('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" title=\"删除\" /></a><a href=\"javascript:Lock('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" title=\"锁定\" /></a><a href=\"javascript:UnLock('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" title=\"解锁\" /></a><a href=\"admin_POPSet.aspx?UserNum=" + dt.Rows[k]["UserNum"].ToString() + "&id=" + dt.Rows[k]["Id"].ToString() + "\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/set.gif\" border=\"0\" title=\"设置权限\" /></a>";
+                        dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"javascript:Del('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" title=\"删除\" /></a><a href=\"javascript:Lock('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" title=\"锁定\" /></a><a href=\"javascript:UnLock('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" title=\"解锁\" /></a><a href=\"admin_POPSet.aspx?UserNum=" + dt.Rows[k]["UserNum"].ToString() + "&id=" + dt.Rows[k]["Id"].ToString() + "\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/set.gif\" border=\"0\" title=\"设置权限\" /></a>";
                     }
                     else
                     {
-                        dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" title=\"修改\" /></a>";
+                        dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["UserNum"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" title=\"修改\" /></a>";
                     }
-                    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
-                    dt.Rows[k]["userNames"] = "<a class=\"list_link\" href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "\" target=\"_blank\">" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "</a>";
+                    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
+                    dt.Rows[k]["userNames"] = "<a class=\"list_link\" href=\"../../" + Hg.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "\" target=\"_blank\">" + pd.getUserName(dt.Rows[k]["UserNum"].ToString()) + "</a>";
                 }
             }
             DataList1.DataSource = dt;                              //设置datalist数据源
@@ -155,7 +155,7 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
 
     protected void Lock(string ID)
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         ac.Lock(ID);
         PageRight("锁定管理员成功!", "");
     }
@@ -169,7 +169,7 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
 
     protected void UnLock(string ID)
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         ac.UnLock(ID);
         PageRight("解锁管理员成功!", "");
     }
@@ -183,7 +183,7 @@ public partial class manage_Sys_admin_list : Foosun.Web.UI.ManagePage
 
     protected void Del(string ID)
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         ac.Del(ID);
         PageRight("删除管理员成功!", "");
     }

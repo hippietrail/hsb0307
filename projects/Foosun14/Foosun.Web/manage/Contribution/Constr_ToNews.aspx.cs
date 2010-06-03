@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_ToNews : Hg.Web.UI.ManagePage
 {
     Constr con = new Constr();
     rootPublic pd = new rootPublic();
@@ -31,7 +31,7 @@ public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePag
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            string ConIDs = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+            string ConIDs = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
             DataTable dtx = con.sel11(ConIDs);
             int isCheckss = int.Parse(dtx.Rows[0]["isCheck"].ToString());
             if (isCheckss == 1)
@@ -49,7 +49,7 @@ public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePag
     protected void Button1_Click(object sender, EventArgs e)
     {
         rootPublic rd = new rootPublic();
-        string ConIDp = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+        string ConIDp = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
         DataTable dt = con.sel13(ConIDp);
         //获得原始稿件数据
         string Title = dt.Rows[0]["Title"].ToString();
@@ -62,13 +62,13 @@ public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePag
         string creatTime = dt.Rows[0]["creatTime"].ToString();
         string Tags = dt.Rows[0]["Tags"].ToString();
         //获得选择的栏目
-        //string ClassID = Foosun.Common.Input.Filter(Request.Form["ClassCName"].ToString());
-        string ClassID = Foosun.Common.Input.Filter(Request.Form["ClassCName"].Split(',')[0]);
+        //string ClassID = Hg.Common.Input.Filter(Request.Form["ClassCName"].ToString());
+        string ClassID = Hg.Common.Input.Filter(Request.Form["ClassCName"].Split(',')[0]);
         //获得栏目的数据表
         string DataLib = con.sel18(ClassID);
         string NewsTemplet = "/{@dirTemplet}/Content/news.html";
         string strSavePath = "{@year04}-{@month}-{@day}";
-        string strfileName = "constr-" + Foosun.Common.Rand.Number(5) + "";
+        string strfileName = "constr-" + Hg.Common.Rand.Number(5) + "";
         string strfileexName = ".html";
         string strCheckInt = "0|0|0|0";
         DataTable dts = con.getClassInfo(ClassID);
@@ -99,12 +99,12 @@ public partial class manage_Contribution_Constr_ToNews : Foosun.Web.UI.ManagePag
         }
         else
         {
-            _IDStr = int.Parse(Foosun.Common.Rand.Number(8));
+            _IDStr = int.Parse(Hg.Common.Rand.Number(8));
         }
         strfileName = rd.getResultPage(strfileName.Replace("{@自动编号ID}", (_IDStr + 1).ToString()), getDateTime, ClassID, "");
         
         //获得新闻表
-        string NewsID = Foosun.Common.Rand.Number(12);
+        string NewsID = Hg.Common.Rand.Number(12);
         DateTime CreatTime1 = DateTime.Now;
         //获得稿酬编号
         string PCIdsa = this.ParmConstr.SelectedValue;

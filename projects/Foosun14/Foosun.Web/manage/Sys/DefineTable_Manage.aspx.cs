@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_DefineTable_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_DefineTable_Manage : Hg.Web.UI.ManagePage
 {
     public manage_Sys_DefineTable_Manage()
     {
@@ -43,7 +43,7 @@ public partial class manage_Sys_DefineTable_Manage : Foosun.Web.UI.ManagePage
     protected void DataBindSource(int PageIndex)
     {
         int i,j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator1.RecordCount = i;
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -59,7 +59,7 @@ public partial class manage_Sys_DefineTable_Manage : Foosun.Web.UI.ManagePage
                 string DefID = dt.Rows[p]["DefineInfoId"].ToString();
                 dt.Rows[p]["Display"] = "<a href=\"DefineTable_List.aspx?pr=" + DefID + "\" class=\"topnavichar\">查看该类字段</a>";
                 dt.Rows[p]["newsAdd"] = "<a href=\"DefineTable.aspx?pr=" + DefID + "\" class=\"topnavichar\">新增该类字段</a>";
-                dt.Rows[p]["operate"] = "<a href=\"DefineTable_Edit_Manage.aspx?DefID=" + DefID + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"DefineTable_Manage.aspx?action=delone_class&DefID=" + DefID + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？其下的子类和字段也将被删除!')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><a href=\"DefineTable_Manage.aspx?action=add_clildclass&parentid=" + DefID + "\" class=\"list_link\" title=\"添加子类\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><input type='checkbox' name='define_checkbox' id='define_checkbox' value=\"" + DefID + "\"/>";
+                dt.Rows[p]["operate"] = "<a href=\"DefineTable_Edit_Manage.aspx?DefID=" + DefID + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"DefineTable_Manage.aspx?action=delone_class&DefID=" + DefID + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？其下的子类和字段也将被删除!')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><a href=\"DefineTable_Manage.aspx?action=add_clildclass&parentid=" + DefID + "\" class=\"list_link\" title=\"添加子类\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><input type='checkbox' name='define_checkbox' id='define_checkbox' value=\"" + DefID + "\"/>";
                 #region 列表
                 strchar += "<tr class=\"TR_BG_list\">";
                 strchar += "<td width=\"30%\" align=\"left\" valign=\"middle\">" + dt.Rows[p]["DefineName"] + "</td>";
@@ -125,7 +125,7 @@ public partial class manage_Sys_DefineTable_Manage : Foosun.Web.UI.ManagePage
 
         //检测是否有重复数据
        
-      randP:  string rand = Foosun.Common.Rand.Number(12);
+      randP:  string rand = Hg.Common.Rand.Number(12);
         if (def.sel_2(rand) != 0)
             goto randP;
 
@@ -145,7 +145,7 @@ public partial class manage_Sys_DefineTable_Manage : Foosun.Web.UI.ManagePage
         }
         else
         {
-            this.PraText.Text = Foosun.Common.Input.Filter(parentid);
+            this.PraText.Text = Hg.Common.Input.Filter(parentid);
         }
     }
     #endregion

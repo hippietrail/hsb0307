@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Public.js"></script>
 <script language="javascript" type="text/javascript">
 if(self==top)
@@ -15,7 +15,7 @@ if(self==top)
 
 <table width="165" height="29" border="0" cellpadding="0" cellspacing="0" class="menuq">
   <tr>
-    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif" width="8" height="11" border="0"  alt="展开/隐藏"  id="arrow_1"/></td>
+    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif" width="8" height="11" border="0"  alt="展开/隐藏"  id="arrow_1"/></td>
     <td height="2"></td>
     <td width="50" rowspan="2" align="center"></td>
   </tr>
@@ -35,7 +35,7 @@ if(self==top)
 
 <table width="165" height="29" border="0" cellpadding="0" cellspacing="0" class="menuq">
   <tr>
-    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif" width="8" height="11" border="0"  alt="展开/隐藏"  id="arrow_3"/></td>
+    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif" width="8" height="11" border="0"  alt="展开/隐藏"  id="arrow_3"/></td>
     <td height="2"></td>
     <td width="50" rowspan="2" align="center"></td>
   </tr>
@@ -54,7 +54,7 @@ if(self==top)
   {%>
 <table width="165" height="29" border="0" cellpadding="0" cellspacing="0" class="menuq">
   <tr>
-    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot1.gif" width="8" height="11" border="0" alt="展开/隐藏" id="arrow_2" /></td>
+    <td width="26" rowspan="2" align="center"><img src="../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_dot1.gif" width="8" height="11" border="0" alt="展开/隐藏" id="arrow_2" /></td>
     <td height="2"></td>
     <td width="50" rowspan="2" align="center"></td>
   </tr>
@@ -77,12 +77,12 @@ if(self==top)
     if (document.getElementById(DivID).style.display=='')
     {
         document.getElementById(DivID).style.display='none';
-        document.getElementById(ImgID).src='../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif';
+        document.getElementById(ImgID).src='../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_dot.gif';
     }
     else
     {
         document.getElementById(DivID).style.display='';
-        document.getElementById(ImgID).src='../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_dot1.gif';
+        document.getElementById(ImgID).src='../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_dot1.gif';
     }
 }
 </script>

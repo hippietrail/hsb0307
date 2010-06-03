@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Global;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.Global;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class JSTemplet : DbBase, IJSTemplet
     {
@@ -96,10 +96,10 @@ namespace Foosun.AccessDAL
                 }
                 else
                 {
-                    string JsTID = Foosun.Common.Rand.Str(12);
+                    string JsTID = Hg.Common.Rand.Str(12);
                     if (Convert.ToInt32(DbHelper.ExecuteScalar(cn, CommandType.Text, "select count(*) from " + Pre + "news_JSTemplet where TempletID='" + JsTID + "'")) > 0)
                     {
-                        JsTID = Foosun.Common.Rand.Str(12, true);
+                        JsTID = Hg.Common.Rand.Str(12, true);
                     }
                     Sql = "insert into " + Pre + "news_JSTemplet (TempletID,CName,JSClassid,JSTType,JSTContent,CreatTime,SiteID) values ";
                     Sql += "('" + JsTID + "',@CName,@JSClassid," + JSTType + ",@JSTContent,'" + DateTime.Now + "',@SiteID)";
@@ -159,10 +159,10 @@ namespace Foosun.AccessDAL
                 }
                 else
                 {
-                    string CLID = Foosun.Common.Rand.Str(12);
+                    string CLID = Hg.Common.Rand.Str(12);
                     if (Convert.ToInt32(DbHelper.ExecuteScalar(cn, CommandType.Text, "select count(*) from " + Pre + "news_JST_Class where ClassID='" + CLID + "'")) > 0)
                     {
-                        CLID = Foosun.Common.Rand.Str(12, true);
+                        CLID = Hg.Common.Rand.Str(12, true);
                     }
                     Sql = "insert into " + Pre + "news_JST_Class (ClassID,CName,ParentID,Description,CreatTime,SiteID) values ";
                     Sql += "('" + CLID + "',@CName,@ParentID,@Description,'" + DateTime.Now + "',@SiteID)";

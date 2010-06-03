@@ -11,9 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
+using Hg.DALFactory;
 
-namespace Foosun.CMS.Style
+namespace Hg.CMS.Style
 {
     public class Style
     {
@@ -22,12 +22,12 @@ namespace Foosun.CMS.Style
         {
             stClass = DataAccess.CreateStyle();
         }
-        public int sytleClassAdd(Foosun.Model.StyleClassInfo sc)
+        public int sytleClassAdd(Hg.Model.StyleClassInfo sc)
         {
             int result = stClass.sytleClassAdd(sc);
             return result;
         }
-        public int styleClassEdit(Foosun.Model.StyleClassInfo sc)
+        public int styleClassEdit(Hg.Model.StyleClassInfo sc)
         {
             int result = stClass.styleClassEdit(sc);
             return result;
@@ -40,7 +40,7 @@ namespace Foosun.CMS.Style
         {
             stClass.styleClassRDel(id);
         }
-        public int styleAdd(Foosun.Model.StyleInfo sc)
+        public int styleAdd(Hg.Model.StyleInfo sc)
         {
             int result = stClass.styleAdd(sc);
             return result;
@@ -51,7 +51,7 @@ namespace Foosun.CMS.Style
             return stClass.styleNametf(CName);
         }
 
-        public int styleEdit(Foosun.Model.StyleInfo sc)
+        public int styleEdit(Hg.Model.StyleInfo sc)
         {
             int result = stClass.styleEdit(sc);
             return result;

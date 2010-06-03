@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class DefineTable : DbBase, IDefineTable
     {
         #region DefineTable.aspx
         public DataTable Sel_DefineInfoId()
         {
-            string Sql = "Select DefineInfoId,DefineName,ParentInfoId From " + Pre + "define_class where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select DefineInfoId,DefineName,ParentInfoId From " + Pre + "define_class where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
         public DataTable Sel_ParentInfoId(string PID)
         {
             SqlParameter param = new SqlParameter("@ParentInfoId",PID);
-            string Sql = "Select DefineInfoId,DefineName,ParentInfoId From " + Pre + "define_class where ParentInfoId=@ParentInfoId and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select DefineInfoId,DefineName,ParentInfoId From " + Pre + "define_class where ParentInfoId=@ParentInfoId and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
         public int sel_defCname(string defCname)
@@ -68,7 +68,7 @@ namespace Foosun.SQLServerDAL
 
             string Sql = "Insert Into " + Pre + "Define_Data(defineInfoId,DefineCname,DefineColumns,defineType,IsNull,defineValue," +
                          "defineExpr,SiteID,definedvalue) Values(@ColumnsType,@defCname,@defEname,@defineType,@Is_null,@defColumns," +
-                         "@defExp,'" + Foosun.Global.Current.SiteID + "',@definedvalue)";
+                         "@defExp,'" + Hg.Global.Current.SiteID + "',@definedvalue)";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -192,7 +192,7 @@ namespace Foosun.SQLServerDAL
         public int Add2(string rand, string _NewText, string _PraText)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@DefineInfoId", rand), new SqlParameter("@DefineName", _NewText), new SqlParameter("@ParentInfoId", _PraText) };
-            string Sql = "Insert Into " + Pre + "Define_Class(DefineInfoId,DefineName,ParentInfoId,SiteID) values(@DefineInfoId,@DefineName,@ParentInfoId,'" + Foosun.Global.Current.SiteID + "')";
+            string Sql = "Insert Into " + Pre + "Define_Class(DefineInfoId,DefineName,ParentInfoId,SiteID) values(@DefineInfoId,@DefineName,@ParentInfoId,'" + Hg.Global.Current.SiteID + "')";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public void Delete3(string DefID)
@@ -216,17 +216,17 @@ namespace Foosun.SQLServerDAL
         public int Delete6()
         {
             string Sql = "";
-            if (Foosun.Global.Current.SiteID == "0") { Sql = "Delete From " + Pre + "define_class"; }
-            else { Sql = "Delete From " + Pre + "define_class where SiteID='" + Foosun.Global.Current.SiteID + "'"; }
+            if (Hg.Global.Current.SiteID == "0") { Sql = "Delete From " + Pre + "define_class"; }
+            else { Sql = "Delete From " + Pre + "define_class where SiteID='" + Hg.Global.Current.SiteID + "'"; }
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
         public int Delete7()
         {
             string Sql = "";
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             { Sql = "Delete From " + Pre + "define_data"; }
-            else { Sql = "Delete From " + Pre + "define_data where SiteID='" + Foosun.Global.Current.SiteID + "'"; }
+            else { Sql = "Delete From " + Pre + "define_data where SiteID='" + Hg.Global.Current.SiteID + "'"; }
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 

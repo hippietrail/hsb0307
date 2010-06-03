@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <script language="javascript" type="text/javascript">
@@ -71,7 +71,7 @@ function OnDelete(rtstr)
     <td class="list_link"><%# DataBinder.Eval(Container.DataItem, "LabelName")%></td>
     <td class="list_link" align="center"><%# DataBinder.Eval(Container.DataItem, "CreatTime")%></td>
     <td class="list_link"><%# DataBinder.Eval(Container.DataItem, "Description")%></td>
-    <td class="list_link" align="center"><a class="list_link" href="FreeLabel_Add.aspx?id=<%# DataBinder.Eval(Container.DataItem, "Id")%>"><img src="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a> <a class="list_link" href="javascript:DeleteFreeLabel(<%# DataBinder.Eval(Container.DataItem, "Id")%>)"><img src="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/sysico/del.gif" border="0" alt="彻底删除" /></a></td>
+    <td class="list_link" align="center"><a class="list_link" href="FreeLabel_Add.aspx?id=<%# DataBinder.Eval(Container.DataItem, "Id")%>"><img src="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a> <a class="list_link" href="javascript:DeleteFreeLabel(<%# DataBinder.Eval(Container.DataItem, "Id")%>)"><img src="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/sysico/del.gif" border="0" alt="彻底删除" /></a></td>
  </tr>
  </ItemTemplate>
  <FooterTemplate>

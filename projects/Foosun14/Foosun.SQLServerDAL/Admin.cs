@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Admin : DbBase, IAdmin
     {
@@ -53,7 +53,7 @@ namespace Foosun.SQLServerDAL
         /// <returns>返回的Table</returns>
         public DataTable GetAdminGroupList()
         {
-            string str_Sql = "Select adminGroupNumber,GroupName From " + Pre + "sys_AdminGroup where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string str_Sql = "Select adminGroupNumber,GroupName From " + Pre + "sys_AdminGroup where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
         }
 
@@ -84,10 +84,10 @@ namespace Foosun.SQLServerDAL
         public DataTable GetSiteList()
         {
             string str_Sql = "";
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
                 str_Sql = "Select ChannelID,CName From " + Pre + "news_site Where isRecyle=0 And IsURL=0 and islock=0";
             else
-                str_Sql = "Select ChannelID,CName From " + Pre + "news_site Where isRecyle=0 and islock=0 and ParentID='" + Foosun.Global.Current.SiteID + "' And IsURL=0";
+                str_Sql = "Select ChannelID,CName From " + Pre + "news_site Where isRecyle=0 and islock=0 and ParentID='" + Hg.Global.Current.SiteID + "' And IsURL=0";
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null); ;
         }
 
@@ -96,12 +96,12 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ac">构造</param>
         /// <returns></returns>
-        public int Add(Foosun.Model.AdminInfo ac)
+        public int Add(Hg.Model.AdminInfo ac)
         {
             int result = 0;
             string checkSql = "";
             int recordCount = 0;
-            string UserNum = Foosun.Common.Rand.Number(12);
+            string UserNum = Hg.Common.Rand.Number(12);
             while (true)
             {
                 checkSql = "select count(*) from " + Pre + "sys_User where UserNum='" + UserNum + "'";
@@ -109,7 +109,7 @@ namespace Foosun.SQLServerDAL
                 if (recordCount < 1)
                     break;
                 else
-                    UserNum = Foosun.Common.Rand.Number(12, true);
+                    UserNum = Hg.Common.Rand.Number(12, true);
             }
             checkSql = "select ID,UserNum from " + Pre + "sys_User where UserName='" + ac.UserName + "'";
             DataTable dts = DbHelper.ExecuteTable(CommandType.Text, checkSql, null);
@@ -159,7 +159,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ac"></param>
         /// <returns></returns>
-        public int Edit(Foosun.Model.AdminInfo ac)
+        public int Edit(Hg.Model.AdminInfo ac)
         {
             SqlParameter[] param = GetAdminParameters(ac);
             string str_adminSql = "";
@@ -208,7 +208,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="ac"></param>
         /// <returns></returns>
-        private SqlParameter[] GetAdminParameters(Foosun.Model.AdminInfo ac)
+        private SqlParameter[] GetAdminParameters(Hg.Model.AdminInfo ac)
         {
             SqlParameter[] param = new SqlParameter[23];
             param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 18);
@@ -286,7 +286,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public DataTable getAdmininfoList()
         {
-            string str_Sql = "Select a.ID,a.UserNum,a.isSuper,a.adminGroupNumber,b.UserName From " + Pre + "sys_admin a left join " + Pre + "sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Foosun.Global.Current.SiteID + "' order by a.id desc";
+            string str_Sql = "Select a.ID,a.UserNum,a.isSuper,a.adminGroupNumber,b.UserName From " + Pre + "sys_admin a left join " + Pre + "sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Hg.Global.Current.SiteID + "' order by a.id desc";
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
         }
     }

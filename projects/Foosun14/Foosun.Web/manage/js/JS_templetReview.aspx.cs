@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_js_JS_templetReview : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_templetReview : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_templetReview()
     {
@@ -31,7 +31,7 @@ public partial class manage_js_JS_templetReview : Foosun.Web.UI.ManagePage
     protected string templets()
     {
         string tmplet = "找不到内容模型";
-        Foosun.CMS.JSTemplet rd = new Foosun.CMS.JSTemplet();
+        Hg.CMS.JSTemplet rd = new Hg.CMS.JSTemplet();
         string tid = Request.QueryString["tid"];
         if (tid != "" && tid != null)
         {

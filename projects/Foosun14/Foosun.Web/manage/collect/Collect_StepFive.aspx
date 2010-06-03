@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Collect_StepFive.aspx.cs" Inherits="Foosun.Web.manage.collect.Collect_StepFive" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Collect_StepFive.aspx.cs" Inherits="Hg.Web.manage.collect.Collect_StepFive" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>FoosunCMS For .NET v1.0.0</title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet"
         type="text/css" />
 
     <script language="JavaScript" type="text/javascript" charset="utf-8" src="../../configuration/js/Prototype.js"></script>

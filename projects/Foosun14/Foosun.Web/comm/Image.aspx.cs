@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class comm_Image : Foosun.Web.UI.ImagePage
+public partial class comm_Image : Hg.Web.UI.ImagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

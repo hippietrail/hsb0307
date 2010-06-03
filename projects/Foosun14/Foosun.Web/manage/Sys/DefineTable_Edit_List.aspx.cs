@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_DefineTable_Edit_List : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_DefineTable_Edit_List : Hg.Web.UI.ManagePage
 {
     public manage_Sys_DefineTable_Edit_List()
     {
@@ -135,8 +135,8 @@ public partial class manage_Sys_DefineTable_Edit_List : Foosun.Web.UI.ManagePage
             else
             {
                 string Str_ColumnsType = Request.Form["ColumnsType"];
-                string Str_DefName = Foosun.Common.Input.Filter(this.DefName.Text.Trim());//名称
-                string Str_DefEname = Foosun.Common.Input.Filter(this.DefEname.Text.Trim());
+                string Str_DefName = Hg.Common.Input.Filter(this.DefName.Text.Trim());//名称
+                string Str_DefEname = Hg.Common.Input.Filter(this.DefEname.Text.Trim());
                 string definedvalue = this.definedvalue.Text;
                 string Str_DefType = this.DefType.SelectedValue;
                 int Str_DefIsNull = 0;
@@ -148,8 +148,8 @@ public partial class manage_Sys_DefineTable_Edit_List : Foosun.Web.UI.ManagePage
                 {
                     Str_DefIsNull = 0;
                 }
-                string Str_DefColumns = Foosun.Common.Input.Filter(this.DefColumns.Text.Trim());
-                string Str_DefExpr = Foosun.Common.Input.Filter(this.DefExpr.Text.Trim());
+                string Str_DefColumns = Hg.Common.Input.Filter(this.DefColumns.Text.Trim());
+                string Str_DefExpr = Hg.Common.Input.Filter(this.DefExpr.Text.Trim());
                 #region 刷新页面
                 if (def.Update(Str_ColumnsType, Str_DefName, Str_DefEname, Str_DefType, Str_DefIsNull, Str_DefColumns, Str_DefExpr, DefID, definedvalue) != 0)
                 {

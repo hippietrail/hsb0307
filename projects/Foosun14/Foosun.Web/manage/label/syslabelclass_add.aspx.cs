@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_syslabelclass_add : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslabelclass_add : Hg.Web.UI.ManagePage
 {
     public manage_label_syslabelclass_add()
     {
@@ -41,7 +41,7 @@ public partial class manage_label_syslabelclass_add : Foosun.Web.UI.ManagePage
             string str_Cname = LabelClassName.Text;
             string str_Content = ClassContent.Text;
 
-            Foosun.Model.LabelClassInfo lbcc = new Foosun.Model.LabelClassInfo();
+            Hg.Model.LabelClassInfo lbcc = new Hg.Model.LabelClassInfo();
             lbcc.ClassName = str_Cname;
             lbcc.Content = str_Content;
             lbcc.CreatTime = DateTime.Now;
@@ -50,7 +50,7 @@ public partial class manage_label_syslabelclass_add : Foosun.Web.UI.ManagePage
 
             int result = 0;
 
-            Foosun.CMS.Label lbc =  new Foosun.CMS.Label();
+            Hg.CMS.Label lbc =  new Hg.CMS.Label();
             result = lbc.LabelClassAdd(lbcc);
 
             if (result == 1)

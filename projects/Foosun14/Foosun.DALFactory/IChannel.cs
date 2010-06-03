@@ -13,9 +13,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IModel
     {
@@ -28,8 +28,8 @@ namespace Foosun.DALFactory
         IDataReader getModelTempletisConstr();
         IDataReader getModelinfo(int ID);
         void creatModeltable(string DataTable, int channelType, int isConstr);
-        void updateDate(Foosun.Model.ChannelInfo uc);
-        void updateDate1(Foosun.Model.ChannelInfo uc);
+        void updateDate(Hg.Model.ChannelInfo uc);
+        void updateDate1(Hg.Model.ChannelInfo uc);
         int getItemCount(string eName, int modelID);
         int getDbCount(string sTable, int modelID);
         int getSysCord(int ID);
@@ -37,8 +37,8 @@ namespace Foosun.DALFactory
         void ModelStat(int ID, int isLock);
         IDataReader getChInfoMenu(int modelID);
         IDataReader getChValue(int ID);
-        void insertFields(Foosun.Model.ChannelValue uc, string TableSTR);
-        void UpdateFields(Foosun.Model.ChannelValue uc, string TableSTR);
+        void insertFields(Hg.Model.ChannelValue uc, string TableSTR);
+        void UpdateFields(Hg.Model.ChannelValue uc, string TableSTR);
         string getChannelTable(int ChID);
         bool getChannelValueTF(int ChID, string EName, int vID);
         void delFileds(int ID, string TableStr);
@@ -48,8 +48,8 @@ namespace Foosun.DALFactory
         void updateOrder(int ID, int OrderID, int Num);
         string getClassName(int ClassID);
         IDataReader ChannelInfo(int ChID);
-        void insertClassInfo(Foosun.Model.ChannelClassInfo uc);
-        void updateClassInfo(Foosun.Model.ChannelClassInfo uc);
+        void insertClassInfo(Hg.Model.ChannelClassInfo uc);
+        void updateClassInfo(Hg.Model.ChannelClassInfo uc);
         int getClassInfoCord(string EName, int ID);
         IDataReader GetClassInfo(int ClassID);
         int GetTopClassID();
@@ -68,9 +68,9 @@ namespace Foosun.DALFactory
         int delContent(int id, int chid,int num);
         int lockContent(int id, int chid, int num);
         void setOrderContent(int id, int chid, int num);
-        int inserContentInfo(Foosun.Model.ChInfoContent uc, string DTable);
-        void updateContentInfo(Foosun.Model.ChInfoContent uc, string DTable);
-        void updateUserContentInfo(Foosun.Model.ChInfoContent uc, string DTable);
+        int inserContentInfo(Hg.Model.ChInfoContent uc, string DTable);
+        void updateContentInfo(Hg.Model.ChInfoContent uc, string DTable);
+        void updateUserContentInfo(Hg.Model.ChInfoContent uc, string DTable);
         void updatePreContentInfo(int ID, string PreContentName, object PreContent, string DTable);
         IDataReader getContentAll(int ChID, int ID);
         #endregion 
@@ -78,8 +78,8 @@ namespace Foosun.DALFactory
         string getSpecialName(int SpecialID);
         IDataReader getSpecialInfo(int SpecialID);
         int getSpecialCord(string EName, int speicalId);
-        void insertSpecialInfo(Foosun.Model.ChannelSpecialInfo uc);
-        void updateSpecialInfo(Foosun.Model.ChannelSpecialInfo uc);
+        void insertSpecialInfo(Hg.Model.ChannelSpecialInfo uc);
+        void updateSpecialInfo(Hg.Model.ChannelSpecialInfo uc);
         int getSpecialNumber(int SpecialID);
         int Reset_allSpecial(int SpecialID, int ChID);
         int lockstatSpecial(int SpecialID, int num);
@@ -95,8 +95,8 @@ namespace Foosun.DALFactory
         string getStyleClassName(int ClassID);
         int delStyleContent(int id, int chid, int num);
         int lockStyleContent(int id, int chid, int num);
-        void InsertStyleContent(Foosun.Model.styleChContent uc);
-        void UpdateStyleContent(Foosun.Model.styleChContent uc);
+        void InsertStyleContent(Hg.Model.styleChContent uc);
+        void UpdateStyleContent(Hg.Model.styleChContent uc);
         IDataReader GetStyleContent(int Id, int ChID);
         int GetStyleRecord(string CName, int ID, int ChID);
         void InsertStyleClassContent(int ID, int ChID, string cName);
@@ -109,8 +109,8 @@ namespace Foosun.DALFactory
         IDataReader GetLabelClassList(int ChID, int ParentID);
         IDataReader GetLabelContent(int ChID, int ID);
         int GetLabelNameTF(int ChID, string CName, int ID);
-        void InsertLabelContent(Foosun.Model.LabelChContent uc);
-        void UpdateLabelContent(Foosun.Model.LabelChContent uc);
+        void InsertLabelContent(Hg.Model.LabelChContent uc);
+        void UpdateLabelContent(Hg.Model.LabelChContent uc);
 
         DataTable GetLabelPage(string keywords, string ClassID, int ChID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition);
         DataTable GetSLabelPage(int ChID, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition);

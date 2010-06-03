@@ -4,16 +4,16 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Info : DbBase, IInfo
     {
@@ -59,7 +59,7 @@ namespace Foosun.SQLServerDAL
         public int Delete(string FID)
         {
             SqlParameter param = new SqlParameter("@FID", FID);
-            string Sql = "delete " + Pre + "API_Faviate where FID=@FID And UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "delete " + Pre + "API_Faviate where FID=@FID And UserNum='" + Hg.Global.Current.UserNum + "'";
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param));
         }
 
@@ -70,11 +70,11 @@ namespace Foosun.SQLServerDAL
             param[0].Value = NewsID;
             param[1] = new SqlParameter("@ChID", SqlDbType.Int, 4);
             param[1].Value = ChID;
-            string gsql = "select count(id) from " + Pre + "API_Faviate where FID=@NewsID and ChID=@ChID And UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string gsql = "select count(id) from " + Pre + "API_Faviate where FID=@NewsID and ChID=@ChID And UserNum='" + Hg.Global.Current.UserNum + "'";
             int i_Count = Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, gsql, param));
             if (i_Count == 0)
             {
-                string Sql = "insert " + Pre + "API_Faviate(FID,UserNum,CreatTime,APIID,DataLib,ChID) values(@NewsID,'" + Foosun.Global.Current.UserNum + "','" + DateTime.Now + "','0','',@ChID)";
+                string Sql = "insert " + Pre + "API_Faviate(FID,UserNum,CreatTime,APIID,DataLib,ChID) values(@NewsID,'" + Hg.Global.Current.UserNum + "','" + DateTime.Now + "','0','',@ChID)";
                 DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
                 return true;
             }
@@ -422,18 +422,18 @@ namespace Foosun.SQLServerDAL
             string siteID1 = "";
             if (SiteID != "" && SiteID != "0" && SiteID != null)
             {
-                if (Foosun.Global.Current.SiteID == "0")
+                if (Hg.Global.Current.SiteID == "0")
                 {
                     siteID1 = " and SiteID='" + SiteID + "'";
                 }
                 else
                 {
-                    siteID1 = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                    siteID1 = " and SiteID='" + Hg.Global.Current.SiteID + "'";
                 }
             }
             else
             {
-                siteID1 = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                siteID1 = " and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@gtype", int.Parse(typep)), new SqlParameter("@UserNum", UserNum), new SqlParameter("@sle_NUM", sle_NUM) };
             string AllFields = "GhID,ghtype,Gpoint,iPoint,Money,CreatTime,UserNUM,gtype,content";
@@ -457,7 +457,7 @@ namespace Foosun.SQLServerDAL
         public int Delete3(string GhID)
         {
             SqlParameter param = new SqlParameter("@GhID", GhID);
-            string Sql = "delete " + Pre + "user_Ghistory  where  GhID=@GhID " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "delete " + Pre + "user_Ghistory  where  GhID=@GhID " + Hg.Common.Public.getSessionStr() + "";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -481,7 +481,7 @@ namespace Foosun.SQLServerDAL
         }
         public DataTable StartUserC()
         {
-            string Str_FriSql = "Select UserNum,Email From " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Str_FriSql = "Select UserNum,Email From " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str_FriSql, null);
         }
         public DataTable PramValue()
@@ -517,14 +517,14 @@ namespace Foosun.SQLServerDAL
             param[8] = new SqlParameter("@Str_ContentFor", SqlDbType.NText);
             param[8].Value = Str_ContentFor;
 
-            string Str_InSql = "Insert into " + Pre + "friend_link (ClassID,Name,Type,Url,Content,PicUrl,Author,Mail,ContentFor,isAdmin,Lock,IsUser,SiteID) Values(@Str_Class,@Str_Name,@Str_Type,@Str_Url,@Str_Content,@Str_PicUrl,@Str_Author,@Str_Mail,@Str_ContentFor,0,1,1,'" + Foosun.Global.Current.SiteID + "')";
+            string Str_InSql = "Insert into " + Pre + "friend_link (ClassID,Name,Type,Url,Content,PicUrl,Author,Mail,ContentFor,isAdmin,Lock,IsUser,SiteID) Values(@Str_Class,@Str_Name,@Str_Type,@Str_Url,@Str_Content,@Str_PicUrl,@Str_Author,@Str_Mail,@Str_ContentFor,0,1,1,'" + Hg.Global.Current.SiteID + "')";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_InSql, param);
         }
 
         public void delf(string id)
         {
             SqlParameter param = new SqlParameter("@ID", id);
-            string Str_InSql = "delete from " + Pre + "friend_link where Author='" + Foosun.Global.Current.UserNum + "' and ID=@ID";
+            string Str_InSql = "delete from " + Pre + "friend_link where Author='" + Hg.Global.Current.UserNum + "' and ID=@ID";
             DbHelper.ExecuteNonQuery(CommandType.Text, Str_InSql, param);
         }
 

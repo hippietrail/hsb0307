@@ -5,8 +5,8 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %></title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 </head>
 <body style="background-color: #ffffff">
@@ -17,62 +17,62 @@
         </tr>
         <tr>
           <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              Í¶¸å¹ÜÀí</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constr_List.aspx" class="topnavichar">¸å¼þ¹ÜÀí</a></div></td>
+              Í¶ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constr_List.aspx" class="topnavichar">ï¿½ï¿½ï¿½ï¿½ï¿½</a></div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-    <td width="46%" class="navi_link">&nbsp; &nbsp; &nbsp;<a href="Constr_List.aspx" class="topnavichar">¸å¼þ¹ÜÀí</a>&nbsp; &nbsp;<a href="Constr_Stat.aspx" class="topnavichar">¸å¼þÍ³¼Æ</a>&nbsp; &nbsp;<a href="paymentannals.aspx" class="topnavichar">Ö§¸¶ÀúÊ·</a>&nbsp; &nbsp;<a href="Constr_SetParam.aspx" class="topnavichar">¸å³êÉè¶¨</a>&nbsp; &nbsp;<a href="Constr_chicklist.aspx" class="topnavichar">ËùÓÐÍ¨¹ýÉóºË¸å¼þ</a></td>
+    <td width="46%" class="navi_link">&nbsp; &nbsp; &nbsp;<a href="Constr_List.aspx" class="topnavichar">ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constr_Stat.aspx" class="topnavichar">ï¿½ï¿½ï¿½Í³ï¿½</a>&nbsp; &nbsp;<a href="paymentannals.aspx" class="topnavichar">ï¿½Ö§ï¿½ï¿½ï¿½ï¿½Ê·</a>&nbsp; &nbsp;<a href="Constr_SetParam.aspx" class="topnavichar">ï¿½ï¿½ï¿½ï¿½è¶¨</a>&nbsp; &nbsp;<a href="Constr_chicklist.aspx" class="topnavichar">ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ë¸ï¿½</a></td>
   </tr>
 </table>
 <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
   <tr class="TR_BG_list">
       <td class="list_link" colspan="4">
-      <span>ÄúÑ¡ÔñµÄÒªÖ§¸¶¸å³êµÄÓÃ»§Ãû£º
+      <span>ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ÒªÖ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½
           <asp:Label ID="LblName" runat="server" Width="127px" ForeColor="Red"></asp:Label>
       </span>
      <span id="no" runat="server" width="140px">
      </span>
-    <span>ÐèÒªÖ§¸¶µÄ¸å³êÎª£º<label id="money_1" runat="server" />&nbsp;&nbsp;&nbsp;
-          <asp:Button ID="Button1" runat="server" Text="ÉèÖÃÖ§¸¶×´Ì¬"  CssClass="form" OnClientClick="{if(confirm('È·¶¨ÒªÖ§¸¶Âð£¿')){return true;}return false;}" OnClick="Button1_Click1"/>
+    <span>ï¿½ï¿½ï¿½ÒªÖ§ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Îªï¿½ï¿½<label id="money_1" runat="server" />&nbsp;&nbsp;&nbsp;
+          <asp:Button ID="Button1" runat="server" Text="ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½×´Ì¬"  CssClass="form" OnClientClick="{if(confirm('È·ï¿½ï¿½ÒªÖ§ï¿½ï¿½ï¿½')){return true;}return false;}" OnClick="Button1_Click1"/>
       </span> 
       </td>
     </tr>
     <tr class="TR_BG">
       <td class="list_link" colspan="2">
           &nbsp;
-          <asp:Label ID="LblName1" runat="server" ForeColor="Red" Width="80px"></asp:Label>µÄÒøÐÐÕËºÅÐÅÏ¢</td>
+          <asp:Label ID="LblName1" runat="server" ForeColor="Red" Width="80px"></asp:Label>ð£¿µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½Ï¢</td>
       <td class="list_link" colspan="2">
-          »ã¿îµØÖ·</td>
+          ï¿½ï¿½ï¿½ï¿½Ö·</td>
    </tr>
       <tr class="TR_BG_list">
     <td class="list_link" Width="10%">
-        ÕÊ»§Ãû£º</td>
+        ï¿½Ê»ï¿½ï¿½</td>
     <td class="list_link" Width="40%">
         <asp:Label ID="bankRealName" runat="server" Text="Label" Width="100%"></asp:Label></td>
         <td class="list_link" Width="10%">
-            µØÖ·£º</td>
+            ï¿½ï¿½Ö·ï¿½ï¿½</td>
     <td class="list_link" Width="40%">
         <asp:Label ID="address" runat="server" Text="Label" Width="100%"></asp:Label></td>
    </tr>
    <tr class="TR_BG_list">
     <td class="list_link">
-        ¿¨ºÅ£º</td>
+        ï¿½ï¿½ï¿½Å£ï¿½</td>
     <td>
         <asp:Label ID="bankcard" runat="server" Text="Label" Width="100%"></asp:Label></td>
         <td class="list_link">
-            ÓÊ±à£º</td>
+            ï¿½Ê±à£º</td>
     <td class="list_link">
         <asp:Label ID="postcode" runat="server" Text="Label" Width="100%"></asp:Label></td>
 </tr>
    <tr class="TR_BG_list">
     <td class="list_link">
-        ¿ª»§ÒøÐÐ£º</td>
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½</td>
     <td>
         <asp:Label ID="bankName" runat="server" Text="Label" Width="100%"></asp:Label></td>
         <td class="list_link">
-            ÐÕÃû£º</td>
+            ï¿½ï¿½ï¿½</td>
     <td class="list_link">
         <asp:Label ID="RealName" runat="server" Text="Label" Width="100%"></asp:Label></td>
 </tr>

@@ -11,22 +11,22 @@
 using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.Common;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Common;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class FrindLink : DbBase, IFrindLink
     {
         public DataTable GetClass()//取连接的分类
         {
-            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "friend_class where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "friend_class where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
         public DataTable ParamStart()//取友情连接参数设置情况
@@ -43,7 +43,7 @@ namespace Foosun.AccessDAL
             param[1].Value = Str_Content;
 
             //经检查参数排列顺序一致 arjun
-            string Str_InSql = "Update " + Pre + "friend_pram Set IsOpen=" + open + ",IsRegister=" + IsReg + ",isLock = " + isLok + ",ArrSize=@ArrSize,Content=@Content,SiteID=" + Foosun.Global.Current.SiteID + "";
+            string Str_InSql = "Update " + Pre + "friend_pram Set IsOpen=" + open + ",IsRegister=" + IsReg + ",isLock = " + isLok + ",ArrSize=@ArrSize,Content=@Content,SiteID=" + Hg.Global.Current.SiteID + "";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_InSql, param);
         }
         //----------------分类分页-------------------
@@ -51,20 +51,20 @@ namespace Foosun.AccessDAL
         public DataTable GetChildClassList(string classid)
         {
             OleDbParameter param = new OleDbParameter("@classid", classid);
-            string Str = "Select id,ClassID,ClassCName,Content,ParentID From " + Pre + "friend_class Where ParentID=@classid and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str = "Select id,ClassID,ClassCName,Content,ParentID From " + Pre + "friend_class Where ParentID=@classid and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str, param);
         }
         //-------------------------------------------
         public int IsExitClassName(string Str_ClassID)
         {
             OleDbParameter param = new OleDbParameter("@ClassID", Str_ClassID);
-            string Str = " Select count(ClassID) From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str = " Select count(ClassID) From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return (int)DbHelper.ExecuteScalar(CommandType.Text, Str, param);
         }
         public int ISExitNam(string name)
         {
             OleDbParameter param = new OleDbParameter("@ClassCName", name);
-            string Str_CheckSql = "Select count(ClassCName) From " + Pre + "friend_class Where ClassCName=@ClassCName and SiteID='" + Foosun.Global.Current.SiteID + "'"; ;
+            string Str_CheckSql = "Select count(ClassCName) From " + Pre + "friend_class Where ClassCName=@ClassCName and SiteID='" + Hg.Global.Current.SiteID + "'"; ;
             return (int)DbHelper.ExecuteScalar(CommandType.Text, Str_CheckSql, param);
         }
         public int Insert_Class(string Str_ClassID, string Str_ClassCName, string Str_ClassEName, string Str_Description, string parentid)
@@ -89,44 +89,44 @@ namespace Foosun.AccessDAL
             param[4] = new OleDbParameter("@ParentID", OleDbType.VarWChar);
             param[4].Value = parentid;
 
-            string Str_InSql = "Insert into " + Pre + "friend_class ("+Database.getParam(param)+",SiteID) Values("+Database.getAParam(param)+",'" + Foosun.Global.Current.SiteID + "')";
+            string Str_InSql = "Insert into " + Pre + "friend_class ("+Database.getParam(param)+",SiteID) Values("+Database.getAParam(param)+",'" + Hg.Global.Current.SiteID + "')";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_InSql, param);
 
         }
         public int del_oneClass_1(string fid)
         {
             OleDbParameter param = new OleDbParameter("@ClassID", fid);
-            string Str_FriSql = "Delete From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Delete From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_FriSql, param);
         }
         public int del_oneClass_2(string fid)
         {
             OleDbParameter param = new OleDbParameter("@ParentID", fid);
-            string Str_Fri_child_Sql = "Delete From " + Pre + "friend_class where ParentID=@ParentID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_Fri_child_Sql = "Delete From " + Pre + "friend_class where ParentID=@ParentID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_Fri_child_Sql, param);
         }
         public int del_onelink(int fid)
         {
             OleDbParameter param = new OleDbParameter("@ID", fid);
-            string Str_FriSql = "Delete From " + Pre + "friend_link where ID=@ID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Delete From " + Pre + "friend_link where ID=@ID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_FriSql, param);
         }
         public int suo_onelink(int fid)
         {
             OleDbParameter param = new OleDbParameter("@id", fid);
-            string Str_FriSql = "Update " + Pre + "friend_link Set Lock = 1 where id=@id and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Update " + Pre + "friend_link Set Lock = 1 where id=@id and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_FriSql, param);
         }
         public int unsuo_onelink(int fid)
         {
             OleDbParameter param = new OleDbParameter("@id", fid);
-            string Str_FriSql = "Update " + Pre + "friend_link Set Lock = 0 where id=@@id and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Update " + Pre + "friend_link Set Lock = 0 where id=@@id and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_FriSql, param);
         }
         public DataTable EditClass(string classid)
         {
             OleDbParameter param = new OleDbParameter("@ClassID", classid);
-            string Str_FriSql = "Select id,ClassID,ClassCName,ClassEName,Content,ParentID From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Select id,ClassID,ClassCName,ClassEName,Content,ParentID From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str_FriSql, param);
         }
         public int EditClick(string FID, string Str_ClassNameE, string Str_EnglishE, string Str_Descript)
@@ -141,48 +141,48 @@ namespace Foosun.AccessDAL
             param[3] = new OleDbParameter("@ClassID", OleDbType.VarWChar, 12);
             param[3].Value = FID;
             //经检查参数排列一致 arjun
-            string Str_UpdateSql = "Update " + Pre + "friend_class Set ClassCName=@ClassCName,ClassEName=@ClassEName,Content=@Content where ClassID=@ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_UpdateSql = "Update " + Pre + "friend_class Set ClassCName=@ClassCName,ClassEName=@ClassEName,Content=@Content where ClassID=@ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_UpdateSql, param);
         }
         public int _DelPClass(string boxs)
         {
-            string Fri_Sql = "Delete From " + Pre + "friend_class where ClassID in('" + boxs + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Fri_Sql = "Delete From " + Pre + "friend_class where ClassID in('" + boxs + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Fri_Sql, null);
         }
         public int _DelPClass2(string boxs)
         {
-            string Str_Fri_child_Sql = "Delete From " + Pre + "friend_class where ParentID in('" + boxs + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_Fri_child_Sql = "Delete From " + Pre + "friend_class where ParentID in('" + boxs + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_Fri_child_Sql, null);
         }
         public int _DelAllClass()
         {
-            string Str_Fri_Sql = "Delete From " + Pre + "friend_class where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_Fri_Sql = "Delete From " + Pre + "friend_class where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_Fri_Sql, null);
         }
         public int _LockP_Link(string boxs)
         {
-            string F_Link_Sql = "Update " + Pre + "friend_link  Set Lock=1 where id in(" + boxs + ") and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string F_Link_Sql = "Update " + Pre + "friend_link  Set Lock=1 where id in(" + boxs + ") and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, F_Link_Sql, null);
         }
         public int _unLockP_Link(string boxs)
         {
-            string F_Link_Sql = "Update " + Pre + "friend_link  Set Lock=0 where id in(" + boxs + ") and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string F_Link_Sql = "Update " + Pre + "friend_link  Set Lock=0 where id in(" + boxs + ") and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, F_Link_Sql, null);
         }
         public int _delP_Link(string boxs)
         {
-            string F_Link_Sql = "Delete From " + Pre + "friend_link  where id in(" + boxs + ") and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string F_Link_Sql = "Delete From " + Pre + "friend_link  where id in(" + boxs + ") and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, F_Link_Sql, null);
         }
         public int _delAll_Link()
         {
-            string Str_Fri_Sql = "Delete From " + Pre + "friend_link where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_Fri_Sql = "Delete From " + Pre + "friend_link where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_Fri_Sql, null);
         }
         public int ExistName_Link(string Str_Name)
         {
             OleDbParameter param = new OleDbParameter("@Name", Str_Name);
-            string Str_CheckSql = "Select count(Name) From " + Pre + "friend_link Where Name=@Name and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_CheckSql = "Select count(Name) From " + Pre + "friend_link Where Name=@Name and SiteID='" + Hg.Global.Current.SiteID + "'";
             return (int)DbHelper.ExecuteScalar(CommandType.Text, Str_CheckSql, param);
         }
         public int _LinkSave(string Str_Class, string Str_Name, string Str_Type, string Str_Url, string Str_Content, string Str_PicUrl, string Str_Author, string Str_Mail, string Str_ContentFor, string Str_LinkContent, string Str_Addtime, int Isuser, int isLok)
@@ -215,18 +215,18 @@ namespace Foosun.AccessDAL
             param[11].Value = Isuser;
             param[12] = new OleDbParameter("@Lock", OleDbType.Integer, 4);
             param[12].Value = isLok;
-            string Str_InSql = "Insert into " + Pre + "friend_link ("+Database.getParam(param)+",SiteID) Values("+Database.getAParam(param)+",'" + Foosun.Global.Current.SiteID + "')";
+            string Str_InSql = "Insert into " + Pre + "friend_link ("+Database.getParam(param)+",SiteID) Values("+Database.getAParam(param)+",'" + Hg.Global.Current.SiteID + "')";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_InSql, param);
         }
         public DataTable Start_Link(int fid)
         {
             OleDbParameter param = new OleDbParameter("@ID", fid);
-            string Str_FriSql = "Select id,Name,Type,Url,Content,PicUrl,Lock,IsUser,Author,Mail,ContentFor,LinkContent,Addtime,ClassID From " + Pre + "friend_link where ID=@ID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Select id,Name,Type,Url,Content,PicUrl,Lock,IsUser,Author,Mail,ContentFor,LinkContent,Addtime,ClassID From " + Pre + "friend_link where ID=@ID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str_FriSql, param);
         }
         public DataTable Edit_Link_Di()
         {
-            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "friend_class Where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select ClassID,ClassCName,ParentID From " + Pre + "friend_class Where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
         public int Update_Link(string Str_Class, string Str_Name, string Str_Type, string Str_Url, string Str_Content, string Str_PicUrl, int Isuser, int isLok, string Str_Author, string Str_Mail, string Str_ContentFor, string Str_LinkContent, string Str_Addtime, int FID)
@@ -265,19 +265,19 @@ namespace Foosun.AccessDAL
         }
         public DataTable UserNumm()
         {
-            string Str_FriSql = "Select UserNum From " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "' and isAdmin=1 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_FriSql = "Select UserNum From " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "' and isAdmin=1 and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str_FriSql, null);
         }
         public DataTable CClas(string ClassID)
         {
             OleDbParameter param = new OleDbParameter("@ClassID", ClassID);
-            string Class_Sql = "Select ClassCName From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Class_Sql = "Select ClassCName From " + Pre + "friend_class where ClassID=@ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Class_Sql, param);
         }
         public DataTable USerSess(string Authorr)
         {
             OleDbParameter param = new OleDbParameter("@Authorr", Authorr);
-            string Str_UserNum_Sql = "Select UserName,isAdmin From " + Pre + "sys_User where userNum=@Authorr and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_UserNum_Sql = "Select UserName,isAdmin From " + Pre + "sys_User where userNum=@Authorr and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Str_UserNum_Sql, param);
         }
     }

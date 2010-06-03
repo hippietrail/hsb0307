@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Discuss : DbBase, IDiscuss
     {
@@ -122,14 +122,14 @@ namespace Foosun.SQLServerDAL
             else
                 _ClassID = " and indexnumber=@ClassID";
             SqlParameter param = new SqlParameter("@ClassID", ClassID);
-            string Sql = "select DcID,Cname from " + Pre + "user_DiscussClass where UserNum='" + Foosun.Global.Current.UserNum + "' " + _ClassID + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select DcID,Cname from " + Pre + "user_DiscussClass where UserNum='" + Hg.Global.Current.UserNum + "' " + _ClassID + " and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
 
         public void getsClassDel(string ID)
         {
             SqlParameter param = new SqlParameter("@DcID", ID);
-            string Sql = "delete from " + Pre + "user_DiscussClass where UserNum='" + Foosun.Global.Current.UserNum + "' and DcID=@DcID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "delete from " + Pre + "user_DiscussClass where UserNum='" + Hg.Global.Current.UserNum + "' and DcID=@DcID and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
@@ -139,7 +139,7 @@ namespace Foosun.SQLServerDAL
         public int Delete_1(string ID)
         {
             SqlParameter param = new SqlParameter("@DcID", ID);
-            string Sql = " delete " + Pre + "User_DiscussClass where DcID=@DcID and  SiteID=" + Foosun.Global.Current.SiteID + "";
+            string Sql = " delete " + Pre + "User_DiscussClass where DcID=@DcID and  SiteID=" + Hg.Global.Current.SiteID + "";
             return (int)DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -153,7 +153,7 @@ namespace Foosun.SQLServerDAL
         public int Delete_2(string ID)
         {
             SqlParameter param = new SqlParameter("@DisID", ID);
-            string Sql = "delete " + Pre + "user_Discuss where DisID=@DisID and  SiteID=" + Foosun.Global.Current.SiteID + "";
+            string Sql = "delete " + Pre + "user_Discuss where DisID=@DisID and  SiteID=" + Hg.Global.Current.SiteID + "";
             return (int)DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -525,7 +525,7 @@ namespace Foosun.SQLServerDAL
         public int Delete_8(string ID)
         {
             SqlParameter param = new SqlParameter("@Member", ID);
-            string Sql = " delete " + Pre + "user_DiscussMember where Member=@Member and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = " delete " + Pre + "user_DiscussMember where Member=@Member and UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -561,7 +561,7 @@ namespace Foosun.SQLServerDAL
         public DataTable sel_23(string DisID)
         {
             SqlParameter param = new SqlParameter("@DisID", DisID);
-            string Sql = "Select PhotoalbumName,PhotoalbumID From " + Pre + "User_Photoalbum where isDisPhotoalbum=1 And DisID=@DisID and UserName='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "Select PhotoalbumName,PhotoalbumID From " + Pre + "User_Photoalbum where isDisPhotoalbum=1 And DisID=@DisID and UserName='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
         #endregion
@@ -664,7 +664,7 @@ namespace Foosun.SQLServerDAL
             param[2].Value  = Content;
             param[3] =  new SqlParameter("@indexnumber", SqlDbType.NVarChar,50);
             param[3].Value  = indexnumber;
-            string Sql = "insert into " + Pre + "User_DiscussClass(DcID,Cname,Content,indexnumber,SiteID,UserNum) values(@DcID,@Cname,@Content,@indexnumber,'" + Foosun.Global.Current.SiteID + "','" + Foosun.Global.Current.UserNum + "')";
+            string Sql = "insert into " + Pre + "User_DiscussClass(DcID,Cname,Content,indexnumber,SiteID,UserNum) values(@DcID,@Cname,@Content,@indexnumber,'" + Hg.Global.Current.SiteID + "','" + Hg.Global.Current.UserNum + "')";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -764,14 +764,14 @@ namespace Foosun.SQLServerDAL
         }
 
 
-        public void Add_9(Foosun.Model.STADDDiscuss uc)
+        public void Add_9(Hg.Model.STADDDiscuss uc)
         {
             string Sql = "insert into " + Pre + "User_DiscussTopic(DtID,Title,Content,UserNum,ParentID,creatTime,DisID) values(@DtID,@Title,@Content,@UserNum,@ParentID,@creatTime,@DisID)";
             SqlParameter[] parm = Add_9_Parameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
 
-        private SqlParameter[] Add_9_Parameters(Foosun.Model.STADDDiscuss uc1)
+        private SqlParameter[] Add_9_Parameters(Hg.Model.STADDDiscuss uc1)
         {
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@DtID", SqlDbType.NVarChar, 12);
@@ -847,7 +847,7 @@ namespace Foosun.SQLServerDAL
         public DataTable getTopicinfo(string DtID)
         {
             SqlParameter param = new SqlParameter("@DtID", DtID);
-            string Sql = "Select DtID,title,Content,creatTime,UserNum From " + Pre + "User_DiscussTopic where DtID=@DtID and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "Select DtID,title,Content,creatTime,UserNum From " + Pre + "User_DiscussTopic where DtID=@DtID and UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
 
@@ -860,7 +860,7 @@ namespace Foosun.SQLServerDAL
             param[1].Value = title;
             param[2] = new SqlParameter("@content", SqlDbType.NText);
             param[2].Value = content;
-            string Sql = "update " + Pre + "User_DiscussTopic set title=@title,content=@content where DtID=@DtID and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "update " + Pre + "User_DiscussTopic set title=@title,content=@content where DtID=@DtID and UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         #endregion
@@ -906,7 +906,7 @@ namespace Foosun.SQLServerDAL
         public DataTable sel_40(string DisIDs)
         {
             SqlParameter param = new SqlParameter("@DisID", DisIDs);
-            string Sql = "select UserNum from " + Pre + "User_DiscussTopic where DisID=@DisID and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "select UserNum from " + Pre + "User_DiscussTopic where DisID=@DisID and UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
         public string sel_41(string DisIDs)
@@ -924,7 +924,7 @@ namespace Foosun.SQLServerDAL
         public int Delete_11(string DtID)
         {
             SqlParameter param = new SqlParameter("@DtID", DtID);
-            string Sql = "delete " + Pre + "User_DiscussTopic where DtID=@DtID and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "delete " + Pre + "User_DiscussTopic where DtID=@DtID and UserNum='" + Hg.Global.Current.UserNum + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public int Delete_12(string ParentID)

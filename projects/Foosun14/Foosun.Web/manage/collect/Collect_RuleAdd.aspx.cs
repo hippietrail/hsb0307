@@ -20,7 +20,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Net;
 
-public partial class manage_collect_Collect_RuleAdd : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_RuleAdd : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -49,7 +49,7 @@ public partial class manage_collect_Collect_RuleAdd : Foosun.Web.UI.ManagePage
         }
         //this.EdtOldStr.SetTag = new string[] { "[过滤字符串]", "[变量]" };
         this.EdtOldStr.SetTag = new string[] { "[变量]" };
-        Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+        Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
         DataTable tb = cl.SiteList();
         if (tb != null)
         {
@@ -113,7 +113,7 @@ public partial class manage_collect_Collect_RuleAdd : Foosun.Web.UI.ManagePage
             {
                 PageError("请必须填写!", "");
             }
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             if (this.RID.Value.Trim().Equals("") || this.RID.Value.Trim().Equals("0"))
             {
                 int nid = cl.RuleAdd(TxtRuleName.Text.Trim(), EdtOldStr.Text.Trim(), TxtNewStr.Text.Trim(), GetSelectedSite(), ChbCase.Checked);

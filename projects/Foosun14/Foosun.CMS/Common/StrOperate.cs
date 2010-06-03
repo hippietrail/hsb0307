@@ -8,7 +8,7 @@ using System.Drawing.Imaging;//ͼƬ
 using System.Xml;
 using System.Text.RegularExpressions;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
   
     /// <summary>
@@ -136,13 +136,13 @@ namespace Foosun.CMS.Common
             switch (Str)
             {
                 case 0:
-                    str = Foosun.Common.Rand.Number(int.Parse(str));
+                    str = Hg.Common.Rand.Number(int.Parse(str));
                     break;
                 case 1:
                     str = "abcdefae";
                     break;
                 case 2:
-                    str = Foosun.Common.Rand.Str(int.Parse(str));
+                    str = Hg.Common.Rand.Str(int.Parse(str));
                     break;
             }
             return str;

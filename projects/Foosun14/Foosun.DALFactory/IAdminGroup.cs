@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IAdminGroup
     {
-        int add(Foosun.Model.AdminGroupInfo agci);
-        int Edit(Foosun.Model.AdminGroupInfo agci);
+        int add(Hg.Model.AdminGroupInfo agci);
+        int Edit(Hg.Model.AdminGroupInfo agci);
         void Del(string id);
         DataTable getInfo(string id);
         DataTable getClassList(string col, string TbName, string sqlselect);

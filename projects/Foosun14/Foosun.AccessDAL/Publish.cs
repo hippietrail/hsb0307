@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Collections.Generic;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Publish : DbBase, IPublish, IDisposable
     {
@@ -422,10 +422,10 @@ namespace Foosun.AccessDAL
         public IDataReader GetPublishNewsAll(out int ncount)
         {
             string TopParam = "";
-            int refreshNum = int.Parse(Foosun.Common.Public.readparamConfig("infoNumber", "refresh"));
+            int refreshNum = int.Parse(Hg.Common.Public.readparamConfig("infoNumber", "refresh"));
             if (refreshNum != 0)
             {
-                TopParam = "top " + Foosun.Common.Public.readparamConfig("infoNumber", "refresh") + "";
+                TopParam = "top " + Hg.Common.Public.readparamConfig("infoNumber", "refresh") + "";
             }
             string Sql = "select " + TopParam + " a.CommTF,a.templet,a.classid,a.datalib,a.SavePath,a.FileName,a.FileEXName,b.SavePath as SavePath1,b.SaveClassframe,a.NewsID,a.isDelPoint from " + Pre + "news a left join " + Pre + "news_class b on a.ClassID=b.ClassID where a.isRecyle=0 and a.isLock=0 and a.isDelPoint=0 and a.NewsType<>2";
             string SqlCount = "select count(ID) from " + Pre + "news where isRecyle=0 and isLock=0 and isDelPoint=0 and NewsType<>2";

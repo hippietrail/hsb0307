@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_table_list : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_table_list : Hg.Web.UI.ManagePage
 {
     sys rd = new sys();
     protected void Page_Load(object sender, EventArgs e)
@@ -20,8 +20,8 @@ public partial class manage_Sys_table_list : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            tableName.Text = "fs_d_" + Foosun.Common.Rand.Number(5);
-            if (Foosun.Config.verConfig.PublicType != "1"){ PageError("您的版本不允许创建新闻表!", ""); }
+            tableName.Text = "fs_d_" + Hg.Common.Rand.Number(5);
+            if (Hg.Config.verConfig.PublicType != "1"){ PageError("您的版本不允许创建新闻表!", ""); }
         }
     }
     protected void shortCutsubmit(object sender, EventArgs e)

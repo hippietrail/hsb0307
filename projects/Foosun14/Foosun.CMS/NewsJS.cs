@@ -12,10 +12,10 @@ using System.Data;
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class NewsJS
     {
@@ -82,9 +82,9 @@ namespace Foosun.CMS
                 if (info.jsType == 0)
                 {
                     #region 系统JS
-                    Foosun.Publish.CommonData.Initialize();
-                    Foosun.Publish.LabelMass JsLbl = new Foosun.Publish.LabelMass(TmpContent, "", "", "", 0, 0, 0, 0);
-                    JsLbl.TemplateType = Foosun.Publish.TempType.News;
+                    Hg.Publish.CommonData.Initialize();
+                    Hg.Publish.LabelMass JsLbl = new Hg.Publish.LabelMass(TmpContent, "", "", "", 0, 0, 0, 0);
+                    JsLbl.TemplateType = Hg.Publish.TempType.News;
                     JsLbl.ParseContent();
                     JsContent = JsLbl.Analyse_List(null, null);
                     #endregion 系统JS
@@ -96,7 +96,7 @@ namespace Foosun.CMS
                     //int NewsID=0;
                     if (dt != null && dt.Rows.Count > 0)
                     {
-                        Foosun.Publish.CommonData.Initialize();
+                        Hg.Publish.CommonData.Initialize();
                         //<--修改者：吴静岚 时间：2008-06-24 解决自由JS调用新闻条数不受限
                         DataTable dts = GetJSNum(info.JsID);
                         int newNum = int.Parse( dts.Rows[0][0].ToString());
@@ -104,8 +104,8 @@ namespace Foosun.CMS
                         //wjl-->
                         foreach (DataRow r in dt.Rows)
                         {
-                            Foosun.Publish.LabelMass JsLbl = new Foosun.Publish.LabelMass(TmpContent, "", "", r["NewsId"].ToString(), 0, 0, 0, 0);
-                            JsLbl.TemplateType = Foosun.Publish.TempType.News;
+                            Hg.Publish.LabelMass JsLbl = new Hg.Publish.LabelMass(TmpContent, "", "", r["NewsId"].ToString(), 0, 0, 0, 0);
+                            JsLbl.TemplateType = Hg.Publish.TempType.News;
                             //bug修改，自由JS处理不应该ParseContent,by arjun 2006-6-17
                             //bug修改,修改截取字符串长度参数,by 周峻平 2008-5-28
                             JsContent += JsLbl.Analyse_ReadNews(0, info.jsLenTitle, info.jsLenContent, info.jsLenNavi, TmpContent, "", 1, 1, 0);
@@ -130,7 +130,7 @@ namespace Foosun.CMS
             {
                 JsPath = JsPath.Substring(1);
             }
-            JsPath = Foosun.Common.ServerInfo.GetRootPath() + "\\" + JsPath;
+            JsPath = Hg.Common.ServerInfo.GetRootPath() + "\\" + JsPath;
             if (!Directory.Exists(JsPath))
             {
                 Directory.CreateDirectory(JsPath);

@@ -9,9 +9,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_js_JS_List : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_List : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_List()
     {
@@ -25,7 +25,7 @@ public partial class manage_js_JS_List : Foosun.Web.UI.ManagePage
         {
             this.Authority_Code = "C054";
             this.CheckAdminAuthority();
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
             try
             {
                 nj.Delete(Request.Form["JSID"].Trim());
@@ -66,7 +66,7 @@ public partial class manage_js_JS_List : Foosun.Web.UI.ManagePage
     protected void DataListBind(int PageIndex)
     {
         int RdCount = 0, PgCount = 0;
-        Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+        Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
         IList<NewsJSInfo> ljs = nj.GetPage(PageIndex, PAGESIZE, out RdCount, out PgCount, int.Parse(this.HidType.Value));
         this.PageNavigator1.RecordCount = RdCount;
         this.PageNavigator1.PageCount = PgCount;
@@ -112,7 +112,7 @@ public partial class manage_js_JS_List : Foosun.Web.UI.ManagePage
             tr.Cells.Add(td5);
             TableCell td6 = new TableCell();
             td6.CssClass = "list_link";
-            td6.Text = "<a href=\"JS_Add.aspx?ID=" + r.Id.ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteJS(" + r.Id.ToString() + ");\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a> <input type=\"checkbox\" name=\"checkbox\" value=\""+ r.Id.ToString() +"\"/>";
+            td6.Text = "<a href=\"JS_Add.aspx?ID=" + r.Id.ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteJS(" + r.Id.ToString() + ");\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a> <input type=\"checkbox\" name=\"checkbox\" value=\""+ r.Id.ToString() +"\"/>";
             td6.HorizontalAlign = HorizontalAlign.Center;
             tr.Cells.Add(td6);
             this.TabData.Rows.Add(tr);

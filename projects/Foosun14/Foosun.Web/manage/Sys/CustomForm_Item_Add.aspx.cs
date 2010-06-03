@@ -10,13 +10,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomForm_Item_Add : Foosun.Web.UI.ManagePage
+    public partial class CustomForm_Item_Add : Hg.Web.UI.ManagePage
     {
-        Foosun.CMS.CustomForm customfm = new Foosun.CMS.CustomForm();
+        Hg.CMS.CustomForm customfm = new Hg.CMS.CustomForm();
         static private readonly string FormTbPre = Config.DBConfig.TableNamePrefix + "Form_";
         protected void Page_Load(object sender, EventArgs e)
         {

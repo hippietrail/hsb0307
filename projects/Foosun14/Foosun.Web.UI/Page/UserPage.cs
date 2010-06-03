@@ -4,7 +4,7 @@ using System.Web.UI;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
     public class UserPage : BasePage
     {
@@ -12,8 +12,8 @@ namespace Foosun.Web.UI
         protected override void Logout()
         {
             base.Logout();
-            string _dirDumm = Foosun.Config.UIConfig.dirDumm;
-            string TmpPath = Foosun.Config.UIConfig.dirUser + "/";
+            string _dirDumm = Hg.Config.UIConfig.dirDumm;
+            string TmpPath = Hg.Config.UIConfig.dirUser + "/";
             if ((_dirDumm).Trim() != "") { _dirDumm = "/" + _dirDumm; }
             ExecuteJs("top.location.href=\"" + _dirDumm + "/" + TmpPath + "login.aspx\";");
             Context.Response.End();

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_label_FreeLabel_Ajax : Foosun.Web.UI.ManagePage
+public partial class manage_label_FreeLabel_Ajax : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -10,7 +10,7 @@ public partial class manage_label_FreeLabel_Ajax : Foosun.Web.UI.ManagePage
         {
             if (Request.Form["Option"] != null)
             {
-                Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+                Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
                 if (Request.Form["Option"].Equals("GetFields"))
                 {
                     if (Request.Form["TableName"] != null && !Request.Form["TableName"].Equals(""))

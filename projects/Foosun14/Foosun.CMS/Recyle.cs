@@ -10,16 +10,16 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.DALFactory;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Recyle
     {
         private IRecyle rc;
-        private string str_dirDumm = Foosun.Config.UIConfig.dirDumm;
-        private string str_dirSite = Foosun.Config.UIConfig.dirSite;
-        private string str_rootpath = Foosun.Common.ServerInfo.GetRootPath();
+        private string str_dirDumm = Hg.Config.UIConfig.dirDumm;
+        private string str_dirSite = Hg.Config.UIConfig.dirSite;
+        private string str_rootpath = Hg.Common.ServerInfo.GetRootPath();
         public Recyle()
         {
             rc = DataAccess.CreateRecyle();
@@ -95,13 +95,13 @@ namespace Foosun.CMS
 
                                     string filepath = str_rootpath + str_dirDumm + savepath + "\\" + filename + "." + fileexname;
 
-                                    Foosun.Common.Public.DelFile("", filepath);
+                                    Hg.Common.Public.DelFile("", filepath);
                                     rc.raDComment(newsid, true);
                                 }
                                 dc.Clear(); dc.Dispose();
 
                                 string dirpath = str_rootpath + str_dirDumm + dv.Rows[j]["SavePath"].ToString() + "\\" + dv.Rows[j]["SaveClassframe"].ToString();
-                                Foosun.Common.Public.DelFile(dirpath, "");
+                                Hg.Common.Public.DelFile(dirpath, "");
                             }
                         }
                         dv.Clear(); dv.Dispose();  
@@ -131,7 +131,7 @@ namespace Foosun.CMS
 
                             string filepath = str_rootpath + str_dirDumm + savepath + "\\" + filename + "." + fileexname;
 
-                            Foosun.Common.Public.DelFile("", filepath);
+                            Hg.Common.Public.DelFile("", filepath);
                             rc.raDComment(newsid, true);
                         }
                         dc.Clear(); dc.Dispose();
@@ -150,7 +150,7 @@ namespace Foosun.CMS
                     string siteid = dt.Rows[i]["ChannelID"].ToString();
                     string siteename = dt.Rows[i]["EName"].ToString();
                     string sitepath = str_rootpath + str_dirDumm + "\\" + str_dirSite + "\\" + siteename;
-                    Foosun.Common.Public.DelFile(sitepath, "");
+                    Hg.Common.Public.DelFile(sitepath, "");
                 }
                 dt.Clear();dt.Dispose();
             }
@@ -171,7 +171,7 @@ namespace Foosun.CMS
 
                     string FilePath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath + "\\" + filename + "." + fileexname;
                     string DirPath = str_rootpath + str_dirDumm + savepath + "\\" + spename + "\\" + savedirpath;
-                    Foosun.Common.Public.DelFile(DirPath, FilePath);
+                    Hg.Common.Public.DelFile(DirPath, FilePath);
                 }
                 dt.Clear();dt.Dispose();
             }
@@ -259,7 +259,7 @@ namespace Foosun.CMS
                                     string newsid = dv.Rows[k]["NewsID"].ToString();
                                     string filepath = str_rootpath + str_dirDumm + dv.Rows[k]["SavePath"].ToString() + "\\" + dv.Rows[k]["FileName"].ToString() + "." + dv.Rows[k]["FileEXName"].ToString();
 
-                                    Foosun.Common.Public.DelFile("", filepath);
+                                    Hg.Common.Public.DelFile("", filepath);
                                     rc.raDComment(newsid, true);
                                 }
                                 dv.Clear(); dv.Dispose();
@@ -268,7 +268,7 @@ namespace Foosun.CMS
                         dt.Clear(); dt.Dispose();
                     }
                     string dirPath = str_rootpath + str_dirDumm + dc.Rows[0]["SavePath"].ToString() + "\\" + dc.Rows[0]["SaveClassframe"].ToString();
-                    Foosun.Common.Public.DelFile(dirPath, "");
+                    Hg.Common.Public.DelFile(dirPath, "");
                 }
                 dc.Clear(); dc.Dispose();
             }
@@ -294,7 +294,7 @@ namespace Foosun.CMS
 
                             string filepath = str_rootpath + str_dirDumm + savepath + "\\" + filename + "." +fileexname;// husb
 
-                            Foosun.Common.Public.DelFile("", filepath);
+                            Hg.Common.Public.DelFile("", filepath);
                             rc.raDComment(newsid, true);
                         }
                         dv.Clear(); dv.Dispose();
@@ -314,7 +314,7 @@ namespace Foosun.CMS
                     string siteid = dt.Rows[i]["ChannelID"].ToString();
                     string siteename = dt.Rows[i]["EName"].ToString();
                     string sitepath = str_rootpath + str_dirDumm + "\\" + str_dirSite + "\\" + siteename;
-                    Foosun.Common.Public.DelFile(sitepath, "");
+                    Hg.Common.Public.DelFile(sitepath, "");
                 }
                 dt.Clear(); dt.Dispose();
             }
@@ -335,7 +335,7 @@ namespace Foosun.CMS
 
                     string FilePath = str_rootpath + str_dirDumm + savepath + "\\" + specialEName + "\\" + saveDirPath + "\\" + filename + "." + fileexname;
                     string DirPath = str_rootpath + str_dirDumm + savepath + "\\" + specialEName + "\\" + saveDirPath;
-                    Foosun.Common.Public.DelFile(DirPath, FilePath);
+                    Hg.Common.Public.DelFile(DirPath, FilePath);
                 }
                 dt.Clear();
                 dt.Dispose();

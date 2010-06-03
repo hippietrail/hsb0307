@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Common;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.Common;
+using Hg.CMS.Common;
 
-public partial class manage_user_announce_add : Foosun.Web.UI.ManagePage
+public partial class manage_user_announce_add : Hg.Web.UI.ManagePage
 {
     public manage_user_announce_add()
     {
@@ -69,14 +69,14 @@ public partial class manage_user_announce_add : Foosun.Web.UI.ManagePage
             {
                 string ramAID;
                 ramAID = Rand.Number(12);//产生12位随机字符
-                Foosun.Model.UserInfo5 uc = new Foosun.Model.UserInfo5();
+                Hg.Model.UserInfo5 uc = new Hg.Model.UserInfo5();
                 uc.newsID = ramAID;
                 uc.Title = TxtTitle;
                 uc.content = TxtContent;
                 uc.creatTime = DateCreatTime;
                 uc.GroupNumber = TxtGroupNumber;
                 uc.getPoint = TxtgetPoint;
-                uc.SiteId = Foosun.Global.Current.SiteID;
+                uc.SiteId = Hg.Global.Current.SiteID;
                 rd.InsertAnnounce(uc);
                 PageRight("创建公告成功成功。", "announce.aspx");
             }

@@ -6,14 +6,14 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
 using System.Configuration;
 using System.Data.SqlClient;
 
-public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
+public partial class manage_news_class_list : Hg.Web.UI.ManagePage
 {
     public manage_news_class_list()
     {
@@ -21,17 +21,17 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
     }
     ContentManage rd = new ContentManage();
     rootPublic pd = new rootPublic();
-    Foosun.CMS.UserMisc ud = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc ud = new Hg.CMS.UserMisc();
     DataTable newsClassTable = null;
     //加载函数
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除缓存
-        Foosun.Publish.CommonData.NewsClass.Clear();
-        Foosun.Publish.CommonData.CHClass.Clear();
+        Hg.Publish.CommonData.NewsClass.Clear();
+        Hg.Publish.CommonData.CHClass.Clear();
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChange);
         Response.CacheControl = "no-cache";
-        string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+        string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
         if (ReadType == "1")
         {
             makeHTML2.Enabled = false;
@@ -46,7 +46,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
         string stat = Request.QueryString["Stat"];
         if (!IsPostBack)
         {
-            if (Foosun.Config.verConfig.PublicType != "1")
+            if (Hg.Config.verConfig.PublicType != "1")
             {
                 ClassIndex.Enabled = false;
             }
@@ -54,7 +54,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
             {
                 this.Authority_Code = "C029";
                 this.CheckAdminAuthority();
-                string Classid = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+                string Classid = Hg.Common.Input.Filter(Request.QueryString["id"]);
                 StaticChange(Classid);
                 pd.SaveUserAdminLogs(0, 1, UserNum, "锁定/解锁操作", "锁定/解锁操作栏目.ClassID:" + Request.Form["Checkbox1"] + "");
                 PageRight("锁定/解锁操作栏目成功!", "class_list.aspx");
@@ -78,7 +78,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
         {
             this.Authority_Code = "C097";
             this.CheckAdminAuthority();
-            string ClassId = Foosun.Common.Input.Filter(Request.QueryString["ClassId"].ToString());
+            string ClassId = Hg.Common.Input.Filter(Request.QueryString["ClassId"].ToString());
             int orderId = int.Parse(Request.QueryString["OrderId"].ToString());
             updateOrder(ClassId, orderId);
         }
@@ -206,21 +206,21 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
             if (SiteID == "0")
             {
                 SQLConditionInfo st = new SQLConditionInfo("@SiteID", _SiteID.ToString());
-                dt = Foosun.CMS.Pagination.GetPage("manage_news_class_list_1_aspx", PageIndex, 50, out i, out j, st);
+                dt = Hg.CMS.Pagination.GetPage("manage_news_class_list_1_aspx", PageIndex, 50, out i, out j, st);
             }
             else
             {
-                dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 50, out i, out j, null);
+                dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 50, out i, out j, null);
             }
         }
         else
         {
             SQLConditionInfo st = new SQLConditionInfo("@SiteID", SiteID);
-            dt = Foosun.CMS.Pagination.GetPage("manage_news_class_list_1_aspx", PageIndex, 50, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("manage_news_class_list_1_aspx", PageIndex, 50, out i, out j, st);
         }
         //else
         //{
-        //     dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 50, out i, out j, null);
+        //     dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 50, out i, out j, null);
         //}
 
         if (dt != null)
@@ -298,16 +298,16 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                 {
                     if (dt.Rows[k]["isPage"].ToString() == "0")
                     {
-                        _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" title=\"添加新闻\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Number=" + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + dt.Rows[k]["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
+                        _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" title=\"添加新闻\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Number=" + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + dt.Rows[k]["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
                     }
                 }
                 if (dt.Rows[k]["isPage"].ToString() == "1")
                 {
-                    dt.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + dt.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + dt.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                    dt.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + dt.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + dt.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                 }
                 else
                 {
-                    dt.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Acation=Add," + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + dt.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                    dt.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(dt.Rows[k]["ClassCName"])) + "&Acation=Add," + dt.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + dt.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                 }
 
                 if (!this.CheckAuthority())
@@ -430,18 +430,18 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                     {
                         if (row["isPage"].ToString() == "0")
                         {
-                            _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + row["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Number=" + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + row["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
+                            _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + row["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Number=" + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + row["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
                         }
                     }
 
                     //操作
                     if (row["isPage"].ToString() == "1")
                     {
-                        row["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + row["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + row["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\"></a><a href=\"news_review.aspx?ID=" + row["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                        row["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + row["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + row["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\"></a><a href=\"news_review.aspx?ID=" + row["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                     }
                     else
                     {
-                        row["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + row["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Acation=Add," + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\"></a><a href=\"news_review.aspx?ID=" + row["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                        row["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + row["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(row["ClassCName"])) + "&Acation=Add," + row["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\"></a><a href=\"news_review.aspx?ID=" + row["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                     }
 
                     if (!this.CheckAuthority())
@@ -548,7 +548,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
             int j = 0;
             for (int i = 0; i < Checkbox.Length; i++)
             {
-                if (Foosun.Publish.General.publishXML(Checkbox[i]))
+                if (Hg.Publish.General.publishXML(Checkbox[i]))
                 {
                     j++;
                 }
@@ -573,11 +573,11 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
         }
         else
         {
-            Foosun.Control.HProgressBar.Start();
-            Foosun.Publish.General PG = new Foosun.Publish.General();
+            Hg.Control.HProgressBar.Start();
+            Hg.Publish.General PG = new Hg.Publish.General();
             try
             {
-                Foosun.Control.HProgressBar.Roll("正在发布栏目", 0);
+                Hg.Control.HProgressBar.Roll("正在发布栏目", 0);
                 string[] Checkboxs = Str.Split(',');
                 Str = null;
                 int j = 0;
@@ -593,19 +593,19 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                     }
                     else
                     {
-                        if (Foosun.Publish.General.publishPage(Checkboxs[i].ToString()))
+                        if (Hg.Publish.General.publishPage(Checkboxs[i].ToString()))
                         {
                             j++;
                         }
                     }
-                    Foosun.Control.HProgressBar.Roll("共生成" + m + "个栏目，正在发布" + (i + 1) + "个。", ((i + 1) * 100 / m));
+                    Hg.Control.HProgressBar.Roll("共生成" + m + "个栏目，正在发布" + (i + 1) + "个。", ((i + 1) * 100 / m));
                 }
-                Foosun.Control.HProgressBar.Roll("发布栏目成功,成功" + j + "个,<a href=\"../Publish/error/geterror.aspx?\">失败" + (Checkboxs.Length - j) + "个(可能有栏目有浏览权限)</a>. &nbsp;<a href=\"class_list.aspx\">返回</a>", 100);
+                Hg.Control.HProgressBar.Roll("发布栏目成功,成功" + j + "个,<a href=\"../Publish/error/geterror.aspx?\">失败" + (Checkboxs.Length - j) + "个(可能有栏目有浏览权限)</a>. &nbsp;<a href=\"class_list.aspx\">返回</a>", 100);
             }
             catch (Exception ex)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□发布栏目", "【错误描述：】\r\n" + ex.ToString(), UserName);
-                Foosun.Control.HProgressBar.Roll("发布栏目失败。<a href=\"../publish/error/geterror.aspx?\">查看日志</a>", 0);
+                Hg.Common.Public.savePublicLogFiles("□□□发布栏目", "【错误描述：】\r\n" + ex.ToString(), UserName);
+                Hg.Control.HProgressBar.Roll("发布栏目失败。<a href=\"../publish/error/geterror.aspx?\">查看日志</a>", 0);
             }
             Response.End();
         }
@@ -628,7 +628,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
             {
                 if (rd.getclassPage(Checkboxs[i]) == 0)
                 {
-                    if (Foosun.Publish.General.publishClassIndex(Checkboxs[i]))
+                    if (Hg.Publish.General.publishClassIndex(Checkboxs[i]))
                     {
                         j++;
                     }
@@ -758,7 +758,7 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
         //int i, j;
         string _SiteID = Request.QueryString["SiteID"];
 
-        Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup ac = new Hg.CMS.AdminGroup();
         if (_SiteID != null && _SiteID != string.Empty)
         {
             if (SiteID == "0")
@@ -845,16 +845,16 @@ public partial class manage_news_class_list : Foosun.Web.UI.ManagePage
                 {
                     if (newsClassTable.Rows[k]["isPage"].ToString() == "0")
                     {
-                        _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" title=\"添加新闻\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Number=" + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + newsClassTable.Rows[k]["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
+                        _TempStr = "<a title=\"添加新闻\" href=\"News_add.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"].ToString() + "&EditAction=add\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addnews.gif\" border=\"0\" title=\"添加新闻\" /></a><a href=\"Class_add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Number=" + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" title=\"添加子类\" /></a><a href=\"news_Page.aspx?Number=" + newsClassTable.Rows[k]["ClassID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addpage.gif\" border=\"0\" title=\"添加单页面\" /></a>";
                     }
                 }
                 if (newsClassTable.Rows[k]["isPage"].ToString() == "1")
                 {
-                    newsClassTable.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + newsClassTable.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + newsClassTable.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                    newsClassTable.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + newsClassTable.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"news_Page.aspx?ClassID=" + newsClassTable.Rows[k]["ClassID"] + "&Action=Edit\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + newsClassTable.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                 }
                 else
                 {
-                    newsClassTable.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + newsClassTable.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Acation=Add," + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + newsClassTable.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
+                    newsClassTable.Rows[k]["pop"] = "<input name=\"Checkbox1\" type=\"checkbox\" value=" + newsClassTable.Rows[k]["ClassID"] + " />&nbsp;&nbsp;<a href=\"Class_Add.aspx?Cname=" + Server.UrlEncode(Convert.ToString(newsClassTable.Rows[k]["ClassCName"])) + "&Acation=Add," + newsClassTable.Rows[k]["ClassID"] + "&SiteID=" + Request.QueryString["SiteID"] + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/edit.gif\" border=\"0\" title=\"修改\" /></a><a href=\"news_review.aspx?ID=" + newsClassTable.Rows[k]["ClassID"] + "&type=class\" class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysIco/review.gif\" border=\"0\" title=\"浏览\" /></a>" + _TempStr + "";
                 }
 
                 if (!this.CheckAuthority())

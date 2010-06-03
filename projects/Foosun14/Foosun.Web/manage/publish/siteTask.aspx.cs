@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_siteTask : Foosun.Web.UI.ManagePage
+public partial class manage_publish_siteTask : Hg.Web.UI.ManagePage
 {
     rootPublic logs = new rootPublic();
     Psframe pl = new Psframe();
@@ -78,7 +78,7 @@ public partial class manage_publish_siteTask : Foosun.Web.UI.ManagePage
                     #region
                     dt.Rows[k]["TaskName"] = "<a class=\"list_link\"  href=\"siteTask_edit.aspx?taskid=" + taskID + "\" title=\"点击查看详情或修改\">" + dt.Rows[k]["TaskName"].ToString() + "</a>";
                     #endregion
-                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"siteTask_edit.aspx?taskid=" + taskID + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a class=\"list_link\" href=\"?type=del&taskid=" + taskID + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\">&nbsp;<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='task_checkbox' id='task_checkbox'value=\"" + taskID + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"siteTask_edit.aspx?taskid=" + taskID + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a class=\"list_link\" href=\"?type=del&taskid=" + taskID + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\">&nbsp;<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='task_checkbox' id='task_checkbox'value=\"" + taskID + "\"/>";
                 }
                 DataList1.DataSource = dt;
                 DataList1.DataBind();

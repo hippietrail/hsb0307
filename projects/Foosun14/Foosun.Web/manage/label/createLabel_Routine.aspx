@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <title></title>
-<link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .showCSSdiv {left:18px;top:8px;background:#FFFFE1 repeat-x left top;border:1px double #4F4F4F;text-align:left;padding-left:8px;padding-top:8px;padding-bottom:12px;padding-right:8px;clip:rect(auto, auto, auto, auto);}	
 </style>
@@ -132,7 +132,7 @@
         <script language="javascript" type="text/javascript">
         function insertHTMLEdit(url)
             {
-                var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+                var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
                 var oEditor = FCKeditorAPI.GetInstance("UserDefined");
                 if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
                 {

@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Stat : DbBase, IStat
     {
-        string isDataBase = Foosun.Config.UIConfig.indeData;
+        string isDataBase = Hg.Config.UIConfig.indeData;
       
         public DataTable sel()
         {
@@ -25,13 +25,13 @@ namespace Foosun.AccessDAL
         public string Str_ClassSql(string id)
         {
             OleDbParameter param = new OleDbParameter("@id", id);
-            string Sql = "Select classname From " + Pre + "stat_class where statid=@id and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select classname From " + Pre + "stat_class where statid=@id and SiteID='" + Hg.Global.Current.SiteID + "'";
             return Convert.ToString(DbHelper.ExecuteScalar( CommandType.Text, Sql, param));
         }
         public bool Str_classSql(string ID)
         {
             OleDbParameter param = new OleDbParameter("@ID", ID);
-            string Sql = "Delete From " + Pre + "stat_class where statid=@ID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_class where statid=@ID and SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, param);
             if (i == 0)
             {
@@ -42,7 +42,7 @@ namespace Foosun.AccessDAL
         public bool Str_statInfo_Sql(string ID)
         {
             OleDbParameter param = new OleDbParameter("@ID", ID);
-            string Sql = "Delete From " + Pre + "stat_Info where classid = @ID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Info where classid = @ID and SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, param);
             if (i == 0)
             {
@@ -53,7 +53,7 @@ namespace Foosun.AccessDAL
         public bool Str_statContent_Sql(string ID)
         {
             OleDbParameter param = new OleDbParameter("@ID", ID);
-            string Sql = "Delete From " + Pre + "stat_Content where classid = @ID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Content where classid = @ID and SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, param);
             if (i == 0)
             {
@@ -61,14 +61,14 @@ namespace Foosun.AccessDAL
             }
             return true;
         }
-        public void Str_InSql(Foosun.Model.stat_Param sp)
+        public void Str_InSql(Hg.Model.stat_Param sp)
         {
             string Sql = "Update " + Pre + "stat_Param Set SystemName=@Str_SystemName,SystemNameE=@Str_SystemNameE,ipCheck=@Str_ipCheck,ipTime=@Str_ipTime,isOnlinestat=@Str_isOnlinestat,pageNum=@Str_pageNum,cookies=@Str_cookies,pointNum=@Str_pointNum,SiteID=@SiteID";
             OleDbParameter[] parm = Getstat_Param(sp);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
 
-        private OleDbParameter[] Getstat_Param(Foosun.Model.stat_Param sp)
+        private OleDbParameter[] Getstat_Param(Hg.Model.stat_Param sp)
         {
             OleDbParameter[] parm = new OleDbParameter[9];
             parm[0] = new OleDbParameter("@Str_SystemName", OleDbType.VarWChar, 100);
@@ -94,7 +94,7 @@ namespace Foosun.AccessDAL
         public int Stat_Sql()
         {
             int intnum = 20;
-            string Sql = "Select pageNum From " + Pre + "stat_Param where SiteID='" + Foosun.Global.Current.SiteID + "'";//取得参数设置中的每页显示数
+            string Sql = "Select pageNum From " + Pre + "stat_Param where SiteID='" + Hg.Global.Current.SiteID + "'";//取得参数设置中的每页显示数
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (dt != null)
             {
@@ -108,22 +108,22 @@ namespace Foosun.AccessDAL
         }
         public void Vote_Sql(string CheckboxArray)
         {
-            string Sql = "Delete From " + Pre + "stat_class where statid in ('" + CheckboxArray + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_class where statid in ('" + CheckboxArray + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public void Str_statInfo_Sql_1(string CheckboxArray)
         {
-            string Sql = "Delete From " + Pre + "stat_Info where classid in ('" + CheckboxArray + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Info where classid in ('" + CheckboxArray + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public void Str_statContent_Sql_1(string CheckboxArray)
         {
-            string Sql = "Delete From " + Pre + "stat_Content where classid in ('" + CheckboxArray + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Content where classid in ('" + CheckboxArray + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public bool Str_StatSql()
         {
-            string Sql = "Delete From " + Pre + "stat_class where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_class where SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
             if (i == 0)
             {
@@ -133,7 +133,7 @@ namespace Foosun.AccessDAL
         }
         public bool Str_DelAllinfo_Sql()
         {
-            string Sql = "Delete From " + Pre + "stat_Info where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Info where SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
             if (i == 0)
             {
@@ -143,7 +143,7 @@ namespace Foosun.AccessDAL
         }
         public bool Str_DelContent_Sql()
         {
-            string Sql = "Delete From " + Pre + "stat_Content where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Content where SiteID='" + Hg.Global.Current.SiteID + "'";
             int i = DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
             if (i == 0)
             {
@@ -154,13 +154,13 @@ namespace Foosun.AccessDAL
         public int sel_1(string Str_statid)
         {
             OleDbParameter param = new OleDbParameter("@statid", Str_statid);
-            string Sql = "Select count(statid) From " + Pre + "stat_class where statid = @statid and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select count(statid) From " + Pre + "stat_class where statid = @statid and SiteID='" + Hg.Global.Current.SiteID + "'";
             return (int)DbHelper.ExecuteScalar( CommandType.Text, Sql,param);
         }
         public int Str_CheckSql(string Str_Classname)
         {
             OleDbParameter param = new OleDbParameter("@Classname", Str_Classname);
-            string Sql = "Select count(classname) From " + Pre + "stat_class Where classname=@Classname and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select count(classname) From " + Pre + "stat_class Where classname=@Classname and SiteID='" + Hg.Global.Current.SiteID + "'";
             return (int)DbHelper.ExecuteScalar( CommandType.Text, Sql, param);
         }
         public int Str_InSql_1(string Str_statid, string Str_Classname, string SiteID)
@@ -170,17 +170,17 @@ namespace Foosun.AccessDAL
         }
         public int Str_UpdateSql(string Str_ClassnameE, string id)
         {
-            string Sql = "Update " + Pre + "stat_class set classname='" + Str_ClassnameE + "' where statid='" + id + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "stat_class set classname='" + Str_ClassnameE + "' where statid='" + id + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public int Str_StatSql_1()
         {
-            string Sql = "Delete From " + Pre + "stat_Info where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_Info where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public int Str_StatSqlZ()
         {
-            string Sql = "Delete From " + Pre + "stat_content where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From " + Pre + "stat_content where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery( CommandType.Text, Sql, null);
         }
         public DataTable sel_2(string viewid, string SiteID)

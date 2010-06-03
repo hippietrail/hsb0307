@@ -3,13 +3,13 @@ using System.Text;
 using System.Collections;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Site : DbBase, ISite
     {
@@ -28,7 +28,7 @@ namespace Foosun.AccessDAL
                     if (RcdCount < 1)
                         break;
                     else
-                        SiteID = Foosun.Common.Rand.Number(12, true);
+                        SiteID = Hg.Common.Rand.Number(12, true);
                 }
                 string SqlRptEnm = "select count(*) from " + Pre + "News_site where EName='" + site.EName + "'";
                 int n = (int)DbHelper.ExecuteScalar(cn, CommandType.Text, SqlRptEnm, null);
@@ -200,7 +200,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public IDataReader siteList()
         {
-            string Sql = "select ChannelID,CName,ChannCName from " + Pre + "news_site where ParentID='0' and isURL=0 and isLock=0 and isRecyle=0 " + Foosun.Common.Public.getCHStr() + " order by id asc";
+            string Sql = "select ChannelID,CName,ChannCName from " + Pre + "news_site where ParentID='0' and isURL=0 and isLock=0 and isRecyle=0 " + Hg.Common.Public.getCHStr() + " order by id asc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 

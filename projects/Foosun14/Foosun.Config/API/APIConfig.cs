@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Config.API
+namespace Hg.Config.API
 {
     /// <summary>
     /// 整合配置信息类

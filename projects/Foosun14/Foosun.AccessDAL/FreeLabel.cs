@@ -3,13 +3,13 @@ using System.Data;
 using System.Data.OleDb;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Global;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Global;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class FreeLabel : DbBase, IFreeLabel
     {
@@ -119,10 +119,10 @@ namespace Foosun.AccessDAL
                 parm[3].Value = info.Description.Equals("") ? DBNull.Value : (object)info.Description;
                 if (info.Id < 1)
                 {
-                    string LblID = Foosun.Common.Rand.Number(12);
+                    string LblID = Hg.Common.Rand.Number(12);
                     while (Convert.ToInt32(DbHelper.ExecuteScalar(cn, CommandType.Text, "select count(*) from " + Pre + "sys_LabelFree where LabelID='" + LblID + "'", null)) > 0)
                     {
-                        LblID = Foosun.Common.Rand.Number(12, true);
+                        LblID = Hg.Common.Rand.Number(12, true);
                     }
                     Sql = "insert into " + Pre + "sys_LabelFree (LabelID,"+Database.getParam(parm)+",CreatTime,SiteID) values ('" + LblID + "',"+Database.getAParam(parm)+",'" + DateTime.Now + "','" + Current.SiteID + "')";
                 }

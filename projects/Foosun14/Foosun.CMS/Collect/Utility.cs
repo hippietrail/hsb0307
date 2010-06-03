@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 using System.Net;
 using System.IO;
 
-namespace Foosun.CMS.Collect
+namespace Hg.CMS.Collect
 {
     public class Utility
     {
@@ -89,7 +89,7 @@ namespace Foosun.CMS.Collect
                 BaseUrl = BaseUrl.Replace("\\", "/");
                 BranchUrl = BranchUrl.Replace("\\", "/");
                 //2007-09-27 ken暂时修改
-                if (Foosun.Common.Input.GetSubString(BranchUrl, 1).ToString() == "/...")
+                if (Hg.Common.Input.GetSubString(BranchUrl, 1).ToString() == "/...")
                 {
                     return GetLastUrl(BaseUrl, BranchUrl);
                 }

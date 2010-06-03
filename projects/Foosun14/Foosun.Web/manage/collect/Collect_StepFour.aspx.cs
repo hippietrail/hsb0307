@@ -22,7 +22,7 @@ using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
 
-public partial class manage_collect_Collect_StepFour : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_StepFour : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -52,7 +52,7 @@ public partial class manage_collect_Collect_StepFour : Foosun.Web.UI.ManagePage
             else
             {
                 int n = int.Parse(Request.QueryString["ID"]);
-                Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+                Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
                 DataTable tb = cl.GetSite(n);
                 if (tb == null || tb.Rows.Count == 0)
                 {
@@ -143,7 +143,7 @@ public partial class manage_collect_Collect_StepFour : Foosun.Web.UI.ManagePage
             {
                 PageError("新闻内容没有设置或设置不正确！", "Collect_List.aspx");
             }
-            Foosun.Model.CollectSiteInfo nf = new Foosun.Model.CollectSiteInfo();
+            Hg.Model.CollectSiteInfo nf = new Hg.Model.CollectSiteInfo();
             nf.ID = Convert.ToInt32(this.HidSiteID.Value);
             nf.PageTitleSetting = EdtCaption.Text.Trim();
             nf.PagebodySetting = EdtContent.Text.Trim();
@@ -246,7 +246,7 @@ public partial class manage_collect_Collect_StepFour : Foosun.Web.UI.ManagePage
                     return;
                 }
             }
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             cl.SiteUpdate(nf, 4);
             //bug修改  周峻平  2008-6-4
             //下一步DdlObtUrl

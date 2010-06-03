@@ -18,17 +18,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class sys_Param : Foosun.Web.UI.ManagePage
+public partial class sys_Param : Hg.Web.UI.ManagePage
 {
     public sys_Param()
     {
         Authority_Code = "Q001";
     }
     sys sys = new sys();//初始化实例
-    Foosun.Model.STsys_param su;
-    Foosun.CMS.Common.rootPublic rp = new Foosun.CMS.Common.rootPublic();
+    Hg.Model.STsys_param su;
+    Hg.CMS.Common.rootPublic rp = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         #region 页面载入时版权信息,加载函数
@@ -88,8 +88,8 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             #endregion
 
             #region 设置分页样式
-            string PageStyles = Foosun.Common.Public.readparamConfig("PageStyle");
-            string PageLinkCounts = Foosun.Common.Public.readparamConfig("PageLinkCount");
+            string PageStyles = Hg.Common.Public.readparamConfig("PageStyle");
+            string PageLinkCounts = Hg.Common.Public.readparamConfig("PageLinkCount");
             if (string.IsNullOrEmpty(PageStyles))
             {
                 PageStyles = "0";
@@ -100,7 +100,7 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             this.PageLinkCount.Text = PageLinkCounts;
 
             //设置是否开启分页  默认开启
-            string isAutoPageSplit = Foosun.Config.UIConfig.enableAutoPage;
+            string isAutoPageSplit = Hg.Config.UIConfig.enableAutoPage;
             if (string.IsNullOrEmpty(isAutoPageSplit))
             {
                 this.RadioButton_autoPageSplit1.Checked = true;
@@ -119,7 +119,7 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
 
             //设置分页字数
-            this.txt_pageSplitCount.Text = Foosun.Config.UIConfig.splitPageCount;
+            this.txt_pageSplitCount.Text = Hg.Config.UIConfig.splitPageCount;
             #endregion
         }
         #endregion
@@ -178,7 +178,7 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
                 XiangDui.Checked = true;
             }
             #endregion
-            BaseCopyRight.Value = Foosun.Common.Input.ToTxt(dt.Rows[0]["CopyRight"].ToString());
+            BaseCopyRight.Value = Hg.Common.Input.ToTxt(dt.Rows[0]["CopyRight"].ToString());
             CheckInt.Text = dt.Rows[0]["CheckInt"].ToString();
 
             #region 图片盗链
@@ -348,7 +348,7 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             FTPIP.Text = dt.Rows[0]["FTPIP"].ToString();
             Ftpport.Text = dt.Rows[0]["Ftpport"].ToString();
             FtpUserName.Text = dt.Rows[0]["FtpUserName"].ToString();
-            FTPPASSword.Text = Foosun.Common.Input.NcyString(dt.Rows[0]["FTPPASSword"].ToString());//字符串解密显示
+            FTPPASSword.Text = Hg.Common.Input.NcyString(dt.Rows[0]["FTPPASSword"].ToString());//字符串解密显示
             #endregion
 
             #region RSS参数设置部分
@@ -642,14 +642,14 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
         if (Page.IsValid)//判断页面是否通过验证
         {
             #region 取得基本参数设置添加中的表单信息
-            su.Str_SiteName = Foosun.Common.Input.Filter(this.SiteName.Text.Trim());//站点名称
-            su.Str_SiteDomain = Foosun.Common.Input.Filter(this.SiteDomain.Text.Trim());//站点域名
-            su.Str_IndexTemplet = Foosun.Common.Input.Filter(this.IndexTemplet.Text.Trim());//首页摸板路径
-            su.Str_Txt_IndexFileName = Foosun.Common.Input.Filter(this.IndexFileName.Text.Trim());//首页生成文件名
-            su.Str_FileEXName = Foosun.Common.Input.Filter(this.FileEXName.Text.Trim());//默认的扩展名（主站）
-            su.Str_ReadNewsTemplet = Foosun.Common.Input.Filter(this.ReadNewsTemplet.Text.Trim());//新闻浏览页摸板
-            su.Str_ClassListTemplet = Foosun.Common.Input.Filter(this.ClassListTemplet.Text.Trim());//新闻栏目页摸板
-            su.Str_SpecialTemplet = Foosun.Common.Input.Filter(this.SpecialTemplet.Text.Trim());//新闻专题页摸板
+            su.Str_SiteName = Hg.Common.Input.Filter(this.SiteName.Text.Trim());//站点名称
+            su.Str_SiteDomain = Hg.Common.Input.Filter(this.SiteDomain.Text.Trim());//站点域名
+            su.Str_IndexTemplet = Hg.Common.Input.Filter(this.IndexTemplet.Text.Trim());//首页摸板路径
+            su.Str_Txt_IndexFileName = Hg.Common.Input.Filter(this.IndexFileName.Text.Trim());//首页生成文件名
+            su.Str_FileEXName = Hg.Common.Input.Filter(this.FileEXName.Text.Trim());//默认的扩展名（主站）
+            su.Str_ReadNewsTemplet = Hg.Common.Input.Filter(this.ReadNewsTemplet.Text.Trim());//新闻浏览页摸板
+            su.Str_ClassListTemplet = Hg.Common.Input.Filter(this.ClassListTemplet.Text.Trim());//新闻栏目页摸板
+            su.Str_SpecialTemplet = Hg.Common.Input.Filter(this.SpecialTemplet.Text.Trim());//新闻专题页摸板
 
             #region 前台浏览方式
             su.readtypef = 0;
@@ -666,8 +666,8 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_LoginTimeOut = Foosun.Common.Input.Filter(this.LoginTimeOut.Text.Trim());//后台登陆过期时间
-            su.Str_Email = Foosun.Common.Input.Filter(this.Email.Text.Trim());//管理员信箱
+            su.Str_LoginTimeOut = Hg.Common.Input.Filter(this.LoginTimeOut.Text.Trim());//后台登陆过期时间
+            su.Str_Email = Hg.Common.Input.Filter(this.Email.Text.Trim());//管理员信箱
 
             #region 站点采用路径方式
             int linkTypeConfig = 0;
@@ -684,8 +684,8 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_BaseCopyRight = Foosun.Common.Input.Filter(this.BaseCopyRight.Value.Trim());//版权信息
-            su.Str_CheckInt = Foosun.Common.Input.Filter(this.CheckInt.Text.Trim());//新闻后台审核机制
+            su.Str_BaseCopyRight = Hg.Common.Input.Filter(this.BaseCopyRight.Value.Trim());//版权信息
+            su.Str_CheckInt = Hg.Common.Input.Filter(this.CheckInt.Text.Trim());//新闻后台审核机制
 
             #region 图片防盗
             su.picc = 0;
@@ -698,8 +698,8 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
                 su.picc = 0;
             }
             #endregion
-            su.Str_LenSearch = Foosun.Common.Input.Filter(this.LenSearch.Text.Trim());//关键字长度
-            if (Foosun.Common.Input.IsInteger(this.HistoryNum.Text) == false)
+            su.Str_LenSearch = Hg.Common.Input.Filter(this.LenSearch.Text.Trim());//关键字长度
+            if (Hg.Common.Input.IsInteger(this.HistoryNum.Text) == false)
             {
                 PageError("生成归档索引生成多少天前索引请填写数字", "sys_Param.aspx");
             }
@@ -749,16 +749,16 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_SaveClassFilePath = Foosun.Common.Input.Filter(this.SaveClassFilePath.Text.Trim());//生成栏目文件保存路径
+            su.Str_SaveClassFilePath = Hg.Common.Input.Filter(this.SaveClassFilePath.Text.Trim());//生成栏目文件保存路径
             string TmpIndexPage = this.SaveIndexPage.Text.Trim();
             if (TmpIndexPage.ToLower().IndexOf("{@year") == -1 || TmpIndexPage.ToLower().IndexOf("{@month}") == -1 || TmpIndexPage.ToLower().IndexOf("{@day}") == -1)
             {
                 PageError("索引页面规则必须包含{@month}、{@day}及{@year04}或{@year02}", "sys_Param.aspx");
             }
-            su.Str_SaveIndexPage = Foosun.Common.Input.Filter(this.SaveIndexPage.Text.Trim());//生成索引页规则
-            su.Str_SaveNewsFilePath = Foosun.Common.Input.Filter(this.SaveNewsFilePath.Text.Trim());//新闻文件命名规则
-            su.Str_SaveNewsDirPath = Foosun.Common.Input.Filter(this.SaveNewsDirPath.Text.Trim());//新闻文件保存路径
-            su.Str_Pram_Index = Foosun.Common.Input.Filter(this.Pram_Index.Text.Trim());//每页显示数量
+            su.Str_SaveIndexPage = Hg.Common.Input.Filter(this.SaveIndexPage.Text.Trim());//生成索引页规则
+            su.Str_SaveNewsFilePath = Hg.Common.Input.Filter(this.SaveNewsFilePath.Text.Trim());//新闻文件命名规则
+            su.Str_SaveNewsDirPath = Hg.Common.Input.Filter(this.SaveNewsDirPath.Text.Trim());//新闻文件保存路径
+            su.Str_Pram_Index = Hg.Common.Input.Filter(this.Pram_Index.Text.Trim());//每页显示数量
             #endregion
 
             #region 判断
@@ -785,19 +785,19 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             {
                 isAutoPageSplit = "false";
             }
-            Foosun.Common.Public.SaveXmlConfig("enableAutoPage", isAutoPageSplit, "xml/sys/foosun.config");
+            Hg.Common.Public.SaveXmlConfig("enableAutoPage", isAutoPageSplit, "xml/sys/foosun.config");
 
             //设置字数
             string txt_pageSplitCount = this.txt_pageSplitCount.Text;
-            Foosun.Common.Public.SaveXmlConfig("splitPageCount", txt_pageSplitCount, "xml/sys/foosun.config");
+            Hg.Common.Public.SaveXmlConfig("splitPageCount", txt_pageSplitCount, "xml/sys/foosun.config");
             //刷新
-            Foosun.Config.UIConfig.RefurbishCatch();
+            Hg.Config.UIConfig.RefurbishCatch();
             #endregion 
 
             #region 载入数据-刷新页面
             if (sys.Update_BaseInfo(su) != 0)
             {
-                if (Foosun.Common.Public.saveparamconfig(this.SiteName.Text.Trim(), this.SiteDomain.Text.Trim(), linkTypeConfig, ReviewType, this.IndexTemplet.Text.Trim(), this.IndexFileName.Text.Trim(), this.LenSearch.Text.Trim(), this.SaveIndexPage.Text.Trim(), this.InsertPicPosition.Text, collectTF.ToString(), this.HistoryNum.Text, true, _PageStyle, _PageLinkCount, "dd") == false)
+                if (Hg.Common.Public.saveparamconfig(this.SiteName.Text.Trim(), this.SiteDomain.Text.Trim(), linkTypeConfig, ReviewType, this.IndexTemplet.Text.Trim(), this.IndexFileName.Text.Trim(), this.LenSearch.Text.Trim(), this.SaveIndexPage.Text.Trim(), this.InsertPicPosition.Text, collectTF.ToString(), this.HistoryNum.Text, true, _PageStyle, _PageLinkCount, "dd") == false)
                 {
                     PageError("参数保存成功。<li>但更新缓存失败，请检查您的/xml/sys/base.config是否具有可写权限。</li>", "sys_Param.aspx");
                 }
@@ -923,14 +923,14 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             #endregion
 
             su.Str_Commfiltrchar = this.Commfiltrchar.Value.Trim() + "";//评论过滤
-            //string Str_IPLimt = Foosun.Common.Input.Filter(this.IPLimt.Value.Trim());//IP
+            //string Str_IPLimt = Hg.Common.Input.Filter(this.IPLimt.Value.Trim());//IP
             su.Str_IPLimt = Request.Form["IPLimt"]+"";
-            su.Str_GpointName = Foosun.Common.Input.Filter(this.GpointName.Text.Trim());//G币
-            su.Str_LoginLock = Foosun.Common.Input.Filter(this.LoginLock.Text.Trim());//锁定
-            su.Str_setPoint = Foosun.Common.Input.Filter(this.setPoint.Text.Trim());//注册获得的积分金币
-            su.Str_cPointParam = Foosun.Common.Input.Filter(this.cPointParam.Text.Trim());//魅力值增加
-            su.Str_aPointparam = Foosun.Common.Input.Filter(this.aPointparam.Text.Trim());//活跃值增加
-            su.Str_RegContent = Foosun.Common.Input.Filter(this.RegContent.Value.Trim());//注册协议
+            su.Str_GpointName = Hg.Common.Input.Filter(this.GpointName.Text.Trim());//G币
+            su.Str_LoginLock = Hg.Common.Input.Filter(this.LoginLock.Text.Trim());//锁定
+            su.Str_setPoint = Hg.Common.Input.Filter(this.setPoint.Text.Trim());//注册获得的积分金币
+            su.Str_cPointParam = Hg.Common.Input.Filter(this.cPointParam.Text.Trim());//魅力值增加
+            su.Str_aPointparam = Hg.Common.Input.Filter(this.aPointparam.Text.Trim());//活跃值增加
+            su.Str_RegContent = Hg.Common.Input.Filter(this.RegContent.Value.Trim());//注册协议
 
             #region 会员注册参数
             string _tmpSTR = this.regitemContent.Text;//,UserPassword
@@ -1031,10 +1031,10 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_PicServerDomain = Foosun.Common.Input.Filter(this.PicServerDomain.Text.Trim());//域名
-            su.Str_PicUpLoad = Foosun.Common.Input.Filter(this.PicUpload.Text.Trim());//图片附件目录
-            su.Str_UpfilesType = Foosun.Common.Input.Filter(this.UpfilesType.Text.Trim());//上传格式
-            su.Str_UpFilesSize = Foosun.Common.Input.Filter(this.UpFilesSize.Text.Trim());//上传大小
+            su.Str_PicServerDomain = Hg.Common.Input.Filter(this.PicServerDomain.Text.Trim());//域名
+            su.Str_PicUpLoad = Hg.Common.Input.Filter(this.PicUpload.Text.Trim());//图片附件目录
+            su.Str_UpfilesType = Hg.Common.Input.Filter(this.UpfilesType.Text.Trim());//上传格式
+            su.Str_UpFilesSize = Hg.Common.Input.Filter(this.UpFilesSize.Text.Trim());//上传大小
 
             #region 域名
             su.domainnn = 0;
@@ -1048,15 +1048,15 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_RemoteDomain = Foosun.Common.Input.Filter(this.RemoteDomain.Text.Trim());//远程图片域名
-            su.Str_RemoteSavePath = Foosun.Common.Input.Filter(this.RemoteSavePath.Text.Trim());//远程图片保存路径
+            su.Str_RemoteDomain = Hg.Common.Input.Filter(this.RemoteDomain.Text.Trim());//远程图片域名
+            su.Str_RemoteSavePath = Hg.Common.Input.Filter(this.RemoteSavePath.Text.Trim());//远程图片保存路径
             #endregion
 
             #region 分组刷新
-            su.Str_ClassListNum = Foosun.Common.Input.Filter(this.ClassListNum.Text.Trim());//列表每次刷新数
-            su.Str_NewsNum = Foosun.Common.Input.Filter(this.NewsNum.Text.Trim());//信息每次刷新数
-            su.Str_BatDelNum = Foosun.Common.Input.Filter(this.BatDelNum.Text.Trim());//批量删除数
-            su.Str_SpecialNum = Foosun.Common.Input.Filter(this.SpecialNum.Text.Trim());//专题每次刷新数
+            su.Str_ClassListNum = Hg.Common.Input.Filter(this.ClassListNum.Text.Trim());//列表每次刷新数
+            su.Str_NewsNum = Hg.Common.Input.Filter(this.NewsNum.Text.Trim());//信息每次刷新数
+            su.Str_BatDelNum = Hg.Common.Input.Filter(this.BatDelNum.Text.Trim());//批量删除数
+            su.Str_SpecialNum = Hg.Common.Input.Filter(this.SpecialNum.Text.Trim());//专题每次刷新数
             #endregion
 
             #region 向数据库中写入添加的基本参数设置信息
@@ -1067,7 +1067,7 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             #region 载入数据-刷新页面
             if (ftpf != 0)
             {
-                if (Foosun.Common.Public.saveRefreshConfig(this.ClassListNum.Text.Trim(), this.NewsNum.Text.Trim(), this.BatDelNum.Text.Trim(), this.SpecialNum.Text.Trim()) == false)
+                if (Hg.Common.Public.saveRefreshConfig(this.ClassListNum.Text.Trim(), this.NewsNum.Text.Trim(), this.BatDelNum.Text.Trim(), this.SpecialNum.Text.Trim()) == false)
                 {
                     PageError("上传、分组刷新参数设置成功。<li>但更新缓存失败，请检查您的/xml/sys/refresh.config是否具有可写权限。</li>", "sys_Param.aspx");
                 }
@@ -1093,28 +1093,28 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
         this.Authority_Code = "Q005";
         this.CheckAdminAuthority();
         #region 取得JS,FTP设置添加中的表单信息
-        string Str_JsNews1 = Foosun.Common.Input.Filter(this.JsNews1.Text.Trim());
-        string Str_JsTitle1 = Foosun.Common.Input.Filter(this.JsTitle1.Text.Trim());
+        string Str_JsNews1 = Hg.Common.Input.Filter(this.JsNews1.Text.Trim());
+        string Str_JsTitle1 = Hg.Common.Input.Filter(this.JsTitle1.Text.Trim());
         string Str_JsModel1 = this.JsModel1.SelectedValue;
         su.Str_HotJS = "" + Str_JsNews1 + "|" + Str_JsTitle1 + "|" + Str_JsModel1 + "";
 
-        string Str_JsNews2 = Foosun.Common.Input.Filter(this.JsNews2.Text.Trim());
-        string Str_JsTitle2 = Foosun.Common.Input.Filter(this.JsTitle2.Text.Trim());
+        string Str_JsNews2 = Hg.Common.Input.Filter(this.JsNews2.Text.Trim());
+        string Str_JsTitle2 = Hg.Common.Input.Filter(this.JsTitle2.Text.Trim());
         string Str_JsModel2 = this.JsModel2.SelectedValue;
         su.Str_LastJS = "" + Str_JsNews2 + "|" + Str_JsTitle2 + "|" + Str_JsModel2 + "";
 
-        string Str_JsNews3 = Foosun.Common.Input.Filter(this.JsNews3.Text.Trim());
-        string Str_JsTitle3 = Foosun.Common.Input.Filter(this.JsTitle3.Text.Trim());
+        string Str_JsNews3 = Hg.Common.Input.Filter(this.JsNews3.Text.Trim());
+        string Str_JsTitle3 = Hg.Common.Input.Filter(this.JsTitle3.Text.Trim());
         string Str_JsModel3 = this.JsModel3.SelectedValue;
         su.Str_RecJS = "" + Str_JsNews3 + "|" + Str_JsTitle3 + "|" + Str_JsModel3 + "";
 
-        string Str_JsNews4 = Foosun.Common.Input.Filter(this.JsNews4.Text.Trim());
-        string Str_JsTitle4 = Foosun.Common.Input.Filter(this.JsTitle4.Text.Trim());
+        string Str_JsNews4 = Hg.Common.Input.Filter(this.JsNews4.Text.Trim());
+        string Str_JsTitle4 = Hg.Common.Input.Filter(this.JsTitle4.Text.Trim());
         string Str_JsModel4 = this.JsModel4.SelectedValue;
         su.Str_HoMJS = "" + Str_JsNews4 + "|" + Str_JsTitle4 + "|" + Str_JsModel4 + "";
 
-        string Str_JsNews5 = Foosun.Common.Input.Filter(this.JsNews5.Text.Trim());
-        string Str_JsTitle5 = Foosun.Common.Input.Filter(this.JsTitle5.Text.Trim());
+        string Str_JsNews5 = Hg.Common.Input.Filter(this.JsNews5.Text.Trim());
+        string Str_JsTitle5 = Hg.Common.Input.Filter(this.JsTitle5.Text.Trim());
         string Str_JsModel5 = this.JsModel5.SelectedValue;
         su.Str_TMJS = "" + Str_JsNews5 + "|" + Str_JsTitle5 + "|" + Str_JsModel5 + "";
 
@@ -1130,10 +1130,10 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             su.ftpp = 0;
         }
         #endregion
-        su.Str_FTPIP = Foosun.Common.Input.Filter(this.FTPIP.Text.Trim());
-        su.Str_Ftpport = Foosun.Common.Input.Filter(this.Ftpport.Text.Trim());
-        su.Str_FtpUserName = Foosun.Common.Input.Filter(this.FtpUserName.Text.Trim());
-        su.Str_FTPPASSword = Foosun.Common.Input.Filter(Foosun.Common.Input.EncryptString(this.FTPPASSword.Text.Trim()));//字符串加密方式写入数据库
+        su.Str_FTPIP = Hg.Common.Input.Filter(this.FTPIP.Text.Trim());
+        su.Str_Ftpport = Hg.Common.Input.Filter(this.Ftpport.Text.Trim());
+        su.Str_FtpUserName = Hg.Common.Input.Filter(this.FtpUserName.Text.Trim());
+        su.Str_FTPPASSword = Hg.Common.Input.Filter(Hg.Common.Input.EncryptString(this.FTPPASSword.Text.Trim()));//字符串加密方式写入数据库
         #endregion
         #endregion
 
@@ -1184,20 +1184,20 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_PrintPicTF = Foosun.Common.Input.Filter(this.PrintPicTF.Text.Trim());//类型
-            su.Str_PrintWord = Foosun.Common.Input.Filter(this.PrintWord.Text.Trim());//文字水印
-            su.Str_Printfontsize = Foosun.Common.Input.Filter(this.Printfontsize.Text.Trim());//字体大小
-            su.Str_Printfontfamily = Foosun.Common.Input.Filter(this.Printfontfamily.Text.Trim());//字体
-            su.Str_Printfontcolor = Foosun.Common.Input.Filter(this.Printfontcolor.Text.Trim());//水印颜色
-            su.Str_PrintBTF = Foosun.Common.Input.Filter(this.PrintBTF.Text.Trim());//文字是否加粗
-            su.Str_PintPicURL = Foosun.Common.Input.Filter(this.PintPicURL.Text.Trim());//图片水印路径
-            su.Str_PrintPicsize = Foosun.Common.Input.Filter(this.PrintPicsize.Text.Trim());//图片水印大小
-            su.Str_PintPictrans = Foosun.Common.Input.Filter(this.PintPictrans.Text.Trim());//透明度
-            su.Str_PrintPosition = Foosun.Common.Input.Filter(this.PrintPosition.Text.Trim());//位置
-            su.Str_PrintSmallTF = Foosun.Common.Input.Filter(this.PrintSmallTF.Text.Trim());//是否开启缩图
-            su.Str_PrintSmallSizeStyle = Foosun.Common.Input.Filter(this.PrintSmallSizeStyle.Text.Trim());//缩图方式
-            su.Str_PrintSmallSize = Foosun.Common.Input.Filter(this.PrintSmallSize.Text.Trim());//缩图大小
-            su.Str_PrintSmallinv = Foosun.Common.Input.Filter(this.PrintSmallinv.Text.Trim());//缩图比例
+            su.Str_PrintPicTF = Hg.Common.Input.Filter(this.PrintPicTF.Text.Trim());//类型
+            su.Str_PrintWord = Hg.Common.Input.Filter(this.PrintWord.Text.Trim());//文字水印
+            su.Str_Printfontsize = Hg.Common.Input.Filter(this.Printfontsize.Text.Trim());//字体大小
+            su.Str_Printfontfamily = Hg.Common.Input.Filter(this.Printfontfamily.Text.Trim());//字体
+            su.Str_Printfontcolor = Hg.Common.Input.Filter(this.Printfontcolor.Text.Trim());//水印颜色
+            su.Str_PrintBTF = Hg.Common.Input.Filter(this.PrintBTF.Text.Trim());//文字是否加粗
+            su.Str_PintPicURL = Hg.Common.Input.Filter(this.PintPicURL.Text.Trim());//图片水印路径
+            su.Str_PrintPicsize = Hg.Common.Input.Filter(this.PrintPicsize.Text.Trim());//图片水印大小
+            su.Str_PintPictrans = Hg.Common.Input.Filter(this.PintPictrans.Text.Trim());//透明度
+            su.Str_PrintPosition = Hg.Common.Input.Filter(this.PrintPosition.Text.Trim());//位置
+            su.Str_PrintSmallTF = Hg.Common.Input.Filter(this.PrintSmallTF.Text.Trim());//是否开启缩图
+            su.Str_PrintSmallSizeStyle = Hg.Common.Input.Filter(this.PrintSmallSizeStyle.Text.Trim());//缩图方式
+            su.Str_PrintSmallSize = Hg.Common.Input.Filter(this.PrintSmallSize.Text.Trim());//缩图大小
+            su.Str_PrintSmallinv = Hg.Common.Input.Filter(this.PrintSmallinv.Text.Trim());//缩图比例
 
             #endregion
 
@@ -1248,10 +1248,10 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             {
                 WapLastNums = this.WapLastNum.Text.Trim();
             }
-            su.Str_RssNum = Foosun.Common.Input.Filter(this.RssNum.Text.Trim());//显示范围
-            su.Str_RssContentNum = Foosun.Common.Input.Filter(this.RssContentNum.Text.Trim());//截取数
-            su.Str_RssTitle = Foosun.Common.Input.Filter(this.RssTitle.Text.Trim());//标题
-            su.Str_RssPicURL = Foosun.Common.Input.Filter(this.RssPicURL.Text.Trim());//地址
+            su.Str_RssNum = Hg.Common.Input.Filter(this.RssNum.Text.Trim());//显示范围
+            su.Str_RssContentNum = Hg.Common.Input.Filter(this.RssContentNum.Text.Trim());//截取数
+            su.Str_RssTitle = Hg.Common.Input.Filter(this.RssTitle.Text.Trim());//标题
+            su.Str_RssPicURL = Hg.Common.Input.Filter(this.RssPicURL.Text.Trim());//地址
 
             #region 加入WAP
             su.wapp = 0;
@@ -1265,9 +1265,9 @@ public partial class sys_Param : Foosun.Web.UI.ManagePage
             }
             #endregion
 
-            su.Str_WapPath = Foosun.Common.Input.Filter(WapPaths);//WAP路径
-            su.Str_WapDomain = Foosun.Common.Input.Filter(wapdomains);//WAP域名
-            su.Str_WapLastNum = Foosun.Common.Input.Filter(WapLastNums);//WAP数
+            su.Str_WapPath = Hg.Common.Input.Filter(WapPaths);//WAP路径
+            su.Str_WapDomain = Hg.Common.Input.Filter(wapdomains);//WAP域名
+            su.Str_WapLastNum = Hg.Common.Input.Filter(WapLastNums);//WAP数
 
             #endregion
             #region 向数据库中写入添加的RSS参数设置信息

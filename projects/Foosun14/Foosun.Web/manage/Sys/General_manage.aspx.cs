@@ -9,11 +9,11 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class General_manage : Foosun.Web.UI.ManagePage
+public partial class General_manage : Hg.Web.UI.ManagePage
 {
     public General_manage()
     {
@@ -249,11 +249,11 @@ public partial class General_manage : Foosun.Web.UI.ManagePage
         if (key != null && key != "")
         {
             SQLConditionInfo st = new SQLConditionInfo("@gType", int.Parse(key.ToString()));
-            dt = Foosun.CMS.Pagination.GetPage("General_manage_2_aspx", PageIndex, 20, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("General_manage_2_aspx", PageIndex, 20, out i, out j, st);
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage("General_manage_1_aspx", PageIndex, 20, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage("General_manage_1_aspx", PageIndex, 20, out i, out j, null);
         }
         #region 从参数设置里取得每页显示记录的条数
         int num = PAGESIZE;
@@ -317,7 +317,7 @@ public partial class General_manage : Foosun.Web.UI.ManagePage
                     }
                     #endregion
                     dt.Rows[k]["Cname"] = "<a class=\"list_link\"  href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\">" + dt.Rows[k]["Cname"].ToString() + "</a>";
-                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=suo&id=" + id + "\" title=\"点击锁定\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=unsuo&id=" + id + "\" title=\"点击解锁\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=del&id=" + id + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此常规项\" /></a><input type='checkbox' name='general_checkbox' id='general_checkbox'value=\"" + id + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"General_Edit_Manage.aspx?Action=edit&id=" + id + "&kkey=" + gType + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=suo&id=" + id + "\" title=\"点击锁定\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=unsuo&id=" + id + "\" title=\"点击解锁\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁此常规项\" /></a><a class=\"list_link\" href=\"General_manage.aspx?type=del&id=" + id + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此常规项\" /></a><input type='checkbox' name='general_checkbox' id='general_checkbox'value=\"" + id + "\"/>";
                 }
                 DataList1.DataSource = dt;
                 DataList1.DataBind();

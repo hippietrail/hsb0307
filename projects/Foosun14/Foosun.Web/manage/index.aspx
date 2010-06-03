@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %>--后台管理</title>
+    <title><%Response.Write(Hg.Config.UIConfig.HeadTitle); %>--后台管理</title>
         <script language="JavaScript" type="text/javascript">
 <!--
 function killErrors() {
@@ -13,7 +13,7 @@ window.onerror = killErrors;
 
 // -->
     </script>
-<%--<link href="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />--%>
+<%--<link href="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />--%>
 </head>
 <frameset rows="85,*" cols="*" frameborder="no" border="0" framespacing="0">
     <frame src="top.aspx" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />

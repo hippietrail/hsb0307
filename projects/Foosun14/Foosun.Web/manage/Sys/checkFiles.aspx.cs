@@ -11,11 +11,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
-using Foosun.Config;
-using Foosun.CMS.Common;
+using Hg.Model;
+using Hg.Config;
+using Hg.CMS.Common;
 
-public partial class manage_Sys_checkFiles : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_checkFiles : Hg.Web.UI.ManagePage
 {
     private bool showdiff = false;
     public string ReloadURL = "";
@@ -232,7 +232,7 @@ public partial class manage_Sys_checkFiles : Foosun.Web.UI.ManagePage
         string fsurl = OfficialConfig.CompareFileUrl;
         if (fsurl.Trim() != string.Empty)
         {
-            string s = Foosun.CMS.Collect.Utility.GetPageContent(new System.Uri(fsurl, true), System.Text.Encoding.Default);
+            string s = Hg.CMS.Collect.Utility.GetPageContent(new System.Uri(fsurl, true), System.Text.Encoding.Default);
             this.HidStandard.Value = s;
             Display();
         }

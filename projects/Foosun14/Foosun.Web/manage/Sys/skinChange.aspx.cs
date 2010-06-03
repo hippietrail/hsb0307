@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 using System.Xml;
 
-public partial class manage_Sys_skinChange : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_skinChange : Hg.Web.UI.ManagePage
 {
     public manage_Sys_skinChange()
     {
@@ -24,7 +24,7 @@ public partial class manage_Sys_skinChange : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;
-            string _style = Foosun.Config.UIConfig.CssPath();
+            string _style = Hg.Config.UIConfig.CssPath();
             skinlist.InnerHtml = getskinlist(_style);
         }
     }
@@ -34,7 +34,7 @@ public partial class manage_Sys_skinChange : Foosun.Web.UI.ManagePage
         string _Str = "<select name=\"styleDir\" onchange=\"javascript:lsrc(this.value);\">\r";
         try
         {
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "")
             { _dirdumm = "/" + _dirdumm; }
             string xmlPath = Server.MapPath(_dirdumm + "/xml/skin/skin.xml");
@@ -71,14 +71,14 @@ public partial class manage_Sys_skinChange : Foosun.Web.UI.ManagePage
     protected void buttonsave(object sender, EventArgs e)
     {
         string StrChar = Request.Form["styleDir"];
-        //if (Foosun.Common.Public.constReadOnly(0))
-        //    Foosun.Common.Public.constReadOnly(2);
-        if (Foosun.Common.Public.constReadOnly(0, "xml/sys/foosun.config"))
-            Foosun.Common.Public.constReadOnly(2, "xml/sys/foosun.config");
-        //Foosun.Common.Public.SaveXmlElementValue("manner", StrChar);
-        Foosun.Common.Public.SaveXmlConfig("manner", StrChar, "xml/sys/foosun.config");
-        //Foosun.Common.Public.constReadOnly(1);
-        //Foosun.Common.Public.constReadOnly(1, "xml/sys/foosun.config");
+        //if (Hg.Common.Public.constReadOnly(0))
+        //    Hg.Common.Public.constReadOnly(2);
+        if (Hg.Common.Public.constReadOnly(0, "xml/sys/foosun.config"))
+            Hg.Common.Public.constReadOnly(2, "xml/sys/foosun.config");
+        //Hg.Common.Public.SaveXmlElementValue("manner", StrChar);
+        Hg.Common.Public.SaveXmlConfig("manner", StrChar, "xml/sys/foosun.config");
+        //Hg.Common.Public.constReadOnly(1);
+        //Hg.Common.Public.constReadOnly(1, "xml/sys/foosun.config");
         Response.Write("<script language=\"JavaScript\" type=\"text/javascript\">top.location.href=\"../index.aspx\"</script>");
     }
 }

@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_channel_list : Foosun.Web.UI.ManagePage
+public partial class manage_channel_list : Hg.Web.UI.ManagePage
 {
     public manage_channel_list()
     {
@@ -75,7 +75,7 @@ public partial class manage_channel_list : Foosun.Web.UI.ManagePage
     {
         int i, j;
         DataTable dt = null;
-        dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+        dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

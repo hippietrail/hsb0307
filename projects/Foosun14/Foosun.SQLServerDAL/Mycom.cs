@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Mycom : DbBase, IMycom
     {
@@ -18,7 +18,7 @@ namespace Foosun.SQLServerDAL
         public DataTable sel(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "select Title,Content,IP,UserNum,creatTime from " + Pre + "api_commentary where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select Title,Content,IP,UserNum,creatTime from " + Pre + "api_commentary where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
         public int Update(string Title, string Contents, DateTime CreatTime, string Commid)
@@ -33,7 +33,7 @@ namespace Foosun.SQLServerDAL
             param[3] = new SqlParameter("@Commid", SqlDbType.NVarChar, 12);
             param[3].Value = Commid;
 
-            string Sql = "update " + Pre + "api_commentary set Title=@Title,Content=@Contents,creatTime=@CreatTime where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "api_commentary set Title=@Title,Content=@Contents,creatTime=@CreatTime where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return (int)DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public DataTable GetPage(string UserNum2, string GoodTitle2, string UserNum, string title, string Um, string dtm1, string dtm2, string isCheck, string islock, string SiteID, string infoID, string APIID, string DTable, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
@@ -77,8 +77,8 @@ namespace Foosun.SQLServerDAL
             if (UserNum2 != null && UserNum2 != "")
                 um = " and UserNum=@UserNum2";
             string siteID1 = "";
-            if (Foosun.Global.Current.SiteID != "0")
-                siteID1 = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            if (Hg.Global.Current.SiteID != "0")
+                siteID1 = " and SiteID='" + Hg.Global.Current.SiteID + "'";
             else
             {
                 if (SiteID != "" && SiteID != null)
@@ -103,7 +103,7 @@ namespace Foosun.SQLServerDAL
             IDataReader dt = DbHelper.ExecuteReader(CommandType.Text, Sql, param);
             string URL = "";
             string NewsTitle = "";
-            string dimm = Foosun.Config.UIConfig.dirDumm;
+            string dimm = Hg.Config.UIConfig.dirDumm;
             if (dimm.Trim() != string.Empty)
             {
                 dimm = "/" + dimm;
@@ -148,13 +148,13 @@ namespace Foosun.SQLServerDAL
         public void Delete(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "delete " + Pre + "api_commentary  where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "delete " + Pre + "api_commentary  where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public string sel_5(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "select OrderID from " + Pre + "api_commentary where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select OrderID from " + Pre + "api_commentary where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         public int Update_1(int OrderID, string Commid)
@@ -164,13 +164,13 @@ namespace Foosun.SQLServerDAL
             param[0].Value = OrderID;
             param[1] = new SqlParameter("@Commid", SqlDbType.NVarChar, 12);
             param[1].Value = Commid;
-            string Sql = "update  " + Pre + "api_commentary set OrderID=@OrderID where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update  " + Pre + "api_commentary set OrderID=@OrderID where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public string sel_6(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "select GoodTitle from " + Pre + "api_commentary where Commid=@Commid and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select GoodTitle from " + Pre + "api_commentary where Commid=@Commid and SiteID='" + Hg.Global.Current.SiteID + "'";
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         public void Update_2(int GoodTitle, string Commid)
@@ -180,37 +180,37 @@ namespace Foosun.SQLServerDAL
             param[0].Value = GoodTitle;
             param[1] = new SqlParameter("@Commid", SqlDbType.NVarChar, 12);
             param[1].Value = Commid;
-            string Sql = "update  " + Pre + "api_commentary set GoodTitle=@GoodTitle where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update  " + Pre + "api_commentary set GoodTitle=@GoodTitle where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public string sel_7(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "select isCheck from " + Pre + "api_commentary where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select isCheck from " + Pre + "api_commentary where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         public int Update_3(string Commid, int ch)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@Commid", Commid), new SqlParameter("@ch", ch) };
-            string Sql = "update  " + Pre + "api_commentary set isCheck=@ch where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update  " + Pre + "api_commentary set isCheck=@ch where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
         public string sel_8(string Commid)
         {
             SqlParameter param = new SqlParameter("@Commid", Commid);
-            string Sql = "select islock from " + Pre + "api_commentary where Commid=@Commid " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select islock from " + Pre + "api_commentary where Commid=@Commid " + Hg.Common.Public.getSessionStr() + "";
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         public int Update_4(int islock, string Commid)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@islock", islock), new SqlParameter("@Commid", Commid) };
-            string Sql = "update  " + Pre + "api_commentary set islock=@islock where Commid=@Commid" + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update  " + Pre + "api_commentary set islock=@islock where Commid=@Commid" + Hg.Common.Public.getSessionStr() + "";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
         public string sel_9(string UserName)
         {
             SqlParameter param = new SqlParameter("@UserName", UserName);
-            string Sql = "select UserNum from " + Pre + "sys_user where UserName=@UserName " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select UserNum from " + Pre + "sys_user where UserName=@UserName " + Hg.Common.Public.getSessionStr() + "";
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         #endregion

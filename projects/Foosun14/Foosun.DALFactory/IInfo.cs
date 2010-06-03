@@ -4,9 +4,9 @@
 using System;
 using System.Data;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IInfo
     {

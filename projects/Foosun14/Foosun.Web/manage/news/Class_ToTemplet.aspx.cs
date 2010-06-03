@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_Class_ToTemplet : Foosun.Web.UI.ManagePage
+public partial class manage_news_Class_ToTemplet : Hg.Web.UI.ManagePage
 {
     public manage_news_Class_ToTemplet()
     {
@@ -20,7 +20,7 @@ public partial class manage_news_Class_ToTemplet : Foosun.Web.UI.ManagePage
     ContentManage rd = new ContentManage();
     rootPublic pd = new rootPublic();
     DataTable dt = new DataTable();
-    public string DirHtml = Foosun.Config.UIConfig.dirHtml;
+    public string DirHtml = Hg.Config.UIConfig.dirHtml;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -28,7 +28,7 @@ public partial class manage_news_Class_ToTemplet : Foosun.Web.UI.ManagePage
 
             if (SiteID != "0")
             { 
-                DirHtml = Foosun.Config.UIConfig.dirSite; 
+                DirHtml = Hg.Config.UIConfig.dirSite; 
             }
             this.Itemtemplets.Text = rd.GetParamBase("ClasslistTemplet");
             this.displaytemplets.Text = rd.GetParamBase("ReadNewsTemplet");

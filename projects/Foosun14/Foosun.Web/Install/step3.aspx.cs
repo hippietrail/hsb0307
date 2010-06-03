@@ -12,7 +12,7 @@ using System.Web.UI.HtmlControls;
 using System.Reflection;
 using System.IO;
 
-namespace Foosun.Web.Install
+namespace Hg.Web.Install
 {
 	public partial class step3 : System.Web.UI.Page
 	{
@@ -57,9 +57,9 @@ namespace Foosun.Web.Install
 					Response.Write("请正确填写序列号&nbsp; &nbsp; <a href=\"javascript:closediv();\"> <span style=\"color:Blue\">重新操作</span>");
 					Response.End();
 				}
-				Foosun.Config.UIConfig osn = new Foosun.Config.UIConfig();
+				Hg.Config.UIConfig osn = new Hg.Config.UIConfig();
 				string snpass = osn.snportpass();
-				Foosun.Config.Series sn = new Foosun.Config.Series();
+				Hg.Config.Series sn = new Hg.Config.Series();
 				string Inputpass = sn.EnPas(gSN).ToUpper();
 				if (Inputpass != snpass)
 				{
@@ -137,7 +137,7 @@ namespace Foosun.Web.Install
 					//------------------------建立数据库----------------------------
 					string connStr = string.Format("data source={0};user id={1};password={2};persist security info=false;packet size=4096", server, user, pwd);
 
-					Foosun.Install.Comm.ExecuteSql(connStr, "master", "IF Not EXISTS (select name from master.dbo.sysdatabases where name = N'" + dbname + "') CREATE DATABASE " + dbname + " COLLATE Chinese_PRC_CI_AS");
+					Hg.Install.Comm.ExecuteSql(connStr, "master", "IF Not EXISTS (select name from master.dbo.sysdatabases where name = N'" + dbname + "') CREATE DATABASE " + dbname + " COLLATE Chinese_PRC_CI_AS");
 
 					//用osql.exe执行方式
 					//System.Diagnostics.Process sqlProcess = new System.Diagnostics.Process();
@@ -152,15 +152,15 @@ namespace Foosun.Web.Install
 					StreamReader sr1 = File.OpenText(s_dbsqlpath);
 					string s_sqlcontent = sr1.ReadToEnd();
 					sr1.Close();
-					Foosun.Install.Comm.ExecuteSql(connStr, dbname, s_sqlcontent);
+					Hg.Install.Comm.ExecuteSql(connStr, dbname, s_sqlcontent);
 
 					//执行创建存储过程
-					Foosun.Install.Comm.ExecuteSql(connStr, dbname, "CREATE PROCEDURE [" + tbpre + "publish_CHupdateishtml] @tablename varchar(30),@filedname varchar(30),@idtype varchar(30),@id int AS begin declare @sql varchar(500) set @sql='update '+@tablename +' set '+@filedname+'=1 where '+@idtype+'='+'''+@id+''' exec (@sql) end");
-					Foosun.Install.Comm.ExecuteSql(connStr, dbname, "CREATE PROCEDURE [" + tbpre + "publish_updateishtml] @tablename varchar(30),@filedname varchar(30),@idtype varchar(30),@newsid varchar(12) AS begin declare @sql varchar(500) set @sql='update '+@tablename +' set '+@filedname+'=1 where '+@idtype+'='+''''+@newsid+'''' exec (@sql) end");
+					Hg.Install.Comm.ExecuteSql(connStr, dbname, "CREATE PROCEDURE [" + tbpre + "publish_CHupdateishtml] @tablename varchar(30),@filedname varchar(30),@idtype varchar(30),@id int AS begin declare @sql varchar(500) set @sql='update '+@tablename +' set '+@filedname+'=1 where '+@idtype+'='+'''+@id+''' exec (@sql) end");
+					Hg.Install.Comm.ExecuteSql(connStr, dbname, "CREATE PROCEDURE [" + tbpre + "publish_updateishtml] @tablename varchar(30),@filedname varchar(30),@idtype varchar(30),@newsid varchar(12) AS begin declare @sql varchar(500) set @sql='update '+@tablename +' set '+@filedname+'=1 where '+@idtype+'='+''''+@newsid+'''' exec (@sql) end");
 
 					//执行创建管理员
-					//string s_adminpwd = Foosun.Common.Input.MD5(adminpwd, true);
-					//string s_usernum = Foosun.Common.Rand.Number(12);
+					//string s_adminpwd = Hg.Common.Input.MD5(adminpwd, true);
+					//string s_usernum = Hg.Common.Rand.Number(12);
 					//string s_Addadmin = "insert into [" + tbpre + "sys_User] ([UserNum],[UserName],[UserPassword],[NickName]," +
 					//                    "[RealName],[isAdmin],[UserGroupNumber],[PassQuestion],[PassKey],[CertType],[CertNumber]," +
 					//                    "[Email],[mobile],[Sex],[birthday],[Userinfo],[UserFace],[userFacesize],[marriage],[iPoint]," +
@@ -179,15 +179,15 @@ namespace Foosun.Web.Install
 					//                    "values " +
 					//                    "('" + s_usernum + "',1,'00000001','',0,0,0,'0',0,'','')";
 
-					//Foosun.Install.Comm.ExecuteSql(connStr, dbname, s_Addadmin);
+					//Hg.Install.Comm.ExecuteSql(connStr, dbname, s_Addadmin);
 
 					//执行创建系统默认值
 					//StreamReader sr = File.OpenText(s_dbsqlpath1);
 					//string s_sqldefault= sr.ReadToEnd();
 					//string s_result = Regex.Replace(s_sqldefault, @"\[[Ff][Ss]_", "[" + tbpre, RegexOptions.Compiled);
 					//sr.Close();
-					//Foosun.Install.Comm.ExecuteSql(connStr, dbname, s_result);
-					//Foosun.Install.Comm.ExecuteSql(connStr, dbname, "insert into [" + tbpre + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + tbpre + "News','2007-12-12 19:07:27');");
+					//Hg.Install.Comm.ExecuteSql(connStr, dbname, s_result);
+					//Hg.Install.Comm.ExecuteSql(connStr, dbname, "insert into [" + tbpre + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + tbpre + "News','2007-12-12 19:07:27');");
 				}
 				else
 				{
@@ -266,7 +266,7 @@ namespace Foosun.Web.Install
 						}
 						if (Node.Attributes.GetNamedItem("key").Value.ToLower() == "webdal")
 						{
-							Node.Attributes.GetNamedItem("value").Value = "Foosun.SQLServerDAL";
+							Node.Attributes.GetNamedItem("value").Value = "Hg.SQLServerDAL";
 							FoundIt = true;
 						}
 						if (Node.Attributes.GetNamedItem("key").Value.ToLower() == "mssql")
@@ -296,7 +296,7 @@ namespace Foosun.Web.Install
 				//{
 				//    siteDomain = siteDomain + ":" + DomainPort;
 				//}
-				Foosun.Common.Public.SaveXmlConfig("siteDomain", siteDomain, "xml/sys/base.config");
+				Hg.Common.Public.SaveXmlConfig("siteDomain", siteDomain, "xml/sys/base.config");
 			}
 			catch
 			{ }
@@ -353,7 +353,7 @@ namespace Foosun.Web.Install
 						}
 						if (Node.Attributes.GetNamedItem("key").Value.ToLower() == "webdal")
 						{
-							Node.Attributes.GetNamedItem("value").Value = "Foosun.AccessDAL";
+							Node.Attributes.GetNamedItem("value").Value = "Hg.AccessDAL";
 							FoundIt = true;
 						}
 						if (Node.Attributes.GetNamedItem("key").Value.ToLower() == "mssql")
@@ -383,7 +383,7 @@ namespace Foosun.Web.Install
 				{
 					siteDomain = siteDomain + ":" + DomainPort;
 				}
-				Foosun.Common.Public.SaveXmlConfig("siteDomain", siteDomain, "xml/sys/base.config");
+				Hg.Common.Public.SaveXmlConfig("siteDomain", siteDomain, "xml/sys/base.config");
 			}
 			catch
 			{ }

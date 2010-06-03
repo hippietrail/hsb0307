@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
     public class SystemInfo
     {

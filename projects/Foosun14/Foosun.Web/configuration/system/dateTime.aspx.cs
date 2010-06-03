@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Web.UI;
+using Hg.Web.UI;
 
-public partial class configuration_system_dateTime : Foosun.Web.UI.DialogPage
+public partial class configuration_system_dateTime : Hg.Web.UI.DialogPage
 {
     public configuration_system_dateTime()
     {

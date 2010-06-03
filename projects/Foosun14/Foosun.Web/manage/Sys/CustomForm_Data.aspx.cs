@@ -9,11 +9,11 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomForm_Data : Foosun.Web.UI.ManagePage
+    public partial class CustomForm_Data : Hg.Web.UI.ManagePage
     {
-        Foosun.CMS.CustomForm cf = new Foosun.CMS.CustomForm();
+        Hg.CMS.CustomForm cf = new Hg.CMS.CustomForm();
         protected int formid = 0;
         protected string tablenm = string.Empty;
         protected void Page_Load(object sender, EventArgs e)

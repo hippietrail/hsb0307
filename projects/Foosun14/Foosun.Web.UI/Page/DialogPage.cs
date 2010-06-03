@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
     public class DialogPage : BasePage
     {

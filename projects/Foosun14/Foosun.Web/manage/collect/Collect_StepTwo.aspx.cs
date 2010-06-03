@@ -20,7 +20,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-public partial class manage_collect_Collect_StepTwo : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_StepTwo : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,7 +40,7 @@ public partial class manage_collect_Collect_StepTwo : Foosun.Web.UI.ManagePage
             else
             {
                 int n = int.Parse(Request.QueryString["ID"]);
-                Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+                Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
                 DataTable tb = cl.GetSite(n);
                 if (tb == null || tb.Rows.Count < 1)
                 {
@@ -84,7 +84,7 @@ public partial class manage_collect_Collect_StepTwo : Foosun.Web.UI.ManagePage
             {
                 PageError("请指定列表内容", "");
             }
-            Foosun.Model.CollectSiteInfo nf = new Foosun.Model.CollectSiteInfo();
+            Hg.Model.CollectSiteInfo nf = new Hg.Model.CollectSiteInfo();
             nf.ID = int.Parse(this.HidSiteID.Value);
             nf.ListSetting = EdtList.Text;
 
@@ -119,7 +119,7 @@ public partial class manage_collect_Collect_StepTwo : Foosun.Web.UI.ManagePage
                 nf.EndPageNum = int.Parse(TxtPageEnd.Text);
             }
             #endregion 分页设定
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             cl.SiteUpdate(nf, 2);
             Response.Redirect("Collect_StepThree.aspx?ID=" + this.HidSiteID.Value);
         }

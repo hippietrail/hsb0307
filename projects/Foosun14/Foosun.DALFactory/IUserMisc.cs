@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IUserMisc
     {
@@ -62,27 +62,27 @@ namespace Foosun.DALFactory
         DataTable getCardInfoID(int ID);
         DataTable getmoneylist();
         DataTable getleves();
-        void insertCardR(Foosun.Model.IDCARD uc);
-        void UpdateCardR(Foosun.Model.IDCARD uc);
+        void insertCardR(Hg.Model.IDCARD uc);
+        void UpdateCardR(Hg.Model.IDCARD uc);
         void delALLCARD();
         string getUserGChange(string GroupNumber);
         void Announcedels(string Aid);
-        void UpdateUserInfoBase(Foosun.Model.UserInfo uc);
-        void UpdateUserInfoBase1(Foosun.Model.UserInfo1 uc1);
-        void UpdateUserInfoBase2(Foosun.Model.UserInfo1 uc2);
-        void UpdateUserInfoContact1(Foosun.Model.UserInfo2 uc);
-        void UpdateUserInfoContact2(Foosun.Model.UserInfo2 uc);
-        void UpdateUserInfoBaseStat(Foosun.Model.UserInfo3 uc);
-        void InsertGroup(Foosun.Model.UserInfo4 uc);
-        void updateGroupEdit(Foosun.Model.UserInfo4 uc);
-        void InsertAnnounce(Foosun.Model.UserInfo5 uc);
-        void UpdateAnnounce(Foosun.Model.UserInfo5 uc);
-        void UpdateOnlinePay(Foosun.Model.UserInfo6 uc);
-        void InsertManageMenu(Foosun.Model.UserInfo7 uc);
-        void EditManageMenu(Foosun.Model.UserInfo7 uc);
-        void EditManageMenu1(Foosun.Model.UserInfo7 uc);
-        void InsertQMenu(Foosun.Model.UserInfo8 uc);
-        void UpdateQMenu(Foosun.Model.UserInfo8 uc);
+        void UpdateUserInfoBase(Hg.Model.UserInfo uc);
+        void UpdateUserInfoBase1(Hg.Model.UserInfo1 uc1);
+        void UpdateUserInfoBase2(Hg.Model.UserInfo1 uc2);
+        void UpdateUserInfoContact1(Hg.Model.UserInfo2 uc);
+        void UpdateUserInfoContact2(Hg.Model.UserInfo2 uc);
+        void UpdateUserInfoBaseStat(Hg.Model.UserInfo3 uc);
+        void InsertGroup(Hg.Model.UserInfo4 uc);
+        void updateGroupEdit(Hg.Model.UserInfo4 uc);
+        void InsertAnnounce(Hg.Model.UserInfo5 uc);
+        void UpdateAnnounce(Hg.Model.UserInfo5 uc);
+        void UpdateOnlinePay(Hg.Model.UserInfo6 uc);
+        void InsertManageMenu(Hg.Model.UserInfo7 uc);
+        void EditManageMenu(Hg.Model.UserInfo7 uc);
+        void EditManageMenu1(Hg.Model.UserInfo7 uc);
+        void InsertQMenu(Hg.Model.UserInfo8 uc);
+        void UpdateQMenu(Hg.Model.UserInfo8 uc);
         void UpdateUserSafe(int Uid, string PassQuestion, string PassKey, string password);
         void UpdateUserInfoIDCard(int Uid, string _temp);
         void GroupDels(int Gid);

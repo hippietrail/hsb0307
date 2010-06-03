@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Special : DbBase, ISpecial
     {
         private string SiteID;
         public Special()
         {
-            SiteID = Foosun.Global.Current.SiteID;
+            SiteID = Hg.Global.Current.SiteID;
         }
 
         public DataTable getChildList(string classid)
@@ -27,7 +27,7 @@ namespace Foosun.SQLServerDAL
 
         public void Lock(string id)
         {
-            string idstr = Foosun.Common.Input.CutComma(getChildId(id));
+            string idstr = Hg.Common.Input.CutComma(getChildId(id));
             string str_sql = "Update " + Pre + "news_special Set isLock=1 where SpecialID In(" + idstr + ")";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
@@ -86,7 +86,7 @@ namespace Foosun.SQLServerDAL
                 if (locktf == false)
                     temp_id1 += "'" + temp_id + "',";
             }
-            temp_id1 = Foosun.Common.Input.CutComma(temp_id1);
+            temp_id1 = Hg.Common.Input.CutComma(temp_id1);
             if (temp_id1 == null || temp_id1 == "" || temp_id1 == string.Empty)
                 throw new Exception("选中专题的父专题被锁定,请先解锁此专题的父专题!");
             string str_sql = "Update " + Pre + "news_special Set isLock=0 where SpecialID In(" + temp_id1 + ")";
@@ -100,13 +100,13 @@ namespace Foosun.SQLServerDAL
             return result.ToString();
         }
 
-        public string Add(Foosun.Model.Special sci)
+        public string Add(Hg.Model.Special sci)
         {
             int result = 0;
             string SpecialID = "";
             string checkSql = "";
             int recordCount = 0;
-            SpecialID = Foosun.Common.Rand.Number(12);
+            SpecialID = Hg.Common.Rand.Number(12);
             while (true)
             {
                 checkSql = "select count(*) from " + Pre + "news_special where SpecialID='" + SpecialID + "'";
@@ -114,7 +114,7 @@ namespace Foosun.SQLServerDAL
                 if (recordCount < 1)
                     break;
                 else
-                    SpecialID = Foosun.Common.Rand.Number(12, true);
+                    SpecialID = Hg.Common.Rand.Number(12, true);
             }
             checkSql = "select count(*) from " + Pre + "news_special where SpecialCName='" + sci.SpecialCName + "'";
             recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
@@ -140,7 +140,7 @@ namespace Foosun.SQLServerDAL
             return result + "|" + SpecialID;
         }
 
-        public int Edit(Foosun.Model.Special sci)
+        public int Edit(Hg.Model.Special sci)
         {
             int result = 0;
             string checkSql = "";
@@ -168,7 +168,7 @@ namespace Foosun.SQLServerDAL
         {
             string str_Sql = "Select SpecialID,SpecialCName,specialEName,ParentID,[Domain],isDelPoint,Gpoint,iPoint,GroupNumber,FileName," +
                              "FileEXName,NaviPicURL,NaviContent,Templet,isLock,isRecyle,SavePath,saveDirPath,NaviPosition From " +
-                             Pre + "news_special Where SiteID='" + Foosun.Global.Current.SiteID + "' And SpecialID='" + id + "'";
+                             Pre + "news_special Where SiteID='" + Hg.Global.Current.SiteID + "' And SpecialID='" + id + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
             return dt;
         }
@@ -254,13 +254,13 @@ namespace Foosun.SQLServerDAL
                 temp_id = arr_id[i].Replace("'", "");
                 temp_id1 += getChildId(temp_id);
             }
-            temp_id1 = Foosun.Common.Input.CutComma(temp_id1);
+            temp_id1 = Hg.Common.Input.CutComma(temp_id1);
             return temp_id1;
         }
 
 
 
-        private SqlParameter[] GetSpecialParameters(Foosun.Model.Special sc)
+        private SqlParameter[] GetSpecialParameters(Hg.Model.Special sc)
         {
             SqlParameter[] param = new SqlParameter[21];
             param[0] = new SqlParameter("@SpecialID", SqlDbType.NVarChar, 12);

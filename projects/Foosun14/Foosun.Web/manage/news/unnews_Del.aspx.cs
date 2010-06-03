@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_unnews_Del : Foosun.Web.UI.ManagePage
+public partial class manage_news_unnews_Del : Hg.Web.UI.ManagePage
 {
     public manage_news_unnews_Del()
     {
@@ -23,7 +23,7 @@ public partial class manage_news_unnews_Del : Foosun.Web.UI.ManagePage
         UnID = Request.QueryString["UnID"];    
         if (UnID != null)
         {
-            UnID = Foosun.Common.Input.Filter(UnID);
+            UnID = Hg.Common.Input.Filter(UnID);
             if (nes.Str_DelSql(UnID) != 0)
             {
                 PageRight("删除不规则新闻成功!", "unNews.aspx");

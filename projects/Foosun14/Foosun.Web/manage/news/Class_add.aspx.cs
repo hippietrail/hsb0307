@@ -9,10 +9,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
+public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
 {
  /// <summary>
  /// 权限设置
@@ -23,12 +23,12 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
     }
     ContentManage rd = new ContentManage();
     rootPublic pd = new rootPublic();
-    public string dirm = Foosun.Config.UIConfig.dirDumm;
+    public string dirm = Hg.Config.UIConfig.dirDumm;
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除缓存
-        Foosun.Publish.CommonData.NewsClass.Clear();
-        Foosun.Publish.CommonData.CHClass.Clear();
+        Hg.Publish.CommonData.NewsClass.Clear();
+        Hg.Publish.CommonData.CHClass.Clear();
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
@@ -249,8 +249,8 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
             }
             else
                 Saying.Checked = false;
-            HtmlPhrasing.Text = Foosun.Common.Input.ToTxt(dt.Rows[0]["NaviPosition"].ToString());
-            NewsHtmlPhrasing.Text = Foosun.Common.Input.ToTxt(dt.Rows[0]["NewsPosition"].ToString());
+            HtmlPhrasing.Text = Hg.Common.Input.ToTxt(dt.Rows[0]["NaviPosition"].ToString());
+            NewsHtmlPhrasing.Text = Hg.Common.Input.ToTxt(dt.Rows[0]["NewsPosition"].ToString());
             Hidden.Value = "Add";
             this.HiddenDefine.Value = dt.Rows[0]["Defineworkey"].ToString(); 
 
@@ -398,7 +398,7 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
         }
         #endregion
         //清除缓存
-        Foosun.Publish.CommonData.DisposeSystemCatch();
+        Hg.Publish.CommonData.DisposeSystemCatch();
     }
 
    /// <summary>
@@ -414,7 +414,7 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
             string ClassID = "";
             if (InterChar == 0)
             {
-                ClassID = Foosun.Common.Rand.Number(12);
+                ClassID = Hg.Common.Rand.Number(12);
             }
             else
             {
@@ -425,8 +425,8 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
             string ClassEName = this.TEname.Text;
             if (InterChar == 0)
             {
-                System.Collections.Generic.IList<Foosun.Model.PubClassInfo> _NewsClass = Foosun.Publish.CommonData.DalPublish.GetClassList();
-                foreach (Foosun.Model.PubClassInfo p in _NewsClass)
+                System.Collections.Generic.IList<Hg.Model.PubClassInfo> _NewsClass = Hg.Publish.CommonData.DalPublish.GetClassList();
+                foreach (Hg.Model.PubClassInfo p in _NewsClass)
                 {
                     if (p.ClassEName.Equals(ClassEName))
                     {
@@ -530,7 +530,7 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
             if (this.Saying.Checked) { isComm = 1; }
             string Defineworkey = this.HiddenDefine.Value;
 
-            Foosun.Model.ClassContent uc = new Foosun.Model.ClassContent();
+            Hg.Model.ClassContent uc = new Hg.Model.ClassContent();
             uc.ClassCName = ClassCName;
             uc.ClassEName = ClassEName;
             uc.ParentID = ParentID;
@@ -573,7 +573,7 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
             uc.Defineworkey = Defineworkey;
             uc.ClassID = ClassID;
             uc.CreatTime = _Temp_date;
-            Foosun.Common.Public.saveClassXML(ClassEName);
+            Hg.Common.Public.saveClassXML(ClassEName);
             if (InterChar == 0)
             {
                 rd.insertClassContent(uc);
@@ -662,7 +662,7 @@ public partial class manage_news_Class_add : Foosun.Web.UI.ManagePage
         }
         else
         {
-            str_classSavePath = Foosun.Config.UIConfig.dirHtml;
+            str_classSavePath = Hg.Config.UIConfig.dirHtml;
         }
         return str_classSavePath;
     }

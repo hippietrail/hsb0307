@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Arealist
     {
         private IArealist dal;
         public Arealist()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateArealist();
+            dal = Hg.DALFactory.DataAccess.CreateArealist();
         }
         #region arealist.aspx
         public DataTable sel(string Cid)

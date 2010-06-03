@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Text;
 
-public partial class manage_Sys_File_OnLine_Edit : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_File_OnLine_Edit : Hg.Web.UI.ManagePage
 {
     public manage_Sys_File_OnLine_Edit()
     {
@@ -22,7 +22,7 @@ public partial class manage_Sys_File_OnLine_Edit : Foosun.Web.UI.ManagePage
     }
     sys rd = new sys();
     rootPublic pd = new rootPublic();
-    string FP = Foosun.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
+    string FP = Hg.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";//设置页面无缓存

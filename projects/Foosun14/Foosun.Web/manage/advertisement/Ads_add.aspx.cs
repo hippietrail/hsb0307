@@ -12,14 +12,14 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_advertisement_Ads_add : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_Ads_add : Hg.Web.UI.ManagePage
 {
     public manage_advertisement_Ads_add()
     {
         Authority_Code = "S007";
     }
     public DataTable TbClass;
-    public string str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+    public string str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";                        //设置页面无缓存
@@ -46,7 +46,7 @@ public partial class manage_advertisement_Ads_add : Foosun.Web.UI.ManagePage
 
     protected void getClassInfo()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         TbClass = ac.getAdsClassList();
 
         if (TbClass != null)
@@ -65,7 +65,7 @@ public partial class manage_advertisement_Ads_add : Foosun.Web.UI.ManagePage
     protected void getAdsList()
     {
         CycID.Items.Clear();
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         TbClass = ac.getAdsList(null);
         if (TbClass != null)
         {
@@ -121,7 +121,7 @@ public partial class manage_advertisement_Ads_add : Foosun.Web.UI.ManagePage
 
     protected void AdsAdd()
     {
-        Foosun.Model.AdsInfo ai = new Foosun.Model.AdsInfo();
+        Hg.Model.AdsInfo ai = new Hg.Model.AdsInfo();
         ai.AdID = "";
         ai.adName = Request.Form["adName"];
         ai.ClassID = Request.Form["ClassID"];
@@ -183,7 +183,7 @@ public partial class manage_advertisement_Ads_add : Foosun.Web.UI.ManagePage
         ai.ShowNum = 0;
         ai.ClickNum = 0;
         ai.OldClass = "";
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         int result = ac.adsAdd(ai);
 
         if (result == 1)

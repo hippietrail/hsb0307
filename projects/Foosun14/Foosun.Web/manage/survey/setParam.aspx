@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -12,46 +12,46 @@
 <form id="form1" runat="server">
   <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" class="toptable">
     <tr>
-      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">µ÷²é¹ÜÀí</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" class="list_link" target="sys_main">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />µ÷²é¹ÜÀí</div></td>
+      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" class="list_link" target="sys_main">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
     </tr>
   </table>
   <div>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="Navitable">
       <tr class="menulist">
-        <td height="18" style="width: 45%" colspan="2"  style="PADDING-LEFT: 14px" ><div align="left"> <a href="ManageVote.aspx" class="menulist"> <a href="setParam.aspx" class="menulist">ÏµÍ³²ÎÊýÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setClass.aspx" class="menulist">Í¶Æ±·ÖÀàÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setTitle.aspx" class="menulist">Í¶Æ±Ö÷ÌâÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setItem.aspx" class="menulist">Í¶Æ±Ñ¡ÏîÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setSteps.aspx" class="menulist">¶à²½Í¶Æ±¹ÜÀí</a>&nbsp;©®&nbsp;<a href="ManageVote.aspx" class="menulist">Í¶Æ±Çé¿ö¹ÜÀí</a> </div></td>
+        <td height="18" style="width: 45%" colspan="2"  style="PADDING-LEFT: 14px" ><div align="left"> <a href="ManageVote.aspx" class="menulist"> <a href="setParam.aspx" class="menulist">ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setClass.aspx" class="menulist">Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setTitle.aspx" class="menulist">Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setItem.aspx" class="menulist">Í¶Æ±Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setSteps.aspx" class="menulist">ï¿½à²½Í¶Æ±ï¿½ï¿½ï¿½</a>&nbsp;í©®&nbsp;<a href="ManageVote.aspx" class="menulist">Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½</a> </div></td>
       </tr>
     </table>
   </div>
   <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1"  class="table">
     <tr class="TR_BG_list">
-      <td class="list_link" colspan="2">ÎÊ¾íµ÷²éÏµÍ³²ÎÊýÉèÖÃ</td>
+      <td class="list_link" colspan="2">ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 257px"> IPÊ±¼ä¼ä¸ô£º</td>
+      <td align="right"  class="list_link" style="width: 257px"> IPï¿½Ê±ï¿½ï¿½ï¿½</td>
       <td  align="left" class="list_link"><asp:TextBox ID="IPtime" runat="server" Width="124px" CssClass="form"/>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverParam_0001',this)">°ïÖú</span></td>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverParam_0001',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 257px"> ÊÇ·ñ×¢²á²ÅÄÜÍ¶Æ±£º</td>
+      <td align="right"  class="list_link" style="width: 257px"> ï¿½ï¿½Ç·ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Í¶Æ±ï¿½ï¿½</td>
       <td  align="left" class="list_link"><asp:DropDownList ID="IsReg" runat="server" CssClass="form">
-          <asp:ListItem Value="1">ÊÇ</asp:ListItem>
-          <asp:ListItem Value="0" Selected="True">·ñ</asp:ListItem>
+          <asp:ListItem Value="1">ï¿½</asp:ListItem>
+          <asp:ListItem Value="0" Selected="True">Ç·</asp:ListItem>
         </asp:DropDownList>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverParam_0002',this)">°ïÖú</span></td>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverParam_0002',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 257px"> ½ûÖ¹Í¶Æ±µÄIP¶Î£º</td>
+      <td align="right"  class="list_link" style="width: 257px"> ï¿½ï¿½Ö¹Í¶Æ±ï¿½IPÄ¶Î£ï¿½</td>
       <td  align="left" class="list_link"><textarea ID="IpLimit" runat="server" style="width: 251px; height: 105px" class="form"/>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverParam_0003',this)">°ïÖú</span></td>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverParam_0003',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
       <td align="center"  colspan="2" class="list_link"><label>
-        <input type="submit" name="Saveupload" value=" Ìá ½» " class="form" id="SavePram" runat="server" onserverclick="SavePram_ServerClick"/>
+        <input type="submit" name="Saveupload" value=" ï¿½ï¿½ á½» " class="form" id="SavePram" runat="server" onserverclick="SavePram_ServerClick"/>
         </label>
         &nbsp;&nbsp;
         <label>
-        <input type="reset" name="Clearupload" value=" ÖØ Ìî " class="form" id="ClearPram" runat="server" />
+        <input type="reset" name="Clearupload" value=" ï¿½ ï¿½ï¿½ " class="form" id="ClearPram" runat="server" />
         </label></td>
     </tr>
   </table>

@@ -8,18 +8,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectPath : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectPath()
     {
         BrowserAuthor = EnumDialogAuthority.Publicity;
         BrowserAuthor = EnumDialogAuthority.ForPerson | EnumDialogAuthority.ForAdmin;
     }
-    private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-    private string str_dirFile = Foosun.Config.UIConfig.dirHtml;  //获取图片或者文件路径
+    private string str_dirMana = Hg.Config.UIConfig.dirDumm;
+    private string str_dirFile = Hg.Config.UIConfig.dirHtml;  //获取图片或者文件路径
     private string str_FilePath = "";
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,13 +27,13 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)//判断虚拟路径是否为空,如果不是则加上//
             str_dirMana = "//" + str_dirMana;
         string type = Request.Form["Type"];
-        if (Foosun.Global.Current.SiteID.Trim() == "0")
+        if (Hg.Global.Current.SiteID.Trim() == "0")
         {
             str_FilePath = Server.MapPath(str_dirMana + "\\" + str_dirFile);
         }
         else
         {
-            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
+            string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
             if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
             str_FilePath = Server.MapPath(_sitePath);
         }
@@ -122,13 +122,13 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
         else
         {
             string _str_dirFileTF = "";
-            if (Foosun.Global.Current.SiteID.Trim() == "0")
+            if (Hg.Global.Current.SiteID.Trim() == "0")
             {
                 _str_dirFileTF = str_dirMana + "\\" + str_dirFile;
             }
             else
             {
-                _str_dirFileTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
+                _str_dirFileTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName.Trim() + "\\" + str_dirFile;
             }
             if (dir == Server.MapPath(_str_dirFileTF))      //判断是否是模板目录,如果是则不显示返回上级目录
             {
@@ -181,7 +181,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
 
     string PathPre()
     {
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         string str_path = tpClass.PathPre(str_FilePath + Request.Form["Path"], str_dirFile);
         return str_path;
     }
@@ -201,7 +201,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
         if (str_OldName == "" || str_OldName == null || str_OldName == string.Empty || str_NewName == "" || str_NewName == null || str_NewName == string.Empty)
             PageError("参数传递错误!", "selectPath.aspx");
 
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         int result = tpClass.EidtName(path, str_OldName, str_NewName, 0);
         if (result == 1)
             PageRight("更改文件夹名成功！", "selectPath.aspx");
@@ -219,7 +219,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
     protected void DelDir(string path)
     {
         int result = 0;
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         result = tpClass.Del(path, "", 0);
         if (result == 1)
             PageRight("删除文件夹成功!", "selectPath.aspx");
@@ -242,7 +242,7 @@ public partial class configuration_system_selectPath : Foosun.Web.UI.DialogPage
         string str_DirName = Request.Form["filename"];
 
         int result = 0;
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         result = tpClass.AddDir(path, str_DirName);
         if (result == 1)
             PageRight("添加文件夹成功!", "selectPath.aspx");

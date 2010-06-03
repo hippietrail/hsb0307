@@ -2,12 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<title>文件上传__<%Response.Write(Foosun.Config.UIConfig.HeadTitle); %></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title>文件上传__<%Response.Write(Hg.Config.UIConfig.HeadTitle); %></title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="f_Upload" runat="server" method="post" action="" enctype="multipart/form-data">
-        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
             <tr>
                 <td class="sysmain_navi"  style="PADDING-LEFT: 14px" height="30">文件上传</td>
             </tr>

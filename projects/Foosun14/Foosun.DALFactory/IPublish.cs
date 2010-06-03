@@ -3,9 +3,9 @@ using System.Data;
 using System.Text;
 using System.Reflection;
 using System.Collections.Generic;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IPublish
     {

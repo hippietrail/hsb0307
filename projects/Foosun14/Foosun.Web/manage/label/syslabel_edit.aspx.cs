@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class manage_label_syslabel_edit : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslabel_edit : Hg.Web.UI.ManagePage
 {
     public manage_label_syslabel_edit()
     {
@@ -39,9 +39,9 @@ public partial class manage_label_syslabel_edit : Foosun.Web.UI.ManagePage
 
     protected void GetLabelInfo()
     {
-        string str_ID = Foosun.Common.Input.checkID(Request.QueryString["LabelID"]);
+        string str_ID = Hg.Common.Input.checkID(Request.QueryString["LabelID"]);
         LabelID.Value = str_ID;
-        Foosun.CMS.Label lbc = new Foosun.CMS.Label();
+        Hg.CMS.Label lbc = new Hg.CMS.Label();
         DataTable dt = lbc.GetLabelInfo(str_ID);
         if (dt != null)
         {
@@ -80,7 +80,7 @@ public partial class manage_label_syslabel_edit : Foosun.Web.UI.ManagePage
         string str_showstr = "";
         if (ClassID != "99999999")
         {
-            Foosun.CMS.Label lbc = new Foosun.CMS.Label();
+            Hg.CMS.Label lbc = new Hg.CMS.Label();
             DataTable dt = lbc.GetLabelClassList();
             if (dt != null)
             {
@@ -122,8 +122,8 @@ public partial class manage_label_syslabel_edit : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             int result = 0;
-            Foosun.Model.LabelInfo lbc = new Foosun.Model.LabelInfo();
-            lbc.LabelID = Foosun.Common.Input.checkID(Request.Form["LabelID"]);
+            Hg.Model.LabelInfo lbc = new Hg.Model.LabelInfo();
+            lbc.LabelID = Hg.Common.Input.checkID(Request.Form["LabelID"]);
             string TmplabelName = Request.Form["LabelName"];
             string TmplabelName_1 = "{FS_" + TmplabelName.Replace("{", "").Replace("}", "").Replace("S_", "").Replace("ClassD_", "").Replace("SpecialD_", "").Replace("Page_", "") + "}";
             if (TmplabelName.ToLower().IndexOf("free_") >= 0)
@@ -138,7 +138,7 @@ public partial class manage_label_syslabel_edit : Foosun.Web.UI.ManagePage
             lbc.CreatTime = DateTime.Now;
             lbc.SiteID = SiteID;
 
-            Foosun.CMS.Label labelc = new Foosun.CMS.Label();
+            Hg.CMS.Label labelc = new Hg.CMS.Label();
             result = labelc.LabelEdit(lbc);
             if (result == 1)
                 PageRight("修改标签成功!", "SysLabel_List.aspx?ClassID=" + Request.Form["LabelClass"]);

@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_psf_add : Foosun.Web.UI.ManagePage
+public partial class manage_publish_psf_add : Hg.Web.UI.ManagePage
 {
     Psframe rd = new Psframe();
     rootPublic pd = new rootPublic();
@@ -43,7 +43,7 @@ public partial class manage_publish_psf_add : Foosun.Web.UI.ManagePage
         if (Page.IsValid == true)                               //判断页面是否通过验证
         {
             #region 取得添加中的表单信息
-            string Str_psfName = Foosun.Common.Input.Filter(this.psfName.Text.Trim());//接点名
+            string Str_psfName = Hg.Common.Input.Filter(this.psfName.Text.Trim());//接点名
             #region 复选框
             int isSubb = 0, isAlll = 0;
             if (isSub.Checked)
@@ -66,8 +66,8 @@ public partial class manage_publish_psf_add : Foosun.Web.UI.ManagePage
 
 
             #region checknum
-            string Str_psfID = Foosun.Common.Rand.Number(12);
-            //check: string Str_psfID = Foosun.Common.Rand.Number(12);
+            string Str_psfID = Hg.Common.Rand.Number(12);
+            //check: string Str_psfID = Hg.Common.Rand.Number(12);
             //    if (rd.IsExitPSFID(Str_psfID) != 0)
             //        goto check;
             #endregion
@@ -96,7 +96,7 @@ public partial class manage_publish_psf_add : Foosun.Web.UI.ManagePage
             #endregion
             #endregion
             #region 为构造函数中赋予数据
-            Foosun.Model.PSF uc = new Foosun.Model.PSF();
+            Hg.Model.PSF uc = new Hg.Model.PSF();
             uc.psfID = Str_psfID;
             uc.psfName = Str_psfName;
             uc.LocalDir = Str_LocalDir;

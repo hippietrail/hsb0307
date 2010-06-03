@@ -10,9 +10,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Xml;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_admin_POPSet : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_admin_POPSet : Hg.Web.UI.ManagePage
 {
     public manage_Sys_admin_POPSet()
     {
@@ -34,18 +34,18 @@ public partial class manage_Sys_admin_POPSet : Foosun.Web.UI.ManagePage
             }
             else
             {
-                if (ReqUNum == Foosun.Global.Current.UserNum)
+                if (ReqUNum == Hg.Global.Current.UserNum)
                 {
                     PageError("自己给自己设置权限??", "");
                 }
-                string[] getReturn = rd.GetAdminPopList(Foosun.Common.Input.checkID(ReqUNum), int.Parse(Id)).Split('|');
+                string[] getReturn = rd.GetAdminPopList(Hg.Common.Input.checkID(ReqUNum), int.Parse(Id)).Split('|');
                 if (getReturn[0] == "1")
                 {
                     PageError("系统管理员不需要设置权限。拥有全部权限", "");
                 }
                 string PopList1 = getReturn[1];
                 string PopList = "";
-                string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+                string _dirdumm = Hg.Config.UIConfig.dirDumm;
                 if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }
                 string _num = Request.QueryString["num"];
                 if (_num != null && _num != string.Empty)
@@ -151,7 +151,7 @@ public partial class manage_Sys_admin_POPSet : Foosun.Web.UI.ManagePage
             string ReqUNum = Request.QueryString["UserNum"];
             string ID = Request.QueryString["id"];
             string PopList = Request.Form["PopList"];
-            rd.UpdatePOPlist(Foosun.Common.Input.checkID(ReqUNum), int.Parse(Foosun.Common.Input.checkID(ID)), PopList);
+            rd.UpdatePOPlist(Hg.Common.Input.checkID(ReqUNum), int.Parse(Hg.Common.Input.checkID(ID)), PopList);
             PageRight("更新权限成功", "admin_list.aspx");
         }
     }

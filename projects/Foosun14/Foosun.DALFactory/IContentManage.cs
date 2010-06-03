@@ -13,9 +13,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IContentManage
     {
@@ -32,8 +32,8 @@ namespace Foosun.DALFactory
         void del_all(int nID, string Tablename);
         void del_Recyle(string nID, string Tablename);
         void del_Lock(string nID, string Tablename);
-        void insertClassContent(Foosun.Model.ClassContent uc);
-        void UpdateClassContent(Foosun.Model.ClassContent uc);
+        void insertClassContent(Hg.Model.ClassContent uc);
+        void UpdateClassContent(Hg.Model.ClassContent uc);
         void del_recyleClass(string ClassID);
         void del_Class(string ClassID);
         void GetChildClassdel(string ParentID);
@@ -69,13 +69,13 @@ namespace Foosun.DALFactory
         DataTable getSysParam();
         void iGen(string _TempStr, string _URL, string _EmailURL, int _num);
         string getDataLib(string ClassID);
-        void insertNewsContent(Foosun.Model.NewsContent uc);
-        void UpdateNewsContent(Foosun.Model.NewsContent uc);
+        void insertNewsContent(Hg.Model.NewsContent uc);
+        void UpdateNewsContent(Hg.Model.NewsContent uc);
         DataTable getTopNewsId(string Datatb);
         DataTable getNewsIDTF(string NewsID, string Datatb);
-        void intsertTT(Foosun.Model.NewsContentTT uc);
-        void UpdateTT(Foosun.Model.NewsContentTT uc);
-        void intsertVote(Foosun.Model.VoteContent uc);
+        void intsertTT(Hg.Model.NewsContentTT uc);
+        void UpdateTT(Hg.Model.NewsContentTT uc);
+        void intsertVote(Hg.Model.VoteContent uc);
         void insertFileURL(string URLName, string NewsID, string DataLib, string FileURL, int OrderID);
         void updateFileURL(string URLName, string DataLib, string FileURL, int OrderID, int ID);
         void deleteFileUrl(string ids, string NewsID);
@@ -83,7 +83,7 @@ namespace Foosun.DALFactory
         void deleteFilesurl(int flgTF, string NewsID);
         DataTable getFileList(string NewsID, string DataTB);
         int getFileIDTF(int ID);
-        void UpdateVote(Foosun.Model.VoteContent uc);
+        void UpdateVote(Hg.Model.VoteContent uc);
         DataTable getVoteID(string NewsID, string DataLib);
         DataTable getTopline(string NewsID, string DataLib, int NewsTFNum);
         DataTable getDefineID(string _str);
@@ -95,8 +95,8 @@ namespace Foosun.DALFactory
         int newsTitletf(string NewsTitle, string dtable, string EditAction, string NewsID);
         string saveAjaxContent(string Content);
         DataTable getPageContent(string ClassID);
-        void insertPage(Foosun.Model.PageContent uc);
-        void updatePage(Foosun.Model.PageContent uc);
+        void insertPage(Hg.Model.PageContent uc);
+        void updatePage(Hg.Model.PageContent uc);
         string getClassCName(string ClassID);
         // husb 2010-04-06
 

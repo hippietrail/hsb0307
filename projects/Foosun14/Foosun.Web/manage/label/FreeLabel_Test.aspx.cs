@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_FreeLabel_Test : Foosun.Web.UI.ManagePage
+public partial class manage_label_FreeLabel_Test : Hg.Web.UI.ManagePage
 {
     public manage_label_FreeLabel_Test()
     {
@@ -48,7 +48,7 @@ public partial class manage_label_FreeLabel_Test : Foosun.Web.UI.ManagePage
             }
             else
             {
-                Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+                Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
                 try
                 {
                     DataTable tb = fb.TestSQL(sql);

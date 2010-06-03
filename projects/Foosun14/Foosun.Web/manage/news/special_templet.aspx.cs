@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-namespace Foosun.Web.manage.news
+namespace Hg.Web.manage.news
 {
-    public partial class special_templet : Foosun.Web.UI.ManagePage
+    public partial class special_templet : Hg.Web.UI.ManagePage
     {
         Special rd = new Special();
         protected void Page_Load(object sender, EventArgs e)

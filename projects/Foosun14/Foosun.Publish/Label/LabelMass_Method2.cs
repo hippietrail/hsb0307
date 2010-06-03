@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
@@ -37,7 +37,7 @@ namespace Foosun.Publish
         public string Analyse_surveyJS()
         {
             string str_JSID = this.GetParamValue("FS:JSID");
-            string str_SpanID = str_JSID + "_" + Foosun.Common.Rand.Number(5);
+            string str_SpanID = str_JSID + "_" + Hg.Common.Rand.Number(5);
             string str_JsCode = "";
             if (str_JSID != null)
             {

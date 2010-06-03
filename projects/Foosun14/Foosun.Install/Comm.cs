@@ -3,9 +3,9 @@ using System.Web;
 using System.IO;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALProfile;
+using Hg.DALProfile;
 
-namespace Foosun.Install
+namespace Hg.Install
 {
 	public class Comm
 	{

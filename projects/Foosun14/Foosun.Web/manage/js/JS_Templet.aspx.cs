@@ -9,19 +9,19 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_js_JS_Templet : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_Templet : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_Templet()
     {
         Authority_Code = "C055";
     }
-    private Foosun.CMS.JSTemplet jt;
+    private Hg.CMS.JSTemplet jt;
     protected void Page_Load(object sender, EventArgs e)
     {
 
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_OnPageChange);
         Response.CacheControl = "no-cache"; //清除缓存
-        jt = new Foosun.CMS.JSTemplet();
+        jt = new Hg.CMS.JSTemplet();
         if (Request.Form["Option"] != null && Request.Form["ID"] != null)
         {
             try
@@ -103,11 +103,11 @@ public partial class manage_js_JS_Templet : Foosun.Web.UI.ManagePage
             td4.CssClass = "list_link";
             if (n == 0 || n == 1)
             {
-                td4.Text = "<a href=\"JS_Templet_Add.aspx?ID=" + r["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteTmp(" + r["ID"].ToString() + ");\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
+                td4.Text = "<a href=\"JS_Templet_Add.aspx?ID=" + r["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteTmp(" + r["ID"].ToString() + ");\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
             }
             else
             {
-                td4.Text = "<a href=\"javascript:GoToClass('" + r["TmpID"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/enter.gif\" border=\"0\" alt=\"进入\" /></a> <a href=\"JS_Templet_Class.aspx?ID=" + r["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteClass('" + r["TmpID"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
+                td4.Text = "<a href=\"javascript:GoToClass('" + r["TmpID"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/enter.gif\" border=\"0\" alt=\"进入\" /></a> <a href=\"JS_Templet_Class.aspx?ID=" + r["id"].ToString() + "\" class=\"list_link\"><img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a> <a href=\"javascript:DeleteClass('" + r["TmpID"].ToString() + "');\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
             }
             td4.HorizontalAlign = HorizontalAlign.Center;
             tr.Cells.Add(td4);

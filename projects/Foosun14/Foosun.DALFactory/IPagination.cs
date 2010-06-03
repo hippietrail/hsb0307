@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.Model;
+using Hg.Model;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IPagination
     {

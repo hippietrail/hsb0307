@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Text;
-using Foosun.Model;
-using Foosun.Config;
-using Foosun.DALProfile;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.Config;
+using Hg.DALProfile;
+using Hg.DALFactory;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class CustomForm : DbBase, ICustomForm
     {
@@ -674,7 +674,7 @@ namespace Foosun.AccessDAL
                 Param[1] = new OleDbParameter("@username", OleDbType.VarWChar, 50);
                 Param[1].Value = DBNull.Value;
                 Param[2] = new OleDbParameter("@submit_ip", OleDbType.VarWChar, 15);
-                Param[2].Value = Foosun.Common.Public.getUserIP();
+                Param[2].Value = Hg.Common.Public.getUserIP();
                 Param[3] = new OleDbParameter("@submit_time", OleDbType.Date);
                 Param[3].Value = DateTime.Now;
                 #endregion

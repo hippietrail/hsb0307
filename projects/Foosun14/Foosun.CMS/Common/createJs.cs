@@ -16,9 +16,9 @@ using System.IO;
 /// </summary>
 public class createJs
 {
-    private static string str_SessionID= Foosun.Global.Current.SiteID;
-    private static string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-    private static string str_rootpath= Foosun.Common.ServerInfo.GetRootPath();
+    private static string str_SessionID= Hg.Global.Current.SiteID;
+    private static string str_dirMana = Hg.Config.UIConfig.dirDumm;
+    private static string str_rootpath= Hg.Common.ServerInfo.GetRootPath();
     /// <summary>
     /// 获取当前站点域名
     /// </summary>
@@ -32,7 +32,7 @@ public class createJs
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)
             str_dirMana = "//" + str_dirMana;
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsDomain();
         
         if (SiteID == "0")
@@ -71,7 +71,7 @@ public class createJs
     public static string GetAdsLeftStr(string adsID)
     {
         string str_Temp = "";
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsPicInfo("leftPic,leftSize,linkURL", "ads", adsID);
         if (dt != null)
         {
@@ -89,7 +89,7 @@ public class createJs
                                    " height=\"" + arr_LeftSize[1].ToString() + "\" type=\"application/x-shockwave-flash\" " +
                                    " pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed>";
                     else
-                        str_Temp = "<embed src=\"" + Foosun.Publish.CommonData.getUrl() + str_leftPic + "\" quality=\"high\" " +
+                        str_Temp = "<embed src=\"" + Hg.Publish.CommonData.getUrl() + str_leftPic + "\" quality=\"high\" " +
                                    " width=\"" + arr_LeftSize[0].ToString() + "\" height=\"" + arr_LeftSize[1].ToString() + "\" " +
                                    " type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed>";
                 }
@@ -99,13 +99,13 @@ public class createJs
 
                         if (string.IsNullOrEmpty(dt.Rows[0]["linkURL"].ToString()))
                         {
-                            str_Temp = "<img src=\"" + Foosun.Publish.CommonData.getUrl() + str_leftPic + "\" border=\"0\" width=\"" + arr_LeftSize[0].ToString() + "\" " +
+                            str_Temp = "<img src=\"" + Hg.Publish.CommonData.getUrl() + str_leftPic + "\" border=\"0\" width=\"" + arr_LeftSize[0].ToString() + "\" " +
                                        " height=\"" + arr_LeftSize[1].ToString() + "\" align=\"top\">";
                         }
                         else
                         {
-                            str_Temp = "<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
-                                       " target=_blank><img src=\"" + Foosun.Publish.CommonData.getUrl() + str_leftPic + "\" border=\"0\" width=\"" + arr_LeftSize[0].ToString() + "\" " +
+                            str_Temp = "<a href=\"" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
+                                       " target=_blank><img src=\"" + Hg.Publish.CommonData.getUrl() + str_leftPic + "\" border=\"0\" width=\"" + arr_LeftSize[0].ToString() + "\" " +
                                        " height=\"" + arr_LeftSize[1].ToString() + "\" align=\"top\"></a>";
                         }
                     else
@@ -118,7 +118,7 @@ public class createJs
                         }
                         else
                         {
-                            str_Temp = "<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
+                            str_Temp = "<a href=\"" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
                                        " target=_blank><img src=\""+ str_leftPic + "\" border=\"0\" " +
                                        "width=\"" + arr_LeftSize[0].ToString() + "\" height=\"" + arr_LeftSize[1].ToString() + "\" align=\"top\"></a>";
 
@@ -140,7 +140,7 @@ public class createJs
 
     public static string GetAdsRightStr(string adsID)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsPicInfo("rightPic,rightSize,LinkURL", "ads", adsID);
         
         string str_Temp = "";
@@ -160,7 +160,7 @@ public class createJs
                                    " height=\"" + arr_rightSize[1].ToString() + "\" type=\"application/x-shockwave-flash\" " +
                                    " pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed>";
                     else
-                        str_Temp = "<embed src=\"" + Foosun.Publish.CommonData.getUrl() + str_rightPic + "\" quality=\"high\" " +
+                        str_Temp = "<embed src=\"" + Hg.Publish.CommonData.getUrl() + str_rightPic + "\" quality=\"high\" " +
                                    "width=\"" + arr_rightSize[0].ToString() + "\" height=\"" + arr_rightSize[1].ToString() + "\"" +
                                    "type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed>";
                 }
@@ -176,7 +176,7 @@ public class createJs
                         }
                         else
                         {
-                            str_Temp = "<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" target=_blank>" +
+                            str_Temp = "<a href=\"" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" target=_blank>" +
                                        "<img src=\"" + str_rightPic + "\" border=\"0\" width=\"" + arr_rightSize[0].ToString() + "\" " +
                                        " height=\"" + arr_rightSize[1].ToString() + "\" align=\"top\"></a>";
                         }
@@ -185,13 +185,13 @@ public class createJs
                     {
                         if (string.IsNullOrEmpty(dt.Rows[0]["linkurl"].ToString()))
                         {
-                            str_Temp = "<img src=\"" + Foosun.Publish.CommonData.getUrl() + str_rightPic + "\" border=\"0\" " +
+                            str_Temp = "<img src=\"" + Hg.Publish.CommonData.getUrl() + str_rightPic + "\" border=\"0\" " +
                                        "width=\"" + arr_rightSize[0].ToString() + "\" height=\"" + arr_rightSize[1].ToString() + "\" align=\"top\">";
                         }
                         else
                         {
-                            str_Temp = "<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
-                                       " target=_blank><img src=\"" + Foosun.Publish.CommonData.getUrl() + str_rightPic + "\" border=\"0\" " +
+                            str_Temp = "<a href=\"" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/adsclick.aspx?adsID=" + adsID + "\" " +
+                                       " target=_blank><img src=\"" + Hg.Publish.CommonData.getUrl() + str_rightPic + "\" border=\"0\" " +
                                        "width=\"" + arr_rightSize[0].ToString() + "\" height=\"" + arr_rightSize[1].ToString() + "\" align=\"top\"></a>";
                         }
                     }
@@ -258,7 +258,7 @@ public class createJs
     public static bool checkJs(string adsID)
     {
         bool tf = false;
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsPicInfo("CondiTF,maxShowClick,TimeOutDay,maxClick,isLock,ClickNum,ShowNum", "ads", adsID);
         if (dt != null)
         {
@@ -366,7 +366,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
             str_leftSize = dt.Rows[0]["leftSize"].ToString();
@@ -414,7 +414,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
             str_leftSize = dt.Rows[0]["leftSize"].ToString();
@@ -434,7 +434,7 @@ public class createJs
                            "clip:rect(0," + str_leftSize[0].ToString() + "," + str_leftSize[1].ToString() + ",0)\">" +
                            "<div id=FilterAwayF style=\"position:absolute;top:0; center:1\">" + str_Temp + "</div></div></div>');\r" +
                            "}\r" +
-                           "document.write('<script language=javascript src=" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/CreateJs/" +
+                           "document.write('<script language=javascript src=" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/CreateJs/" +
                            "FilterAway.js></script>');\r";
             dt.Clear();
             dt.Dispose();
@@ -460,12 +460,12 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
             str_leftSize = dt.Rows[0]["leftSize"].ToString();
             string[] arr_leftSize = str_leftSize.Split('|');
-            str_AdsJsstr = "window.showModalDialog('" + Foosun.Publish.CommonData.getUrl() + "/jsfiles/ads/pic.aspx?adsID=" + adsID + "',''," +
+            str_AdsJsstr = "window.showModalDialog('" + Hg.Publish.CommonData.getUrl() + "/jsfiles/ads/pic.aspx?adsID=" + adsID + "',''," +
                            "'dialogWidth:" + (int.Parse(arr_leftSize[0].ToString()) + 10) + "px;dialogHeight:" +
                            "" + (int.Parse(arr_leftSize[1].ToString()) + 30) + "px;center:0;status:no');\r";
             dt.Clear();
@@ -492,7 +492,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
             str_leftSize = dt.Rows[0]["leftSize"].ToString();
@@ -533,7 +533,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
             str_leftSize = dt.Rows[0]["leftSize"].ToString();
@@ -577,7 +577,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo(" leftPic,leftSize", "ads", adsID);
 
             str_leftPic = ReplaceDirfile(dt.Rows[0]["leftPic"].ToString());
@@ -698,7 +698,7 @@ public class createJs
     public static void CreateAds11(string adsID, string adsClassID)
     {
         string s_picH = "0";
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsPicInfo("leftSize", "ads", adsID);
         if (dt != null)
         {
@@ -771,7 +771,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo("CycAdID,CycSpeed,CycDic,leftPic,leftSize", "ads", adsID);
 
             if (checkJs(dt.Rows[0]["CycAdID"].ToString()) == true)
@@ -828,7 +828,7 @@ public class createJs
         }
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo("AdTxtNum", "ads", adsID);
             int int_txtnum = 0;
             try
@@ -891,7 +891,7 @@ public class createJs
             str_AdsJsstr = "document.write('此广告已暂停或失效!')";
         else
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo("leftPic,leftSize,linkURL", "ads", adsID);
             if (dt != null)
             {
@@ -903,7 +903,7 @@ public class createJs
                     str_leftPic = str_leftPic.ToLower();
                     string[] arr_LeftSize = str_leftSize.Split('|');
                     string[] arr_url = dt.Rows[0]["linkURL"].ToString().Split(';');
-                    str_TempLeft = " imagePathL.push(\"" + Foosun.Publish.CommonData.getUrl() + str_leftPic + "\");" +
+                    str_TempLeft = " imagePathL.push(\"" + Hg.Publish.CommonData.getUrl() + str_leftPic + "\");" +
                                    "  linkPathL.push(\"" + arr_url[0] + "\");";
                 }
             }
@@ -923,7 +923,7 @@ public class createJs
                     {
                         url = arr_url[1];
                     }
-                    str_TempRight = "imagePathL.push(\"" + Foosun.Publish.CommonData.getUrl() + str_rightPic + "\");" +
+                    str_TempRight = "imagePathL.push(\"" + Hg.Publish.CommonData.getUrl() + str_rightPic + "\");" +
                                    "linkPathL.push(\"" + url + "\");";
                 }
             }
@@ -969,7 +969,7 @@ public class createJs
 
     public static string ReplaceDirfile(string picpath)
     {
-        string str_Temppath = picpath.Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
+        string str_Temppath = picpath.Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
         return str_Temppath;
     }
 }

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
-	<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+	<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 	<script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -55,7 +55,7 @@ function ListGo(Path,ParentPath)
     var dir = location.href;
     var arr_dir  = dir.split("/");
     var url = "";
-    var dirDumm = "<% Response.Write(Foosun.Config.UIConfig.dirDumm); %>";
+    var dirDumm = "<% Response.Write(Hg.Config.UIConfig.dirDumm); %>";
     for (var i=0;i<arr_dir.length;i++)
     {
 	    if(i<3)

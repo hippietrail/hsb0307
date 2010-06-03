@@ -8,18 +8,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.Xml;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class SearchEngine
     {
         /// <summary>
         /// 得到虚拟目录
         /// </summary>
-        private static string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+        private static string _dirdumm = Hg.Config.UIConfig.dirDumm;
 
         /// <summary>
         /// 是否生成百度搜索协议xml文件
@@ -191,7 +191,7 @@ namespace Foosun.CMS
                                     DataTable dt1 = rd.getClassParam(drs["ClassID"].ToString());
                                     if (dt != null && dt.Rows.Count > 0)
                                     {
-                                        if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+                                        if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
                                         {
                                             urls = "/content-" + drs["NewsID"].ToString() + ".aspx";
                                         }
@@ -206,14 +206,14 @@ namespace Foosun.CMS
                                                 urls = "/" + dt1.Rows[0]["SavePath"].ToString() + "/" + dt1.Rows[0]["SaveClassframe"].ToString() + "/" + drs["SavePath"].ToString() + "/" + drs["FileName"].ToString() + drs["FileEXName"].ToString();
                                             }
                                         }
-                                        urls = Foosun.Publish.CommonData.SiteDomain + urls.Replace("//", "/");
+                                        urls = Hg.Publish.CommonData.SiteDomain + urls.Replace("//", "/");
                                         dt1.Clear(); dt1.Dispose();
                                     }
                                 }
                                 sw.WriteLine("      <link>" + urls + "</link>\r");
-                                sw.WriteLine("      <description>" + Foosun.Common.Input.LostHTML(drs["naviContent"].ToString()) + "</description>\r");
-                                sw.WriteLine("      <text>" + Foosun.Common.Input.LostHTML(drs["Content"].ToString()) + "</text>\r");
-                                if (drs["PicURL"].ToString().Trim() != "" && drs["PicURL"].ToString().Trim() != null) { sw.WriteLine("      <image>http://" + website + _dirdumm + (drs["PicURL"].ToString()).Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile) + "</image>\r"); }
+                                sw.WriteLine("      <description>" + Hg.Common.Input.LostHTML(drs["naviContent"].ToString()) + "</description>\r");
+                                sw.WriteLine("      <text>" + Hg.Common.Input.LostHTML(drs["Content"].ToString()) + "</text>\r");
+                                if (drs["PicURL"].ToString().Trim() != "" && drs["PicURL"].ToString().Trim() != null) { sw.WriteLine("      <image>http://" + website + _dirdumm + (drs["PicURL"].ToString()).Replace("{@dirfile}", Hg.Config.UIConfig.dirFile) + "</image>\r"); }
                                 else { sw.WriteLine("      <image></image>\r"); }
                                 sw.WriteLine("      <keywords>" + drs["Metakeywords"].ToString().Replace(",", " ") + "</keywords>\r");
                                 sw.WriteLine("      <author>" + drs["Author"] + "</author>\r");

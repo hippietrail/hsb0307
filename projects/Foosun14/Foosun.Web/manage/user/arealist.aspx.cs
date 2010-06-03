@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_arealist : Foosun.Web.UI.ManagePage
+public partial class manage_user_arealist : Hg.Web.UI.ManagePage
 {
     public manage_user_arealist()
     {
@@ -41,7 +41,7 @@ public partial class manage_user_arealist : Foosun.Web.UI.ManagePage
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -64,7 +64,7 @@ public partial class manage_user_arealist : Foosun.Web.UI.ManagePage
       protected void Showu_discusslist(int PageIndex)
       {   
             int ig, js;
-            DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
+            DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
 
             this.PageNavigator1.PageCount = js;
             this.PageNavigator1.PageIndex = PageIndex;
@@ -86,7 +86,7 @@ public partial class manage_user_arealist : Foosun.Web.UI.ManagePage
                         s["creatTimes"] = s["creatTime"].ToString();
                     }
 
-                    s["idc"] = "<a href=\"arealist_upp.aspx?Cid=" + s["Cid"].ToString() + "\" class=\"list_link\" title=\"修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"arealist_cadd.aspx?Cid=" + s["Cid"].ToString() + "&type=1\" class=\"list_link\"　title=\"添加小类\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加小类\" /></a><a href=\"#\" onclick=\"javascript:del('" + s["Cid"].ToString() + "');\" title=\"删除\");\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + s["Cid"].ToString() + "  runat=\"server\" />";
+                    s["idc"] = "<a href=\"arealist_upp.aspx?Cid=" + s["Cid"].ToString() + "\" class=\"list_link\" title=\"修改\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"arealist_cadd.aspx?Cid=" + s["Cid"].ToString() + "&type=1\" class=\"list_link\"　title=\"添加小类\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加小类\" /></a><a href=\"#\" onclick=\"javascript:del('" + s["Cid"].ToString() + "');\" title=\"删除\");\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + s["Cid"].ToString() + "  runat=\"server\" />";
                     show += "<tr class=\"TR_BG_list\"  onmouseover=\"overColor(this)\" onmouseout=\"outColor(this)\">";
                     show += "<td align=\"left\" width=\"20%\">" + s["cityName"].ToString() + "</td>";
                     show += "<td align=\"center\" width=\"40%\">" + s["creatTimes"] + "</td>";

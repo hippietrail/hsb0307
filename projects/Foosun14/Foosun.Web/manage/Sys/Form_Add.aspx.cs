@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class Form_Add : Foosun.Web.UI.ManagePage
+    public partial class Form_Add : Hg.Web.UI.ManagePage
     {
         public Form_Add()
         {

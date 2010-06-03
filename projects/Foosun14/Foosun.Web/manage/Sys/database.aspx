@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <script language="javascript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
@@ -17,13 +17,13 @@
   </table>
 <table width="98%" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr class="TR_BG_list">
-    <td align="left"><table width="772" align="left" height="29" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif" >
+    <td align="left"><table width="772" align="left" height="29" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif" >
         <tr>
           <td Width="193" class="m_down_bg" height="29" align="center" onclick="javascript:ChangeDiv('ExcuteSql')" style="cursor:hand;" id="TdExcuteSql">执行SQL语句</td>
           <td Width="193" class="m_up_bg" align="center" height="29" onclick="javascript:ChangeDiv('Bak')" style="cursor:hand;" id="TdBak">数据库备份</td>
           <td Width="193" class="m_up_bg" align="center" height="29" onclick="javascript:ChangeDiv('Replace')" style="cursor:hand;" id="TdReplace">数据库批量替换</td> 
 
-          <td Width="193" class="m_up_bg" align="center" height="29" onclick="javascript:ChangeDiv('Rar')" style="cursor:hand;<% if (Foosun.Config.UIConfig.WebDAL == "Foosun.SQLServerDAL"){ Response.Write("display:none;");}%>" id="TdRar" >数据库压缩</td>
+          <td Width="193" class="m_up_bg" align="center" height="29" onclick="javascript:ChangeDiv('Rar')" style="cursor:hand;<% if (Hg.Config.UIConfig.WebDAL == "Hg.SQLServerDAL"){ Response.Write("display:none;");}%>" id="TdRar" >数据库压缩</td>
         </tr>
       </table></td>
   </tr>
@@ -58,7 +58,7 @@
           </table>
         </form>
       </div>
-      <% if (Foosun.Config.UIConfig.WebDAL == "Foosun.SQLServerDAL")
+      <% if (Hg.Config.UIConfig.WebDAL == "Hg.SQLServerDAL")
          { 
       %>
       <div id="DivBak" style="display:none">

@@ -10,14 +10,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.DALFactory;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.CMS;
+using Hg.Model;
 using System.IO;
 using System.Data;
-using Foosun.Common;
+using Hg.Common;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Database
     {

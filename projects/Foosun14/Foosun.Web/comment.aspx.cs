@@ -9,13 +9,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class comment : Foosun.Web.UI.BasePage
+public partial class comment : Hg.Web.UI.BasePage
 {
     protected string newLine = "\r\n";
-    protected string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-    protected string str_Templet = Foosun.Config.UIConfig.dirTemplet;  //获取模板路径
+    protected string str_dirMana = Hg.Config.UIConfig.dirDumm;
+    protected string str_Templet = Hg.Config.UIConfig.dirTemplet;  //获取模板路径
     public static string InstallDir = "{$InstallDir}";
     public static string TempletDir = "{$TempletDir}";
     private static string HiddenNewsID = null;
@@ -28,7 +28,7 @@ public partial class comment : Foosun.Web.UI.BasePage
 
         if (GetRount != null && GetRount != string.Empty && sNewsID != null && sNewsID != string.Empty)
         {
-            Foosun.CMS.News rd = new Foosun.CMS.News();
+            Hg.CMS.News rd = new Hg.CMS.News();
             Response.Write(rd.getCommCounts(sNewsID.ToString(), Todays.ToString()));
             Response.End();
         }
@@ -78,13 +78,13 @@ public partial class comment : Foosun.Web.UI.BasePage
     {
         string str_UserNum = Request.QueryString["UserNum"];
         string str_UserPwd = Request.QueryString["UserPwd"];
-        string str_NewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string str_NewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
         if (string.IsNullOrEmpty(str_NewsID))
         {
             str_NewsID = HiddenNewsID;
         }
-        string str_IsQID = Foosun.Common.Input.Filter(Request.QueryString["IsQID"]);
-        string str_Content = Foosun.Common.Input.ToHtml(Request.QueryString["Content"]).Replace("?", "？").Replace("$$$", "");
+        string str_IsQID = Hg.Common.Input.Filter(Request.QueryString["IsQID"]);
+        string str_Content = Hg.Common.Input.ToHtml(Request.QueryString["Content"]).Replace("?", "？").Replace("$$$", "");
         string SiteID = "0";
         string gChID = Request.QueryString["ChID"];
         int ChID = 0;
@@ -92,7 +92,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             ChID = int.Parse(gChID.ToString());
         }
-        Foosun.CMS.sys sys = new Foosun.CMS.sys();
+        Hg.CMS.sys sys = new Hg.CMS.sys();
         if (str_Content.Length > 200 || str_Content.Length < 2)
         {
             Response.Write("ERR$$$评论内容不能大于200字符，小于2个字符!");
@@ -123,18 +123,18 @@ public partial class comment : Foosun.Web.UI.BasePage
             {
                 if (Validate_Session())
                 {
-                    str_UserNum = Foosun.Global.Current.UserName;
-                    SiteID = Foosun.Global.Current.SiteID;
+                    str_UserNum = Hg.Global.Current.UserName;
+                    SiteID = Hg.Global.Current.SiteID;
                 }
                 else
                 {
                     GlobalUserInfo info;
                     EnumLoginState state = _UserLogin.PersonLogin(str_UserNum, str_UserPwd, out info);
-                    if(state==Foosun.Model.EnumLoginState.Succeed)
+                    if(state==Hg.Model.EnumLoginState.Succeed)
                     {
-                        Foosun.Global.Current.Set(info);
-                        str_UserNum = Foosun.Global.Current.UserName;
-                        SiteID = Foosun.Global.Current.SiteID;
+                        Hg.Global.Current.Set(info);
+                        str_UserNum = Hg.Global.Current.UserName;
+                        SiteID = Hg.Global.Current.SiteID;
                     }
                     else
                     {
@@ -147,8 +147,8 @@ public partial class comment : Foosun.Web.UI.BasePage
             {
                 if(Validate_Session())
                 {
-                    str_UserNum = Foosun.Global.Current.UserName;
-                    SiteID = Foosun.Global.Current.SiteID;
+                    str_UserNum = Hg.Global.Current.UserName;
+                    SiteID = Hg.Global.Current.SiteID;
                 }
                 else
                 {
@@ -157,12 +157,12 @@ public partial class comment : Foosun.Web.UI.BasePage
                 }
             }
         }
-        Foosun.Model.Comment ci = new Foosun.Model.Comment();
+        Hg.Model.Comment ci = new Hg.Model.Comment();
         ci.Id = 0;
         ci.Commid = "";
         ci.InfoID = str_NewsID;
         ci.APIID = "0";
-        ci.DataLib = Foosun.Config.UIConfig.dataRe + "news";
+        ci.DataLib = Hg.Config.UIConfig.dataRe + "news";
         ci.Title = "";
         ci.Content = str_Content;
         ci.creatTime = DateTime.Now;
@@ -178,7 +178,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         DataTable isl = sys.UserPram();
         if (isl != null && isl.Rows.Count > 0)
         {
-            if (Foosun.Common.Input.IsInteger(isl.Rows[0]["CommCheck"].ToString()))
+            if (Hg.Common.Input.IsInteger(isl.Rows[0]["CommCheck"].ToString()))
             {
                 islocks = int.Parse(isl.Rows[0]["CommCheck"].ToString());
             }
@@ -191,7 +191,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         ci.SiteID = SiteID;
         ci.commtype = int.Parse(str_commtype.ToString());
 
-        Foosun.CMS.News news = new Foosun.CMS.News();
+        Hg.CMS.News news = new Hg.CMS.News();
         if (news.AddComment(ci) == 1)
         {
             if (islocks == 1)
@@ -233,8 +233,8 @@ public partial class comment : Foosun.Web.UI.BasePage
     /// </summary>
     protected void GetCommentList(int num,int isList)
     {
-        if (!string.IsNullOrEmpty(Foosun.Common.Input.Filter(Request.QueryString["id"])))
-            HiddenNewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        if (!string.IsNullOrEmpty(Hg.Common.Input.Filter(Request.QueryString["id"])))
+            HiddenNewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
         Response.Write(CommentList(num, isList));
         Response.End();
     }
@@ -245,7 +245,7 @@ public partial class comment : Foosun.Web.UI.BasePage
     /// <returns></returns>
     //protected string CommentList(int num,int isList)
     //{
-    //    string NewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+    //    string NewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
     //    if (string.IsNullOrEmpty(NewsID))
     //        NewsID = HiddenNewsID;
     //    string showdiv = Request.QueryString["showdiv"];
@@ -255,16 +255,16 @@ public partial class comment : Foosun.Web.UI.BasePage
     //    {
     //        ChID = int.Parse(gChID.ToString());
     //    }
-    //    string CommentTemplet = Foosun.Publish.General.ReadHtml(GetCommentTemplet());
+    //    string CommentTemplet = Hg.Publish.General.ReadHtml(GetCommentTemplet());
     //    string str_Clist = "";
     //    string str_ClistPage = "";
     //    if (num == 1)
     //    {
-    //        CommentTemplet = Foosun.Publish.General.ReadHtml(getCommentContentTemplet());
+    //        CommentTemplet = Hg.Publish.General.ReadHtml(getCommentContentTemplet());
     //    }
     //    if (NewsID != "" && NewsID != null)
     //    {
-    //        Foosun.CMS.News news = new Foosun.CMS.News();
+    //        Hg.CMS.News news = new Hg.CMS.News();
     //        DataTable dt = news.getCommentList(NewsID);
 
     //        if (dt != null && dt.Rows.Count > 0)
@@ -272,9 +272,9 @@ public partial class comment : Foosun.Web.UI.BasePage
     //            string curPage = Request.QueryString["page"];    //当前页码
     //            int pageSize = 10;
 
-    //            if (Foosun.Common.Input.IsInteger(Foosun.Config.UIConfig.commperPageNum))
+    //            if (Hg.Common.Input.IsInteger(Hg.Config.UIConfig.commperPageNum))
     //            {
-    //                pageSize = int.Parse(Foosun.Config.UIConfig.commperPageNum);
+    //                pageSize = int.Parse(Hg.Config.UIConfig.commperPageNum);
     //            }
 
     //            int page = 0;                     //每页显示数
@@ -311,11 +311,11 @@ public partial class comment : Foosun.Web.UI.BasePage
     //                if (CommentTemplet.IndexOf("{#Page_NewsURL}") > -1) { p_list = true; }
     //            }
 
-    //            string tmpContent = "<table style=\"width:90%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td style=\"width:32%;text-align:right\">不知所云</td><td><img alt=\"不知所云\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\"></td><td style=\"width:70%\"><table width='100%'><tr><td style=\"height:15px;width:" + news.returnCommentGD(NewsID, 0) + "px;background-color:#0000FF\"></td><td>" + news.returnCommentGD(NewsID, 0) + "%</td></tr></table></td></tr>";
-    //            tmpContent += "<tr><td style=\"text-align:right\">不赞成</td><td><img alt=\"不赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 1) + "px;background-color:#990066\"></td><td>" + news.returnCommentGD(NewsID, 1) + "%</td></tr></table></td></tr>";
-    //            tmpContent += "<tr><td style=\"text-align:right\">中立</td><td><img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 2) + "px;background-color:#FF6600\"></td><td>" + news.returnCommentGD(NewsID, 2) + "%</td></tr></table></td></tr>";
-    //            tmpContent += "<tr><td style=\"text-align:right\">赞成</td><td><img alt=\"赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\"></td><td><table width='100%'><tr><td  style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 3) + "px;background-color:#FF0000\"></td><td>" + news.returnCommentGD(NewsID, 3) + "%</td></tr></table></td></tr>";
-    //            tmpContent += "<tr><td style=\"text-align:right\">堪为精典</td><td><img alt=\"堪为精典\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 4) + "px;background-color:#009900\"></td><td>" + news.returnCommentGD(NewsID, 4) + "%</td></tr></table></td></tr></table>";
+    //            string tmpContent = "<table style=\"width:90%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td style=\"width:32%;text-align:right\">不知所云</td><td><img alt=\"不知所云\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\"></td><td style=\"width:70%\"><table width='100%'><tr><td style=\"height:15px;width:" + news.returnCommentGD(NewsID, 0) + "px;background-color:#0000FF\"></td><td>" + news.returnCommentGD(NewsID, 0) + "%</td></tr></table></td></tr>";
+    //            tmpContent += "<tr><td style=\"text-align:right\">不赞成</td><td><img alt=\"不赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 1) + "px;background-color:#990066\"></td><td>" + news.returnCommentGD(NewsID, 1) + "%</td></tr></table></td></tr>";
+    //            tmpContent += "<tr><td style=\"text-align:right\">中立</td><td><img alt=\"中立\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 2) + "px;background-color:#FF6600\"></td><td>" + news.returnCommentGD(NewsID, 2) + "%</td></tr></table></td></tr>";
+    //            tmpContent += "<tr><td style=\"text-align:right\">赞成</td><td><img alt=\"赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\"></td><td><table width='100%'><tr><td  style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 3) + "px;background-color:#FF0000\"></td><td>" + news.returnCommentGD(NewsID, 3) + "%</td></tr></table></td></tr>";
+    //            tmpContent += "<tr><td style=\"text-align:right\">堪为精典</td><td><img alt=\"堪为精典\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\"></td><td><table width='100%'><tr><td style=\"padding:inherit;height:15px;width:" + news.returnCommentGD(NewsID, 4) + "px;background-color:#009900\"></td><td>" + news.returnCommentGD(NewsID, 4) + "%</td></tr></table></td></tr></table>";
     //            #region 循环条件
     //            string goodTitle = "";
     //            for (i = (page - 1) * pageSize, j = 1; i < Cnt && j <= pageSize; i++, j++)
@@ -355,32 +355,32 @@ public partial class comment : Foosun.Web.UI.BasePage
     //                    }
     //                    if (dt.Rows[i]["GoodTitle"].ToString() == "1")
     //                    {
-    //                        goodTitle = "<img alt=\"精华评论\" src=\""+Foosun.Publish.CommonData.getUrl() + "/sysImages/normal/best.jpg\" border=\"0\" />&nbsp;";
+    //                        goodTitle = "<img alt=\"精华评论\" src=\""+Hg.Publish.CommonData.getUrl() + "/sysImages/normal/best.jpg\" border=\"0\" />&nbsp;";
     //                    }
-    //                    string commtypes = commtypes = "<img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
+    //                    string commtypes = commtypes = "<img alt=\"中立\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
     //                    string commtype = dt.Rows[i]["commtype"].ToString();
     //                    switch (commtype)
     //                    {
     //                        case "0":
-    //                            commtypes = "<img alt=\"不知所云\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\">";
+    //                            commtypes = "<img alt=\"不知所云\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\">";
     //                            break;
     //                        case "1":
-    //                            commtypes = "<img alt=\"不赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\">";
+    //                            commtypes = "<img alt=\"不赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\">";
     //                            break;
     //                        case "2":
-    //                            commtypes = "<img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
+    //                            commtypes = "<img alt=\"中立\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
     //                            break;
     //                        case "3":
-    //                            commtypes = "<img alt=\"赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\">";
+    //                            commtypes = "<img alt=\"赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\">";
     //                            break;
     //                        case "4":
-    //                            commtypes = "<img alt=\"堪为精品\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\">";
+    //                            commtypes = "<img alt=\"堪为精品\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\">";
     //                            break;
     //                    }
 
     //                    if (str_UserName != "匿名")
     //                    {
-    //                        str_UserName = "" + commtypes + " <a href=\"" + Foosun.Publish.CommonData.getUrl() + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserNum"].ToString() + ".aspx\" target=\"_blank\">" + dt.Rows[i]["UserNum"].ToString() + "</a>  ";
+    //                        str_UserName = "" + commtypes + " <a href=\"" + Hg.Publish.CommonData.getUrl() + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserNum"].ToString() + ".aspx\" target=\"_blank\">" + dt.Rows[i]["UserNum"].ToString() + "</a>  ";
     //                    }
     //                    else
     //                    {
@@ -397,7 +397,7 @@ public partial class comment : Foosun.Web.UI.BasePage
     //                    {
     //                        string str_Content = goodTitle + dt.Rows[i]["Content"].ToString();
     //                        string Commfiltrchar = "";
-    //                        Foosun.CMS.sys sd = new Foosun.CMS.sys();
+    //                        Hg.CMS.sys sd = new Hg.CMS.sys();
     //                        DataTable sds = sd.UserPram();
     //                        if (dt != null && dt.Rows.Count > 0)
     //                        {
@@ -423,7 +423,7 @@ public partial class comment : Foosun.Web.UI.BasePage
     //                str_CPage += "<div style=\"width:100%;padding-top:15px;\">\r";
     //                if (num == 1)
     //                {
-    //                    str_CPage += "<span>" + ShowPageContent(NewsID, Foosun.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
+    //                    str_CPage += "<span>" + ShowPageContent(NewsID, Hg.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
     //                    CommentTemplet = CommentTemplet.Replace("{#Page_CommPages}", "");
     //                }
     //                else
@@ -524,8 +524,8 @@ public partial class comment : Foosun.Web.UI.BasePage
     //    {
     //        CommentTemplet = "<div style=\"width:100%;\">错误的参数</div>\r";
     //    }
-    //    string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
-    //    getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
+    //    string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
+    //    getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
     //    getajaxJS += "<!--Created by dotNETCMS v1.0 For Foosun Inc. at " + DateTime.Now + "-->\r\n";
     //    string getContent = string.Empty;
     //    if (isList == 1)
@@ -547,13 +547,13 @@ public partial class comment : Foosun.Web.UI.BasePage
     //    {
     //        getContent = str_ClistPage;
     //    }
-    //    getContent = (getContent.Replace(InstallDir, Foosun.Publish.CommonData.getUrl())).Replace(TempletDir, str_Templet);
+    //    getContent = (getContent.Replace(InstallDir, Hg.Publish.CommonData.getUrl())).Replace(TempletDir, str_Templet);
     //    return getContent;
     //}
 
     protected string CommentList(int num, int isList)
     {
-        string NewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string NewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
         if (string.IsNullOrEmpty(NewsID))
             NewsID = HiddenNewsID;
         string showdiv = Request.QueryString["showdiv"];
@@ -563,16 +563,16 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             ChID = int.Parse(gChID.ToString());
         }
-        string CommentTemplet = Foosun.Publish.General.ReadHtml(GetCommentTemplet());
+        string CommentTemplet = Hg.Publish.General.ReadHtml(GetCommentTemplet());
         string str_Clist = "";
         string str_ClistPage = "";
         if (num == 1)
         {
-            CommentTemplet = Foosun.Publish.General.ReadHtml(getCommentContentTemplet());
+            CommentTemplet = Hg.Publish.General.ReadHtml(getCommentContentTemplet());
         }
         if (NewsID != "" && NewsID != null)
         {
-            Foosun.CMS.News news = new Foosun.CMS.News();
+            Hg.CMS.News news = new Hg.CMS.News();
             DataTable dt = news.getCommentList(NewsID);
 
             if (dt != null && dt.Rows.Count > 0)
@@ -580,9 +580,9 @@ public partial class comment : Foosun.Web.UI.BasePage
                 string curPage = Request.QueryString["page"];    //当前页码
                 int pageSize = 10;
 
-                if (Foosun.Common.Input.IsInteger(Foosun.Config.UIConfig.commperPageNum))
+                if (Hg.Common.Input.IsInteger(Hg.Config.UIConfig.commperPageNum))
                 {
-                    pageSize = int.Parse(Foosun.Config.UIConfig.commperPageNum);
+                    pageSize = int.Parse(Hg.Config.UIConfig.commperPageNum);
                 }
 
                 int page = 0;                     //每页显示数
@@ -663,32 +663,32 @@ public partial class comment : Foosun.Web.UI.BasePage
                         }
                         if (dt.Rows[i]["GoodTitle"].ToString() == "1")
                         {
-                            goodTitle = "<img alt=\"精华评论\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysImages/normal/best.jpg\" border=\"0\" />&nbsp;";
+                            goodTitle = "<img alt=\"精华评论\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysImages/normal/best.jpg\" border=\"0\" />&nbsp;";
                         }
-                        string commtypes = commtypes = "<img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
+                        string commtypes = commtypes = "<img alt=\"中立\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
                         string commtype = dt.Rows[i]["commtype"].ToString();
                         switch (commtype)
                         {
                             case "0":
-                                commtypes = "<img alt=\"不知所云\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\">";
+                                commtypes = "<img alt=\"不知所云\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/0.gif\" border=\"0\">";
                                 break;
                             case "1":
-                                commtypes = "<img alt=\"不赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\">";
+                                commtypes = "<img alt=\"不赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/1.gif\" border=\"0\">";
                                 break;
                             case "2":
-                                commtypes = "<img alt=\"中立\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
+                                commtypes = "<img alt=\"中立\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/2.gif\" border=\"0\">";
                                 break;
                             case "3":
-                                commtypes = "<img alt=\"赞成\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\">";
+                                commtypes = "<img alt=\"赞成\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/3.gif\" border=\"0\">";
                                 break;
                             case "4":
-                                commtypes = "<img alt=\"堪为精品\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\">";
+                                commtypes = "<img alt=\"堪为精品\" src=\"" + Hg.Publish.CommonData.getUrl() + "/sysimages/commface/4.gif\" border=\"0\">";
                                 break;
                         }
 
                         if (str_UserName != "匿名")
                         {
-                            str_UserName = ""  + " <a href=\"" + Foosun.Publish.CommonData.getUrl() + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserNum"].ToString() + ".aspx\" target=\"_blank\">" + dt.Rows[i]["UserNum"].ToString() + "</a>  ";
+                            str_UserName = ""  + " <a href=\"" + Hg.Publish.CommonData.getUrl() + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserNum"].ToString() + ".aspx\" target=\"_blank\">" + dt.Rows[i]["UserNum"].ToString() + "</a>  ";
                         }
                         else
                         {
@@ -705,7 +705,7 @@ public partial class comment : Foosun.Web.UI.BasePage
                         {
                             string str_Content = goodTitle + dt.Rows[i]["Content"].ToString();
                             string Commfiltrchar = "";
-                            Foosun.CMS.sys sd = new Foosun.CMS.sys();
+                            Hg.CMS.sys sd = new Hg.CMS.sys();
                             DataTable sds = sd.UserPram();
                             if (dt != null && dt.Rows.Count > 0)
                             {
@@ -731,7 +731,7 @@ public partial class comment : Foosun.Web.UI.BasePage
                     str_CPage += "<div style=\"width:100%;padding-top:15px;margin-bottom:8px;\">\r";
                     if (num == 1)
                     {
-                        str_CPage += "<span style=\"float:right;\">" + ShowPageContent(NewsID, Foosun.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
+                        str_CPage += "<span style=\"float:right;\">" + ShowPageContent(NewsID, Hg.Publish.CommonData.getUrl(), page, Cnt, pageCount) + "</span>\r";
                         CommentTemplet = CommentTemplet.Replace("{#Page_CommPages}", "");
                     }
                     else
@@ -832,8 +832,8 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             CommentTemplet = "<div style=\"width:100%;\">错误的参数</div>\r";
         }
-        string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
-        getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
+        string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
+        getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
         getajaxJS += "<!--Created by dotNETCMS v1.0 For Foosun Inc. at " + DateTime.Now + "-->\r\n";
         string getContent = string.Empty;
         if (isList == 1)
@@ -855,7 +855,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             getContent = str_ClistPage;
         }
-        getContent = (getContent.Replace(InstallDir, Foosun.Publish.CommonData.getUrl())).Replace(TempletDir, str_Templet);
+        getContent = (getContent.Replace(InstallDir, Hg.Publish.CommonData.getUrl())).Replace(TempletDir, str_Templet);
         return getContent;
     }
 
@@ -884,22 +884,22 @@ public partial class comment : Foosun.Web.UI.BasePage
     /// </summary>
     protected string GetAddCommentForm(string tmstr)
     {
-        Foosun.CMS.sys sys = new Foosun.CMS.sys();
-        string NewsID = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        Hg.CMS.sys sys = new Hg.CMS.sys();
+        string NewsID = Hg.Common.Input.Filter(Request.QueryString["id"]);
 
         string UserName = "Guest";
         string UserExit = "";
 
         if(Validate_Session())
         {
-            UserName = Foosun.Global.Current.UserName;
+            UserName = Hg.Global.Current.UserName;
             if (tmstr == "getlist")
             {
-                UserExit = "<span id=\"loginOutB\"><a href=\"javascript:CommentLoginOut(this.form,'" + Foosun.Publish.CommonData.getUrl() + "');\">注销帐户</a></span>&nbsp;&nbsp;<a hrefs=\"" + Foosun.Publish.CommonData.getUrl() + "/" + Foosun.Config.UIConfig.dirUser + "/index.aspx?url=info/mycom.aspx\">我的评论</a>";
+                UserExit = "<span id=\"loginOutB\"><a href=\"javascript:CommentLoginOut(this.form,'" + Hg.Publish.CommonData.getUrl() + "');\">注销帐户</a></span>&nbsp;&nbsp;<a hrefs=\"" + Hg.Publish.CommonData.getUrl() + "/" + Hg.Config.UIConfig.dirUser + "/index.aspx?url=info/mycom.aspx\">我的评论</a>";
             }
             else
             {
-                UserExit = "<a href=\"javascript:CommentLoginOut();\">注销帐户</a>&nbsp;&nbsp;<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/" + Foosun.Config.UIConfig.dirUser + "/index.aspx?urls=info/mycom.aspx\">我的评论</a>";
+                UserExit = "<a href=\"javascript:CommentLoginOut();\">注销帐户</a>&nbsp;&nbsp;<a href=\"" + Hg.Publish.CommonData.getUrl() + "/" + Hg.Config.UIConfig.dirUser + "/index.aspx?urls=info/mycom.aspx\">我的评论</a>";
             }
         }
         else
@@ -910,7 +910,7 @@ public partial class comment : Foosun.Web.UI.BasePage
                 if (dt.Rows[0]["UnRegCommTF"].ToString() != "1")
                 {
                     UserName = "";
-                    UserExit = "没帐户？<a href=\"" + Foosun.Publish.CommonData.getUrl() + "/" + Foosun.Config.UIConfig.dirUser + "/register.aspx\">这里注册</a>";
+                    UserExit = "没帐户？<a href=\"" + Hg.Publish.CommonData.getUrl() + "/" + Hg.Config.UIConfig.dirUser + "/register.aspx\">这里注册</a>";
                 }
                 else
                 {
@@ -935,7 +935,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         str_CommForm += "<div style=\"text-align:left;height:110px;\">\r";
         if (tmstr == "getlist")
         {
-            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"6\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');}\"></textarea>\r";
+            str_CommForm += "<textarea name=\"Content\" style=\"font-size:12px;width:90%\" rows=\"6\" onkeydown=\"javascript:if(event.ctrlKey&&event.keyCode==13){CommandSubmitContent(this.form,'" + Hg.Publish.CommonData.getUrl() + "','" + NewsID + "');}\"></textarea>\r";
         }
         else
         {
@@ -945,7 +945,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         str_CommForm += "<div style=\"text-align:left;height:35px;\">\r";
         if (tmstr == "getlist")
         {
-            str_CommForm += "<input name=\"B_CommandSubmit\"  type=\"button\" value=\"提交评论\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Foosun.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
+            str_CommForm += "<input name=\"B_CommandSubmit\"  type=\"button\" value=\"提交评论\" onclick=\"javascript:CommandSubmitContent(this.form,'" + Hg.Publish.CommonData.getUrl() + "','" + NewsID + "');\">\r";
         }
         else
         {
@@ -987,7 +987,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             ChID = int.Parse(gChID.ToString());
         }
-        return urlstr + " <a href=\"" + Foosun.Publish.CommonData.getUrl() + "/Comment.aspx?CommentType=getlist&id=" + NewsID + "&ChID=" + ChID.ToString() + "\" style=\"color:Red;\">查看全部</a>";
+        return urlstr + " <a href=\"" + Hg.Publish.CommonData.getUrl() + "/Comment.aspx?CommentType=getlist&id=" + NewsID + "&ChID=" + ChID.ToString() + "\" style=\"color:Red;\">查看全部</a>";
     }
 
     /// <summary>
@@ -1050,7 +1050,7 @@ public partial class comment : Foosun.Web.UI.BasePage
     protected string getNewsURL(string isDelPoint, string NewsID, string SavePath, string SaveClassframe, string FileName, string FileEXName)
     {
         string str_temppath = "";
-        if (Foosun.Common.Public.readparamConfig("ReviewType") == "0")
+        if (Hg.Common.Public.readparamConfig("ReviewType") == "0")
         {
             if (isDelPoint != "0")
             {
@@ -1065,7 +1065,7 @@ public partial class comment : Foosun.Web.UI.BasePage
         {
             str_temppath = "/content.aspx?id=" + NewsID + "";
         }
-        str_temppath = Foosun.Publish.CommonData.getUrl() + str_temppath.Replace("//", "/");
+        str_temppath = Hg.Publish.CommonData.getUrl() + str_temppath.Replace("//", "/");
         return str_temppath;
     }
 
@@ -1075,11 +1075,11 @@ public partial class comment : Foosun.Web.UI.BasePage
     public string getCHInfoURL(int ChID, int isDelPoint, int id, string ClassSavePath, string SavePath, string FileName)
     {
         string urls = string.Empty;
-        int ishtml = int.Parse(Foosun.Common.Public.readCHparamConfig("isHTML", ChID));
-        string Domain = Foosun.Common.Public.readCHparamConfig("bdomain", ChID);
-        string linkType = Foosun.Common.Public.readparamConfig("linkTypeConfig");
-        string htmldir = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-        string dirdumm = Foosun.Config.UIConfig.dirDumm;
+        int ishtml = int.Parse(Hg.Common.Public.readCHparamConfig("isHTML", ChID));
+        string Domain = Hg.Common.Public.readCHparamConfig("bdomain", ChID);
+        string linkType = Hg.Common.Public.readparamConfig("linkTypeConfig");
+        string htmldir = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+        string dirdumm = Hg.Config.UIConfig.dirDumm;
         if (dirdumm.Trim() != string.Empty)
         {
             dirdumm = "/" + dirdumm;
@@ -1104,13 +1104,13 @@ public partial class comment : Foosun.Web.UI.BasePage
             {
                 urls = "/" + htmldir + "/" + ClassSavePath + "/" + SavePath + "/" + FileName;
                 urls = urls.Replace("//", "/");
-                urls = Foosun.Publish.CommonData.getUrl() + urls;
+                urls = Hg.Publish.CommonData.getUrl() + urls;
             }
         }
         else
         {
-            urls = Foosun.Publish.CommonData.getUrl() + "/Content.aspx?Id=" + id.ToString() + "&ChID=" + ChID.ToString() + "";
+            urls = Hg.Publish.CommonData.getUrl() + "/Content.aspx?Id=" + id.ToString() + "&ChID=" + ChID.ToString() + "";
         }
-        return urls.ToLower().Replace("{@dirhtml}", Foosun.Config.UIConfig.dirHtml);
+        return urls.ToLower().Replace("{@dirhtml}", Hg.Config.UIConfig.dirHtml);
     }
 }

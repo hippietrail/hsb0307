@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     /// <summary>
     /// ±êÇ©ÖÐµÄÓï¾ä¿é

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.DALFactory;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Search
     {
-        public static DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Foosun.Model.Search si)
+        public static DataTable SearchGetPage(string DTable,int PageIndex, int PageSize, out int RecordCount, out int PageCount, Hg.Model.Search si)
         {
             ISearch dal = DataAccess.CreateSearch();
             return dal.SearchGetPage(DTable,PageIndex, PageSize, out RecordCount, out PageCount, si);

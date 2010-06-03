@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_unnews_iframe : Foosun.Web.UI.ManagePage
+public partial class manage_news_unnews_iframe : Hg.Web.UI.ManagePage
 {
     public manage_news_unnews_iframe()
     {
@@ -22,7 +22,7 @@ public partial class manage_news_unnews_iframe : Foosun.Web.UI.ManagePage
         if (Request.Form["Option"] != null && !Request.Form["Option"].Trim().Equals("")
             && Request.Form["NewsID"] != null && !Request.Form["NewsID"].Trim().Equals(""))
         {
-            string id = Foosun.Common.Input.Filter(Request.Form["NewsID"].Trim());
+            string id = Hg.Common.Input.Filter(Request.Form["NewsID"].Trim());
             switch (Request.Form["Option"].Trim())
             {
                 case "RecyleNews":
@@ -67,9 +67,9 @@ public partial class manage_news_unnews_iframe : Foosun.Web.UI.ManagePage
         {
             DdlClass = DdlClass.Substring(0, DdlClass.IndexOf(','));
         }
-        string sKeywrds = Foosun.Common.Input.Filter(this.TxtKeywords.Text.Trim());
+        string sKeywrds = Hg.Common.Input.Filter(this.TxtKeywords.Text.Trim());
         string sChoose = this.LblChoose.Text.Trim();
-        string TablePrefix = Foosun.Config.UIConfig.dataRe;
+        string TablePrefix = Hg.Config.UIConfig.dataRe;
         string DdlKwdType = this.DdlKwdType.SelectedValue;
         int nRCount, nPCount;
         DataTable tb = nws.GetPageiframe(DdlClass, sKeywrds, sChoose, DdlKwdType, PageIndex, 50, out nRCount, out nPCount, null);

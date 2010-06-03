@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_SetParam : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_SetParam : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_Constr_SetParam()
     {
@@ -38,11 +38,11 @@ public partial class manage_Contribution_Constr_SetParam : Foosun.Web.UI.ManageP
         rootPublic rd = new rootPublic();
         if (Page.IsValid)
         {
-            string PCId = Foosun.Common.Rand.Number(12);
-            string ConstrPayName = Foosun.Common.Input.Filter(Request.Form["ConstrPayName"].ToString());
-            int moneys1 = int.Parse(Foosun.Common.Input.Filter(Request.Form["moneys"].ToString()));
-            string ipoint = Foosun.Common.Input.Filter(Request.Form["ipoint"].ToString());
-            string gpoint = Foosun.Common.Input.Filter(Request.Form["gpoint"].ToString());
+            string PCId = Hg.Common.Rand.Number(12);
+            string ConstrPayName = Hg.Common.Input.Filter(Request.Form["ConstrPayName"].ToString());
+            int moneys1 = int.Parse(Hg.Common.Input.Filter(Request.Form["moneys"].ToString()));
+            string ipoint = Hg.Common.Input.Filter(Request.Form["ipoint"].ToString());
+            string gpoint = Hg.Common.Input.Filter(Request.Form["gpoint"].ToString());
             string Gunit = this.Gunit.SelectedItem.ToString();
             DataTable dt = con.sel24();
             int cutb = dt.Rows.Count;

@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_admin_GroupEdit : Hg.Web.UI.ManagePage
 {
     public manage_Sys_admin_GroupEdit()
     {
@@ -21,7 +21,7 @@ public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
     }
     protected void Page_Load(object sender, EventArgs e)
     {
-        string ID = Foosun.Common.Input.checkID(Request.QueryString["ID"]);
+        string ID = Hg.Common.Input.checkID(Request.QueryString["ID"]);
         string Type = Request.QueryString["Type"];
         if (!IsPostBack)
         {
@@ -42,7 +42,7 @@ public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
 
     protected void getList()
     {
-        Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         DataTable dt = agc.getClassList("ClassID,ClassCName,ParentID", "news_Class", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
         DataTable dv = agc.getClassList("ChannelID,CName,ParentID", "news_site", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
         DataTable dc = agc.getClassList("SpecialID,SpecialCName,ParentID", "news_special", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
@@ -134,7 +134,7 @@ public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
 
     protected void GetGroupInfo(string ID)
     {
-        Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         DataTable dt = agc.getInfo(ID);
         if (dt != null)
         {
@@ -192,7 +192,7 @@ public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
                 ClassID = "SpecialID";
                 break;
         }
-        Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         DataTable dt = agc.getColCname(Cname, Tbname, ClassID, ID);
         string temp_str = null;
         if (dt != null)
@@ -215,16 +215,16 @@ public partial class manage_Sys_admin_GroupEdit : Foosun.Web.UI.ManagePage
     protected void UpdateGroupInfo(string ID)
     {
         int result = 0;
-        Foosun.Model.AdminGroupInfo agci = new Foosun.Model.AdminGroupInfo();
+        Hg.Model.AdminGroupInfo agci = new Hg.Model.AdminGroupInfo();
         agci.adminGroupNumber = ID;
         agci.GroupName = "";
-        agci.ClassList = Foosun.Common.Input.Filter(Request.Form["News_List"]);
-        agci.SpecialList = Foosun.Common.Input.Filter(Request.Form["Sp_List"]);
-        agci.channelList = Foosun.Common.Input.Filter(Request.Form["Site_List"]);
+        agci.ClassList = Hg.Common.Input.Filter(Request.Form["News_List"]);
+        agci.SpecialList = Hg.Common.Input.Filter(Request.Form["Sp_List"]);
+        agci.channelList = Hg.Common.Input.Filter(Request.Form["Site_List"]);
         agci.CreatTime = DateTime.Now;
         agci.SiteID = SiteID;
 
-        Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         result = agc.Edit(agci);
 
         if(result==1)

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <script language="javascript" type="text/javascript">
@@ -160,7 +160,7 @@ function DeleteSite(id)
     <asp:Label runat="server" ID="LblDomain" Text='<%# DataBinder.Eval(Container.DataItem, "Domain")%>'/>
     </td>
     <td class="list_link">
-        <a href="Site_add.aspx?ID=<%# DataBinder.Eval(Container.DataItem, "Id")%>" class="list_link"><img src="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a>&nbsp;<a href="javascript:RecyleSite('<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>')" class="list_link"><img src="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/sysico/del.gif" border="0" alt="删除" /></a>&nbsp;<a href="javascript:DeleteSite('<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>');" class="list_link"><img src="../../sysImages/folder/dels.gif" border="0" alt="彻底删除" /></a>&nbsp;<input type="checkbox" name="checkbox" value="<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>"/>
+        <a href="Site_add.aspx?ID=<%# DataBinder.Eval(Container.DataItem, "Id")%>" class="list_link"><img src="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/sysico/edit.gif" border="0" alt="修改" /></a>&nbsp;<a href="javascript:RecyleSite('<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>')" class="list_link"><img src="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/sysico/del.gif" border="0" alt="删除" /></a>&nbsp;<a href="javascript:DeleteSite('<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>');" class="list_link"><img src="../../sysImages/folder/dels.gif" border="0" alt="彻底删除" /></a>&nbsp;<input type="checkbox" name="checkbox" value="<%# DataBinder.Eval(Container.DataItem, "ChannelID")%>"/>
     </td>
   </tr>
  </ItemTemplate>

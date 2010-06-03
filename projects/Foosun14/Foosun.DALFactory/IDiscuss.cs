@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IDiscuss
     {
@@ -170,7 +170,7 @@ namespace Foosun.DALFactory
         #region discussTopi_commentary.aspx
         DataTable sel_37(string Dtd);
         //int Add_9(string DtsID, string Titles, string Contentss, string UserNum, string DtIDa, DateTime creatTime, string DisIDx);
-        void Add_9(Foosun.Model.STADDDiscuss uc);
+        void Add_9(Hg.Model.STADDDiscuss uc);
         DataTable sel_38(string DtID);
         int Update_4(DateTime te, string hidd);
         string sel_39(string VoteID);

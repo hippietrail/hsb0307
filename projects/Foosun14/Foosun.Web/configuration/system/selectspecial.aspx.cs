@@ -9,15 +9,15 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.configuration.system
+namespace Hg.Web.configuration.system
 {
-    public partial class selectspecial  : Foosun.Web.UI.ManagePage
+    public partial class selectspecial  : Hg.Web.UI.ManagePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+                Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
                 DataTable dc = agc.getClassList("SpecialID,SpecialCName,ParentID", "news_special", " Where isLock=0 And isRecyle=0 And SiteID='" + SiteID + "' ");
                 listShow(dc, "0", 0, Special);
                 dc.Clear(); dc.Dispose();

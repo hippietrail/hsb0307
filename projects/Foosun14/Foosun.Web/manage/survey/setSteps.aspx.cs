@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
+public partial class manage_survey_setSteps : Hg.Web.UI.ManagePage
 {
     public manage_survey_setSteps()
     {
@@ -102,7 +102,7 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
     protected void VoteStepsManage(int PageIndex)//显示投票选项管理页面
     {
         #region 查询操作条件判断语句
-        string KeyWord = Foosun.Common.Input.Filter(this.KeyWord.Text.Trim());//关键字
+        string KeyWord = Hg.Common.Input.Filter(this.KeyWord.Text.Trim());//关键字
         string type = this.DdlKwdType.SelectedValue;//类型
         int i = 0, j = 0;
         int num = PAGESIZE;//从参数设置里取得每页显示记录的条数
@@ -112,11 +112,11 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
             switch (type)
             {
                 case "choose":
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
                     break;
                 case "nums":
                     SQLConditionInfo st = new SQLConditionInfo("@SID", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_2_aspx", PageIndex, num, out i, out j, st);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_2_aspx", PageIndex, num, out i, out j, st);
                     break;
                 case "titles":
                     DataTable dt1 = new DataTable();
@@ -129,22 +129,22 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
                             {
                                 int tid = int.Parse(dt1.Rows[l]["TID"].ToString());
                                 SQLConditionInfo st1 = new SQLConditionInfo("@TIDS", "%" + tid + "%");
-                                dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_3_aspx", PageIndex, num, out i, out j, st1);
+                                dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_3_aspx", PageIndex, num, out i, out j, st1);
                             }
                         }
                         else
                         {
-                            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+                            dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
                         }
                     }
                     else
                     {
-                        dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+                        dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
                     }
                     break;
                 case "nunber":
                     SQLConditionInfo st2 = new SQLConditionInfo("@Steps", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_4_aspx", PageIndex, num, out i, out j, st2);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_4_aspx", PageIndex, num, out i, out j, st2);
                     break;
                 case "titleu":
                     DataTable dt2 = new DataTable();
@@ -157,24 +157,24 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
                             {
                                 int tid = int.Parse(dt2.Rows[a]["TID"].ToString());
                                 SQLConditionInfo st3 = new SQLConditionInfo("@TIDU", "%" + tid + "%");
-                                dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_5_aspx", PageIndex, num, out i, out j, st3);
+                                dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_5_aspx", PageIndex, num, out i, out j, st3);
                             }
                         }
                         else
                         {
-                            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+                            dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
                         }
                     }
                     else
                     {
-                        dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+                        dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
                     }
                     break;
             }
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage("manage_survey_setSteps_1_aspx", PageIndex, num, out i, out j, null);
         }
         #endregion
 
@@ -211,7 +211,7 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
                     }
                     catch { }
 
-                    dt.Rows[k]["oPerate"] = "<a href=\"setSteps.aspx?type=edit&id=" + SID + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setSteps.aspx?type=delone&id=" + SID + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + SID + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a href=\"setSteps.aspx?type=edit&id=" + SID + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setSteps.aspx?type=delone&id=" + SID + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + SID + "\"/>";
                 }
             }
             else
@@ -253,7 +253,7 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
         {
             //取得设置添加中的表单信息
             string Str_vote_CNameSe = this.vote_CNameSe.SelectedValue;//调查主题
-            string Str_StepsN = Foosun.Common.Input.Filter(this.StepsN.Text);//步骤
+            string Str_StepsN = Hg.Common.Input.Filter(this.StepsN.Text);//步骤
             string Str_vote_CNameUse = this.vote_CNameUse.SelectedValue;//调用主题
 
             //检查是否有已经存在的
@@ -267,7 +267,7 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
                 PageError("对不起，您提交的数据有空值!\n请选择相应的调查主题和调用主题!", "setSteps.aspx");
             }
             //判断数字类型
-            if (!Foosun.Common.Input.IsInteger(Str_StepsN))
+            if (!Hg.Common.Input.IsInteger(Str_StepsN))
             {
                 PageError("抱歉，顺序号应为数字型，请确保您输入的值为数字型", "setSteps.aspx");
             }
@@ -398,16 +398,16 @@ public partial class manage_survey_setSteps : Foosun.Web.UI.ManagePage
         {
             int SID = int.Parse(Request.QueryString["ID"]);
             //取得修改中的表单信息
-            string Str_votecnameEditse = Foosun.Common.Input.Filter(this.votecnameEditse.Text.Trim());
-            string Str_NumEdit = Foosun.Common.Input.Filter(this.NumEdit.Text.Trim());
-            string Str_votecnameEditue = Foosun.Common.Input.Filter(this.votecnameEditue.Text.Trim());
+            string Str_votecnameEditse = Hg.Common.Input.Filter(this.votecnameEditse.Text.Trim());
+            string Str_NumEdit = Hg.Common.Input.Filter(this.NumEdit.Text.Trim());
+            string Str_votecnameEditue = Hg.Common.Input.Filter(this.votecnameEditue.Text.Trim());
             //判断数据是否为空
             if (Str_votecnameEditse == null || Str_votecnameEditse == string.Empty || Str_votecnameEditue == null || Str_votecnameEditue == string.Empty)
             {
                 PageError("对不起，您提交的数据有空值!\n请选择相应的调查主题和调用主题!", "setSteps.aspx");
             }
             //判断数字类型
-            if (!Foosun.Common.Input.IsInteger(Str_NumEdit))
+            if (!Hg.Common.Input.IsInteger(Str_NumEdit))
             {
                 PageError("抱歉，顺序号应为数字型，请确保您输入的值为数字型", "setSteps.aspx");
             }

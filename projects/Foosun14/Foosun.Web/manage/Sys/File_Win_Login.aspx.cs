@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_File_Win_Login : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_File_Win_Login : Hg.Web.UI.ManagePage
 {
     public manage_Sys_File_Win_Login()
     {
@@ -35,7 +35,7 @@ public partial class manage_Sys_File_Win_Login : Foosun.Web.UI.ManagePage
    
     protected void FilePassClick_ServerClick(object sender, EventArgs e)
     {
-        string fp = Foosun.CMS.FSSecurity.FDESEncrypt(File_Manag_Pass.Text.ToString().Trim(), 1);
+        string fp = Hg.CMS.FSSecurity.FDESEncrypt(File_Manag_Pass.Text.ToString().Trim(), 1);
         fp = fp.Replace("+", "%2B");
         Response.Redirect("File_GetIn.aspx?id="+fp);
     }

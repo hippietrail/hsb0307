@@ -20,9 +20,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Net;
 using System.IO;
-using Foosun.CMS.Collect;
+using Hg.CMS.Collect;
 
-public partial class manage_collect_Collect_StepThree : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_StepThree : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -38,7 +38,7 @@ public partial class manage_collect_Collect_StepThree : Foosun.Web.UI.ManagePage
             else
             {
                 int n = int.Parse(Request.QueryString["ID"]);
-                Foosun.CMS.Collect.Collect cl = new Collect();
+                Hg.CMS.Collect.Collect cl = new Collect();
                 DataTable tb = cl.GetSite(n);
                 if (tb == null || tb.Rows.Count == 0)
                 {
@@ -104,7 +104,7 @@ public partial class manage_collect_Collect_StepThree : Foosun.Web.UI.ManagePage
             HttpCookie ck = new HttpCookie("CollectObtainURL");
             ck.Value = oburl;
             Response.Cookies.Add(ck);
-            Foosun.Model.CollectSiteInfo nf = new Foosun.Model.CollectSiteInfo();
+            Hg.Model.CollectSiteInfo nf = new Hg.Model.CollectSiteInfo();
             nf.ID = id;
             nf.LinkSetting = EdtListURL.Text;
             Collect cl = new Collect();

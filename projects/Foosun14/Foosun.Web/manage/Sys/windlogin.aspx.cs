@@ -8,7 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-public partial class manage_Sys_windlogin : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_windlogin : Hg.Web.UI.ManagePage
 {
     public manage_Sys_windlogin()
     {
@@ -24,7 +24,7 @@ public partial class manage_Sys_windlogin : Foosun.Web.UI.ManagePage
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string tb_ = Foosun.CMS.FSSecurity.FDESEncrypt(TextBox1.Text.ToString().Trim(), 1);
+        string tb_ = Hg.CMS.FSSecurity.FDESEncrypt(TextBox1.Text.ToString().Trim(), 1);
         Session["tb_"] = tb_;
         Response.Redirect("const.aspx");
         

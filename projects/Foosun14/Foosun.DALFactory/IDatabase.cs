@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Data;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IDatabase
     {

@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace Foosun.Config
+namespace Hg.Config
 {
     public class ConfigFileManage
     {

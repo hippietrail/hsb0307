@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_System_navimenu : Foosun.Web.UI.ManagePage
+public partial class manage_System_navimenu : Hg.Web.UI.ManagePage
 {
     public manage_System_navimenu()
     {
@@ -95,7 +95,7 @@ public partial class manage_System_navimenu : Foosun.Web.UI.ManagePage
             }
 
             //连接数据库
-            string am_ClassID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            string am_ClassID = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dt = rd.getManageChildNaviRecord(am_ClassID);
             if (dt != null)
             {
@@ -105,7 +105,7 @@ public partial class manage_System_navimenu : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    Foosun.Model.UserInfo7 uc = new Foosun.Model.UserInfo7();
+                    Hg.Model.UserInfo7 uc = new Hg.Model.UserInfo7();
                     uc.api_IdentID = "0";
                     uc.am_ClassID = am_ClassID;
                     uc.Am_position = Am_position;

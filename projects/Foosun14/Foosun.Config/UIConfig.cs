@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml;
 using System.ComponentModel;
 
-namespace Foosun.Config
+namespace Hg.Config
 {
     public class UIConfig
     {
@@ -35,7 +35,7 @@ namespace Foosun.Config
         public static string dirFile = BaseConfig.GetConfigValue("dirFile");
         public static string dirHtml = BaseConfig.GetConfigValue("dirHtml");
         public static string saveContent = BaseConfig.GetConfigValue("saveContent");
-        public static string publicType = Foosun.Config.verConfig.PublicType;
+        public static string publicType = Hg.Config.verConfig.PublicType;
         public static string indeData = BaseConfig.GetConfigValue("indeData");
         public static string Logfilename = BaseConfig.GetConfigValue("Logfilename");
         public static string dirPige = BaseConfig.GetConfigValue("dirPige");

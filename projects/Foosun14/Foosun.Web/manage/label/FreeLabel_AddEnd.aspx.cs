@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
+public partial class manage_label_FreeLabel_AddEnd : Hg.Web.UI.ManagePage
 {
     public manage_label_FreeLabel_AddEnd()
     {
@@ -30,7 +30,7 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
         Response.CacheControl = "no-cache";
 
         this.LnkBtnSave.Attributes.Add("onclick", "javascript:var s = oUtil.obj.getHTMLBody().trim();if(s.length>4000){alert('标签内容不能长于4000个字符');return false;}if(s.length < 1){ alert('标签内容不能为空');return false;}");
-        Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+        Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
         this.TxtLabelName.Attributes.Add("readonly","true");
         this.PreSteps.Visible = false;
         if (!Page.IsPostBack)
@@ -121,7 +121,7 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
         int id = int.Parse(this.HidID.Value);
         string lblsql = this.HidSQL.Value;
         string content = this.EdtContent.Value.Trim();
-        content = Foosun.Common.Input.HtmlDecode(content);
+        content = Hg.Common.Input.HtmlDecode(content);
         if (content.Equals(""))
         {
             PageError("标签内容不能为空!", "");
@@ -130,15 +130,15 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
         {
             PageError("标签内容不能大于4000个字符!", "");
         }
-        Foosun.Model.FreeLabelInfo info = new Foosun.Model.FreeLabelInfo(id, sname, lblsql, content, this.TxtDescrpt.Text.Trim());
-        Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+        Hg.Model.FreeLabelInfo info = new Hg.Model.FreeLabelInfo(id, sname, lblsql, content, this.TxtDescrpt.Text.Trim());
+        Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
 
         if (id > 0)
         {
             if (fb.Update(info))
             {
                 //清除缓存
-                Foosun.Publish.CommonData.DisposeSystemCatch();
+                Hg.Publish.CommonData.DisposeSystemCatch();
                 PageRight("自由标签修改成功!", "freelabel_list.aspx", true);
             }
             else
@@ -149,7 +149,7 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
             if (fb.Add(info))
             {
                 //清除缓存
-                Foosun.Publish.CustomLabel._lableTableInfo.Clear();
+                Hg.Publish.CustomLabel._lableTableInfo.Clear();
                 PageRight("自由标签添加成功!", "freelabel_list.aspx", true);
             }
             else
@@ -167,7 +167,7 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
             int id = int.Parse(this.HidID.Value);
             string lblsql = this.HidSQL.Value;
             string content = this.EdtContent.Value.Trim();
-            content = Foosun.Common.Input.HtmlDecode(content);
+            content = Hg.Common.Input.HtmlDecode(content);
             if (content.Equals(""))
             {
                 PageError("标签内容不能为空!", "");
@@ -176,9 +176,9 @@ public partial class manage_label_FreeLabel_AddEnd : Foosun.Web.UI.ManagePage
             {
                 PageError("标签内容不能大于4000个字符!", "");
             }
-            Foosun.Model.FreeLabelInfo info = new Foosun.Model.FreeLabelInfo(id, sname, lblsql, content, this.TxtDescrpt.Text.Trim());
-            Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
-            Foosun.Publish.FreeLabel flb = new Foosun.Publish.FreeLabel(sname, Foosun.Publish.LabelType.Free);
+            Hg.Model.FreeLabelInfo info = new Hg.Model.FreeLabelInfo(id, sname, lblsql, content, this.TxtDescrpt.Text.Trim());
+            Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
+            Hg.Publish.FreeLabel flb = new Hg.Publish.FreeLabel(sname, Hg.Publish.LabelType.Free);
             string htmlStr = "";
             if (id > 0)
             {

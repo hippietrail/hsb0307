@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_survey_ManageVote : Foosun.Web.UI.ManagePage
+public partial class manage_survey_ManageVote : Hg.Web.UI.ManagePage
 {
     public manage_survey_ManageVote()
     {
@@ -60,7 +60,7 @@ public partial class manage_survey_ManageVote : Foosun.Web.UI.ManagePage
     protected void VoteManage(int PageIndex)//显示投票选项管理页面
     {
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

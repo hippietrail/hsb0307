@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .midtxtad{margin:5px;padding:8px 5px;float:left;width:96%;border:1px #AFCAE4 dotted;background-color:#FCFDFE;}
     .midtxtad a{color:#03C;}

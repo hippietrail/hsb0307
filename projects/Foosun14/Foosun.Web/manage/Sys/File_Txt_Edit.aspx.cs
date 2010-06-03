@@ -9,13 +9,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 
 
-public partial class manage_Sys_File_Txt_Edit : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_File_Txt_Edit : Hg.Web.UI.ManagePage
 {
     public manage_Sys_File_Txt_Edit()
     {
@@ -23,7 +23,7 @@ public partial class manage_Sys_File_Txt_Edit : Foosun.Web.UI.ManagePage
     }
     sys rd = new sys();
     rootPublic pd = new rootPublic();
-    string FP = Foosun.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
+    string FP = Hg.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
     protected void Page_Load(object sender, EventArgs e)
     {
         string dir = Request.QueryString["dir"];

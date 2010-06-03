@@ -18,13 +18,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_News_PicSet : Foosun.Web.UI.ManagePage
+public partial class manage_news_News_PicSet : Hg.Web.UI.ManagePage
 {
     public string Udirs = "";
-    public string dirDumm = Foosun.Config.UIConfig.dirDumm;
-    public string dirFile = Foosun.Config.UIConfig.dirFile;
+    public string dirDumm = Hg.Config.UIConfig.dirDumm;
+    public string dirFile = Hg.Config.UIConfig.dirFile;
     ContentManage rd = new ContentManage();
     protected void Page_Load(object sender, EventArgs e)
     {

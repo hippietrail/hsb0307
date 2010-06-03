@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_js_JS_Add : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_Add : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_Add()
     {
@@ -34,7 +34,7 @@ public partial class manage_js_JS_Add : Foosun.Web.UI.ManagePage
             this.TxtSavePath.Text = "/" + jspath;
             this.TxtSavePath.Attributes.Add("readonly", "true");
             this.LblCatpion.Text = this.LblTitle.Text = "新增JS";
-            Foosun.CMS.JSTemplet jt = new Foosun.CMS.JSTemplet();
+            Hg.CMS.JSTemplet jt = new Hg.CMS.JSTemplet();
             DataTable tb = jt.List();
             if (tb == null || tb.Rows.Count < 1)
             {
@@ -81,7 +81,7 @@ public partial class manage_js_JS_Add : Foosun.Web.UI.ManagePage
                 int id = int.Parse(Request.QueryString["ID"]);
                 this.LblCatpion.Text = this.LblTitle.Text = "修改JS";
                 this.HidID.Value = id.ToString();
-                Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+                Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
                 NewsJSInfo jf = nj.GetSingle(id);
                 this.HidJsID.Value = jf.JsID;
                 this.TxtName.Text = jf.JSName;
@@ -140,7 +140,7 @@ public partial class manage_js_JS_Add : Foosun.Web.UI.ManagePage
             }
             info.jssavepath = this.TxtSavePath.Text.Trim();
             info.jsfilename = this.TxtFileName.Text.Trim();
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
             if (info.Id > 0)
             {
                 nj.Update(info);

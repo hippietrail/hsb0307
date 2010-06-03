@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Control
+namespace Hg.Control
 {
     /// <summary>
     /// ÍøÒ³½ø¶ÈÌõ
@@ -23,7 +23,7 @@ namespace Foosun.Control
         public static void Start(string msg)
         {
             string s = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title></title>\r\n\r\n";
-            s += "<link href=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/css/css.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n";
+            s += "<link href=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/css/css.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n";
             s += "<style>body {text-align:center;margin-top: 50px;}#ProgressBarSide {height:25px;border:1px #2F2F2F;width:65%;background:#EEFAFF;}</style>\r\n";
             s += "<script language=\"javascript\">\r\n";
             s += "function SetPorgressBar(msg, pos)\r\n";

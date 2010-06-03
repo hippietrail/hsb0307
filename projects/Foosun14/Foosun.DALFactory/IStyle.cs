@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IStyle
     {
-        int sytleClassAdd(Foosun.Model.StyleClassInfo sc);
-        int styleClassEdit(Foosun.Model.StyleClassInfo sc);
+        int sytleClassAdd(Hg.Model.StyleClassInfo sc);
+        int styleClassEdit(Hg.Model.StyleClassInfo sc);
         void styleClassDel(string id);
         void styleClassRDel(string id);
-        int styleAdd(Foosun.Model.StyleInfo sc);
-        int styleEdit(Foosun.Model.StyleInfo sc);
+        int styleAdd(Hg.Model.StyleInfo sc);
+        int styleEdit(Hg.Model.StyleInfo sc);
         void styleDel(string id);
         void styleRdel(string id);
         DataTable getstyleClassInfo(string id);

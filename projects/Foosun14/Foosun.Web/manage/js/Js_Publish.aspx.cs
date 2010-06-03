@@ -9,11 +9,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.manage.js
+namespace Hg.Web.manage.js
 {
-    public partial class Js_Publish : Foosun.Web.UI.ManagePage
+    public partial class Js_Publish : Hg.Web.UI.ManagePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace Foosun.Web.manage.js
             int sucNum = 0;
             int errNum = 0;
             string[] ida = ids.Split(',');
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
             for (int i = 0; i < ida.Length; i++)
             {
                 try

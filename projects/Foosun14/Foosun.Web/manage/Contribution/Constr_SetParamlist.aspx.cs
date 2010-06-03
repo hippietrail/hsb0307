@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_SetParamlist : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_SetParamlist : Hg.Web.UI.ManagePage
 {
     Constr con = new Constr();
     protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ public partial class manage_Contribution_Constr_SetParamlist : Foosun.Web.UI.Man
         string ID = "";
         if (Request.QueryString["ID"] != "" && Request.QueryString["ID"] != null)
         {
-            ID = Foosun.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
+            ID = Hg.Common.Input.Filter(Request.QueryString["ID"]);  //取得需要操作的稿件ID
         }
 
         switch (Type)
@@ -60,7 +60,7 @@ public partial class manage_Contribution_Constr_SetParamlist : Foosun.Web.UI.Man
     protected void Showu_discusslist(int PageIndex)//显示所有讨论组列表
     {
         int ig, js;
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out ig, out js, null);
 
 
         this.PageNavigator1.PageCount = js;

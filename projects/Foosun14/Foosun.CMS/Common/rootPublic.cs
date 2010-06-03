@@ -12,17 +12,17 @@ using System.Net;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
     public class rootPublic
     {
         private IrootPublic dal;
         public rootPublic()
         {
-            dal = Foosun.DALFactory.DataAccess.CreaterootPublic();
+            dal = Hg.DALFactory.DataAccess.CreaterootPublic();
         }
         /// <summary>
         /// 得到站点ID是否存在

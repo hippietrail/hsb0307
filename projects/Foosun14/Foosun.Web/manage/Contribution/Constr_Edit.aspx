@@ -7,8 +7,8 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 <script type="text/javascript" src="../../editor/fckeditor.js"></script>
-<title><%Response.Write(Foosun.Config.UIConfig.CssPath()); %></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<title><%Response.Write(Hg.Config.UIConfig.CssPath()); %></title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body><form id="form1" name="form1" method="post" action="" runat="server"> 
@@ -91,7 +91,7 @@
 <br />
 <table width="100%" height="74" border="0" cellpadding="0" cellspacing="0" class="copyright_bg">
   <tr>
-    <td><div align="center"><%Response.Write(Foosun.Config.UIConfig.HeadTitle); %> </div></td>
+    <td><div align="center"><%Response.Write(Hg.Config.UIConfig.HeadTitle); %> </div></td>
   </tr>
 </table>
 </form>

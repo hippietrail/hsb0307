@@ -18,13 +18,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml;
 
-public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
+public partial class manage_news_News_add : Hg.Web.UI.ManagePage
 {
 	/// <summary>
 	/// 权限设置
@@ -37,8 +37,8 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 	ContentManage rd = new ContentManage();
 	rootPublic pd = new rootPublic();
 	protected static string getSiteRoot = "";
-	private string dimmdir = Foosun.Config.UIConfig.dirDumm;
-	private string localSavedir = Foosun.Config.UIConfig.dirFile;
+	private string dimmdir = Hg.Config.UIConfig.dirDumm;
+	private string localSavedir = Hg.Config.UIConfig.dirFile;
 	public string UDir = "\\Content";
 	public int _SetTime = 180;
 	public string loadTime = "";
@@ -51,7 +51,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 	protected String FamilyArray = "['Agency FB','Arial','仿宋_GB2312','华文中宋','华文仿宋','华文彩云','华文新魏','华文细黑','华文行楷','宋体','宋体-方正超大字符集','幼圆','新宋体','方正姚体','方正舒体','楷体_GB2312','隶书','黑体']";
 	protected String FontStyleArray = "{Regular:0,Bold:1,Italic:2,Underline:4,Strikeout:8}";
 	protected String fs_PicInfo = "";
-	protected string siteDomain = Foosun.Common.Public.readparamConfig("siteDomain");
+	protected string siteDomain = Hg.Common.Public.readparamConfig("siteDomain");
 
 
 	//预留结束
@@ -86,10 +86,10 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			lastTags.InnerHtml = tagslist();
 			#endregion 获得相关参数
 			#region 自动存稿
-			//if (Foosun.Config.UIConfig.saveContent.Split('|')[0] == "1")
+			//if (Hg.Config.UIConfig.saveContent.Split('|')[0] == "1")
 			//{
 			//    int SetTime = 3;
-			//    if (Foosun.Common.Input.IsInteger(Foosun.Config.UIConfig.saveContent.Split('|')[1])) { SetTime = int.Parse(Foosun.Config.UIConfig.saveContent.Split('|')[1]); }
+			//    if (Hg.Common.Input.IsInteger(Hg.Config.UIConfig.saveContent.Split('|')[1])) { SetTime = int.Parse(Hg.Config.UIConfig.saveContent.Split('|')[1]); }
 			//    _SetTime = SetTime * 60;
 			//    loadTime = "setTimeout('saveContentPage()', 1000)";
 			//    divsaveContent.InnerHtml = "<label class=\"reshow\" id=\"div_time\">" + _SetTime + "</label>秒后将自动存稿。";
@@ -161,7 +161,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			#region 分页参数获得
 			try
 			{
-				this.CheckBox1.Checked = bool.Parse(Foosun.Config.UIConfig.enableAutoPage);
+				this.CheckBox1.Checked = bool.Parse(Hg.Config.UIConfig.enableAutoPage);
 			}
 			catch
 			{
@@ -169,7 +169,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			}
 			try
 			{
-				int i = Int32.Parse(Foosun.Config.UIConfig.splitPageCount);
+				int i = Int32.Parse(Hg.Config.UIConfig.splitPageCount);
 				this.TxtPageCount.Text = i.ToString();
 			}
 			catch
@@ -190,7 +190,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 					this.style_hidden.Checked = true;
 					string NewsID = Request.QueryString["NewsID"].ToString();
 					#region 得到栏目数据表
-					string _DataLib = Foosun.Config.UIConfig.dataRe + "news";
+					string _DataLib = Hg.Config.UIConfig.dataRe + "news";
 					#endregion 得到数据表结束
 					this.NewsID.Value = NewsID;
 					getNewsInfo(NewsID, _DataLib);
@@ -244,7 +244,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 		if (unNewsid != "")
 		{
 			#region 编辑不规则新闻
-			unNewsid = Foosun.Common.Input.Filter(unNewsid);
+			unNewsid = Hg.Common.Input.Filter(unNewsid);
 			DataTable DT = rd.getUNews(unNewsid);
 			if (DT != null && DT.Rows.Count > 0)
 			{
@@ -843,7 +843,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			}
 			else
 			{
-				NewsID = Foosun.Common.Rand.Number(12);
+				NewsID = Hg.Common.Rand.Number(12);
 				#region 检查编号是否存在
 			RandFirst: string RandInt = NewsID;
 				DataTable rTF = rd.getNewsIDTF(RandInt, getDataLibStr);
@@ -917,10 +917,10 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				{
 					naviContent = this.FileContent.Value;
 				}
-				string LostResultStr = Foosun.Common.Input.LostHTML(naviContent);
-				LostResultStr = Foosun.Common.Input.LostPage(LostResultStr);
-				LostResultStr = Foosun.Common.Input.LostVoteStr(LostResultStr);
-				naviContent = Foosun.Common.Input.GetSubString(LostResultStr, 255);
+				string LostResultStr = Hg.Common.Input.LostHTML(naviContent);
+				LostResultStr = Hg.Common.Input.LostPage(LostResultStr);
+				LostResultStr = Hg.Common.Input.LostVoteStr(LostResultStr);
+				naviContent = Hg.Common.Input.GetSubString(LostResultStr, 255);
 			}
 			string Templet = this.Templet.Text;
 			int CommTF = 0;
@@ -1074,16 +1074,16 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			{
 				try
 				{
-					Content = Foosun.Common.Input.AutoSplitPage(Content, int.Parse(this.TxtPageCount.Text));
+					Content = Hg.Common.Input.AutoSplitPage(Content, int.Parse(this.TxtPageCount.Text));
 				}
 				catch (Exception ex)
 				{
-					//Content = Foosun.Common.Input.AutoSplitPage(Content,20);
+					//Content = Hg.Common.Input.AutoSplitPage(Content,20);
 				}
 			}
 			if (EditAction != "Edit")
 			{
-				if (Foosun.Config.UIConfig.isLinkTF == "1")
+				if (Hg.Config.UIConfig.isLinkTF == "1")
 				{
 					DataTable gD = rd.getGenContent();
 					if (gD != null && gD.Rows.Count > 0)
@@ -1101,7 +1101,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			//===================================================================================================
 			#region 开始插入值
 
-			Foosun.Model.NewsContent uc = new Foosun.Model.NewsContent();
+			Hg.Model.NewsContent uc = new Hg.Model.NewsContent();
 			uc.NewsType = NewsType;
 			uc.OrderID = OrderID;
 			uc.NewsTitle = NewsTitle;
@@ -1115,7 +1115,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			uc.PicURL = PicURL;
 			if (this.sPicFromContent.Checked)
 			{
-				if (!Foosun.Common.Input.IsInteger(this.btngetContentNum.Text))
+				if (!Hg.Common.Input.IsInteger(this.btngetContentNum.Text))
 				{
 					PageError("提取图片的第几张，请填写数字", "");
 				}
@@ -1154,7 +1154,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				string _dimmdirPic = "";
 				string fileEX = System.IO.Path.GetExtension(PicURL);
 				if (dimmdir != null && dimmdir.Trim() != "") { _dimmdirPic = "/" + dimmdir; }
-				string _tmpPic = "/" + localSavedir + "/shortPictures/" + getDateTime.Year + "-" + getDateTime.Month + "/" + getDateTime.Year + getDateTime.Month + getDateTime.Day + Foosun.Common.Rand.Number(5) + fileEX;
+				string _tmpPic = "/" + localSavedir + "/shortPictures/" + getDateTime.Year + "-" + getDateTime.Month + "/" + getDateTime.Year + getDateTime.Month + getDateTime.Day + Hg.Common.Rand.Number(5) + fileEX;
 				if (!localSavedir.Equals("files"))
 				{
 					_tmpPic = "/files" + _tmpPic;
@@ -1173,8 +1173,8 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 					bug_Del_FilePath = Server.MapPath(_tmpPicURL);
 				}
 
-				int _sWidth = int.Parse(Foosun.Config.UIConfig.sWidth);
-				int _sHeight = int.Parse(Foosun.Config.UIConfig.sHeight);
+				int _sWidth = int.Parse(Hg.Config.UIConfig.sWidth);
+				int _sHeight = int.Parse(Hg.Config.UIConfig.sHeight);
 				if (this.stWidth.Text != null && this.stWidth.Text != "") { _sWidth = int.Parse(this.stWidth.Text); }
 				if (this.stHeight.Text != null && this.stHeight.Text != "") { _sHeight = int.Parse(this.stHeight.Text); }
 				string _PicURL = Server.MapPath(_tmpPicURL.Replace("{@dirfile}", localSavedir));
@@ -1251,7 +1251,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			}
 			else
 			{
-				_IDStr = int.Parse(Foosun.Common.Rand.Number(8));
+				_IDStr = int.Parse(Hg.Common.Rand.Number(8));
 			}
 			#endregion 结束
 			uc.ContentPicTF = ContentPicTF;
@@ -1273,7 +1273,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				if (this.ismTF.Checked) { ismTF = 1; }
 				int isMember = 0;
 				if (this.isMember.Checked) { isMember = 1; }
-				Foosun.Model.VoteContent uc2 = new Foosun.Model.VoteContent();
+				Hg.Model.VoteContent uc2 = new Hg.Model.VoteContent();
 				uc2.NewsID = NewsID;
 				uc2.voteTitle = NewsTitle;
 				uc2.creattime = getDateTime;
@@ -1294,7 +1294,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				else
 				{
 					//插入投票
-					string _VoteNum = getDateTime.Year + "" + getDateTime.Month + "" + getDateTime.Day + "" + getDateTime.Hour + "" + Foosun.Common.Rand.Number(8);
+					string _VoteNum = getDateTime.Year + "" + getDateTime.Month + "" + getDateTime.Day + "" + getDateTime.Hour + "" + Hg.Common.Rand.Number(8);
 					uc2.voteNum = _VoteNum;
 					uc2.SiteID = site;
 					rd.intsertVote(uc2);
@@ -1309,7 +1309,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				if (this.PicTTTF.Checked)
 				{
 					uc.NewsPicTopline = 1;
-					Foosun.Model.NewsContentTT uc1 = new Foosun.Model.NewsContentTT();
+					Hg.Model.NewsContentTT uc1 = new Hg.Model.NewsContentTT();
 					uc1.NewsTF = 0;
 					uc1.NewsID = NewsID;
 					uc1.DataLib = getDataLibStr;
@@ -1337,7 +1337,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 						}
 						else
 						{
-							_tl_SavePath = "/{@dirFile}/topline/" + getDateTime.Year + "-" + getDateTime.Month + "/" + Foosun.Common.Rand.Number(15) + ".jpg";
+							_tl_SavePath = "/{@dirFile}/topline/" + getDateTime.Year + "-" + getDateTime.Month + "/" + Hg.Common.Rand.Number(15) + ".jpg";
 						}
 						uc1.tl_SavePath = _tl_SavePath;
 
@@ -1352,7 +1352,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 					}
 					else
 					{
-						_tl_SavePath = "/{@dirFile}/topline/" + getDateTime.Year + "-" + getDateTime.Month + "/" + Foosun.Common.Rand.Number(15) + ".jpg";
+						_tl_SavePath = "/{@dirFile}/topline/" + getDateTime.Year + "-" + getDateTime.Month + "/" + Hg.Common.Rand.Number(15) + ".jpg";
 						uc1.tl_SavePath = _tl_SavePath;
 						rd.intsertTT(uc1);
 					}
@@ -1525,7 +1525,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 			uc.SubNewsTF = 0;
 			if (SubTF.Checked)
 			{
-				String OldNewsId = Foosun.Common.Input.Filter(Request.Form["NewsIDs"]);
+				String OldNewsId = Hg.Common.Input.Filter(Request.Form["NewsIDs"]);
 				String[] Arr_OldNewsId;
 				String getNewsTitle, NewsRow, NewsTable, titleCSS;
 				#region 判断数据是否合法
@@ -1600,7 +1600,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 				rd.insertNewsContent(uc);
 				resultstr = "新闻：<font color=\"red\">[" + NewsTitle + "]</font>&nbsp;&nbsp;添加成功!<li><a href=\"News_Add.aspx?ClassID=" + ClassID + "&EditAction=Add\" class=\"list_link\"><b><font color=\"red\">继续添加</font></b></a>&nbsp;┊&nbsp;<a href=\"News_add.aspx?ClassID=" + ClassID + "&NewsID=" + NewsID + "&EditAction=Edit\" class=\"list_link\"><b><font color=\"red\">修改本条新闻</font></b></a>&nbsp;┊&nbsp;<a href=\"News_list.aspx?ClassID=" + ClassID + "\" class=\"list_link\"><b><font color=\"blue\">返回本栏目列表</font></b></a></li>" + iNewsTF + "";
 			}
-			string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+			string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
 			if (isDelPoint == 0)
 			{
 				if (this.isHTML.Checked)
@@ -1621,7 +1621,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 						{
 							if (isLock == 0)
 							{
-								if (Foosun.Publish.General.publishSingleNews(NewsID, ClassID, isCom))
+								if (Hg.Publish.General.publishSingleNews(NewsID, ClassID, isCom))
 								{
 									rd.updateNewsHTML(1, NewsID);
 									resultstr += "<li>此页已经自动生成了静态页面，<a href=\"News_review.aspx?ID=" + NewsID + "\" target=\"_blank\">浏览本页</a></li>";
@@ -1639,12 +1639,12 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 					}
 				}
 			}
-			string[] publicfreshinfoARR = Foosun.Config.UIConfig.publicfreshinfo.Split('|');
+			string[] publicfreshinfoARR = Hg.Config.UIConfig.publicfreshinfo.Split('|');
 			string publicclass = publicfreshinfoARR[0].ToString();
 			string publicspecial = publicfreshinfoARR[1].ToString();
 			if (publicclass == "1")
 			{
-				Foosun.Publish.General pn = new Foosun.Publish.General();
+				Hg.Publish.General pn = new Hg.Publish.General();
 				if (pn.publishSingleClass(ClassID))
 				{
 					resultstr += "<li>本新闻所在的栏目同时也生成了静态页面</li>";
@@ -1658,15 +1658,15 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 					string[] arr_specialID = uc.SpecialID.Split(',');
 					for (int i = 0; i < arr_specialID.Length; i++)
 					{
-						Foosun.Publish.General Pn = new Foosun.Publish.General();
+						Hg.Publish.General Pn = new Hg.Publish.General();
 						Pn.publishSingleSpecial(arr_specialID[i].ToString());
 					}
 					resultstr += "<li>本新闻所属的专题已经生成了静态页面</li>";
 				}
 			}
 			//清除缓存
-			Foosun.Publish.CommonData.NewsInfoList = null;
-			//Foosun.Publish.CommonData.NewsInfoList.Dispose();
+			Hg.Publish.CommonData.NewsInfoList = null;
+			//Hg.Publish.CommonData.NewsInfoList.Dispose();
 			PageRight(resultstr, "News_list.aspx?ClassID=" + ClassID + "");
 		}
 
@@ -1683,7 +1683,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 	/// <returns></returns>
 	public string getRemoteContent(string _Content, string _localSavedir, string _PhylocalSavedir, string o1, bool ReminTF)
 	{
-		Foosun.CMS.Collect.RemoteResource red = new Foosun.CMS.Collect.RemoteResource(_Content, _localSavedir, _PhylocalSavedir, "", ReminTF);
+		Hg.CMS.Collect.RemoteResource red = new Hg.CMS.Collect.RemoteResource(_Content, _localSavedir, _PhylocalSavedir, "", ReminTF);
 		red.FileExtends = new string[] { "gif", "jpg", "bmp", "ico", "png", "jpeg", "swf", "rar", "zip", "cab", "doc", "rm", "ram", "wav", "mid", "mp3", "avi", "wmv" };
 		red.FetchResource();
 		return red.Content;
@@ -1697,7 +1697,7 @@ public partial class manage_news_News_add : Foosun.Web.UI.ManagePage
 
 	protected void getsurveyJSInfo()
 	{
-		Foosun.CMS.Label lc = new Foosun.CMS.Label();
+		Hg.CMS.Label lc = new Hg.CMS.Label();
 		DataTable dt = lc.getsurveyJSInfo();
 		if (dt != null)
 		{

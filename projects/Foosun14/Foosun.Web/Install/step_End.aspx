@@ -1,11 +1,11 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="step_End.aspx.cs" Inherits="Foosun.Web.Install.step_End" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="step_End.aspx.cs" Inherits="Hg.Web.Install.step_End" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title><%=Foosun.Install.Config.title%></title>
-           <%=Foosun.Install.Config.style%>
+    <title><%=Hg.Install.Config.title%></title>
+           <%=Hg.Install.Config.style%>
            <style type="text/css">
            .Greens{color:green;font-weight:bold;}
            .Reds{color:red;}
@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td width="180" valign="top">
-                            <%=Foosun.Install.Config.logo%>
+                            <%=Hg.Install.Config.logo%>
                         </td>
                         <td width="520" valign="top">
                             <br>
@@ -90,7 +90,7 @@
             </td>
         </tr>
     </table>
-    <%=Foosun.Install.Config.corpRight%>
+    <%=Hg.Install.Config.corpRight%>
 </body>
 </html>
 

@@ -12,15 +12,15 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class jsfiles_ads_pic : Foosun.Web.UI.BasePage
+public partial class jsfiles_ads_pic : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         string adsID = Request.QueryString["adsID"];
-        adsID = Foosun.Common.Input.checkID(adsID);
+        adsID = Hg.Common.Input.checkID(adsID);
         if (createJs.checkJs(adsID) == false)
         {
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             DataTable dt = ac.getAdsPicInfo("leftPic,leftSize,LinkURL", "ads", adsID);
             if (dt != null)
             {

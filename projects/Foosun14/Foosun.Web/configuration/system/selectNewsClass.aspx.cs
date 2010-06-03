@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class configuration_system_selectNewsClass : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectNewsClass : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectNewsClass()
     {

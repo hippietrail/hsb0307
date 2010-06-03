@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Web;
 
-namespace Foosun.Config.API
+namespace Hg.Config.API
 {
     public class APIConfigs
     {

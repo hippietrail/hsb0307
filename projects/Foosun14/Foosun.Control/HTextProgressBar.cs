@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Control
+namespace Hg.Control
 {
     /// <summary>
     /// ÍøÒ³½ø¶ÈÌõ

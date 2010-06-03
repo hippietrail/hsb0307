@@ -4,13 +4,13 @@ using System.Collections;
 using System.Data;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.DALProfile;
-using Foosun.Config;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.DALProfile;
+using Hg.Config;
+using Hg.Common;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class UserLogin : DbBase, IUserLogin
     {
@@ -165,11 +165,11 @@ namespace Foosun.AccessDAL
                 flag = false;
             }
             rd.Close();
-            //if (Foosun.Global.Current.adminLogined == null)
+            //if (Hg.Global.Current.adminLogined == null)
            // {
             //    return EnumLoginState.Err_AdminLogined;
             //}
-            //if (Foosun.Global.Current.adminLogined != "1")
+            //if (Hg.Global.Current.adminLogined != "1")
            // {
            //     return EnumLoginState.Err_AdminLogined;
            // }
@@ -187,7 +187,7 @@ namespace Foosun.AccessDAL
 
         EnumLoginState IUserLogin.CheckAdminLogin(string UserNum)
         {
-            OleDbConnection cn = new OleDbConnection(Foosun.Config.DBConfig.CmsConString);
+            OleDbConnection cn = new OleDbConnection(Hg.Config.DBConfig.CmsConString);
             try
             {
                 cn.Open();
@@ -246,8 +246,8 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         EnumLoginState IUserLogin.CheckAdminAuthority(string PopCode, string ClassID, string SpecialID, string SiteID, string adminLogined)
         {
-            string UserNum = Foosun.Global.Current.UserNum;
-            string adminLoginED = Foosun.Global.Current.adminLogined;
+            string UserNum = Hg.Global.Current.UserNum;
+            string adminLoginED = Hg.Global.Current.adminLogined;
             if (adminLoginED != "1")
             {
                 return EnumLoginState.Err_AdminLogined;
@@ -305,7 +305,7 @@ namespace Foosun.AccessDAL
             OleDbConnection cn = new OleDbConnection(Database.FoosunConnectionString);
             try
             {
-                string LogIP = Foosun.Common.Public.getUserIP();
+                string LogIP = Hg.Common.Public.getUserIP();
                 DateTime Now = DateTime.Now;
                 cn.Open();
                 #region 基本信息表
@@ -380,7 +380,7 @@ namespace Foosun.AccessDAL
                     rd.Close();
                 }
                 #endregion
-                if (PWD != Foosun.Common.Input.MD5(PassWord))
+                if (PWD != Hg.Common.Input.MD5(PassWord))
                 {
                     //记录错误
                     UpdateErrorNum(cn, UserNum, LogIP);
@@ -505,7 +505,7 @@ namespace Foosun.AccessDAL
                     byte isLock = rd.GetByte(3);
                     if (!rd.IsDBNull(4))
                         SiteID = rd.GetString(4);
-                    if (pwd != Foosun.Common.Input.MD5(PassWord))
+                    if (pwd != Hg.Common.Input.MD5(PassWord))
                         state = EnumLoginState.Err_NameOrPwdError;
                     else if (isAdmin != 0X01)
                         state = EnumLoginState.Err_NotAdmin;

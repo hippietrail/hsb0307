@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-namespace Foosun.Web.manage.adapt
+namespace Hg.Web.manage.adapt
 {
-    public partial class adapt : Foosun.Web.UI.ManagePage
+    public partial class adapt : Hg.Web.UI.ManagePage
     {
         public adapt()
         {
@@ -24,7 +24,7 @@ namespace Foosun.Web.manage.adapt
         {
             if(this.IsPostBack)
                 return;
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
             this.Api_Key.Text = config.AppKey;
             this.Api_Enable.Checked = config.Enable;
             this.TextBoxAppID.Text = config.AppID;
@@ -37,11 +37,11 @@ namespace Foosun.Web.manage.adapt
         {
             if (!this.IsValid)
                 return;
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
             config.Enable = this.Api_Enable.Checked;
             config.AppID = this.TextBoxAppID.Text;
             config.AppKey = this.Api_Key.Text;
-            Foosun.Config.API.APIConfigs.SaveConfig(config);
+            Hg.Config.API.APIConfigs.SaveConfig(config);
             Response.Redirect(Request.Url.ToString());
         }
 
@@ -50,7 +50,7 @@ namespace Foosun.Web.manage.adapt
             if (e.Item.ItemType == ListItemType.AlternatingItem ||
                 e.Item.ItemType == ListItemType.Item)
             {
-                Foosun.Config.API.ApplicationInfo appInfo=e.Item.DataItem as Foosun.Config.API.ApplicationInfo;
+                Hg.Config.API.ApplicationInfo appInfo=e.Item.DataItem as Hg.Config.API.ApplicationInfo;
                 Literal LiteralAppID = e.Item.FindControl("LiteralAppID") as Literal;
                 Literal LiteralAppUrl = e.Item.FindControl("LiteralAppUrl") as Literal;
 

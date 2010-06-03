@@ -15,12 +15,12 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Text;
 
-public partial class manage_Templet_Txteditor : Foosun.Web.UI.ManagePage
+public partial class manage_Templet_Txteditor : Hg.Web.UI.ManagePage
 {
     public string dir = "";
     public string filename = "";
-    private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-    private string str_Templet = Foosun.Config.UIConfig.dirTemplet;  //获取模板路径
+    private string str_dirMana = Hg.Config.UIConfig.dirDumm;
+    private string str_Templet = Hg.Config.UIConfig.dirTemplet;  //获取模板路径
     private string str_FilePath = "";
 
     protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ public partial class manage_Templet_Txteditor : Foosun.Web.UI.ManagePage
             }
             else
             {
-                string _sitePath = str_dirMana + "\\" + str_Templet + "\\siteTemplets\\" + Foosun.Global.Current.SiteEName;
+                string _sitePath = str_dirMana + "\\" + str_Templet + "\\siteTemplets\\" + Hg.Global.Current.SiteEName;
                 if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
                 str_FilePath = Server.MapPath(_sitePath);
             }
@@ -60,14 +60,14 @@ public partial class manage_Templet_Txteditor : Foosun.Web.UI.ManagePage
 
     protected void ShowFileContet(string filepath)
     {
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         FileContent.Text = tpClass.showFileContet(filepath);
     }
 
     protected void getLabelList()
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
-        DataTable dt = lb.getLableList(Foosun.Global.Current.SiteID,2);
+        Hg.CMS.Label lb = new Hg.CMS.Label();
+        DataTable dt = lb.getLableList(Hg.Global.Current.SiteID,2);
         if (dt != null)
         {
             LabelList.DataTextField = "Label_Name";
@@ -91,7 +91,7 @@ public partial class manage_Templet_Txteditor : Foosun.Web.UI.ManagePage
         {
             string filepath = FilePath.Text;
             int result = 0;
-            Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+            Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
             result = tpClass.saveFile(filepath, this.FileContent.Text);
             //文件路径 bug修改  保存后返回到原文件路径 周峻平 2008-5-30
             string[] strForderPath = dir.Split('\\');

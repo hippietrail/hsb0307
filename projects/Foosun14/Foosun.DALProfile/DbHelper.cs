@@ -4,9 +4,9 @@ using System.Data;
 using System.Data.Common;
 using System.Collections;
 using System.Text.RegularExpressions;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.DALProfile
+namespace Hg.DALProfile
 {
     public abstract class DbHelper
     {

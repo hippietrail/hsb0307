@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
+public partial class manage_publish_siteTask_edit : Hg.Web.UI.ManagePage
 {
     #region
     rootPublic rd = new rootPublic();
@@ -100,7 +100,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                 today_class = class_value.Split('|')[2];//今天
                                 
                 #region 程序版本
-                string str_publicType = Foosun.Config.verConfig.PublicType;
+                string str_publicType = Hg.Config.verConfig.PublicType;
                 #endregion
                 #region 版本1
                 if (str_publicType == "1")
@@ -340,7 +340,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
 
                 string Str_CreateTime = this.CreatTime.Text.Trim();//创建时间
                 #region checkdata
-                if (Foosun.Common.Input.ChkDate(Str_CreateTime) == false)
+                if (Hg.Common.Input.ChkDate(Str_CreateTime) == false)
                 {
                     PageError("日期格式不正确", "siteTask.aspx");
                 }
@@ -350,7 +350,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                 #region 栏目索引
 
                 int all_class = 0, every_class = 0, today_class = 0;
-                string str_publictype = Foosun.Config.verConfig.PublicType;
+                string str_publictype = Hg.Config.verConfig.PublicType;
                 if (str_publictype == "1")
                 {
                     if (AllClass1.Checked)
@@ -428,15 +428,15 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                 string Str_NewsID = "0";
                 if (NewsID.Checked)
                 {
-                    string Str_NewsID1 = Foosun.Common.Input.Filter(this.NewsID1.Text.Trim());
-                    string Str_NewsID2 = Foosun.Common.Input.Filter(this.NewsID2.Text.Trim());
+                    string Str_NewsID1 = Hg.Common.Input.Filter(this.NewsID1.Text.Trim());
+                    string Str_NewsID2 = Hg.Common.Input.Filter(this.NewsID2.Text.Trim());
                     if (Str_NewsID1 == null || Str_NewsID1 == "" || Str_NewsID1 == string.Empty || Str_NewsID2 == null || Str_NewsID2 == "" || Str_NewsID2 == string.Empty)
                     {
                         Str_NewsID = "0";
                     }
                     else
                     {
-                        if (!Foosun.Common.Input.IsInteger(Str_NewsID1) || !Foosun.Common.Input.IsInteger(Str_NewsID2))
+                        if (!Hg.Common.Input.IsInteger(Str_NewsID1) || !Hg.Common.Input.IsInteger(Str_NewsID2))
                         {
                             PageError("抱歉，ID必须为数字", "siteTask.aspx");
                         }
@@ -459,8 +459,8 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                 string Str_Data = "0";
                 if (Data.Checked)
                 {
-                    string Str_Data1 = Foosun.Common.Input.Filter(this.Data1.Text.Trim());
-                    string Str_Data2 = Foosun.Common.Input.Filter(this.Data2.Text.Trim());
+                    string Str_Data1 = Hg.Common.Input.Filter(this.Data1.Text.Trim());
+                    string Str_Data2 = Hg.Common.Input.Filter(this.Data2.Text.Trim());
                     if (Str_Data1 == null || Str_Data1 == "" || Str_Data1 == string.Empty || Str_Data2 == null || Str_Data2 == "" || Str_Data2 == string.Empty)
                     {
                         Str_Data = "0";//不按照日期发布
@@ -468,7 +468,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                     else
                     {
                         #region check data
-                        if (Foosun.Common.Input.ChkDate(Str_Data1) == false || Foosun.Common.Input.ChkDate(Str_Data2) == false)
+                        if (Hg.Common.Input.ChkDate(Str_Data1) == false || Hg.Common.Input.ChkDate(Str_Data2) == false)
                         {
                             PageError("日期格式不正确", "siteTask.aspx");
                         }
@@ -493,7 +493,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
                     }
                     else
                     {
-                        if (!Foosun.Common.Input.IsInteger(lastnum))
+                        if (!Hg.Common.Input.IsInteger(lastnum))
                         {
                             PageError("最新数应为数字型", "siteTask.aspx");
                         }
@@ -531,7 +531,7 @@ public partial class manage_publish_siteTask_edit : Foosun.Web.UI.ManagePage
 
                 #region 修改数据
 
-                Foosun.Model.Task uc = new Foosun.Model.Task();
+                Hg.Model.Task uc = new Hg.Model.Task();
                 uc.taskID = taskid;
                 uc.TaskName = Str_TaskName;
                 uc.isIndex = isindexx;

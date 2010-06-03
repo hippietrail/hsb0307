@@ -2,10 +2,10 @@
 using System.Web;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Config;
-using Foosun.Model;
+using Hg.Config;
+using Hg.Model;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
@@ -28,7 +28,7 @@ namespace Foosun.Publish
         protected string getNewsURL(string isDelPoint, string NewsID, string SavePath, string SaveClassframe, string FileName, string FileEXName)
         {
             string str_temppath = "";
-            if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+            if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
             {
                 str_temppath = "/content.aspx?id=" + NewsID;
             }
@@ -69,7 +69,7 @@ namespace Foosun.Publish
         /// <returns></returns>
         protected string RelpacePicPath(string PicPath)
         {
-            return PicPath.ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
+            return PicPath.ToLower().Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Foosun.Publish
             }
             string NewsTitle = dr["NewsTitle"].ToString();
             if (i_TitleNum != 0)
-                NewsTitle = Foosun.Common.Input.GetSubString(NewsTitle, i_TitleNum);
+                NewsTitle = Hg.Common.Input.GetSubString(NewsTitle, i_TitleNum);
 
             if (StyleTf == 1)
             {
@@ -143,7 +143,7 @@ namespace Foosun.Publish
             string tmstr = "";
             if (Domain.Length > 5)
             {
-                if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+                if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
                 {
                     tmstr = "/list.aspx?id=" + ClassID;
                     return CommonData.SiteDomain + tmstr.Replace("//", "/").Replace("//", "/");
@@ -164,7 +164,7 @@ namespace Foosun.Publish
             }
             else
             {
-                if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+                if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
                 {
                     tmstr = "/list.aspx?id=" + ClassID;
                 }
@@ -200,7 +200,7 @@ namespace Foosun.Publish
         protected string getSpeacilURL(string isDelPoint, string SpecialID, string SavePath, string SaveDirPath, string FileName, string FileEXName)
         {
             string tmstr = "";
-            if (Foosun.Common.Public.readparamConfig("ReviewType") == "1" || isDelPoint != "0")
+            if (Hg.Common.Public.readparamConfig("ReviewType") == "1" || isDelPoint != "0")
             {
                 tmstr = "/special.aspx?id=" + SpecialID;
             }
@@ -282,7 +282,7 @@ namespace Foosun.Publish
                 str_CommForm += "                        } " + newLine;
                 str_CommForm += "                    } " + newLine;
                 str_CommForm += "                 }; " + newLine;
-                str_CommForm += "     new  Ajax.Request('" + Foosun.Publish.CommonData.SiteDomain + "/comment.aspx?no-cache='+Math.random(),options); " + newLine;
+                str_CommForm += "     new  Ajax.Request('" + Hg.Publish.CommonData.SiteDomain + "/comment.aspx?no-cache='+Math.random(),options); " + newLine;
                 str_CommForm += "} " + newLine;
 
                 str_CommForm += "function CommentLoginOut()" + newLine;
@@ -301,7 +301,7 @@ namespace Foosun.Publish
                 str_CommForm += "                          document.getElementById(\"Div_CommentForm\").innerHTML=arrreturnvalue[1]; " + newLine;
                 str_CommForm += "                   } " + newLine;
                 str_CommForm += "                 }; " + newLine;
-                str_CommForm += "      new  Ajax.Request('" + Foosun.Publish.CommonData.SiteDomain + "/comment.aspx?no-cache='+Math.random(),options);" + newLine;
+                str_CommForm += "      new  Ajax.Request('" + Hg.Publish.CommonData.SiteDomain + "/comment.aspx?no-cache='+Math.random(),options);" + newLine;
                 str_CommForm += "}" + newLine;
 
                 str_CommForm += "</script>" + newLine;
@@ -324,7 +324,7 @@ namespace Foosun.Publish
             string CommStr = "";
             if (NewsTF == 1)
             {
-                string radnum = Foosun.Common.Rand.Number(3);
+                string radnum = Hg.Common.Rand.Number(3);
                 CommStr += "<a href=\"" + CommonData.SiteDomain + "/Comment.aspx?CommentType=getlist&id=" + NewsID + "&ChID=" + ChID + "\"><span id=\"gCount" + NewsID + radnum + td + "\"></span></a>" + newLine;
                 CommStr += "<script language=\"javascript\" type=\"text/javascript\">";
                 CommStr += "pubajax('" + CommonData.SiteDomain + "/comment.aspx','id=" + NewsID + "&commCount=1&ChID=" + ChID + "&Today=" + td + "','gCount" + NewsID + radnum + td + "');";
@@ -348,7 +348,7 @@ namespace Foosun.Publish
             string votelist = "";
             if (NewsTF == 1)
             {
-                string radnum = Foosun.Common.Rand.Number(5);
+                string radnum = Hg.Common.Rand.Number(5);
                 votelist += "<div id=\"vote" + NewsID + radnum + "\">投票加载中...</div>" + newLine;
                 votelist += "<script language=\"javascript\" type=\"text/javascript\">";
                 votelist += "pubajax('" + CommonData.SiteDomain + "/vote.aspx','NewsID=" + NewsID + "','vote" + NewsID + radnum + "');";
@@ -369,7 +369,7 @@ namespace Foosun.Publish
         protected string getLastComm(string NewsID, int NewsTF, int ChID)
         {
             string str_LastCommList = "";
-            string RamStr = Foosun.Common.Rand.Number(5);
+            string RamStr = Hg.Common.Rand.Number(5);
             if (NewsTF == 1)
             {
                 str_LastCommList += "<a name=\"commList\"></a><div id=\"Div_CommentList\">正在加载评论列表...</div>" + newLine;
@@ -424,7 +424,7 @@ namespace Foosun.Publish
         /// <returns>返回收藏连接地址</returns>
         protected string getCollection(string NewsID, int ChID)
         {
-            return CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/index.aspx?urls=info/collection.aspx?ChID=" + ChID + "|Add|" + NewsID;
+            return CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/index.aspx?urls=info/collection.aspx?ChID=" + ChID + "|Add|" + NewsID;
         }
 
 
@@ -776,7 +776,7 @@ namespace Foosun.Publish
         {
             string PageStr = "";
             string[] PageARR = null;
-            string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+            string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
             string getDyUrl = string.Empty;
             string Pmstr = string.Empty;
             string CHSTR = string.Empty;
@@ -968,7 +968,7 @@ namespace Foosun.Publish
             string naviStr = string.Empty;
             if (str_SubNaviCSS != string.Empty)
             {
-                naviStr = Foosun.Common.Input.ToshowTxt(Foosun.Common.Input.isPicStr(str_SubNaviCSS));
+                naviStr = Hg.Common.Input.ToshowTxt(Hg.Common.Input.isPicStr(str_SubNaviCSS));
             }
             DataTable dt = CommonData.DalPublish.GetSubUnRule(NewsID);
             if (dt != null && dt.Rows.Count > 0)

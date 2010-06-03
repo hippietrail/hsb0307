@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Model
+namespace Hg.Model
 {
     /// <summary>
     /// SQL查询时所用的条件

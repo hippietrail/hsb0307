@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class Manage_Login : Foosun.Web.UI.BasePage
+public partial class Manage_Login : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,11 +25,11 @@ public partial class Manage_Login : Foosun.Web.UI.BasePage
             string TmUrl = Request.QueryString["urls"];
             if (TmUrl != null && TmUrl != "")
             {
-                string tmDir = Foosun.Config.UIConfig.dirMana.Trim() + "/index.aspx";
-                string tmDir1 = Foosun.Config.UIConfig.dirMana.Trim() + "/menu.aspx";
+                string tmDir = Hg.Config.UIConfig.dirMana.Trim() + "/index.aspx";
+                string tmDir1 = Hg.Config.UIConfig.dirMana.Trim() + "/menu.aspx";
                 if ((TmUrl.ToString().ToLower()).IndexOf(tmDir.ToLower()) == -1 && (TmUrl.ToString().ToLower()).IndexOf(tmDir1.ToLower()) == -1) { this.HidUrl.Value = TmUrl.ToString(); }
             }
-            string[] _protPass = Foosun.Config.UIConfig.protPass.Split(',');
+            string[] _protPass = Hg.Config.UIConfig.protPass.Split(',');
             if (_protPass[0] == "1") 
             { safeCodeVerify_1.Visible = true; }
             else 
@@ -62,21 +62,21 @@ public partial class Manage_Login : Foosun.Web.UI.BasePage
                 PageError("输入验证码错误!", "login.aspx?" + Urls + "");
             }
             #region 安全码验证
-            string[] _protPass = Foosun.Config.UIConfig.protPass.Split(',');
+            string[] _protPass = Hg.Config.UIConfig.protPass.Split(',');
             if (_protPass[0] == "1")
             {
                 if (_protPass[1] == "1")
                 {
                     if (_protPass[2] == "0")
                     {
-                        if ((VerifyCode + Foosun.Config.UIConfig.protRand) != SafeCode)
+                        if ((VerifyCode + Hg.Config.UIConfig.protRand) != SafeCode)
                         {
                             PageError("输入的安全码错误!", "login.aspx?" + Urls + "");
                         }
                     }
                     else
                     {
-                        if ((Foosun.Config.UIConfig.protRand + SafeCode) != SafeCode)
+                        if ((Hg.Config.UIConfig.protRand + SafeCode) != SafeCode)
                         {
                             PageError("输入的安全码错误!", "login.aspx?" + Urls + "");
                         }
@@ -84,7 +84,7 @@ public partial class Manage_Login : Foosun.Web.UI.BasePage
                 }
                 else
                 {
-                    if (Foosun.Config.UIConfig.protRand != SafeCode)
+                    if (Hg.Config.UIConfig.protRand != SafeCode)
                     {
                         PageError("输入的安全码错误!", "login.aspx?" + Urls + "");
                     }
@@ -96,11 +96,11 @@ public partial class Manage_Login : Foosun.Web.UI.BasePage
             EnumLoginState state = Login(Account, PassWord, out info, true);
             if (state == EnumLoginState.Succeed)
             {
-                Foosun.Global.Current.Set(info);
+                Hg.Global.Current.Set(info);
                 Session["islogin"]="1";
                 if (Urls != null && Urls.Trim() != string.Empty)
                 {
-                    string MangeStr = Foosun.Config.UIConfig.dirMana + "/index.aspx".ToLower();
+                    string MangeStr = Hg.Config.UIConfig.dirMana + "/index.aspx".ToLower();
                     if (Urls.IndexOf(MangeStr) > 0)
                     {
                         Response.Write("<script language=\"javascript\">window.top.location.href=\"Index.aspx\";</script>");

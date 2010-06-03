@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class UserMisc : DbBase, IUserMisc
     {
@@ -24,11 +24,11 @@ namespace Foosun.AccessDAL
         public IDataReader Navilist(string UserNum)
         {
             string getS = "";
-            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_position='99999' and siteID='" + Foosun.Global.Current.SiteID + "' ";
+            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_position='99999' and siteID='" + Hg.Global.Current.SiteID + "' ";
             object obj = DbHelper.ExecuteScalar(CommandType.Text, SQLTF, null);
             if (obj != null)
             {
-                getS = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                getS = " and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             else
             {
@@ -41,11 +41,11 @@ namespace Foosun.AccessDAL
         public IDataReader aplist(string UserNum)
         {
             string getS = "";
-            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_position='99999' and siteID='" + Foosun.Global.Current.SiteID + "' ";
+            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_position='99999' and siteID='" + Hg.Global.Current.SiteID + "' ";
             object obj = DbHelper.ExecuteReader(CommandType.Text, SQLTF, null);
             if (obj != null)
             {
-                getS = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                getS = " and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             else
             {
@@ -58,7 +58,7 @@ namespace Foosun.AccessDAL
         public DataTable calendar(string UserNum)
         {
             OleDbParameter param = new OleDbParameter("@UserNum", UserNum);
-            string Sql = "Select id,logID,Title,Content,userNum,LogDateTime From " + Pre + "user_userlogs Where (DATEDIFF('d', LogDateTime, Now())<=datenum) and Usernum=@UserNum and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select id,logID,Title,Content,userNum,LogDateTime From " + Pre + "user_userlogs Where (DATEDIFF('d', LogDateTime, Now())<=datenum) and Usernum=@UserNum and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -89,11 +89,11 @@ new OleDbParameter("@UserNum", UserNum)
 new OleDbParameter("@UserNum", UserNum)
 };
             string getS = "";
-            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_ParentID=@stype and siteID='" + Foosun.Global.Current.SiteID + "' ";
+            string SQLTF = "select am_ID from " + Pre + "api_Navi where am_ParentID=@stype and siteID='" + Hg.Global.Current.SiteID + "' ";
             object obj = DbHelper.ExecuteScalar(CommandType.Text, SQLTF, param);
             if (obj != null)
             {
-                getS = " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                getS = " and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
             else
             {
@@ -108,7 +108,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable ManagemenuNavilist()
         {
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Hg.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -119,7 +119,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable ManagechildmenuNavilist(string pID)
         {
             OleDbParameter param = new OleDbParameter("@pID", pID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Hg.Global.Current.SiteID + "' order by am_orderID desc,am_id asc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -132,7 +132,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable getManageChildNaviRecord(string am_ClassID)
         {
             OleDbParameter param = new OleDbParameter("@am_ClassID", am_ClassID);
-            string Sql = "Select am_ClassID From " + Pre + "API_Navi Where am_ClassID=@am_ClassID and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select am_ClassID From " + Pre + "API_Navi Where am_ClassID=@am_ClassID and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -145,7 +145,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable GetNaviEditID(int nID)
         {
             OleDbParameter param = new OleDbParameter("@nID", nID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_id=@nID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_id=@nID and SiteID='" + Hg.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -156,7 +156,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable Getparentidlist()
         {
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where Am_position='00000' and SiteID='" + Hg.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -168,7 +168,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable Getchildparentidlist(string pID)
         {
             OleDbParameter param = new OleDbParameter("@pID", pID);
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Foosun.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,isSys,popCode From " + Pre + "API_Navi where am_ParentID=@pID and SiteID='" + Hg.Global.Current.SiteID + "' order by am_orderID desc,am_id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -176,12 +176,12 @@ new OleDbParameter("@UserNum", UserNum)
         /// 插入菜单新记录
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertManageMenu(Foosun.Model.UserInfo7 uc2)
+        public void InsertManageMenu(Hg.Model.UserInfo7 uc2)
         {
             string Sql = "insert into " + Pre + "API_Navi (";
             Sql += "api_IdentID,am_ClassID,Am_position,am_Name,am_FilePath,am_target,am_ParentID,am_type,am_creatTime,am_orderID,[isSys],siteID,userNum,popCode";
             Sql += ") values (";
-            Sql += "@api_IdentID,@am_ClassID,@Am_position,@am_Name,@am_FilePath,@am_target,@am_ParentID,@am_type,@am_creatTime,@am_orderID,@isSys,'" + Foosun.Global.Current.SiteID + "',@userNum,@popCode)";
+            Sql += "@api_IdentID,@am_ClassID,@Am_position,@am_Name,@am_FilePath,@am_target,@am_ParentID,@am_type,@am_creatTime,@am_orderID,@isSys,'" + Hg.Global.Current.SiteID + "',@userNum,@popCode)";
             OleDbParameter[] parm = InsertManageMenuParameters(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -190,9 +190,9 @@ new OleDbParameter("@UserNum", UserNum)
         ///更新菜单
         /// </summary>
         /// <param name="uc2"></param>
-        public void EditManageMenu(Foosun.Model.UserInfo7 uc2)
+        public void EditManageMenu(Hg.Model.UserInfo7 uc2)
         {
-            string Sql = "Update " + Pre + "API_Navi set am_ParentID=@am_ParentID,Am_position=@Am_position,am_Name=@am_Name,am_FilePath=@am_FilePath,am_target=@am_target,am_type=@am_type,am_orderID=@am_orderID,isSys=@isSys,popCode=@popCode where am_ID=" + uc2.am_ID + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + Pre + "API_Navi set am_ParentID=@am_ParentID,Am_position=@Am_position,am_Name=@am_Name,am_FilePath=@am_FilePath,am_target=@am_target,am_type=@am_type,am_orderID=@am_orderID,isSys=@isSys,popCode=@popCode where am_ID=" + uc2.am_ID + " " + Hg.Common.Public.getSessionStr() + "";
             OleDbParameter[] parm = InsertManageMenuParameters1(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -201,9 +201,9 @@ new OleDbParameter("@UserNum", UserNum)
         ///更新菜单
         /// </summary>
         /// <param name="uc2"></param>
-        public void EditManageMenu1(Foosun.Model.UserInfo7 uc2)
+        public void EditManageMenu1(Hg.Model.UserInfo7 uc2)
         {
-            string Sql = "Update " + Pre + "API_Navi set am_Name=@am_Name,am_orderID=@am_orderID,popCode=@popCode where am_ID=" + uc2.am_ID + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + Pre + "API_Navi set am_Name=@am_Name,am_orderID=@am_orderID,popCode=@popCode where am_ID=" + uc2.am_ID + " " + Hg.Common.Public.getSessionStr() + "";
             OleDbParameter[] parm = InsertManageMenuParameters2(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -213,7 +213,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertManageMenuParameters(Foosun.Model.UserInfo7 uc1)
+        private OleDbParameter[] InsertManageMenuParameters(Hg.Model.UserInfo7 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[15];
             param[0] = new OleDbParameter("@api_IdentID", OleDbType.VarWChar, 30);
@@ -255,7 +255,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertManageMenuParameters1(Foosun.Model.UserInfo7 uc1)
+        private OleDbParameter[] InsertManageMenuParameters1(Hg.Model.UserInfo7 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[10];
             param[0] = new OleDbParameter("@Am_position", OleDbType.VarWChar, 5);
@@ -286,7 +286,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertManageMenuParameters2(Foosun.Model.UserInfo7 uc1)
+        private OleDbParameter[] InsertManageMenuParameters2(Hg.Model.UserInfo7 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[4];
             param[0] = new OleDbParameter("@am_Name", OleDbType.VarWChar, 20);
@@ -303,14 +303,14 @@ new OleDbParameter("@UserNum", UserNum)
         public void Shortcutdel(int Qid)
         {
             OleDbParameter param = new OleDbParameter("@Qid", Qid);
-            string str_sql = "delete From " + Pre + "API_Navi where am_id=@Qid and UserNum='" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string str_sql = "delete From " + Pre + "API_Navi where am_id=@Qid and UserNum='" + Hg.Global.Current.UserNum + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, param);
         }
 
         public void Shortcutde2(string ClassID)
         {
             OleDbParameter param = new OleDbParameter("@ClassID", ClassID);
-            string str_sql = "delete From " + Pre + "API_Navi where am_ParentID=@ClassID and UserNum='" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string str_sql = "delete From " + Pre + "API_Navi where am_ParentID=@ClassID and UserNum='" + Hg.Global.Current.UserNum + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, param);
         }
 
@@ -321,7 +321,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable navimenusub(string _str)
         {
-            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,siteid,isSys From " + Pre + "API_Navi where SiteID='" + Foosun.Global.Current.SiteID + "' " + _str + " order by am_orderID asc,am_ID desc";
+            string Sql = "Select am_id,api_IdentID,am_ClassID,Am_position,am_Name,Am_Ename,am_FilePath,am_target,am_ParentID,am_type,am_orderID,siteid,isSys From " + Pre + "API_Navi where SiteID='" + Hg.Global.Current.SiteID + "' " + _str + " order by am_orderID asc,am_ID desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -332,7 +332,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <param name="Qid"></param>
         public void QShortcutdel(int Qid, int _num)
         {
-            string str_sql = "delete From " + Pre + "API_Qmenu where id=" + Qid + " and UserNum='" + Foosun.Global.Current.UserNum + "' and ismanage=" + _num + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string str_sql = "delete From " + Pre + "API_Qmenu where id=" + Qid + " and UserNum='" + Hg.Global.Current.UserNum + "' and ismanage=" + _num + " and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
 
@@ -342,7 +342,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public IDataReader QShortcutList(int _num)
         {
-            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid,orderid From " + Pre + "API_Qmenu where (UserNum='" + Foosun.Global.Current.UserNum + "' or UserNum='0') and ismanage=" + _num + " and SiteID='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,id desc";
+            string Sql = "Select id,QMID,qName,FilePath,usernum,siteid,orderid From " + Pre + "API_Qmenu where (UserNum='" + Hg.Global.Current.UserNum + "' or UserNum='0') and ismanage=" + _num + " and SiteID='" + Hg.Global.Current.SiteID + "' order by OrderID desc,id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -352,7 +352,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable QeditAction(int QID)
         {
-            string Sql = "Select QmID,qName,FilePath,Ismanage,OrderID,usernum,siteID From " + Pre + "API_Qmenu Where ID=" + QID + " and UserNum = '" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select QmID,qName,FilePath,Ismanage,OrderID,usernum,siteID From " + Pre + "API_Qmenu Where ID=" + QID + " and UserNum = '" + Hg.Global.Current.UserNum + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -362,7 +362,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable QGetRecord(int num)
         {
-            string Sql = "Select QmID From " + Pre + "API_Qmenu Where UserNum='" + Foosun.Global.Current.UserNum + "' and ismanage=" + num + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select QmID From " + Pre + "API_Qmenu Where UserNum='" + Hg.Global.Current.UserNum + "' and ismanage=" + num + " and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -384,12 +384,12 @@ new OleDbParameter("@UserNum", UserNum)
         /// 插入快捷菜单新记录
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertQMenu(Foosun.Model.UserInfo8 uc2)
+        public void InsertQMenu(Hg.Model.UserInfo8 uc2)
         {
             string Sql = "insert into " + Pre + "API_Qmenu (";
             Sql += "QmID,qName,FilePath,Ismanage,OrderID,usernum,SiteID";
             Sql += ") values (";
-            Sql += "@QmID,@qName,@FilePath,@Ismanage,@OrderID,@usernum,'" + Foosun.Global.Current.SiteID + "')";
+            Sql += "@QmID,@qName,@FilePath,@Ismanage,@OrderID,@usernum,'" + Hg.Global.Current.SiteID + "')";
             OleDbParameter[] parm = InsertQMenuParameters(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -398,9 +398,9 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新快捷菜单记录
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateQMenu(Foosun.Model.UserInfo8 uc2)
+        public void UpdateQMenu(Hg.Model.UserInfo8 uc2)
         {
-            string Sql = "Update " + Pre + "API_Qmenu set qName=@qName,FilePath=@FilePath,OrderID=@OrderID where ID=" + uc2.Id + " and UserNum='" + Foosun.Global.Current.UserNum + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "API_Qmenu set qName=@qName,FilePath=@FilePath,OrderID=@OrderID where ID=" + uc2.Id + " and UserNum='" + Hg.Global.Current.UserNum + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             OleDbParameter[] parm = InsertQMenuParameters1(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -410,7 +410,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertQMenuParameters(Foosun.Model.UserInfo8 uc1)
+        private OleDbParameter[] InsertQMenuParameters(Hg.Model.UserInfo8 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[8];
             param[0] = new OleDbParameter("@QmID", OleDbType.VarWChar, 12);
@@ -437,7 +437,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertQMenuParameters1(Foosun.Model.UserInfo8 uc1)
+        private OleDbParameter[] InsertQMenuParameters1(Hg.Model.UserInfo8 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[4];
             param[0] = new OleDbParameter("@qName", OleDbType.VarWChar, 50);
@@ -455,7 +455,7 @@ new OleDbParameter("@UserNum", UserNum)
         #region 会员列表部分
         public DataTable getUserInfobase1(int Uid)
         {
-            string Sql = "select UserGroupNumber,UserNum,NickName,RealName,birthday,Userinfo,UserFace,userFacesize,email from " + Pre + "sys_User where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select UserGroupNumber,UserNum,NickName,RealName,birthday,Userinfo,UserFace,userFacesize,email from " + Pre + "sys_User where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -470,14 +470,14 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable sexlist(int Uid)
         {
-            string Sql = "select sex from " + Pre + "sys_User where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select sex from " + Pre + "sys_User where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public DataTable marriagelist(int Uid)
         {
-            string Sql = "select marriage from " + Pre + "sys_User where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select marriage from " + Pre + "sys_User where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -485,7 +485,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable isopenlist(int Uid)
         {
 
-            string Sql = "select isopen from " + Pre + "sys_User where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select isopen from " + Pre + "sys_User where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -499,7 +499,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getUserInfoNum(int Uid)
         {
-            string Sql = "select userNum from " + Pre + "sys_User where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select userNum from " + Pre + "sys_User where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -533,30 +533,30 @@ new OleDbParameter("@UserNum", UserNum)
             param[0] = new OleDbParameter("@PassQuestion", OleDbType.VarWChar, 20);
             param[0].Value = PassQuestion;
             param[1] = new OleDbParameter("@PassKey", OleDbType.VarWChar, 20);
-            param[1].Value = Foosun.Common.Input.MD5(PassKey);
+            param[1].Value = Hg.Common.Input.MD5(PassKey);
             param[2] = new OleDbParameter("@password", OleDbType.VarWChar, 32);
-            param[2].Value = Foosun.Common.Input.MD5(password);
+            param[2].Value = Hg.Common.Input.MD5(password);
 
-            string str_sql = "Update " + Pre + "sys_User set PassQuestion=@PassQuestion,PassKey=@PassKey,UserPassword=@password where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Update " + Pre + "sys_User set PassQuestion=@PassQuestion,PassKey=@PassKey,UserPassword=@password where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, param);
         }
 
         public void UpdateUserInfoIDCard(int Uid, string _temp)
         {
-            string str_sql = "update " + Pre + "sys_user " + _temp + " where id=" + Uid + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "update " + Pre + "sys_user " + _temp + " where id=" + Uid + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
 
         public DataTable userStatlist(int Uid)
         {
-            string Sql = "select UserName,isIDcard,IDcardFiles from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select UserName,isIDcard,IDcardFiles from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public DataTable idCardlist(int Uid)
         {
-            string Sql = "select id,UserName,isIDcard,IDcardFiles from " + Pre + "sys_user where id=" + Uid + "" + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id,UserName,isIDcard,IDcardFiles from " + Pre + "sys_user where id=" + Uid + "" + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -565,7 +565,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable getUserContactRecord(string userNum)
         {
             OleDbParameter param = new OleDbParameter("@userNum", userNum);
-            string Sql = "select id from " + Pre + "sys_userfields where UserNum=@userNum " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id from " + Pre + "sys_userfields where UserNum=@userNum " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -574,21 +574,21 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable getUserInfoContact(string userNum)
         {
             OleDbParameter param = new OleDbParameter("@userNum", userNum);
-            string Sql = "select province,City,Address,Postcode,FaTel,WorkTel,Fax,QQ,MSN from " + Pre + "sys_userfields where UserNum=@userNum " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select province,City,Address,Postcode,FaTel,WorkTel,Fax,QQ,MSN from " + Pre + "sys_userfields where UserNum=@userNum " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
 
         public DataTable getUserInfoBaseStat(int Uid)
         {
-            string Sql = "select id,CertType,CertNumber,ipoint,gpoint,cpoint,epoint,apoint,RegTime,onlineTime,LoginNumber,LoginLimtNumber,lastIP,LastLoginTime,SiteID from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id,CertType,CertNumber,ipoint,gpoint,cpoint,epoint,apoint,RegTime,onlineTime,LoginNumber,LoginLimtNumber,lastIP,LastLoginTime,SiteID from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public DataTable getLockStat(int Uid)
         {
-            string Sql = "select islock from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select islock from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -600,7 +600,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable getAdminsStat(int Uid)
         {
-            string Sql = "select isadmin from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select isadmin from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -612,7 +612,7 @@ new OleDbParameter("@UserNum", UserNum)
         public int getisAdmin()
         {
             int intflg = 0;
-            string Sql = "select isAdmin from " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "select isAdmin from " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (dt != null)
             {
@@ -624,7 +624,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getGroupListStat(int Uid)
         {
-            string Sql = "select UserGroupNumber from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select UserGroupNumber from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -632,7 +632,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getCertsStat(int Uid)
         {
-            string Sql = "select id,isIDcard from " + Pre + "sys_user where id=" + Uid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id,isIDcard from " + Pre + "sys_user where id=" + Uid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -643,9 +643,9 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新基本资料
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateUserInfoBase(Foosun.Model.UserInfo uc)
+        public void UpdateUserInfoBase(Hg.Model.UserInfo uc)
         {
-            string str_sql = "Update " + Pre + "sys_User set NickName=@NickName,RealName=@RealName,sex=@sex,birthday=@birthday,Userinfo=@Userinfo,UserFace=@UserFace,userFacesize=@userFacesize,marriage=@marriage,isopen=@isopen,UserGroupNumber=@UserGroupNumber,email=@email where id=" + uc.Id + " " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Update " + Pre + "sys_User set NickName=@NickName,RealName=@RealName,sex=@sex,birthday=@birthday,Userinfo=@Userinfo,UserFace=@UserFace,userFacesize=@userFacesize,marriage=@marriage,isopen=@isopen,UserGroupNumber=@UserGroupNumber,email=@email where id=" + uc.Id + " " + Hg.Common.Public.getSessionStr() + "";
             OleDbParameter[] parm = GetUserInfoParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, Database.getNewParam(parm, Database.getSqlParam(str_sql)));
         }
@@ -655,7 +655,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc"></param>
         /// <returns></returns>
-        private OleDbParameter[] GetUserInfoParameters(Foosun.Model.UserInfo uc)
+        private OleDbParameter[] GetUserInfoParameters(Hg.Model.UserInfo uc)
         {
             OleDbParameter[] param = new OleDbParameter[11];
             param[0] = new OleDbParameter("@NickName", OleDbType.VarWChar, 12);
@@ -687,7 +687,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新基本资料第2表
         /// </summary>
         /// <param name="uc1"></param>
-        public void UpdateUserInfoBase1(Foosun.Model.UserInfo1 uc1)
+        public void UpdateUserInfoBase1(Hg.Model.UserInfo1 uc1)
         {
             string str_sql = "Update " + Pre + "sys_userfields set Nation=@Nation,nativeplace=@nativeplace,[character]=@character,UserFan=@UserFan,orgSch=@orgSch,job=@job,education=@education,Lastschool=@Lastschool where UserNum=@UserNum";
 
@@ -699,7 +699,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 如果基本资料第2表，则插入新记录
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateUserInfoBase2(Foosun.Model.UserInfo1 uc2)
+        public void UpdateUserInfoBase2(Hg.Model.UserInfo1 uc2)
         {
             //<--修改者：吴静岚 时间：2008-06-24 解决会员资料修改错误
             string Sql = "insert into [" + Pre + "sys_userfields ] (";
@@ -715,7 +715,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] GetUserInfoParameters1(Foosun.Model.UserInfo1 uc1)
+        private OleDbParameter[] GetUserInfoParameters1(Hg.Model.UserInfo1 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[9];   
             param[0] = new OleDbParameter("@UserNum", OleDbType.VarWChar, 15);
@@ -744,7 +744,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新基本资料第2表
         /// </summary>
         /// <param name="uc1"></param>
-        public void UpdateUserInfoContact1(Foosun.Model.UserInfo2 uc1)
+        public void UpdateUserInfoContact1(Hg.Model.UserInfo2 uc1)
         {
             string str_sql = "Update " + Pre + "sys_userfields set province=@province,City=@City,Address=@Address,Postcode=@Postcode,FaTel=@FaTel,WorkTel=@WorkTel,Fax=@Fax,QQ=@QQ,MSN=@MSN where UserNum=@UserNum";
             OleDbParameter[] parm = GetUserInfoContactParameters1(uc1);
@@ -755,7 +755,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 如果基本资料第2表，则插入新记录
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateUserInfoContact2(Foosun.Model.UserInfo2 uc2)
+        public void UpdateUserInfoContact2(Hg.Model.UserInfo2 uc2)
         {
             string Sql = "insert into " + Pre + "sys_userfields (";
             Sql += "UserNum,province,City,Address,Postcode,FaTel,WorkTel,Fax,QQ,MSN";
@@ -767,7 +767,7 @@ new OleDbParameter("@UserNum", UserNum)
         }
 
 
-        private OleDbParameter[] GetUserInfoContactParameters1(Foosun.Model.UserInfo2 uc1)
+        private OleDbParameter[] GetUserInfoContactParameters1(Hg.Model.UserInfo2 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[10];
             param[0] = new OleDbParameter("@province", OleDbType.VarWChar, 20);
@@ -798,7 +798,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 如果基本资料状态表
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateUserInfoBaseStat(Foosun.Model.UserInfo3 uc)
+        public void UpdateUserInfoBaseStat(Hg.Model.UserInfo3 uc)
         {
             string str_sql = "Update " + Pre + "sys_user set UserGroupNumber=@UserGroupNumber,islock=@islock,isadmin=@isadmin,CertType=@CertType,CertNumber=@CertNumber,ipoint=@ipoint,gpoint=@gpoint,cpoint=@cpoint,epoint=@epoint,apoint=@apoint,onlineTime=@onlineTime,RegTime=@RegTime,LastLoginTime=@LastLoginTime,LoginNumber=@LoginNumber,LoginLimtNumber=@LoginLimtNumber,lastIP=@lastIP,SiteID=@SiteID where Id=" + uc.Id + "";
             OleDbParameter[] parm = GetUserInfoBaseStatParameters1(uc);
@@ -806,7 +806,7 @@ new OleDbParameter("@UserNum", UserNum)
         }
 
 
-        private OleDbParameter[] GetUserInfoBaseStatParameters1(Foosun.Model.UserInfo3 uc1)
+        private OleDbParameter[] GetUserInfoBaseStatParameters1(Hg.Model.UserInfo3 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[17];
             param[0] = new OleDbParameter("@UserGroupNumber", OleDbType.VarWChar, 12);
@@ -851,7 +851,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <returns></returns>
         public DataTable getMobileBindTF()
         {
-            string Sql = "select BindTF from " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "select BindTF from " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -863,7 +863,7 @@ new OleDbParameter("@UserNum", UserNum)
         public void updateMobile(string _MobileNumber, int BindTF)
         {
             OleDbParameter param = new OleDbParameter("@Mobile", _MobileNumber);
-            string Sql = "Update " + Pre + "sys_User set mobile=@Mobile,BindTF=" + BindTF + " where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "Update " + Pre + "sys_User set mobile=@Mobile,BindTF=" + BindTF + " where UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
@@ -874,17 +874,17 @@ new OleDbParameter("@UserNum", UserNum)
         {
             rootPublic pd = new rootPublic();
             //更新相应的会员数据会员组
-            string SQL = "Update " + Pre + "sys_user set UserGroupNumber='0' where UserGroupNumber='" + pd.getGidGroupNumber(Gid) + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string SQL = "Update " + Pre + "sys_user set UserGroupNumber='0' where UserGroupNumber='" + pd.getGidGroupNumber(Gid) + "' " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, SQL, null);
 
-            string str_sql = "Delete From  " + Pre + "user_Group where id=" + Gid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string str_sql = "Delete From  " + Pre + "user_Group where id=" + Gid + " " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
 
 
         public DataTable GroupListStr()
         {
-            string Sql = "select id,GroupNumber,Discount,GroupName,iPoint,Gpoint,CreatTime,Rtime from " + Pre + "user_Group where 1=1 " + Foosun.Common.Public.getSessionStr() + " order by id desc";
+            string Sql = "select id,GroupNumber,Discount,GroupName,iPoint,Gpoint,CreatTime,Rtime from " + Pre + "user_Group where 1=1 " + Hg.Common.Public.getSessionStr() + " order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -909,7 +909,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 插入新会员组
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertGroup(Foosun.Model.UserInfo4 uc2)
+        public void InsertGroup(Hg.Model.UserInfo4 uc2)
         {
             string Sql = "Insert Into " + Pre + "user_Group(GroupNumber,GroupName,iPoint,Gpoint,Rtime,LenCommContent,CommCheckTF,PostCommTime,upfileType,upfileNum,upfileSize,DayUpfilenum,ContrNum,DicussTF,PostTitle,ReadUser,MessageNum,MessageGroupNum,IsCert,CharTF,CharHTML,CharLenContent,RegMinute,PostTitleHTML,DelSelfTitle,DelOTitle,EditSelfTitle,EditOtitle,ReadTitle,MoveSelfTitle,MoveOTitle,TopTitle,GoodTitle,LockUser,UserFlag,CheckTtile,IPTF,EncUser,OCTF,StyleTF,UpfaceSize,GIChange,GTChageRate,LoginPoint,RegPoint,GroupTF,GroupSize,GroupPerNum,GroupCreatNum,CreatTime,siteID,Discount";
             Sql += ") Values(";
@@ -924,7 +924,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertGroupParameters(Foosun.Model.UserInfo4 uc1)
+        private OleDbParameter[] InsertGroupParameters(Hg.Model.UserInfo4 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[52];
             param[0] = new OleDbParameter("@SiteID", OleDbType.VarWChar, 12);
@@ -1042,7 +1042,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getGroupEdit(int Gid)
         {
-            string Sql = "select id,GroupNumber,GroupName,iPoint,Gpoint,Rtime,LenCommContent,CommCheckTF,PostCommTime,upfileType,upfileNum,upfileSize,DayUpfilenum,ContrNum,DicussTF,PostTitle,ReadUser,MessageNum,MessageGroupNum,IsCert,CharTF,CharHTML,CharLenContent,RegMinute,PostTitleHTML,DelSelfTitle,DelOTitle,EditSelfTitle,EditOtitle,ReadTitle,MoveSelfTitle,MoveOTitle,TopTitle,GoodTitle,LockUser,UserFlag,CheckTtile,IPTF,EncUser,OCTF,StyleTF,UpfaceSize,GIChange,GTChageRate,LoginPoint,RegPoint,GroupTF,GroupSize,GroupPerNum,GroupCreatNum,CreatTime,siteID,Discount from " + Pre + "user_Group where id=" + Gid + "" + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id,GroupNumber,GroupName,iPoint,Gpoint,Rtime,LenCommContent,CommCheckTF,PostCommTime,upfileType,upfileNum,upfileSize,DayUpfilenum,ContrNum,DicussTF,PostTitle,ReadUser,MessageNum,MessageGroupNum,IsCert,CharTF,CharHTML,CharLenContent,RegMinute,PostTitleHTML,DelSelfTitle,DelOTitle,EditSelfTitle,EditOtitle,ReadTitle,MoveSelfTitle,MoveOTitle,TopTitle,GoodTitle,LockUser,UserFlag,CheckTtile,IPTF,EncUser,OCTF,StyleTF,UpfaceSize,GIChange,GTChageRate,LoginPoint,RegPoint,GroupTF,GroupSize,GroupPerNum,GroupCreatNum,CreatTime,siteID,Discount from " + Pre + "user_Group where id=" + Gid + "" + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -1052,7 +1052,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新新会员组
         /// </summary>
         /// <param name="uc2"></param>
-        public void updateGroupEdit(Foosun.Model.UserInfo4 uc2)
+        public void updateGroupEdit(Hg.Model.UserInfo4 uc2)
         {
             string Sql = "Update " + Pre + "user_Group set GroupName=@GroupName,iPoint=@iPoint,Gpoint=@Gpoint,Rtime=@Rtime,LenCommContent=@LenCommContent,CommCheckTF=@CommCheckTF,PostCommTime=@PostCommTime,upfileType=@upfileType,upfileNum=@upfileNum,upfileSize=@upfileSize,DayUpfilenum=@DayUpfilenum,ContrNum=@ContrNum,DicussTF=@DicussTF,PostTitle=@PostTitle,ReadUser=@ReadUser,MessageNum=@MessageNum,MessageGroupNum=@MessageGroupNum,IsCert=@IsCert,CharTF=@CharTF,CharHTML=@CharHTML,CharLenContent=@CharLenContent,RegMinute=@RegMinute,PostTitleHTML=@PostTitleHTML,DelSelfTitle=@DelSelfTitle,DelOTitle=@DelOTitle,EditSelfTitle=@EditSelfTitle,EditOtitle=@EditOtitle,ReadTitle=@ReadTitle,MoveSelfTitle=@MoveSelfTitle,MoveOTitle=@MoveOTitle,TopTitle=@TopTitle,GoodTitle=@GoodTitle,LockUser=@LockUser,UserFlag=@UserFlag,CheckTtile=@CheckTtile,IPTF=@IPTF,EncUser=@EncUser,OCTF=@OCTF,StyleTF=@StyleTF,UpfaceSize=@UpfaceSize,GIChange=@GIChange,GTChageRate=@GTChageRate,LoginPoint=@LoginPoint,RegPoint=@RegPoint,GroupTF=@GroupTF,GroupSize=@GroupSize,GroupPerNum=@GroupPerNum,GroupCreatNum=@GroupCreatNum,Discount=@Discount where id=" + uc2.gID + "";
             OleDbParameter[] parm = updateGroupEditParameters(uc2);
@@ -1064,7 +1064,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] updateGroupEditParameters(Foosun.Model.UserInfo4 uc1)
+        private OleDbParameter[] updateGroupEditParameters(Hg.Model.UserInfo4 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[50];
             param[0] = new OleDbParameter("@gID", OleDbType.Integer, 4);
@@ -1180,13 +1180,13 @@ new OleDbParameter("@UserNum", UserNum)
         #region 公告部分
         public void Announcedels(string Aid)
         {
-            string Sql = "Delete From  " + Pre + "user_news where id in(" + Aid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Delete From  " + Pre + "user_news where id in(" + Aid + ") " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
         public void AnnounceLockAction(string Aid, string lockstr)
         {
-            string Sql = "update " + Pre + "user_news " + lockstr + " where id in(" + Aid + ") " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "user_news " + lockstr + " where id in(" + Aid + ") " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -1194,7 +1194,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// 则插入新记录公告
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertAnnounce(Foosun.Model.UserInfo5 uc2)
+        public void InsertAnnounce(Hg.Model.UserInfo5 uc2)
         {
             string Sql = "insert into " + Pre + "user_news (";
             Sql += "newsID,Title,content,creatTime,GroupNumber,getPoint,SiteId,isLock";
@@ -1210,7 +1210,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] GetAnnounceParameters(Foosun.Model.UserInfo5 uc1)
+        private OleDbParameter[] GetAnnounceParameters(Hg.Model.UserInfo5 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[9];
             param[0] = new OleDbParameter("@newsID", OleDbType.VarWChar, 12);
@@ -1238,9 +1238,9 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateAnnounce(Foosun.Model.UserInfo5 uc2)
+        public void UpdateAnnounce(Hg.Model.UserInfo5 uc2)
         {
-            string Sql = "update " + Pre + "user_news set Title=@Title,content=@content,GroupNumber=@GroupNumber,getPoint=@getPoint where Id=" + uc2.Id + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "update " + Pre + "user_news set Title=@Title,content=@content,GroupNumber=@GroupNumber,getPoint=@getPoint where Id=" + uc2.Id + " " + Hg.Common.Public.getSessionStr() + "";
 
             OleDbParameter[] parm = UpdateAnnounceParameters(uc2);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
@@ -1251,7 +1251,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] UpdateAnnounceParameters(Foosun.Model.UserInfo5 uc1)
+        private OleDbParameter[] UpdateAnnounceParameters(Hg.Model.UserInfo5 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[5];
             param[0] = new OleDbParameter("@Title", OleDbType.VarWChar, 50);
@@ -1269,7 +1269,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getAnnounceEdit(int aid)
         {
-            string Sql = "select id,title,content,getpoint,GroupNumber from " + Pre + "user_news where id=" + aid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "select id,title,content,getpoint,GroupNumber from " + Pre + "user_news where id=" + aid + " " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -1280,7 +1280,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public void ICarddels(string iId)
         {
-            string Sql = "Delete From  " + Pre + "user_card where id in(" + iId + ")" + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Delete From  " + Pre + "user_card where id in(" + iId + ")" + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -1291,11 +1291,11 @@ new OleDbParameter("@UserNum", UserNum)
             {
                 string _Tmpstr = "";
                 _Tmpstr = " set TimeOutDate='1900-1-1'";
-                Sql = "update " + Pre + "user_card " + _Tmpstr + " where id in(" + iId + ") " + Foosun.Common.Public.getSessionStr() + "";
+                Sql = "update " + Pre + "user_card " + _Tmpstr + " where id in(" + iId + ") " + Hg.Common.Public.getSessionStr() + "";
             }
             else
             {
-                Sql = "update " + Pre + "user_card " + lockstr + " where id in(" + iId + ") " + Foosun.Common.Public.getSessionStr() + "";
+                Sql = "update " + Pre + "user_card " + lockstr + " where id in(" + iId + ") " + Hg.Common.Public.getSessionStr() + "";
             }
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
@@ -1339,18 +1339,18 @@ new OleDbParameter("@UserNum", UserNum)
             }
             if (_SiteID != "" && _SiteID != null)
             {
-                if (Foosun.Global.Current.SiteID == "0")
+                if (Hg.Global.Current.SiteID == "0")
                 {
                     QSQL += " and SiteID='" + _SiteID + "'";
                 }
                 else
                 {
-                    QSQL += " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                    QSQL += " and SiteID='" + Hg.Global.Current.SiteID + "'";
                 }
             }
             else
             {
-                QSQL += " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+                QSQL += " and SiteID='" + Hg.Global.Current.SiteID + "'";
             }
 
             string AllFields = "id,CaID,CardNumber,CardPassWord,creatTime,Money,Point,isBuy,isUse,isLock,UserNum,SiteId,TimeOutDate";
@@ -1394,16 +1394,16 @@ new OleDbParameter("@UserNum", UserNum)
             return flg;
         }
 
-        public void insertCardR(Foosun.Model.IDCARD uc)
+        public void insertCardR(Hg.Model.IDCARD uc)
         {
             string Sql = "Insert Into " + Pre + "user_card(CaID,CardNumber,CardPassWord,creatTime,[Money],Point,isBuy,isUse,isLock,UserNum,siteID,TimeOutDate) Values(@CaID,@CardNumber,@CardPassWord,@creatTime,@Money,@Point,@isBuy,@isUse,@isLock,@UserNum,@siteID,@TimeOutDate)";
             OleDbParameter[] parm = insertCardRParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
 
-        public void UpdateCardR(Foosun.Model.IDCARD uc)
+        public void UpdateCardR(Hg.Model.IDCARD uc)
         {
-            string Sql = "Update " + Pre + "user_card set CardPassWord=@CardPassWord,[Money]=@Money,Point=@Point,isBuy=@isBuy,isUse=@isUse,isLock=@isLock,TimeOutDate=@TimeOutDate where Id=" + uc.Id + " and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "user_card set CardPassWord=@CardPassWord,[Money]=@Money,Point=@Point,isBuy=@isBuy,isUse=@isUse,isLock=@isLock,TimeOutDate=@TimeOutDate where Id=" + uc.Id + " and SiteID='" + Hg.Global.Current.SiteID + "'";
             OleDbParameter[] parm = UpdateCardRParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -1413,7 +1413,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] insertCardRParameters(Foosun.Model.IDCARD uc1)
+        private OleDbParameter[] insertCardRParameters(Hg.Model.IDCARD uc1)
         {
             OleDbParameter[] param = new OleDbParameter[13];
             param[0] = new OleDbParameter("@CaID", OleDbType.VarWChar, 12);
@@ -1454,7 +1454,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] UpdateCardRParameters(Foosun.Model.IDCARD uc1)
+        private OleDbParameter[] UpdateCardRParameters(Hg.Model.IDCARD uc1)
         {
             OleDbParameter[] param = new OleDbParameter[8];
             param[0] = new OleDbParameter("@CardPassWord", OleDbType.VarWChar, 150);
@@ -1483,19 +1483,19 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         public void delALLCARD()
         {
-            string Sql = "Delete From  " + Pre + "user_card where SiteID = '" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Delete From  " + Pre + "user_card where SiteID = '" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
         public DataTable getmoneylist()
         {
-            string Sql = "select DisTinct Money from " + Pre + "user_Card where isBuy=0 and isUse=0 and isLock=0 and SiteID='" + Foosun.Global.Current.SiteID + "' and TimeOutDate>#" + DateTime.Now + "# and Money>0 order by Money asc";
+            string Sql = "select DisTinct Money from " + Pre + "user_Card where isBuy=0 and isUse=0 and isLock=0 and SiteID='" + Hg.Global.Current.SiteID + "' and TimeOutDate>#" + DateTime.Now + "# and Money>0 order by Money asc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public DataTable getCardInfoID(int ID)
         {
-            string Sql = "select id,CardNumber,CardPassWord,Money,Point,TimeOutDate,isLock,isUse,isBuy From " + Pre + "user_card where id=" + ID + " and SiteID = '" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select id,CardNumber,CardPassWord,Money,Point,TimeOutDate,isLock,isUse,isBuy From " + Pre + "user_card where id=" + ID + " and SiteID = '" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -1508,7 +1508,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getOnlinePay()
         {
-            string Sql = "select onpayType,O_userName,O_key,O_sendurl,O_returnurl,O_md5,O_other1,O_other2,O_other3 from " + Pre + "sys_PramUser where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select onpayType,O_userName,O_key,O_sendurl,O_returnurl,O_md5,O_other1,O_other2,O_other3 from " + Pre + "sys_PramUser where SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -1518,20 +1518,20 @@ new OleDbParameter("@UserNum", UserNum)
         /// 更新
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateOnlinePay(Foosun.Model.UserInfo6 uc2)
+        public void UpdateOnlinePay(Hg.Model.UserInfo6 uc2)
         {
             string Sql = "";
-            string SQLTF = "select ID from " + Pre + "sys_PramUser where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string SQLTF = "select ID from " + Pre + "sys_PramUser where SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, SQLTF, null);
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
                 {
-                    Sql = "Update " + Pre + "sys_PramUser set onpayType=" + uc2.onpayType + ",O_userName='" + uc2.O_userName + "',o_key='" + uc2.O_key + "',O_sendurl='" + uc2.O_sendurl + "',O_returnurl='" + uc2.O_returnurl + "',O_md5='" + uc2.O_md5 + "',O_other1='" + uc2.O_other1 + "',O_other2='" + uc2.O_other2 + "',O_other3='" + uc2.O_other3 + "' where SiteID='" + Foosun.Global.Current.SiteID + "'";
+                    Sql = "Update " + Pre + "sys_PramUser set onpayType=" + uc2.onpayType + ",O_userName='" + uc2.O_userName + "',o_key='" + uc2.O_key + "',O_sendurl='" + uc2.O_sendurl + "',O_returnurl='" + uc2.O_returnurl + "',O_md5='" + uc2.O_md5 + "',O_other1='" + uc2.O_other1 + "',O_other2='" + uc2.O_other2 + "',O_other3='" + uc2.O_other3 + "' where SiteID='" + Hg.Global.Current.SiteID + "'";
                 }
                 else
                 {
-                    Sql = "Insert Into " + Pre + "sys_PramUser(onpayType,O_userName,o_key,O_sendurl,O_returnurl,O_md5,O_other1,O_other2,O_other3,SiteID) Values(" + uc2.onpayType + ",'" + uc2.O_userName + "','" + uc2.O_key + "','" + uc2.O_sendurl + "','" + uc2.O_returnurl + "','" + uc2.O_md5 + "','" + uc2.O_other1 + "','" + uc2.O_other2 + "','" + uc2.O_other3 + "','" + Foosun.Global.Current.SiteID + "')";
+                    Sql = "Insert Into " + Pre + "sys_PramUser(onpayType,O_userName,o_key,O_sendurl,O_returnurl,O_md5,O_other1,O_other2,O_other3,SiteID) Values(" + uc2.onpayType + ",'" + uc2.O_userName + "','" + uc2.O_key + "','" + uc2.O_sendurl + "','" + uc2.O_returnurl + "','" + uc2.O_md5 + "','" + uc2.O_other1 + "','" + uc2.O_other2 + "','" + uc2.O_other3 + "','" + Hg.Global.Current.SiteID + "')";
                 }
             }
             //OleDbParameter[] parm = UpdateOnlinePayParameters(uc2);
@@ -1543,7 +1543,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] UpdateOnlinePayParameters(Foosun.Model.UserInfo6 uc1)
+        private OleDbParameter[] UpdateOnlinePayParameters(Hg.Model.UserInfo6 uc1)
         {
             OleDbParameter[] param = new OleDbParameter[9];
             param[0] = new OleDbParameter("@o_userName", OleDbType.VarWChar, 100);
@@ -1618,10 +1618,10 @@ new OleDbParameter("@UserNum", UserNum)
 
         public int getPasswordTF(string password)
         {
-            string md5Pwd = Foosun.Common.Input.MD5(password, true);
+            string md5Pwd = Hg.Common.Input.MD5(password, true);
             OleDbParameter param = new OleDbParameter("@password", md5Pwd);
             int flg = 1;
-            string Sql = "select UserPassword from " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "' and UserPassword=@password";
+            string Sql = "select UserPassword from " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "' and UserPassword=@password";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             if (rdr != null)
             {
@@ -1636,7 +1636,7 @@ new OleDbParameter("@UserNum", UserNum)
 
         public DataTable getICardTF()
         {
-            string Sql = "select isIDcard,IDcardFiles,ID from " + Pre + "sys_User where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "select isIDcard,IDcardFiles,ID from " + Pre + "sys_User where UserNum='" + Hg.Global.Current.UserNum + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -1648,7 +1648,7 @@ new OleDbParameter("@UserNum", UserNum)
         /// <param name="uc2"></param>
         public void ResetICard()
         {
-            string Sql = "update  " + Pre + "sys_User set IDcardFiles='',isIDcard=0 where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "update  " + Pre + "sys_User set IDcardFiles='',isIDcard=0 where UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -1659,7 +1659,7 @@ new OleDbParameter("@UserNum", UserNum)
         public void SaveDataICard(string f_IDcardFiles)
         {
             OleDbParameter param = new OleDbParameter("@f_IDcardFiles", f_IDcardFiles);
-            string Sql = "update " + Pre + "sys_User set IDcardFiles=@f_IDcardFiles,isIDcard=0 where UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "update " + Pre + "sys_User set IDcardFiles=@f_IDcardFiles,isIDcard=0 where UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
@@ -1690,7 +1690,7 @@ new OleDbParameter("@UserNum", UserNum)
         public DataTable getConstrID(string ConID, string UserNum)
         {
             OleDbParameter[] param = new OleDbParameter[] { new OleDbParameter("@ConID", ConID), new OleDbParameter("@UserNum", UserNum) };
-            string Sql = "select ID,Title,Content,creatTime,Source,Tags,Author,PicURL from " + Pre + "user_Constr where UserNum=@UserNum and ConID=@ConID and  isuserdel=0 and SiteID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "select ID,Title,Content,creatTime,Source,Tags,Author,PicURL from " + Pre + "user_Constr where UserNum=@UserNum and ConID=@ConID and  isuserdel=0 and SiteID='" + Hg.Global.Current.SiteID + "' order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -1721,11 +1721,11 @@ new OleDbParameter("@UserNum", UserNum)
             string Sql = "";
             if (NUM == 0)
             {
-                Sql = "Insert Into " + Pre + "user_URL(URLName,URL,URLColor,ClassID,Content,CreatTime,UserNum) Values(@URLName,@URL,@URLColor,@ClassID,@Content,'" + DateTime.Now + "','" + Foosun.Global.Current.UserNum + "')";
+                Sql = "Insert Into " + Pre + "user_URL(URLName,URL,URLColor,ClassID,Content,CreatTime,UserNum) Values(@URLName,@URL,@URLColor,@ClassID,@Content,'" + DateTime.Now + "','" + Hg.Global.Current.UserNum + "')";
             }
             else
             {
-                Sql = "update " + Pre + "user_URL set URLName=@URLName,URL=@URL,URLColor=@URLColor,ClassID=@ClassID,Content=@Content where id=" + ID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+                Sql = "update " + Pre + "user_URL set URLName=@URLName,URL=@URL,URLColor=@URLColor,ClassID=@ClassID,Content=@Content where id=" + ID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             }
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
@@ -1736,11 +1736,11 @@ new OleDbParameter("@UserNum", UserNum)
             string Sql = "";
             if (NUM == 0)
             {
-                Sql = "Insert Into " + Pre + "user_URLClass(ClassName,ParentID,UserNum) Values(@ClassName,0,'" + Foosun.Global.Current.UserNum + "')";
+                Sql = "Insert Into " + Pre + "user_URLClass(ClassName,ParentID,UserNum) Values(@ClassName,0,'" + Hg.Global.Current.UserNum + "')";
             }
             else
             {
-                Sql = "update " + Pre + "user_URLClass set ClassName=@ClassName where id=" + ID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+                Sql = "update " + Pre + "user_URLClass set ClassName=@ClassName where id=" + ID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             }
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
@@ -1754,15 +1754,15 @@ new OleDbParameter("@UserNum", UserNum)
 
         public void delURL(int ID)
         {
-            string Sql = "delete from " + Pre + "user_URL where ID =" + ID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "delete from " + Pre + "user_URL where ID =" + ID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
         public void delclass(int ID)
         {
-            string Sql = "delete from " + Pre + "user_URLClass where ID =" + ID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "delete from " + Pre + "user_URLClass where ID =" + ID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
-            string Sql1 = "delete from " + Pre + "user_URL where ClassID =" + ID + " and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql1 = "delete from " + Pre + "user_URL where ClassID =" + ID + " and UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql1, null);
         }
 

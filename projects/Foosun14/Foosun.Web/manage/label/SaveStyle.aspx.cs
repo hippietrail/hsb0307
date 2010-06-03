@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_label_SaveStyle : Foosun.Web.UI.ManagePage
+public partial class manage_label_SaveStyle : Hg.Web.UI.ManagePage
 {
     public manage_label_SaveStyle()
     {
@@ -19,11 +19,11 @@ public partial class manage_label_SaveStyle : Foosun.Web.UI.ManagePage
     protected void Page_Load(object sender, EventArgs e)
     {
         int result = 0;
-        Foosun.Model.StyleInfo stClass = new Foosun.Model.StyleInfo();
+        Hg.Model.StyleInfo stClass = new Hg.Model.StyleInfo();
         string StyleName = Request.QueryString["StyleName"];
         string ClassID = Request.QueryString["ClassID"];
         string Content = Request.QueryString["Content"]+"";
-        Foosun.CMS.Style.Style style_Class = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style style_Class = new Hg.CMS.Style.Style();
         if (style_Class.styleNametf(StyleName.ToString()) > 0)
         {
             Response.Write("名称已经存在!");
@@ -31,7 +31,7 @@ public partial class manage_label_SaveStyle : Foosun.Web.UI.ManagePage
         }
         stClass.StyleName = StyleName.ToString();
         stClass.ClassID = ClassID.ToString();
-        stClass.Content = Foosun.Common.Input.HtmlDecode(Content);
+        stClass.Content = Hg.Common.Input.HtmlDecode(Content);
         stClass.Description = "";
         stClass.CreatTime = DateTime.Now;
         stClass.isRecyle = 0;

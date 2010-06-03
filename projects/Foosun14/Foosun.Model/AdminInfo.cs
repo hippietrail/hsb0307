@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Foosun.Model
+namespace Hg.Model
 {
     [Serializable]
     public class AdminInfo

@@ -10,16 +10,16 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class rootPublic : DbBase, IrootPublic
     {
@@ -182,7 +182,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public string getUserGroupNumber(string strUserNum)
         {
-            string USQL = "Select UserGroupNumber From " + Pre + "sys_user Where UserNum=@UserNum and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string USQL = "Select UserGroupNumber From " + Pre + "sys_user Where UserNum=@UserNum and SiteID='" + Hg.Global.Current.SiteID + "'";
             SqlParameter Param = new SqlParameter("@UserNum", strUserNum);
             return Convert.ToString(DbHelper.ExecuteScalar(CommandType.Text, USQL, Param));
         }
@@ -196,7 +196,7 @@ namespace Foosun.SQLServerDAL
         {
             string uflg = string.Empty;
             SqlParameter Param = new SqlParameter("@UserNum", UserNum);
-            string USQL = "Select UserGroupNumber From " + Pre + "sys_user Where UserNum=@UserNum and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string USQL = "Select UserGroupNumber From " + Pre + "sys_user Where UserNum=@UserNum and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, USQL, Param);
             if (dt != null)
             {
@@ -257,7 +257,7 @@ namespace Foosun.SQLServerDAL
         {
             string uflg = "0";
             SqlParameter GroupNumberParam = new SqlParameter("@GroupNumber", GroupNumber);
-            string Sql = "Select id From " + Pre + "user_Group Where GroupNumber=@GroupNumber and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select id From " + Pre + "user_Group Where GroupNumber=@GroupNumber and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, GroupNumberParam);
             if (rdr != null)
             {
@@ -576,7 +576,7 @@ namespace Foosun.SQLServerDAL
                 DataTable rdrs = DbHelper.ExecuteTable(CommandType.Text, sqls, param);
                 if (rdrs != null && rdrs.Rows.Count > 0)
                 {
-                    gflg = rdrs.Rows[0]["SaveDirPath"].ToString() + "/" + rdrs.Rows[0]["EName"].ToString() + "/" + Foosun.Config.UIConfig.dirHtml;
+                    gflg = rdrs.Rows[0]["SaveDirPath"].ToString() + "/" + rdrs.Rows[0]["EName"].ToString() + "/" + Hg.Config.UIConfig.dirHtml;
                     rdrs.Clear(); rdrs.Dispose();
                 }
             }
@@ -788,11 +788,11 @@ namespace Foosun.SQLServerDAL
             string Sql = "insert into " + Pre + "sys_logs (";
             Sql += "title,content,creatTime,IP,usernum,SiteID,ismanage";
             Sql += ") values (";
-            Sql += "@Title,@Content,'" + System.DateTime.Now + "','" + Foosun.Common.Public.getUserIP() + "',@UserNum,'0',@_num )";
+            Sql += "@Title,@Content,'" + System.DateTime.Now + "','" + Hg.Common.Public.getUserIP() + "',@UserNum,'0',@_num )";
             DbHelper.ExecuteNonQuery(cn, CommandType.Text, Sql, param);
             if (num == 1)
             {
-                Foosun.Common.Public.saveLogFiles(_num, UserNum, Title, Content);
+                Hg.Common.Public.saveLogFiles(_num, UserNum, Title, Content);
             }
         }
 
@@ -802,7 +802,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public IDataReader GetGroupList()
         {
-            string Sql = "select id,GroupNumber,GroupName from " + Pre + "user_Group where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select id,GroupNumber,GroupName from " + Pre + "user_Group where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, null);
         }
 
@@ -825,7 +825,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public DataTable GetselectNewsList()
         {
-            string Sql = "Select id,ChannelID,ParentID,CName from " + Pre + "news_site where isRecyle=0 and isLock=0 and IsURL =0 and ParentID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "Select id,ChannelID,ParentID,CName from " + Pre + "news_site where isRecyle=0 and isLock=0 and IsURL =0 and ParentID='" + Hg.Global.Current.SiteID + "' order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -836,7 +836,7 @@ namespace Foosun.SQLServerDAL
         /// <returns></returns>
         public DataTable GetselectLabelList()
         {
-            string Sql = "Select id,ClassID,Sname,(Select Count(id) from " + Pre + "sys_LabelStyle where a.ClassId=ClassID and isRecyle=0 and siteID='" + Foosun.Global.Current.SiteID + "') as HasSub  from " + Pre + "sys_styleclass a where isRecyle=0 and siteID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "Select id,ClassID,Sname,(Select Count(id) from " + Pre + "sys_LabelStyle where a.ClassId=ClassID and isRecyle=0 and siteID='" + Hg.Global.Current.SiteID + "') as HasSub  from " + Pre + "sys_styleclass a where isRecyle=0 and siteID='" + Hg.Global.Current.SiteID + "' order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -866,7 +866,7 @@ namespace Foosun.SQLServerDAL
         public DataTable GetselectLabelList1(string ClassID)
         {
             SqlParameter param = new SqlParameter("@ClassID", ClassID);
-            string Sql = "select ID,styleID,ClassID,StyleName,Description,Content from " + Pre + "sys_LabelStyle where ClassId=@ClassID and siteID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "select ID,styleID,ClassID,StyleName,Description,Content from " + Pre + "sys_LabelStyle where ClassId=@ClassID and siteID='" + Hg.Global.Current.SiteID + "' order by id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -879,7 +879,7 @@ namespace Foosun.SQLServerDAL
         public IDataReader GetajaxsNewsList(string ParentId)
         {
             SqlParameter param = new SqlParameter("@ParentId", ParentId);
-            string Sql = "Select ClassID,ClassCName,(Select Count(id) from " + Pre + "news_Class where ParentID=a.ClassID and isRecyle=0 and isUrl=0 and isPage=0 and islock=0) as HasSub from " + Pre + "news_Class a where ParentID=@ParentId and isRecyle=0 and isUrl=0 and SiteID='" + Foosun.Global.Current.SiteID + "' and isPage=0 and islock=0 order by OrderID desc,id desc";
+            string Sql = "Select ClassID,ClassCName,(Select Count(id) from " + Pre + "news_Class where ParentID=a.ClassID and isRecyle=0 and isUrl=0 and isPage=0 and islock=0) as HasSub from " + Pre + "news_Class a where ParentID=@ParentId and isRecyle=0 and isUrl=0 and SiteID='" + Hg.Global.Current.SiteID + "' and isPage=0 and islock=0 order by OrderID desc,id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, param);
         }
 
@@ -921,7 +921,7 @@ namespace Foosun.SQLServerDAL
         public IDataReader GetajaxsspecialList(string ParentId)
         {
             SqlParameter param = new SqlParameter("@ParentId", ParentId);
-            string Sql = "Select SpecialID,SpecialCName,(Select Count(id) from " + Pre + "news_special where ParentID=a.SpecialID and isRecyle=0) as HasSub from " + Pre + "news_special a where ParentID=@ParentId and isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "' order by id desc";
+            string Sql = "Select SpecialID,SpecialCName,(Select Count(id) from " + Pre + "news_special where ParentID=a.SpecialID and isRecyle=0) as HasSub from " + Pre + "news_special a where ParentID=@ParentId and isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "' order by id desc";
             return DbHelper.ExecuteReader(CommandType.Text, Sql, param);
         }
 
@@ -934,7 +934,7 @@ namespace Foosun.SQLServerDAL
         public DataTable getClassListPublic(string ParentID)
         {
             SqlParameter param = new SqlParameter("@ParentID", ParentID);
-            string Sql = "Select ClassID,ClassCName,ParentID, ClassCNameRefer from " + Pre + "news_class where isURL=0 and isLock=0 and isRecyle=0 and isPage!=1 and ParentID=@ParentID and SiteID ='" + Foosun.Global.Current.SiteID + "' order by OrderID desc,Id desc";
+            string Sql = "Select ClassID,ClassCName,ParentID, ClassCNameRefer from " + Pre + "news_class where isURL=0 and isLock=0 and isRecyle=0 and isPage!=1 and ParentID=@ParentID and SiteID ='" + Hg.Global.Current.SiteID + "' order by OrderID desc,Id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -947,7 +947,7 @@ namespace Foosun.SQLServerDAL
         public DataTable getSpecialListPublic(string ParentID)
         {
             SqlParameter param = new SqlParameter("@ParentID", ParentID);
-            string Sql = "Select SpecialID,SpecialCName,ParentID from " + Pre + "news_special where isLock=0 and isRecyle=0 and ParentID=@ParentID and SiteID ='" + Foosun.Global.Current.SiteID + "' order by Id desc";
+            string Sql = "Select SpecialID,SpecialCName,ParentID from " + Pre + "news_special where isLock=0 and isRecyle=0 and ParentID=@ParentID and SiteID ='" + Hg.Global.Current.SiteID + "' order by Id desc";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             return rdr;
         }
@@ -1028,9 +1028,9 @@ namespace Foosun.SQLServerDAL
                 {
                     for (int i = 0; i <= 9; i++)
                     {
-                        _Str = _Str.Replace("{@ram" + i + "_0}", Foosun.Common.Rand.Number(i));
-                        _Str = _Str.Replace("{@ram" + i + "_1}", Foosun.Common.Rand.Str_char(i));
-                        _Str = _Str.Replace("{@ram" + i + "_2}", Foosun.Common.Rand.Str(i));
+                        _Str = _Str.Replace("{@ram" + i + "_0}", Hg.Common.Rand.Number(i));
+                        _Str = _Str.Replace("{@ram" + i + "_1}", Hg.Common.Rand.Str_char(i));
+                        _Str = _Str.Replace("{@ram" + i + "_2}", Hg.Common.Rand.Str(i));
                     }
                 }
             }
@@ -1046,7 +1046,7 @@ namespace Foosun.SQLServerDAL
         {
             string _STR = "";
             SqlParameter param = new SqlParameter("@ClassID", ClassID);
-            string Sql = "Select ClassEName From " + Pre + "news_class where ClassID=@ClassID and SiteID ='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select ClassEName From " + Pre + "news_class where ClassID=@ClassID and SiteID ='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             if (dt != null)
             {
@@ -1152,7 +1152,7 @@ namespace Foosun.SQLServerDAL
         {
             //删除投稿
             SqlParameter param = new SqlParameter("@UserNum", UserNum);
-            string consql = "delete from " + Pre + "user_Constr where UserNum = @UserNum and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string consql = "delete from " + Pre + "user_Constr where UserNum = @UserNum and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, consql, param);
             //投稿分类
             SqlParameter paramClass = new SqlParameter("@UserNum", UserNum);

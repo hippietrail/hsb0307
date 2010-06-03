@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
+public partial class manage_news_Special_edit : Hg.Web.UI.ManagePage
 {
     public manage_news_Special_edit()
     {
@@ -38,9 +38,9 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
 
     protected void GetSpeacilInfo()
     {
-        string ID = Foosun.Common.Input.checkID(Request.QueryString["ID"]);
+        string ID = Hg.Common.Input.checkID(Request.QueryString["ID"]);
 
-        Foosun.CMS.Special scinfo = new Foosun.CMS.Special();
+        Hg.CMS.Special scinfo = new Hg.CMS.Special();
         DataTable dt = scinfo.getSpeacilInfo(ID);
 
         if (dt != null)
@@ -53,7 +53,7 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
                 S_Parent.Text = dt.Rows[0]["ParentID"].ToString();
                 if (dt.Rows[0]["ParentID"].ToString() != "0")
                 {
-                    Foosun.CMS.Special parentSpecial = new Foosun.CMS.Special();
+                    Hg.CMS.Special parentSpecial = new Hg.CMS.Special();
                     DataTable psc = parentSpecial.getSpeacilInfo(dt.Rows[0]["ParentID"].ToString());
                     this.S_ParentName.Text = psc.Rows[0]["SpecialCName"].ToString();
                 }
@@ -67,7 +67,7 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
                 string str_UesrGroup = dt.Rows[0]["GroupNumber"].ToString();
                 string [] arr_UserGroup = str_UesrGroup.Split(',');
 
-                Foosun.CMS.Common.rootPublic rpc = new Foosun.CMS.Common.rootPublic();
+                Hg.CMS.Common.rootPublic rpc = new Hg.CMS.Common.rootPublic();
                 IDataReader rd = rpc.GetGroupList();
                 ListItem defaultitm = new ListItem();
                 defaultitm.Value = "0";
@@ -126,7 +126,7 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
     {
         //---------------------------取得表单值
 
-        Foosun.Model.Special sci = new Foosun.Model.Special();
+        Hg.Model.Special sci = new Hg.Model.Special();
         sci.SpecialID = Request.Form["SpaecilID"];            //专题编号
         sci.SpecialCName = Request.Form["S_Cname"];           //中文名
         sci.specialEName = "";
@@ -150,10 +150,10 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
         //英文名
         string enNames = this.S_Ename.Text;
 
-        string fileNames = Foosun.CMS.Common.CommStr.FileRandName(Request.Form["S_FileRule"]);      //文件名生成规则
+        string fileNames = Hg.CMS.Common.CommStr.FileRandName(Request.Form["S_FileRule"]);      //文件名生成规则
         string f_name = Regex.Replace(fileNames, "{@EName}", enNames);
 
-        sci.saveDirPath = Foosun.CMS.Common.CommStr.FileRandName(Request.Form["S_DirRule"]);    //目录生成规则
+        sci.saveDirPath = Hg.CMS.Common.CommStr.FileRandName(Request.Form["S_DirRule"]);    //目录生成规则
         sci.FileName = f_name;      //文件名生成规则
         sci.SavePath = Request.Form["S_SavePath"];            //保存路径
 
@@ -168,14 +168,14 @@ public partial class manage_news_Special_edit : Foosun.Web.UI.ManagePage
         sci.ParentID = "";
 
         int result = 0;
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         result = sc.Edit(sci);
         //清除缓存
-        Foosun.Publish.CommonData.NewsSpecial.Clear();
-        Foosun.Publish.CommonData.CHSpecial.Clear();
+        Hg.Publish.CommonData.NewsSpecial.Clear();
+        Hg.Publish.CommonData.CHSpecial.Clear();
         if (result == 1)
         {
-            Foosun.Publish.General PG = new Foosun.Publish.General();
+            Hg.Publish.General PG = new Hg.Publish.General();
             if (PG.publishSingleSpecial(sci.SpecialID))
                 PageRight("修改专题信息成功!生成专题成功!", "special_list.aspx");
             else

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getManageForder.aspx.cs" Inherits="Foosun.Web.configuration.system.getManageForder" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getManageForder.aspx.cs" Inherits="Hg.Web.configuration.system.getManageForder" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

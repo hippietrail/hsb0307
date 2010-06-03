@@ -11,15 +11,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_list : Hg.Web.UI.ManagePage
 {
     public manage_advertisement_list()
     {
         Authority_Code = "S006";
     }
-    public string str_dirMana =Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+    public string str_dirMana =Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";                        //设置页面无缓存
@@ -88,10 +88,10 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected string CheckID(string idlist)
     {
-        idlist = Foosun.Common.Input.Losestr(idlist);
+        idlist = Hg.Common.Input.Losestr(idlist);
         if(idlist=="IsNull")
             PageError("请选择要批量操作的内容!", "");
-        idlist = Foosun.Common.Input.CutComma(idlist);
+        idlist = Hg.Common.Input.CutComma(idlist);
         return idlist;
     }
 
@@ -191,31 +191,31 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected DataTable GetSql(string type)
     {
-        Foosun.Model.AdsListInfo ali = new Foosun.Model.AdsListInfo();
+        Hg.Model.AdsListInfo ali = new Hg.Model.AdsListInfo();
 
         ali.type = type;
         if (Request.QueryString["SiteID"] != null && Request.QueryString["SiteID"]!=string.Empty)
         {
-            ali.showSiteID = Foosun.Common.Input.Filter(Request.QueryString["SiteID"]);
+            ali.showSiteID = Hg.Common.Input.Filter(Request.QueryString["SiteID"]);
         }
         ali.showAdsType = Request.QueryString["showadstype"];
         if (Request.QueryString["adsType"] != null && Request.QueryString["adsType"] != string.Empty)
         {
-            ali.adsType = Foosun.Common.Input.Filter(Request.QueryString["adsType"]);
+            ali.adsType = Hg.Common.Input.Filter(Request.QueryString["adsType"]);
         }
 
         ali.searchType = Request.QueryString["searchType"];
         if (Request.QueryString["SearchKey"] != null && Request.QueryString["SearchKey"] != string.Empty)
         {
-            ali.SearchKey = Foosun.Common.Input.Filter(Request.QueryString["SearchKey"]);
+            ali.SearchKey = Hg.Common.Input.Filter(Request.QueryString["SearchKey"]);
         }
 
         if (Request.QueryString["searchType"] != null && Request.QueryString["searchType"] == "className")
         {
-            ali.SearchKey = Foosun.Common.Input.Filter(Request.QueryString["SearchKey"]);
+            ali.SearchKey = Hg.Common.Input.Filter(Request.QueryString["SearchKey"]);
             ali.type = "ClassName";
         }
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.list(ali);
         return dt;
     }
@@ -292,21 +292,21 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
                     string adsAddTime = dt.Rows[i]["creatTime"].ToString();
                     string adsClassName = dt.Rows[i]["Cname"].ToString();
 
-                    Foosun.CMS.Common.rootPublic rd = new Foosun.CMS.Common.rootPublic();
+                    Hg.CMS.Common.rootPublic rd = new Hg.CMS.Common.rootPublic();
                     string uname  = rd.getUserName(dt.Rows[i]["CusID"].ToString());
 
-                    string adsCusID = "<a target=\"_blank\" href=\"../../" + Foosun.Config.UIConfig.dirUser + "/"+
+                    string adsCusID = "<a target=\"_blank\" href=\"../../" + Hg.Config.UIConfig.dirUser + "/"+
                                       "showuser.aspx?uid=" + rd.getUserName(dt.Rows[i]["CusID"].ToString()) + "\" class=\"list_link\">" + uname + "</a>";
                     string adsMode = dt.Rows[i]["isLock"].ToString();
 
                     string str_adsTempMode = "";
                     if (adsMode == "1") { str_adsTempMode = "<font color=\"red\">锁定</font>"; } else { str_adsTempMode = "正常"; }
                     string Op = " <a href=\"javascript:EditAds('" + type + "','" + adsID + "');\" class=\"list_link\">" +
-                                "<img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
+                                "<img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
                                 "<a href=\"javascript:Lock('" + type + "','" + adsID + "');\" class=\"list_link\">" +
-                                "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定\" /></a>" +
+                                "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定\" /></a>" +
                                 "<a href=\"javascript:UnLock('" + type + "','" + adsID + "');\" class=\"list_link\">" +
-                                "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁\" /></a>" +
+                                "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁\" /></a>" +
                                 " <a href=\"javascript:getCode('" + adsID + "');\" class=\"list_link\">代码</a> <input type=\"checkbox\" value=\"'" + adsID + "'\" id=\"ID\" name=\"ID\" />";
                     str_TempStr += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                     //str_TempStr += "<td align=\"left\" valign=\"middle\" height=\"20\">" + adsID + "</td>";
@@ -336,9 +336,9 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
                     string adsClassMoney = dt.Rows[i]["Adprice"].ToString();
                     string adsClassAddTime = dt.Rows[i]["creatTime"].ToString();
                     string Op = " <a href=\"javascript:EditAds('" + type + "','" + adsClassID + "');\" class=\"list_link\">" +
-                                "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
+                                "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
                                 "<a href=\"javascript:AddAdsClass('" + adsClassID + "');\" class=\"list_link\">" +
-                                "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><" +
+                                "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><" +
                                 "input type=\"checkbox\" value=\"'" + adsClassID + "'\" id=\"ID\" name=\"ID\" />";
                     str_TempStr += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                     str_TempStr += "<td align=\"left\" valign=\"middle\" height=\"20\">" + adsClassID + "</td>";
@@ -369,7 +369,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
                     string shownum = dt.Rows[i]["ShowNum"].ToString();
                     string op = "<input type=\"checkbox\" value=\"'" + adsID + "'\" id=\"ID\" name=\"ID\" />";
                     string LookInfo = "<a href=\"javascript:LookInfo('" + adsID + "');\" class=\"list_link\">"+
-                                      "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" alt=\"查看此广告统计信息\" border=\"0\"></a>";
+                                      "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" alt=\"查看此广告统计信息\" border=\"0\"></a>";
                     str_TempStr += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                     str_TempStr += "<td align=\"left\" valign=\"middle\" height=\"20\">" + adsID + "</td>";
                     str_TempStr += "<td align=\"left\" valign=\"middle\" height=\"20\">" + adName + "</td>";
@@ -457,7 +457,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
     string ChildList(string Classid, string sign,string type)
     {
         string str_TempStr = "";
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
 
         DataTable dv = ac.childlist(Classid);
         sign += "─";
@@ -470,9 +470,9 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
                 string adsClassMoney = dv.Rows[i]["Adprice"].ToString();
                 string adsClassAddTime = dv.Rows[i]["creatTime"].ToString();
                 string Op = " <a href=\"javascript:EditAds('" + type + "','" + adsClassID + "');\" class=\"list_link\">" +
-                            "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
+                            "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" +
                             "<a href=\"javascript:AddAdsClass('" + adsClassID + "');\" class=\"list_link\">" +
-                            "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a>" +
+                            "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a>" +
                             "<input type=\"checkbox\" value=\"'" + adsClassID + "'\" id=\"ID\" name=\"ID\" />";
 
                 str_TempStr += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
@@ -499,7 +499,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void adsLock(string adsID)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.Lock(adsID);
         PageRight("锁定广告成功!", "list.aspx");
     }
@@ -513,7 +513,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void adsUnLock(string adsID)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.UnLock(adsID);
         PageRight("解锁广告成功!", "list.aspx");
     }
@@ -527,7 +527,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void adsDelAll()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.DelAllAds();
         PageRight("删除全部广告成功!", "list.aspx");
     }
@@ -541,7 +541,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void adsDel(string idStr)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.DelPAds(idStr);
         PageRight("批量删除广告成功!", "list.aspx");
     }
@@ -555,7 +555,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void classDelAll()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.DelAllAdsClass();
         PageRight("删除全部栏目成功!", "list.aspx");
     }
@@ -569,7 +569,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void classDel(string idStr)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.DelPAdsClass(idStr);
         PageRight("批量删除栏目成功!", "list.aspx");
     }
@@ -582,7 +582,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void statDelAll()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.statDelAll();
         PageRight("重置全部统计信息成功!", "list.aspx");
     }
@@ -596,7 +596,7 @@ public partial class manage_advertisement_list : Foosun.Web.UI.ManagePage
 
     protected void statDel(string idStr)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         ac.statDel(idStr);
         PageRight("批量重置统计信息成功!", "list.aspx");
     }

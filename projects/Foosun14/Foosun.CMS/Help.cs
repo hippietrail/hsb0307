@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Help
     {
         private IHelp dal;
         public Help()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateHelp();
+            dal = Hg.DALFactory.DataAccess.CreateHelp();
         }
         public int Str_CheckSql(string Str_HelpID)
         {

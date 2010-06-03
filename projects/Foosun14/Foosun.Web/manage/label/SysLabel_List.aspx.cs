@@ -11,10 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
+public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
 {
     public manage_label_SysLabel_List()
     {
@@ -22,23 +22,23 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
     }
     public string Cname = "";
     public string ReloadURL = "";
-    Foosun.CMS.Label ld = new Foosun.CMS.Label();
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.Label ld = new Hg.CMS.Label();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除标签缓存
-        Foosun.Publish.CustomLabel._lableTableInfo.Clear();
+        Hg.Publish.CustomLabel._lableTableInfo.Clear();
         Response.CacheControl = "no-cache";                        //设置页面无缓存
         if (!IsPostBack)
         {
             
             copyright.InnerHtml = CopyRight;
             ReloadURL = "http://passport.foosun.net/libary/dotnetcms/reloadlabel/label.aspx?type=reload";
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             {
                 string getSiteID = Request.QueryString["SiteID"];
                 if (getSiteID != null && getSiteID != "") { channelList.InnerHtml = SiteList(getSiteID); }
-                else { channelList.InnerHtml = SiteList(Foosun.Global.Current.SiteID); }
+                else { channelList.InnerHtml = SiteList(Hg.Global.Current.SiteID); }
             }
         }
         Op();
@@ -99,7 +99,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
         {
             if (SiteID != "0")
             {
-                _SiteID = Foosun.Global.Current.SiteID;
+                _SiteID = Hg.Global.Current.SiteID;
             }
         }
         if (action_s != null && action_s != string.Empty)
@@ -107,7 +107,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@SiteID", _SiteID);
             st[1] = new SQLConditionInfo("@Keyword", "%" + Request.QueryString["keyword"].ToString() + "%");
-            dt = Foosun.CMS.Pagination.GetPage("manage_label_SysLabel_List_3_aspx", PageIndex, 40, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("manage_label_SysLabel_List_3_aspx", PageIndex, 40, out i, out j, st);
             Cname = "标签名称";
             Back.InnerHtml = "";
         }
@@ -116,7 +116,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
             if (str_classid == null || str_classid == "" || str_classid == string.Empty)
             {
                 SQLConditionInfo st = new SQLConditionInfo("@SiteID", _SiteID);
-                dt = Foosun.CMS.Pagination.GetPage("manage_label_SysLabel_List_1_aspx", PageIndex, 30, out i, out j, st);
+                dt = Hg.CMS.Pagination.GetPage("manage_label_SysLabel_List_1_aspx", PageIndex, 30, out i, out j, st);
                 tf = true;
 
                 Cname = "分类名称";
@@ -126,8 +126,8 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
             {
                 SQLConditionInfo[] st = new SQLConditionInfo[2];
                 st[0] = new SQLConditionInfo("@SiteID", _SiteID);
-                st[1] = new SQLConditionInfo("@ClassID", Foosun.Common.Input.Filter(str_classid));
-                dt = Foosun.CMS.Pagination.GetPage("manage_label_SysLabel_List_2_aspx", PageIndex, 40, out i, out j, st);
+                st[1] = new SQLConditionInfo("@ClassID", Hg.Common.Input.Filter(str_classid));
+                dt = Hg.CMS.Pagination.GetPage("manage_label_SysLabel_List_2_aspx", PageIndex, 40, out i, out j, st);
 
                 Cname = "标签名称";
                 Back.InnerHtml = "&nbsp;┊&nbsp;<a href=\"SysLabel_List.aspx\" class=\"list_link\">返回上一级</a>";
@@ -157,11 +157,11 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
                         dt.Rows[k]["Type"] = "<span style=\"text-DECORATION:none;cursor:pointer;\" onclick=\"shdivlabel('" + dt.Rows[k]["LabelID"] + "');\" title=\"点击查看标签内容\">" + dt.Rows[k]["Label_Name"].ToString() + "</span>" + tstr + "";
                         if (str_classid == "99999999")
                         {
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"查看\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"查看\" /></a>";
                         }
                         else
                         {
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"sysLabel_out.aspx?LabelID=" + dt.Rows[k]["LabelID"].ToString() + "&LabelName=" + dt.Rows[k]["Label_Name"].ToString() + "&type=out\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/out.gif\" border=\"0\" alt=\"导出标签\" /></a>&nbsp;<a href=\"javascript:Bak('" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/bak.gif\" border=\"0\" alt=\"放进备份库,注意:操作成功后此标签将不能使用.\" /></a>&nbsp;<a href=\"javascript:Del('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" />&nbsp;<a href=\"javascript:Dels('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"sysLabel_out.aspx?LabelID=" + dt.Rows[k]["LabelID"].ToString() + "&LabelName=" + dt.Rows[k]["Label_Name"].ToString() + "&type=out\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/out.gif\" border=\"0\" alt=\"导出标签\" /></a>&nbsp;<a href=\"javascript:Bak('" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/bak.gif\" border=\"0\" alt=\"放进备份库,注意:操作成功后此标签将不能使用.\" /></a>&nbsp;<a href=\"javascript:Del('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" />&nbsp;<a href=\"javascript:Dels('Label','" + dt.Rows[k]["LabelID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
                         }
                     }
                     else
@@ -170,12 +170,12 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
                         if (dt.Rows[k]["ClassID"].ToString() == "99999999")
                         {
                             dt.Rows[k]["Type"] = "<a class=\"list_link\" href=\"SysLabel_List.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&SiteID=" + Request.QueryString["SiteID"] + "\" title=\"点击查看此分类下的标签\"><img src=\"../../sysImages/folder/review.gif\" border=\"0\" /><font color=\"red\">" + dt.Rows[k]["ClassName"].ToString() + "</font></a><span class=\"reshow\" style=\"font-size:10px;\" title=\"此栏目下标签数\">(" + getCount + ")</span>";
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:reload();\" class='list_link'><img src=\"../../sysImages/folder/downlabel.gif\" border=\"0\" title=\"从风讯(Foosun.net)官方重新获取完整的系统标签\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:reload();\" class='list_link'><img src=\"../../sysImages/folder/downlabel.gif\" border=\"0\" title=\"从风讯(Hg.net)官方重新获取完整的系统标签\" /></a>";
                         }
                         else
                         {
                             dt.Rows[k]["Type"] = "<a class=\"list_link\" href=\"SysLabel_List.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&SiteID=" + Request.QueryString["SiteID"] + "\" title=\"点击查看此分类下的标签\"><img src=\"../../sysImages/folder/review.gif\" border=\"0\" />" + dt.Rows[k]["ClassName"].ToString() + "</a><span class=\"reshow\" style=\"font-size:10px;\" title=\"此栏目下标签数\">(" + getCount + ")</span>";
-                            dt.Rows[k]["Op"] = "<a href=\"syslable_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/add.gif\" border=\"0\" alt=\"增加标签\" /></a>&nbsp;<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:Del('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /></a>&nbsp;<a href=\"javascript:Dels('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"syslable_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/add.gif\" border=\"0\" alt=\"增加标签\" /></a>&nbsp;<a href=\"javascript:Update('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>&nbsp;<a href=\"javascript:Del('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /></a>&nbsp;<a href=\"javascript:Dels('LabelClass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
                         }
                     }
                 }
@@ -205,10 +205,10 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
                 switch (str_Type)
                 {
                     case "Label":
-                        delLabel(Foosun.Common.Input.checkID(str_ID));
+                        delLabel(Hg.Common.Input.checkID(str_ID));
                         break;
                     case "LabelClass":
-                        delLabelClass(Foosun.Common.Input.checkID(str_ID));
+                        delLabelClass(Hg.Common.Input.checkID(str_ID));
                         break;
                     default:
                         break;
@@ -218,17 +218,17 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
                 switch (str_Type)
                 {
                     case "Label":
-                        delsLabel(Foosun.Common.Input.checkID(str_ID));
+                        delsLabel(Hg.Common.Input.checkID(str_ID));
                         break;
                     case "LabelClass":
-                        delsLabelClass(Foosun.Common.Input.checkID(str_ID));
+                        delsLabelClass(Hg.Common.Input.checkID(str_ID));
                         break;
                     default:
                         break;
                 }
                 break;
             case "Bak":
-                LabelBak(Foosun.Common.Input.checkID(str_ID));
+                LabelBak(Hg.Common.Input.checkID(str_ID));
                 break;
             default:
                 break;
@@ -246,7 +246,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
     {
         this.Authority_Code = "T013";
         this.CheckAdminAuthority();
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelDel(ID);
         PageRight("将标签放入回收站成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }
@@ -262,7 +262,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
     {
         this.Authority_Code = "T014";
         this.CheckAdminAuthority();
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelDels(ID);
         PageRight("彻底删除标签成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }
@@ -276,7 +276,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
 
     protected void delsLabelClass(string ID)
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelClassDels(ID);
         PageRight("彻底删除栏目成功!", "SysLabel_List.aspx");
     }
@@ -290,7 +290,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
 
     protected void delLabelClass(string ID)
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelClassDel(ID);
         PageRight("将栏目放入回收站成功!", "SysLabel_List.aspx");
     }
@@ -304,7 +304,7 @@ public partial class manage_label_SysLabel_List : Foosun.Web.UI.ManagePage
     
     protected void LabelBak(string ID)
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelBackUp(ID);
         PageRight("将标签放入备份库成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }

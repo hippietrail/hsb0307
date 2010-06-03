@@ -8,16 +8,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class manage_user_announce : Foosun.Web.UI.ManagePage
+public partial class manage_user_announce : Hg.Web.UI.ManagePage
 {
     public manage_user_announce()
     {
         Authority_Code = "U019";
     }
-    Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+    Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
     UserList UL = new UserList();
     /// <summary>
     /// Page_Load 的摘要说明
@@ -40,7 +40,7 @@ public partial class manage_user_announce : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    channelList.InnerHtml = SiteList(Foosun.Global.Current.SiteID);
+                    channelList.InnerHtml = SiteList(Hg.Global.Current.SiteID);
                 }
             }
 
@@ -50,7 +50,7 @@ public partial class manage_user_announce : Foosun.Web.UI.ManagePage
                 string aId = "";
                 try
                 {
-                    aId = Foosun.Common.Input.Filter(Request.QueryString["ID"]);
+                    aId = Hg.Common.Input.Filter(Request.QueryString["ID"]);
                 }
                 catch (Exception AX)
                 {
@@ -184,7 +184,7 @@ public partial class manage_user_announce : Foosun.Web.UI.ManagePage
         string siteID1 = "";
         if (Request.QueryString["SiteID"] != "" && Request.QueryString["SiteID"] != "0" && Request.QueryString["SiteID"] != null)
         {
-            siteID1 = Foosun.Common.Input.Filter(Request.QueryString["SiteID"].ToString());
+            siteID1 = Hg.Common.Input.Filter(Request.QueryString["SiteID"].ToString());
         }
         int i, j;
         DataTable dt = null;
@@ -193,16 +193,16 @@ public partial class manage_user_announce : Foosun.Web.UI.ManagePage
             if (SiteID == "0")
             {
                 SQLConditionInfo st = new SQLConditionInfo("@SiteID", siteID1);
-                dt = Foosun.CMS.Pagination.GetPage("manage_user_announce_1_aspx", PageIndex, 20, out i, out j, st);
+                dt = Hg.CMS.Pagination.GetPage("manage_user_announce_1_aspx", PageIndex, 20, out i, out j, st);
             }
             else
             {
-                dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+                dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
             }
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -217,7 +217,7 @@ public partial class manage_user_announce : Foosun.Web.UI.ManagePage
                 //----------------------------------------添加列结束--------------------------------------------
                 for (int k = 0; dt.Rows.Count > k; k++)
                 {
-                    dt.Rows[k]["op"] = "<a href=\"Announce_Edit.aspx?Id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"Announce.aspx?Type=Del&id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除' onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"></a><input type=\"checkbox\" name=\"aid\" value=\"" + dt.Rows[k]["id"] + "\" />";
+                    dt.Rows[k]["op"] = "<a href=\"Announce_Edit.aspx?Id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt='修改'></a><a href=\"Announce.aspx?Type=Del&id=" + dt.Rows[k]["id"] + "\" class='list_link'><img src=\"../../sysimages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt='删除' onClick=\"{if(confirm('确定要删除吗？')){return true;}return false;}\"></a><input type=\"checkbox\" name=\"aid\" value=\"" + dt.Rows[k]["id"] + "\" />";
                     if (dt.Rows[k]["islock"].ToString() == "1")
                     {
                         dt.Rows[k]["islocks"] = "<span class=\"tbie\">锁定</span>";

@@ -10,11 +10,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomForm_Add : Foosun.Web.UI.ManagePage
+    public partial class CustomForm_Add : Hg.Web.UI.ManagePage
     {
         static private readonly string FormTbPre = Config.DBConfig.TableNamePrefix + "Form_";
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace Foosun.Web.manage.Sys
                     this.HidID.Value = id.ToString();
                     this.TxtTableName.Attributes.Add("readonly", "true");
                     this.LtrCaption.Text = "修改表单";
-                    Foosun.CMS.CustomForm customfm = new Foosun.CMS.CustomForm();
+                    Hg.CMS.CustomForm customfm = new Hg.CMS.CustomForm();
                     CustomFormInfo info = customfm.GetInfo(id);
                     this.TxtName.Text = info.formname;
                     this.TxtTableName.Text = Regex.Replace(info.formtablename, "^" + Regex.Escape(FormTbPre), "", RegexOptions.Compiled);
@@ -102,7 +102,7 @@ namespace Foosun.Web.manage.Sys
                 cf.submitonce = this.ChbOnce.Checked;
                 cf.showvalidatecode = this.ChbShowValidate.Checked;
                 cf.memo = this.TxtMemo.Text.Trim();
-                Foosun.CMS.CustomForm customfm = new Foosun.CMS.CustomForm();
+                Hg.CMS.CustomForm customfm = new Hg.CMS.CustomForm();
                 customfm.Edit(cf);
                 if (cf.id > 0)
                     PageRight("修改自定义表单成功!", "CustomForm.aspx");

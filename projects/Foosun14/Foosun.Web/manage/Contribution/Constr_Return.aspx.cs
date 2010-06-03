@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_Return : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_Return : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_Constr_Return()
     {
@@ -34,7 +34,7 @@ public partial class manage_Contribution_Constr_Return : Foosun.Web.UI.ManagePag
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            string ConID = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+            string ConID = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
             DataTable dt = con.sel23(ConID);
             int ispass = int.Parse(dt.Rows[0]["ispass"].ToString());
             if (ispass == 1)
@@ -48,8 +48,8 @@ public partial class manage_Contribution_Constr_Return : Foosun.Web.UI.ManagePag
     protected void But_Click(object sender, EventArgs e)
     {
         rootPublic rd = new rootPublic();
-        string ConIDs = Foosun.Common.Input.Filter(Request.QueryString["ConID"].ToString());
-        string passcontent = Foosun.Common.Input.Filter(Request.Form["passcontent"].ToString());
+        string ConIDs = Hg.Common.Input.Filter(Request.QueryString["ConID"].ToString());
+        string passcontent = Hg.Common.Input.Filter(Request.Form["passcontent"].ToString());
         if (con.Update6(passcontent, ConIDs) == 0)
         {
             rd.SaveUserAdminLogs(1, 1, UserNum, "退稿", "操作失败");

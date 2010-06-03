@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_System_shortcut : Foosun.Web.UI.ManagePage
+public partial class manage_System_shortcut : Hg.Web.UI.ManagePage
 {
     public manage_System_shortcut()
     {
@@ -60,7 +60,7 @@ public partial class manage_System_shortcut : Foosun.Web.UI.ManagePage
             string Str_action = Request.Form["action_edit"];
             string str_ID = Request.Form["action_id"];
             string Str_QmID;
-            Str_QmID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            Str_QmID = Hg.Common.Rand.Number(12);//产生12位随机字符
             DataTable dt = rd.QGetRecord(0);
             if (dt.Rows.Count > 20)
             {
@@ -70,7 +70,7 @@ public partial class manage_System_shortcut : Foosun.Web.UI.ManagePage
             {
                 if (Str_action == "edit")
                 {
-                    Foosun.Model.UserInfo8 uc = new Foosun.Model.UserInfo8();
+                    Hg.Model.UserInfo8 uc = new Hg.Model.UserInfo8();
                     uc.qName = Str_qName;
                     uc.FilePath = Str_FilePath;
                     uc.OrderID = int.Parse(Str_orderID);
@@ -89,7 +89,7 @@ public partial class manage_System_shortcut : Foosun.Web.UI.ManagePage
                         }
                         else
                         {
-                            Foosun.Model.UserInfo8 uc = new Foosun.Model.UserInfo8();
+                            Hg.Model.UserInfo8 uc = new Hg.Model.UserInfo8();
                             uc.QmID = Str_QmID;
                             uc.qName = Str_qName;
                             uc.FilePath = Str_FilePath;

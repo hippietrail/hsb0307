@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
+public partial class manage_news_Recyle : Hg.Web.UI.ManagePage
 {
     public manage_news_Recyle()
     {
@@ -61,7 +61,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             Response.Write("<table width=\"98%\" border=\"0\" align=\"center\" cellpadding=\"4\" cellspacing=\"1\" bgcolor=\"#FFFFFF\" class=\"table\"><tr class=\"TR_BG_list\"><td align=\"left\">API</td></tr></table>");
             Response.End();
         }
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         DataTable dt = rc.getList(type);
  
         if (dt != null)
@@ -140,7 +140,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
         str_TempStr += "<a href=\"javascript:PR('" + type + "');\" class=\"list_link\">批量恢复</a>&nbsp;┊&nbsp;\r";
         str_TempStr += "<a href=\"javascript:PD('" + type + "');\" class=\"list_link\">批量删除</a> \r";
         
-        Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup ac = new Hg.CMS.AdminGroup();
         if (type == "NList")
         {
             DataTable dt = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", "Where isRecyle=0 And SiteID='" + SiteID + "'");
@@ -289,12 +289,12 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
                 case "PR":  //批量恢复
                     this.Authority_Code = "Q027";
                     this.CheckAdminAuthority();
-                    PR(type, Foosun.Common.Input.CutComma(CheckID(str_IdList)));
+                    PR(type, Hg.Common.Input.CutComma(CheckID(str_IdList)));
                     break;
                 case "PD":  //批量删除
                     this.Authority_Code = "Q027";
                     this.CheckAdminAuthority();
-                    PD(type, Foosun.Common.Input.CutComma(CheckID(str_IdList)));
+                    PD(type, Hg.Common.Input.CutComma(CheckID(str_IdList)));
                     break;           
             }
         }
@@ -309,7 +309,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
     
     protected string CheckID(string idlist)
     {
-        idlist = Foosun.Common.Input.Losestr(idlist);
+        idlist = Hg.Common.Input.Losestr(idlist);
         if (idlist == "IsNull")
             PageError("请选择要批量操作的内容!", "");
         return idlist;
@@ -490,7 +490,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallNCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallNCList();
         PageRight("恢复全部新闻栏目成功!", "");
     }
@@ -508,7 +508,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请指定一个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.RallNList(str_ClassID);
             PageRight("恢复全部新闻成功!", "");
         }
@@ -522,7 +522,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallCList();
         PageRight("恢复全部频道成功!", "");
     }
@@ -535,7 +535,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallSList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallSList();
         PageRight("恢复全部专题成功!", "");
     }
@@ -548,7 +548,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallLCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallLCList();
         PageRight("恢复全部标签栏目成功!", "");
     }
@@ -566,7 +566,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请选择要将标签恢复到那个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.RallLList(str_ClassID);
             PageRight("恢复全部标签成功!", "");
         }
@@ -580,7 +580,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallStCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallStCList();
         PageRight("恢复全部样式栏目成功!", "");
     }
@@ -598,7 +598,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请选择要将样式恢复到那个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.RallStList(str_ClassID);
             PageRight("恢复全部样式成功!", "");
         }
@@ -613,7 +613,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void RallPSFList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.RallPSFList();
         PageRight("恢复全部PSF(结点)成功!", "");
     }
@@ -626,7 +626,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
         
     protected void DallNCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallNCList();
         PageRight("删除全部新闻栏目成功!", "");
     }
@@ -640,7 +640,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallNList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallNList();
         PageRight("删除全部新闻成功!", "");
     }
@@ -653,7 +653,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallCList();
         PageRight("删除全部频道成功!", "");
     }
@@ -666,7 +666,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallSList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallSList();
         PageRight("删除全部专题成功!", "");
     }
@@ -679,7 +679,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallLCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallLCList();
         PageRight("删除全部标签栏目成功!", "");
     }
@@ -693,7 +693,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallLList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallLList();
         PageRight("删除全部标签成功!", "");
     }
@@ -707,7 +707,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallStCList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallStCList();
         PageRight("删除全部样式栏目成功!", "");
     }
@@ -721,7 +721,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallStList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallStList();
         PageRight("删除全部样式成功!", "");
     }
@@ -734,7 +734,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void DallPSFList()
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.DallPSFList();
         PageRight("删除全部PSF结点成功!", "");
     }
@@ -748,7 +748,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRNCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRNCList(idlist);
         PageRight("批量恢复新闻栏目成功!", "");
     }
@@ -767,7 +767,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请选择要将新闻恢复到那个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.PRNList(str_ClassID,idlist);
             PageRight("批量恢复新闻成功!", "");
         }
@@ -782,7 +782,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRCList(idlist);
         PageRight("批量恢复频道成功!", "");
      }
@@ -796,7 +796,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRSList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRSList(idlist);
         PageRight("批量恢复专题成功!", "");
     }
@@ -810,7 +810,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRStCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRStCList(idlist);
         PageRight("批量恢复样式栏目成功!", "");
     }
@@ -829,7 +829,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请选择要将样式恢复到那个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.PRStList(str_ClassID, idlist);
             PageRight("批量恢复样式成功!", "");
         }
@@ -844,7 +844,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRLCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRLCList(idlist);
         PageRight("批量恢复标签栏目成功!", "");
     }
@@ -864,7 +864,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
             PageError("请选择要将标签恢复到那个栏目!", "");
         else
         {
-            Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+            Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
             rc.PRLList(str_ClassID, idlist);
             PageRight("批量恢复标签成功!", "");
         }
@@ -879,7 +879,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PRPSFList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PRPSFList(idlist);
         PageRight("批量恢复PSF(结点)成功!", "");
     }
@@ -893,7 +893,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDNCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDNCList(idlist);
         PageRight("批量删除新闻栏目成功!", "");
     }
@@ -909,7 +909,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDNList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDNList(idlist);
         PageRight("批量删除新闻成功!", "");
     }
@@ -923,7 +923,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDCList(idlist);
         PageRight("批量删除频道成功!", "");
     }
@@ -937,7 +937,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDSList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDSList(idlist);
         PageRight("批量删除专题成功!", "");
     }
@@ -952,7 +952,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDStCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDStCList(idlist);
         PageRight("批量删除样式栏目成功!", "");
     }
@@ -966,7 +966,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDStList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDStList(idlist);
         PageRight("批量删除样式成功!", "");
     }
@@ -981,7 +981,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDLCList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDLCList(idlist);
         PageRight("批量删除标签栏目成功!", "");
     }
@@ -996,7 +996,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDLList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDLList(idlist);
         PageRight("批量删除标签成功!", "");
     }
@@ -1010,7 +1010,7 @@ public partial class manage_news_Recyle : Foosun.Web.UI.ManagePage
 
     protected void PDPSFList(string idlist)
     {
-        Foosun.CMS.Recyle rc = new Foosun.CMS.Recyle();
+        Hg.CMS.Recyle rc = new Hg.CMS.Recyle();
         rc.PDPSFList(idlist);
         PageRight("批量删除PSF(结点)成功!", "");
     }

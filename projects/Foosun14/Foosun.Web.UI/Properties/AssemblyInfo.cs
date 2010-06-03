@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Foosun.Web.UI")]
+[assembly: AssemblyTitle("Hg.Web.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("风讯科技")]
-[assembly: AssemblyProduct("Foosun.Web.UI")]
+[assembly: AssemblyProduct("Hg.Web.UI")]
 [assembly: AssemblyCopyright("Copyright © 风讯科技 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

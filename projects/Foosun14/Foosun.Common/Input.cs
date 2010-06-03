@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace Foosun.Common
+namespace Hg.Common
 {
 	public class Input
 	{
@@ -181,8 +181,8 @@ namespace Foosun.Common
 		/// <returns></returns>
 		public static string GetSubString(string Str, int Num)
 		{
-			string titlemore = Foosun.Config.UIConfig.titlemore;
-			string titlenew = Foosun.Config.UIConfig.titlenew;
+			string titlemore = Hg.Config.UIConfig.titlemore;
+			string titlenew = Hg.Config.UIConfig.titlenew;
 			if (Str == null || Str == "")
 			{
 				return "";
@@ -658,7 +658,7 @@ namespace Foosun.Common
 		/// <returns></returns>
 		public static string isPicStr(string inputStr)
 		{
-			string dimm = Foosun.Config.UIConfig.dirDumm;
+			string dimm = Hg.Config.UIConfig.dirDumm;
 			if (dimm.Trim() != string.Empty)
 			{
 				dimm = "/" + dimm;
@@ -700,7 +700,7 @@ namespace Foosun.Common
 					}
 					if (PType == 1)
 					{
-						gStr = "<img src=\"" + dimm + inputStr.ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile) + "\" border=\"0\" />";
+						gStr = "<img src=\"" + dimm + inputStr.ToLower().Replace("{@dirfile}", Hg.Config.UIConfig.dirFile) + "\" border=\"0\" />";
 					}
 					else
 					{

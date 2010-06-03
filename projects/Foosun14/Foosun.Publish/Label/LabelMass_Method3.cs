@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.Config;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.Config;
+using Hg.Model;
+using Hg.Common;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
@@ -60,7 +60,7 @@ namespace Foosun.Publish
 
             if (str_CSS != null)
                 str_CSS = " class=\"" + str_CSS + "\"";
-            string dirUser = Foosun.Config.UIConfig.dirUser;
+            string dirUser = Hg.Config.UIConfig.dirUser;
             int i = 0;
             IDataReader rd = CommonData.DalPublish.GetDiscussInfo(str_GroupType, this.Param_Loop);
             while (rd.Read())
@@ -68,7 +68,7 @@ namespace Foosun.Publish
                 string row = "";
                 string str_Cname = rd["Cname"].ToString();
                 if (str_TitleNumer != null)
-                    str_Cname = Foosun.Common.Input.GetSubString(str_Cname, Convert.ToInt32(str_TitleNumer));
+                    str_Cname = Hg.Common.Input.GetSubString(str_Cname, Convert.ToInt32(str_TitleNumer));
 
                 if (str_ShowM == "true")
                     row = getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + "<a href=\"" + CommonData.SiteDomain + "/" + dirUser + "/index.aspx?urls=discuss/discussTopi_list.aspx?DisID=" + rd["DisID"].ToString() + "" + "\" " + str_CSS + ">" + str_Cname + "</a> " + rd[Fileds].ToString();
@@ -158,15 +158,15 @@ namespace Foosun.Publish
                     string getNavistr = getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i);
                     if (str_ShowDate == "right")
                     {
-                        str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavistr + " <a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span><span style=\"float:right\">" + dt.Rows[i]["RegTime"].ToString() + "</a></span></li>" + newLine;
+                        str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavistr + " <a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span><span style=\"float:right\">" + dt.Rows[i]["RegTime"].ToString() + "</a></span></li>" + newLine;
                     }
                     else if (str_ShowDate == "left")
                     {
-                        str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavistr + " <a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span> <span>" + dt.Rows[i]["RegTime"].ToString() + "</a></span></li>" + newLine;
+                        str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavistr + " <a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span> <span>" + dt.Rows[i]["RegTime"].ToString() + "</a></span></li>" + newLine;
                     }
                     else
                     {
-                        str_NewUser += "<li style=\"list-style:none;\"><span>" + getNavistr + "<a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span></li>" + newLine;
+                        str_NewUser += "<li style=\"list-style:none;\"><span>" + getNavistr + "<a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + dt.Rows[i]["UserName"].ToString() + ".aspx\" " + classStr + ">" + dt.Rows[i]["UserName"].ToString() + "</a></span></li>" + newLine;
                     }
                 }
                 dt.Clear(); dt.Dispose();
@@ -223,15 +223,15 @@ namespace Foosun.Publish
             {
                 if (str_PointParam == "right")
                 {
-                    str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" " + classStr + " title=\"昵称：" + rd["NickName"].ToString() + "\" target=\"_blank\">" + rd["UserName"].ToString() + "</a></span><span style=\"float:right\">" + rd[Fileds].ToString() + "</span></li>" + newLine;
+                    str_NewUser += "<li style=\"list-style:none;\"><span style=\"float:left\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" " + classStr + " title=\"昵称：" + rd["NickName"].ToString() + "\" target=\"_blank\">" + rd["UserName"].ToString() + "</a></span><span style=\"float:right\">" + rd[Fileds].ToString() + "</span></li>" + newLine;
                 }
                 else if (str_PointParam == "left")
                 {
-                    str_NewUser += "<li style=\"list-style:none;\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" title=\"昵称：" + rd["NickName"].ToString() + "\" " + classStr + " target=\"_blank\">" + rd["UserName"].ToString() + "</a> " + rd[Fileds].ToString() + "</li>" + newLine;
+                    str_NewUser += "<li style=\"list-style:none;\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" title=\"昵称：" + rd["NickName"].ToString() + "\" " + classStr + " target=\"_blank\">" + rd["UserName"].ToString() + "</a> " + rd[Fileds].ToString() + "</li>" + newLine;
                 }
                 else
                 {
-                    str_NewUser += "<li style=\"list-style:none;\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" title=\"昵称：" + rd["NickName"].ToString() + "\" " + classStr + " target=\"_blank\">" + rd["UserName"].ToString() + "</a></li>" + newLine;
+                    str_NewUser += "<li style=\"list-style:none;\">" + getNavi(str_ShowNavi, str_NaviCSS, str_NaviPic, i) + " <a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + rd["UserName"].ToString() + ".aspx\" title=\"昵称：" + rd["NickName"].ToString() + "\" " + classStr + " target=\"_blank\">" + rd["UserName"].ToString() + "</a></li>" + newLine;
                 }
                 i++;
             }
@@ -251,7 +251,7 @@ namespace Foosun.Publish
         public string Analyse_UserLogin()
         {
             #region  判断是否开启整合
-            Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
+            Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
 
             #endregion
             string str_LoginP = this.GetParamValue("FS:LoginP");
@@ -260,7 +260,7 @@ namespace Foosun.Publish
             string str_RegCSS = this.GetParamValue("FS:RegCSS");
             string str_PassCSS = this.GetParamValue("FS:PassCSS");
             string str_StyleID = this.GetParamValue("FS:StyleID");
-            string str_RandNum = Foosun.Common.Rand.Number(5);
+            string str_RandNum = Hg.Common.Rand.Number(5);
             string str_UserLogin = "<div id=\"Div_UserInfo" + str_RandNum + "\">正在加载中..." + newLine;
             str_UserLogin += "</div>" + newLine;
 
@@ -271,7 +271,7 @@ namespace Foosun.Publish
             str_UserLogin += "var hiddenValues;" + newLine;
             str_UserLogin += "function getLoginForm()" + newLine;
             str_UserLogin += "{" + newLine;
-            str_UserLogin += "      var Action='Type=getLoginForm&RandNum=" + str_RandNum + "&LoginP=" + str_LoginP + "&FormCSS=" + str_FormCSS + "&LoginCSS=" + str_LoginCSS + "&RegCSS=" + Foosun.Common.Input.URLEncode(str_RegCSS) + "&PassCSS=" + Foosun.Common.Input.URLEncode(str_PassCSS) + "&StyleID=" + Foosun.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
+            str_UserLogin += "      var Action='Type=getLoginForm&RandNum=" + str_RandNum + "&LoginP=" + str_LoginP + "&FormCSS=" + str_FormCSS + "&LoginCSS=" + str_LoginCSS + "&RegCSS=" + Hg.Common.Input.URLEncode(str_RegCSS) + "&PassCSS=" + Hg.Common.Input.URLEncode(str_PassCSS) + "&StyleID=" + Hg.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
             str_UserLogin += "      var options={ " + newLine;
             str_UserLogin += "                  method:'get', " + newLine;
             str_UserLogin += "                  parameters:Action, " + newLine;
@@ -284,7 +284,7 @@ namespace Foosun.Publish
             str_UserLogin += "                          document.getElementById(\"Div_UserInfo" + str_RandNum + "\").innerHTML=returnvalue; " + newLine;
             str_UserLogin += "                   } " + newLine;
             str_UserLogin += "                   }; " + newLine;
-            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
+            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
             str_UserLogin += "}" + newLine;
 
             str_UserLogin += "function LoginSubmit(obj)" + newLine;
@@ -297,7 +297,7 @@ namespace Foosun.Publish
             if (config.Enable)
             {
                 str_UserLogin += "      hiddenValues = obj.UserNum.value;" + newLine;
-                str_UserLogin += "      var adaptAction='username='+escape(obj.UserNum.value)+'&password='+escape(obj.UserPwd.value)+'&tag=login&StyleID=" + Foosun.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
+                str_UserLogin += "      var adaptAction='username='+escape(obj.UserNum.value)+'&password='+escape(obj.UserPwd.value)+'&tag=login&StyleID=" + Hg.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
                 str_UserLogin += "      var adaptOptions={" + newLine;
                 str_UserLogin += "                  method:'get'," + newLine;
                 str_UserLogin += "                  parameters:adaptAction," + newLine;
@@ -306,11 +306,11 @@ namespace Foosun.Publish
                 str_UserLogin += "                       sendInterface(transport);" + newLine;
                 str_UserLogin += "                  }" + newLine;
                 str_UserLogin += "                   }; " + newLine;
-                str_UserLogin += "      new Ajax.Request('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/ConformityInterface.aspx?no-cache='+Math.random(),adaptOptions);" + newLine;
+                str_UserLogin += "      new Ajax.Request('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/ConformityInterface.aspx?no-cache='+Math.random(),adaptOptions);" + newLine;
             }
             #endregion
 
-            str_UserLogin += "      var Action='UserNum='+escape(obj.UserNum.value)+'&UserPwd='+escape(obj.UserPwd.value)+'&Type=Login&RandNum=" + str_RandNum + "&LoginP=" + str_LoginP + "&StyleID=" + Foosun.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
+            str_UserLogin += "      var Action='UserNum='+escape(obj.UserNum.value)+'&UserPwd='+escape(obj.UserPwd.value)+'&Type=Login&RandNum=" + str_RandNum + "&LoginP=" + str_LoginP + "&StyleID=" + Hg.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
             str_UserLogin += "      var options={ " + newLine;
             str_UserLogin += "                  method:'get', " + newLine;
             str_UserLogin += "                  parameters:Action, " + newLine;
@@ -325,7 +325,7 @@ namespace Foosun.Publish
             str_UserLogin += "                          document.getElementById(\"Div_UserInfo" + str_RandNum + "\").innerHTML=returnvaluearr[1]; " + newLine;
             str_UserLogin += "                   } " + newLine;
             str_UserLogin += "                   }; " + newLine;
-            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
+            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
             str_UserLogin += "}" + newLine;
 
             if (config.Enable)
@@ -384,7 +384,7 @@ namespace Foosun.Publish
             #region 整合，同步退出
             if (config.Enable)
             {
-                str_UserLogin += "      var adaptAction='tag=logout&userName='+escape(hiddenValues)+'&StyleID=" + Foosun.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
+                str_UserLogin += "      var adaptAction='tag=logout&userName='+escape(hiddenValues)+'&StyleID=" + Hg.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
                 str_UserLogin += "      var adaptOptions={" + newLine;
                 str_UserLogin += "                  method:'get'," + newLine;
                 str_UserLogin += "                  parameters:adaptAction," + newLine;
@@ -393,11 +393,11 @@ namespace Foosun.Publish
                 str_UserLogin += "                        sendLoginOutInterFace(transport);" + newLine;
                 str_UserLogin += "                  } " + newLine;
                 str_UserLogin += "                   }; " + newLine;
-                str_UserLogin += "      new Ajax.Request('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/ConformityInterface.aspx?no-cache='+Math.random(),adaptOptions);" + newLine;
+                str_UserLogin += "      new Ajax.Request('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/ConformityInterface.aspx?no-cache='+Math.random(),adaptOptions);" + newLine;
             }
             #endregion
 
-            str_UserLogin += "      var Action='Type=LoginOut&LoginP=" + str_LoginP + "&StyleID=" + Foosun.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
+            str_UserLogin += "      var Action='Type=LoginOut&LoginP=" + str_LoginP + "&StyleID=" + Hg.Common.Input.URLEncode(str_StyleID) + "';" + newLine;
             str_UserLogin += "      var options={ " + newLine;
             str_UserLogin += "                  method:'get', " + newLine;
             str_UserLogin += "                  parameters:Action, " + newLine;
@@ -410,7 +410,7 @@ namespace Foosun.Publish
             str_UserLogin += "                          document.getElementById(\"Div_UserInfo" + str_RandNum + "\").innerHTML=returnvalue; " + newLine;
             str_UserLogin += "                   } " + newLine;
             str_UserLogin += "                   }; " + newLine;
-            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
+            str_UserLogin += "      new  Ajax.Request('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/UserLoginajax.aspx?no-cache='+Math.random(),options);" + newLine;
             str_UserLogin += "}" + newLine;
 
             str_UserLogin += "getLoginForm();" + newLine;
@@ -444,7 +444,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string str_Title = Foosun.Common.Input.GetSubString(dt.Rows[i]["Content"].ToString(), i_tnumber);
+                    string str_Title = Hg.Common.Input.GetSubString(dt.Rows[i]["Content"].ToString(), i_tnumber);
                     string GUrls = CommonData.SiteDomain + "/Comment.aspx?CommentType=getlist&id=" + dt.Rows[i]["InfoID"].ToString();
                     if (str_ShowDate == "right")
                     {
@@ -556,7 +556,7 @@ namespace Foosun.Publish
             switch (str_TopNewsType)
             {
                 case "Hour":
-                    if (Foosun.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('d',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }
@@ -566,7 +566,7 @@ namespace Foosun.Publish
                     }
                     break;
                 case "YesDay":
-                    if (Foosun.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('d',[CreatTime] ,now())=1 Order By [CreatTime]";
                     }
@@ -577,7 +577,7 @@ namespace Foosun.Publish
                     break;
                 case "Week":
 
-                    if (Foosun.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('ww',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }
@@ -588,7 +588,7 @@ namespace Foosun.Publish
                     break;
                 case "Month":
 
-                    if (Foosun.Config.UIConfig.WebDAL == "foosun.accessdal")
+                    if (Hg.Config.UIConfig.WebDAL == "foosun.accessdal")
                     {
                         SqlOrderBy += " And DateDiff('m',[CreatTime] ,now())=0 Order By [CreatTime]";
                     }
@@ -642,11 +642,11 @@ namespace Foosun.Publish
             #endregion 对栏目进行判断
 
             int nTitleNum = 30, nContentNum = 200, nNaviNumber = 200;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
                 nTitleNum = int.Parse(str_TitleNumer);
-            if (str_ContentNumber != null && Foosun.Common.Input.IsInteger(str_ContentNumber))
+            if (str_ContentNumber != null && Hg.Common.Input.IsInteger(str_ContentNumber))
                 nContentNum = int.Parse(str_ContentNumber);
-            if (str_NaviNumber != null && Foosun.Common.Input.IsInteger(str_NaviNumber))
+            if (str_NaviNumber != null && Hg.Common.Input.IsInteger(str_NaviNumber))
                 nNaviNumber = int.Parse(str_NaviNumber);
 
             DataTable dt = null;
@@ -671,7 +671,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     {
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         str_newslist += getSubSTR(sNCI.NewsID, string.Empty);
                     }
@@ -683,7 +683,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     {
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         row += getSubSTR(sNCI.NewsID, string.Empty);
                     }
@@ -804,7 +804,7 @@ namespace Foosun.Publish
                     str_NaviRead += "<div>" + newLine;
                     if (str_SpecialTitleNumber != null)
                     {
-                        str_NaviRead += "   <a href=\"" + str_url + "\" style=\"font-weight:bold;\">" + Foosun.Common.Input.GetSubString(info.SpecialCName, int.Parse(str_SpecialTitleNumber));
+                        str_NaviRead += "   <a href=\"" + str_url + "\" style=\"font-weight:bold;\">" + Hg.Common.Input.GetSubString(info.SpecialCName, int.Parse(str_SpecialTitleNumber));
                     }
                     else
                     {
@@ -815,7 +815,7 @@ namespace Foosun.Publish
                     str_NaviRead += "<div>" + newLine;
                     if (str_SpecialNaviTitleNumber != null)
                     {
-                        str_NaviRead += "   " + Foosun.Common.Input.GetSubString(info.NaviContent, int.Parse(str_SpecialNaviTitleNumber)) + "...<a href=\"" + str_url + "\">[详情]</a>";
+                        str_NaviRead += "   " + Hg.Common.Input.GetSubString(info.NaviContent, int.Parse(str_SpecialNaviTitleNumber)) + "...<a href=\"" + str_url + "\">[详情]</a>";
                     }
                     else
                     {
@@ -987,7 +987,7 @@ namespace Foosun.Publish
 
                     str_NaviRead += "<div>" + newLine;
                     if (str_ClassTitleNumber != null)
-                        str_NaviRead += "   <a href=\"" + str_url + "\" style=\"font-weight:bold;\">" + Foosun.Common.Input.GetSubString(info.ClassCName, int.Parse(str_ClassTitleNumber)) + "</a>";
+                        str_NaviRead += "   <a href=\"" + str_url + "\" style=\"font-weight:bold;\">" + Hg.Common.Input.GetSubString(info.ClassCName, int.Parse(str_ClassTitleNumber)) + "</a>";
                     else
                         str_NaviRead += "   <a href=\"" + str_url + "\" style=\"font-weight:bold;\">" + info.ClassCName + "</a>";
                     str_NaviRead += "</div>" + newLine;
@@ -995,7 +995,7 @@ namespace Foosun.Publish
                     str_NaviRead += "<div>" + newLine;
 
                     if (str_ClassNaviTitleNumber != null)
-                        str_NaviRead += "   " + Foosun.Common.Input.GetSubString(info.NaviContent, int.Parse(str_ClassNaviTitleNumber)) + "...<a href=\"" + str_url + "\">[详情]</a>";
+                        str_NaviRead += "   " + Hg.Common.Input.GetSubString(info.NaviContent, int.Parse(str_ClassNaviTitleNumber)) + "...<a href=\"" + str_url + "\">[详情]</a>";
                     else
                         str_NaviRead += "   " + info.NaviContent + "...<a href=\"" + str_url + "\">[详情]</a>";
                     str_NaviRead += "</div>" + newLine;

@@ -8,16 +8,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class manage_label_syslabel_outLocal : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslabel_outLocal : Hg.Web.UI.ManagePage
 {
     public manage_label_syslabel_outLocal()
     {
         Authority_Code = "T015";
     }
-    Foosun.CMS.Label rd = new Foosun.CMS.Label();
+    Hg.CMS.Label rd = new Hg.CMS.Label();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)

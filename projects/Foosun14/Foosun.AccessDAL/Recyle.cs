@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Recyle : DbBase, IRecyle
     {
-        private string SiteID = Foosun.Global.Current.SiteID;
+        private string SiteID = Hg.Global.Current.SiteID;
         public Recyle()
         {
         }
@@ -121,7 +121,7 @@ namespace Foosun.AccessDAL
                                     int NewsType = int.Parse(dv.Rows[j]["NewsType"].ToString());
                                     DateTime CreatTime = DateTime.Parse(dv.Rows[j]["CreatTime"].ToString());
                                     int isConstr = 0;
-                                    if (Foosun.Common.Input.IsInteger(dv.Rows[j]["isConstr"].ToString()))
+                                    if (Hg.Common.Input.IsInteger(dv.Rows[j]["isConstr"].ToString()))
                                     {
                                         isConstr = int.Parse(dv.Rows[j]["isConstr"].ToString());
                                     }
@@ -794,7 +794,7 @@ namespace Foosun.AccessDAL
                 temp_id = arr_id[i].Replace("'", "");
                 temp_id1 += getChildId(temp_id, col, tbname);
             }
-            temp_id1 = Foosun.Common.Input.CutComma(temp_id1);
+            temp_id1 = Hg.Common.Input.CutComma(temp_id1);
             return temp_id1;
         }
 

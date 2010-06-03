@@ -12,9 +12,9 @@ using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 using System.Net;
 
-namespace Foosun.Web.Install
+namespace Hg.Web.Install
 {
-    public partial class step_End : Foosun.Web.UI.BasePage
+    public partial class step_End : Hg.Web.UI.BasePage
     {
         private string sitedir = null;
         protected void Page_Load(object sender, EventArgs e)
@@ -92,45 +92,45 @@ namespace Foosun.Web.Install
                 {
                     StreamReader sr = File.OpenText(s_dbsqlpath1);
                     string s_sqldefault = sr.ReadToEnd();
-                    string s_result = Regex.Replace(s_sqldefault, @"\[[Ff][Ss]_", "[" + Foosun.Config.UIConfig.dataRe, RegexOptions.Compiled);
+                    string s_result = Regex.Replace(s_sqldefault, @"\[[Ff][Ss]_", "[" + Hg.Config.UIConfig.dataRe, RegexOptions.Compiled);
                     sr.Close();
                     string[] sqlarr = s_result.Split('\n');
                     for (int i = 0; i < sqlarr.Length; i++)
                     {
                         if (sqlarr[i] != "\r" && sqlarr[i] != "" && sqlarr[i] != null)
                         {
-                            //Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, "##", sqlarr[i]);
+                            //Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, "##", sqlarr[i]);
                             switch (par)
                             {
                                 case "collect":
-                                    Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CollectConString, sqlarr[i]);
+                                    Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CollectConString, sqlarr[i]);
                                     break;
                                 case "help":
-                                    Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.HelpConString, sqlarr[i]);
+                                    Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.HelpConString, sqlarr[i]);
                                     break;
                                 default:
-                                    Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, sqlarr[i]);
+                                    Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, sqlarr[i]);
                                     break;
                             }
 
                         }
                     }
-                    //Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, "##", s_result);
+                    //Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, "##", s_result);
                     if (par == "site_param")
                     {
-                        string sql = "insert into [" + Foosun.Config.UIConfig.dataRe + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + Foosun.Config.UIConfig.dataRe + "News','" + DateTime.Now + "');";
-                        //Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, "##", "insert into [" + Foosun.Config.UIConfig.dataRe + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + Foosun.Config.UIConfig.dataRe + "News','" + DateTime.Now + "');");
+                        string sql = "insert into [" + Hg.Config.UIConfig.dataRe + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + Hg.Config.UIConfig.dataRe + "News','" + DateTime.Now + "');";
+                        //Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, "##", "insert into [" + Hg.Config.UIConfig.dataRe + "sys_newsIndex] ([TableName],[CreatTime]) values ('" + Hg.Config.UIConfig.dataRe + "News','" + DateTime.Now + "');");
                         switch (par)
                         {
                             case "collect":
-                                Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CollectConString, sql);
+                                Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CollectConString, sql);
                                 break;
                             case "help":
-                                Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.HelpConString, sql);
+                                Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.HelpConString, sql);
                                 deleteAllInstallFile();
                                 break;
                             default:
-                                Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, sql);
+                                Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, sql);
                                 break;
                         }
                     }
@@ -197,7 +197,7 @@ namespace Foosun.Web.Install
         private void setDomainName()
         {
             string param = "update fs_sys_param set SiteDomain='" + Request.Url.Host + "'";
-            Foosun.Install.Comm.ExecuteSql(Foosun.Config.DBConfig.CmsConString, param);
+            Hg.Install.Comm.ExecuteSql(Hg.Config.DBConfig.CmsConString, param);
         }
     }
 }

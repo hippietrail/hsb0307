@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Info
     {
         private IInfo dal;
         public Info()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateInfo();
+            dal = Hg.DALFactory.DataAccess.CreateInfo();
         }
         #region announce.aspx
         public string sel_1(string UserNum)
