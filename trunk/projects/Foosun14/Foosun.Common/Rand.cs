@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Common
+namespace Hg.Common
 {
     public class Rand
     {

@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="selectspecial.aspx.cs" Inherits="Foosun.Web.configuration.system.selectspecial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="selectspecial.aspx.cs" Inherits="Hg.Web.configuration.system.selectspecial" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-<title>选择专题__By Foosun.net & Foosun Inc.</title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<title>选择专题__By Hg.net & Foosun Inc.</title>
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>

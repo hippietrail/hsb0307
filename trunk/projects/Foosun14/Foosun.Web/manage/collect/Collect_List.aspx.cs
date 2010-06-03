@@ -20,7 +20,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-public partial class manage_collect_Collect_List : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_List : Hg.Web.UI.ManagePage
 {
     public manage_collect_Collect_List()
     {
@@ -34,7 +34,7 @@ public partial class manage_collect_Collect_List : Foosun.Web.UI.ManagePage
             try
             {
                 int id = int.Parse(Request.Form["ID"]);
-                Foosun.CMS.Collect.Collect bl = new Foosun.CMS.Collect.Collect();
+                Hg.CMS.Collect.Collect bl = new Hg.CMS.Collect.Collect();
                 switch (Request.Form["Option"])
                 {
                     case "ReproduceFolder":
@@ -78,7 +78,7 @@ public partial class manage_collect_Collect_List : Foosun.Web.UI.ManagePage
         int FID = 0;
         if (!HidFolderID.Value.Equals(""))
             FID = int.Parse(HidFolderID.Value);
-        Foosun.CMS.Collect.Collect collect = new Foosun.CMS.Collect.Collect();
+        Hg.CMS.Collect.Collect collect = new Hg.CMS.Collect.Collect();
         this.RptSite.DataSource = collect.GetFolderSitePage(FID, PageIndex, PAGESIZE, out nRCount, out nPCount);
         this.RptSite.DataBind();
         this.PageNavigator1.PageCount = nPCount;

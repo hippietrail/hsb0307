@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_js_JS_GetCode : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_GetCode : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -22,9 +22,9 @@ public partial class manage_js_JS_GetCode : Foosun.Web.UI.ManagePage
                 PageError("参数传递错误", "JS_List.aspx");
             }
             int id = int.Parse(Request.QueryString["JSID"]);
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
-            Foosun.Model.NewsJSInfo info = nj.GetSingle(id);
-            this.CodePath.Value = "<script language=\"javascript\" type=\"text/javascript\" src=\""+ Foosun.Common.ServerInfo.GetRootURI(Request) + info.jssavepath +"/"+ info.jsfilename +".js\"></script>";
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
+            Hg.Model.NewsJSInfo info = nj.GetSingle(id);
+            this.CodePath.Value = "<script language=\"javascript\" type=\"text/javascript\" src=\""+ Hg.Common.ServerInfo.GetRootURI(Request) + info.jssavepath +"/"+ info.jsfilename +".js\"></script>";
         }
     }
 }

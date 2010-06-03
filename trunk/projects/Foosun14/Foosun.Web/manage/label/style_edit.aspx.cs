@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
+public partial class manage_label_style_edit : Hg.Web.UI.ManagePage
 {
     public manage_label_style_edit()
     {
@@ -27,11 +27,11 @@ public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
         {
             
             copyright.InnerHtml = CopyRight;        //获取版权信息
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }
-            style_base.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
-            style_class.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
-            style_special.InnerHtml = Foosun.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
+            style_base.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
+            style_class.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
+            style_special.InnerHtml = Hg.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
             GetStyleInfo();
             getDefine();
         }
@@ -47,7 +47,7 @@ public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
     {
         string str_ID = Request.QueryString["styleID"];
         styleID.Value = str_ID;
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.getstyleInfo(str_ID);
         if (dt != null)
         {
@@ -75,7 +75,7 @@ public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
 
     protected void getClassInfo(string ClassID)
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styleClassList();
         if (dt != null)
         {
@@ -107,7 +107,7 @@ public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
 
     protected void getDefine()
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styledefine();
         if (dt != null)
         {
@@ -136,23 +136,23 @@ public partial class manage_label_style_edit : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             int result = 0;
-            Foosun.Model.StyleInfo stClass = new Foosun.Model.StyleInfo();
-            stClass.styleID = Foosun.Common.Input.Filter(Request.Form["styleID"]);
+            Hg.Model.StyleInfo stClass = new Hg.Model.StyleInfo();
+            stClass.styleID = Hg.Common.Input.Filter(Request.Form["styleID"]);
             stClass.StyleName = Request.Form["styleName"];
             stClass.ClassID = Request.Form["styleClass"];
             string StContent = ContentTextBox.Value;
             if (StContent.ToLower().IndexOf("<p>") > -1 && StContent.IndexOf("</p>") > -1)
             {
-                StContent = Foosun.Common.Input.RemovePor(StContent);
+                StContent = Hg.Common.Input.RemovePor(StContent);
             }
             stClass.Content = StContent;
             stClass.Description = Request.Form["Description"];
             stClass.CreatTime = DateTime.Now;
 
-            Foosun.CMS.Style.Style styleClass = new Foosun.CMS.Style.Style();
+            Hg.CMS.Style.Style styleClass = new Hg.CMS.Style.Style();
             result = styleClass.styleEdit(stClass);
             //清除样式缓存
-            Foosun.Publish.LabelStyle.CatchClear();
+            Hg.Publish.LabelStyle.CatchClear();
             if (result==1)
                 PageRight("修改样式成功!", "style.aspx?ClassID=" + Request.Form["styleClass"]);
             else

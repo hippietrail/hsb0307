@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -106,7 +106,7 @@ function Del(type,id)
 
 function reload()
 {
-    if(confirm('您确认要重新从风讯(Foosun.net)下载 [系统内置标签] 吗?\n重新下载标签，将把您系统内置标签全部清空。\n特别注意：下载的是xml文件，把xml文件通过导入标签功能导入!\n如果您确认。请点[确定]按钮'))
+    if(confirm('您确认要重新从风讯(Hg.net)下载 [系统内置标签] 吗?\n重新下载标签，将把您系统内置标签全部清空。\n特别注意：下载的是xml文件，把xml文件通过导入标签功能导入!\n如果您确认。请点[确定]按钮'))
     {
 	    var ifm = document.getElementById("reloadfromfoosun");
 	    ifm.src = "<%Response.Write(ReloadURL);%>";

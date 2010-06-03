@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
+public partial class manage_label_createLabel_Other : Hg.Web.UI.ManagePage
 {
     public string APIID = "0";
     public DataTable dt_class = null;
@@ -39,7 +39,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
     
     protected void getfreeJSInfo()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getfreeJSInfo();
 
         if (dt != null)
@@ -67,7 +67,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
 
     protected void getsysJSInfo()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getsysJSInfo();
         if (dt != null)
         {
@@ -94,7 +94,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
 
     protected void getadsJsInfo()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getadsJsInfo();
 
         if (dt != null)
@@ -123,7 +123,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
 
     protected void getsurveyJSInfo()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getsurveyJSInfo();
         if (dt != null)
         {
@@ -150,7 +150,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
 
     protected void getstatJSInfo()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getstatJSInfo();
 
         if (dt != null)
@@ -172,7 +172,7 @@ public partial class manage_label_createLabel_Other : Foosun.Web.UI.ManagePage
 
     protected void getFreeLabelInfo()
     { 
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getFreeLabelInfo();
 
         if (dt != null)

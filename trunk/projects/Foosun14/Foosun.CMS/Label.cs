@@ -10,10 +10,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Label
     {
@@ -155,12 +155,12 @@ namespace Foosun.CMS
         }
 
         //string Classid = this.LabelClass.SelectedValue;
-        //string Label_Name = Foosun.Common.Public.getXmlValue(xmlPath, "labelname");
-        //string Label_Content = Foosun.Common.Public.getXmlValue(xmlPath, "labelcontent");
-        //string Description = Foosun.Common.Public.getXmlValue(xmlPath, "labeldescription");
-        //string CreatTime = Foosun.Common.Public.getXmlValue(xmlPath, "labelcreattime");
-        //string isSys = Foosun.Common.Public.getXmlValue(xmlPath, "labelissys");
-        //string SiteID = Foosun.Global.Current.SiteID;
+        //string Label_Name = Hg.Common.Public.getXmlValue(xmlPath, "labelname");
+        //string Label_Content = Hg.Common.Public.getXmlValue(xmlPath, "labelcontent");
+        //string Description = Hg.Common.Public.getXmlValue(xmlPath, "labeldescription");
+        //string CreatTime = Hg.Common.Public.getXmlValue(xmlPath, "labelcreattime");
+        //string isSys = Hg.Common.Public.getXmlValue(xmlPath, "labelissys");
+        //string SiteID = Hg.Global.Current.SiteID;
 
         public void inserLabelLocal(string LabelID,string Classid,string Label_Name,string Label_Content,string Description,string isSystem)
         {

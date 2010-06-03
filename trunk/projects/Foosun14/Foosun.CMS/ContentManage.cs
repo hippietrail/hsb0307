@@ -18,14 +18,14 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class ContentManage
     {
-        Foosun.DALFactory.IContentManage dal;
+        Hg.DALFactory.IContentManage dal;
         public ContentManage()
         {
             dal = DataAccess.CreateContentManage();
@@ -72,7 +72,7 @@ namespace Foosun.CMS
                     string _NewsSavePath = dt.Rows[0]["NewsSavePath"].ToString();
                     string _ClassSavePath = dt.Rows[0]["ClassSavePath"].ToString();
                     string _SaveClassframe = dt.Rows[0]["SaveClassframe"].ToString();
-                    string _DeletePath = "/" + Foosun.Config.UIConfig.dirDumm + "/" + _ClassSavePath + "/" + _SaveClassframe + "/" + _NewsSavePath + "/" + _FileName + _FileEXName;
+                    string _DeletePath = "/" + Hg.Config.UIConfig.dirDumm + "/" + _ClassSavePath + "/" + _SaveClassframe + "/" + _NewsSavePath + "/" + _FileName + _FileEXName;
                     _DeletePath = HttpContext.Current.Server.MapPath(_DeletePath.Replace("//", "/").Replace("//", "/"));
                     bool _FileIsExisted = File.Exists(_DeletePath);
                     int i = 1;
@@ -80,7 +80,7 @@ namespace Foosun.CMS
                     {
                         File.Delete(_DeletePath);
                         i++;
-                        _DeletePath = "/" + Foosun.Config.UIConfig.dirDumm + "/" + _ClassSavePath + "/" + _SaveClassframe + "/" + _NewsSavePath + "/" + _FileName + "_" + i.ToString() + _FileEXName;
+                        _DeletePath = "/" + Hg.Config.UIConfig.dirDumm + "/" + _ClassSavePath + "/" + _SaveClassframe + "/" + _NewsSavePath + "/" + _FileName + "_" + i.ToString() + _FileEXName;
                         _DeletePath = HttpContext.Current.Server.MapPath(_DeletePath.Replace("//", "/").Replace("//", "/"));
                         _FileIsExisted = File.Exists(_DeletePath);
                     }
@@ -266,7 +266,7 @@ namespace Foosun.CMS
         /// 插入新闻
         /// </summary>
         /// <param name="uc"></param>
-        public void insertNewsContent(Foosun.Model.NewsContent uc)
+        public void insertNewsContent(Hg.Model.NewsContent uc)
         {
             dal.insertNewsContent(uc);
         }
@@ -275,7 +275,7 @@ namespace Foosun.CMS
         /// 更新新闻
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateNewsContent(Foosun.Model.NewsContent uc)
+        public void UpdateNewsContent(Hg.Model.NewsContent uc)
         {
             dal.UpdateNewsContent(uc);
         }
@@ -284,7 +284,7 @@ namespace Foosun.CMS
         /// 插入头条
         /// </summary>
         /// <param name="uc"></param>
-        public void intsertTT(Foosun.Model.NewsContentTT uc)
+        public void intsertTT(Hg.Model.NewsContentTT uc)
         {
             dal.intsertTT(uc);
         }
@@ -293,7 +293,7 @@ namespace Foosun.CMS
         /// 更新头条
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateTT(Foosun.Model.NewsContentTT uc)
+        public void UpdateTT(Hg.Model.NewsContentTT uc)
         {
             dal.UpdateTT(uc);
         }
@@ -302,7 +302,7 @@ namespace Foosun.CMS
         /// 插入投票
         /// </summary>
         /// <param name="uc"></param>
-        public void intsertVote(Foosun.Model.VoteContent uc)
+        public void intsertVote(Hg.Model.VoteContent uc)
         {
             dal.intsertVote(uc);
         }
@@ -370,7 +370,7 @@ namespace Foosun.CMS
         /// 更新投票
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateVote(Foosun.Model.VoteContent uc)
+        public void UpdateVote(Hg.Model.VoteContent uc)
         {
             dal.UpdateVote(uc);
         }
@@ -579,7 +579,7 @@ namespace Foosun.CMS
         /// 插入栏目数据
         /// </summary>
         /// <param name="uc"></param>
-        public void insertClassContent(Foosun.Model.ClassContent uc)
+        public void insertClassContent(Hg.Model.ClassContent uc)
         {
             dal.insertClassContent(uc);
         }
@@ -588,7 +588,7 @@ namespace Foosun.CMS
         /// 更新栏目数据
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateClassContent(Foosun.Model.ClassContent uc)
+        public void UpdateClassContent(Hg.Model.ClassContent uc)
         {
             dal.UpdateClassContent(uc);
         }
@@ -800,7 +800,7 @@ namespace Foosun.CMS
         /// 添加单页面
         /// </summary>
         /// <param name="uc"></param>
-        public void insertPage(Foosun.Model.PageContent uc)
+        public void insertPage(Hg.Model.PageContent uc)
         {
             dal.insertPage(uc);
         }
@@ -809,7 +809,7 @@ namespace Foosun.CMS
         /// 修改单页面
         /// </summary>
         /// <param name="uc"></param>
-        public void updatePage(Foosun.Model.PageContent uc)
+        public void updatePage(Hg.Model.PageContent uc)
         {
             dal.updatePage(uc);
         }

@@ -3,8 +3,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-    <title>选择规则 __by Foosun.net & Foosun Inc.</title>
-<link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+    <title>选择规则 __by Hg.net & Foosun Inc.</title>
+<link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" name="form1">

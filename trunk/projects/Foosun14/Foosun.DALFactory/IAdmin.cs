@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IAdmin
     {
@@ -12,8 +12,8 @@ namespace Foosun.DALFactory
         void Del(string id);
         DataTable GetAdminGroupList();
         DataTable GetSiteList();
-        int Add(Foosun.Model.AdminInfo aci);
-        int Edit(Foosun.Model.AdminInfo aci);
+        int Add(Hg.Model.AdminInfo aci);
+        int Edit(Hg.Model.AdminInfo aci);
         DataTable GetAdminInfo(string id);
         string GetAdminPopList(string UserNum, int Id);
         void UpdatePOPlist(string UserNum, int Id, string PopLIST);

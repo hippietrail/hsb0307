@@ -11,9 +11,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_Sys_admin_group : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_admin_group : Hg.Web.UI.ManagePage
 {
     public manage_Sys_admin_group()
     {
@@ -36,7 +36,7 @@ public partial class manage_Sys_admin_group : Foosun.Web.UI.ManagePage
             case "Del":             //删除管理员
                 this.Authority_Code = "Q018";
                 this.CheckAdminAuthority();
-                Del(Foosun.Common.Input.checkID(ID));
+                Del(Hg.Common.Input.checkID(ID));
                 break;
             default:
                 break;
@@ -57,7 +57,7 @@ public partial class manage_Sys_admin_group : Foosun.Web.UI.ManagePage
     {
         int i, j;
         SQLConditionInfo st = new SQLConditionInfo("@SiteID", SiteID);
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
 
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -91,7 +91,7 @@ public partial class manage_Sys_admin_group : Foosun.Web.UI.ManagePage
     
     protected void Del(string ID)
     {
-        Foosun.CMS.AdminGroup agc = new Foosun.CMS.AdminGroup();
+        Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         agc.Del(ID);
         PageRight("删除管理员组成功!", "");
     }

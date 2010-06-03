@@ -10,10 +10,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml;
 using System.Text.RegularExpressions;
-using Foosun.Global;
+using Hg.Global;
 using System.Net.Mail;
 
-namespace Foosun.Common
+namespace Hg.Common
 {
     /// <summary>
     /// Class1 的摘要说明
@@ -265,24 +265,24 @@ namespace Foosun.Common
         }
 
         /// <summary>
-        /// 得到SQL语句的SiID;getstr = " and SiteID='" + Foosun.Global.Current.SiteID + "'"
+        /// 得到SQL语句的SiID;getstr = " and SiteID='" + Hg.Global.Current.SiteID + "'"
         /// </summary>
         /// <returns></returns>
         public static string getSessionStr()
         {
             string getstr = "";
-            if (Foosun.Global.Current.SiteID != "0"){getstr = " and SiteID='" + Foosun.Global.Current.SiteID + "'";}
+            if (Hg.Global.Current.SiteID != "0"){getstr = " and SiteID='" + Hg.Global.Current.SiteID + "'";}
             return getstr;
         }
 
         /// <summary>
-        /// 得到频道ID; and ChannelID='" + Foosun.Global.Current.SiteID + "'
+        /// 得到频道ID; and ChannelID='" + Hg.Global.Current.SiteID + "'
         /// </summary>
         /// <returns></returns>
         public static string getCHStr()
         {
             string getstr = "";
-            if (Foosun.Global.Current.SiteID != "0") { getstr = " and ChannelID='" + Foosun.Global.Current.SiteID + "'"; }
+            if (Hg.Global.Current.SiteID != "0") { getstr = " and ChannelID='" + Hg.Global.Current.SiteID + "'"; }
             return getstr;
         }
 
@@ -293,7 +293,7 @@ namespace Foosun.Common
         public static void saveClassXML(string Ename)
         {
             StreamWriter sw = null;
-            if (Foosun.Global.Current.SiteID != "0")
+            if (Hg.Global.Current.SiteID != "0")
             {
 
             }
@@ -330,7 +330,7 @@ namespace Foosun.Common
         {
             bool sta = false;
             StreamWriter sw = null;
-            if (Foosun.Global.Current.SiteID != "0")
+            if (Hg.Global.Current.SiteID != "0")
             {
 
             }
@@ -388,7 +388,7 @@ namespace Foosun.Common
         {
             bool sta = false;
             StreamWriter sw = null;
-            if (Foosun.Global.Current.SiteID != "0")
+            if (Hg.Global.Current.SiteID != "0")
             {
 
             }
@@ -526,7 +526,7 @@ namespace Foosun.Common
             string FileName = date.Year + "-" + date.Month;
             try
             {
-                FileName = HttpContext.Current.Server.MapPath("~/Logs/User-" + _num + "-") + FileName + "-" + Foosun.Common.Input.MD5(FileName) + "-s.log";
+                FileName = HttpContext.Current.Server.MapPath("~/Logs/User-" + _num + "-") + FileName + "-" + Hg.Common.Input.MD5(FileName) + "-s.log";
 
                 #region 检测日志目录是否存在
                 if (!Directory.Exists(HttpContext.Current.Server.MapPath("~/Logs")))
@@ -542,7 +542,7 @@ namespace Foosun.Common
                 }
                 #endregion
 
-                sw.WriteLine("IP                 :" + Foosun.Common.Public.getUserIP() + "\r");
+                sw.WriteLine("IP                 :" + Hg.Common.Public.getUserIP() + "\r");
                 sw.WriteLine("title              :" + Title + "\r");
                 sw.WriteLine("content            :" + Content);
                 sw.WriteLine("usernum&UserName   :" + UserNum + "\r");
@@ -567,7 +567,7 @@ namespace Foosun.Common
         {
             StreamWriter sw = null;
             DateTime date = DateTime.Now;
-            string FileName = Foosun.Config.UIConfig.Logfilename;
+            string FileName = Hg.Config.UIConfig.Logfilename;
             try
             {
                 if (HttpContext.Current == null)
@@ -625,7 +625,7 @@ namespace Foosun.Common
         {
             StreamWriter sw = null;
             DateTime date = DateTime.Now;
-            string FileName = Foosun.Config.UIConfig.Logfilename;
+            string FileName = Hg.Config.UIConfig.Logfilename;
             try
             {
                 FileName = HttpContext.Current.Server.MapPath("~/Logs/convert_" + FileName + "_" + date.Month + date.Day + ".log");

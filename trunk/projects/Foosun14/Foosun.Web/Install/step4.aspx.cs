@@ -8,14 +8,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-namespace Foosun.Web.Install
+namespace Hg.Web.Install
 {
-    public partial class step4 :Foosun.Web.UI.BasePage
+    public partial class step4 :Hg.Web.UI.BasePage
     {
         public string gError = string.Empty;
-        Foosun.CMS.Install rd = new Foosun.CMS.Install();
+        Hg.CMS.Install rd = new Hg.CMS.Install();
         protected void Page_Load(object sender, EventArgs e)
         {
             this.Button1.Attributes.Add("onclick", "return showLoading();");

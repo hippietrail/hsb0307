@@ -8,24 +8,24 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
 
-public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectuserpic : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectuserpic()
     {
         BrowserAuthor = EnumDialogAuthority.ForAdmin | EnumDialogAuthority.ForPerson;
     }
-    private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-    private string str_dirSite = Foosun.Config.UIConfig.dirSite;
-    private string str_dirUserFile = Foosun.Config.UIConfig.UserdirFile;
+    private string str_dirMana = Hg.Config.UIConfig.dirDumm;
+    private string str_dirSite = Hg.Config.UIConfig.dirSite;
+    private string str_dirUserFile = Hg.Config.UIConfig.UserdirFile;
     private string str_dirFile = "";  //获取图片或者文件路径
     private string str_FilePath = "";
     bool tf = false;
     protected void Page_Load(object sender, EventArgs e)
     {
-        str_dirFile = str_dirUserFile + "\\" + Foosun.Global.Current.UserNum;
+        str_dirFile = str_dirUserFile + "\\" + Hg.Global.Current.UserNum;
         Response.CacheControl = "no-cache";
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)//判断虚拟路径是否为空,如果不是则加上//
             str_dirMana = "//" + str_dirMana;
@@ -40,7 +40,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
                 tf = true;
 
             string type = Request.Form["Type"];
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             {
                 str_FilePath = Server.MapPath(str_dirMana + "\\" + str_dirFile);
             }
@@ -144,7 +144,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         else
         {
             string _str_dirFileTF = "";
-            if (Foosun.Global.Current.SiteID == "0")
+            if (Hg.Global.Current.SiteID == "0")
             {
                 _str_dirFileTF = str_dirMana + "\\" + str_dirFile;
             }
@@ -199,11 +199,11 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
             {
                 string str_replace = "{@UserdirFile}";
 
-                string str_picadress = str_dirMana + "/" + str_replace + "/" + Foosun.Global.Current.UserNum + "/" + str_parpath + "/" + DirFile.Name;
+                string str_picadress = str_dirMana + "/" + str_replace + "/" + Hg.Global.Current.UserNum + "/" + str_parpath + "/" + DirFile.Name;
                 str_picadress = str_picadress.Replace("//", "/");
 
                 string str_picshowadress = str_dirMana + "/" + str_dirFile + "/" + str_parpath + "/" + DirFile.Name;
-                str_picshowadress = Foosun.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
+                str_picshowadress = Hg.Publish.CommonData.getUrl() + str_picshowadress.Replace("//", "/");
                 str_picshowadress = str_picshowadress.Replace("\\", "/");
                 string str_showpic = "";
                 if (tf == true)
@@ -234,7 +234,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         {
             if (SelectFile(DirFile.Extension))
             {
-                string str_picshowadress = Foosun.Publish.CommonData.getUrl() + "/sysImages/user/face/" + DirFile.Name;
+                string str_picshowadress = Hg.Publish.CommonData.getUrl() + "/sysImages/user/face/" + DirFile.Name;
                 string str_showpic = "onmouseover=\"javascript:ShowDivPic(this,'" + str_picshowadress + "','" + DirFile.Extension + "'," + DirFile.Length + ");\" onmouseout=\"javascript:hiddDivPic();\"";
 
                 str_TempFileStr += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
@@ -255,7 +255,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
 
     string PathPre()
     {
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         string str_path = tpClass.PathPre(str_FilePath + Request.Form["Path"], str_dirFile);
         return str_path;
     }
@@ -470,7 +470,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         if (str_OldName == "" || str_OldName == null || str_OldName == string.Empty || str_NewName == "" || str_NewName == null || str_NewName == string.Empty)
             PageError("参数传递错误!", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
 
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         int result = tpClass.EidtName(path, str_OldName, str_NewName, 0);
         if (result == 1)
             PageRight("更改文件夹名成功！", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
@@ -493,7 +493,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         if (str_OldName == "" || str_OldName == null || str_OldName == string.Empty || str_NewName == "" || str_NewName == null || str_NewName == string.Empty)
             PageError("参数传递错误!", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
 
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         int result = tpClass.EidtName(path, str_OldName, str_NewName, 1);
         if (result == 1)
             PageRight("更改文件名成功！", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
@@ -511,7 +511,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
     protected void DelDir(string path)
     {
         int result = 0;
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         result = tpClass.Del(path, "", 0);
         if (result == 1)
             PageRight("删除文件夹成功!", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
@@ -531,7 +531,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         string str_FileName = Request.Form["filename"];
 
         int result = 0;
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         result = tpClass.Del(path, str_FileName, 1);
         if (result == 1)
             PageRight("删除文件成功!", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);
@@ -552,7 +552,7 @@ public partial class configuration_system_selectuserpic : Foosun.Web.UI.DialogPa
         string str_DirName = Request.Form["filename"];
 
         int result = 0;
-        Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+        Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
         result = tpClass.AddDir(path, str_DirName);
         if (result == 1)
             PageRight("添加文件夹成功!", "selectuserpic.aspx?FileType=" + Request.QueryString["FileType"]);

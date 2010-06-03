@@ -11,9 +11,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-namespace Foosun.Web.Install
+namespace Hg.Web.Install
 {
-    public partial class finishinstall : Foosun.Web.UI.BasePage
+    public partial class finishinstall : Hg.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,9 +35,9 @@ namespace Foosun.Web.Install
             }
             catch
             {
-                Response.Redirect("../" + Foosun.Config.UIConfig.dirMana + "/login.aspx?");
+                Response.Redirect("../" + Hg.Config.UIConfig.dirMana + "/login.aspx?");
             }
-            Response.Redirect("../" + Foosun.Config.UIConfig.dirMana + "/login.aspx?");
+            Response.Redirect("../" + Hg.Config.UIConfig.dirMana + "/login.aspx?");
         }
     }
 }

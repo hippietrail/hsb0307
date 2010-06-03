@@ -5,16 +5,16 @@ using System.Data;
 using System.IO;
 using System.Configuration;
 using System.Text.RegularExpressions;
-using Foosun.Config;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Config;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public class General
     {
-        public static string strgTemplet = Foosun.Config.UIConfig.dirTemplet;
-        public static string RootInstallDir = Foosun.Publish.CommonData.SiteDomain;
+        public static string strgTemplet = Hg.Config.UIConfig.dirTemplet;
+        public static string RootInstallDir = Hg.Publish.CommonData.SiteDomain;
         public static string InstallDir = "{$InstallDir}";
         public static string TempletDir = "{$TempletDir}";
         /// <summary>
@@ -28,12 +28,12 @@ namespace Foosun.Publish
             string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + CommonData.SiteDomain + "/configuration/js/Prototype.js\"></script>\r\n";
             getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + CommonData.SiteDomain + "/configuration/js/jspublic.js\"></script>\r\n";
             //开启CNZZ整合
-            if (Foosun.Common.Public.readparamConfig("Open", "Cnzz") == "11")
+            if (Hg.Common.Public.readparamConfig("Open", "Cnzz") == "11")
             {
-                getajaxJS += "<script src='http://pw.cnzz.com/c.php?id=" + Foosun.Common.Public.readparamConfig("SiteID", "Cnzz") + "' " +
+                getajaxJS += "<script src='http://pw.cnzz.com/c.php?id=" + Hg.Common.Public.readparamConfig("SiteID", "Cnzz") + "' " +
                             "language='JavaScript' charset='gb2312'></script>\r\n";
             }
-            string PageStyles = Foosun.Common.Public.readparamConfig("PageStyle");
+            string PageStyles = Hg.Common.Public.readparamConfig("PageStyle");
             if (PageStyles == "3") PageStyles = getPageDefaultStyleSheet(); else PageStyles = "";
 
             string byCreat = "<!--Created by WebFastCMS v1.0 For HGZP Inc. at " + DateTime.Now + "-->\r\n" + PageStyles;
@@ -149,8 +149,8 @@ namespace Foosun.Publish
         }
         private static string getDNSUrl()
         {
-            string SiteDomain = Foosun.Common.Public.readparamConfig("siteDomain");
-            string Port = Foosun.Common.ServerInfo.ServerPort;
+            string SiteDomain = Hg.Common.Public.readparamConfig("siteDomain");
+            string Port = Hg.Common.ServerInfo.ServerPort;
             if (Port != "80") Port = ":" + Port; else Port = "";
             return "http://" + SiteDomain + Port;
         }
@@ -164,7 +164,7 @@ namespace Foosun.Publish
             bool state = false;
             try
             {
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string xmlSTR = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n";
                 xmlSTR += "<?xml-stylesheet type=\"text/css\" href=\"" + CommonData.SiteDomain + "/sysImages/css/rss.css\"?>\r\n";
                 //xmlSTR += "<?xml-stylesheet type=\"text/xsl\" href=\"" + CommonData.SiteDomain + "/sysImages/css/Rss.xsl\"?>\r\n";
@@ -204,7 +204,7 @@ namespace Foosun.Publish
                         if (ContentSTR != string.Empty && ContentSTR != null)
                         {
                             ContentSTR = htmlRegex.Replace(ContentSTR, ""); //wjl
-                            xmlTemp += "<description><![CDATA[" + Foosun.Common.Input.FilterHTML(Foosun.Common.Input.GetSubString(ContentSTR, 200)) + "]]></description>\r\n";
+                            xmlTemp += "<description><![CDATA[" + Hg.Common.Input.FilterHTML(Hg.Common.Input.GetSubString(ContentSTR, 200)) + "]]></description>\r\n";
                         }
                         else
                         {
@@ -241,7 +241,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成栏目XML", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成栏目XML", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -257,15 +257,15 @@ namespace Foosun.Publish
             bool state = false;
             try
             {
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string xmlSTR = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n";
                 xmlSTR += "<?xml-stylesheet type=\"text/css\" href=\"" + CommonData.SiteDomain + "/sysImages/css/rss.css\"?>\r\n";
                 xmlSTR += "<rss version=\"2.0\">\r\n";
                 xmlSTR += "<channel>\r\n";
                 DataTable dt = CommonData.DalPublish.GetLastCHNews(50, ClassID, ChID);
                 string ClassEname = "none";
-                string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-                dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+                dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     string ClassSTR = "/" + dirHTML + "/" + dt.Rows[0]["savepath1"].ToString() + "/" + dt.Rows[0]["fileName"].ToString();
@@ -291,7 +291,7 @@ namespace Foosun.Publish
                         string ContentSTR = dt.Rows[i]["Content"].ToString();
                         if (ContentSTR != string.Empty && ContentSTR != null)
                         {
-                            xmlSTR += "<description><![CDATA[" + Foosun.Common.Input.FilterHTML(Foosun.Common.Input.GetSubString(ContentSTR, 200)) + "]]></description>\r\n";
+                            xmlSTR += "<description><![CDATA[" + Hg.Common.Input.FilterHTML(Hg.Common.Input.GetSubString(ContentSTR, 200)) + "]]></description>\r\n";
                         }
                         else
                         {
@@ -318,7 +318,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成栏目XML,频道ID" + ChID + "", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成栏目XML,频道ID" + ChID + "", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -334,10 +334,10 @@ namespace Foosun.Publish
             bool state = false;
             try
             {
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
-                string historydir = Foosun.Config.UIConfig.dirPige;
-                string dimm = Foosun.Config.UIConfig.dirDumm;
-                string dirTemplet = Foosun.Config.UIConfig.dirTemplet;
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
+                string historydir = Hg.Config.UIConfig.dirPige;
+                string dimm = Hg.Config.UIConfig.dirDumm;
+                string dirTemplet = Hg.Config.UIConfig.dirTemplet;
                 if (dimm.Trim() != string.Empty)
                 {
                     dimm = "/" + dimm;
@@ -367,7 +367,7 @@ namespace Foosun.Publish
                     }
                     Content = Content.Replace("{#history_list}", liststr);
                     Content = Content.Replace("{#history_PageTitle}", "历史查询__" + DateTime.Now.AddDays((-Numday)).ToShortDateString() + "");
-                    filePath = SiteRootPath + historydir + "\\" + getResultPage(Foosun.Common.Public.readparamConfig("SaveIndexPage"), DateTime.Now.AddDays((-Numday)), "", "history") + "\\index.html";
+                    filePath = SiteRootPath + historydir + "\\" + getResultPage(Hg.Common.Public.readparamConfig("SaveIndexPage"), DateTime.Now.AddDays((-Numday)), "", "history") + "\\index.html";
                     dt.Clear(); dt.Dispose();
                     WriteHtml(Content, filePath);
                     state = true;
@@ -377,7 +377,7 @@ namespace Foosun.Publish
                     //如果没有归档新闻
                     Content = Content.Replace("{#history_list}", "今天没有归档新闻");
                     Content = Content.Replace("{#history_PageTitle}", "历史查询__" + DateTime.Now.AddDays((-Numday)).ToShortDateString() + "");
-                    filePath = SiteRootPath + historydir + "\\" + getResultPage(Foosun.Common.Public.readparamConfig("SaveIndexPage"), DateTime.Now.AddDays((-Numday)), "", "history") + "\\index.html";
+                    filePath = SiteRootPath + historydir + "\\" + getResultPage(Hg.Common.Public.readparamConfig("SaveIndexPage"), DateTime.Now.AddDays((-Numday)), "", "history") + "\\index.html";
                     dt.Clear(); dt.Dispose();
                     WriteHtml(Content, filePath);
                     state = true;
@@ -386,7 +386,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成历史文档", "【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成历史文档", "【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -404,10 +404,10 @@ namespace Foosun.Publish
             bool state = false;
             try
             {
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
-                string historydir = Foosun.Config.UIConfig.dirPige;
-                string dimm = Foosun.Config.UIConfig.dirDumm;
-                string dirTemplet = Foosun.Config.UIConfig.dirTemplet;
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
+                string historydir = Hg.Config.UIConfig.dirPige;
+                string dimm = Hg.Config.UIConfig.dirDumm;
+                string dirTemplet = Hg.Config.UIConfig.dirTemplet;
                 PubClassInfo info = CommonData.GetClassById(ClassID);
                 if (info != null)
                 {
@@ -431,7 +431,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成索引", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成索引", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -449,9 +449,9 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
-                string dim = Foosun.Config.UIConfig.dirDumm;
+                string dim = Hg.Config.UIConfig.dirDumm;
                 IDataReader rd = CommonData.DalPublish.GetSinglePageClass(ClassID);
                 string finallyContent = string.Empty;
                 while (rd.Read())
@@ -577,7 +577,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成单页面", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成单页面", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -595,9 +595,9 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
-                string dim = Foosun.Config.UIConfig.dirDumm;
+                string dim = Hg.Config.UIConfig.dirDumm;
                 IDataReader rd = CommonData.DalPublish.GetSingleCHPageClass(ClassID);
                 while (rd.Read())
                 {
@@ -630,7 +630,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成单页面,频道ID:" + ChID + "", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成单页面,频道ID:" + ChID + "", "【ClassID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -652,7 +652,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();// +"\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath();// +"\\";
                 if(!SiteRootPath.EndsWith("\\"))
                 {
                     SiteRootPath += "\\";
@@ -736,7 +736,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -760,7 +760,7 @@ namespace Foosun.Publish
                 NewsContent newsInfo = CommonData.getNewsInfoById(newsID);
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
                 IDataReader rd = CommonData.DalPublish.GetNewsSavePath(newsID);
                 while (rd.Read())
@@ -836,7 +836,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -853,7 +853,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
                 IDataReader rd = CommonData.DalPublish.GetCHNewsSavePath(newsID, ChID);
                 while (rd.Read())
@@ -864,8 +864,8 @@ namespace Foosun.Publish
                         TempletPath = TempletPath.Replace("/", "\\");
                         TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
                         TempletPath = SiteRootPath.Trim('\\') + TempletPath;
-                        string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-                        dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                        string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+                        dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                         saveNewsPath = "\\" + dirHTML.Trim('\\').Trim('/') + "\\" + rd["SavePath1"].ToString().Trim('\\').Trim('/') + "\\" + rd["SavePath"].ToString().Trim('\\').Trim('/') + "\\" + rd["FileName"].ToString().Trim('\\').Trim('/');
                         Template newsTemplate = new Template(TempletPath, TempType.ChNews);
                         newsTemplate.CHNewsID = newsID;
@@ -918,7 +918,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成新闻(频道ID" + ChID + ")", "【ID】:" + newsID.ToString() + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成新闻(频道ID" + ChID + ")", "【ID】:" + newsID.ToString() + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -937,7 +937,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveClassPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath();
                 string strTempletDir = strgTemplet;
                 PubClassInfo info = CommonData.GetClassById(classID);
                 if (info != null)
@@ -965,7 +965,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成栏目", "【classID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成栏目", "【classID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
             }
             return state;
         }
@@ -981,7 +981,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveClassPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath();
                 string strTempletDir = strgTemplet;
                 PubCHClassInfo info = CommonData.GetCHClassById(classID);
                 if (info != null)
@@ -993,8 +993,8 @@ namespace Foosun.Publish
                         TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
                         TempletPath = SiteRootPath.Trim('\\') + TempletPath;
                         string TMPSavePath = info.SavePath.Trim();
-                        string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-                        dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                        string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+                        dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                         TMPSavePath = dirHTML + "/" + TMPSavePath;
                         TMPSavePath = TMPSavePath.Replace("//", "/");
                         if (TMPSavePath.Substring(0, 1) != "/")
@@ -1014,7 +1014,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成栏目,频道ID：" + ChID + "", "【classID】:" + classID.ToString() + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成栏目,频道ID：" + ChID + "", "【classID】:" + classID.ToString() + "\r\n【错误描述：】\r\n" + e.ToString(), "");
             }
             return state;
         }
@@ -1031,7 +1031,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveSpecialPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
                 PubSpecialInfo info = CommonData.GetSpecial(specialID);
                 if (info != null)
@@ -1054,7 +1054,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成专题", "【specialID】:" + specialID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成专题", "【specialID】:" + specialID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
             }
             return state;
         }
@@ -1070,7 +1070,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveSpecialPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = strgTemplet;
                 PubCHSpecialInfo info = CommonData.GetCHSpecial(specialID);
                 if (info != null)
@@ -1078,8 +1078,8 @@ namespace Foosun.Publish
                     TempletPath = info.templet;
                     TempletPath = TempletPath.Replace("/", "\\");
                     TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-                    string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-                    dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                    string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+                    dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                     TempletPath = SiteRootPath.Trim('\\') + TempletPath;
                     saveSpecialPath = dirHTML.Trim('\\').Trim('/') + "\\" + info.savePath.Trim('\\').Trim('/') + '\\' + info.filename;
                     Template specialTemplate = new Template(TempletPath, TempType.Chspecial);
@@ -1093,7 +1093,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成专题,频道ID:" + ChID + "", "【specialID】:" + specialID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成专题,频道ID:" + ChID + "", "【specialID】:" + specialID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
             }
             return state;
         }
@@ -1157,7 +1157,7 @@ namespace Foosun.Publish
                     Match match = reg.Match(PageMid);
                     if (match.Success)
                     {
-                        if (Foosun.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass || tempRe.MyTempType == TempType.Chspecial)
+                        if (Hg.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass || tempRe.MyTempType == TempType.Chspecial)
                         {
                             string PageStr = match.Value;
                             int posPage = PageStr.IndexOf("}{Page:");
@@ -1250,16 +1250,16 @@ namespace Foosun.Publish
         private static string ReplacePageLink(string content, string fileName, string EXName, int PageCount, int CurrentPage)
         {
             //如果没有分页，则不显示用户增加的分页样式
-            string isPageSplit = Foosun.Config.UIConfig.enableAutoPage;
+            string isPageSplit = Hg.Config.UIConfig.enableAutoPage;
             if (string.IsNullOrEmpty(isPageSplit) || bool.Parse(isPageSplit) == false)
             {
                 return content.Replace("{#Page_Split}", "");
             }
             //每页显示链接个数
-            string PageLinkCount = Foosun.Common.Public.readparamConfig("PageLinkCount");
+            string PageLinkCount = Hg.Common.Public.readparamConfig("PageLinkCount");
             if (string.IsNullOrEmpty(PageLinkCount)) PageLinkCount = "10";
 
-            string PageStyles = Foosun.Common.Public.readparamConfig("PageStyle");
+            string PageStyles = Hg.Common.Public.readparamConfig("PageStyle");
             if (PageStyles == "4") PageStyles = "0";
             //分页链接内容
             string Link = null;
@@ -1403,8 +1403,8 @@ namespace Foosun.Publish
         /// <returns></returns>
         public static string ReplaceResultPage(string NewsID, string Content, string FileName, string EXName, int PageCount, int CurrentPage, int isPop)
         {
-            string PageStyles = Foosun.Common.Public.readparamConfig("PageStyle");
-            string _PageLinkCount = Foosun.Common.Public.readparamConfig("PageLinkCount");
+            string PageStyles = Hg.Common.Public.readparamConfig("PageStyle");
+            string _PageLinkCount = Hg.Common.Public.readparamConfig("PageLinkCount");
             if (string.IsNullOrEmpty(_PageLinkCount)) _PageLinkCount = "10";
             if (PageStyles == "0" || PageStyles == "1" || PageStyles == "2" || PageStyles == "3")
             {
@@ -1430,7 +1430,7 @@ namespace Foosun.Publish
             }
             string getContent = "";
             string ChinesePageLinkCount = GetChineseNumber(Convert.ToInt16(_PageLinkCount));
-            string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+            string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
             //首页
             if (Content.IndexOf("{#PageStartLink}") > -1)
             {
@@ -1706,9 +1706,9 @@ namespace Foosun.Publish
                 {
                     for (int i = 0; i <= 9; i++)
                     {
-                        _Str = _Str.Replace("{@ram" + i + "_0}", Foosun.Common.Rand.Number(i));
-                        _Str = _Str.Replace("{@ram" + i + "_1}", Foosun.Common.Rand.Str_char(i));
-                        _Str = _Str.Replace("{@ram" + i + "_2}", Foosun.Common.Rand.Str(i));
+                        _Str = _Str.Replace("{@ram" + i + "_0}", Hg.Common.Rand.Number(i));
+                        _Str = _Str.Replace("{@ram" + i + "_1}", Hg.Common.Rand.Str_char(i));
+                        _Str = _Str.Replace("{@ram" + i + "_2}", Hg.Common.Rand.Str(i));
                     }
                 }
             }

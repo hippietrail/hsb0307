@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.Config;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.Config;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Collections;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public class CommonData
     {
-        public static Foosun.DALFactory.IPublish DalPublish = DataAccess.CreatePublish();
+        public static Hg.DALFactory.IPublish DalPublish = DataAccess.CreatePublish();
         public static IList<PubClassInfo> NewsClass = new List<PubClassInfo>();
         public static IList<PubSpecialInfo> NewsSpecial = new List<PubSpecialInfo>();
         public static IList<PubCHClassInfo> CHClass = new List<PubCHClassInfo>();
@@ -27,23 +27,23 @@ namespace Foosun.Publish
         public static string getUrl()
         {
             string flg = "";
-            string dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string dirdumm = Hg.Config.UIConfig.dirDumm;
 
             if (dirdumm.Trim() != string.Empty)
             {
                 dirdumm = "/" + dirdumm;
             }
-            string linkType = Foosun.Common.Public.readparamConfig("linkTypeConfig");
-            string sitedomain = Foosun.Common.Public.readparamConfig("siteDomain");
+            string linkType = Hg.Common.Public.readparamConfig("linkTypeConfig");
+            string sitedomain = Hg.Common.Public.readparamConfig("siteDomain");
             if (linkType == "1")
             {
                 if (sitedomain.IndexOf("http://") > -1) { flg = sitedomain + dirdumm; }
                 else
                 {
                     flg = "http://" + sitedomain;
-                    if (Foosun.Common.ServerInfo.ServerPort != "80")
+                    if (Hg.Common.ServerInfo.ServerPort != "80")
                     {
-                        flg += ":" + Foosun.Common.ServerInfo.ServerPort;
+                        flg += ":" + Hg.Common.ServerInfo.ServerPort;
                     }
                     flg += dirdumm;
                 }
@@ -173,7 +173,7 @@ namespace Foosun.Publish
         public static string getNewsURLFormID(string NewsID, string DataLib)
         {
             string URLSTR = "";
-            string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+            string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
             IDataReader rd = DalPublish.GetNewsInfoAndClassInfo(NewsID, DataLib);
             if (rd.Read())
             {
@@ -218,7 +218,7 @@ namespace Foosun.Publish
             string tmstr = "";
             if (Domain.Length > 5)
             {
-                if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+                if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
                 {
                     tmstr = "/list.aspx?id=" + ClassID;
                     return CommonData.SiteDomain + tmstr.Replace("//", "/");
@@ -239,7 +239,7 @@ namespace Foosun.Publish
             }
             else
             {
-                if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+                if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
                 {
                     tmstr = "/list.aspx?id=" + ClassID;
                 }
@@ -270,7 +270,7 @@ namespace Foosun.Publish
         {
             CommonData.Initialize();
             string str_temppath = "";
-            if (Foosun.Common.Public.readparamConfig("ReviewType") == "1")
+            if (Hg.Common.Public.readparamConfig("ReviewType") == "1")
             {
                 str_temppath = "/content.aspx?id=" + NewsID;
             }
@@ -297,11 +297,11 @@ namespace Foosun.Publish
         public static string getClassURL(string ClassID)
         {
             CommonData.Initialize();
-            Foosun.Model.PubClassInfo pci = CommonData.GetClassById(ClassID);
+            Hg.Model.PubClassInfo pci = CommonData.GetClassById(ClassID);
             return CommonData.getClassURL(pci.Domain, pci.isDelPoint, pci.ClassID, pci.SavePath, pci.SaveClassframe, pci.ClassSaveRule);
         }
 
-        public static Foosun.Model.NewsContent getNewsInfoById(string newsID)
+        public static Hg.Model.NewsContent getNewsInfoById(string newsID)
         {
             //if (NewsInfoList.Columns.Count == 0)
             //    _SetDataTableFrame();
@@ -342,7 +342,7 @@ namespace Foosun.Publish
             }
         }
 
-        public static Foosun.Model.NewsContent getNewsInfoById(int id)
+        public static Hg.Model.NewsContent getNewsInfoById(int id)
         {
             if (NewsInfoList.Columns.Count == 0)
                 _SetDataTableFrame();
@@ -533,9 +533,9 @@ namespace Foosun.Publish
 
             NewsInfoList.Rows.Add(dr);
         }
-        private static Foosun.Model.NewsContent _setNewsInfos(IDataReader rd)
+        private static Hg.Model.NewsContent _setNewsInfos(IDataReader rd)
         {
-            Foosun.Model.NewsContent Nci = new Foosun.Model.NewsContent();
+            Hg.Model.NewsContent Nci = new Hg.Model.NewsContent();
             Nci.ID = Convert.ToInt32(rd["ID"]);
             Nci.NewsID = Convert.ToString(rd["NewsID"]);
             Nci.NewsType = Convert.ToByte(rd["NewsType"]);
@@ -595,9 +595,9 @@ namespace Foosun.Publish
             rd.Close();
             return Nci;
         }
-        private static Foosun.Model.NewsContent _setNewsInfos(DataRowView rd)
+        private static Hg.Model.NewsContent _setNewsInfos(DataRowView rd)
         {
-            Foosun.Model.NewsContent Nci = new Foosun.Model.NewsContent();
+            Hg.Model.NewsContent Nci = new Hg.Model.NewsContent();
             if (rd != null)
             {
                 Nci.ID = Convert.ToInt32(rd["ID"]);

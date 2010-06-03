@@ -6,7 +6,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
@@ -14,14 +14,14 @@
 <form id="form1" runat="server">
   <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" class="toptable">
     <tr>
-      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">µ÷²é¹ÜÀí</td>
-      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />µ÷²é¹ÜÀí</div></td>
+      <td width="57%" class="sysmain_navi"  style="PADDING-LEFT: 14px" Height="30">ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+      <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
     </tr>
   </table>
     <div>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="Navitable">
       <tr class="menulist">
-        <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"><label id="param_id" runat="server" /><a href="setClass.aspx" class="menulist">Í¶Æ±·ÖÀàÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setTitle.aspx" class="menulist">Í¶Æ±Ö÷ÌâÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setItem.aspx" class="menulist">Í¶Æ±Ñ¡ÏîÉèÖÃ</a>&nbsp;©®&nbsp;<a href="setSteps.aspx" class="menulist">¶à²½Í¶Æ±¹ÜÀí</a>&nbsp;©®&nbsp;<a href="ManageVote.aspx" class="menulist">Í¶Æ±Çé¿ö¹ÜÀí</a> </div></td>
+        <td height="18" style="width: 45%" colspan="2" style="PADDING-LEFT: 14px"><div align="left"><label id="param_id" runat="server" /><a href="setClass.aspx" class="menulist">ï¿½Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setTitle.aspx" class="menulist">Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setItem.aspx" class="menulist">Í¶Æ±Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;Ã©ï¿½&nbsp;<a href="setSteps.aspx" class="menulist">ï¿½à²½Í¶Æ±ï¿½ï¿½ï¿½</a>&nbsp;í©®&nbsp;<a href="ManageVote.aspx" class="menulist">Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½</a> </div></td>
       </tr>
     </table>
   </div>
@@ -34,10 +34,10 @@
       <div>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
       <tr>
-        <td height="18" style="width: 45%" colspan="2" ><div align="right"><a href="?type=add" class="topnavichar">ÐÂÔö·ÖÀà</a> |
-            <asp:LinkButton ID="DelP" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('È·ÈÏÉ¾³ýËùÑ¡ÐÅÏ¢Âð?')){return true;}return false;}" OnClick="DelP_Click">ÅúÁ¿É¾³ý</asp:LinkButton>
+        <td height="18" style="width: 45%" colspan="2" ><div align="right"><a href="?type=add" class="topnavichar">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> |
+            <asp:LinkButton ID="DelP" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('ï¿½È·ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ï¢ï¿½?')){return true;}return false;}" OnClick="DelP_Click">ï¿½ï¿½ï¿½ï¿½É¾ï¿½</asp:LinkButton>
             |
-            <asp:LinkButton ID="DelAll" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('È·ÈÏÉ¾³ýÈ«²¿ÐÅÏ¢Âð?')){return true;}return false;}" OnClick="DelAll_Click">É¾³ýÈ«²¿</asp:LinkButton></div></td>
+            <asp:LinkButton ID="DelAll" runat="server" CssClass="topnavichar" OnClientClick="{if(confirm('ï¿½È·ï¿½ï¿½É¾ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½?')){return true;}return false;}" OnClick="DelAll_Click">ï¿½É¾ï¿½ï¿½È«ï¿½ï¿½</asp:LinkButton></div></td>
       </tr>
     </table>
   </div>
@@ -45,10 +45,10 @@
     <HeaderTemplate>
       <table width="98%" border="0" align="center" cellpadding="4" cellspacing="1" class="table">
       <tr class="TR_BG">
-        <td width="7%" align="center" valign="middle" class="sys_topBg">±àºÅ</td>
-        <td width="10%" align="center" valign="middle" class="sys_topBg">Àà±ðÃû³Æ</td>
-        <td width="9%" align="center" valign="middle" class="sys_topBg">ÃèÊö</td>
-        <td width="27%" align="center" valign="middle" class="sys_topBg">²Ù×÷
+        <td width="7%" align="center" valign="middle" class="sys_topBg">ï¿½ï¿½</td>
+        <td width="10%" align="center" valign="middle" class="sys_topBg">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+        <td width="9%" align="center" valign="middle" class="sys_topBg">ï¿½ï¿½ï¿½ï¿½</td>
+        <td width="27%" align="center" valign="middle" class="sys_topBg">ï¿½ï¿½ï¿½
           <input type="checkbox" id="vote_checkbox" value="-1" name="vote_checkbox" onclick="javascript:return selectAll(this.form,this.checked);"/></td>
       </tr>
     </HeaderTemplate>
@@ -69,21 +69,21 @@
   </div>
   <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
     <tr class="TR_BG_list">
-      <td class="list_link"> ·ÖÀà²éÑ¯:
+      <td class="list_link"> ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯:
         &nbsp;
-        ¹Ø¼ü×Ö:
+        ï¿½Ø¼ï¿½ï¿½:
         <asp:TextBox runat="server" ID="KeyWord" size="15"  CssClass="form"/>
         &nbsp;&nbsp;
-        ²éÑ¯ÀàÐÍ:
+        Ö²ï¿½Ñ¯ï¿½ï¿½ï¿½:
         <asp:DropDownList ID="DdlKwdType" runat="server"  CssClass="form">
-          <asp:ListItem Value="choose" Text="ÇëÑ¡Ôñ" />
-          <asp:ListItem Value="number" Text="±àºÅ" />
-          <asp:ListItem Value="classname" Text="ÀàÃû" />
-          <asp:ListItem Value="description" Text="ÃèÊö" />
+          <asp:ListItem Value="choose" Text="ï¿½ï¿½ï¿½Ñ¡ï¿½" />
+          <asp:ListItem Value="number" Text="ï¿½ï¿½" />
+          <asp:ListItem Value="classname" Text="ï¿½ï¿½ï¿½ï¿½" />
+          <asp:ListItem Value="description" Text="ï¿½ï¿½ï¿½ï¿½" />
         </asp:DropDownList>
         &nbsp;&nbsp;
-        <asp:Button runat="server" ID="BtnSearch" Text=" ²éÑ¯ " CssClass="form" OnClick="BtnSearch_Click" />
-        &nbsp;<span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_searchClass_0001',this)">°ïÖú</span> </td>
+        <asp:Button runat="server" ID="BtnSearch" Text=" ï¿½ï¿½Ñ¯ " CssClass="form" OnClick="BtnSearch_Click" />
+        &nbsp;<span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_searchClass_0001',this)">ï¿½ï¿½ï¿½</span> </td>
     </tr>
   </table>
   <%
@@ -97,25 +97,25 @@
       %>
   <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1"  class="table" id="Addvote_Class">
     <tr class="TR_BG_list">
-      <td class="list_link" colspan="2">ÐÂÔöÎÊ¾íµ÷²é·ÖÀàÐÅÏ¢</td>
+      <td class="list_link" colspan="2">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 171px"> Àà±ðÃû³Æ£º</td>
+      <td align="right"  class="list_link" style="width: 171px"> ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½</td>
       <td  align="left" class="list_link"><asp:TextBox ID="ClassName" runat="server" Width="124px" CssClass="form"/>
-        <span class=reshow>(*)</span> <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverClass_0001',this)">°ïÖú</span></td>
+        <span class=reshow>(*)</span> <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverClass_0001',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 171px"> ÃèÊö£º</td>
+      <td align="right"  class="list_link" style="width: 171px"> ï¿½ï¿½ï¿½ï¿½</td>
       <td  align="left" class="list_link"><textarea ID="Description" runat="server" Width="124px" style="width: 266px; height: 99px" class="form"/>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverClass_0002',this)">°ïÖú</span></td>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverClass_0002',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
       <td align="center"  colspan="2" class="list_link"><label>
-        <input type="submit" name="Saveupload" value=" Ìá ½» " class="form" id="SaveClass" runat="server" onserverclick="SaveClass_ServerClick"/>
+        <input type="submit" name="Saveupload" value=" ï¿½ï¿½ á½» " class="form" id="SaveClass" runat="server" onserverclick="SaveClass_ServerClick"/>
         </label>
         &nbsp;&nbsp;
         <label>
-        <input type="reset" name="Clearupload" value=" ÖØ Ìî " class="form" id="ClearClass" runat="server" />
+        <input type="reset" name="Clearupload" value=" ï¿½ ï¿½ï¿½ " class="form" id="ClearClass" runat="server" />
         </label></td>
     </tr>
   </table>
@@ -128,25 +128,25 @@
       %>
   <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1"  class="table" id="Editvote_Class">
     <tr class="TR_BG_list">
-      <td class="list_link" colspan="2">ÐÞ¸ÄÎÊ¾íµ÷²é·ÖÀàÐÅÏ¢</td>
+      <td class="list_link" colspan="2">ï¿½ï¿½Þ¸ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 175px"> Àà±ðÃû³Æ£º</td>
+      <td align="right"  class="list_link" style="width: 175px"> ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½</td>
       <td  align="left" class="list_link"><asp:TextBox ID="ClassNameEdit" runat="server" Width="124px" CssClass="form"/>
-        <span class=reshow>(*)</span> <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverClass_0001',this)">°ïÖú</span></td>
+        <span class=reshow>(*)</span> <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverClass_0001',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
-      <td align="right"  class="list_link" style="width: 175px"> ÃèÊö£º</td>
+      <td align="right"  class="list_link" style="width: 175px"> ï¿½ï¿½ï¿½ï¿½</td>
       <td  align="left" class="list_link"><textarea ID="DescriptionE" runat="server" rows="5" Width="124px" style="width: 266px; height: 99px" class="form"/>
-        <span class="helpstyle" style="cursor:help;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_surverClass_0002',this)">°ïÖú</span></td>
+        <span class="helpstyle" style="cursor:help;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_surverClass_0002',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
       <td align="center"  colspan="2" class="list_link"><label>
-        <input type="submit" name="Savevote" value=" Ìá ½» " class="form" id="EditSave" runat="server" onserverclick="EditSave_ServerClick"/>
+        <input type="submit" name="Savevote" value=" ï¿½ï¿½ á½» " class="form" id="EditSave" runat="server" onserverclick="EditSave_ServerClick"/>
         </label>
         &nbsp;&nbsp;
         <label>
-        <input type="reset" name="Clearvote" value=" ÖØ Ìî " class="form" id="EditClear" runat="server" />
+        <input type="reset" name="Clearvote" value=" ï¿½ ï¿½ï¿½ " class="form" id="EditClear" runat="server" />
         </label></td>
     </tr>
   </table>

@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Mycom
     {
         private IMycom dal;
         public Mycom()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateMycom();
+            dal = Hg.DALFactory.DataAccess.CreateMycom();
         }
         #region usermycom_Look.aspx
         public DataTable sel(string Commid)

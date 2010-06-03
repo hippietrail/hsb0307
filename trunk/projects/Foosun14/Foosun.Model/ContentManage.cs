@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Model
+namespace Hg.Model
 {
     [Serializable]
     //栏目增加/修改构造函数

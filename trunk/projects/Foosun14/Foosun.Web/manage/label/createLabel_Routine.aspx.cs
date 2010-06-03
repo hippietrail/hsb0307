@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_createLabel_Routine : Foosun.Web.UI.ManagePage
+public partial class manage_label_createLabel_Routine : Hg.Web.UI.ManagePage
 {
     public string APIID = "0";
-    Foosun.CMS.Label rd = new Foosun.CMS.Label();
+    Hg.CMS.Label rd = new Hg.CMS.Label();
     protected void Page_Load(object sender, EventArgs e)
     {
         APIID = SiteID;
@@ -20,11 +20,11 @@ public partial class manage_label_createLabel_Routine : Foosun.Web.UI.ManagePage
         {
             Response.CacheControl = "no-cache";                        //设置页面无缓存
             
-            string _dirdumm = Foosun.Config.UIConfig.dirDumm;
+            string _dirdumm = Hg.Config.UIConfig.dirDumm;
             if (_dirdumm.Trim() != "") { _dirdumm = "/" + _dirdumm; }
-            style_base.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
-            style_class.InnerHtml = Foosun.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
-            style_special.InnerHtml = Foosun.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
+            style_base.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent", _dirdumm + "/xml/cuslabeStyle/cstylebase.xml");
+            style_class.InnerHtml = Hg.Common.Public.getxmlstylelist("styleContent1", _dirdumm + "/xml/cuslabeStyle/cstyleclass.xml");
+            style_special.InnerHtml = Hg.Common.Public.getxmlstylelist("DropDownList2", _dirdumm + "/xml/cuslabeStyle/cstylespecial.xml");
             getRuleID();
             getTodayPicID();
             getDefine();
@@ -51,7 +51,7 @@ public partial class manage_label_createLabel_Routine : Foosun.Web.UI.ManagePage
 
     protected void getRuleID()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getRuleID();
         if (dt != null)
         {
@@ -77,7 +77,7 @@ public partial class manage_label_createLabel_Routine : Foosun.Web.UI.ManagePage
     
     protected void getTodayPicID()
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         DataTable dt = lc.getTodayPicID();
         if (dt != null)
         {
@@ -102,7 +102,7 @@ public partial class manage_label_createLabel_Routine : Foosun.Web.UI.ManagePage
 
     protected void getDefine()
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.styledefine();
 
         if (dt != null)

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IPsframe
     {
@@ -21,8 +21,8 @@ namespace Foosun.DALFactory
         int DelAllTask();
         DataTable getTaskParam(string TaskID);
         DataTable getTaskName(string TaskName);
-        void insertTask(Foosun.Model.Task uc);
-        void UpdateTask(Foosun.Model.Task uc);
+        void insertTask(Hg.Model.Task uc);
+        void UpdateTask(Hg.Model.Task uc);
         DataTable getTaskIDInfo(string TaskID);
     }
 

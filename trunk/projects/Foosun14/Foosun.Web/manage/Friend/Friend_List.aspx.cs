@@ -18,11 +18,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
 
-public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
+public partial class manage_Friend_Friend_List : Hg.Web.UI.ManagePage
 {
     public manage_Friend_Friend_List()
     {
@@ -207,7 +207,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             {
                 IsRegister.Checked = false;
             }
-            if (Foosun.Config.UIConfig.Linktagert.Equals("_blank"))
+            if (Hg.Config.UIConfig.Linktagert.Equals("_blank"))
             {
                 isBlank.Checked = true;
             }
@@ -215,7 +215,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             {
                 isBlank.Checked = false;
             }
-            if (Foosun.Config.UIConfig.Linktagertimg.Equals("_blank"))
+            if (Hg.Config.UIConfig.Linktagertimg.Equals("_blank"))
             {
                 isImgBlank.Checked = true;
             }
@@ -224,7 +224,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
                 isImgBlank.Checked = false;
             }
             ArrSize.Text = dt.Rows[0]["ArrSize"].ToString();
-            Content.Value = Foosun.Common.Input.ToTxt(dt.Rows[0]["Content"].ToString());
+            Content.Value = Hg.Common.Input.ToTxt(dt.Rows[0]["Content"].ToString());
             if (dt.Rows[0]["isLock"].ToString() == "1")
             {
                 isLock.Checked = true;
@@ -270,22 +270,22 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             }
             if (isBlank.Checked == true)
             {
-                Foosun.Config.UIConfig.Linktagert = "_blank";
+                Hg.Config.UIConfig.Linktagert = "_blank";
             }
             else
             {
-                Foosun.Config.UIConfig.Linktagert = "";
+                Hg.Config.UIConfig.Linktagert = "";
             }
             if (isImgBlank.Checked == true)
             {
-                Foosun.Config.UIConfig.Linktagertimg = "_blank";
+                Hg.Config.UIConfig.Linktagertimg = "_blank";
             }
             else
             {
-                Foosun.Config.UIConfig.Linktagertimg = "";
+                Hg.Config.UIConfig.Linktagertimg = "";
             }
-            string Str_ArrSize = Foosun.Common.Input.Filter(this.ArrSize.Text.Trim());//图片尺寸
-            string Str_Content = Foosun.Common.Input.Filter(this.Content.Value.Trim());//注册须知;
+            string Str_ArrSize = Hg.Common.Input.Filter(this.ArrSize.Text.Trim());//图片尺寸
+            string Str_Content = Hg.Common.Input.Filter(this.Content.Value.Trim());//注册须知;
             #endregion
 
             #region 向数据库中写入添加的参数设置信息
@@ -317,7 +317,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
     protected void FriendClassManage(int PageIndex)//显示类别管理页面
     {
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage("manage_Friend_Friend_List_1_aspx", PageIndex, PAGESIZE, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage("manage_Friend_Friend_List_1_aspx", PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -336,7 +336,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
                         String strchar = null;
                         string id = dt.Rows[k]["ClassID"].ToString();
                         dt.Rows[k]["ClassCName"] = "<a href='Friend_List.aspx?type=edit_class&id=" + id + "' class='list_link' title='点击查看详情或修改'>" + dt.Rows[k]["ClassCName"].ToString() + "</a>";
-                        dt.Rows[k]["oPerate"] = "<a href=\"Friend_List.aspx?type=edit_class&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"Friend_List.aspx?type=delone_class&id=" + id + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？其下的子类也将被删除!')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><a href=\"Friend_List.aspx?type=add_class&parentid=" + id + "\" class=\"list_link\" title=\"添加子类\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><input type='checkbox' name='friend_checkbox' id='friend_checkbox' value=\"" + id + "\"/>";
+                        dt.Rows[k]["oPerate"] = "<a href=\"Friend_List.aspx?type=edit_class&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"Friend_List.aspx?type=delone_class&id=" + id + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？其下的子类也将被删除!')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><a href=\"Friend_List.aspx?type=add_class&parentid=" + id + "\" class=\"list_link\" title=\"添加子类\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子类\" /></a><input type='checkbox' name='friend_checkbox' id='friend_checkbox' value=\"" + id + "\"/>";
                         strchar += "<tr class=\"TR_BG_list\">";
                         strchar += "<td  align=\"left\" valign=\"middle\" >" + dt.Rows[k]["ClassCName"] + "</td>";
                         strchar += "<td  align=\"center\" valign=\"middle\" >" + dt.Rows[k]["Content"] + "</td>";
@@ -406,7 +406,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
     protected void FriendLinkManage(int PageIndex)//显示连接管理页面
     {
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage("manage_Friend_Friend_List_2_aspx", PageIndex, PAGESIZE, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage("manage_Friend_Friend_List_2_aspx", PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator2.PageCount = j;
         this.PageNavigator2.PageIndex = PageIndex;
         this.PageNavigator2.RecordCount = i;
@@ -476,9 +476,9 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
                         DataTable dt_user = fl.USerSess(Authorr);
                         string AdminName = (dt_user.Rows[0]["UserName"].ToString());
                         string isadmin = dt_user.Rows[0]["isAdmin"].ToString();
-                        dt.Rows[k]["author"] = isadmin == "1" ? "管理员:<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + AdminName + "\" target=\"_blank\" class=\"list_link\">" + AdminName + "</a>" : "会员:<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + AdminName + "\" target=\"_blank\" class=\"list_link\">" + AdminName + "</a>";
+                        dt.Rows[k]["author"] = isadmin == "1" ? "管理员:<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + AdminName + "\" target=\"_blank\" class=\"list_link\">" + AdminName + "</a>" : "会员:<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + AdminName + "\" target=\"_blank\" class=\"list_link\">" + AdminName + "</a>";
                         #endregion
-                        dt.Rows[k]["operate"] = "<a href=\"Friend_List.aspx?type=edit_link&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><input type='checkbox' name='friend_checkbox_link' id='friend_checkbox_link' value=\"" + id + "\"/>";
+                        dt.Rows[k]["operate"] = "<a href=\"Friend_List.aspx?type=edit_link&id=" + id + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><input type='checkbox' name='friend_checkbox_link' id='friend_checkbox_link' value=\"" + id + "\"/>";
                     }
                 }
                 else
@@ -545,11 +545,11 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
         {
             //取得设置添加中的表单信息
             string parentid = this.ParentID.Text.Trim();//父类编号
-            string Str_ClassCName = Foosun.Common.Input.Filter(this.ClassCName.Text.Trim());//类别名称
-            string Str_ClassEName = Foosun.Common.Input.Filter(this.ClassEName.Text.Trim());//英文名称
-            string Str_Description = Foosun.Common.Input.Filter(this.Content_Class.Value.Trim());//说明
+            string Str_ClassCName = Hg.Common.Input.Filter(this.ClassCName.Text.Trim());//类别名称
+            string Str_ClassEName = Hg.Common.Input.Filter(this.ClassEName.Text.Trim());//英文名称
+            string Str_Description = Hg.Common.Input.Filter(this.Content_Class.Value.Trim());//说明
             #region 检查重复数据
-        check: string Str_ClassID = Foosun.Common.Rand.Number(12);
+        check: string Str_ClassID = Hg.Common.Rand.Number(12);
             if (fl.IsExitClassName(Str_ClassID) != 0)
                 goto check;
             #endregion
@@ -728,9 +728,9 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
         {
             string FID = Request.QueryString["ID"];
             //取得添加中的表单信息
-            string Str_ClassNameE = Foosun.Common.Input.Filter(this.ClassCNameEdit.Text.Trim());//类别名称
-            string Str_EnglishE = Foosun.Common.Input.Filter(this.ClassENameEdit.Text.Trim());//英文
-            string Str_Descript = Foosun.Common.Input.Filter(this.DescriptionE.Value.Trim());//说明
+            string Str_ClassNameE = Hg.Common.Input.Filter(this.ClassCNameEdit.Text.Trim());//类别名称
+            string Str_EnglishE = Hg.Common.Input.Filter(this.ClassENameEdit.Text.Trim());//英文
+            string Str_Descript = Hg.Common.Input.Filter(this.DescriptionE.Value.Trim());//说明
 
             //判断类别名称是否为空
             if (Str_ClassNameE == null || Str_ClassNameE == string.Empty)
@@ -950,15 +950,15 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             #region 取得设置添加中的表单信息
 
             string Str_Class = Request.Form["SelectClass"];//选择类别
-            string Str_Name = Foosun.Common.Input.Filter(this.Name.Text.Trim());//站点名称
+            string Str_Name = Hg.Common.Input.Filter(this.Name.Text.Trim());//站点名称
             string Str_Type = this.Type.Text.Trim();//连接类型
-            string Str_Url = Foosun.Common.Input.Filter(this.Url.Text.Trim());//连接地址
-            string Str_Content = Foosun.Common.Input.Filter(this.ContentFri.Value.Trim());//站点说明
-            string Str_PicUrl = Foosun.Common.Input.Filter(this.PicUrl.Text);//图片地址
-            string Str_Author = Foosun.Common.Input.Filter(this.Author.Text.Trim());//申请人作者
-            string Str_Mail = Foosun.Common.Input.Filter(this.Mail.Text.Trim());//邮件
-            string Str_ContentFor = Foosun.Common.Input.Filter(this.ContentFor.Value.Trim());//申请理由
-            string Str_LinkContent = Foosun.Common.Input.Filter(this.LinkContent.Value.Trim());//其他联系方式
+            string Str_Url = Hg.Common.Input.Filter(this.Url.Text.Trim());//连接地址
+            string Str_Content = Hg.Common.Input.Filter(this.ContentFri.Value.Trim());//站点说明
+            string Str_PicUrl = Hg.Common.Input.Filter(this.PicUrl.Text);//图片地址
+            string Str_Author = Hg.Common.Input.Filter(this.Author.Text.Trim());//申请人作者
+            string Str_Mail = Hg.Common.Input.Filter(this.Mail.Text.Trim());//邮件
+            string Str_ContentFor = Hg.Common.Input.Filter(this.ContentFor.Value.Trim());//申请理由
+            string Str_LinkContent = Hg.Common.Input.Filter(this.LinkContent.Value.Trim());//其他联系方式
             string Str_Addtime = this.Addtime.Text.Trim();//添加时间
 
             #endregion
@@ -1129,11 +1129,11 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             int FID = int.Parse(Request.QueryString["ID"].ToString());
             //取得表单信息
             string Str_Class = Request.Form["Sclass"];//选择类别
-            string Str_Name = Foosun.Common.Input.Filter(this.SiteName.Text.Trim());//站点名称
+            string Str_Name = Hg.Common.Input.Filter(this.SiteName.Text.Trim());//站点名称
             string Str_Type = this.LinkType.Text;//连接类型
-            string Str_Url = Foosun.Common.Input.Filter(this.linkUrl.Text.Trim())+"";//连接地址
+            string Str_Url = Hg.Common.Input.Filter(this.linkUrl.Text.Trim())+"";//连接地址
             string Str_Content = this.siteDesc.Value+"";//站点说明
-            string Str_PicUrl = Foosun.Common.Input.Filter(this.PicUrll.Text.Trim())+"";//图片地址
+            string Str_PicUrl = Hg.Common.Input.Filter(this.PicUrll.Text.Trim())+"";//图片地址
             int Isuser = 0, isLok = 0;
             if (isSuo.Checked == true)
             {
@@ -1143,10 +1143,10 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
             {
                 Isuser = 1;
             }
-            string Str_Author = Foosun.Common.Input.Filter(this.Authorr.Text.Trim())+"";//申请人作者
-            string Str_Mail = Foosun.Common.Input.Filter(this.Emaill.Text.Trim())+"";//邮件
-            string Str_ContentFor = Foosun.Common.Input.Filter(this.forfor.Value.Trim())+"";//申请理由
-            string Str_LinkContent = Foosun.Common.Input.Filter(this.otherl.Value.Trim())+"";//其他联系方式
+            string Str_Author = Hg.Common.Input.Filter(this.Authorr.Text.Trim())+"";//申请人作者
+            string Str_Mail = Hg.Common.Input.Filter(this.Emaill.Text.Trim())+"";//邮件
+            string Str_ContentFor = Hg.Common.Input.Filter(this.forfor.Value.Trim())+"";//申请理由
+            string Str_LinkContent = Hg.Common.Input.Filter(this.otherl.Value.Trim())+"";//其他联系方式
             string Str_Addtime = this.datetime.Text.Trim();//添加时间
             if (Str_Addtime == null || Str_Addtime == "")
             {
@@ -1202,7 +1202,7 @@ public partial class manage_Friend_Friend_List : Foosun.Web.UI.ManagePage
         }
         else
         {
-            this.ParentID.Text = Foosun.Common.Input.Filter(parentid);
+            this.ParentID.Text = Hg.Common.Input.Filter(parentid);
         }
     }
 

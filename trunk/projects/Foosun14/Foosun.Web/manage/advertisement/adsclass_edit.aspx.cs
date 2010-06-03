@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_advertisement_adsclass_edit : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_adsclass_edit : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -35,9 +35,9 @@ public partial class manage_advertisement_adsclass_edit : Foosun.Web.UI.ManagePa
     {
         if (Page.IsValid)
         {
-            Foosun.Model.AdsClassInfo aci = new Foosun.Model.AdsClassInfo();
-            aci.AcID = Foosun.Common.Input.Filter(Request.Form["adsclassid"]);
-            aci.Cname = Foosun.Common.Input.Filter(Request.Form["AdsClassName"]);
+            Hg.Model.AdsClassInfo aci = new Hg.Model.AdsClassInfo();
+            aci.AcID = Hg.Common.Input.Filter(Request.Form["adsclassid"]);
+            aci.Cname = Hg.Common.Input.Filter(Request.Form["AdsClassName"]);
             aci.ParentID ="";
             if (Request.Form["AdsPrice"].ToString() != null && Request.Form["AdsPrice"].ToString() != "")
                 aci.Adprice = int.Parse(Request.Form["AdsPrice"].ToString());
@@ -46,7 +46,7 @@ public partial class manage_advertisement_adsclass_edit : Foosun.Web.UI.ManagePa
             aci.creatTime = DateTime.Now;
             aci.SiteID = SiteID;
 
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             int result =  ac.EditClass(aci);
 
             if(result==1)
@@ -64,9 +64,9 @@ public partial class manage_advertisement_adsclass_edit : Foosun.Web.UI.ManagePa
 
     protected void getAdsClassInfo()
     {
-        string classid =Foosun.Common.Input.Filter(Request.QueryString["AdsClassID"]);
+        string classid =Hg.Common.Input.Filter(Request.QueryString["AdsClassID"]);
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getAdsClassInfo(classid);
 
         if (dt != null)

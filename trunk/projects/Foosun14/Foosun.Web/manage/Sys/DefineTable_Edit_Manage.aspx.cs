@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_DefineTable_Edit_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_DefineTable_Edit_Manage : Hg.Web.UI.ManagePage
 {
     public manage_Sys_DefineTable_Edit_Manage()
     {
@@ -74,7 +74,7 @@ public partial class manage_Sys_DefineTable_Edit_Manage : Foosun.Web.UI.ManagePa
             }
             else
             {
-                string Str_NewText = Foosun.Common.Input.Filter(this.NewText.Text.Trim());//名称               
+                string Str_NewText = Hg.Common.Input.Filter(this.NewText.Text.Trim());//名称               
                 #region 刷新页面
                 if (def.Update1(Str_NewText, DefID) != 0)
                 {

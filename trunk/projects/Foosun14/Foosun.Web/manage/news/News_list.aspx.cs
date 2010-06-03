@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
+public partial class manage_news_News_list : Hg.Web.UI.ManagePage
 {
     /// <summary>
     /// 权限管理
@@ -34,20 +34,20 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
     ContentManage rd = new ContentManage();
     rootPublic pd = new rootPublic();
     UserMisc rds = new UserMisc();
-    public string DPre = Foosun.Config.UIConfig.dataRe;
+    public string DPre = Hg.Config.UIConfig.dataRe;
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除缓存
-        //Foosun.Publish.CommonData.NewsInfoList.Clear();
-        //Foosun.Publish.CommonData.NewsInfoList.Dispose();
-        string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+        //Hg.Publish.CommonData.NewsInfoList.Clear();
+        //Hg.Publish.CommonData.NewsInfoList.Dispose();
+        string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
         if (ReadType == "1")
         {
             isMakeHTML.Visible = false;
         }
         if (Request.Form["Option"] != null && !Request.Form["Option"].Trim().Equals("") && Request.Form["NewsID"] != null && !Request.Form["NewsID"].Trim().Equals(""))
         {
-            string id = Foosun.Common.Input.Filter(Request.Form["NewsID"].Trim());
+            string id = Hg.Common.Input.Filter(Request.Form["NewsID"].Trim());
             string HiddenSpecialID = Request.Form["HiddenSpecialID"];
 
             switch (Request.Form["Option"].Trim())
@@ -152,7 +152,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             string _TClassID = Request.QueryString["ClassID"];
             if (_TClassID != null)
             {
-                if (Foosun.Config.verConfig.PublicType != "1")
+                if (Hg.Config.verConfig.PublicType != "1")
                 {
                     ClassNewsIndex.InnerHtml = "<span title=\"门户版功能\" style=\"color:#999999\">索引</span>";
                 }
@@ -248,7 +248,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
     private void ListDataBind(int PageIndex)
     {
         string ClassID = "";
-        string SpecialID = Foosun.Common.Input.Filter(Request.QueryString["SpecialID"]);
+        string SpecialID = Hg.Common.Input.Filter(Request.QueryString["SpecialID"]);
 
         this.HiddenSpecialID.Value = SpecialID;
 
@@ -265,7 +265,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             }
             this.keyWorks.Text = string.Empty;
         }
-        string sKeywrd = Foosun.Common.Input.Filter(this.TxtKeywords.Text.Trim());
+        string sKeywrd = Hg.Common.Input.Filter(this.TxtKeywords.Text.Trim());
         string DdlKwdType = this.DdlKwdType.SelectedValue;
         string sChooses = this.LblChoose.Text.Trim();
         string site = "0";
@@ -378,11 +378,11 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
                 string SetTop = null;
                 if (dt.Rows[k]["OrderID"].ToString() != "10")
                 {
-                    SetTop = "<a href=\"javascript:SetTop('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/top.gif\" alt=\"固顶此内容\" border=\"0\" /></a>";
+                    SetTop = "<a href=\"javascript:SetTop('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/top.gif\" alt=\"固顶此内容\" border=\"0\" /></a>";
                 }
                 else
                 {
-                    SetTop = "<a href=\"javascript:UnSetTop('" + dt.Rows[k]["ID"].ToString() + "')\"  class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/untop.gif\" alt=\"解固此内容\" border=\"0\" /></a>";
+                    SetTop = "<a href=\"javascript:UnSetTop('" + dt.Rows[k]["ID"].ToString() + "')\"  class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/untop.gif\" alt=\"解固此内容\" border=\"0\" /></a>";
                 }
                 //dt.Rows[k]["UserNames"] = "<a href=\"News_list.aspx?ClassID=" + Request.QueryString["ClassID"] + "&Editor=" + dt.Rows[k]["Editor"] + "\" class=\"list_link\">" + dt.Rows[k]["Editor"] + "</a>";
                 string _islock = "";
@@ -410,7 +410,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
                 }
                 else
                 {
-                    dt.Rows[k]["op"] = "<a href=\"News_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&NewsID=" + dt.Rows[k]["NewsID"].ToString() + "&EditAction=Edit\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" alt=\"修改\" border=\"0\" /></a>&nbsp;<a href=\"news_review.aspx?ID=" + dt.Rows[k]["NewsID"].ToString() + "\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" alt=\"预览\" border=\"0\" /></a>&nbsp;" + SetTop + "&nbsp;<a href=\"javascript:AddToJS('" + dt.Rows[k]["ID"].ToString() + "')\"  class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/js.gif\" alt=\"加入自由JS\" border=\"0\" /></a>&nbsp;<a href=\"javascript:Recycle('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/folder/del.gif\" alt=\"删除到回收站\" border=\"0\" /></a>&nbsp;<a href=\"javascript:Delete('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" alt=\"彻底删除\" border=\"0\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ID"].ToString() + "  runat=\"server\" />";
+                    dt.Rows[k]["op"] = "<a href=\"News_add.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "&NewsID=" + dt.Rows[k]["NewsID"].ToString() + "&EditAction=Edit\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" alt=\"修改\" border=\"0\" /></a>&nbsp;<a href=\"news_review.aspx?ID=" + dt.Rows[k]["NewsID"].ToString() + "\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" alt=\"预览\" border=\"0\" /></a>&nbsp;" + SetTop + "&nbsp;<a href=\"javascript:AddToJS('" + dt.Rows[k]["ID"].ToString() + "')\"  class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/js.gif\" alt=\"加入自由JS\" border=\"0\" /></a>&nbsp;<a href=\"javascript:Recycle('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/folder/del.gif\" alt=\"删除到回收站\" border=\"0\" /></a>&nbsp;<a href=\"javascript:Delete('" + dt.Rows[k]["ID"].ToString() + "')\" class=\"list_link\"><img src=\"../../sysImages/folder/dels.gif\" alt=\"彻底删除\" border=\"0\" /></a><input name=\"Checkbox1\" type=\"checkbox\" value=" + dt.Rows[k]["ID"].ToString() + "  runat=\"server\" />";
                 }
             }
 
@@ -574,7 +574,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
     private void Option_Recyle(string sid,string specialID)
     {
         string[] id = sid.Split(',');
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         int ln = id.Length;
         int n = 0;
         for (int i = 0; i < id.Length; i++)
@@ -608,7 +608,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
         rd.delTBNewsID(sid);
         //rd.delTBDateNumber(SearchEngine.datenumber());
         //rd.delTBTypeNumber(SearchEngine.conditionnumbers());
-        Foosun.CMS.Special delSpecial = new Foosun.CMS.Special();
+        Hg.CMS.Special delSpecial = new Hg.CMS.Special();
         string[] id = sid.Split(',');
         int ln = id.Length;
         int n = 0;
@@ -662,7 +662,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
     //生成栏目
     private void Option_ClassRefresh(string sid)
     {
-        Foosun.Publish.General PN = new Foosun.Publish.General();
+        Hg.Publish.General PN = new Hg.Publish.General();
         if (PN.publishSingleClass(sid))
         {
             Response.Clear();
@@ -677,7 +677,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
 
     private void Option_XMLRefresh(string sid)
     {
-        if (Foosun.Publish.General.publishXML(sid))
+        if (Hg.Publish.General.publishXML(sid))
         {
             Response.Clear();
             Response.Write("成功此栏目XML成功！");
@@ -692,7 +692,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
     //生成静态
     private void Option_makeFilesHTML(string sid)
     {
-        string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+        string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
         if (ReadType == "1")
         {
             Response.Clear();
@@ -705,7 +705,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
             string[] ARR1 = rd.GetNewsIDfromID1(int.Parse(id)).Split('|');
             string NewsID_1 = ARR1[0];
             string ClassID_1 = ARR1[1];
-            if (Foosun.Publish.General.publishSingleNews(NewsID_1, ClassID_1))
+            if (Hg.Publish.General.publishSingleNews(NewsID_1, ClassID_1))
             {
                 rd.updateNewsHTML(1, NewsID_1);
                 Response.Clear();
@@ -729,7 +729,7 @@ public partial class manage_news_News_list : Foosun.Web.UI.ManagePage
                 string[] ARR2 = rd.GetNewsIDfromID1(int.Parse(idARR[i].ToString())).Split('|');
                 sNewsID = ARR2[0];
                 sClassID = ARR2[1];
-                if (Foosun.Publish.General.publishSingleNews(sNewsID, sClassID))
+                if (Hg.Publish.General.publishSingleNews(sNewsID, sClassID))
                 {
                     rd.updateNewsHTML(1, sNewsID);
                     j++;

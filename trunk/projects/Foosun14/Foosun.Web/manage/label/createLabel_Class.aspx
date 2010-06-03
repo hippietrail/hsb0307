@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="createLabel_Class.aspx.cs"
-    Inherits="Foosun.Web.manage.label.createLabel_Class" %>
+    Inherits="Hg.Web.manage.label.createLabel_Class" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css"
+    <link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css"
         rel="stylesheet" type="text/css" />
 
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
@@ -87,7 +87,7 @@ function getType()
                     <script language="javascript" type="text/javascript">
         function insertHTMLEdit(url)
             {
-                var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+                var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
                 var oEditor = FCKeditorAPI.GetInstance("UserDefined");
                 if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
                 {

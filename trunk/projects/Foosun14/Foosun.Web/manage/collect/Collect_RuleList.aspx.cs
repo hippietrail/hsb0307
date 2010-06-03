@@ -19,9 +19,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_collect_Collect_RuleList : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_RuleList : Hg.Web.UI.ManagePage
 {
-    private Foosun.CMS.Collect.Collect cl;
+    private Hg.CMS.Collect.Collect cl;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Request.Form["Option"] != null && !Request.Form["Option"].Trim().Equals("")
@@ -32,7 +32,7 @@ public partial class manage_collect_Collect_RuleList : Foosun.Web.UI.ManagePage
                 int id = int.Parse(Request.Form["ID"]);
                 if (Request.Form["Option"].Equals("DeleteRule"))
                 {
-                    cl = new Foosun.CMS.Collect.Collect();
+                    cl = new Hg.CMS.Collect.Collect();
                     cl.RuleDelete(id);
                 }
                 Response.Write("1%成功删除一个规则");
@@ -57,7 +57,7 @@ public partial class manage_collect_Collect_RuleList : Foosun.Web.UI.ManagePage
     private void ListDataBind(int PageIndex)
     {
         int nRCount, nPCount;
-        cl = new Foosun.CMS.Collect.Collect();
+        cl = new Hg.CMS.Collect.Collect();
         this.RptRule.DataSource = cl.GetRulePage(PageIndex, PAGESIZE, out nRCount, out nPCount);
         this.RptRule.DataBind();
         this.PageNavigator1.PageCount = nPCount;

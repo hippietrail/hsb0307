@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace Foosun.CMS.Templet
+namespace Hg.CMS.Templet
 {
 	public class Templet
 	{

@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Web.UI;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.Web.UI;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class configuration_system_Genlist : Foosun.Web.UI.DialogPage
+public partial class configuration_system_Genlist : Hg.Web.UI.DialogPage
 {
     public configuration_system_Genlist()
     {
@@ -56,7 +56,7 @@ public partial class configuration_system_Genlist : Foosun.Web.UI.DialogPage
         if (_type != null && _type != "")
         {
             SQLConditionInfo st = new SQLConditionInfo("@gType",_tmpstr);
-            dt = Foosun.CMS.Pagination.GetPage("configuration_system_Genlist_1_aspx", PageIndex, 40, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("configuration_system_Genlist_1_aspx", PageIndex, 40, out i, out j, st);
         }
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface ISpecial
     {
@@ -16,8 +16,8 @@ namespace Foosun.DALFactory
         void PUnLock(string id);
         void RemoveNews(string specialID, string newsID);
         string getSpicaelNewsNum(string id);
-        string Add(Foosun.Model.Special sci);
-        int Edit(Foosun.Model.Special sci);
+        string Add(Hg.Model.Special sci);
+        int Edit(Hg.Model.Special sci);
         DataTable getSpeacilInfo(string id);
         IDataReader ToTempletBind(string ParentID);
         void BindSPTemplet(string SpecialID, string Templet);

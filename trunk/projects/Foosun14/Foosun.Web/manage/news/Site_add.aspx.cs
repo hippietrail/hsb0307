@@ -18,12 +18,12 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
+public partial class manage_news_Site_add : Hg.Web.UI.ManagePage
 {
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
-    public string PublishType = Foosun.Config.verConfig.PublicType;
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
+    public string PublishType = Hg.Config.verConfig.PublicType;
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";
@@ -41,7 +41,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
             this.RadStatus.Items[0].Selected = true;
             this.RadFileType.Items[0].Selected = true;
             this.DdlDataTable.Items.Clear();
-            Foosun.CMS.News news = new Foosun.CMS.News();
+            Hg.CMS.News news = new Hg.CMS.News();
             DataTable tbnews = news.GetTables();
             this.DdlDataTable.DataSource = tbnews;
             this.DdlDataTable.DataTextField = "TableName";
@@ -55,7 +55,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
                 int id = int.Parse(Request.QueryString["ID"]);
                 this.TxtEnName.Enabled = false;
                 this.LblID.Text = id.ToString();
-                Foosun.CMS.Site site = new Foosun.CMS.Site();
+                Hg.CMS.Site site = new Hg.CMS.Site();
                 DataTable tb = site.GetSingle(id);
                 if (tb != null && tb.Rows.Count > 0)
                 {
@@ -195,7 +195,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
                 string[] upfileTypeARR = pd.upfileType().Split('|');
                 this.TxtUpFileType.Text = upfileTypeARR[0];
                 this.TxtUpFileSize.Text = upfileTypeARR[1];
-                this.TxtFileDir.Text = "/" + Foosun.Config.UIConfig.dirSite;
+                this.TxtFileDir.Text = "/" + Hg.Config.UIConfig.dirSite;
                 this.TxtDirRule.Text = "{@year04}-{@month}-{@day}";
                 this.TxtFileRule .Text = "{@year04}{@month}-{@自动编号ID}";
 
@@ -329,7 +329,7 @@ public partial class manage_news_Site_add : Foosun.Web.UI.ManagePage
             stsite.SpecialNum = 500;
             #endregion 为变量赋值
 
-            Foosun.CMS.Site site = new Foosun.CMS.Site();
+            Hg.CMS.Site site = new Hg.CMS.Site();
             if (LblID.Text.Trim().Equals(string.Empty))
             {
                 //PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);

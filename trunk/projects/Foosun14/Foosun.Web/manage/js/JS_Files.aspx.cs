@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_js_JS_Files : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_Files : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -17,7 +17,7 @@ public partial class manage_js_JS_Files : Foosun.Web.UI.ManagePage
         Response.CacheControl = "no-cache";//设置页面无缓存
         if (Request.Form["Option"] != null && Request.Form["Option"].Equals("RemoveJS") && Request.Form["ID"] != null)
         {
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
             try
             {
                 int id = int.Parse(Request.Form["id"]);
@@ -35,7 +35,7 @@ public partial class manage_js_JS_Files : Foosun.Web.UI.ManagePage
         //批量删除
         if (Request.Form["Option"] != null && Request.Form["Option"].Equals("RemoveAllJS") && Request.Form["idList"] != null)
         {
-            Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+            Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
             string[] idList = Request.Form["idList"].Split(',');
 
             foreach (string s in idList)
@@ -71,7 +71,7 @@ public partial class manage_js_JS_Files : Foosun.Web.UI.ManagePage
     {
         int id = int.Parse(this.HidJsID.Value);
         int RcdCount = 0, PgCount = 0;
-        Foosun.CMS.NewsJS nj = new Foosun.CMS.NewsJS();
+        Hg.CMS.NewsJS nj = new Hg.CMS.NewsJS();
         DataTable tb = nj.GetJSFilePage(PageIndex, PAGESIZE, out RcdCount, out PgCount, id);
         this.PageNavigator1.RecordCount = RcdCount;
         this.PageNavigator1.PageCount = PgCount;

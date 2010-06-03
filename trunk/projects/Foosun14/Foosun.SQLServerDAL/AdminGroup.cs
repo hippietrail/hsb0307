@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class AdminGroup : DbBase, IAdminGroup
     {
         private string SiteID;
         public AdminGroup()
         {
-            SiteID = Foosun.Global.Current.SiteID;
+            SiteID = Hg.Global.Current.SiteID;
         }
         /// <summary>
         /// 增加管理员组
         /// </summary>
         /// <param name="agci">构造参数</param>
         /// <returns></returns>
-        public int add(Foosun.Model.AdminGroupInfo agci)
+        public int add(Hg.Model.AdminGroupInfo agci)
         {
             string checkSql = "";
             int recordCount = 0;
-            string AdminGruopNum = Foosun.Common.Rand.Number(8);
+            string AdminGruopNum = Hg.Common.Rand.Number(8);
             while (true)
             {
                 checkSql = "select count(*) from " + Pre + "sys_AdminGroup where adminGroupNumber='" + AdminGruopNum + "'";
@@ -33,7 +33,7 @@ namespace Foosun.SQLServerDAL
                 if (recordCount < 1)
                     break;
                 else
-                    AdminGruopNum = Foosun.Common.Rand.Number(12, true);
+                    AdminGruopNum = Hg.Common.Rand.Number(12, true);
             }
             checkSql = "select count(*) from " + Pre + "sys_AdminGroup where GroupName='" + agci.GroupName + "'";
             recordCount = (int)DbHelper.ExecuteScalar(CommandType.Text, checkSql, null);
@@ -49,7 +49,7 @@ namespace Foosun.SQLServerDAL
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param));
         }
 
-        public int Edit(Foosun.Model.AdminGroupInfo agci)
+        public int Edit(Hg.Model.AdminGroupInfo agci)
         {
             string str_Sql = "Update " + Pre + "sys_AdminGroup Set ClassList=@ClassList,SpecialList=@SpecialList,";
             str_Sql += "channelList=@channelList Where adminGroupNumber='" + agci.adminGroupNumber + "'";
@@ -82,7 +82,7 @@ namespace Foosun.SQLServerDAL
             return DbHelper.ExecuteTable(CommandType.Text, str_Sql, null);
         }
 
-        private SqlParameter[] GetAdminGroupParameters(Foosun.Model.AdminGroupInfo agci)
+        private SqlParameter[] GetAdminGroupParameters(Hg.Model.AdminGroupInfo agci)
         {
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@adminGroupNumber", SqlDbType.NVarChar, 8);

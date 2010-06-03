@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.configuration.system
+namespace Hg.Web.configuration.system
 {
-    public partial class _public : Foosun.Web.UI.DialogPage
+    public partial class _public : Hg.Web.UI.DialogPage
     {
         public _public()
         {
@@ -69,7 +69,7 @@ namespace Foosun.Web.configuration.system
                 }
             }
             pstr += "</select>日&nbsp;<input type=\"button\" name=\"Submit\" style=\"font-size:12px;\" value=\"查询\" />\r";
-            pstr += "&nbsp;<img src=\"" + Foosun.Publish.CommonData.SiteDomain + "/sysImages/folder/daylist.gif\" border=\"0\" alt=\"选择日期查看\" onclick=\"getDaylist();\" style=\"cursor:pointer;\" />\r";
+            pstr += "&nbsp;<img src=\"" + Hg.Publish.CommonData.SiteDomain + "/sysImages/folder/daylist.gif\" border=\"0\" alt=\"选择日期查看\" onclick=\"getDaylist();\" style=\"cursor:pointer;\" />\r";
             Response.Write(pstr);
         }
     }

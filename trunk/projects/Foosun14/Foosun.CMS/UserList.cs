@@ -10,17 +10,17 @@
 using System;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class UserList
     {
         private IUserList dal;
         public UserList()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateUserList();
+            dal = Hg.DALFactory.DataAccess.CreateUserList();
         }
 
         public string getGroupName(string strGroupNumber)

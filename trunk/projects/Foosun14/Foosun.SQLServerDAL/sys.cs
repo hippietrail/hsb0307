@@ -1,16 +1,16 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 using System.Collections;
 using System.Collections.Specialized;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class sys : DbBase, Isys
     {
@@ -134,7 +134,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void General_M_Del(int Gid)
         {
-            string Sql = "Delete From " + Pre + "News_Gen where id=" + Gid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Delete From " + Pre + "News_Gen where id=" + Gid + " " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void General_M_Suo(int Gid)
         {
-            string Sql = "Update " + Pre + "News_Gen Set isLock=1 where id=" + Gid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + Pre + "News_Gen Set isLock=1 where id=" + Gid + " " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -153,7 +153,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void General_M_UnSuo(int Gid)
         {
-            string Sql = "Update " + Pre + "News_Gen Set isLock=0 where id=" + Gid + " " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Update " + Pre + "News_Gen Set isLock=0 where id=" + Gid + " " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -163,13 +163,13 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void General_DelAll()
         {
-            string Sql = "Delete From " + Pre + "News_Gen where 1=1 " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Delete From " + Pre + "News_Gen where 1=1 " + Hg.Common.Public.getSessionStr() + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
         public DataTable GetGeneralRecord(string Cname)
         {
-            string Sql = "Select Cname,gType From " + Pre + "News_Gen Where Cname='" + Cname + "' " + Foosun.Common.Public.getSessionStr() + "";
+            string Sql = "Select Cname,gType From " + Pre + "News_Gen Where Cname='" + Cname + "' " + Hg.Common.Public.getSessionStr() + "";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
@@ -180,7 +180,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void insertGeneral(string _Sel_Type, string _Name, string _LinkUrl, string _Email)
         {
-            //string Sql = "Insert Into " + Pre + "news_Gen(gType,Cname,URL,EmailURL,SiteID) Values(" + _Sel_Type + ",'" + _Name + "','" + _LinkUrl + "','" + _Email + "','" + Foosun.Global.Current.SiteID + "')";
+            //string Sql = "Insert Into " + Pre + "news_Gen(gType,Cname,URL,EmailURL,SiteID) Values(" + _Sel_Type + ",'" + _Name + "','" + _LinkUrl + "','" + _Email + "','" + Hg.Global.Current.SiteID + "')";
             //DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into fs_news_Gen(");
@@ -198,7 +198,7 @@ namespace Foosun.SQLServerDAL
             parameters[1].Value = _Sel_Type;
             parameters[2].Value = _LinkUrl;
             parameters[3].Value = _Email;
-            parameters[4].Value = Foosun.Global.Current.SiteID;
+            parameters[4].Value = Hg.Global.Current.SiteID;
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parameters);
         }
 
@@ -208,7 +208,7 @@ namespace Foosun.SQLServerDAL
         /// <param name="TableName"></param>
         public void UpdateGeneral(string _Sel_Type, string _Name, string _LinkUrl, string _Email, int GID)
         {
-            string Sql = "Update " + Pre + "news_Gen Set gType=" + _Sel_Type + ",Cname=N'" + _Name + "',EmailURL='" + _Email + "',URL='" + _LinkUrl + "' where id=" + GID + " and SiteID = " + Foosun.Global.Current.SiteID + "";
+            string Sql = "Update " + Pre + "news_Gen Set gType=" + _Sel_Type + ",Cname=N'" + _Name + "',EmailURL='" + _Email + "',URL='" + _LinkUrl + "' where id=" + GID + " and SiteID = " + Hg.Global.Current.SiteID + "";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 

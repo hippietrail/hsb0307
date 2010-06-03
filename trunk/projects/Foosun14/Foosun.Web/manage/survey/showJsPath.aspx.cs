@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS.Common;
+using Hg.CMS.Common;
 
-public partial class manage_survey_showJsPath : Foosun.Web.UI.ManagePage
+public partial class manage_survey_showJsPath : Hg.Web.UI.ManagePage
 {
     #region 取得服务器变量集合
     System.Collections.Specialized.NameValueCollection ServerVariables = System.Web.HttpContext.Current.Request.ServerVariables;
@@ -46,7 +46,7 @@ public partial class manage_survey_showJsPath : Foosun.Web.UI.ManagePage
             string scripts = null;
             string scripte = null;
             string strtheurl = null;
-            string Str_dirMana = Foosun.Config.UIConfig.dirDumm;
+            string Str_dirMana = Hg.Config.UIConfig.dirDumm;
             if (Str_dirMana != "" && Str_dirMana != null && Str_dirMana != string.Empty)//判断虚拟路径是否为空,如果不是则加上//
             {
                 Str_dirMana = "/" + Str_dirMana;
@@ -66,9 +66,9 @@ public partial class manage_survey_showJsPath : Foosun.Web.UI.ManagePage
             ///InfoID为HTML页面ID
             ///PicW为查看页面图片的宽度
             scripts = "<script src=\"";
-            Path = "/survey/VoteJs.aspx?TID=" + jsid + "&PicW=60&ajaxid=Vote_HTML_ID_" + jsid + "_" + Foosun.Common.Rand.Number(5) + "\"";
+            Path = "/survey/VoteJs.aspx?TID=" + jsid + "&PicW=60&ajaxid=Vote_HTML_ID_" + jsid + "_" + Hg.Common.Rand.Number(5) + "\"";
             scripte = "  language=\"JavaScript\"></script>";
-            span = "<div style=\"display:inline\" id=\"Vote_HTML_ID_" + jsid + "_"+Foosun.Common.Rand.Number(5)+"\">正在加载...</div>";
+            span = "<div style=\"display:inline\" id=\"Vote_HTML_ID_" + jsid + "_"+Hg.Common.Rand.Number(5)+"\">正在加载...</div>";
             //取得js调用地址
             string _Request_Port = Request.ServerVariables["SERVER_PORT"].ToString();
             if (_Request_Port == "80") _Request_Port = "";

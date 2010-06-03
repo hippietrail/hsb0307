@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Js_Publish.aspx.cs" Inherits="Foosun.Web.manage.js.Js_Publish" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Js_Publish.aspx.cs" Inherits="Hg.Web.manage.js.Js_Publish" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

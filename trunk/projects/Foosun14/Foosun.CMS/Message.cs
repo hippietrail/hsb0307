@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Message
     {
         private IMessage dal;
         public Message()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateMessage();
+            dal = Hg.DALFactory.DataAccess.CreateMessage();
         }
         #region Message_box.aspx
         public int sel(string ID)
@@ -130,7 +130,7 @@ namespace Foosun.CMS
         {
             return dal.sel_15(UserName);
         }
-        public void Add(Foosun.Model.message uc)
+        public void Add(Hg.Model.message uc)
         {
             dal.Add(uc);
         }

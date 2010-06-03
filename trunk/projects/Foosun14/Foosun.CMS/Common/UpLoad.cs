@@ -15,7 +15,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
 	public class UpLoad
 	{
@@ -102,7 +102,7 @@ namespace Foosun.CMS.Common
 					if (isAdmin != 1)
 					{
 						rootPublic pd = new rootPublic();
-						DataTable dt = pd.getGroupUpInfo(Foosun.Global.Current.UserNum);
+						DataTable dt = pd.getGroupUpInfo(Hg.Global.Current.UserNum);
 						if (dt != null && dt.Rows.Count > 0)
 						{
 							Extension = dt.Rows[0]["upfileType"].ToString();
@@ -162,7 +162,7 @@ namespace Foosun.CMS.Common
 								if (!Directory.Exists(SavePath)) { Directory.CreateDirectory(SavePath); }
 								if (_num == 1)
 								{
-									string _Randstr = Foosun.Common.Rand.Number(6);
+									string _Randstr = Hg.Common.Rand.Number(6);
 									string _tmps = DateTime.Now.Month + DateTime.Now.Day + "-" + _Randstr + "-" + fileName;
 									if (fileType.Equals("7"))
 									{

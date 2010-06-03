@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Constr
     {
         private IConstr dal;
         public Constr()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateConstr();
+            dal = Hg.DALFactory.DataAccess.CreateConstr();
         }
         #region 前台
         public int Add(STConstr Con)

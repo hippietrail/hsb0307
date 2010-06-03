@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Text.RegularExpressions;
-using Foosun.Config;
-using Foosun.Model;
+using Hg.Config;
+using Hg.Model;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
 
-        public static string dimmDir = Foosun.Config.UIConfig.dirDumm;
+        public static string dimmDir = Hg.Config.UIConfig.dirDumm;
 
         /// <summary>
         /// 友情连接
@@ -25,11 +25,11 @@ namespace Foosun.Publish
             string str_isAdmin = this.GetParamValue("FS:isAdmin");
             string str_isDiv = this.GetParamValue("FS:isDiv");
             string str_classID = this.GetParamValue("FS:TypeClassID");
-            if (str_Cols == null || !Foosun.Common.Input.IsInteger(str_Cols))
+            if (str_Cols == null || !Hg.Common.Input.IsInteger(str_Cols))
             {
                 str_Cols = "10";
             }
-            if (str_FType == null || !Foosun.Common.Input.IsInteger(str_FType))
+            if (str_FType == null || !Hg.Common.Input.IsInteger(str_FType))
             {
                 str_FType = "0";
             }
@@ -37,7 +37,7 @@ namespace Foosun.Publish
             {
                 str_isDiv = "true";
             }
-            if (str_isAdmin == null || !Foosun.Common.Input.IsInteger(str_isAdmin))
+            if (str_isAdmin == null || !Hg.Common.Input.IsInteger(str_isAdmin))
             {
                 str_isAdmin = "3";
             }
@@ -51,7 +51,7 @@ namespace Foosun.Publish
 
             //bug修改  周峻平  为图片大小添加宽和高
             //查询友情链接数据表中图片的大小
-            Foosun.DALFactory.IFrindLink frindLinks = Foosun.DALFactory.DataAccess.CreateFrindLink();
+            Hg.DALFactory.IFrindLink frindLinks = Hg.DALFactory.DataAccess.CreateFrindLink();
             DataTable dt = frindLinks.ParamStart();
             string size = dt.Rows[0]["ArrSize"].ToString();
             //判断是否有值
@@ -76,22 +76,22 @@ namespace Foosun.Publish
                         {
                             //时间：2008-07-15  修改者：吴静岚
                             //增加友情连接是否打开新窗口参数设置 开始
-                            list += "<li><a border='0' href=\"" + dr["Url"] + "\" target=\"" + Foosun.Config.UIConfig.Linktagertimg + "\"><img border='0' width=\"" + image_width + "\" height=\"" + image_height + "\" src=\"" + (dr["PicURL"].ToString().ToLower()).Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile) + "\" alt=\"" + dr["Name"].ToString() + "\" /></a></li>";
+                            list += "<li><a border='0' href=\"" + dr["Url"] + "\" target=\"" + Hg.Config.UIConfig.Linktagertimg + "\"><img border='0' width=\"" + image_width + "\" height=\"" + image_height + "\" src=\"" + (dr["PicURL"].ToString().ToLower()).Replace("{@dirfile}", Hg.Config.UIConfig.dirFile) + "\" alt=\"" + dr["Name"].ToString() + "\" /></a></li>";
                         }
                         else
                         {
-                            list += "<li><a border='0' href=\"" + dr["Url"] + "\" alt=\"" + dr["Name"].ToString() + "\" target=\"" + Foosun.Config.UIConfig.Linktagert + "\">" + dr["Name"].ToString() + "</a></li>";
+                            list += "<li><a border='0' href=\"" + dr["Url"] + "\" alt=\"" + dr["Name"].ToString() + "\" target=\"" + Hg.Config.UIConfig.Linktagert + "\">" + dr["Name"].ToString() + "</a></li>";
                         }
                     }
                     else
                     {
                         if (str_FType == "0")
                         {
-                            list += "<td><a border='0' href=\"" + dr["Url"] + "\" title=\"" + dr["Content"].ToString() + "\" target=\"" + Foosun.Config.UIConfig.Linktagertimg + "\"><img border='0' width=\"" + image_width + "\" height=\"" + image_height + "\" src=\"" + (dr["PicURL"].ToString().ToLower()).Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile) + "\" alt=\"" + dr["Name"].ToString() + "\" /></a></td>";
+                            list += "<td><a border='0' href=\"" + dr["Url"] + "\" title=\"" + dr["Content"].ToString() + "\" target=\"" + Hg.Config.UIConfig.Linktagertimg + "\"><img border='0' width=\"" + image_width + "\" height=\"" + image_height + "\" src=\"" + (dr["PicURL"].ToString().ToLower()).Replace("{@dirfile}", Hg.Config.UIConfig.dirFile) + "\" alt=\"" + dr["Name"].ToString() + "\" /></a></td>";
                         }
                         else
                         {
-                            list += "<td><a border='0' href=\"" + dr["Url"] + "\" title=\"" + dr["Content"].ToString() + "\" target=\"" + Foosun.Config.UIConfig.Linktagert + "\">" + dr["Name"].ToString() + "</a></td>";
+                            list += "<td><a border='0' href=\"" + dr["Url"] + "\" title=\"" + dr["Content"].ToString() + "\" target=\"" + Hg.Config.UIConfig.Linktagert + "\">" + dr["Name"].ToString() + "</a></td>";
                             //结束 by wjl
                         }
                         if ((i + 1) % int.Parse(str_Cols) == 0)
@@ -213,7 +213,7 @@ namespace Foosun.Publish
             hstr += "   var syear = index_historyindex1.h_year.options[index_historyindex1.h_year.selectedIndex].value;;" + newLine;
             hstr += "   var smonth = index_historyindex1.h_month.options[index_historyindex1.h_month.selectedIndex].value;" + newLine;
             hstr += "   var sday = index_historyindex1.h_day.options[index_historyindex1.h_day.selectedIndex].value;" + newLine;
-            //hstr += "   window.open('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirPige + "/index/\'+syear+smonth+sday+\'.shtml\','_blank');return false;" + newLine;
+            //hstr += "   window.open('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirPige + "/index/\'+syear+smonth+sday+\'.shtml\','_blank');return false;" + newLine;
             hstr += "   window.open('" + CommonData.SiteDomain + "/history.aspx?year='+syear+'&month=' + smonth + '&day=' + sday +'','_blank');return false;" + newLine;
             hstr += "}" + newLine;
             hstr += "</script>";
@@ -226,7 +226,7 @@ namespace Foosun.Publish
         /// <returns>得到显示样式</returns>
         public string getDateJs(string SaveIndexPage)
         {
-            return "<iframe src=\"" + CommonData.SiteDomain + "/configuration/historyjs.html?startDate=" + Foosun.Config.UIConfig.dirPigeDate + "&param=history/" + SaveIndexPage + "\" width=\"143px\" height=\"165px\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            return "<iframe src=\"" + CommonData.SiteDomain + "/configuration/historyjs.html?startDate=" + Hg.Config.UIConfig.dirPigeDate + "&param=history/" + SaveIndexPage + "\" width=\"143px\" height=\"165px\" frameborder=\"0\" scrolling=\"no\"></iframe>";
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace Foosun.Publish
             hstr += "   content=content.replace(\"{@year02}\",syear.substring(2,4));" + newLine;
             hstr += "   content=content.replace(\"{@month}\",smonth);" + newLine;
             hstr += "   content=content.replace(\"{@day}\",sday);" + newLine;
-            //hstr += "   window.open('" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirPige + "/\'+content+\'/index.html\','_blank');return false;" + newLine;
+            //hstr += "   window.open('" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirPige + "/\'+content+\'/index.html\','_blank');return false;" + newLine;
             hstr += "   window.open('" + CommonData.SiteDomain + "/history.aspx?year='+syear+'&month=' + smonth + '&day=' + sday +'','_blank');return false;" + newLine;
             hstr += "}" + newLine;
             hstr += "</script>";
@@ -326,8 +326,8 @@ namespace Foosun.Publish
         public string Analyse_Sitemap()
         {
             //子类每行显示数量
-            string dirfile = Foosun.Config.UIConfig.dirFile;
-            string dimm = Foosun.Config.UIConfig.dirDumm;
+            string dirfile = Hg.Config.UIConfig.dirFile;
+            string dimm = Hg.Config.UIConfig.dirDumm;
             if (dimm.Trim() != string.Empty)
             {
                 dimm = "/" + dimm;
@@ -478,7 +478,7 @@ namespace Foosun.Publish
 
             //string SqlFields = " [NewsID],[NewsTitle],[TitleColor],[TitleITF],[TitleBTF],[PicURL],[SPicURL],[ClassID],[SavePath],[FileName],[FileEXName],[DataLib] ";
             string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And SubString([NewsProperty],7,1)='1'";
-            if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
             {
                 SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And [NewsType]=1 And mid([NewsProperty],7,1)='1'";
             }
@@ -552,7 +552,7 @@ namespace Foosun.Publish
                     string str_Txt = dt.Rows[i]["NewsTitle"].ToString();
 
                     if (str_TitleNumer != null)
-                        str_Txt = Foosun.Common.Input.GetSubString(str_Txt, Convert.ToInt32(str_TitleNumer));
+                        str_Txt = Hg.Common.Input.GetSubString(str_Txt, Convert.ToInt32(str_TitleNumer));
 
                     if (str_PicUrl != "" && str_PicUrl != null)
                     {
@@ -678,7 +678,7 @@ namespace Foosun.Publish
                 str_FlashBG = "FFF";
 
             string SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And ([NewsType]=1 or [NewsType]=2 or [NewsType]=3) And SubString([NewsProperty],7,1)='1'";
-            if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
             {
                 SqlCondition = " Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "' And ([NewsType]=1 or [NewsType]=2 or [NewsType]=3) And mid([NewsProperty],7,1)='1'";
             }
@@ -747,7 +747,7 @@ namespace Foosun.Publish
                         Link_Str += getNewsURL(dt.Rows[i]["isDelPoint"].ToString(), dt.Rows[i]["newsID"].ToString(), dt.Rows[i]["SavePath"].ToString(), ci.SavePath + "/" + ci.SaveClassframe, dt.Rows[i]["FileName"].ToString(), dt.Rows[i]["FileEXName"].ToString(), dt.Rows[i]["NewsType"].ToString(), dt.Rows[i]["URLaddress"].ToString()) + "|";
                         if (isTitleCutTF == 1)
                         {
-                            Title_Str += Foosun.Common.Input.GetSubString(dt.Rows[i]["NewsTitle"].ToString(), int_TitleNumber) + "|";
+                            Title_Str += Hg.Common.Input.GetSubString(dt.Rows[i]["NewsTitle"].ToString(), int_TitleNumber) + "|";
                         }
                         else
                         {
@@ -757,10 +757,10 @@ namespace Foosun.Publish
                 }
             }
             dt.Clear(); dt.Dispose();
-            Pics_Path = Foosun.Common.Input.CutComma(Pics_Path, "|");
+            Pics_Path = Hg.Common.Input.CutComma(Pics_Path, "|");
             Pics_Path = RelpacePicPath(Pics_Path);
-            Link_Str = Foosun.Common.Input.CutComma(Link_Str, "|");
-            Title_Str = Foosun.Common.Input.CutComma(Title_Str, "|");
+            Link_Str = Hg.Common.Input.CutComma(Link_Str, "|");
+            Title_Str = Hg.Common.Input.CutComma(Title_Str, "|");
 
             //去除“号
             Title_Str = Title_Str.Replace('"',' ');
@@ -825,7 +825,7 @@ namespace Foosun.Publish
         public string Analyse_Search()
         {
             string str_Search = "";
-            string str_RnadNum = Foosun.Common.Rand.Number(5);
+            string str_RnadNum = Hg.Common.Rand.Number(5);
             string str_SearchType = this.GetParamValue("FS:SearchType");
             string str_ShowDate = this.GetParamValue("FS:ShowDate");
             string str_ShowClass = this.GetParamValue("FS:ShowClass");
@@ -875,7 +875,7 @@ namespace Foosun.Publish
             str_Search += "{" + newLine;
             int minlen = 0;
             int maxlen = 20;
-            string LenSearch = Foosun.Common.Public.readparamConfig("LenSearch");
+            string LenSearch = Hg.Common.Public.readparamConfig("LenSearch");
             minlen = int.Parse(LenSearch.Split('|')[0]);
             maxlen = int.Parse(LenSearch.Split('|')[1]);
             str_Search += "if(obj.tags.value.length<" + minlen + "||obj.tags.value.length>" + maxlen + ")" + newLine;
@@ -914,7 +914,7 @@ namespace Foosun.Publish
             {
                 str_DynChar = " >> ";
             }
-            string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+            string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
             switch (this.TemplateType.ToString())
             {
                 #region 新闻频道
@@ -973,7 +973,7 @@ namespace Foosun.Publish
                         else
                         {
                             string iPath = "/" + dr["htmldir"].ToString() + "/" + dr["indexFileName"].ToString() + "";
-                            iPath = iPath.Replace("//", "/").Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                            iPath = iPath.Replace("//", "/").Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                             str_Position = "<a href=\"" + CommonData.SiteDomain + "\">首页</a>" + str_DynChar + "<a href=\"" + CommonData.SiteDomain + iPath + "\">" + dr["channelName"].ToString() + "</a>";
                         }
                     }
@@ -1007,7 +1007,7 @@ namespace Foosun.Publish
                 else
                 {
                     string iPath = "/" + dr["htmldir"].ToString() + "/" + dr["indexFileName"].ToString() + "";
-                    iPath = iPath.Replace("//", "/").Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                    iPath = iPath.Replace("//", "/").Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                     str_Position = "<a href=\"" + CommonData.SiteDomain + "\">首页</a>" + str_DynChar + "<a href=\"" + CommonData.SiteDomain + iPath + "\">" + dr["channelName"].ToString() + "</a>";
                 }
             }
@@ -1174,7 +1174,7 @@ namespace Foosun.Publish
             string gstr_RuleID = "0";
             if (str_unNavi1 != null)
             {
-                str_unNavi = Foosun.Common.Input.isPicStr(str_unNavi1);
+                str_unNavi = Hg.Common.Input.isPicStr(str_unNavi1);
             }
             if (str_RuleID != null)
             {
@@ -1409,7 +1409,7 @@ namespace Foosun.Publish
 
         public string Analyse_ReadNews(int id /*DataRow dr*/, int TitleNumer, int ContentNumber, int NaviNumber, string str_Style, string styleid, int currentPageNum, int EndPageNum, int NewsTF)
         {
-            Foosun.Model.NewsContent Nci = new Foosun.Model.NewsContent();
+            Hg.Model.NewsContent Nci = new Hg.Model.NewsContent();
             Nci = this.getNewsInfo(id, this.Param_CurrentNewsID);
 
             string TmpdimmDir = "";
@@ -1476,7 +1476,7 @@ namespace Foosun.Publish
                             }
                         }
 
-                        str_title = getStyle(Foosun.Common.Input.GetSubString(str_title, TitleNumer), Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
+                        str_title = getStyle(Hg.Common.Input.GetSubString(str_title, TitleNumer), Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
                     }
                     string _titlenews = UIConfig.titlenew, B_titlenewsStr = "", E_titlenewsStr = "";
                     string[] _titlenewsArray = _titlenews.Split('|');
@@ -1549,18 +1549,18 @@ namespace Foosun.Publish
                     string tmpcontent = str_content;
                     if (NewsTF == 0)
                     {
-                        string LostResultStr = Foosun.Common.Input.LostHTML(tmpcontent);
+                        string LostResultStr = Hg.Common.Input.LostHTML(tmpcontent);
                         if (LostResultStr.IndexOf("[FS:PAGE") > -1 && LostResultStr.IndexOf("$]") > -1)
                         {
-                            LostResultStr = Foosun.Common.Input.LostPage(LostResultStr);
+                            LostResultStr = Hg.Common.Input.LostPage(LostResultStr);
                         }
                         if (LostResultStr.IndexOf("[FS:unLoop") > -1 && LostResultStr.IndexOf("[/FS:unLoop]") > -1)
                         {
-                            LostResultStr = Foosun.Common.Input.LostVoteStr(LostResultStr);
+                            LostResultStr = Hg.Common.Input.LostVoteStr(LostResultStr);
                         }
                         // 
-                        //str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber) + "...";
-                        str_content = Foosun.Common.Input.GetSubString(LostResultStr, ContentNumber);
+                        //str_content = Hg.Common.Input.GetSubString(LostResultStr, ContentNumber) + "...";
+                        str_content = Hg.Common.Input.GetSubString(LostResultStr, ContentNumber);
                         if (!String.IsNullOrEmpty(str_content) && str_content.Length > 10) // ContentNumber
                         {
                             str_content += String.Format("&nbsp;&nbsp;<a href=\"{0}\" title=\"\" style=\"font-family:宋体,Verdana,Tahoma; font-size:9pt;\">&gt;&gt;&gt;</a>", URLS);// "...";
@@ -1578,8 +1578,8 @@ namespace Foosun.Publish
                             string[] arrContentPicSize = ContentPicSize.Split('|');
                             string heighSTR = arrContentPicSize[1].ToString();
                             string widthSTR = arrContentPicSize[0].ToString();
-                            string dirFile = Foosun.Config.UIConfig.dirFile;
-                            string getPostAlign = Foosun.Common.Public.readparamConfig("InsertPicPosition");
+                            string dirFile = Hg.Config.UIConfig.dirFile;
+                            string getPostAlign = Hg.Common.Public.readparamConfig("InsertPicPosition");
                             int picLen = 200;
                             string postAlign = "left";
                             if (getPostAlign.IndexOf("|") > -1)
@@ -1754,9 +1754,9 @@ namespace Foosun.Publish
                             }
                         }
                         //str_Style = str_Style.Replace("{#Content}", "<!-FS:STAR=" + tmpcontent.Replace("[FS:PAGE]", "{Foosun:NewsLIST}") + "FS:END->");
-                        if (Foosun.Common.Public.readparamConfig("collectTF") == "1")
+                        if (Hg.Common.Public.readparamConfig("collectTF") == "1")
                         {
-                            tmpcontent = tmpcontent.Replace("<div", "<!--source from " + Foosun.Common.Public.readparamConfig("siteDomain") + "--><div");
+                            tmpcontent = tmpcontent.Replace("<div", "<!--source from " + Hg.Common.Public.readparamConfig("siteDomain") + "--><div");
                         }
                         str_Style = str_Style.Replace("{#Content}", "<!-FS:STAR=" + tmpcontent + "FS:END->");
                     }
@@ -1826,7 +1826,7 @@ namespace Foosun.Publish
                 if (str_Style.IndexOf("{#Editor}") > -1)
                 {
                     if (Nci.Editor != "")
-                        str_Style = str_Style.Replace("{#Editor}", "<a href=\"" + CommonData.SiteDomain + "/search.html?type=edit&tags=" + Foosun.Common.Input.URLEncode(Nci.Editor) + "\" title=\"查看此编辑的所有新闻\" target=\"_blank\">" + Nci.Editor + "</a>");
+                        str_Style = str_Style.Replace("{#Editor}", "<a href=\"" + CommonData.SiteDomain + "/search.html?type=edit&tags=" + Hg.Common.Input.URLEncode(Nci.Editor) + "\" title=\"查看此编辑的所有新闻\" target=\"_blank\">" + Nci.Editor + "</a>");
                     else
                         str_Style = str_Style.Replace("{#Editor}", "");
                 }
@@ -1838,7 +1838,7 @@ namespace Foosun.Publish
                     {
                         if (Nci.isConstr == 1)
                         {
-                            str_Style = str_Style.Replace("{#Author}", "<a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + Nci.Author + ".aspx\" title=\"查看他的资料\">" + Nci.Author + "</a> <a href=\"" + CommonData.SiteDomain + "/search.html?type=author&tags=" + Nci.Author + "\" title=\"此看此作者所有的文章\" target=\"_blank\">发表的文章</a>");
+                            str_Style = str_Style.Replace("{#Author}", "<a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + Nci.Author + ".aspx\" title=\"查看他的资料\">" + Nci.Author + "</a> <a href=\"" + CommonData.SiteDomain + "/search.html?type=author&tags=" + Nci.Author + "\" title=\"此看此作者所有的文章\" target=\"_blank\">发表的文章</a>");
                         }
                         else
                         {
@@ -1905,7 +1905,7 @@ namespace Foosun.Publish
                         {
                             if (Nci.naviContent != "")
                             {
-                                GResult = MideStr.Replace("{#NaviContent}", Foosun.Common.Input.GetSubString(Nci.naviContent, NaviNumber));
+                                GResult = MideStr.Replace("{#NaviContent}", Hg.Common.Input.GetSubString(Nci.naviContent, NaviNumber));
                             }
                             else
                             {
@@ -1934,7 +1934,7 @@ namespace Foosun.Publish
                     {
                         if (Nci.naviContent != string.Empty)
                         {
-                            str_Style = str_Style.Replace("{$#NaviContent}", Foosun.Common.Input.GetSubString(Nci.naviContent, NaviNumber));
+                            str_Style = str_Style.Replace("{$#NaviContent}", Hg.Common.Input.GetSubString(Nci.naviContent, NaviNumber));
                         }
                         else
                         {
@@ -2019,12 +2019,12 @@ namespace Foosun.Publish
                 //Digg(数量)--------------------------------------------------------------------------------------------------------
                 if (str_Style.IndexOf("{#TopNum}") > -1)
                 {
-                    str_Style = str_Style.Replace("{#TopNum}", getTopNum(Nci.NewsID, NewsTF, Nci.TopNum.ToString(), Nci.FileName + Foosun.Common.Rand.Number(5)));
+                    str_Style = str_Style.Replace("{#TopNum}", getTopNum(Nci.NewsID, NewsTF, Nci.TopNum.ToString(), Nci.FileName + Hg.Common.Rand.Number(5)));
                 }
                 //Digg(连接地址)--------------------------------------------------------------------------------------------------------
                 if (str_Style.IndexOf("{#TopURL}") > -1)
                 {
-                    str_Style = str_Style.Replace("{#TopURL}", getTopURL(Nci.NewsID, NewsTF, Nci.FileName + Foosun.Common.Rand.Number(5)));
+                    str_Style = str_Style.Replace("{#TopURL}", getTopURL(Nci.NewsID, NewsTF, Nci.FileName + Hg.Common.Rand.Number(5)));
                 }
                 #endregion 互动
                 #region 视频附件
@@ -2187,7 +2187,7 @@ namespace Foosun.Publish
                     string str_definedvalue = CommonData.DalPublish.GetDefinedValue(Nci.NewsID, definename);
                     if (definevalue_length > 0)
                     {
-                        str_definedvalue = Foosun.Common.Input.GetSubString(str_definedvalue, definevalue_length);
+                        str_definedvalue = Hg.Common.Input.GetSubString(str_definedvalue, definevalue_length);
                     }
                     str_Style = str_Style.Replace("{#FS:define=" + temp_definename + "}", str_definedvalue);
                     mPage = mPage.NextMatch();
@@ -2286,14 +2286,14 @@ namespace Foosun.Publish
             string str_ContentNumber = this.GetParamValue("FS:ContentNumber");
             string str_WNum = this.GetParamValue("FS:WNum");
             int TNum = 5;
-            if (str_WNum != null && Foosun.Common.Input.IsInteger(str_WNum))
+            if (str_WNum != null && Hg.Common.Input.IsInteger(str_WNum))
             {
                 TNum = int.Parse(str_WNum);
             }
             string str_WCSS = this.GetParamValue("FS:WCSS");
 
             string SqlCondition = " Where substring(NewsProperty,9,1)='1' and islock=0 and isRecyle=0";
-            if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+            if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
             {
                 SqlCondition = " Where mid(NewsProperty,9,1)='1' and islock=0 and isRecyle=0";
             }
@@ -2368,7 +2368,7 @@ namespace Foosun.Publish
                             if (isBIGTTF)
                             {
                                 string gstr_TitleNumer_1 = "20";
-                                if (Foosun.Common.Input.IsInteger(str_bigTitleNumber))
+                                if (Hg.Common.Input.IsInteger(str_bigTitleNumber))
                                 {
                                     gstr_TitleNumer_1 = str_bigTitleNumber;
                                 }
@@ -2576,7 +2576,7 @@ namespace Foosun.Publish
                     subTF = true;
                 }
             }
-            string getpublicType = Foosun.Config.verConfig.PublicType;//得到版本号
+            string getpublicType = Hg.Config.verConfig.PublicType;//得到版本号
             string getWhere = "";
             if (getpublicType == "1")
             {
@@ -2696,16 +2696,16 @@ namespace Foosun.Publish
             //得到刷新新闻的数量//refresh.config里获得参数
             if (str_ListType == "News")
             {
-                if (Foosun.Common.Public.readparamConfig("classlistNumber", "refresh") != "0")
+                if (Hg.Common.Public.readparamConfig("classlistNumber", "refresh") != "0")
                 {
-                    topParam = " top " + Foosun.Common.Public.readparamConfig("classlistNumber", "refresh") + " ";
+                    topParam = " top " + Hg.Common.Public.readparamConfig("classlistNumber", "refresh") + " ";
                 }
             }
             else
             {
-                if (Foosun.Common.Public.readparamConfig("specialNumber", "refresh") != "0")
+                if (Hg.Common.Public.readparamConfig("specialNumber", "refresh") != "0")
                 {
-                    topParam = " top " + Foosun.Common.Public.readparamConfig("specialNumber", "refresh") + " ";
+                    topParam = " top " + Hg.Common.Public.readparamConfig("specialNumber", "refresh") + " ";
                 }
             }
             string Sql = "select " + topParam + SqlFields + " from " + SqlCondition + SqlOrderBy;
@@ -2718,15 +2718,15 @@ namespace Foosun.Publish
             string str_newslist = string.Empty;
             int i;
             int nTitleNum = 30, nContentNum = 200, nNaviNumber = 200;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
             {
                 nTitleNum = int.Parse(str_TitleNumer);
             }
-            if (str_ContentNumber != null && Foosun.Common.Input.IsInteger(str_ContentNumber))
+            if (str_ContentNumber != null && Hg.Common.Input.IsInteger(str_ContentNumber))
             {
                 nContentNum = int.Parse(str_ContentNumber);
             }
-            if (str_NaviNumber != null && Foosun.Common.Input.IsInteger(str_NaviNumber))
+            if (str_NaviNumber != null && Hg.Common.Input.IsInteger(str_NaviNumber))
             {
                 nNaviNumber = int.Parse(str_NaviNumber);
             }
@@ -2795,7 +2795,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     {
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         str_newslist += getSubSTR(sNCI.NewsID, string.Empty);
                     }
@@ -2808,7 +2808,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     {
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         row += getSubSTR(sNCI.NewsID, string.Empty);
                     }
@@ -2965,9 +2965,9 @@ namespace Foosun.Publish
             return RetVal;
         }
 
-        protected Foosun.Model.NewsContent getNewsInfo(int ID, string NewsID)
+        protected Hg.Model.NewsContent getNewsInfo(int ID, string NewsID)
         {
-            Foosun.Model.NewsContent Nci = null;
+            Hg.Model.NewsContent Nci = null;
             if (ID == 0 && string.IsNullOrEmpty(NewsID))
                 Nci = new NewsContent();
             else

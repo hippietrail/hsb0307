@@ -8,12 +8,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 using System.Xml;
 
-public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
+public partial class manage_news_news_page : Hg.Web.UI.ManagePage
 {
 	/// <summary>
 	/// 权限设置
@@ -35,7 +35,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 			//<--时间：2008-07-17 修改者：吴静岚 单页分页功能 开始
 			try
 			{
-				this.CheckBox1.Checked = bool.Parse(Foosun.Config.UIConfig.enableAutoPage);
+				this.CheckBox1.Checked = bool.Parse(Hg.Config.UIConfig.enableAutoPage);
 			}
 			catch
 			{
@@ -43,7 +43,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 			}
 			try
 			{
-				int i = Int32.Parse(Foosun.Config.UIConfig.splitPageCount);
+				int i = Int32.Parse(Hg.Config.UIConfig.splitPageCount);
 				this.TxtPageCount.Text = i.ToString();
 			}
 			catch
@@ -140,7 +140,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 				{
 					FProjTemplets.Text = "/{@dirTemplet}/siteTemplets/" + SiteID + "/Content/page.html";
 				}
-				TPath.Text = "/" + Foosun.Config.UIConfig.dirHtml + "/" + Foosun.Common.Rand.Str_char(5).ToLower() + ".html";
+				TPath.Text = "/" + Hg.Config.UIConfig.dirHtml + "/" + Hg.Common.Rand.Str_char(5).ToLower() + ".html";
 				this.TOrder.Text = "0";
 			}
 		}
@@ -160,10 +160,10 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 			}
 			else
 			{
-				ClassID = Foosun.Common.Rand.Number(12);
+				ClassID = Hg.Common.Rand.Number(12);
 			}
 			string ClassCName = this.TCname.Text;
-			string ClassEName = Foosun.Common.Rand.Str_char(10).ToLower();
+			string ClassEName = Hg.Common.Rand.Str_char(10).ToLower();
 			string ParentId = this.TParentId.Text;
 			if (ParentId.Trim() != "0")
 			{
@@ -174,7 +174,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 				}
 			}
 			int OrderID = 0;
-			if (Foosun.Common.Input.IsInteger(this.TOrder.Text))
+			if (Hg.Common.Input.IsInteger(this.TOrder.Text))
 			{
 				OrderID = int.Parse(this.TOrder.Text);
 			}
@@ -247,18 +247,18 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 				{
 					try
 					{
-						Content = Foosun.Common.Input.AutoSplitPage(Content, int.Parse(this.TxtPageCount.Text));
+						Content = Hg.Common.Input.AutoSplitPage(Content, int.Parse(this.TxtPageCount.Text));
 					}
 					catch (Exception ex)
 					{
-						//Content = Foosun.Common.Input.AutoSplitPage(Content, 20);
+						//Content = Hg.Common.Input.AutoSplitPage(Content, 20);
 					}
 				}
 			}
 			//结束 wjl-->
 			#endregion
 
-			Foosun.Model.PageContent uc = new Foosun.Model.PageContent();
+			Hg.Model.PageContent uc = new Hg.Model.PageContent();
 			uc.ClassID = ClassID;
 			uc.ClassCName = ClassCName;
 			uc.ClassEName = ClassEName;
@@ -289,7 +289,7 @@ public partial class manage_news_news_page : Foosun.Web.UI.ManagePage
 				rd.insertPage(uc);
 			}
 			string ishtml = "";
-			if (Foosun.Publish.General.publishPage(ClassID))
+			if (Hg.Publish.General.publishPage(ClassID))
 			{
 				ishtml = "<li>同时生成了静态文件。</li>";
 			}

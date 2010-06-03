@@ -17,7 +17,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
 	/// <summary>
 	/// 生成水印、缩略图、生成有指定内容的图片

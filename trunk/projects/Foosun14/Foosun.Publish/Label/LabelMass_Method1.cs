@@ -4,10 +4,10 @@ using System.Data;
 using System.Web;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.Config;
-using Foosun.Model;
+using Hg.Config;
+using Hg.Model;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
@@ -140,7 +140,7 @@ namespace Foosun.Publish
             if (str_ShowDateNumer != null && str_ShowDateNumer != "")
             {
 
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     SqlCondition += " And DateDiff('d',[CreatTime] ,Now()) < " + int.Parse(str_ShowDateNumer);
                 }
@@ -278,15 +278,15 @@ namespace Foosun.Publish
             string str_newslist = string.Empty;
             int i;
             int nTitleNum = 30, nContentNum = 200, nNaviNumber = 200;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
             {
                 nTitleNum = int.Parse(str_TitleNumer);
             }
-            if (str_ContentNumber != null && Foosun.Common.Input.IsInteger(str_ContentNumber))
+            if (str_ContentNumber != null && Hg.Common.Input.IsInteger(str_ContentNumber))
             {
                 nContentNum = int.Parse(str_ContentNumber);
             }
-            if (str_NaviNumber != null && Foosun.Common.Input.IsInteger(str_NaviNumber))
+            if (str_NaviNumber != null && Hg.Common.Input.IsInteger(str_NaviNumber))
             {
                 nNaviNumber = int.Parse(str_NaviNumber);
             }
@@ -337,7 +337,7 @@ namespace Foosun.Publish
             //        }
             //        marqueestr += "</marquee>";
             //        marqueestr = marqueestr.Replace("\r\n", "");
-            //        string str_randnumber = Foosun.Common.Rand.Number(5);
+            //        string str_randnumber = Hg.Common.Rand.Number(5);
             //        str_newslist += "var marqueestr" + str_randnumber + "='" + marqueestr + "';" + newLine;
             //        str_newslist += "document.write(marqueestr" + str_randnumber + "); " + newLine;
             //        str_newslist += "</script>" + newLine;
@@ -375,7 +375,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     { 
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         str_newslist += getSubSTR(sNCI.NewsID, str_SubNaviCSS);
                     }
@@ -390,7 +390,7 @@ namespace Foosun.Publish
                     //开始调用副新闻
                     if (subTF)
                     {
-                        Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                        Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                         sNCI = this.getNewsInfo((int)dt.Rows[i][0], null);
                         row += getSubSTR(sNCI.NewsID, str_SubNaviCSS);
                     }
@@ -440,7 +440,7 @@ namespace Foosun.Publish
             //str_newslist += "<div style=\"width:100%;\" align=\"right\"><a href=\"" + ClassURLs + "\" target=\"_blank\"><img src=\"" + gdimm + "/sysImages/normal/more.gif\" border=\"0\" /></a></div>";
             if (!string.IsNullOrEmpty(str_More))
             {
-                string gdimm = Foosun.Config.UIConfig.dirDumm;
+                string gdimm = Hg.Config.UIConfig.dirDumm;
                 if (gdimm.Trim() != string.Empty)
                 {
                     gdimm = "/" + gdimm;
@@ -448,7 +448,7 @@ namespace Foosun.Publish
 
                 if (str_More.EndsWith(@".gif") || str_More.EndsWith(@".jpg"))
                 {
-                    str_More = str_More.ToLower().Replace(@"{@dirfile}", Foosun.Config.UIConfig.dirFile);
+                    str_More = str_More.ToLower().Replace(@"{@dirfile}", Hg.Config.UIConfig.dirFile);
                     str_newslist += "<div style=\"width:100%;\" align=\"right\"><a href=\"" + ClassURLs + "\" target=\"_blank\"><img src=\"" + str_More + "\" border=\"0\"></img></a></div>";
                 }
                 else
@@ -500,7 +500,7 @@ namespace Foosun.Publish
             //-------判断显示最近多少天内信息
             if (str_ShowDateNumer != null && str_ShowDateNumer != "")
             {
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     SqlCondition += " And DateDiff('d',[CreatTime] ,now()) < " + int.Parse(str_ShowDateNumer);
                 }
@@ -538,15 +538,15 @@ namespace Foosun.Publish
             }
 
             int nTitleNum = 30, nContentNum = 200, nNaviNumber = 200;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
             {
                 nTitleNum = int.Parse(str_TitleNumer);
             }
-            if (str_ContentNumber != null && Foosun.Common.Input.IsInteger(str_ContentNumber))
+            if (str_ContentNumber != null && Hg.Common.Input.IsInteger(str_ContentNumber))
             {
                 nContentNum = int.Parse(str_ContentNumber);
             }
-            if (str_NaviNumber != null && Foosun.Common.Input.IsInteger(str_NaviNumber))
+            if (str_NaviNumber != null && Hg.Common.Input.IsInteger(str_NaviNumber))
             {
                 nNaviNumber = int.Parse(str_NaviNumber);
             }
@@ -631,7 +631,7 @@ namespace Foosun.Publish
                             //开始调用副新闻
                             if (subTF)
                             {
-                                Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                                Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                                 sNCI = this.getNewsInfo((int)dv.Rows[j][0], null);
                                 str_newslist += getSubSTR(sNCI.NewsID, str_SubNaviCSS);
                             }
@@ -646,7 +646,7 @@ namespace Foosun.Publish
                             //开始调用副新闻
                             if (subTF)
                             {
-                                Foosun.Model.NewsContent sNCI = new Foosun.Model.NewsContent();
+                                Hg.Model.NewsContent sNCI = new Hg.Model.NewsContent();
                                 sNCI = this.getNewsInfo((int)dt.Rows[j][0], null);
                                 row += getSubSTR(sNCI.NewsID, str_SubNaviCSS);
                             }

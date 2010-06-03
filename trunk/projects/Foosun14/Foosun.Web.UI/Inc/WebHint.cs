@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
-using Foosun.Config;
-using Foosun.CMS;
+using Hg.Config;
+using Hg.CMS;
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
     public class WebHint
     {
@@ -53,7 +53,7 @@ namespace Foosun.Web.UI
         }
         static internal void PageRender(string Msg, string Url, bool Succeed, bool returnUrl,bool noHistory)
         {
-            string cssDir = Foosun.Common.ServerInfo.GetRootURI() + "/sysImages/";
+            string cssDir = Hg.Common.ServerInfo.GetRootURI() + "/sysImages/";
             string STitle = "操作结果!";
             string ReUrlStr = "";
             string _tmp = "<img src=\"" + cssDir + "folder/success.gif\" border=\"0\">";
@@ -68,8 +68,8 @@ namespace Foosun.Web.UI
             System.Web.HttpContext.Current.Response.Write("<html xmlns=\"http://www.w3.org/1999/xhtml\">\r<head>\r");
             System.Web.HttpContext.Current.Response.Write("<title>" + STitle + "_Foosun Inc.</title>\r");
             System.Web.HttpContext.Current.Response.Write("<link href=\"" + cssDir + UIConfig.CssPath() + "/css/css.css\" rel=\"stylesheet\" type=\"text/css\" />\r");
-            System.Web.HttpContext.Current.Response.Write("<script src=\"" + Foosun.Common.ServerInfo.GetRootURI() + "/configuration/js/Prototype.js\" language=\"javascript\" type=\"text/javascript\"></script>\r");
-            System.Web.HttpContext.Current.Response.Write("<script src=\"" + Foosun.Common.ServerInfo.GetRootURI() + "/configuration/js/Public.js\" language=\"javascript\" type=\"text/javascript\"></script>\r");
+            System.Web.HttpContext.Current.Response.Write("<script src=\"" + Hg.Common.ServerInfo.GetRootURI() + "/configuration/js/Prototype.js\" language=\"javascript\" type=\"text/javascript\"></script>\r");
+            System.Web.HttpContext.Current.Response.Write("<script src=\"" + Hg.Common.ServerInfo.GetRootURI() + "/configuration/js/Public.js\" language=\"javascript\" type=\"text/javascript\"></script>\r");
             System.Web.HttpContext.Current.Response.Write("\r</head>\r");
             if (returnUrl)
             {

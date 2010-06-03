@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class DefineTable
     {
         private IDefineTable dal;
         public DefineTable()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateDefineTable();
+            dal = Hg.DALFactory.DataAccess.CreateDefineTable();
         }
         #region DefineTable.aspx
         public DataTable Sel_DefineInfoId()

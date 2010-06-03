@@ -11,9 +11,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class help_HelpList : Foosun.Web.UI.BasePage
+public partial class help_HelpList : Hg.Web.UI.BasePage
 {
     Help help = new Help();
     protected void Page_Load(object sender, EventArgs e)

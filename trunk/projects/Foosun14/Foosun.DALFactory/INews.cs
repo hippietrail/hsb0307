@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface INews
     {
@@ -14,7 +14,7 @@ namespace Foosun.DALFactory
         int unlovkc(string boxs);
         int delalpl();
         int AddNewsClick(string NewsID);
-        int AddComment(Foosun.Model.Comment ci);
+        int AddComment(Hg.Model.Comment ci);
         DataTable getCommentList(string NewsID);
         int returnCommentGD(string infoID, int num);
         int gettopnum(string NewsID, string getNum);

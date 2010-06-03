@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <script type="text/javascript" src="../../editor/fckeditor.js"></script>
@@ -133,7 +133,7 @@
 	
 function insertHTMLEdit(url)
 {
-    var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+    var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
     var oEditor = FCKeditorAPI.GetInstance("ContentTextBox");
     if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
     {

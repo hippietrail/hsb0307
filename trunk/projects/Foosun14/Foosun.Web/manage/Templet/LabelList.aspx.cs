@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_Templet_LabelList : Foosun.Web.UI.ManagePage
+public partial class manage_Templet_LabelList : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -47,7 +47,7 @@ public partial class manage_Templet_LabelList : Foosun.Web.UI.ManagePage
     /// <returns></returns>
     protected string SiteList(string SessionSiteID)
     {
-        Foosun.CMS.UserMisc rd = new Foosun.CMS.UserMisc();
+        Hg.CMS.UserMisc rd = new Hg.CMS.UserMisc();
         string siteStr = "<select class=\"form\" name=\"SiteID\" id=\"SiteID\" onChange=\"getchanelInfo(this)\">\r";
         DataTable crs = rd.getSiteList();
         if (crs != null)
@@ -68,7 +68,7 @@ public partial class manage_Templet_LabelList : Foosun.Web.UI.ManagePage
 
     protected void getLabelList(string SiteID, int intsys)
     {
-        Foosun.CMS.Label lb = new Foosun.CMS.Label();
+        Hg.CMS.Label lb = new Hg.CMS.Label();
         DataTable dt = lb.getLableList(SiteID, intsys);
 
         string str_tempList = string.Empty;

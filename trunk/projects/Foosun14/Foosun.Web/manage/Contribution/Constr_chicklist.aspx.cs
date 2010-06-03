@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_chicklist : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_chicklist : Hg.Web.UI.ManagePage
 {
     public manage_Contribution_Constr_chicklist()
     {
@@ -66,7 +66,7 @@ public partial class manage_Contribution_Constr_chicklist : Foosun.Web.UI.Manage
     {
         int i, j;
 
-        DataTable dts = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
+        DataTable dts = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 10, out i, out j, null);
 
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -90,7 +90,7 @@ public partial class manage_Contribution_Constr_chicklist : Foosun.Web.UI.Manage
                 else if (infos == 1) { s["constrlevel"] = "优先"; }
                 else { s["constrlevel"] = "加急"; }
                 rootPublic pd = new rootPublic();
-                s["userName"] = "<a class=\"list_link\" target=\"_blank\" href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + pd.getUserName(s["UserNum"].ToString()) + ".aspx\">" + pd.getUserName(s["UserNum"].ToString()) + "</a>";
+                s["userName"] = "<a class=\"list_link\" target=\"_blank\" href=\"../../" + Hg.Config.UIConfig.dirUser + "/showuser-" + pd.getUserName(s["UserNum"].ToString()) + ".aspx\">" + pd.getUserName(s["UserNum"].ToString()) + "</a>";
 
                 int l = int.Parse(tagss[2].ToString());
                 if (l == 1) { s["islocks"] = "<span class=\"reshow\">是</span>"; }

@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_System_shortcut_list : Foosun.Web.UI.ManagePage
+public partial class manage_System_shortcut_list : Hg.Web.UI.ManagePage
 {
     public manage_System_shortcut_list()
     {
@@ -72,7 +72,7 @@ public partial class manage_System_shortcut_list : Foosun.Web.UI.ManagePage
             }
             else
             {
-                liststr = liststr + "<td align='left'class=\"list_link\"><a class=\"list_link\" href=\"shortcut.aspx?action=edit&id=" + id + "\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"编辑\" /></a>&nbsp;<a class=\"list_link\" href=\"shortcut_list.aspx?action=del&id=" + id + "\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"彻底删除\" /></a></td>\r";
+                liststr = liststr + "<td align='left'class=\"list_link\"><a class=\"list_link\" href=\"shortcut.aspx?action=edit&id=" + id + "\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"编辑\" /></a>&nbsp;<a class=\"list_link\" href=\"shortcut_list.aspx?action=del&id=" + id + "\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"彻底删除\" /></a></td>\r";
             }
             liststr = liststr + "</tr>";
         }

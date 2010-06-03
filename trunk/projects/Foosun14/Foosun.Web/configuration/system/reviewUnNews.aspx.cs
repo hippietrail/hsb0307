@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.configuration.system
+namespace Hg.Web.configuration.system
 {
-    public partial class reviewUnNews : Foosun.Web.UI.DialogPage
+    public partial class reviewUnNews : Hg.Web.UI.DialogPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace Foosun.Web.configuration.system
             {
                 Response.CacheControl = "no-cache";
                 Response.Expires = 0;
-                Foosun.CMS.ContentManage rd = new Foosun.CMS.ContentManage();
+                Hg.CMS.ContentManage rd = new Hg.CMS.ContentManage();
                 DataTable dt = rd.getUnNewsReview(Request.QueryString["UnID"].ToString());
                 string str_unRule = "";
                 if (dt != null && dt.Rows.Count > 0)

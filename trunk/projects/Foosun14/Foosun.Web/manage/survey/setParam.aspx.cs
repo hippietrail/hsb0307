@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
 
-public partial class Manage_Survey_setParam : Foosun.Web.UI.ManagePage
+public partial class Manage_Survey_setParam : Hg.Web.UI.ManagePage
 {
     public Manage_Survey_setParam()
     {
@@ -64,9 +64,9 @@ public partial class Manage_Survey_setParam : Foosun.Web.UI.ManagePage
         if (Page.IsValid)//判断页面是否通过验证
         {
             //取得投票参数设置添加中的表单信息
-            string Str_IPtime = Foosun.Common.Input.Filter(this.IPtime.Text);//Ip时间间隔
-            string Str_IsReg = Foosun.Common.Input.Filter(this.IsReg.Text);//是否需要注册?
-            string Str_IpLimit = Foosun.Common.Input.Filter(this.IpLimit.Value);//IP段
+            string Str_IPtime = Hg.Common.Input.Filter(this.IPtime.Text);//Ip时间间隔
+            string Str_IsReg = Hg.Common.Input.Filter(this.IsReg.Text);//是否需要注册?
+            string Str_IpLimit = Hg.Common.Input.Filter(this.IpLimit.Value);//IP段
             #region 判断
             if (Str_IPtime == null || Str_IPtime == string.Empty)
             {

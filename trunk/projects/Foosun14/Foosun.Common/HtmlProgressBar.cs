@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web;
 
-namespace Foosun.Common
+namespace Hg.Common
 {
     /// <summary>
     /// 网页进度条

@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/usercss.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>	
 </head>
 <body style="background-color: #ffffff">
@@ -19,13 +19,13 @@
         </tr>
         <tr>
           <td width="57%"  class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              ¸å³êÉèÖÃ</td>
-          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">Î»ÖÃµ¼º½£º<a href="../main.aspx" target="sys_main" class="list_link">Ê×Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constr_List.aspx" target="sys_main" class="list_link">¸å¼þ¹ÜÀí</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />¸å³êÉèÖÃ</div></td>
+              ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+          <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½<a href="../main.aspx" target="sys_main" class="list_link">ï¿½ï¿½Ò³</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" /><a href="Constr_List.aspx" target="sys_main" class="list_link">ï¿½ï¿½ï¿½ï¿½ï¿½</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
         </tr>
 </table>
 <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="Navitable">
   <tr>
-    <td width="46%" class="navi_link">&nbsp; &nbsp; &nbsp;<a href="Constr_List.aspx" class="topnavichar">¸å¼þ¹ÜÀí</a>&nbsp; &nbsp;<a href="#" class="topnavichar">ËùÓÐÉèÖÃ</a>&nbsp; &nbsp;<a href="Constr_SetParam.aspx" class="topnavichar">Ìí¼ÓÉèÖÃ</a>&nbsp; &nbsp;<span id="pdels" runat="server"></span></td>
+    <td width="46%" class="navi_link">&nbsp; &nbsp; &nbsp;<a href="Constr_List.aspx" class="topnavichar">Ã¸ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="#" class="topnavichar">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<a href="Constr_SetParam.aspx" class="topnavichar">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp; &nbsp;<span id="pdels" runat="server"></span></td>
   </tr>
 </table>
 <div id="no" runat="server"></div>
@@ -37,12 +37,12 @@
     <HeaderTemplate>
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF" class="table">
     <tr class="TR_BG">
-    <td class="sys_topBg" align="center" width="17.5%">µÈ¼¶Ãû³Æ</td>
-    <td class="sys_topBg" align="center" width="17.5%">¸å³ê</td>
-    <td class="sys_topBg" align="center" width="17.5%">»ý·ÖÊý</td>
-    <td class="sys_topBg" align="center" width="17.5%">½ð±ÒÊý</td>
-    <td class="sys_topBg" align="center" width="17.5%">µ¥Î»</td>
-    <td class="sys_topBg" align="center" width="17.5%">²Ù×÷&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
+    <td class="sys_topBg" align="center" width="17.5%">ÃµÈ¼ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="17.5%">Æ¸ï¿½</td>
+    <td class="sys_topBg" align="center" width="17.5%">ï¿½ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="17.5%">ï¿½ï¿½ï¿½ï¿½</td>
+    <td class="sys_topBg" align="center" width="17.5%">ï¿½Î»</td>
+    <td class="sys_topBg" align="center" width="17.5%">ï¿½ï¿½ï¿½&nbsp; &nbsp;<input type="checkbox" name="Checkbox1" onclick="javascript:selectAll(this.form,this.checked)" /></td>
     </tr>
     <div id="tnzlist" runat="server"  onmouseover="overColor(this)" onmouseout="outColor(this)"></div>
     </HeaderTemplate>
@@ -74,14 +74,14 @@
 <script language="javascript" type="text/javascript">
 function del(ID)
 {
-   if(confirm("ÄãÈ·¶¨ÒªÉ¾³ýÂð?"))
+   if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½?"))
    { 
         self.location="?Type=del&ID="+ID;
    }
 }
 function PDel()
 {
-    if(confirm("ÄãÈ·¶¨Òª³¹µ×É¾³ýÂð?"))
+    if(confirm("ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½?"))
     {
 	    document.form1.action="?Type=PDel";
 	    document.form1.submit();

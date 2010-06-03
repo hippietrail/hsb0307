@@ -12,25 +12,25 @@ using System.IO;
 using System.Data;
 using System.Net;
 using System.Text;
-using Foosun.Model;
-using Foosun.Control;
+using Hg.Model;
+using Hg.Control;
 using System.Text.RegularExpressions;
 
-namespace Foosun.CMS.Collect
+namespace Hg.CMS.Collect
 {
     /// <summary>
     /// 采集类
     /// </summary>
     public class Collect
     {
-        private Foosun.DALFactory.ICollect dal;
+        private Hg.DALFactory.ICollect dal;
         private string ErrorMsg = "";
         /// <summary>
         /// 构造函数
         /// </summary>
         public Collect()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateCollect();
+            dal = Hg.DALFactory.DataAccess.CreateCollect();
         }
         #region 采集入库
         /// <summary>
@@ -65,17 +65,17 @@ namespace Foosun.CMS.Collect
             if (bool.Parse(r["SaveRemotePic"].ToString()))
             {
                 #region 远程图片
-                string rtpath = Foosun.Config.UIConfig.dirFile;
+                string rtpath = Hg.Config.UIConfig.dirFile;
                 if (rtpath == null || rtpath.Trim().Equals(""))
                 {
                     HProgressBar.Roll("没有找到管理员附件目录!", 0);
                     return;
                 }
                 string dtpath = DateTime.Now.ToString("yyyyMMdd");
-                PicSavePath = Foosun.Common.ServerInfo.GetRootPath().TrimEnd('\\') + @"\" + rtpath + @"\RemoteFiles\" + dtpath;
+                PicSavePath = Hg.Common.ServerInfo.GetRootPath().TrimEnd('\\') + @"\" + rtpath + @"\RemoteFiles\" + dtpath;
                 if (!Directory.Exists(PicSavePath))
                     Directory.CreateDirectory(PicSavePath);
-                PicSaveUrl = Foosun.Publish.CommonData.getUrl() + "/" + rtpath + "/RemoteFiles/" + dtpath;
+                PicSaveUrl = Hg.Publish.CommonData.getUrl() + "/" + rtpath + "/RemoteFiles/" + dtpath;
                 bSaveRemotePic = true;
                 #endregion
             }
@@ -241,7 +241,7 @@ namespace Foosun.CMS.Collect
             //    pn.Replace(r["OldContent"].ToString(), r["ReContent"].ToString(), bool.Parse(r["IgnoreCase"].ToString()));
             if (pn.Content != null && !pn.Content.Trim().Equals("") && !pn.Title.Trim().Equals(""))
             {
-                Foosun.Model.CollectNewsInfo ninf = new Foosun.Model.CollectNewsInfo();
+                Hg.Model.CollectNewsInfo ninf = new Hg.Model.CollectNewsInfo();
                 ninf.Author = pn.Author;
                 ninf.Source = pn.Source;
                 ninf.AddDate = pn.AddTime;

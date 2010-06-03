@@ -3,16 +3,16 @@ using System.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.Common;
-using Foosun.Control;
-using Foosun.Config;
-using Foosun.Model;
-using Foosun.DALProfile;
+using Hg.Common;
+using Hg.Control;
+using Hg.Config;
+using Hg.Model;
+using Hg.DALProfile;
 using System.Web;
 using System.Threading;
 using System.Collections;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class UltiPublish
     {
@@ -184,7 +184,7 @@ namespace Foosun.Publish
         /// <summary>
         /// 获取模板目录
         /// </summary>
-        private string strTempletDir = Foosun.Config.UIConfig.dirTemplet;
+        private string strTempletDir = Hg.Config.UIConfig.dirTemplet;
         /// <summary>
         /// 构造函数,传入标志和页面信息字符串
         /// </summary>
@@ -192,8 +192,8 @@ namespace Foosun.Publish
         public UltiPublish(bool isProgressBar)
         {
             fs_isProgressBar = isProgressBar;
-            // SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
-            SiteRootPath = Foosun.Common.ServerInfo.GetRootPath();
+            // SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
+            SiteRootPath = Hg.Common.ServerInfo.GetRootPath();
 
             //检查发布实体是否在用，如果没有则清除
             //以下是遍历Hashtable:
@@ -250,10 +250,10 @@ namespace Foosun.Publish
             //{
             HProgressBar.Roll("正在发布主页", 0);
             string indexname = "index.html";
-            TempletPath = Foosun.Common.Public.readparamConfig("IndexTemplet"); //rd["IndexTemplet"].ToString();
+            TempletPath = Hg.Common.Public.readparamConfig("IndexTemplet"); //rd["IndexTemplet"].ToString();
             TempletPath = TempletPath.Replace("/", "\\");
             TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-            indexname = Foosun.Common.Public.readparamConfig("IndexFileName");//rd["IndexFileName"].ToString();
+            indexname = Hg.Common.Public.readparamConfig("IndexFileName");//rd["IndexFileName"].ToString();
             Template indexTemp = new Template(SiteRootPath.Trim('\\') + TempletPath, TempType.Index);
             indexTemp.GetHTML();
             indexTemp.ReplaceLabels();
@@ -265,7 +265,7 @@ namespace Foosun.Publish
             //  }
             // catch (Exception ex)
             // {
-            //    Foosun.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(), "");
+            //    Hg.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(), "");
             // HProgressBar.Roll("发布主页失败。<a href=\"error/geterror.aspx?\">查看日志</a>", 0);
             // }
         }
@@ -277,7 +277,7 @@ namespace Foosun.Publish
         {
             CommonData.DisposeSystemCatch();
             //清除样式缓存
-            Foosun.Publish.LabelStyle.CatchClear();
+            Hg.Publish.LabelStyle.CatchClear();
         }
 
         //随机用户编号
@@ -288,7 +288,7 @@ namespace Foosun.Publish
         private void ultiPublishNews()
         {
             showMessage showObj = new showMessage();
-            showObj.Indexname = Foosun.Common.Public.readparamConfig("IndexFileName");
+            showObj.Indexname = Hg.Common.Public.readparamConfig("IndexFileName");
 
             IDataReader rd = getAllNews();
             if (nNewsCount <= 0)
@@ -346,7 +346,7 @@ namespace Foosun.Publish
             sbScript.Append("<script language=\"JavaScript\" type=\"text/javascript\" src=\"../../configuration/js/Prototype.js\"></script>");
             sbScript.Append("<script language=\"javascript\">");
             sbScript.Append("var userPublishID=" + userPublishID + ";");
-            sbScript.Append("showMessageRequest('" + Foosun.Config.UIConfig.dirMana + "');");
+            sbScript.Append("showMessageRequest('" + Hg.Config.UIConfig.dirMana + "');");
             sbScript.Append("</script>");
             
             if (PublisStates)//快速发布
@@ -361,7 +361,7 @@ namespace Foosun.Publish
 
                 Thread ths = new Thread(new ThreadStart(thread));
                 ths.Priority = ThreadPriority.Lowest;
-                ths.Name = Foosun.Common.ServerInfo.ServerPort;
+                ths.Name = Hg.Common.ServerInfo.ServerPort;
                 ths.Start();
             }
 
@@ -405,7 +405,7 @@ namespace Foosun.Publish
                 }
                 string idList = sb.ToString();
                 DataTable dts = CommonData.DalPublish.GetNewsListByAll(idList);
-                Foosun.Publish.CommonData.NewsInfoList = dts;
+                Hg.Publish.CommonData.NewsInfoList = dts;
             }
         }
 
@@ -469,7 +469,7 @@ namespace Foosun.Publish
                 {
                     for (int i = 0; i < failedList.Count; i++)
                     {
-                        Foosun.Common.Public.savePublicLogFiles("□□□发布新闻", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
+                        Hg.Common.Public.savePublicLogFiles("□□□发布新闻", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
                     }
                     failedList.Clear();
                 }
@@ -574,7 +574,7 @@ namespace Foosun.Publish
                 int failedNum = 0;
                 bool HasRows = false;
                 string indexname = "index.html";
-                indexname = Foosun.Common.Public.readparamConfig("IndexFileName");
+                indexname = Hg.Common.Public.readparamConfig("IndexFileName");
                 if (nClassCount > 0)
                 {
                     while (rd.Read())
@@ -629,7 +629,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
                 }
                 failedList.Clear();
             }
@@ -649,7 +649,7 @@ namespace Foosun.Publish
             int failedNum = 0;
             bool HasRows = false;
             string indexname = "index.html";
-            indexname = Foosun.Common.Public.readparamConfig("IndexFileName");
+            indexname = Hg.Common.Public.readparamConfig("IndexFileName");
             IDataReader rd = getAllSpecials();
             {
                 if (nSpecialCount > 0)
@@ -661,7 +661,7 @@ namespace Foosun.Publish
                         TempletPath = TempletPath.Replace("/", "\\");
                         TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
                         string TmpsaveSpecialPath = "\\" + rd["SavePath"].ToString().Trim('\\').Trim('/') + "\\" + rd["saveDirPath"].ToString().Trim('\\').Trim('/') + '\\' + rd["FileName"].ToString().Trim('\\').Trim('/') + rd["FileEXName"].ToString().Trim('\\').Trim('/');
-                        saveSpecialPath = TmpsaveSpecialPath.Replace("{@dirHtml}", Foosun.Config.UIConfig.dirHtml).Replace("/", "\\"); ;
+                        saveSpecialPath = TmpsaveSpecialPath.Replace("{@dirHtml}", Hg.Config.UIConfig.dirHtml).Replace("/", "\\"); ;
                         bool state = publishSingleSpecial(rd["specialID"].ToString());
                         if (state)
                         {
@@ -695,7 +695,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布专题", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布专题", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
                 }
                 failedList.Clear();
             }
@@ -727,7 +727,7 @@ namespace Foosun.Publish
                 CommonData.Initialize();
                 string saveNewsPath = string.Empty;
                 string TempletPath = string.Empty;
-                string SiteRootPath = Foosun.Common.ServerInfo.GetRootPath() + "\\";
+                string SiteRootPath = Hg.Common.ServerInfo.GetRootPath() + "\\";
                 string strTempletDir = General.strgTemplet;
                 //CommonData.DalPublish.GetNewsSavePath(newsID);
 
@@ -800,7 +800,7 @@ namespace Foosun.Publish
             }
             catch (Exception e)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□ 生成新闻", "【NewsID】:" + newsID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 state = false;
             }
             return state;
@@ -864,7 +864,7 @@ namespace Foosun.Publish
             catch (Exception e)
             {
                 failedList.Add(classID + "$" + e.Message);
-                Foosun.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
+                Hg.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(), "");
                 return false;
             }
         }
@@ -975,7 +975,7 @@ namespace Foosun.Publish
                     Match match = reg.Match(PageMid);
                     if (match.Success)
                     {
-                        if (Foosun.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass || tempRe.MyTempType == TempType.Chspecial)
+                        if (Hg.Config.verConfig.PublicType == "0" || tempRe.MyTempType == TempType.ChClass || tempRe.MyTempType == TempType.Chspecial)
                         {
                             string PageStr = match.Value;
                             int posPage = PageStr.IndexOf("}{Page:");
@@ -1172,7 +1172,7 @@ namespace Foosun.Publish
                 if (OtherStyle != "") OtherStyle = " class=\"" + OtherStyle + "\"";
 
             string Pagestr = string.Empty;
-            string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+            string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
             switch (Numstr)
             {
                 case "0":
@@ -1367,7 +1367,7 @@ namespace Foosun.Publish
                         CurrentSytle = " class=\"foosun_pagebox_num_nonce\"";
                         OtherStyle = " class=\"foosun_pagebox_num\"";
                     }
-                    string PageStyles = Foosun.Common.Public.readparamConfig("PageStyle");
+                    string PageStyles = Hg.Common.Public.readparamConfig("PageStyle");
                     if (PageStyles != "3") Pagestr += getPageDefaultStyleSheet();
                     Pagestr += "<div style=\"padding-top:15px;\" " + postResult_css + ">";
                    
@@ -1721,12 +1721,12 @@ namespace Foosun.Publish
         {
             if (fs_strClassParams.IndexOf("#") >= 0)
             {
-                return CommonData.DalPublish.GetPublishClass(Foosun.Global.Current.SiteID, "", true, out nClassCount);
+                return CommonData.DalPublish.GetPublishClass(Hg.Global.Current.SiteID, "", true, out nClassCount);
 
             }
             else
             {
-                return CommonData.DalPublish.GetPublishClass(Foosun.Global.Current.SiteID, "", false, out nClassCount);
+                return CommonData.DalPublish.GetPublishClass(Hg.Global.Current.SiteID, "", false, out nClassCount);
             }
         }
         /// <summary>
@@ -1853,7 +1853,7 @@ namespace Foosun.Publish
             int failedNum = 0;
             bool HasRows = false;
             string indexname = "index.html";
-            indexname = Foosun.Common.Public.readparamConfig("IndexFileName");
+            indexname = Hg.Common.Public.readparamConfig("IndexFileName");
             if (nClassCount > 0)
             {
                 while (rd.Read())
@@ -1865,7 +1865,7 @@ namespace Foosun.Publish
                     string TmpsaveClassPath = "\\" + rd["savePath"].ToString().Trim('\\').Trim('/');
                     saveClassPath = TmpsaveClassPath.Replace("/", "\\");
                     string strClassId = rd["classid"].ToString();
-                    bool state = Foosun.Publish.General.publishPage(strClassId);
+                    bool state = Hg.Publish.General.publishPage(strClassId);
                     num += 1;
                     if (state)
                     {
@@ -1904,7 +1904,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布单页", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布单页", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1], "");
                 }
                 failedList.Clear();
             }

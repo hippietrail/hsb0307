@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IMessage
     {
@@ -36,7 +36,7 @@ namespace Foosun.DALFactory
         DataTable sel_11(string u_meGroupNumber);
         int sel_12(string UserNum);
         DataTable sel_15(string UserName);
-        void Add(Foosun.Model.message uc);
+        void Add(Hg.Model.message uc);
         int Add_1(string MfID, string Mid, string UserNum, string fileName, string FileUrl, DateTime CreatTime);
         #endregion
 

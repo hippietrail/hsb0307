@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Text.RegularExpressions;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public class ChannelLabel : Label
     {

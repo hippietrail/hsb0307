@@ -20,7 +20,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Net;
 
-public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_Add : Hg.Web.UI.ManagePage
 {
     public manage_collect_Collect_Add()
     {
@@ -36,7 +36,7 @@ public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
             {
                 PageError("参数不正确或无效!", "");
             }
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             int n = 0;
             if (Request.QueryString["ID"] == null || Request.QueryString["ID"].Trim().Equals(""))
             {
@@ -106,7 +106,7 @@ public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
                         this.TxtSiteName.Text = tb.Rows[0]["SiteName"].ToString();
                         this.TxtSiteURL.Text = tb.Rows[0]["objURL"].ToString();
                         this.HidClassID.Value = tb.Rows[0]["ClassID"].ToString();
-                        Foosun.CMS.ContentManage cm = new Foosun.CMS.ContentManage();
+                        Hg.CMS.ContentManage cm = new Hg.CMS.ContentManage();
                         string ClassName = cm.getClassCName(this.HidClassID.Value);
                         this.TxtClassName.Text = ClassName;
                         if (!tb.Rows[0].IsNull("Encode")) this.TxtEncode.Text = tb.Rows[0]["Encode"].ToString();
@@ -149,7 +149,7 @@ public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
             string sMemo = TxtFolderMemo.Text.Trim();
             if (sName.Equals(""))
                 PageError("栏目名称请必须填写!", "Collect_List.aspx");
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             if (this.HddFolderID.Value.Trim().Equals("") || this.HddFolderID.Value.Trim().Equals("0"))
             {
                 this.HddFolderID.Value = cl.FolderAdd(sName, sMemo).ToString();
@@ -190,7 +190,7 @@ public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
             sUrl = sUrl.Replace("'", "''");
             sUrl = sUrl.Replace("\\", "/");
 
-            Foosun.Model.CollectSiteInfo nf = new Foosun.Model.CollectSiteInfo();
+            Hg.Model.CollectSiteInfo nf = new Hg.Model.CollectSiteInfo();
             nf.SiteName = TxtSiteName.Text.Trim();
             nf.objURL = sUrl;
             if (DdlSiteFolder.SelectedValue.Equals(""))
@@ -214,7 +214,7 @@ public partial class manage_collect_Collect_Add : Foosun.Web.UI.ManagePage
             nf.IsIFrame = ChbIFRAME.Checked;
             nf.IsScript = ChbSCRIPT.Checked;
             nf.ClassID = this.HidClassID.Value;
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             if (this.HidSiteID.Value.Trim().Equals("") || this.HidSiteID.Value.Trim().Equals("0"))
             {
                 int collectID = cl.SiteAdd(nf);

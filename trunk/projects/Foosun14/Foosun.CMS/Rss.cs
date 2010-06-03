@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Rss
     {
         private IRss dal;
         public Rss()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateRss();
+            dal = Hg.DALFactory.DataAccess.CreateRss();
         }
         public int sel(string ClassID)
         {

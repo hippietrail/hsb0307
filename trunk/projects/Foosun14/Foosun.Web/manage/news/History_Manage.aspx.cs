@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_History_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_news_History_Manage : Hg.Web.UI.ManagePage
 {
     public manage_news_History_Manage()
     {
@@ -58,7 +58,7 @@ public partial class manage_news_History_Manage : Foosun.Web.UI.ManagePage
     {
 
         int i, j;
-        DataTable dt = Foosun.CMS.Pagination.GetPage("manage_news_History_Manage_aspx", PageIndex, 20, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage("manage_news_History_Manage_aspx", PageIndex, 20, out i, out j, null);
 
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -247,16 +247,16 @@ public partial class manage_news_History_Manage : Foosun.Web.UI.ManagePage
     {
         this.Authority_Code = "C049";
         this.CheckAdminAuthority();
-        Foosun.Control.HProgressBar.Start();
-        int getHistoryNum = int.Parse(Foosun.Common.Public.readparamConfig("HistoryNum"));
+        Hg.Control.HProgressBar.Start();
+        int getHistoryNum = int.Parse(Hg.Common.Public.readparamConfig("HistoryNum"));
         try
         {
-            Foosun.Control.HProgressBar.Roll("正在发布索引", 0);
+            Hg.Control.HProgressBar.Roll("正在发布索引", 0);
             int m = 0;
             int j = 0;
             for (int i = 0; i < getHistoryNum; i++)
             {
-                if (Foosun.Publish.General.publishHistryIndex(i))
+                if (Hg.Publish.General.publishHistryIndex(i))
                 {
                     m++;
                 }
@@ -264,14 +264,14 @@ public partial class manage_news_History_Manage : Foosun.Web.UI.ManagePage
                 {
                     j++;
                 }
-                Foosun.Control.HProgressBar.Roll("正在发布第" + i + "天,共" + getHistoryNum + ",失败" + j + "个(可能当天没归档新闻。)", ((i + 1) * 100 / getHistoryNum));
+                Hg.Control.HProgressBar.Roll("正在发布第" + i + "天,共" + getHistoryNum + ",失败" + j + "个(可能当天没归档新闻。)", ((i + 1) * 100 / getHistoryNum));
             }
-            Foosun.Control.HProgressBar.Roll("发布索引成功, 共" + getHistoryNum + ",失败" + j + "个(可能当天没归档新闻。). &nbsp;<a href=\"history_Manage.aspx\">返回</a>", 100);
+            Hg.Control.HProgressBar.Roll("发布索引成功, 共" + getHistoryNum + ",失败" + j + "个(可能当天没归档新闻。). &nbsp;<a href=\"history_Manage.aspx\">返回</a>", 100);
         }
         catch (Exception ex)
         {
-            Foosun.Common.Public.savePublicLogFiles("□□□发布索引", "【错误描述：】\r\n" + ex.ToString(), UserName);
-            Foosun.Control.HProgressBar.Roll("发布索引失败。<a href=\"error/geterror.aspx?\">查看日志</a>", 0);
+            Hg.Common.Public.savePublicLogFiles("□□□发布索引", "【错误描述：】\r\n" + ex.ToString(), UserName);
+            Hg.Control.HProgressBar.Roll("发布索引失败。<a href=\"error/geterror.aspx?\">查看日志</a>", 0);
         }
         Response.End();
     }

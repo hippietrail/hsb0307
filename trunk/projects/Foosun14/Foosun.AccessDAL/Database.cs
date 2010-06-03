@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 using System.Web;
 using System.Text;
 using System.Configuration;
 using System.Text.RegularExpressions;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Database : DbBase, IDatabase
     {
@@ -48,11 +48,11 @@ namespace Foosun.AccessDAL
         {
             string s_dbCstring = "";
             if (type == 1)
-                s_dbCstring = Foosun.Config.DBConfig.CmsConString;
+                s_dbCstring = Hg.Config.DBConfig.CmsConString;
             else if (type == 2)
-                s_dbCstring = Foosun.Config.DBConfig.HelpConString;
+                s_dbCstring = Hg.Config.DBConfig.HelpConString;
             else
-                s_dbCstring = Foosun.Config.DBConfig.CollectConString;
+                s_dbCstring = Hg.Config.DBConfig.CollectConString;
 
             string[] a_dbNamestring = s_dbCstring.Split(';');
             string[] a_dbNameS = a_dbNamestring[3].ToString().Split('=');

@@ -4,7 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
     public class ImagePage : System.Web.UI.Page
     {
@@ -14,7 +14,7 @@ namespace Foosun.Web.UI
         /// <param name="code">生成认证长度</param>
         protected void DrawImage(int code)
         {
-            Session["CheckCode"] = Foosun.Common.Rand.Number(code);
+            Session["CheckCode"] = Hg.Common.Rand.Number(code);
             CreateImages(Session["CheckCode"].ToString());
         }
         /// <summary>

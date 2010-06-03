@@ -12,15 +12,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Collections.Specialized;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class sys
     {
-        Foosun.DALFactory.Isys dal;
+        Hg.DALFactory.Isys dal;
         public sys()
         {
             dal = DataAccess.Createsys();

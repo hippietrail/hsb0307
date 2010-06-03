@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS.Collect;
+using Hg.CMS.Collect;
 
-namespace Foosun.Web.manage.collect
+namespace Hg.Web.manage.collect
 {
-    public partial class Collect_StepFive : Foosun.Web.UI.ManagePage
+    public partial class Collect_StepFive : Hg.Web.UI.ManagePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

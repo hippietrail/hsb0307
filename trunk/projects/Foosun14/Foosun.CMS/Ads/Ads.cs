@@ -10,23 +10,23 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 using System.IO;
 
-namespace Foosun.CMS.Ads
+namespace Hg.CMS.Ads
 {
     public class Ads
     {
-        private string str_dirDumm = Foosun.Config.UIConfig.dirDumm;
-        private string str_rootpath = Foosun.Common.ServerInfo.GetRootPath();
+        private string str_dirDumm = Hg.Config.UIConfig.dirDumm;
+        private string str_rootpath = Hg.Common.ServerInfo.GetRootPath();
         private IAds ac;
         public Ads()
         {
             ac = DataAccess.CreateAds();
         }
 
-        public DataTable list(Foosun.Model.AdsListInfo ali)
+        public DataTable list(Hg.Model.AdsListInfo ali)
         {
             DataTable dt = ac.list(ali);
             return dt;
@@ -55,7 +55,7 @@ namespace Foosun.CMS.Ads
                     string classid = dt.Rows[i]["ClassID"].ToString();
                     string adsid = dt.Rows[i]["AdID"].ToString();
                     string adspath = str_rootpath + str_dirDumm + "\\jsfiles\\ads\\" + classid + "\\" + adsid + ".js";
-                    Foosun.Common.Public.DelFile("", adspath);
+                    Hg.Common.Public.DelFile("", adspath);
                 }
                 dt.Clear(); dt.Dispose();
             }
@@ -71,7 +71,7 @@ namespace Foosun.CMS.Ads
                     string classid = dt.Rows[i]["ClassID"].ToString();
                     string adsid = dt.Rows[i]["AdID"].ToString();
                     string adspath = str_rootpath + str_dirDumm + "\\jsfiles\\ads\\" + classid + "\\" + adsid + ".js";
-                    Foosun.Common.Public.DelFile("", adspath);
+                    Hg.Common.Public.DelFile("", adspath);
                 }
                 dt.Clear(); dt.Dispose();
             }
@@ -86,7 +86,7 @@ namespace Foosun.CMS.Ads
                 {
                     string classid = dt.Rows[i]["AcID"].ToString();
                     string classpath = str_rootpath + str_dirDumm + "\\jsfiles\\ads\\" + classid;
-                    Foosun.Common.Public.DelFile(classpath, "");
+                    Hg.Common.Public.DelFile(classpath, "");
                 }
                 dt.Clear(); dt.Dispose();
             }
@@ -102,19 +102,19 @@ namespace Foosun.CMS.Ads
                 {
                     string str_classid = dt.Rows[i]["AcID"].ToString();
                     string classpath = str_rootpath + str_dirDumm + "\\jsfiles\\ads\\" + str_classid;
-                    Foosun.Common.Public.DelFile(classpath, "");
+                    Hg.Common.Public.DelFile(classpath, "");
                 }
                 dt.Clear(); dt.Dispose();
             }
             ac.DelPAdsClass(classid);
         }
-        public int AddClass(Foosun.Model.AdsClassInfo aci)
+        public int AddClass(Hg.Model.AdsClassInfo aci)
         {
             int result = 0;
             result = ac.AddClass(aci);
             return result;
         }
-        public int EditClass(Foosun.Model.AdsClassInfo aci)
+        public int EditClass(Hg.Model.AdsClassInfo aci)
         {
             int result = 0;
             result = ac.EditClass(aci);
@@ -145,7 +145,7 @@ namespace Foosun.CMS.Ads
             return dt;
         }
 
-        public int adsAdd(Foosun.Model.AdsInfo ai)
+        public int adsAdd(Hg.Model.AdsInfo ai)
         {
             string AdID = ac.adsAdd(ai);
             createJS(ai.adType.ToString(),AdID,ai.ClassID);
@@ -166,11 +166,11 @@ namespace Foosun.CMS.Ads
             DataTable dt = ac.getAdsInfo(id);
             return dt;
         }
-        public int adsEdit(Foosun.Model.AdsInfo ai)
+        public int adsEdit(Hg.Model.AdsInfo ai)
         {
             int result = ac.adsEdit(ai);
             string str_jspath = str_rootpath + str_dirDumm + "\\jsfiles\\ads\\" + ai.OldClass + "\\" + ai.AdID + ".js";
-            Foosun.Common.Public.DelFile("", str_jspath);
+            Hg.Common.Public.DelFile("", str_jspath);
             
             createJS(ai.adType.ToString(), ai.AdID, ai.ClassID);
             return result;

@@ -13,7 +13,7 @@ using System.IO;
 using System.Web;
 using System.Text;
 
-namespace Foosun.CMS.Common
+namespace Hg.CMS.Common
 {
     public class FsLog
     {
@@ -39,13 +39,13 @@ namespace Foosun.CMS.Common
                 switch (logt)
                 {
                     case 0:
-                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Foosun.Common.Input.MD5(FileName + "~") + "-s.log";
+                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Hg.Common.Input.MD5(FileName + "~") + "-s.log";
                         break;
                     case 1:
-                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Foosun.Common.Input.MD5(FileName + "~") + "-e.log";
+                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Hg.Common.Input.MD5(FileName + "~") + "-e.log";
                         break;
                     default:
-                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Foosun.Common.Input.MD5(FileName + "~") + "-s.log";
+                        FileName = HttpContext.Current.Server.MapPath("~/Logs/") + FileName + "-" + Hg.Common.Input.MD5(FileName + "~") + "-s.log";
                         break;
                 }
                 #region 检测日志文件是否存在
@@ -90,7 +90,7 @@ namespace Foosun.CMS.Common
 
         public static void SaveUserLogs(int intnum, int intSaveFiles, string titlestr, string ContentStr)
         {
-            Foosun.DALFactory.IFsLog fslog = Foosun.DALFactory.DataAccess.CreateFsLog();
+            Hg.DALFactory.IFsLog fslog = Hg.DALFactory.DataAccess.CreateFsLog();
             int flag = fslog.Add(intnum, titlestr, ContentStr, HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString(), HttpContext.Current.Session["UserNum"].ToString(), HttpContext.Current.Session["SiteID"].ToString());
             if (flag < 1)
             {
@@ -106,7 +106,7 @@ namespace Foosun.CMS.Common
                     string FileName = date.Year + "-" + date.Month;
                     try
                     {
-                        FileName = HttpContext.Current.Server.MapPath("~/Logs/User-" + intnum + "-") + FileName + "-" + Foosun.Common.Input.MD5(FileName + "~") + "-s.log";
+                        FileName = HttpContext.Current.Server.MapPath("~/Logs/User-" + intnum + "-") + FileName + "-" + Hg.Common.Input.MD5(FileName + "~") + "-s.log";
 
                         #region 检测日志目录是否存在
                         if (!Directory.Exists(HttpContext.Current.Server.MapPath("~/Logs")))

@@ -11,10 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class FreeLabel
     {
@@ -38,7 +38,7 @@ namespace Foosun.CMS
         }
         public bool Add(FreeLabelInfo info)
         {
-            info.SiteID = Foosun.Global.Current.SiteID;
+            info.SiteID = Hg.Global.Current.SiteID;
             return dal.Add(info);
         }
         public bool Update(FreeLabelInfo info)

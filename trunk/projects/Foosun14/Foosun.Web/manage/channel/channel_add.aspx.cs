@@ -8,12 +8,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.IO;
-using Foosun.CMS.Common;
+using Hg.CMS.Common;
 using System.Xml;
 
-public partial class manage_channel_channel_add : Foosun.Web.UI.ManagePage
+public partial class manage_channel_channel_add : Hg.Web.UI.ManagePage
 {
     public manage_channel_channel_add()
     {
@@ -22,9 +22,9 @@ public partial class manage_channel_channel_add : Foosun.Web.UI.ManagePage
     Channel rd = new Channel();
     rootPublic pd = new rootPublic();
     public string dable = "";
-    public static string dirdumm = Foosun.Config.UIConfig.dirDumm;
-    public static string dirTemplet = Foosun.Config.UIConfig.dirTemplet;
-    public static string dirHTML = Foosun.Config.UIConfig.dirHtml;
+    public static string dirdumm = Hg.Config.UIConfig.dirDumm;
+    public static string dirTemplet = Hg.Config.UIConfig.dirTemplet;
+    public static string dirHTML = Hg.Config.UIConfig.dirHtml;
     protected void Page_Load(object sender, EventArgs e)
     {
        // Response.Redirect("../Publish/psf.aspx");
@@ -62,7 +62,7 @@ public partial class manage_channel_channel_add : Foosun.Web.UI.ManagePage
                 PageError("频道标志已经存在", "javascript:history.back()", true);
             }
             string channelDescript = this.channelDescript.Text;
-            string DataLib = Foosun.Config.UIConfig.dataRe + "channel_" + this.DataLib.Text;
+            string DataLib = Hg.Config.UIConfig.dataRe + "channel_" + this.DataLib.Text;
             //判断英文是否存在
             if (rd.getDbCount(DataLib.ToString(), ChID) != 0)
             {
@@ -116,7 +116,7 @@ public partial class manage_channel_channel_add : Foosun.Web.UI.ManagePage
             //开始创建表
             //插入数据
             DateTime _Temp_date = DateTime.Now;
-            Foosun.Model.ChannelInfo uc = new Foosun.Model.ChannelInfo();
+            Hg.Model.ChannelInfo uc = new Hg.Model.ChannelInfo();
             uc.Id = ChID;
             uc.channelType = channelType;
             uc.channelName = channelName;

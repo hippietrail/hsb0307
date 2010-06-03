@@ -4,19 +4,19 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
-using Foosun.Config;
-using Foosun.Model;
-using Foosun.CMS;
+using Hg.Config;
+using Hg.Model;
+using Hg.CMS;
 using System.Web;
 
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
 	public class BasePage : System.Web.UI.Page
 	{
 		protected readonly int PAGESIZE = Config.UIConfig.GetPageSize();
 		protected internal UserLogin _UserLogin;
-		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Foosun Inc. By " + Foosun.Config.verConfig.Productversion + "</span>";
+		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Foosun Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
 		protected void AddStyleSheet(Page page, string cssPath)
 		{
 			HtmlLink link = new HtmlLink();
@@ -88,12 +88,12 @@ namespace Foosun.Web.UI
 		/// <returns></returns>
 		protected bool Validate_Session()
 		{
-			return !Foosun.Global.Current.IsTimeout();
+			return !Hg.Global.Current.IsTimeout();
 		}
 
 		protected void LoginResultShow(EnumLoginState state)
 		{
-			string dimm = Foosun.Config.UIConfig.dirDumm.Trim();
+			string dimm = Hg.Config.UIConfig.dirDumm.Trim();
 			if (dimm != string.Empty)
 			{
 				dimm = "/" + dimm;
@@ -103,7 +103,7 @@ namespace Foosun.Web.UI
 			switch (state)
 			{
 				case EnumLoginState.Err_IPLimited:
-					ErrorMsg = "您IP[" + Foosun.Common.Public.getUserIP() + "]被限制，不能登陆!";
+					ErrorMsg = "您IP[" + Hg.Common.Public.getUserIP() + "]被限制，不能登陆!";
 					isAdminReturn = 2;
 					break;
 				case EnumLoginState.Err_Locked:
@@ -111,7 +111,7 @@ namespace Foosun.Web.UI
 					isAdminReturn = 2;
 					break;
 				case EnumLoginState.Err_AdminLogined:
-					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Foosun.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url + "\";</script>");
+					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Hg.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url + "\";</script>");
 					Response.End();
 					break;
 				case EnumLoginState.Err_UnEmail:
@@ -119,11 +119,11 @@ namespace Foosun.Web.UI
 					isAdminReturn = 0;
 					break;
 				case EnumLoginState.Err_TimeOut:
-					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Foosun.Config.UIConfig.dirUser + "/login.aspx?urls=" + Request.Url + "\";</script>");
+					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Hg.Config.UIConfig.dirUser + "/login.aspx?urls=" + Request.Url + "\";</script>");
 					Response.End();
 					break;
 				case EnumLoginState.Err_AdminTimeOut:
-					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Foosun.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url + "\";</script>");
+					Response.Write("<script language=\"javascript\">window.parent.location.href=\"" + dimm + "/" + Hg.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url + "\";</script>");
 					Response.End();
 					break;
 				case EnumLoginState.Err_UnMobile:
@@ -167,7 +167,7 @@ namespace Foosun.Web.UI
 					isAdminReturn = 0;
 					break;
 				case EnumLoginState.Err_NotAdmin:
-					ErrorMsg = "抱歉，您不是管理员。您的操作已经记录！<li>您的IP：[" + Foosun.Common.Public.getUserIP() + "]已被记录</li>";
+					ErrorMsg = "抱歉，您不是管理员。您的操作已经记录！<li>您的IP：[" + Hg.Common.Public.getUserIP() + "]已被记录</li>";
 					isAdminReturn = 1;
 					break;
 				case EnumLoginState.Succeed:
@@ -182,16 +182,16 @@ namespace Foosun.Web.UI
 			{
 				case 0:
 
-					ReturnUrl = dimm + "/" + Foosun.Config.UIConfig.dirUser + "/login.aspx?urls=" + Request.Url;
+					ReturnUrl = dimm + "/" + Hg.Config.UIConfig.dirUser + "/login.aspx?urls=" + Request.Url;
 					break;
 				case 1:
 					if (state == EnumLoginState.Err_NoAuthority)
 					{
-						ReturnUrl = dimm + "/" + Foosun.Config.UIConfig.dirMana + "/main.aspx";
+						ReturnUrl = dimm + "/" + Hg.Config.UIConfig.dirMana + "/main.aspx";
 					}
 					else
 					{
-						ReturnUrl = dimm + "/" + Foosun.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url;
+						ReturnUrl = dimm + "/" + Hg.Config.UIConfig.dirMana + "/login.aspx?urls=" + Request.Url;
 					}
 					break;
 				default:
@@ -205,21 +205,21 @@ namespace Foosun.Web.UI
 			if (!Validate_Session())
 				LoginResultShow(EnumLoginState.Err_TimeOut);
 			else
-				LoginResultShow(CheckUserLogin(Foosun.Global.Current.UserNum, false));
+				LoginResultShow(CheckUserLogin(Hg.Global.Current.UserNum, false));
 		}
 		protected void CheckUserLoginCert()
 		{
 			if (!Validate_Session())
 				LoginResultShow(EnumLoginState.Err_TimeOut);
 			else
-				LoginResultShow(CheckUserLogin(Foosun.Global.Current.UserNum, true));
+				LoginResultShow(CheckUserLogin(Hg.Global.Current.UserNum, true));
 		}
 		protected void CheckAdminLogin()
 		{
 			if (!Validate_Session())
 				LoginResultShow(EnumLoginState.Err_AdminTimeOut);
 			else
-				LoginResultShow(CheckAdminLogin(Foosun.Global.Current.UserNum));
+				LoginResultShow(CheckAdminLogin(Hg.Global.Current.UserNum));
 		}
 		/// <summary>
 		/// 检查普通会员登录状态

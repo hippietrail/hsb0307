@@ -2,10 +2,10 @@
 using System.Data;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class CustomForm
     {

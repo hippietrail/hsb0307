@@ -9,7 +9,7 @@ using System.Net;
 using System.Text;
 using System.IO;
 
-namespace Foosun.PlugIn.Passport
+namespace Hg.PlugIn.Passport
 {
     /// <summary>
     /// 提交整合要求类
@@ -43,12 +43,12 @@ namespace Foosun.PlugIn.Passport
         public string address = string.Empty;
         System.Xml.XmlDocument XmlDoc = new System.Xml.XmlDocument();
         System.Web.HttpContext context;
-        Foosun.Config.API.APIConfig config ;
+        Hg.Config.API.APIConfig config ;
         public DPO_Request(System.Web.HttpContext context)
         {
 
             this.context = context;
-            config = Foosun.Config.API.APIConfigs.GetConfig();
+            config = Hg.Config.API.APIConfigs.GetConfig();
             
              
             LoadXmlFile();
@@ -64,7 +64,7 @@ namespace Foosun.PlugIn.Passport
                 return;
             if (config.ApplicationList != null)               
             {
-                foreach (Foosun.Config.API.ApplicationInfo app in config.ApplicationList)
+                foreach (Hg.Config.API.ApplicationInfo app in config.ApplicationList)
                 {
                     if (app.AppUrl.StartsWith( "http://"))
                     {
@@ -241,7 +241,7 @@ namespace Foosun.PlugIn.Passport
 
             string output = string.Empty;
             string _temp = string.Empty;
-            foreach (Foosun.Config.API.ApplicationInfo app in config.ApplicationList)
+            foreach (Hg.Config.API.ApplicationInfo app in config.ApplicationList)
             {
                 Encoding encoding = Encoding.GetEncoding("GB2312");
 
@@ -274,7 +274,7 @@ namespace Foosun.PlugIn.Passport
             string[] url = new string[config.ApplicationList.Count];
             StringBuilder content = new StringBuilder();
             content.Append("<Interface>");
-            foreach (Foosun.Config.API.ApplicationInfo app in config.ApplicationList)
+            foreach (Hg.Config.API.ApplicationInfo app in config.ApplicationList)
             {
                 content.Append("<www>");
                 Encoding encoding = Encoding.GetEncoding("GB2312");
@@ -331,7 +331,7 @@ namespace Foosun.PlugIn.Passport
 
             string output = string.Empty;
             string _temp = string.Empty;
-            foreach (Foosun.Config.API.ApplicationInfo app in config.ApplicationList)
+            foreach (Hg.Config.API.ApplicationInfo app in config.ApplicationList)
             {
                 Encoding encoding = Encoding.GetEncoding("GB2312");
 

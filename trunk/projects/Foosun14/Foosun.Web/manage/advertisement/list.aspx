@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>广告系统</title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>

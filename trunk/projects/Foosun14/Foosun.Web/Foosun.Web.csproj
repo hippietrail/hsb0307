@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9883C8B0-6C65-4096-826E-F12FBDA20F11}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -223,42 +223,36 @@
     <Content Include="user\UserLoginajax.aspx" />
     <Compile Include="Click.aspx.cs">
       <DependentUpon>Click.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Click.aspx.designer.cs">
       <DependentUpon>Click.aspx</DependentUpon>
     </Compile>
     <Compile Include="comment.aspx.cs">
       <DependentUpon>comment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
     </Compile>
     <Compile Include="comm\Image.aspx.cs">
       <DependentUpon>Image.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="comm\Image.aspx.designer.cs">
       <DependentUpon>Image.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\dateTime.aspx.cs">
       <DependentUpon>dateTime.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\dateTime.aspx.designer.cs">
       <DependentUpon>dateTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\Genlist.aspx.cs">
       <DependentUpon>Genlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\Genlist.aspx.designer.cs">
       <DependentUpon>Genlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\getClassCname.aspx.cs">
       <DependentUpon>getClassCname.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\getClassCname.aspx.designer.cs">
       <DependentUpon>getClassCname.aspx</DependentUpon>
@@ -272,126 +266,108 @@
     </Compile>
     <Compile Include="configuration\system\HelpAjax.aspx.cs">
       <DependentUpon>HelpAjax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\HelpAjax.aspx.designer.cs">
       <DependentUpon>HelpAjax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\history.page.aspx.cs">
       <DependentUpon>history.page.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\history.page.aspx.designer.cs">
       <DependentUpon>history.page.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\iframe.aspx.cs">
       <DependentUpon>iframe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\iframe.aspx.designer.cs">
       <DependentUpon>iframe.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\public.aspx.cs">
       <DependentUpon>public.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\public.aspx.designer.cs">
       <DependentUpon>public.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\reviewUnNews.aspx.cs">
       <DependentUpon>reviewUnNews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\reviewUnNews.aspx.designer.cs">
       <DependentUpon>reviewUnNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectChannel.aspx.cs">
       <DependentUpon>selectChannel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectChannel.aspx.designer.cs">
       <DependentUpon>selectChannel.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectFiles.aspx.cs">
       <DependentUpon>selectFiles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectFiles.aspx.designer.cs">
       <DependentUpon>selectFiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectLabelStyle.aspx.cs">
       <DependentUpon>selectLabelStyle.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectLabelStyle.aspx.designer.cs">
       <DependentUpon>selectLabelStyle.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectNewsClass.aspx.cs">
       <DependentUpon>selectNewsClass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectNewsClass.aspx.designer.cs">
       <DependentUpon>selectNewsClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectnewsclass_ajax.aspx.cs">
       <DependentUpon>selectnewsclass_ajax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectnewsclass_ajax.aspx.designer.cs">
       <DependentUpon>selectnewsclass_ajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectNewsspecial.aspx.cs">
       <DependentUpon>selectNewsspecial.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectNewsspecial.aspx.designer.cs">
       <DependentUpon>selectNewsspecial.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\SelectNewsspecial_ajax.aspx.cs">
       <DependentUpon>SelectNewsspecial_ajax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\SelectNewsspecial_ajax.aspx.designer.cs">
       <DependentUpon>SelectNewsspecial_ajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectPath.aspx.cs">
       <DependentUpon>selectPath.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectPath.aspx.designer.cs">
       <DependentUpon>selectPath.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectrulePram.aspx.cs">
       <DependentUpon>selectrulePram.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectrulePram.aspx.designer.cs">
       <DependentUpon>selectrulePram.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectspecial.aspx.cs">
       <DependentUpon>selectspecial.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectspecial.aspx.designer.cs">
       <DependentUpon>selectspecial.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectuserdiscuss.aspx.cs">
       <DependentUpon>selectuserdiscuss.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectuserdiscuss.aspx.designer.cs">
       <DependentUpon>selectuserdiscuss.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectuserpic.aspx.cs">
       <DependentUpon>selectuserpic.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectuserpic.aspx.designer.cs">
       <DependentUpon>selectuserpic.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>

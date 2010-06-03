@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_user_AnnounceEdit : Foosun.Web.UI.ManagePage
+public partial class manage_user_AnnounceEdit : Hg.Web.UI.ManagePage
 {
     public manage_user_AnnounceEdit()
     {
@@ -34,7 +34,7 @@ public partial class manage_user_AnnounceEdit : Foosun.Web.UI.ManagePage
                 int aId=0;
                 try
                 {
-                    aId = int.Parse(Foosun.Common.Input.Filter(Request.QueryString["id"]));
+                    aId = int.Parse(Hg.Common.Input.Filter(Request.QueryString["id"]));
                     DataTable dt = rd.getAnnounceEdit(aId);
                     if (dt != null)
                     {
@@ -98,7 +98,7 @@ public partial class manage_user_AnnounceEdit : Foosun.Web.UI.ManagePage
             }
             if (TxtTitle.ToString() != "" && TxtTitle.ToString() != null)
             {
-                Foosun.Model.UserInfo5 uc = new Foosun.Model.UserInfo5();
+                Hg.Model.UserInfo5 uc = new Hg.Model.UserInfo5();
                 uc.Id = aId;
                 uc.Title = TxtTitle;
                 uc.content = TxtContent;

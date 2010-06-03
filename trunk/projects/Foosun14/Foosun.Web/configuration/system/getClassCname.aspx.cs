@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Web.UI;
+using Hg.CMS;
+using Hg.Web.UI;
 
-public partial class configuration_system_getClassCname : Foosun.Web.UI.DialogPage
+public partial class configuration_system_getClassCname : Hg.Web.UI.DialogPage
 {
     public configuration_system_getClassCname()
     {

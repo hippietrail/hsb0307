@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_news_unNews_Edit : Foosun.Web.UI.ManagePage
+public partial class manage_news_unNews_Edit : Hg.Web.UI.ManagePage
 {
     public manage_news_unNews_Edit()
     {
@@ -53,7 +53,7 @@ public partial class manage_news_unNews_Edit : Foosun.Web.UI.ManagePage
         if (unNewsid != "")
         {
             #region 编辑不规则新闻
-            unNewsid = Foosun.Common.Input.Filter(unNewsid);
+            unNewsid = Hg.Common.Input.Filter(unNewsid);
             DataTable DT = nws.sel(unNewsid);
             if (DT != null && DT.Rows.Count > 0)
             {
@@ -148,12 +148,12 @@ public partial class manage_news_unNews_Edit : Foosun.Web.UI.ManagePage
     //保存数据
     protected bool SaveunNewsData()
     {
-        String OldNewsId = Foosun.Common.Input.Filter(Request.Form["NewsID"]);
+        String OldNewsId = Hg.Common.Input.Filter(Request.Form["NewsID"]);
         String[] Arr_OldNewsId;
         String NewsID, NewsTitle, NewsRow, NewsTable,SubCSS;
 
         NewsID = Request.Form["TopNewsID"];
-        string unName = Foosun.Common.Input.Filter(this.unName.Text);
+        string unName = Hg.Common.Input.Filter(this.unName.Text);
         string titleCSS = this.titleCSS.Text;
         #region 判断数据是否合法
         if (this.unName.Text.Trim() == "")
@@ -178,7 +178,7 @@ public partial class manage_news_unNews_Edit : Foosun.Web.UI.ManagePage
             OldNewsId = "";
             Arr_OldNewsId = OldNewsId.Split(new char[] { ',' });
         }
-        string unNewsids = Foosun.Common.Rand.Number(12);
+        string unNewsids = Hg.Common.Rand.Number(12);
         if (Request.Form["UnID"].Trim() != "")
         {
             unNewsids = Request.Form["UnID"];
@@ -186,10 +186,10 @@ public partial class manage_news_unNews_Edit : Foosun.Web.UI.ManagePage
         }
         for (int For_Num = 0; For_Num < Arr_OldNewsId.Length; For_Num++)
         {
-            NewsTitle = Foosun.Common.Input.Filter(Request.Form["NewsTitle" + Arr_OldNewsId[For_Num]]);
-            NewsRow = Foosun.Common.Input.Filter(Request.Form["Row" + Arr_OldNewsId[For_Num]]);
-            NewsTable = Foosun.Common.Input.Filter(Request.Form["NewsTable" + Arr_OldNewsId[For_Num]]);
-            SubCSS = Foosun.Common.Input.Filter(Request.Form["SubCSS" + Arr_OldNewsId[For_Num]]);
+            NewsTitle = Hg.Common.Input.Filter(Request.Form["NewsTitle" + Arr_OldNewsId[For_Num]]);
+            NewsRow = Hg.Common.Input.Filter(Request.Form["Row" + Arr_OldNewsId[For_Num]]);
+            NewsTable = Hg.Common.Input.Filter(Request.Form["NewsTable" + Arr_OldNewsId[For_Num]]);
+            SubCSS = Hg.Common.Input.Filter(Request.Form["SubCSS" + Arr_OldNewsId[For_Num]]);
             if (nws.Add_2(unName, titleCSS, SubCSS, unNewsids, Arr_OldNewsId[For_Num], NewsRow, NewsTitle, NewsTable, SiteID) == 0)
             {
                 PageError("保存不规则新闻失败!", "unNews.aspx");

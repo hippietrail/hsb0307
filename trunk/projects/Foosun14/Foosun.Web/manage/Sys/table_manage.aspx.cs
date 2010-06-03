@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_table_manage : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_table_manage : Hg.Web.UI.ManagePage
 {
     sys rd = new sys();
     protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +21,7 @@ public partial class manage_Sys_table_manage : Foosun.Web.UI.ManagePage
             copyright.InnerHtml = CopyRight;
         }
         table_list.InnerHtml = tableList();
-        if (Foosun.Config.verConfig.PublicType == "1")
+        if (Hg.Config.verConfig.PublicType == "1")
         {
             isTRUE.InnerHtml = "&nbsp;┊&nbsp;<a class=\"topnavichar\" href=\"table_list.aspx\">复制新闻表</a>";
         }

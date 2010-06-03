@@ -13,7 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace Foosun.CMS.Collect
+namespace Hg.CMS.Collect
 {
     public class PageList : Page
     {

@@ -18,14 +18,14 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Channel
     {
-        Foosun.DALFactory.IModel dal;
+        Hg.DALFactory.IModel dal;
         public Channel()
         {
             dal = DataAccess.CreateModel();
@@ -89,11 +89,11 @@ namespace Foosun.CMS
         /// 更新数据
         /// </summary>
         /// <param name="uc"></param>
-        public void updateDate(Foosun.Model.ChannelInfo uc)
+        public void updateDate(Hg.Model.ChannelInfo uc)
         {
             dal.updateDate(uc);
         }
-        public void updateDate1(Foosun.Model.ChannelInfo uc)
+        public void updateDate1(Hg.Model.ChannelInfo uc)
         {
             dal.updateDate1(uc);
         }
@@ -170,12 +170,12 @@ namespace Foosun.CMS
         /// 插入值
         /// </summary>
         /// <param name="uc"></param>
-        public void insertFields(Foosun.Model.ChannelValue uc, string TableSTR)
+        public void insertFields(Hg.Model.ChannelValue uc, string TableSTR)
         {
             dal.insertFields(uc, TableSTR);
         }
 
-        public void UpdateFields(Foosun.Model.ChannelValue uc, string TableSTR)
+        public void UpdateFields(Hg.Model.ChannelValue uc, string TableSTR)
         {
             dal.UpdateFields(uc, TableSTR);
         }
@@ -229,12 +229,12 @@ namespace Foosun.CMS
             return dal.ChannelInfo(ChID);
         }
 
-        public void insertClassInfo(Foosun.Model.ChannelClassInfo uc)
+        public void insertClassInfo(Hg.Model.ChannelClassInfo uc)
         {
             dal.insertClassInfo(uc);
         }
 
-        public void updateClassInfo(Foosun.Model.ChannelClassInfo uc)
+        public void updateClassInfo(Hg.Model.ChannelClassInfo uc)
         {
             dal.updateClassInfo(uc);
         }
@@ -340,16 +340,16 @@ namespace Foosun.CMS
         }
         #endregion 
 
-        public int inserContentInfo(Foosun.Model.ChInfoContent uc,string DTable)
+        public int inserContentInfo(Hg.Model.ChInfoContent uc,string DTable)
         { 
             return dal.inserContentInfo(uc,DTable);
         }
 
-        public void updateContentInfo(Foosun.Model.ChInfoContent uc, string DTable)
+        public void updateContentInfo(Hg.Model.ChInfoContent uc, string DTable)
         {
             dal.updateContentInfo(uc, DTable);
         }
-        public void updateUserContentInfo(Foosun.Model.ChInfoContent uc, string DTable)
+        public void updateUserContentInfo(Hg.Model.ChInfoContent uc, string DTable)
         {
             dal.updateUserContentInfo(uc, DTable);
         }
@@ -385,12 +385,12 @@ namespace Foosun.CMS
             return dal.getSpecialCord(EName, speicalId);
         }
 
-        public void insertSpecialInfo(Foosun.Model.ChannelSpecialInfo uc)
+        public void insertSpecialInfo(Hg.Model.ChannelSpecialInfo uc)
         {
             dal.insertSpecialInfo(uc);
         }
 
-        public void updateSpecialInfo(Foosun.Model.ChannelSpecialInfo uc)
+        public void updateSpecialInfo(Hg.Model.ChannelSpecialInfo uc)
         {
             dal.updateSpecialInfo(uc);
         }
@@ -460,11 +460,11 @@ namespace Foosun.CMS
         {
             return dal.lockStyleContent(id, chid, num);
         }
-        public void InsertStyleContent(Foosun.Model.styleChContent uc)
+        public void InsertStyleContent(Hg.Model.styleChContent uc)
         {
             dal.InsertStyleContent(uc);
         }
-        public void UpdateStyleContent(Foosun.Model.styleChContent uc)
+        public void UpdateStyleContent(Hg.Model.styleChContent uc)
         {
             dal.UpdateStyleContent(uc);
         }
@@ -530,11 +530,11 @@ namespace Foosun.CMS
             return dal.GetLabelNameTF(ChID, CName, ID);
         }
 
-        public void InsertLabelContent(Foosun.Model.LabelChContent uc)
+        public void InsertLabelContent(Hg.Model.LabelChContent uc)
         {
             dal.InsertLabelContent(uc);
         }
-        public void UpdateLabelContent(Foosun.Model.LabelChContent uc)
+        public void UpdateLabelContent(Hg.Model.LabelChContent uc)
         {
             dal.UpdateLabelContent(uc);
         }

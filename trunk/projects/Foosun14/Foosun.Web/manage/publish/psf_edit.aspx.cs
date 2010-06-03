@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_psf_edit : Foosun.Web.UI.ManagePage
+public partial class manage_publish_psf_edit : Hg.Web.UI.ManagePage
 {
     Psframe rd = new Psframe();
     rootPublic pd = new rootPublic();
@@ -186,7 +186,7 @@ public partial class manage_publish_psf_edit : Foosun.Web.UI.ManagePage
                 #endregion
                 #region updata
 
-                Foosun.Model.PSF uc = new Foosun.Model.PSF();
+                Hg.Model.PSF uc = new Hg.Model.PSF();
                 uc.psfID = psfID;
                 uc.psfName = Str_psfName;
                 uc.LocalDir = Str_LocalDir;

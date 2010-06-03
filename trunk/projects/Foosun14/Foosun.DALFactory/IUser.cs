@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IUser
     {
@@ -18,8 +18,8 @@ namespace Foosun.DALFactory
         DataTable getCountselt(string UserName);
         DataTable getIschick(string UserName);
         DataTable isAdminUser(string UserNum);
-        void InsertUserLogs(Foosun.Model.UserLog1 uc);
-        void UpdateUserLogs(Foosun.Model.UserLog1 uc);
+        void InsertUserLogs(Hg.Model.UserLog1 uc);
+        void UpdateUserLogs(Hg.Model.UserLog1 uc);
         DataTable sel_isAdmin(string UserNum);
         #region 登陆限制开始
         //DataTable CheckUserTF(string strUserName);
@@ -46,9 +46,9 @@ namespace Foosun.DALFactory
         int sel_updateUserMobileStat(string UserName);
         int sel_getUserMobileBindTF(string Moblie);
         void sel_updateMobileBindTF(string UserName);
-        int Add_User(Foosun.Model.User ui);
-        int Add_userfields(Foosun.Model.UserFields ufi);
-        int Add_Ghistory(Foosun.Model.UserGhistory ugi);
+        int Add_User(Hg.Model.User ui);
+        int Add_userfields(Hg.Model.UserFields ufi);
+        int Add_Ghistory(Hg.Model.UserGhistory ugi);
         string sel_setPoint(string SiteID);
         DataTable sel_reg(string SiteID);
         string getuserUpFile(string groupNumber);
@@ -58,10 +58,10 @@ namespace Foosun.DALFactory
         DataTable getWapParam();
         IDataReader getWapContent(string SiteID);
 
-        Foosun.Model.User UserInfo(string UserNum, int ID);
-        Foosun.Model.UserFields UserFields(string UserNum);
-        Foosun.Model.UserGroup UserGroup(string GroupNumber);
-        Foosun.Model.UserParam UserParam(string SiteID);
+        Hg.Model.User UserInfo(string UserNum, int ID);
+        Hg.Model.UserFields UserFields(string UserNum);
+        Hg.Model.UserGroup UserGroup(string GroupNumber);
+        Hg.Model.UserParam UserParam(string SiteID);
     }
     public sealed partial class DataAccess
     {

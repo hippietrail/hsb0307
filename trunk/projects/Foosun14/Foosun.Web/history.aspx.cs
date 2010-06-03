@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Common;
-using Foosun.CMS;
-using Foosun.Config;
-using Foosun.Model;
-using Foosun.Publish;
+using Hg.Common;
+using Hg.CMS;
+using Hg.Config;
+using Hg.Model;
+using Hg.Publish;
 
-namespace Foosun.Web
+namespace Hg.Web
 {
     public partial class history : System.Web.UI.Page
     {
@@ -33,7 +33,7 @@ namespace Foosun.Web
             year = Input.Filter(year);
             month = Input.Filter(month);
             day=Input.Filter(day);
-            Foosun.CMS.Info inf=new Foosun.CMS.Info();
+            Hg.CMS.Info inf=new Hg.CMS.Info();
             int histornum = inf.historyCount(Strday);
             if (histornum<=0)
             {
@@ -57,7 +57,7 @@ namespace Foosun.Web
                     sitedomain = sitedomain + ":"+serverPort;
                 }
             }
-            urls = sitedomain + "/" + Foosun.Config.UIConfig.dirPige + "/" + content + "/index.html";
+            urls = sitedomain + "/" + Hg.Config.UIConfig.dirPige + "/" + content + "/index.html";
             Response.Redirect(urls);
         }
     }

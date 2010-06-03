@@ -10,10 +10,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class AdminGroup
     {
@@ -23,13 +23,13 @@ namespace Foosun.CMS
             agc = DataAccess.CreateAdminGroup();
         }
 
-        public int add(Foosun.Model.AdminGroupInfo agci)
+        public int add(Hg.Model.AdminGroupInfo agci)
         {
             int result = agc.add(agci);
             return result;
         }
 
-        public int Edit(Foosun.Model.AdminGroupInfo agci)
+        public int Edit(Hg.Model.AdminGroupInfo agci)
         {
             int result = agc.Edit(agci);
             return result;

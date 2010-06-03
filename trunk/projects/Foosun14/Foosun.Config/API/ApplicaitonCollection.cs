@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 
-namespace Foosun.Config.API
+namespace Hg.Config.API
 {
 
     /// <summary>

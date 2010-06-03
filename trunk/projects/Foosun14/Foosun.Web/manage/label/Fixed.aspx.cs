@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_Fixed : Foosun.Web.UI.ManagePage
+public partial class manage_label_Fixed : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {

@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_advertisement_adsclass_add : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_adsclass_add : Hg.Web.UI.ManagePage
 {
     public manage_advertisement_adsclass_add()
     {
@@ -39,10 +39,10 @@ public partial class manage_advertisement_adsclass_add : Foosun.Web.UI.ManagePag
     {
         if (Page.IsValid == true)
         {
-            Foosun.Model.AdsClassInfo aci = new Foosun.Model.AdsClassInfo();
+            Hg.Model.AdsClassInfo aci = new Hg.Model.AdsClassInfo();
             aci.AcID = "";
-            aci.Cname = Foosun.Common.Input.Filter(AdsClassName.Text.ToString());
-            aci.ParentID = Foosun.Common.Input.Filter(AdsParentID.Text.ToString());
+            aci.Cname = Hg.Common.Input.Filter(AdsClassName.Text.ToString());
+            aci.ParentID = Hg.Common.Input.Filter(AdsParentID.Text.ToString());
             if(AdsPrice.Text.ToString()!=null&& AdsPrice.Text.ToString()!="")
                 aci.Adprice = int.Parse(AdsPrice.Text.ToString());
             else
@@ -51,7 +51,7 @@ public partial class manage_advertisement_adsclass_add : Foosun.Web.UI.ManagePag
             aci.SiteID = SiteID;
 
             int result = 0;
-            Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+            Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
             result = ac.AddClass(aci);
             if(result==1)
                 PageRight("添加广告分类成功!", "list.aspx");
@@ -73,6 +73,6 @@ public partial class manage_advertisement_adsclass_add : Foosun.Web.UI.ManagePag
         if (str_parentID == "" || str_parentID == null || str_parentID == string.Empty)
             AdsParentID.Text = "0";
         else
-            AdsParentID.Text = Foosun.Common.Input.Filter(str_parentID);
+            AdsParentID.Text = Hg.Common.Input.Filter(str_parentID);
     }
 }

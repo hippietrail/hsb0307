@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Config
+namespace Hg.Config
 {
     public class Series
     {

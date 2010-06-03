@@ -3,102 +3,102 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
 </head>
 <body>
-<table width="100%" height="32" align="center" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/admin/reght_1_bg_1.gif">
+<table width="100%" height="32" align="center" border="0" cellpadding="0" cellspacing="0" background="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/admin/reght_1_bg_1.gif">
         <tr>
           <td height="1" colspan="2"></td>
         </tr>
         <tr>
           <td width="17%" height="32" class="sysmain_navi"  style="PADDING-LEFT: 14px" >
-              ÅäÖÃÎÄ¼þ¹ÜÀí</td>
+              ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½</td>
           <td height="32" class="topnavichar"  style="PADDING-LEFT: 14px" ></td>
         </tr>
 </table>
 <form id="Form1" runat="server">
 <table width="98%" border="0" cellspacing="1" cellpadding="5" class="table" bgcolor="#FFFFFF" align="center">
   <tr class="TR_BG_list">
-    <td width="21%" height="29" align="right" valign="middle">ºóÌ¨¹ÜÀíÄ¿Â¼</td>
-    <td width="79%" align="left" valign="middle">&nbsp;<asp:TextBox Width="200px" ID="dirMana" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0001',this)">°ïÖú</span>
-        <font color="red">ÌáÊ¾:ÐÞ¸ÄÄ¿Â¼ºóÇëÁ¢¼´ÊÖ¶¯ÐÞ¸ÄÎïÀíÎÄ¼þÃû³Æ(Ãû³Æ±ØÐëÏàÍ¬)</font>
+    <td width="21%" height="29" align="right" valign="middle">ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½Ä¿Â¼</td>
+    <td width="79%" align="left" valign="middle">&nbsp;<asp:TextBox Width="200px" ID="dirMana" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0001',this)">ï¿½ï¿½ï¿½</span>
+        <font color="red">ï¿½ï¿½ï¿½Ê¾:ï¿½Þ¸ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½ï¿½Í¬)</font>
         </td>
     </tr>
   <tr class="TR_BG_list">
     <td height="28" align="right" valign="middle">
-        ºóÌ¨Ä£°æÄ¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirTemplet" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0002',this)">°ïÖú</span>
-    <font color="red">ÌáÊ¾:ÐÞ¸Ä´ËÄ¿Â¼¿ÉÄÜ»á¶ÔÔ­ÓÐÊý¾ÝÔì³ÉÐ§´óÓ°Ïì£¬ÇëÉ÷ÖØÐÞ¸Ä</font>
+        ï¿½ï¿½Ì¨Ä£ï¿½ï¿½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirTemplet" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0002',this)">ï¿½ï¿½ï¿½</span>
+    <font color="red">ï¿½ï¿½ï¿½Ê¾:ï¿½Þ¸Ä´ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Ü»ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½Ó°ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸</font>
     </td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">ÐéÄâÄ¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirDumm" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0003',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirDumm" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0003',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">¿ªÆôÃÜÂë±£»¤</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="protPass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_Pass',this)">°ïÖú</span>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë±£ï¿½ï¿½</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="protPass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_Pass',this)">ï¿½ï¿½ï¿½</span>
     </tr>
   <tr class ="TR_BG_list">
-    <td height="28" align="right" valign="middle">°²È«Âë</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="protRand" Width="200px" runat="server" MaxLength="50" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0004',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½È«ï¿½</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="protRand" Width="200px" runat="server" MaxLength="50" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0004',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
   <tr class = "TR_BG_list">
-    <td height="28" align="right" valign="middle">ÎÄ¼þÉÏ´«Ä¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirFile" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0005',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirFile" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0005',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
 <%--  <tr class = "TR_BG_list">
-    <td height="28" align="right" valign="middle">APIÄ¿Â¼(Ì¨)</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirManaApi" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="é¿? onClick="Help('H_const_0006',this)"></span></td>
+    <td height="28" align="right" valign="middle">APIï¿½Ä¿Â¼(Ì¨)</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirManaApi" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="? onClick="Help('H_const_0006',this)"></span></td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">APIÄ¿Â¼(Ç°Ì¨)</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirUserApi" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="é¿? onClick="Help('H_const_0007',this)"></span></td>
+    <td height="28" align="right" valign="middle">APIï¿½Ä¿Â¼(Ç°Ì¨)</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirUserApi" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="? onClick="Help('H_const_0007',this)"></span></td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">Æ»Â·</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="projPath" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="é¿? onClick="Help('H_const_0008',this)"></span></td>
+    <td height="28" align="right" valign="middle">ï¿½Æ»Â·</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="projPath" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="? onClick="Help('H_const_0008',this)"></span></td>
     </tr>--%>
   <tr class="TR_BG_list"  style="display:none">
-    <td height="28" align="right" valign="middle">Í³¼ÆÏµÍ³ÊÇ·ñÊ¹ÓÃ¶ÀÁ¢Êý¾Ý¿â</td>
+    <td height="28" align="right" valign="middle">ï¿½Í³ï¿½ï¿½ÏµÍ³ï¿½Ç·ï¿½Ê¹ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ý¿</td>
     <td align="left" valign="middle">
-    <asp:RadioButton ID="stat1" runat="server" onclick="Change(1)" Text="ÊÇ" GroupName="indeData" />&nbsp;<asp:RadioButton ID="stat0" runat="server" onclick="Change(0)" Text="·ñ" GroupName="indeData" />
-        <span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0009',this)">°ïÖú</span></td>
+    <asp:RadioButton ID="stat1" runat="server" onclick="Change(1)" Text="ï¿½ï¿½" GroupName="indeData" />&nbsp;<asp:RadioButton ID="stat0" runat="server" onclick="Change(0)" Text="Ç·" GroupName="indeData" />
+        <span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0009',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list" id="stat_dis" style="display:none">
-    <td height="28" align="right" valign="middle">Í³¼ÆÏµÍ³µÄÊý¾Ý¿âÁ¬½Ó</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="sqlConnData" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0014',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½Í³ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="sqlConnData" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="Óµï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0014',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">ÅäÖÃÎÄ¼þ¹ÜÀíÃÜÂë</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="constPass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0010',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="constPass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0010',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">×ÊÔ´ÎÄ¼þ¹ÜÀíÃÜÂë</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="filePass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0010',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="filePass" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0010',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>  
     
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">×ÊÔ´ÎÄ¼þ¹ÜÀíÄ¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="filePath" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0010',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="filePath" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0010',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>  
 
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">¹éµµ±íÌ¬ÎÄ¼þ´æ·ÅÄ¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirPige" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0013',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½éµµï¿½ï¿½Ì¬ï¿½Ä¼ï¿½ï¿½ï¿½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="dirPige" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0013',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
   <tr class="TR_BG_list">
-    <td height="28" align="right" valign="middle">±£´æÑùÊ½Ä¿Â¼</td>
-    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="manner" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="µã»÷²é¿´°ïÖú" onClick="Help('H_const_0015',this)">°ïÖú</span></td>
+    <td height="28" align="right" valign="middle">ï¿½ï¿½ï¿½ï¿½Ê½Ä¿Â¼</td>
+    <td align="left" valign="middle">&nbsp;<asp:TextBox ID="manner" Width="200px" runat="server" CssClass="form"></asp:TextBox><span class="helpstyle" style="cursor:hand;" title="ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½" onClick="Help('H_const_0015',this)">ï¿½ï¿½ï¿½</span></td>
     </tr>
     <tr class="TR_BG_list">
         <td align="right" height="28" valign="middle">
         </td>
         <td align="left" valign="middle">
-            <asp:Button ID="btn_const" runat="server" Height="27px" OnClick="btn_const_Click" Text="Ìá  ½»" OnClientClick="{if(confirm('È·ÈÏÒªÐÞ¸ÄÂð!')){return true;}return false;}" Width="60px" CssClass="form"/></td>
+            <asp:Button ID="btn_const" runat="server" Height="27px" OnClick="btn_const_Click" Text="ï¿½ï¿½  á½»" OnClientClick="{if(confirm('È·ï¿½ï¿½Òªï¿½Þ¸ï¿½ï¿½!')){return true;}return false;}" Width="60px" CssClass="form"/></td>
     </tr>
 </table>
 </form>

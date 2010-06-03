@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_psf : Foosun.Web.UI.ManagePage
+public partial class manage_publish_psf : Hg.Web.UI.ManagePage
 {
     Psframe rd = new Psframe();
     rootPublic pd = new rootPublic();
@@ -53,7 +53,7 @@ public partial class manage_publish_psf : Foosun.Web.UI.ManagePage
     {
         int i, j;
         DataTable dt = null;
-        dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
+        dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, PAGESIZE, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;
@@ -69,7 +69,7 @@ public partial class manage_publish_psf : Foosun.Web.UI.ManagePage
                     #region
                     dt.Rows[k]["psfName"] = "<a class=\"list_link\"  href=\"psf_edit.aspx?psfid=" + psfID + "\" title=\"点击查看详情或修改\">" + dt.Rows[k]["psfName"].ToString() + "</a>";
                     #endregion
-                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"psf_edit.aspx?psfid=" + psfID + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a class=\"list_link\" href=\"?type=del&psfid=" + psfID + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='psf_checkbox' id='psf_checkbox' value=\"" + psfID + "\"/>";
+                    dt.Rows[k]["oPerate"] = "<a class=\"list_link\"  href=\"psf_edit.aspx?psfid=" + psfID + "\" title=\"点击查看详情或修改\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a class=\"list_link\" href=\"?type=del&psfid=" + psfID + "\" title=\"点击删除\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='psf_checkbox' id='psf_checkbox' value=\"" + psfID + "\"/>";
                 }
                 DataList1.DataSource = dt;
                 DataList1.DataBind();

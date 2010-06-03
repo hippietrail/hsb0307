@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class File_GetIn : Foosun.Web.UI.ManagePage
+    public partial class File_GetIn : Hg.Web.UI.ManagePage
     {
         public File_GetIn()
         {
@@ -24,11 +24,11 @@ namespace Foosun.Web.manage.Sys
         rootPublic pd = new rootPublic();
         #region
         
-        string FP = Foosun.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
-        public string str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+        string FP = Hg.Config.UIConfig.filePass;//从Web.config中读取文件密码信息
+        public string str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
         #endregion
         #region 从配置文件读出文件管理路径
-        public string fpath1 = Foosun.Config.UIConfig.filePath.Split(',')[0];//userfiles目录
+        public string fpath1 = Hg.Config.UIConfig.filePath.Split(',')[0];//userfiles目录
         string str_FilePath = "";
         #endregion
         protected void Page_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Foosun.Web.manage.Sys
             }
             else
             {
-                string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + SiteID;
+                string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + SiteID;
                 if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
                 str_FilePath = Server.MapPath(_sitePath);
             }
@@ -185,7 +185,7 @@ namespace Foosun.Web.manage.Sys
                 }
                 else
                 {
-                    _str_TempletTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + SiteID + "\\" + fpath1;
+                    _str_TempletTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + SiteID + "\\" + fpath1;
                 }
 
                 if (dir == Server.MapPath(_str_TempletTF))  //判断是否是文件根目录,如果是则不显示返回上级目录
@@ -230,7 +230,7 @@ namespace Foosun.Web.manage.Sys
                 Str_TempFileStr = Str_TempFileStr + Str_TdStart + "文件夹</td>";
                 Str_TempFileStr = Str_TempFileStr + Str_TdStart + "-" + Str_TdEnd;
                 Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<span style=\"font-size:10px\">" + dirInfo.LastWriteTime.ToString() + "</span>" + Str_TdEnd;
-                Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<a href=\"javascript:EditFolder('" + TempParentPath + "','" + dirInfo.Name + "')\" class=\"list_link\" title=\"点击为此文件夹更名\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"为此项改名\" /></a><a href=\"javascript:MoveFileFolder('" + TempParentPath + "','" + dirInfo.Name + "')\" class=\"list_link\" title=\"移动此文件夹\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/remove1.gif\" border=\"0\" alt=\"转移此项\" /></a><a href=\"javascript:DelDir('" + TempPath + "')\" class=\"list_link\" title=\"点击删除此文件夹\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" />" + Str_TdEnd;
+                Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<a href=\"javascript:EditFolder('" + TempParentPath + "','" + dirInfo.Name + "')\" class=\"list_link\" title=\"点击为此文件夹更名\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"为此项改名\" /></a><a href=\"javascript:MoveFileFolder('" + TempParentPath + "','" + dirInfo.Name + "')\" class=\"list_link\" title=\"移动此文件夹\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/remove1.gif\" border=\"0\" alt=\"转移此项\" /></a><a href=\"javascript:DelDir('" + TempPath + "')\" class=\"list_link\" title=\"点击删除此文件夹\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" />" + Str_TdEnd;
                 Str_TempFileStr = Str_TempFileStr + Str_TrEnd;
             }
             #endregion
@@ -245,7 +245,7 @@ namespace Foosun.Web.manage.Sys
                 Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<span style=\"font-size:10px\">" + DirFile.LastWriteTime.ToString() + "</span>" + Str_TdEnd;
                 string _paths = string.Empty;
                 if (string.IsNullOrEmpty(str_dirMana))
-                    _paths = Foosun.Common.ServerInfo.ServerPort;
+                    _paths = Hg.Common.ServerInfo.ServerPort;
                 else
                     _paths = str_dirMana;
                 if (!string.IsNullOrEmpty(_paths))
@@ -258,7 +258,7 @@ namespace Foosun.Web.manage.Sys
                 }
                 else
                 {
-                    Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<a href=\"javascript:MoveFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"移动此文件\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/remove1.gif\" border=\"0\" alt=\"转移此项\" /></a><a href='http://" + Request.ServerVariables["Server_Name"] + _paths + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" title=\"点击预览此文件\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览该文件\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击为此文件更名\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"为此项改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击删除此文件\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a>" + Str_help1 + Str_TdEnd;
+                    Str_TempFileStr = Str_TempFileStr + Str_TdStart + "<a href=\"javascript:MoveFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"移动此文件\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/remove1.gif\" border=\"0\" alt=\"转移此项\" /></a><a href='http://" + Request.ServerVariables["Server_Name"] + _paths + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" title=\"点击预览此文件\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览该文件\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击为此文件更名\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"为此项改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击删除此文件\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a>" + Str_help1 + Str_TdEnd;
                 }
                 Str_TempFileStr = Str_TempFileStr + Str_TrEnd;
 
@@ -502,7 +502,7 @@ namespace Foosun.Web.manage.Sys
         /// <param name="_DateNum"></param>
         protected void clearFile(string _Path, string _DateNum)
         {
-            if (!Foosun.Common.Input.IsInteger(_DateNum))
+            if (!Hg.Common.Input.IsInteger(_DateNum))
             {
                 PageError("请输入正整数!", "File_GetIn.aspx?id=" + FP + "");
             }

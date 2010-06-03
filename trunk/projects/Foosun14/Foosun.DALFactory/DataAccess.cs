@@ -1,11 +1,11 @@
 using System.Reflection;
 using System.Configuration;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public sealed partial class DataAccess
     {
-        private static readonly string path =Foosun.Config.UIConfig.WebDAL;
+        private static readonly string path =Hg.Config.UIConfig.WebDAL;
        
         public  DataAccess() { }
     }

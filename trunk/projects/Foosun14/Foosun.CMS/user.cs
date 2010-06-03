@@ -10,14 +10,14 @@
 using System;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class user
     {
-        Foosun.DALFactory.IUser dal;
+        Hg.DALFactory.IUser dal;
         public user()
         {
             dal = DataAccess.CreateUser();
@@ -114,12 +114,12 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void InsertUserLogs(Foosun.Model.UserLog1 uc)
+        public void InsertUserLogs(Hg.Model.UserLog1 uc)
         {
             dal.InsertUserLogs(uc);
         }
 
-        public void UpdateUserLogs(Foosun.Model.UserLog1 uc)
+        public void UpdateUserLogs(Hg.Model.UserLog1 uc)
         {
             dal.UpdateUserLogs(uc);
         }
@@ -223,15 +223,15 @@ namespace Foosun.CMS
             dal.sel_updateMobileBindTF(UserName);
         }
 
-        public int Add_User(Foosun.Model.User ui)
+        public int Add_User(Hg.Model.User ui)
         {
             return dal.Add_User(ui);
         }
-        public int Add_userfields(Foosun.Model.UserFields ufi)
+        public int Add_userfields(Hg.Model.UserFields ufi)
         {
             return dal.Add_userfields(ufi);
         }
-        public int Add_Ghistory(Foosun.Model.UserGhistory ugi)
+        public int Add_Ghistory(Hg.Model.UserGhistory ugi)
         {
             return dal.Add_Ghistory(ugi);
         }
@@ -280,7 +280,7 @@ namespace Foosun.CMS
         /// <param name="UserNum">会员随机编号</param>
         /// <param name="ID">会员自动编号</param>
         /// <returns></returns>
-        public Foosun.Model.User UserInfo(string UserNum, int ID)
+        public Hg.Model.User UserInfo(string UserNum, int ID)
         {
             return dal.UserInfo(UserNum, ID);
         }
@@ -290,7 +290,7 @@ namespace Foosun.CMS
         /// </summary>
         /// <param name="UserNum">用户编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserFields UserFields(string UserNum)
+        public Hg.Model.UserFields UserFields(string UserNum)
         {
             return dal.UserFields(UserNum);
         }
@@ -300,7 +300,7 @@ namespace Foosun.CMS
         /// </summary>
         /// <param name="GroupNumber">会员组随机编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserGroup UserGroup(string GroupNumber)
+        public Hg.Model.UserGroup UserGroup(string GroupNumber)
         {
             return dal.UserGroup(GroupNumber);
         }
@@ -310,7 +310,7 @@ namespace Foosun.CMS
         /// </summary>
         /// <param name="SiteID">站点编号</param>
         /// <returns></returns>
-        public Foosun.Model.UserParam UserParam(string SiteID)
+        public Hg.Model.UserParam UserParam(string SiteID)
         {
             return dal.UserParam(SiteID);
         }

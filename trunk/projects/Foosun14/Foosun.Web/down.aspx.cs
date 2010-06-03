@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class down : Foosun.Web.UI.BasePage
+public partial class down : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -22,19 +22,19 @@ public partial class down : Foosun.Web.UI.BasePage
     /// </summary>
     protected void getDownInfo()
     {
-        string id = Foosun.Common.Input.Filter(Request.QueryString["id"]);
+        string id = Hg.Common.Input.Filter(Request.QueryString["id"]);
         if (id != null && id != "")
         {
-            Foosun.CMS.ContentManage news = new Foosun.CMS.ContentManage();
+            Hg.CMS.ContentManage news = new Hg.CMS.ContentManage();
             string DownAdress = news.getNewsAccessory(int.Parse(id));
-            DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
-            DownAdress = DownAdress.ToLower().Replace("{@dirtemplet}", Foosun.Config.UIConfig.dirTemplet);
-            DownAdress = DownAdress.ToLower().Replace("{@dirdumm}", Foosun.Config.UIConfig.dirDumm);
-            DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
-            DownAdress = DownAdress.ToLower().Replace("{@dirhtml}", Foosun.Config.UIConfig.dirHtml);
-            DownAdress = DownAdress.ToLower().Replace("{@dirsite}", Foosun.Config.UIConfig.dirSite);
-            DownAdress = DownAdress.ToLower().Replace("{@diruser}", Foosun.Config.UIConfig.dirUser);
-            //DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
+            DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
+            DownAdress = DownAdress.ToLower().Replace("{@dirtemplet}", Hg.Config.UIConfig.dirTemplet);
+            DownAdress = DownAdress.ToLower().Replace("{@dirdumm}", Hg.Config.UIConfig.dirDumm);
+            DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
+            DownAdress = DownAdress.ToLower().Replace("{@dirhtml}", Hg.Config.UIConfig.dirHtml);
+            DownAdress = DownAdress.ToLower().Replace("{@dirsite}", Hg.Config.UIConfig.dirSite);
+            DownAdress = DownAdress.ToLower().Replace("{@diruser}", Hg.Config.UIConfig.dirUser);
+            //DownAdress = DownAdress.ToLower().Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
             Response.Write("<script langauge=\"javascript\">self.location='" + DownAdress + "';</script>");
             Response.End();
         }

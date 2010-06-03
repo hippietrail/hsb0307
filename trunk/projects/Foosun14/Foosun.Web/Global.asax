@@ -20,13 +20,13 @@
         Regex re = new Regex(@"文件(.*)不存在");
         if (re.Match(errmsg).Success)
         {
-            Foosun.Web.UI.WebHint.ShowError("您所浏览的页面不存在", "/", true);
+            Hg.Web.UI.WebHint.ShowError("您所浏览的页面不存在", "/", true);
         }
         else
         {
-            Foosun.Web.UI.WebHint.ShowError(errmsg, "", false);
+            Hg.Web.UI.WebHint.ShowError(errmsg, "", false);
         }
-        //Foosun.Web.UI.WebHint.ShowError(x.Message, "", false);
+        //Hg.Web.UI.WebHint.ShowError(x.Message, "", false);
     }
 
     void Session_Start(object sender, EventArgs e) 

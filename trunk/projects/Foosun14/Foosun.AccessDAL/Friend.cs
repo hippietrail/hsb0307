@@ -4,16 +4,16 @@
 using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Friend : DbBase, IFriend
     {
@@ -161,7 +161,7 @@ namespace Foosun.AccessDAL
         public int FriendClassCount(string HailFellow)
         {
             OleDbParameter param = new OleDbParameter("@UserNum", HailFellow);
-            string Sql = "select count(*) as nnn from " + Pre + "User_Friend where HailFellow=@HailFellow and usernum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "select count(*) as nnn from " + Pre + "User_Friend where HailFellow=@HailFellow and usernum='" + Hg.Global.Current.UserNum + "'";
             return Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, Sql, param));
         }
         #endregion

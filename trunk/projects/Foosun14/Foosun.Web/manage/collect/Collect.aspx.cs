@@ -20,10 +20,10 @@ using System.Web.UI.HtmlControls;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.CMS.Collect;
-using Foosun.DALFactory;
+using Hg.CMS.Collect;
+using Hg.DALFactory;
 
-public partial class manage_collect_Collect : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect : Hg.Web.UI.ManagePage
 {
     public manage_collect_Collect()
     {
@@ -65,7 +65,7 @@ public partial class manage_collect_Collect : Foosun.Web.UI.ManagePage
     {
         bool result = false;
         string classID = "";
-        Foosun.CMS.Collect.Collect collect = new Foosun.CMS.Collect.Collect();
+        Hg.CMS.Collect.Collect collect = new Hg.CMS.Collect.Collect();
         DataTable dt = collect.GetSite(id);
         if (dt.Rows.Count>0) //获取栏目ID
         {
@@ -73,8 +73,8 @@ public partial class manage_collect_Collect : Foosun.Web.UI.ManagePage
         }
         if (!string.IsNullOrEmpty(classID))　//栏目ID是否在栏目中存在
         {
-            //Foosun.AccessDAL.News news = new Foosun.AccessDAL.News();
-            Foosun.CMS.News news = new Foosun.CMS.News();
+            //Hg.AccessDAL.News news = new Hg.AccessDAL.News();
+            Hg.CMS.News news = new Hg.CMS.News();
             IDataReader dr = news.getClassInfo(classID, 0);
             if (dr.Read())
             { 

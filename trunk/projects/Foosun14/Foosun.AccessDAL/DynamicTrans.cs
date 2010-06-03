@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class DynamicTrans : DbBase, IDynamicTrans
     {

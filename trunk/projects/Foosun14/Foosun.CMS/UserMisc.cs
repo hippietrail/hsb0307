@@ -10,14 +10,14 @@
 using System;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class UserMisc
     {
-        Foosun.DALFactory.IUserMisc dal;
+        Hg.DALFactory.IUserMisc dal;
         public UserMisc()
         {
             dal = DataAccess.CreateUserMisc();
@@ -98,7 +98,7 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void InsertManageMenu(Foosun.Model.UserInfo7 uc)
+        public void InsertManageMenu(Hg.Model.UserInfo7 uc)
         {
             dal.InsertManageMenu(uc);
         }
@@ -137,12 +137,12 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void EditManageMenu(Foosun.Model.UserInfo7 uc)
+        public void EditManageMenu(Hg.Model.UserInfo7 uc)
         {
             dal.EditManageMenu(uc);
         }
 
-        public void EditManageMenu1(Foosun.Model.UserInfo7 uc)
+        public void EditManageMenu1(Hg.Model.UserInfo7 uc)
         {
             dal.EditManageMenu1(uc);
         }
@@ -168,12 +168,12 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void InsertQMenu(Foosun.Model.UserInfo8 uc)
+        public void InsertQMenu(Hg.Model.UserInfo8 uc)
         {
             dal.InsertQMenu(uc);
         }
 
-        public void UpdateQMenu(Foosun.Model.UserInfo8 uc)
+        public void UpdateQMenu(Hg.Model.UserInfo8 uc)
         {
             dal.UpdateQMenu(uc);
         }
@@ -240,17 +240,17 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void UpdateUserInfoBase(Foosun.Model.UserInfo uc)
+        public void UpdateUserInfoBase(Hg.Model.UserInfo uc)
         {
             dal.UpdateUserInfoBase(uc);
         }
 
-        public void UpdateUserInfoBase1(Foosun.Model.UserInfo1 uc1)
+        public void UpdateUserInfoBase1(Hg.Model.UserInfo1 uc1)
         {
             dal.UpdateUserInfoBase1(uc1);
         }
 
-        public void UpdateUserInfoBase2(Foosun.Model.UserInfo1 uc2)
+        public void UpdateUserInfoBase2(Hg.Model.UserInfo1 uc2)
         {
             dal.UpdateUserInfoBase2(uc2);
         }
@@ -267,12 +267,12 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void UpdateUserInfoContact1(Foosun.Model.UserInfo2 uc)
+        public void UpdateUserInfoContact1(Hg.Model.UserInfo2 uc)
         {
             dal.UpdateUserInfoContact1(uc);
         }
 
-        public void UpdateUserInfoContact2(Foosun.Model.UserInfo2 uc)
+        public void UpdateUserInfoContact2(Hg.Model.UserInfo2 uc)
         {
             dal.UpdateUserInfoContact2(uc);
         }
@@ -282,7 +282,7 @@ namespace Foosun.CMS
             dal.UpdateUserSafe(Uid, PassQuestion, PassKey, password);
         }
 
-        public void UpdateUserInfoBaseStat(Foosun.Model.UserInfo3 uc)
+        public void UpdateUserInfoBaseStat(Hg.Model.UserInfo3 uc)
         {
             dal.UpdateUserInfoBaseStat(uc);
         }
@@ -377,7 +377,7 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void InsertGroup(Foosun.Model.UserInfo4 uc)
+        public void InsertGroup(Hg.Model.UserInfo4 uc)
         {
             dal.InsertGroup(uc);
         }
@@ -394,7 +394,7 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void updateGroupEdit(Foosun.Model.UserInfo4 uc)
+        public void updateGroupEdit(Hg.Model.UserInfo4 uc)
         {
             dal.updateGroupEdit(uc);
         }
@@ -412,12 +412,12 @@ namespace Foosun.CMS
             dal.AnnounceLockAction(Aid, lockstr);
         }
 
-        public void InsertAnnounce(Foosun.Model.UserInfo5 uc)
+        public void InsertAnnounce(Hg.Model.UserInfo5 uc)
         {
             dal.InsertAnnounce(uc);
         }
 
-        public void UpdateAnnounce(Foosun.Model.UserInfo5 uc)
+        public void UpdateAnnounce(Hg.Model.UserInfo5 uc)
         {
             dal.UpdateAnnounce(uc);
         }
@@ -469,12 +469,12 @@ namespace Foosun.CMS
             return dal.getCardPassTF(CardPass);
         }
 
-        public void insertCardR(Foosun.Model.IDCARD uc)
+        public void insertCardR(Hg.Model.IDCARD uc)
         {
             dal.insertCardR(uc);
         }
 
-        public void UpdateCardR(Foosun.Model.IDCARD uc)
+        public void UpdateCardR(Hg.Model.IDCARD uc)
         {
             dal.UpdateCardR(uc);
         }
@@ -501,7 +501,7 @@ namespace Foosun.CMS
             return dt;
         }
 
-        public void UpdateOnlinePay(Foosun.Model.UserInfo6 uc)
+        public void UpdateOnlinePay(Hg.Model.UserInfo6 uc)
         {
             dal.UpdateOnlinePay(uc);
         }

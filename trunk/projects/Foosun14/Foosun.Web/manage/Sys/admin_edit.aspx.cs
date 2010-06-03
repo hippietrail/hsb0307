@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_admin_edit : Hg.Web.UI.ManagePage
 {
     public manage_Sys_admin_edit()
     {
@@ -30,7 +30,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
             string Type = Request.QueryString["Type"];
             if (Type == "Update")
             {
-                string ID = Foosun.Common.Input.checkID(Request.QueryString["ID"]);
+                string ID = Hg.Common.Input.checkID(Request.QueryString["ID"]);
                 ShowAdminInfo(ID);                              //取得管理员信息
             }
         }
@@ -44,7 +44,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
     ///  Code By DengXi
     protected void ShowAdminInfo(string ID)
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         DataTable dt = ac.GetAdminInfo(ID);
         if (dt != null)
         {
@@ -94,7 +94,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
 
     protected void GetAdminGroupID(string GroupNum)         
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         DataTable Ds = ac.GetAdminGroupList();
         string Str_GroupTempstr;
         Str_GroupTempstr = "<select name=\"AdminGroup\" style=\"width:206px;\">";
@@ -126,7 +126,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
 
     protected void SiteList(string site)
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         DataTable Ds = ac.GetSiteList();
 
         string Str_SiteIDTempstr;
@@ -161,17 +161,17 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid)                       //判断是否验证成功
         {
-            Foosun.Model.AdminInfo aci = new Foosun.Model.AdminInfo();
+            Hg.Model.AdminInfo aci = new Hg.Model.AdminInfo();
 
-            //aci.UserNum = Foosun.Common.Input.checkID(Request.Form["TxtUserName"]);
-            aci.UserNum = Foosun.Common.Input.checkID(Request.QueryString["ID"]);
+            //aci.UserNum = Hg.Common.Input.checkID(Request.Form["TxtUserName"]);
+            aci.UserNum = Hg.Common.Input.checkID(Request.QueryString["ID"]);
             aci.RealName = Request.Form["RealName"];
             aci.Email = Request.Form["Email"];
             aci.SiteID = Request.Form["SiteID"];
             aci.UserPassword = Request.Form["UserPwd"];
 
             if (aci.UserPassword != null && aci.UserPassword != "" && aci.UserPassword != string.Empty)
-                aci.UserPassword = Foosun.Common.Input.MD5(aci.UserPassword, true);
+                aci.UserPassword = Hg.Common.Input.MD5(aci.UserPassword, true);
 
             aci.adminGroupNumber = Request.Form["AdminGroup"];
             aci.OnlyLogin = 1;//int.Parse(MoreLogin.SelectedValue.ToString());
@@ -189,7 +189,7 @@ public partial class manage_Sys_admin_edit : Foosun.Web.UI.ManagePage
                 aci.isChSupper = 0;
             }
             int result = 0;
-            Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+            Hg.CMS.Admin ac = new Hg.CMS.Admin();
             result = ac.Edit(aci);
 
             if(result==1)

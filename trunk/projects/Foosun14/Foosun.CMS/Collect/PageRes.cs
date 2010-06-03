@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
 
-namespace Foosun.CMS.Collect
+namespace Hg.CMS.Collect
 {
     struct resinfo
     {
@@ -72,7 +72,7 @@ namespace Foosun.CMS.Collect
                 throw new NullReferenceException ("本地的物理路径不能为空!");
             _rename = RenameFile;
             SeriesNum = 1;
-            FileNum = Foosun.Common.Rand.Number(6);
+            FileNum = Hg.Common.Rand.Number(6);
             _localpath = _localpath.Replace("/", "\\");
             _localurl = _localurl.Replace("\\", "/");
             _remoteurl = _remoteurl.Replace("\\", "/");

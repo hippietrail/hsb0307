@@ -6,7 +6,7 @@
 <head>
     <title></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+  <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" class="toptable">

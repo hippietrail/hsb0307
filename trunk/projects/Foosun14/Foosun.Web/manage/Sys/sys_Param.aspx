@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/public.js"></script>
 </head>
@@ -164,7 +164,7 @@
               <td align="right"  class="list_link">生成栏目文件保存路径：</td>
               <td align="left" class="list_link"><asp:TextBox ID="SaveClassFilePath" runat="server"  Width="250" CssClass="form" />
                 &nbsp;
-                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<% Response.Write(Foosun.Config.UIConfig.dirHtml); %>',document.SetParam.SaveClassFilePath,280,500);document.SetParam.SaveClassFilePath.focus();" />
+                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<% Response.Write(Hg.Config.UIConfig.dirHtml); %>',document.SetParam.SaveClassFilePath,280,500);document.SetParam.SaveClassFilePath.focus();" />
                 <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_BaseParam_0008',this)">帮助</span></td>
             </tr>
             <tr class="TR_BG_list">
@@ -555,7 +555,7 @@
               <td align="right"  class="list_link" style="width: 261px">图片（附件）目录：</td>
               <td align="left" class="list_link"><asp:TextBox ID="PicUpload" Width="250" runat="server"   CssClass="form"/>
                 &nbsp;
-                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<%Response.Write(Foosun.Config.UIConfig.dirFile); %>',document.SetParam.PicUpload,280,500);document.SetParam.PicUpload.focus();" />
+                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<%Response.Write(Hg.Config.UIConfig.dirFile); %>',document.SetParam.PicUpload,280,500);document.SetParam.PicUpload.focus();" />
                 <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_UploadParam_0003',this)">帮助</span></td>
             </tr>
             <tr class="TR_BG_list">
@@ -582,7 +582,7 @@
               <td align="right"  class="list_link" style="width: 261px"> 远程图片保存路径：</td>
               <td align="left" class="list_link"><asp:TextBox  Width="250" ID="RemoteSavePath" runat="server" CssClass="form"/>
                 &nbsp;
-                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<% Response.Write(Foosun.Config.UIConfig.dirFile); %>',document.SetParam.RemoteSavePath,280,500);document.SetParam.RemoteSavePath.focus();" />
+                <img src="../../sysImages/folder/s.gif" style="cursor:pointer;" title="选择路径"  onclick="selectFile('path|<% Response.Write(Hg.Config.UIConfig.dirFile); %>',document.SetParam.RemoteSavePath,280,500);document.SetParam.RemoteSavePath.focus();" />
                 <span class="helpstyle" style="cursor:help;" title="点击查看帮助" onClick="Help('H_UploadParam_0008',this)">帮助</span></td>
             </tr>
             <tr class="TR_BG">

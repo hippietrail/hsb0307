@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
+public partial class manage_publish_siteTask_add : Hg.Web.UI.ManagePage
 {
     public string Str_CreatTime;
     rootPublic rd = new rootPublic();
@@ -64,7 +64,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
         {
             #region 开始取表单里的值
 
-            string Str_TaskName = Foosun.Common.Input.Filter(this.TaskName.Text.Trim());//任务名
+            string Str_TaskName = Hg.Common.Input.Filter(this.TaskName.Text.Trim());//任务名
 
             #region 是否生成首页
             int isindexx = 0;
@@ -91,7 +91,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             #endregion
 
             #region checkdata
-            if (Foosun.Common.Input.ChkDate(Str_CreatTime)==false)
+            if (Hg.Common.Input.ChkDate(Str_CreatTime)==false)
             {
                 PageError("日期格式不正确", "siteTask.aspx");
             }
@@ -100,7 +100,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             #region 开始取栏目设置里的值
 
             #region 程序版本,如果为1，则显示每天生成一页并取其值，否则不。
-            string str_publicType = Foosun.Config.verConfig.PublicType;
+            string str_publicType = Hg.Config.verConfig.PublicType;
 
             #region 栏目索引复选？
             int all_class = 0, every_class = 0, today_class = 0;
@@ -165,15 +165,15 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             string Str_NewsID = "0";
             if (NewsID.Checked)
             {
-                string Str_NewsID1 = Foosun.Common.Input.Filter(this.NewsID1.Text.Trim());
-                string Str_NewsID2 = Foosun.Common.Input.Filter(this.NewsID2.Text.Trim());
+                string Str_NewsID1 = Hg.Common.Input.Filter(this.NewsID1.Text.Trim());
+                string Str_NewsID2 = Hg.Common.Input.Filter(this.NewsID2.Text.Trim());
                 if (Str_NewsID1 == null || Str_NewsID1 == "" || Str_NewsID1 == string.Empty || Str_NewsID2 == null || Str_NewsID2 == "" || Str_NewsID2 == string.Empty)
                 {
                     Str_NewsID = "0";
                 }
                 else
                 {
-                    if (!Foosun.Common.Input.IsInteger(Str_NewsID1) || !Foosun.Common.Input.IsInteger(Str_NewsID2))
+                    if (!Hg.Common.Input.IsInteger(Str_NewsID1) || !Hg.Common.Input.IsInteger(Str_NewsID2))
                     {
                         PageError("抱歉，ID必须为数字", "siteTask.aspx");
                     }
@@ -201,8 +201,8 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             string Str_Data = "0";
             if (Data.Checked)
             {
-                string Str_Data1 = Foosun.Common.Input.Filter(this.Data1.Text.Trim());
-                string Str_Data2 = Foosun.Common.Input.Filter(this.Data2.Text.Trim());
+                string Str_Data1 = Hg.Common.Input.Filter(this.Data1.Text.Trim());
+                string Str_Data2 = Hg.Common.Input.Filter(this.Data2.Text.Trim());
                 if (Str_Data1 == null || Str_Data1 == "" || Str_Data1 == string.Empty || Str_Data2 == null || Str_Data2 == "" || Str_Data2 == string.Empty)
                 {
                     Str_Data = "0";//不按照日期发布
@@ -210,7 +210,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
                 else
                 {
                     #region check data
-                    if (Foosun.Common.Input.ChkDate(Str_Data1) == false || Foosun.Common.Input.ChkDate(Str_Data2) == false)
+                    if (Hg.Common.Input.ChkDate(Str_Data1) == false || Hg.Common.Input.ChkDate(Str_Data2) == false)
                     {
                         PageError("日期格式不正确", "siteTask.aspx");
                     }
@@ -232,14 +232,14 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             int Str_LastNewsNum = 0;
             if (LastNewsNum_checkbox.Checked)
             {
-                string lastnum = Foosun.Common.Input.Filter(this.LastNewsNum.Text.Trim());
+                string lastnum = Hg.Common.Input.Filter(this.LastNewsNum.Text.Trim());
                 if (lastnum == null || lastnum == "" || lastnum == string.Empty)
                 {
                     Str_LastNewsNum = 0;
                 }
                 else
                 {
-                    if (!Foosun.Common.Input.IsInteger(lastnum))
+                    if (!Hg.Common.Input.IsInteger(lastnum))
                     {
                         PageError("抱歉，最新数必须为数字型", "siteTask.aspx");
                     }
@@ -287,7 +287,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
             #endregion
 
             #region 12位随机数
-            tcheck: string Str_taskID = Foosun.Common.Rand.Number(12);
+            tcheck: string Str_taskID = Hg.Common.Rand.Number(12);
                 DataTable rdTF = pd.getTaskParam(Str_taskID);
                 if(rdTF.Rows.Count>0)
                     goto tcheck;
@@ -308,7 +308,7 @@ public partial class manage_publish_siteTask_add : Foosun.Web.UI.ManagePage
 
             #region 插入数据
 
-            Foosun.Model.Task uc = new Foosun.Model.Task();
+            Hg.Model.Task uc = new Hg.Model.Task();
             uc.taskID = Str_taskID;
             uc.TaskName = Str_TaskName;
             uc.isIndex = isindexx;

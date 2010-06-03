@@ -5,9 +5,9 @@ using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public enum TempType
     { Index, Class, News, Special,ChIndex,ChClass,ChNews,Chspecial }

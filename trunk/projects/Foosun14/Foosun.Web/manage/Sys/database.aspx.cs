@@ -12,16 +12,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
+public partial class Manage_System_Data_Backup : Hg.Web.UI.ManagePage
 {
     public Manage_System_Data_Backup()
     {
         Authority_Code = "Q024";
     }
-    private string str_dirDumm = Foosun.Config.UIConfig.dirDumm;
+    private string str_dirDumm = Hg.Config.UIConfig.dirDumm;
     public string TabList1 = "";
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -110,7 +110,7 @@ public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
 
     protected void DbBak()
     {
-        string str_filename = Foosun.Common.Rand.Number(15);
+        string str_filename = Hg.Common.Rand.Number(15);
         if (str_dirDumm != "" && str_dirDumm != null && str_dirDumm != string.Empty)
             str_dirDumm = "//" + str_dirDumm;
 
@@ -121,7 +121,7 @@ public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
         string delPath = str_dirDumm + "/manage/Sys/database.aspx?Action=Del&Path=" + downPath;                                                               //数据库备份删除地址
         Database dbClass = new Database();
         int result = 0;
-        if (Foosun.Config.UIConfig.WebDAL == "Foosun.SQLServerDAL")
+        if (Hg.Config.UIConfig.WebDAL == "Hg.SQLServerDAL")
         {
             string type = Request.QueryString["Type"];
             int i_type = 1;
@@ -273,7 +273,7 @@ public partial class Manage_System_Data_Backup : Foosun.Web.UI.ManagePage
 
     protected void getTableList()
     {
-        Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+        Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
         IList<FreeLablelDBInfo> tbs = fb.GetTables();
         foreach (FreeLablelDBInfo info in tbs)
         {

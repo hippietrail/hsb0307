@@ -3,12 +3,12 @@ using System.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
-using Foosun.Common;
-using Foosun.Control;
-using Foosun.Config;
-using Foosun.Model;
+using Hg.Common;
+using Hg.Control;
+using Hg.Config;
+using Hg.Model;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class UltiPublish
     {
@@ -159,26 +159,26 @@ namespace Foosun.Publish
             {
                 HProgressBar.Roll("正在频道发布主页", 0);
                 string indexname = "index.html";
-                TempletPath = "/" + Foosun.Config.UIConfig.dirTemplet + "/" + Foosun.Common.Public.readCHparamConfig("channeltemplet", fs_ChID);
+                TempletPath = "/" + Hg.Config.UIConfig.dirTemplet + "/" + Hg.Common.Public.readCHparamConfig("channeltemplet", fs_ChID);
                 TempletPath = TempletPath.Replace("//", "/");
                 TempletPath = TempletPath.Replace("/", "\\");
                 TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-                indexname = Foosun.Common.Public.readCHparamConfig("channelindexname", fs_ChID);
+                indexname = Hg.Common.Public.readCHparamConfig("channelindexname", fs_ChID);
                 Template indexTemp = new Template(SiteRootPath.Trim('\\') + TempletPath, TempType.ChIndex);
                 indexTemp.ChID = fs_ChID;
                 indexTemp.GetHTML();
                 indexTemp.ReplaceLabels();
-                string SaveIndexPath = Foosun.Common.Public.readCHparamConfig("channelindexpath", fs_ChID);
-                SaveIndexPath = SaveIndexPath.Replace("//", "/").Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                string SaveIndexPath = Hg.Common.Public.readCHparamConfig("channelindexpath", fs_ChID);
+                SaveIndexPath = SaveIndexPath.Replace("//", "/").Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                 SaveIndexPath = SaveIndexPath.Replace("/", "\\");
                 General.WriteHtml(indexTemp.FinallyContent, SiteRootPath.TrimEnd('\\') + "\\" + SaveIndexPath);
-                string dimm = Foosun.Config.UIConfig.dirDumm;
+                string dimm = Hg.Config.UIConfig.dirDumm;
                 if (dimm.Trim() != string.Empty){dimm = "/" + dimm;}
                 HProgressBar.Roll("发布频道主页成功。&nbsp;<a class=\"list_link\" href=\"javascript:history.back();\">返 回</a> &nbsp; <a class=\"list_link\" href=\"" + (dimm + "/" + SaveIndexPath.Replace("\\", "/")).Replace("//", "/") + "\" target=\"_blank\">浏览首页</a>", 100);
             }
             catch (Exception ex)
             {
-                Foosun.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(),"");
+                Hg.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(),"");
                 HProgressBar.Roll("发布频道主页失败。<a href=\"../publish/error/geterror.aspx?\">查看日志</a>", 0);
             }
         }
@@ -242,7 +242,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布频道信息", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布频道信息", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
                 }
                 failedList.Clear();
             }
@@ -318,7 +318,7 @@ namespace Foosun.Publish
             catch (Exception e)
             {
                 //failedList.Add(newsID + "$" + e.Message);
-                Foosun.Common.Public.savePublicLogFiles("□□□发布新闻", "【ID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(),"");
+                Hg.Common.Public.savePublicLogFiles("□□□发布新闻", "【ID】:" + ClassID + "\r\n【错误描述：】\r\n" + e.ToString(),"");
                 return false;
             }
         }
@@ -342,8 +342,8 @@ namespace Foosun.Publish
                         TempletPath = rd["Templet"].ToString();
                         TempletPath = TempletPath.Replace("/", "\\");
                         TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-                        string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", fs_ChID);
-                        dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                        string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", fs_ChID);
+                        dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                         string TmpsaveClassPath = "\\" + dirHTML.Trim('\\').Trim('/') + "\\" + rd["savePath"].ToString().Trim('\\').Trim('/')+"\\" + rd["FileName"].ToString().Trim('\\').Trim('/');
                         saveClassPath = TmpsaveClassPath.Replace("/", "\\");
                         int intClassId = int.Parse(rd["ID"].ToString());
@@ -386,7 +386,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
                 }
                 failedList.Clear();
             }
@@ -437,7 +437,7 @@ namespace Foosun.Publish
             catch (Exception e)
             {
                 failedList.Add(classID + "$" + e.Message);
-                Foosun.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(),"");
+                Hg.Common.Public.savePublicLogFiles("□□□发布栏目", "【ID】:" + classID + "\r\n【错误描述：】\r\n" + e.ToString(),"");
                 return false;
             }
         }
@@ -511,8 +511,8 @@ namespace Foosun.Publish
                         TempletPath = rd["Templet"].ToString();
                         TempletPath = TempletPath.Replace("/", "\\");
                         TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-                        string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", fs_ChID);
-                        dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                        string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", fs_ChID);
+                        dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                         string TmpsaveSpecialPath = "\\" + dirHTML.Trim('\\').Trim('/') + "\\" + rd["SavePath"].ToString().Trim('\\').Trim('/') + '\\' + rd["FileName"].ToString().Trim('\\').Trim('/');
                         saveSpecialPath = (TmpsaveSpecialPath.Replace("/", "\\"));
                         bool state = publishSingleCHSpecial(int.Parse(rd["ID"].ToString()));
@@ -549,7 +549,7 @@ namespace Foosun.Publish
             {
                 for (int i = 0; i < failedList.Count; i++)
                 {
-                    Foosun.Common.Public.savePublicLogFiles("□□□发布专题", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
+                    Hg.Common.Public.savePublicLogFiles("□□□发布专题", "【ID】:" + failedList[i].Split('$')[0] + "\r\n【错误描述：】\r\n" + failedList[i].Split('$')[1],"");
                 }
                 failedList.Clear();
             }
@@ -771,8 +771,8 @@ namespace Foosun.Publish
             PubCHClassInfo info = CommonData.GetCHClassById(classID);
             if (info != null)
             {
-                string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", fs_ChID);
-                dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
+                string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", fs_ChID);
+                dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
                 saveinfoPath =  "\\" + dirHTML.Trim('\\').Trim('/') + "\\" + info.SavePath.Trim('\\').Trim('/') + "\\" + SavePath.Trim('\\').Trim('/') + "\\" + FileName.Trim('\\').Trim('/');
             }
         }

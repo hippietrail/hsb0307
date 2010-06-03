@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Photo
     {
         private IPhoto dal;
         public Photo()
         {
-            dal = Foosun.DALFactory.DataAccess.CreatePhoto();
+            dal = Hg.DALFactory.DataAccess.CreatePhoto();
         }
         #region photo.aspx
         public DataTable sel(string PhotoalbumID)

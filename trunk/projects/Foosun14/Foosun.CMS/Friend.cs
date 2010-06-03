@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Friend
     {
         private IFriend dal;
         public Friend()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateFriend();
+            dal = Hg.DALFactory.DataAccess.CreateFriend();
         }
         #region friend_add.aspx
         public DataTable  sel_1(string UserNum)

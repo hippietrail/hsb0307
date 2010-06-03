@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="adapt.aspx.cs" Inherits="Foosun.Web.manage.adapt.adapt" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="adapt.aspx.cs" Inherits="Hg.Web.manage.adapt.adapt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css"
+    <link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css"
         rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <table width="100%" style="height: 32" align="center" border="0" cellpadding="0"
-            cellspacing="0" background="../../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
+            cellspacing="0" background="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/reght_1_bg_1.gif">
             <tr>
                 <td height="1" colspan="2">
                 </td>
@@ -100,8 +100,8 @@
                         <asp:Literal ID="LiteralAppUrl" runat="server"></asp:Literal>
                     </td>
                     <td>
-                       <asp:HyperLink ID="hpedit" runat="server" > <img src="../../sysImages/<%=Foosun.Config.UIConfig.CssPath() %>/sysico/edit.gif" border="0"  title="修改"/></asp:HyperLink>
-                       <asp:HyperLink ID="hpdelete" runat="server" > <img src="../../sysImages/<%=Foosun.Config.UIConfig.CssPath() %>/sysico/del.gif" border="0"  title="删除"/></asp:HyperLink>
+                       <asp:HyperLink ID="hpedit" runat="server" > <img src="../../sysImages/<%=Hg.Config.UIConfig.CssPath() %>/sysico/edit.gif" border="0"  title="修改"/></asp:HyperLink>
+                       <asp:HyperLink ID="hpdelete" runat="server" > <img src="../../sysImages/<%=Hg.Config.UIConfig.CssPath() %>/sysico/del.gif" border="0"  title="删除"/></asp:HyperLink>
                     </td>
                 </tr>
             </ItemTemplate>

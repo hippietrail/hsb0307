@@ -19,9 +19,9 @@ using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_label_FreeLabel_Add : Foosun.Web.UI.ManagePage
+public partial class manage_label_FreeLabel_Add : Hg.Web.UI.ManagePage
 {
     public manage_label_FreeLabel_Add()
     {
@@ -45,7 +45,7 @@ public partial class manage_label_FreeLabel_Add : Foosun.Web.UI.ManagePage
         #region AJAX
         if (Request.Form["Option"] != null && Request.Form["Option"].Equals("GetFields") && Request.Form["TableName"] != null && !Request.Form["TableName"].Equals(""))
         {
-            Foosun.CMS.FreeLabel freelbl = new Foosun.CMS.FreeLabel();
+            Hg.CMS.FreeLabel freelbl = new Hg.CMS.FreeLabel();
             IList<FreeLablelDBInfo> flds = freelbl.GetFields(Request.Form["TableName"]);
             int i = 0;
             foreach (FreeLablelDBInfo flinfo in flds)
@@ -61,7 +61,7 @@ public partial class manage_label_FreeLabel_Add : Foosun.Web.UI.ManagePage
         if (!Page.IsPostBack)
         {
             string tab1 = "", tab2 = "";
-            Foosun.CMS.FreeLabel fb = new Foosun.CMS.FreeLabel();
+            Hg.CMS.FreeLabel fb = new Hg.CMS.FreeLabel();
             if (Request.QueryString["id"] != null && !Request.QueryString["id"].Trim().Equals(""))
             {
                 id = int.Parse(Request.QueryString["id"]);
@@ -135,7 +135,7 @@ public partial class manage_label_FreeLabel_Add : Foosun.Web.UI.ManagePage
         }
     }
 
-    private string GetFields(Foosun.CMS.FreeLabel fb, string tabnm, string fdlst, string cond, string ordr, bool dbflag, string jnfld, out string opt)
+    private string GetFields(Hg.CMS.FreeLabel fb, string tabnm, string fdlst, string cond, string ordr, bool dbflag, string jnfld, out string opt)
     {
         string ret = "";
         opt = "";

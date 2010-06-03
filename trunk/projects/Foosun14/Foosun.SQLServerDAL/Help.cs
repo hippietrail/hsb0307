@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Help : DbBase, IHelp
     {

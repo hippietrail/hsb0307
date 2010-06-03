@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class FsLog : DbBase, IFsLog
     {

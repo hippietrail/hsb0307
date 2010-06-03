@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_collect_Collect_NumSet : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_NumSet : Hg.Web.UI.ManagePage
 {
     public manage_collect_Collect_NumSet()
     {

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-public partial class manage_collect_Default : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Default : Hg.Web.UI.ManagePage
 {
     public manage_collect_Default()
     {

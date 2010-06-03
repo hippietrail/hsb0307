@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Model
+namespace Hg.Model
 {
     /// <summary>
     /// 用户登录的状态

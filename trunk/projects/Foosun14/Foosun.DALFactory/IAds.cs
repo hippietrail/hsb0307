@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IAds
     {
-        DataTable list(Foosun.Model.AdsListInfo ali);
+        DataTable list(Hg.Model.AdsListInfo ali);
         DataTable childlist(string classid);
         void Lock(string id);
         void UnLock(string id);
@@ -17,15 +17,15 @@ namespace Foosun.DALFactory
         void DelAllAdsClass();
         DataTable adsClassDt(string classid);
         void DelPAdsClass(string classid);
-        int AddClass(Foosun.Model.AdsClassInfo aci);
+        int AddClass(Hg.Model.AdsClassInfo aci);
         DataTable getAdsClassInfo(string classid);
-        int EditClass(Foosun.Model.AdsClassInfo aci);
+        int EditClass(Hg.Model.AdsClassInfo aci);
         void statDelAll();
         void statDel(string idstr);
         DataTable getAdsClassList();
         DataTable getAdsList(string id);
-        string adsAdd(Foosun.Model.AdsInfo ai);
-        int adsEdit(Foosun.Model.AdsInfo ai);
+        string adsAdd(Hg.Model.AdsInfo ai);
+        int adsEdit(Hg.Model.AdsInfo ai);
         DataTable getAdsDomain();
         DataTable getAdsPicInfo(string col, string tbname, string id);
         DataTable getAdsInfo(string id);

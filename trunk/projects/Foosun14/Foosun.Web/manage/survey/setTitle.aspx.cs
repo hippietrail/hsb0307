@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Model;
 
-public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
+public partial class manage_survey_setTitle : Hg.Web.UI.ManagePage
 {
     public manage_survey_setTitle()
     {
@@ -151,7 +151,7 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
     protected void VoteTitleManage(int PageIndex)//显示投票类别管理页面
     {
         #region 查询条件语句判断
-        string KeyWord = Foosun.Common.Input.Filter(this.KeyWord.Text.Trim());//取得关键字的内容
+        string KeyWord = Hg.Common.Input.Filter(this.KeyWord.Text.Trim());//取得关键字的内容
         string type = this.DdlKwdType.SelectedValue;//取得选择的类型
         int i = 0, j = 0;
         int num = 20;//从参数设置里取得每页显示记录的条数
@@ -162,11 +162,11 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
             switch (type)
             {
                 case "choose":
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);//不跟条件进行查询，显示全部内容                   
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);//不跟条件进行查询，显示全部内容                   
                     break;
                 case "title":
                     SQLConditionInfo st = new SQLConditionInfo("@Title", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_2_aspx", PageIndex, num, out i, out j, st);//按照主题名查询相关内容                   
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_2_aspx", PageIndex, num, out i, out j, st);//按照主题名查询相关内容                   
                     break;
                 case "class":
                     DataTable dt1 = new DataTable();
@@ -179,43 +179,43 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
                             {
                                 int Vid = int.Parse(dt1.Rows[l]["VID"].ToString());
                                 SQLConditionInfo st1 = new SQLConditionInfo("@VID", "%" + Vid + "%");
-                                dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_3_aspx", PageIndex, num, out i, out j, st1);//按照类名查询                              
+                                dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_3_aspx", PageIndex, num, out i, out j, st1);//按照类名查询                              
                             }
                         }
                         else
                         {
-                            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
+                            dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
                         }
                     }
                     else
                     {
-                        dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
+                        dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
                     }
                     break;
                 case "num":
                     SQLConditionInfo st2 = new SQLConditionInfo("@MaxNum", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_4_aspx", PageIndex, num, out i, out j, st2);//按照最多数查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_4_aspx", PageIndex, num, out i, out j, st2);//按照最多数查询
                     break;
                 case "starttime":
                     SQLConditionInfo st3 = new SQLConditionInfo("@StartDate", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_5_aspx", PageIndex, num, out i, out j, st3);//按照开始时间查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_5_aspx", PageIndex, num, out i, out j, st3);//按照开始时间查询
                     break;
                 case "endtime":
                     SQLConditionInfo st4 = new SQLConditionInfo("@EndDate", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_6_aspx", PageIndex, num, out i, out j, st4);//按照结束时间查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_6_aspx", PageIndex, num, out i, out j, st4);//按照结束时间查询
                     break;
                 case "itemmodel":
                     SQLConditionInfo st5 = new SQLConditionInfo("@ItemMode", "%" + KeyWord + "%");
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_7_aspx", PageIndex, num, out i, out j, st5); //按照排列方式查询
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_7_aspx", PageIndex, num, out i, out j, st5); //按照排列方式查询
                     break;
                 default:
-                    dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
+                    dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
                     break;
             }
         }
         else
         {
-            dt = Foosun.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
+            dt = Hg.CMS.Pagination.GetPage("manage_survey_setTitle_1_aspx", PageIndex, num, out i, out j, null);
         }
         #endregion
 
@@ -275,7 +275,7 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
                         }
                         dt.Rows[k]["Title"] = "<a href='settitle.aspx?type=edit&id=" + idt + "' class='list_link' title='点击查看详情或修改'>" + dt.Rows[k]["Title"].ToString() + "</a>";
                         dt.Rows[k]["js"] = "<a href=\"javascript:getjsCode(" + idt + ");\" class=\"list_link\">代码</a>";
-                        dt.Rows[k]["oPerate"] = "<a href=\"settitle.aspx?type=edit&id=" + idt + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setTitle.aspx?type=delone&id=" + idt + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + idt + "\"/>";
+                        dt.Rows[k]["oPerate"] = "<a href=\"settitle.aspx?type=edit&id=" + idt + "\"  class=\"list_link\" title=\"修改此项\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改此项\" /></a><a href=\"setTitle.aspx?type=delone&id=" + idt + "\"  class=\"list_link\" title=\"删除此项\" onclick=\"{if(confirm('确认删除吗？')){return true;}return false;}\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a><input type='checkbox' name='vote_checkbox' id='vote_checkbox' value=\"" + idt + "\"/>";
                     }
                 }
                 else
@@ -352,12 +352,12 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
         {
             //取得投票参数设置添加中的表单信息
             string Str_Classname = this.vote_ClassName.SelectedValue;//调查类别
-            string Str_Title = Foosun.Common.Input.Filter(this.Title.Text);//类别名称
+            string Str_Title = Hg.Common.Input.Filter(this.Title.Text);//类别名称
             string Str_TypeSelect = this.TypeSelect.SelectedValue;//项目类型
-            string Str_MaxselectNum = Foosun.Common.Input.Filter(this.MaxselectNum.Text);//最多选项个数
+            string Str_MaxselectNum = Hg.Common.Input.Filter(this.MaxselectNum.Text);//最多选项个数
             string Str_DisModel = this.DisModel.SelectedValue;//显示方式
-            string Str_Starttime = Foosun.Common.Input.Filter(this.Starttime.Text);//开始时间
-            string Str_Endtime = Foosun.Common.Input.Filter(this.Endtime.Text);//结束时间
+            string Str_Starttime = Hg.Common.Input.Filter(this.Starttime.Text);//开始时间
+            string Str_Endtime = Hg.Common.Input.Filter(this.Endtime.Text);//结束时间
             string Str_SortStyle = this.SortStyle.SelectedValue;//排列方式
             string Str_isSteps = this.isSteps.Text;//是否允许多步投票
 
@@ -378,18 +378,18 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
             }
             else//否则，是多选，则若输入不是数字,则出错,反之成功
             {
-                if (!Foosun.Common.Input.IsInteger(Str_MaxselectNum))
+                if (!Hg.Common.Input.IsInteger(Str_MaxselectNum))
                 {
                     PageError("对不起，选项数只能为数字型，请返回继续添加", "setTitle.aspx");
                 }
                 else
                 {
                     //将输入的值赋给最多选项数
-                    Str_MaxselectNum = Foosun.Common.Input.Filter(this.MaxselectNum.Text);
+                    Str_MaxselectNum = Hg.Common.Input.Filter(this.MaxselectNum.Text);
                 }
             }
             //检查日期是否合法
-            if (Foosun.Common.Input.ChkDate(Str_Starttime) == false && Foosun.Common.Input.ChkDate(Str_Endtime) == false)
+            if (Hg.Common.Input.ChkDate(Str_Starttime) == false && Hg.Common.Input.ChkDate(Str_Endtime) == false)
             {
                 PageError("对不起，日期格式不正确，请返回继续添加", "setTitle.aspx");
             }
@@ -424,27 +424,27 @@ public partial class manage_survey_setTitle : Foosun.Web.UI.ManagePage
         {
             int TID = int.Parse(Request.QueryString["ID"]);
             //取得修改中的表单信息
-            string Str_ClassNameE = Foosun.Common.Input.Filter(this.ClassnameE.Text.Trim());
-            string Str_TitleE = Foosun.Common.Input.Filter(this.TitleE.Text.Trim());
-            string Str_TypeE = Foosun.Common.Input.Filter(this.TypeE.Text.Trim());
-            string Str_MaxNumE = Foosun.Common.Input.Filter(this.MaxNumE.Text.Trim());
-            string Str_DisModelE = Foosun.Common.Input.Filter(this.DisModelE.Text.Trim());
-            string Str_StartTimeE = Foosun.Common.Input.Filter(this.StartTimeE.Text.Trim());
-            string Str_EndTimeE = Foosun.Common.Input.Filter(this.EndTimeE.Text.Trim());
-            string Str_StyleE = Foosun.Common.Input.Filter(this.StyleE.Text.Trim());
-            string Str_isSteps = Foosun.Common.Input.Filter(this.isStepsE.Text.Trim());
+            string Str_ClassNameE = Hg.Common.Input.Filter(this.ClassnameE.Text.Trim());
+            string Str_TitleE = Hg.Common.Input.Filter(this.TitleE.Text.Trim());
+            string Str_TypeE = Hg.Common.Input.Filter(this.TypeE.Text.Trim());
+            string Str_MaxNumE = Hg.Common.Input.Filter(this.MaxNumE.Text.Trim());
+            string Str_DisModelE = Hg.Common.Input.Filter(this.DisModelE.Text.Trim());
+            string Str_StartTimeE = Hg.Common.Input.Filter(this.StartTimeE.Text.Trim());
+            string Str_EndTimeE = Hg.Common.Input.Filter(this.EndTimeE.Text.Trim());
+            string Str_StyleE = Hg.Common.Input.Filter(this.StyleE.Text.Trim());
+            string Str_isSteps = Hg.Common.Input.Filter(this.isStepsE.Text.Trim());
 
             if (Str_TitleE == null || Str_TitleE == string.Empty)
             {
                 PageError("对不起，主题名称不能为空，请返回继续添加", "setTitle.aspx");
             }
             //检查选项数是否为数字型
-            if (!Foosun.Common.Input.IsInteger(Str_MaxNumE))
+            if (!Hg.Common.Input.IsInteger(Str_MaxNumE))
             {
                 PageError("对不起，选项数只能为数字型，请返回继续添加", "setTitle.aspx");
             }
             //检查日期是否合法
-            if (Foosun.Common.Input.ChkDate(Str_StartTimeE) == false && Foosun.Common.Input.ChkDate(Str_EndTimeE) == false)
+            if (Hg.Common.Input.ChkDate(Str_StartTimeE) == false && Hg.Common.Input.ChkDate(Str_EndTimeE) == false)
             {
                 PageError("对不起，日期格式不正确，请返回继续添加", "setTitle.aspx");
             }

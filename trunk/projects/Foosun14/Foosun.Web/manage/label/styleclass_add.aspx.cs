@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_styleclass_add : Foosun.Web.UI.ManagePage
+public partial class manage_label_styleclass_add : Hg.Web.UI.ManagePage
 {
     public manage_label_styleclass_add()
     {
@@ -39,12 +39,12 @@ public partial class manage_label_styleclass_add : Foosun.Web.UI.ManagePage
         if (Page.IsValid)
         {
             int result = 0;
-            Foosun.Model.StyleClassInfo stClass= new Foosun.Model.StyleClassInfo();
+            Hg.Model.StyleClassInfo stClass= new Hg.Model.StyleClassInfo();
             stClass.Sname = styleClassName.Text;
             stClass.CreatTime = DateTime.Now;
             stClass.isRecyle = 0;
 
-            Foosun.CMS.Style.Style stcClass = new Foosun.CMS.Style.Style();
+            Hg.CMS.Style.Style stcClass = new Hg.CMS.Style.Style();
             result = stcClass.sytleClassAdd(stClass);
             if (result==1)
                 PageRight("添加分类成功!", "style.aspx");

@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 
-public partial class manage_label_syslabelclass_edit : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslabelclass_edit : Hg.Web.UI.ManagePage
 {
     public manage_label_syslabelclass_edit()
     {
@@ -37,12 +37,12 @@ public partial class manage_label_syslabelclass_edit : Foosun.Web.UI.ManagePage
 
     protected void getLabelClassInfo()
     {
-        string str_ClassID = Foosun.Common.Input.checkID(Request.QueryString["ClassID"]);
+        string str_ClassID = Hg.Common.Input.checkID(Request.QueryString["ClassID"]);
         LabelClassID.Value = str_ClassID;
         string str_ClassName = "";
         string str_ClassContent = "";
         
-        Foosun.CMS.Label lbcc = new Foosun.CMS.Label();
+        Hg.CMS.Label lbcc = new Hg.CMS.Label();
         DataTable dt = lbcc.GetLabelClassInfo(str_ClassID);
         
         if (dt != null)
@@ -75,16 +75,16 @@ public partial class manage_label_syslabelclass_edit : Foosun.Web.UI.ManagePage
             string str_ClassID = Request.Form["LabelClassID"];
             string str_Content = Request.Form["ClassContent"];
 
-            Foosun.Model.LabelClassInfo lbc = new Foosun.Model.LabelClassInfo();
+            Hg.Model.LabelClassInfo lbc = new Hg.Model.LabelClassInfo();
             lbc.ClassName = str_Name;
-            lbc.ClassID = Foosun.Common.Input.checkID(str_ClassID);
+            lbc.ClassID = Hg.Common.Input.checkID(str_ClassID);
             lbc.Content = str_Content;
             lbc.CreatTime = DateTime.Now;
             lbc.SiteID = SiteID;
             
             int result = 0;
 
-            Foosun.CMS.Label lbcc = new Foosun.CMS.Label();
+            Hg.CMS.Label lbcc = new Hg.CMS.Label();
             result = lbcc.LabelClassEdit(lbc);
             if (result==1)
                 PageRight("修改分类成功!", "SysLabel_List.aspx");

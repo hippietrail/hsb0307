@@ -4,11 +4,11 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.Config;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.Config;
+using Hg.CMS;
+using Hg.Model;
 
-namespace Foosun.Web.UI
+namespace Hg.Web.UI
 {
     public class ManagePage : BasePage
     {
@@ -56,10 +56,10 @@ namespace Foosun.Web.UI
             }
             else
             {
-                _UserNum = Foosun.Global.Current.UserNum;
-                _SiteID = Foosun.Global.Current.SiteID.Trim();
-                _UserName = Foosun.Global.Current.UserName;
-                _adminLogined = Foosun.Global.Current.adminLogined;
+                _UserNum = Hg.Global.Current.UserNum;
+                _SiteID = Hg.Global.Current.SiteID.Trim();
+                _UserName = Hg.Global.Current.UserName;
+                _adminLogined = Hg.Global.Current.adminLogined;
             }
         }
         /// <summary>
@@ -131,10 +131,10 @@ namespace Foosun.Web.UI
         protected override void Logout()
         {
             base.Logout();
-            string _dirDumm = Foosun.Config.UIConfig.dirDumm;
-            string TmpPath = Foosun.Config.UIConfig.dirUser + "/";
+            string _dirDumm = Hg.Config.UIConfig.dirDumm;
+            string TmpPath = Hg.Config.UIConfig.dirUser + "/";
             if ((_dirDumm).Trim() != "") { _dirDumm = "/" + _dirDumm; }
-            TmpPath = Foosun.Config.UIConfig.dirMana + "/";
+            TmpPath = Hg.Config.UIConfig.dirMana + "/";
             ExecuteJs("top.location.href=\"" + _dirDumm + "/" + TmpPath + "login.aspx\";");
             Context.Response.End();
         }

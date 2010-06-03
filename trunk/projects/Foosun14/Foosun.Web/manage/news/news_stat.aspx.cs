@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Common;
 
-public partial class manage_news_news_stat : Foosun.Web.UI.ManagePage
+public partial class manage_news_news_stat : Hg.Web.UI.ManagePage
 {
     Admin rd = new Admin();
     rootPublic pd = new rootPublic();

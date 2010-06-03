@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Text.RegularExpressions;
-using Foosun.Config;
+using Hg.Config;
 using System.Collections;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     /// <summary>
     /// 自定义标签

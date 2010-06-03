@@ -7,7 +7,7 @@
 <head>
   <title></title>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
 <script language="JavaScript" charset="gb2312" type="text/javascript" src="../../configuration/js/Public.js"></script>
 <script language="javascript" type="text/javascript">
@@ -313,7 +313,7 @@ function GetPositionHtml(obj)
               <td  class="list_link">静态文件保存路径：</td>
               <td  class="list_link">
               <asp:TextBox ID="TxtFileDir" runat="server" MaxLength="100" Width="280" CssClass="form"/>
-               <img src="../../sysImages/folder/s.gif" alt="选择站群静态文件保存路径" border="0" style="cursor:pointer;" onclick="selectFile('path|<%Response.Write(Foosun.Config.UIConfig.dirSite); %>',document.Form1.TxtFileDir,280,500);document.Form1.TxtFileDir.focus();" />
+               <img src="../../sysImages/folder/s.gif" alt="选择站群静态文件保存路径" border="0" style="cursor:pointer;" onclick="selectFile('path|<%Response.Write(Hg.Config.UIConfig.dirSite); %>',document.Form1.TxtFileDir,280,500);document.Form1.TxtFileDir.focus();" />
               <span class="helpstyle" style="cursor:help;" title="点击显示帮助" onclick="Help('H_site_add_fileDir',this)">帮助</span>
               </td>
             </tr>

@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class digg : Foosun.Web.UI.BasePage
+public partial class digg : Hg.Web.UI.BasePage
 {
     News RD = new News();
     protected void Page_Load(object sender, EventArgs e)
@@ -22,18 +22,18 @@ public partial class digg : Foosun.Web.UI.BasePage
         {
             if (str_getNum.ToString() == "0")
             {
-                Response.Write(RD.gettopnum(Foosun.Common.Input.Filter(str_newsID.ToString()), "0"));
+                Response.Write(RD.gettopnum(Hg.Common.Input.Filter(str_newsID.ToString()), "0"));
             }
             else
             {
                 if (Request.Cookies["FoosunCookeisdigg" + str_newsID + ""] == null)
                 {
                     Response.Cookies["FoosunCookeisdigg" + str_newsID + ""].Value = "1";
-                    Response.Write(RD.gettopnum(Foosun.Common.Input.Filter(str_newsID.ToString()), "1"));
+                    Response.Write(RD.gettopnum(Hg.Common.Input.Filter(str_newsID.ToString()), "1"));
                 }
                 else
                 {
-                    Response.Write(RD.gettopnum(Foosun.Common.Input.Filter(str_newsID.ToString()), "0"));
+                    Response.Write(RD.gettopnum(Hg.Common.Input.Filter(str_newsID.ToString()), "0"));
                 }
             }
             Response.End();

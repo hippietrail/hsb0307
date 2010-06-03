@@ -12,16 +12,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class jsfiles_ads_adsclick : Foosun.Web.UI.BasePage
+public partial class jsfiles_ads_adsclick : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
 
         string Type = Request.QueryString["Type"];
         DataTable dt = null;
         string str_Url = "";
-        string adsID = Foosun.Common.Input.checkID(Request.QueryString["adsID"]);  //检测参数
+        string adsID = Hg.Common.Input.checkID(Request.QueryString["adsID"]);  //检测参数
 
         if (Type == "Txt")      //文字广告
         {

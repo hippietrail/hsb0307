@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace Foosun.Web.manage.publish
+namespace Hg.Web.manage.publish
 {
     public partial class AjaxSiteParam : System.Web.UI.Page
     {
@@ -20,7 +20,7 @@ namespace Foosun.Web.manage.publish
             if (type != null && type.Equals("ShowMessage"))
             {
                 Response.Clear();
-                string message = Foosun.Publish.UltiPublish.showMessages(Convert.ToInt32(userPublishID));
+                string message = Hg.Publish.UltiPublish.showMessages(Convert.ToInt32(userPublishID));
                 Response.ContentType = "text/xml";
                 Response.Write("<message>" + message + "</message>");
                 Response.End();

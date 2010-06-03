@@ -13,14 +13,14 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
 
-public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
+public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 {
 	public manage_Templet_Manage_List()
 	{
 		Authority_Code = "T001";
 	}
-	private string str_dirMana = Foosun.Config.UIConfig.dirDumm;
-	private string str_Templet = Foosun.Config.UIConfig.dirTemplet;  //获取模板路径
+	private string str_dirMana = Hg.Config.UIConfig.dirDumm;
+	private string str_Templet = Hg.Config.UIConfig.dirTemplet;  //获取模板路径
 	private string str_FilePath = "";
 	private string s_url = "";
 	protected void Page_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
         }
         else
         {
-            string _sitePath = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_Templet;
+            string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + str_Templet;
             if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
             str_FilePath = Server.MapPath(_sitePath);
         }
@@ -159,7 +159,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 			}
 			else
 			{
-				_str_TempletTF = str_dirMana + "\\" + Foosun.Config.UIConfig.dirSite + "\\" + Foosun.Global.Current.SiteEName + "\\" + str_Templet;
+				_str_TempletTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + str_Templet;
 			}
 			if (dir == Server.MapPath(_str_TempletTF))      //判断是否是模板目录,如果是则不显示返回上级目录
 			{
@@ -206,7 +206,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 			str_TempFileStr += str_TdStart + "文件夹</td>";
 			str_TempFileStr += str_TdStart + "-" + str_TdEnd;
 			str_TempFileStr += str_TdStart + "<span style=\"font-size:10px\">" + dirInfo.LastWriteTime.ToString() + "</span>" + str_TdEnd;
-			str_TempFileStr += str_TdStart + "<a href=\"javascript:EditFolder('" + TempParentPath + "','" + dirInfo.Name + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelDir('" + TempPath + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" />" + str_TdEnd;
+			str_TempFileStr += str_TdStart + "<a href=\"javascript:EditFolder('" + TempParentPath + "','" + dirInfo.Name + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelDir('" + TempPath + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" />" + str_TdEnd;
 			str_TempFileStr += str_TrEnd;
 		}
 
@@ -221,7 +221,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 				str_TempFileStr += str_TdStart + DirFile.Length.ToString() + str_TdEnd;
 				str_TempFileStr += str_TdStart + "<span style=\"font-size:10px\">" + DirFile.LastWriteTime.ToString() + "</span>" + str_TdEnd;
 
-				str_TempFileStr += str_TdStart + "<a href=\"editor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/editonline.gif\" border=\"0\" alt=\"可视编辑\" /></a><a href=\"Txteditor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edittxt.gif\" border=\"0\" alt=\"文本编辑\" /></a><a href='http://" + DomainAndPort + str_dirMana + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
+				str_TempFileStr += str_TdStart + "<a href=\"editor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editonline.gif\" border=\"0\" alt=\"可视编辑\" /></a><a href=\"Txteditor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edittxt.gif\" border=\"0\" alt=\"文本编辑\" /></a><a href='http://" + DomainAndPort + str_dirMana + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
 				str_TempFileStr += str_TrEnd;
 			}
 		}
@@ -237,7 +237,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 	/// Code By DengXi
 	string PathPre()
 	{
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		string str_path = tpClass.PathPre(str_FilePath + Request.QueryString["Path"], str_Templet);
 		return str_path;
 	}
@@ -367,7 +367,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 		if (str_OldName == "" || str_OldName == null || str_OldName == string.Empty || str_NewName == "" || str_NewName == null || str_NewName == string.Empty)
 			PageError("参数传递错误!", s_url);
 
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		int result = tpClass.EidtName(path, str_OldName, str_NewName, 0);
 		if (result == 1)
 			PageRight("更改文件夹名成功！", s_url);
@@ -389,7 +389,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 		if (str_OldName == "" || str_OldName == null || str_OldName == string.Empty || str_NewName == "" || str_NewName == null || str_NewName == string.Empty)
 			PageError("参数传递错误!", s_url);
 
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		int result = tpClass.EidtName(path, str_OldName, str_NewName, 1);
 		if (result == 1)
 			PageRight("更改文件名成功！", s_url);
@@ -406,7 +406,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 	protected void DelDir(string path)
 	{
 		int result = 0;
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		result = tpClass.Del(path, "", 0);
 		if (result == 1)
 			PageRight("删除文件夹成功!", s_url);
@@ -425,7 +425,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 		string str_FileName = Request.QueryString["filename"];
 
 		int result = 0;
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		result = tpClass.Del(path, str_FileName, 1);
 		if (result == 1)
 			PageRight("删除文件成功!", s_url);
@@ -444,7 +444,7 @@ public partial class manage_Templet_Manage_List : Foosun.Web.UI.ManagePage
 		string str_DirName = Request.QueryString["filename"];
 
 		int result = 0;
-		Foosun.CMS.Templet.Templet tpClass = new Foosun.CMS.Templet.Templet();
+		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
 		result = tpClass.AddDir(path, str_DirName);
 		if (result == 1)
 			PageRight("添加文件夹成功!", s_url);

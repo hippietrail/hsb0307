@@ -4,14 +4,14 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Data.OleDb;
 using System.Collections;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Global;
-using Foosun.DALProfile;
-using Foosun.Config;
-using Foosun.Control;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Global;
+using Hg.DALProfile;
+using Hg.Config;
+using Hg.Control;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Collect : DbBase, ICollect
     {
@@ -819,13 +819,13 @@ namespace Foosun.AccessDAL
                         #region 保存的文件名等的计算
                         string SavePath = ExChangeRule(NewsPathRule, sClass, ClassEname, AID);
                         string FileName = ExChangeRule(NewsFileRule, sClass, ClassEname, AID);
-                        string NewsID = Foosun.Common.Rand.Number(12);
+                        string NewsID = Hg.Common.Rand.Number(12);
                         if (FileName == string.Empty)
-                            FileName = Foosun.Common.Rand.Number(12);
+                            FileName = Hg.Common.Rand.Number(12);
                         while (Convert.ToInt32(DbHelper.ExecuteScalar(confoosun, CommandType.Text, "select count(ID) from " + Pre + "news where NewsID='" + NewsID + "' or FileName='" + FileName + "'", null)) > 0)
                         {
-                            NewsID = Foosun.Common.Rand.Number(12, true);
-                            FileName = FileName + "_" + Foosun.Common.Rand.Number(3, true);
+                            NewsID = Hg.Common.Rand.Number(12, true);
+                            FileName = FileName + "_" + Hg.Common.Rand.Number(3, true);
                         }
                         #endregion
                         #region SQL参数赋值
@@ -860,7 +860,7 @@ namespace Foosun.AccessDAL
                         param[12] = new OleDbParameter("@SiteID", OleDbType.VarWChar, 12);
                         param[12].Value = Current.SiteID;
                         param[13] = new OleDbParameter("@Editor", OleDbType.VarWChar, 18);
-                        param[13].Value = Foosun.Global.Current.UserName;
+                        param[13].Value = Hg.Global.Current.UserName;
                         param[14] = new OleDbParameter("@CheckStat", OleDbType.VarWChar, 10);
                         param[14].Value = CheckSate;
                         param[15] = new OleDbParameter("@NewsProperty", OleDbType.VarWChar, 30);
@@ -947,13 +947,13 @@ namespace Foosun.AccessDAL
                     switch (n)
                     {
                         case 0:
-                            rnd = Foosun.Common.Rand.Number(m);
+                            rnd = Hg.Common.Rand.Number(m);
                             break;
                         case 1:
-                            rnd = Foosun.Common.Rand.Str_char(m);
+                            rnd = Hg.Common.Rand.Str_char(m);
                             break;
                         case 2:
-                            rnd = Foosun.Common.Rand.Str(m);
+                            rnd = Hg.Common.Rand.Str(m);
                             break;
                     }
                     RetVal = RetVal.Replace(s, rnd);

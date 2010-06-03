@@ -11,9 +11,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
+public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
 {
     public manage_news_Special_List()
     {
@@ -22,8 +22,8 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除缓存
-        Foosun.Publish.CommonData.NewsSpecial.Clear();
-        Foosun.Publish.CommonData.CHSpecial.Clear();
+        Hg.Publish.CommonData.NewsSpecial.Clear();
+        Hg.Publish.CommonData.CHSpecial.Clear();
         Response.CacheControl = "no-cache";                        //设置页面无缓存
         if (!IsPostBack)
         {
@@ -38,11 +38,11 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
         {
             case "Lock":            //锁定专题
                 this.Authority_Code = "C041";
-                Lock(Foosun.Common.Input.checkID(ID));
+                Lock(Hg.Common.Input.checkID(ID));
                 break;
             case "UnLock":          //解锁专题
                 this.Authority_Code = "C041";
-                UnLock(Foosun.Common.Input.checkID(ID));
+                UnLock(Hg.Common.Input.checkID(ID));
                 break;
             case "PDel":            //批量删除专题
                 this.Authority_Code = "C037";
@@ -83,7 +83,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
 
     string SiteList(string SessionSiteID)
     {
-        Foosun.CMS.UserMisc ud = new Foosun.CMS.UserMisc();
+        Hg.CMS.UserMisc ud = new Hg.CMS.UserMisc();
         string siteStr = "<select class=\"form\" name=\"SiteID\" id=\"SiteID\" onChange=\"getchanelInfo(this)\">\r";
         DataTable crs = ud.getSiteList();
         if (crs != null)
@@ -139,7 +139,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
         DataTable dt;
         if (IsSearch)
         {
-           Foosun.CMS.Special sp = new Foosun.CMS.Special();
+           Hg.CMS.Special sp = new Hg.CMS.Special();
            dt = sp.getSpecialBySQL(search_SpecialCName.Text);
            i = dt.Rows.Count;
            j = 1;
@@ -149,7 +149,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
         {
             SQLConditionInfo[] st = new SQLConditionInfo[1];
             st[0] = new SQLConditionInfo("@SiteID", site);
-            dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
         }
 
         this.PageNavigator1.PageCount = j;
@@ -166,15 +166,15 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
                 string strchar = null;
                 //取出子类
                 dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["SpecialID"] + "');\" class=\"list_link\">"+
-                                   "<img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改此专题\" /></a>"+
+                                   "<img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改此专题\" /></a>"+
                                    "<a href=\"javascript:Lock('" + dt.Rows[k]["SpecialID"] + "');\" class=\"list_link\">"+
-                                   "<img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/lock.gif\" border=\"0\" alt=\"锁定此专题\" /></a>"+
+                                   "<img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/lock.gif\" border=\"0\" alt=\"锁定此专题\" /></a>"+
                                    "<a href=\"javascript:UnLock('" + dt.Rows[k]["SpecialID"] + "');\" class=\"list_link\">"+
-                                   "<img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/unlock.gif\" border=\"0\" alt=\"解锁此专题\" /></a>"+
+                                   "<img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/unlock.gif\" border=\"0\" alt=\"解锁此专题\" /></a>"+
                                    "<a href=\"javascript:AddChild('" + dt.Rows[k]["SpecialID"] + "');\" class=\"list_link\">"+
-                                   "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                   "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                    "<a href=\"news_review.aspx?ID=" + dt.Rows[k]["SpecialID"] + "&type=special\" target=\"_blank\" class=\"list_link\">" +
-                                   "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                   "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                    "<input type=\"checkbox\" value=\"'" + dt.Rows[k]["SpecialID"] + "'\" id=\"S_ID\" name=\"S_ID\" />";
                 strchar += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                 strchar += "<td align=\"left\" valign=\"middle\" title=\"专题ID：" + dt.Rows[k]["SpecialID"] + "\">" + dt.Rows[k]["SpecialCName"] + "</td>";
@@ -204,7 +204,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     protected string ChileList(string Classid, string sign)
     {
         string strchar = null;
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         DataTable dv = sc.getChildList(Classid);
         sign += "─";
         if (dv != null)
@@ -215,15 +215,15 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
             for (int pi = 0; pi < dv.Rows.Count; pi++)
             {
                 dv.Rows[pi]["Op"] = "<a href=\"javascript:Update('" + dv.Rows[pi]["SpecialID"] + "');\" class=\"list_link\">"+
-                                    "<img src=\"../../sysImages/"+Foosun.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改此专题\" /></a>"+
+                                    "<img src=\"../../sysImages/"+Hg.Config.UIConfig.CssPath()+"/sysico/edit.gif\" border=\"0\" alt=\"修改此专题\" /></a>"+
                                     "<a href=\"javascript:Lock('" + dv.Rows[pi]["SpecialID"] + "');\" class=\"list_link\">"+
-                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定此专题\" /></a>" +
+                                    "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/lock.gif\" border=\"0\" alt=\"锁定此专题\" /></a>" +
                                     "<a href=\"javascript:UnLock('" + dv.Rows[pi]["SpecialID"] + "');\" class=\"list_link\">"+
-                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁此专题\" /></a>" +
+                                    "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/unlock.gif\" border=\"0\" alt=\"解锁此专题\" /></a>" +
                                     "<a href=\"javascript:AddChild('" + dv.Rows[pi]["SpecialID"] + "');\" class=\"list_link\">" +
-                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                    "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/addclass.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                     "<a href=\"news_review.aspx?ID=" + dv.Rows[pi]["SpecialID"] + "&type=special\" target=\"_blank\" class=\"list_link\">" +
-                                    "<img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
+                                    "<img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"添加子专题\" /></a>" +
                                     "<input type=\"checkbox\" value=\"'" + dv.Rows[pi]["SpecialID"] + "'\" id=\"S_ID\" name=\"S_ID\" />";
                 strchar += "<tr class=\"TR_BG_list\" onmouseover=\"javascript:overColor(this);\" onmouseout=\"javascript:outColor(this);\">";
                 strchar += "<td align=\"left\" valign=\"middle\" >" + sign + dv.Rows[pi]["SpecialCName"] + "</td>";
@@ -257,7 +257,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
 
     protected void Lock(string ID)
     {
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.Lock(ID);
         PageRight("锁定专题成功!", "");
     }
@@ -271,7 +271,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     
     protected void UnLock(string ID)
     {
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.UnLock(ID);
         PageRight("解锁专题成功!", "");
     }
@@ -288,11 +288,11 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
         if (Request.Form["S_ID"] == null || Request.Form["S_ID"] == "")
             PageError("请选择要批量删除的专题!", "special_list.aspx");
         string str_SID = "'" + Request.Form["S_ID"].Replace(",", "','") + "'";
-        str_SID = Foosun.Common.Input.Losestr(str_SID);
+        str_SID = Hg.Common.Input.Losestr(str_SID);
         if (str_SID == "IsNull")
             PageError("请选择要批量删除的专题!", "special_list.aspx");
 
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
 
         if (Mode == "Re")
         {
@@ -317,11 +317,11 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     protected void Plock()
     {
         string str_SID = Request.Form["S_ID"];
-        str_SID = Foosun.Common.Input.Losestr(str_SID);
+        str_SID = Hg.Common.Input.Losestr(str_SID);
         if (str_SID == "IsNull")
             PageError("请选择要批量锁定的专题!", "special_list.aspx");
         
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.PLock(str_SID);
         PageRight("批量锁定成功!", "special_list.aspx");
     }
@@ -335,11 +335,11 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     protected void PUnlock()
     {
         string str_SID = Request.Form["S_ID"];
-        str_SID = Foosun.Common.Input.Losestr(str_SID);
+        str_SID = Hg.Common.Input.Losestr(str_SID);
         if (str_SID == "IsNull")
             PageError("请选择要批量解锁的专题!", "special_list.aspx");
 
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.PUnLock(str_SID);
         PageRight("批量解锁成功!<br />如果批量选中的专题还有未解锁的,请先解锁此专题的父专题!", "special_list.aspx");
     }
@@ -348,31 +348,31 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     protected void Publish()
     {
         string str_SID = Request.Form["S_ID"];
-        str_SID = Foosun.Common.Input.Losestr(str_SID);
+        str_SID = Hg.Common.Input.Losestr(str_SID);
         if (str_SID == "IsNull")
             PageError("请选择要生成的专题!", "special_list.aspx");
         
         string[] arr_SID = str_SID.Split(',');
 
-        Foosun.Control.HProgressBar.Start();
-        Foosun.Publish.General PG = new Foosun.Publish.General();
+        Hg.Control.HProgressBar.Start();
+        Hg.Publish.General PG = new Hg.Publish.General();
         try
         {
-            Foosun.Control.HProgressBar.Roll("正在发布专题", 0);
+            Hg.Control.HProgressBar.Roll("正在发布专题", 0);
             int j = 0;
             int m = arr_SID.Length;
             for (int i = 0; i < m; i++)
             {
                 if (PG.publishSingleSpecial(arr_SID[i].ToString().Replace("'", "")))
                     j++;
-                Foosun.Control.HProgressBar.Roll("共生成" + m + "个专题，正在发布" + (i + 1) + "个。", ((i + 1) * 100 / m));
+                Hg.Control.HProgressBar.Roll("共生成" + m + "个专题，正在发布" + (i + 1) + "个。", ((i + 1) * 100 / m));
             }
-            Foosun.Control.HProgressBar.Roll("发布专题成功,成功" + j + "个,<a href=\"../Publish/error/geterror.aspx?\">失败" + (arr_SID.Length - j) + "个(可能有专题有浏览权限)</a>. &nbsp;<a href=\"special_list.aspx\">返回</a>", 100);
+            Hg.Control.HProgressBar.Roll("发布专题成功,成功" + j + "个,<a href=\"../Publish/error/geterror.aspx?\">失败" + (arr_SID.Length - j) + "个(可能有专题有浏览权限)</a>. &nbsp;<a href=\"special_list.aspx\">返回</a>", 100);
         }
         catch (Exception ex)
         {
-            Foosun.Common.Public.savePublicLogFiles("□□□发布专题", "【错误描述：】\r\n" + ex.ToString(), UserName);
-            Foosun.Control.HProgressBar.Roll("发布专题失败。<a href=\"../publish/error/geterror.aspx?\">查看日志</a>", 0);
+            Hg.Common.Public.savePublicLogFiles("□□□发布专题", "【错误描述：】\r\n" + ex.ToString(), UserName);
+            Hg.Control.HProgressBar.Roll("发布专题失败。<a href=\"../publish/error/geterror.aspx?\">查看日志</a>", 0);
         }
         Response.End();
     }
@@ -402,7 +402,7 @@ public partial class manage_news_Special_List : Foosun.Web.UI.ManagePage
     
     protected string GetSpicaelNewsNum(string SID)
     {
-        Foosun.CMS.Special sc = new Foosun.CMS.Special();
+        Hg.CMS.Special sc = new Hg.CMS.Special();
         string cntnum = sc.getSpicaelNewsNum(SID);
         return cntnum;    
     }

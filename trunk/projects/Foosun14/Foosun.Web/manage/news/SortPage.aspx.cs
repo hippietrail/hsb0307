@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_SortPage : Foosun.Web.UI.ManagePage
+public partial class manage_news_SortPage : Hg.Web.UI.ManagePage
 {
     ContentManage rd = new ContentManage();
     rootPublic pd = new rootPublic();
@@ -65,7 +65,7 @@ public partial class manage_news_SortPage : Foosun.Web.UI.ManagePage
         int i, j;
         string _tmp = "";
         string _tmp1 = "";
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, null);
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
         this.PageNavigator1.RecordCount = i;

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Reflection;
-using Foosun.Model;
+using Hg.Model;
 using System.Collections.Specialized;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface Isys
     {

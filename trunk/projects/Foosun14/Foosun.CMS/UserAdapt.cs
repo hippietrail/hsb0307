@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class UserAdapt
     {
-        Foosun.DALFactory.IUserAdapt dal;
+        Hg.DALFactory.IUserAdapt dal;
         public UserAdapt()
         {
             dal = DataAccess.CreateUserAdapt();

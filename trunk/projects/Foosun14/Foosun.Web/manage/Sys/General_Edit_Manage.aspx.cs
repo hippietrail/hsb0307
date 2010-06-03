@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Sys_General_Edit_Manage : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_General_Edit_Manage : Hg.Web.UI.ManagePage
 {
     public manage_Sys_General_Edit_Manage()
     {
@@ -21,7 +21,7 @@ public partial class manage_Sys_General_Edit_Manage : Foosun.Web.UI.ManagePage
     rootPublic pd = new rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
-        string action = Foosun.Common.Input.Filter(Request.QueryString["Action"]);
+        string action = Hg.Common.Input.Filter(Request.QueryString["Action"]);
         if (!IsPostBack)
         {
             Response.CacheControl = "no-cache";//设置页面无缓存
@@ -73,11 +73,11 @@ public partial class manage_Sys_General_Edit_Manage : Foosun.Web.UI.ManagePage
             int GID = int.Parse(Request.QueryString["ID"]);
 
             #region 取得常规添加中的表单信息
-            string Str_Sel_Type = Foosun.Common.Input.Filter(this.Sel_Type.Text.Trim());//类型
-            string Str_Txt_Name = Foosun.Common.Input.Filter(this.Txt_Name.Text.Trim());//标题
+            string Str_Sel_Type = Hg.Common.Input.Filter(this.Sel_Type.Text.Trim());//类型
+            string Str_Txt_Name = Hg.Common.Input.Filter(this.Txt_Name.Text.Trim());//标题
             // string Str_Txt_isLock = Request.Form["islock"];//锁定
-            string Str_Txt_LinkUrl = Foosun.Common.Input.Filter(this.Txt_LinkUrl.Text.Trim());//链接地址
-            string Str_Txt_Email = Foosun.Common.Input.Filter(this.Txt_Email.Text.Trim());//电子邮件
+            string Str_Txt_LinkUrl = Hg.Common.Input.Filter(this.Txt_LinkUrl.Text.Trim());//链接地址
+            string Str_Txt_Email = Hg.Common.Input.Filter(this.Txt_Email.Text.Trim());//电子邮件
 
             rd.UpdateGeneral(Str_Sel_Type, Str_Txt_Name, Str_Txt_LinkUrl, Str_Txt_Email, GID);
             pd.SaveUserAdminLogs(1, 1, UserNum, "修改常规项成功", "常规选项修改成功.");

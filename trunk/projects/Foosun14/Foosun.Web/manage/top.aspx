@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="top.aspx.cs" Inherits="Foosun.Web.manage.top" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="top.aspx.cs" Inherits="Hg.Web.manage.top" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>无标题页</title>
-    <link href="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/css/css.css"
+    <link href="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/css/css.css"
         rel="stylesheet" type="text/css" />
 
     <script language="JavaScript" type="text/javascript" src="../Configuration/JS/Prototype.js"></script>
@@ -73,22 +73,22 @@ function logout()
                     <td>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="indexq">
                             <tr>
-                                <td style="width: 142px; height: 38px;"><img id="Img1" src="../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/logo.jpg" /></td>
+                                <td style="width: 142px; height: 38px;"><img id="Img1" src="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/logo.jpg" /></td>
                                 <td style="width: 420px; height: 38px; text-align: center;"></td>
                                 <td align="right">
                                     <a href="#" onclick="logout();" class="Lion_1">退出</a>&nbsp;┊&nbsp;
-                                    <a href="../<% Response.Write(Foosun.Config.UIConfig.dirUser); %>/index.aspx" target="_blank" class="Lion_1" title="进入会员中心">用户</a>&nbsp;┊&nbsp;
-                                    <a href="../<% Response.Write(Foosun.Config.UIConfig.dirUser); %>/info/ChangePassword.aspx" target="sys_main" class="Lion_1" title="修改密码">密码</a>&nbsp;┊&nbsp;
+                                    <a href="../<% Response.Write(Hg.Config.UIConfig.dirUser); %>/index.aspx" target="_blank" class="Lion_1" title="进入会员中心">用户</a>&nbsp;┊&nbsp;
+                                    <a href="../<% Response.Write(Hg.Config.UIConfig.dirUser); %>/info/ChangePassword.aspx" target="sys_main" class="Lion_1" title="修改密码">密码</a>&nbsp;┊&nbsp;
                                     <a href="sys/skinChange.aspx" title="设置系统皮肤" target="sys_main" class="Lion_1">风格</a>&nbsp;┊&nbsp;
                                     <a href="ver/about.aspx" target="sys_main" class="Lion_1" title="关于产品">关于</a>&nbsp;┊&nbsp;
                                     <a href="../help/HelpList.aspx" target="sys_main" class="Lion_1" title="系统帮助">帮助</a>&nbsp;┊&nbsp;
-                                    <a href="http://www.foosun.net" target="sys_main" class="Lion_1" title="风讯官方站">Foosun.NET</a>&nbsp;&nbsp;
+                                    <a href="http://www.foosun.net" target="sys_main" class="Lion_1" title="风讯官方站">Hg.NET</a>&nbsp;&nbsp;
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-                <tr style="background-image: url(../sysImages/<% Response.Write(Foosun.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg); width: 100%">
+                <tr style="background-image: url(../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/menu_bg.jpg); width: 100%">
                 <td>
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>

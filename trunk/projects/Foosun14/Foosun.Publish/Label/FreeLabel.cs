@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Data;
-using Foosun.Config;
+using Hg.Config;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     /// <summary>
     /// 自由标签
@@ -223,7 +223,7 @@ namespace Foosun.Publish
         }
         protected string ReplaceField(string Input,string FieldName,string FieldValue)
         {
-            FieldValue = FieldValue.Replace("{@dirfile}", Foosun.Config.UIConfig.dirFile);
+            FieldValue = FieldValue.Replace("{@dirfile}", Hg.Config.UIConfig.dirFile);
 
             if (Input == null || Input.Trim() == string.Empty)
                 return string.Empty;
@@ -234,7 +234,7 @@ namespace Foosun.Publish
             if (mymatch.Success)
             {
                 int pos = int.Parse(mymatch.Groups["n"].Value);
-                FieldValue = Foosun.Common.Input.GetSubString(FieldValue, pos);
+                FieldValue = Hg.Common.Input.GetSubString(FieldValue, pos);
                 RetVal = Regex.Replace(Input, pattern, FieldValue);
             }
             else
@@ -258,7 +258,7 @@ namespace Foosun.Publish
                 //    if (mymatch.Success && (FieldName.ToUpper() == "NEWSID"))
                 //    {
                 //        是新闻链接
-                //        string urls = CommonData.getNewsURLFormID(FieldValue, Foosun.Config.DBConfig.CmsConString);
+                //        string urls = CommonData.getNewsURLFormID(FieldValue, Hg.Config.DBConfig.CmsConString);
                 //        string linkstring = "<a href=\"" + urls + "\">" + FieldName + "</a>";
                 //        RetVal = Input.Replace("[*" + FieldName + "*]", urls);
                 //    }
@@ -276,7 +276,7 @@ namespace Foosun.Publish
                 }
                 else if (tabStr == "fs_news")
                 {
-                    string urls = CommonData.getNewsURLFormID(FieldValue, Foosun.Config.DBConfig.CmsConString);
+                    string urls = CommonData.getNewsURLFormID(FieldValue, Hg.Config.DBConfig.CmsConString);
                     string linkstring = "<a href=\"" + urls + "\">" + FieldName + "</a>";
                     RetVal = Input.Replace("[*" + FieldName + "*]", urls);
                 }

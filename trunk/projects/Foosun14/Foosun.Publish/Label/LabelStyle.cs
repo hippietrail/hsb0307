@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.Config;
+using Hg.Config;
 using System.Collections;
 
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     /// <summary>
     /// 有关标签中样式的处理类

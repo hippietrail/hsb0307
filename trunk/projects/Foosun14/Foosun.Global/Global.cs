@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Web;
 using System.Text;
-using Foosun.Model;
+using Hg.Model;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace Foosun.Global
+namespace Hg.Global
 {
     public class Current
     {
@@ -40,7 +40,7 @@ namespace Foosun.Global
                 }
                 catch
                 {
-                    string url = "../" + Foosun.Config.UIConfig.dirUser + "/index.aspx";
+                    string url = "../" + Hg.Config.UIConfig.dirUser + "/index.aspx";
                     System.Web.HttpContext.Current.Response.Redirect(url, true);
                 }
                 return GetInfo().UserNum;

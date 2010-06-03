@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Security;
 using System.IO;
 using System.Xml;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.CMS;
-using Foosun.Config.API;
-namespace Foosun.PlugIn.Passport
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.CMS;
+using Hg.Config.API;
+namespace Hg.PlugIn.Passport
 {
     /// <summary>
     /// 响应整合
@@ -18,7 +18,7 @@ namespace Foosun.PlugIn.Passport
     {
 
         public System.Collections.Generic.List<string> ErrStr = new System.Collections.Generic.List<string>();
-        Foosun.Config.API.APIConfig config = Foosun.Config.API.APIConfigs.GetConfig();
+        Hg.Config.API.APIConfig config = Hg.Config.API.APIConfigs.GetConfig();
         public bool FoundErr = false;
         public string Action = string.Empty;
         public string syskey = string.Empty;
@@ -372,8 +372,8 @@ namespace Foosun.PlugIn.Passport
         /// </summary>
         void reguser()
         {
-            Foosun.CMS.user User = new Foosun.CMS.user();
-            Foosun.Model.UserParam upi = User.UserParam("0");
+            Hg.CMS.user User = new Hg.CMS.user();
+            Hg.Model.UserParam upi = User.UserParam("0");
             
 
             if (User.sel_username(this.username) != 0)
@@ -384,11 +384,11 @@ namespace Foosun.PlugIn.Passport
 
             #region 取得会员表注册参数
             string pwd = this.password;
-            string UserPassword = Foosun.Common.Input.MD5(pwd, true);
-            string UserNum = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            string UserPassword = Hg.Common.Input.MD5(pwd, true);
+            string UserNum = Hg.Common.Rand.Number(12);//产生12位随机字符
 
-            Foosun.Model.User ui = new Foosun.Model.User();
-            Foosun.Model.UserFields ufi = new Foosun.Model.UserFields();
+            Hg.Model.User ui = new Hg.Model.User();
+            Hg.Model.UserFields ufi = new Hg.Model.UserFields();
 
             ui.Id = 0;
             ui.UserNum = UserNum;
@@ -400,7 +400,7 @@ namespace Foosun.PlugIn.Passport
             ui.Sex = 0;
             ui.birthday = Convert.ToDateTime("1980-11-11");
             ui.Userinfo = "";
-            ui.UserFace = "" + Foosun.Publish.CommonData.getUrl() + "/sysImages/user/noHeadpic.gif";
+            ui.UserFace = "" + Hg.Publish.CommonData.getUrl() + "/sysImages/user/noHeadpic.gif";
             ui.userFacesize = "80|80";
             ui.marriage = 0;
 
@@ -421,14 +421,14 @@ namespace Foosun.PlugIn.Passport
             ui.LoginNumber = 0;
             ui.FriendClass = "";
             ui.LoginLimtNumber = 0;
-            ui.LastIP = Foosun.Common.Public.getUserIP();
+            ui.LastIP = Hg.Common.Public.getUserIP();
             ui.SiteID = "0";
             ui.Addfriend = "2";
             ui.isOpen = 0;
             ui.ParmConstrNum = 0;
 
             ///注册是否需要实名验证
-            Foosun.Model.UserGroup ugi = new Foosun.Model.UserGroup();
+            Hg.Model.UserGroup ugi = new Hg.Model.UserGroup();
             ugi = User.UserGroup(upi.RegGroupNumber);
             ui.isIDcard = 0;
             ui.IDcardFiles = "";
@@ -439,7 +439,7 @@ namespace Foosun.PlugIn.Passport
             if (upi.returnemail == 1)
             {
                 ui.EmailATF = 0;
-                ui.EmailCode = Foosun.Common.Input.MD5(Foosun.Common.Rand.Str(15), false); ;
+                ui.EmailCode = Hg.Common.Input.MD5(Hg.Common.Rand.Str(15), false); ;
             }
             else
             {
@@ -451,7 +451,7 @@ namespace Foosun.PlugIn.Passport
             if (upi.returnmobile == 1)
             {
                 ui.isMobile = 0;
-                ui.MobileCode = Foosun.CMS.FSSecurity.FDESEncrypt(Foosun.Common.Rand.Str(8), 1);
+                ui.MobileCode = Hg.CMS.FSSecurity.FDESEncrypt(Hg.Common.Rand.Str(8), 1);
             }
             else
             {
@@ -589,9 +589,9 @@ namespace Foosun.PlugIn.Passport
 
 
             #region 取得会员冲值记录参数
-            Foosun.Model.UserGhistory ughi = new Foosun.Model.UserGhistory();
+            Hg.Model.UserGhistory ughi = new Hg.Model.UserGhistory();
             ughi.Id = 0;
-            ughi.GhID = Foosun.Common.Rand.Number(12);//产生12位随机字符
+            ughi.GhID = Hg.Common.Rand.Number(12);//产生12位随机字符
             ughi.ghtype = 1;
             ughi.Gpoint = ui.gPoint;
             ughi.iPoint = ugi.iPoint;
@@ -607,8 +607,8 @@ namespace Foosun.PlugIn.Passport
             {
                 //CreateFolder
                 string Path = string.Empty;
-                string Userfiles = Foosun.Config.UIConfig.UserdirFile;
-                string _dirdum = Foosun.Config.UIConfig.dirDumm;
+                string Userfiles = Hg.Config.UIConfig.UserdirFile;
+                string _dirdum = Hg.Config.UIConfig.dirDumm;
 
                 if (_dirdum.Trim() != string.Empty)
                 {
@@ -618,7 +618,7 @@ namespace Foosun.PlugIn.Passport
                 string CreatePath = this.context.Server.MapPath(Path);
                 try
                 {
-                    Foosun.CMS.Templet.Templet tc = new Foosun.CMS.Templet.Templet();
+                    Hg.CMS.Templet.Templet tc = new Hg.CMS.Templet.Templet();
                     tc.AddDir(CreatePath, ui.UserNum);
                 }
                 catch { }
@@ -632,19 +632,19 @@ namespace Foosun.PlugIn.Passport
                     string Emailto = ui.Email;
                     string EmailUserNum = ui.UserNum;
                     string EmailCode = ui.EmailCode;
-                    string EmailFrom = Foosun.Config.UIConfig.emailfrom;
-                    string EmailSmtpServer = Foosun.Config.UIConfig.smtpserver;
-                    string EmailUserName = Foosun.Config.UIConfig.emailuserName;
-                    string EmailPwd = Foosun.Config.UIConfig.emailuserpwd;
+                    string EmailFrom = Hg.Config.UIConfig.emailfrom;
+                    string EmailSmtpServer = Hg.Config.UIConfig.smtpserver;
+                    string EmailUserName = Hg.Config.UIConfig.emailuserName;
+                    string EmailPwd = Hg.Config.UIConfig.emailuserpwd;
                     string subj = "邮件密码验证";
 
                     string bodys = "亲爱的" + this.username + ":<br />";
                     bodys += "&nbsp;&nbsp;您注册的用户名：" + this.username + ",用户编号：" + UserNum + ",密码：" + pwd + "<br />";
-                    bodys += "&nbsp;&nbsp;请点击此联接激活您的电子邮件:" + Foosun.Publish.CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/info" +
-                             "/getPassport.aspx?t=mail&e=" + Foosun.Common.Input.MD5(ui.Email, true) + "&" +
-                             "u=" + Foosun.Common.Input.MD5(ui.UserNum, true) + "&c=" + ui.EmailCode + "";
+                    bodys += "&nbsp;&nbsp;请点击此联接激活您的电子邮件:" + Hg.Publish.CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/info" +
+                             "/getPassport.aspx?t=mail&e=" + Hg.Common.Input.MD5(ui.Email, true) + "&" +
+                             "u=" + Hg.Common.Input.MD5(ui.UserNum, true) + "&c=" + ui.EmailCode + "";
 
-                    Foosun.Common.Public.sendMail(EmailSmtpServer, EmailUserName, EmailPwd, EmailFrom, Emailto, subj, bodys);
+                    Hg.Common.Public.sendMail(EmailSmtpServer, EmailUserName, EmailPwd, EmailFrom, Emailto, subj, bodys);
 
                 }
             }
@@ -658,7 +658,7 @@ namespace Foosun.PlugIn.Passport
         void login()
         {
             GlobalUserInfo info;
-            EnumLoginState state = new Foosun.CMS.UserLogin().PersonLogin(username, password, out info);
+            EnumLoginState state = new Hg.CMS.UserLogin().PersonLogin(username, password, out info);
             if (state != EnumLoginState.Succeed)
                 this.AddErrStr("用户名或密码错误！");
         }
@@ -668,7 +668,7 @@ namespace Foosun.PlugIn.Passport
         }
         void update()
         {
-            Foosun.CMS.UserMisc userMisc = new UserMisc();
+            Hg.CMS.UserMisc userMisc = new UserMisc();
             SysUserInfo userInfo= userMisc.GetUserInfo(this.username);
             if (userInfo == null)
             {
@@ -691,7 +691,7 @@ namespace Foosun.PlugIn.Passport
             }
             if (!string.IsNullOrEmpty(this.password))
             {
-                userInfo.UserPassword = Foosun.Common.Input.MD5(this.password, true);
+                userInfo.UserPassword = Hg.Common.Input.MD5(this.password, true);
             }
             if (!string.IsNullOrEmpty(this.Sex))
             {
@@ -753,7 +753,7 @@ namespace Foosun.PlugIn.Passport
         }
         void getinfo()
         {
-            Foosun.CMS.UserMisc userMisc = new UserMisc();
+            Hg.CMS.UserMisc userMisc = new UserMisc();
             SysUserInfo userInfo = userMisc.GetUserInfo(this.username);
             if (userInfo == null)
             {
@@ -787,7 +787,7 @@ namespace Foosun.PlugIn.Passport
         }
         void checkname()
         {
-            Foosun.DALFactory.IUser dal = DataAccess.CreateUser();
+            Hg.DALFactory.IUser dal = DataAccess.CreateUser();
             if (dal.sel_username(this.username) != 0)
             {
                 this.AddErrStr("用户名已被占用！");

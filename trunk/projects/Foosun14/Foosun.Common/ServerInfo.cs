@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace Foosun.Common
+namespace Hg.Common
 {
     /// <summary>
     /// WEB信息

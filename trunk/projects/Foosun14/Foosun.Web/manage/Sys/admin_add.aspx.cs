@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
+public partial class Manage_System_admin_add : Hg.Web.UI.ManagePage
 {
     public Manage_System_admin_add()
     {
@@ -37,7 +37,7 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
     /// Code By DengXi
     protected void GetAdminGroupID()                    
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         DataTable Ds = ac.GetAdminGroupList();
         AdminGroup.DataTextField = "GroupName";          //设置下拉列表框显示的文本
         AdminGroup.DataValueField = "adminGroupNumber";  //设置下拉列表框显示的文本项的值
@@ -49,10 +49,10 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
     {
         if (Page.IsValid == true)                       //判断是否验证成功
         {
-            Foosun.Model.AdminInfo aci = new Foosun.Model.AdminInfo();
+            Hg.Model.AdminInfo aci = new Hg.Model.AdminInfo();
 
             aci.UserName = Request.Form["TxtUserName"];
-            aci.UserPassword = Foosun.Common.Input.MD5(Request.Form["UserPwd"].ToString(),true);
+            aci.UserPassword = Hg.Common.Input.MD5(Request.Form["UserPwd"].ToString(),true);
             aci.RealName = Request.Form["RealName"];
             aci.isAdmin = 1;
             aci.Email = Request.Form["Email"];
@@ -68,7 +68,7 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
             aci.cPoint = 0;
             aci.gPoint = 0;
             aci.iPoint = 0;
-            Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+            Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
             aci.UserGroupNumber = pd.GetRegGroupNumber();
            
             if (this.AdminGroup.SelectedValue != "")
@@ -87,7 +87,7 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
 
             if (aci.isChannel == 0) {aci.isChSupper = 0;}
             int result = 0;
-            Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+            Hg.CMS.Admin ac = new Hg.CMS.Admin();
             result = ac.Add(aci);
             if(result==1)
                 PageRight("添加管理员成功!", "admin_list.aspx");
@@ -104,7 +104,7 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
     ///  Code By DengXi
     protected void SiteList()
     {
-        Foosun.CMS.Admin ac = new Foosun.CMS.Admin();
+        Hg.CMS.Admin ac = new Hg.CMS.Admin();
         DataTable Ds = ac.GetSiteList();
 
         string str_SiteIDTempstr="";

@@ -11,21 +11,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 using System.Text.RegularExpressions;
 
-public partial class manage_label_style : Foosun.Web.UI.ManagePage
+public partial class manage_label_style : Hg.Web.UI.ManagePage
 {
     public manage_label_style()
     {
         Authority_Code = "T017";
     }
     public string Cname = "";
-    Foosun.CMS.Label ld = new Foosun.CMS.Label();
+    Hg.CMS.Label ld = new Hg.CMS.Label();
     protected void Page_Load(object sender, EventArgs e)
     {
         //清除样式缓存
-        Foosun.Publish.LabelStyle.CatchClear();
+        Hg.Publish.LabelStyle.CatchClear();
         Response.CacheControl = "no-cache";                        //设置页面无缓存
         if (!IsPostBack)
         {
@@ -61,7 +61,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
             SQLConditionInfo[] st = new SQLConditionInfo[2];
             st[0] = new SQLConditionInfo("@SiteID", SiteID);
             st[1] = new SQLConditionInfo("@Keyword", "%" + Request.QueryString["keyword"].ToString() + "%");
-            dt = Foosun.CMS.Pagination.GetPage("manage_label_style_3_aspx", PageIndex, 40, out i, out j, st);
+            dt = Hg.CMS.Pagination.GetPage("manage_label_style_3_aspx", PageIndex, 40, out i, out j, st);
             Cname = "样式名称";
             Back.InnerHtml = "";
         }
@@ -70,7 +70,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
             if (str_classid == null || str_classid == "" || str_classid == string.Empty)
             {
                 SQLConditionInfo st = new SQLConditionInfo("@SiteID", SiteID);
-                dt = Foosun.CMS.Pagination.GetPage("manage_label_style_1_aspx", PageIndex, 20, out i, out j, st);
+                dt = Hg.CMS.Pagination.GetPage("manage_label_style_1_aspx", PageIndex, 20, out i, out j, st);
                 tf = true;
                 Cname = "分类名称";
                 Back.InnerHtml = "";
@@ -78,9 +78,9 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
             else
             {
                 SQLConditionInfo[] st = new SQLConditionInfo[2];
-                st[0] = new SQLConditionInfo("@ClassID", Foosun.Common.Input.checkID(str_classid));
+                st[0] = new SQLConditionInfo("@ClassID", Hg.Common.Input.checkID(str_classid));
                 st[1] = new SQLConditionInfo("@SiteID", SiteID);
-                dt = Foosun.CMS.Pagination.GetPage("manage_label_style_2_aspx", PageIndex, 20, out i, out j, st);
+                dt = Hg.CMS.Pagination.GetPage("manage_label_style_2_aspx", PageIndex, 20, out i, out j, st);
                 Cname = "样式名称";
                 Back.InnerHtml = " | <a href=\"style.aspx\" class=\"list_link\">返回上一级</a>";
             }
@@ -111,11 +111,11 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                         dt.Rows[k]["contents"] = tmContent;
                         if (str_classid == "99999999")
                         {
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" + dt.Rows[k]["no"];
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>" + dt.Rows[k]["no"];
                         }
                         else
                         {
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('style','" + dt.Rows[k]["id"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /><a href=\"javascript:Dels('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>" + dt.Rows[k]["no"];
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('style','" + dt.Rows[k]["id"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /><a href=\"javascript:Dels('style','" + dt.Rows[k]["styleID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>" + dt.Rows[k]["no"];
                         }
 
                     }
@@ -124,9 +124,9 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                         int getCount = ld.getClassLabelCount(dt.Rows[k]["ClassID"].ToString(), 1);
                         dt.Rows[k]["Type"] = "<a class=\"list_link\" href=\"style.aspx?ClassID=" + dt.Rows[k]["ClassID"].ToString() + "\" title=\"点击查看此分类下的样式。&#13;此样式分类编号：" + dt.Rows[k]["ClassID"].ToString() + "\">" + dt.Rows[k]["Sname"].ToString() + "</a><span class=\"reshow\" style=\"font-size:10px;\" title=\"此栏目下样式数量\">(" + getCount + ")</span>";
                         if (str_classid == "99999999")
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a>";
                         else
-                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /></a><a href=\"javascript:Dels('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
+                            dt.Rows[k]["Op"] = "<a href=\"javascript:Update('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edit.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除到回收站\" /></a><a href=\"javascript:Dels('styleclass','" + dt.Rows[k]["ClassID"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/dels.gif\" border=\"0\" alt=\"彻底删除\" /></a>";
                     }
                 }
             }
@@ -157,7 +157,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                 switch (str_Type)
                 {
                     case "style":
-                        delstyle(Foosun.Common.Input.checkID(str_ID));
+                        delstyle(Hg.Common.Input.checkID(str_ID));
                         break;
                     case "styleclass":
                         if (ld.getClassLabelCount(str_ID.ToString(), 1) != 0)
@@ -166,7 +166,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                         }
                         else
                         {
-                            delclass(Foosun.Common.Input.checkID(str_ID));
+                            delclass(Hg.Common.Input.checkID(str_ID));
                         }
                         break;
                     default:
@@ -177,7 +177,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                 switch (str_Type)
                 {
                     case "style":
-                        delsstyle(Foosun.Common.Input.checkID(str_ID));
+                        delsstyle(Hg.Common.Input.checkID(str_ID));
                         break;
                     case "styleclass":
                         if (ld.getClassLabelCount(str_ID.ToString(), 1) != 0)
@@ -186,7 +186,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
                         }
                         else
                         {
-                            delsclass(Foosun.Common.Input.checkID(str_ID));
+                            delsclass(Hg.Common.Input.checkID(str_ID));
                         }
                         break;
                     default:
@@ -210,7 +210,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
     {
         this.Authority_Code = "T019";
         this.CheckAdminAuthority();
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleClassDel(ID);
         PageRight("彻底删除栏目成功!", "style.aspx");
     }
@@ -226,7 +226,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
     {
         this.Authority_Code = "T019";
         this.CheckAdminAuthority();
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleClassRDel(ID);
         PageRight("将栏目放入回收站成功!", "style.aspx");
     }
@@ -240,7 +240,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
 
     protected void delstyle(string ID)
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleRdel(ID);
         PageRight("将样式放入回收站成功!", "style.aspx");
     }
@@ -254,7 +254,7 @@ public partial class manage_label_style : Foosun.Web.UI.ManagePage
 
     protected void delsstyle(string ID)
     {
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleDel(ID);
         PageRight("彻底删除样式成功!", "style.aspx");
     }

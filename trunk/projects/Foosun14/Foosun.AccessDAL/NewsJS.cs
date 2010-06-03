@@ -3,13 +3,13 @@ using System.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.OleDb;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.Global;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.Global;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class NewsJS : DbBase, INewsJS
     {
@@ -187,10 +187,10 @@ namespace Foosun.AccessDAL
                 }
                 else
                 {
-                    string jsid = Foosun.Common.Rand.Number(12);
+                    string jsid = Hg.Common.Rand.Number(12);
                     while (Convert.ToInt32(DbHelper.ExecuteScalar(cn, CommandType.Text, "select count(*) from " + Pre + "News_JS where JsID='" + jsid + "'", null)) > 0)
                     {
-                        jsid = Foosun.Common.Rand.Number(12, true);
+                        jsid = Hg.Common.Rand.Number(12, true);
                     }
                     RetVal = jsid;
                     Sql = "insert into " + Pre + "News_JS (JsID,jsType," + Database.getParam(param) + ",CreatTime) ";

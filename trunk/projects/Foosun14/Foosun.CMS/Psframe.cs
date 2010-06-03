@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Psframe
     {
-        Foosun.DALFactory.IPsframe dal;
+        Hg.DALFactory.IPsframe dal;
         public Psframe()
         {
             dal = DataAccess.CreatePsframe();
@@ -52,7 +52,7 @@ namespace Foosun.CMS
         /// 创建PSF
         /// </summary>
         /// <param name="uc"></param>
-        public void InsertPSF(Foosun.Model.PSF uc)
+        public void InsertPSF(Hg.Model.PSF uc)
         {
             dal.InsertPSF(uc);
         }
@@ -61,7 +61,7 @@ namespace Foosun.CMS
         /// 修改PSF
         /// </summary>
         /// <param name="uc"></param>
-        public int UpdatePSF(Foosun.Model.PSF uc)
+        public int UpdatePSF(Hg.Model.PSF uc)
         {
             return dal.UpdatePSF(uc);
         }
@@ -119,7 +119,7 @@ namespace Foosun.CMS
         /// 创建Task
         /// </summary>
         /// <param name="uc"></param>
-        public void insertTask(Foosun.Model.Task uc)
+        public void insertTask(Hg.Model.Task uc)
         {
             dal.insertTask(uc);
         } 
@@ -128,7 +128,7 @@ namespace Foosun.CMS
         /// 修改Task
         /// </summary>
         /// <param name="uc"></param>
-        public void UpdateTask(Foosun.Model.Task uc)
+        public void UpdateTask(Hg.Model.Task uc)
         {
             dal.UpdateTask(uc);
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace Foosun.DALFactory
+namespace Hg.DALFactory
 {
     public interface IDynamicTrans
     {

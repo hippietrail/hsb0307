@@ -20,7 +20,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
 
-public partial class manage_collect_Collect_News : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_News : Hg.Web.UI.ManagePage
 {
     public manage_collect_Collect_News()
     {
@@ -32,7 +32,7 @@ public partial class manage_collect_Collect_News : Foosun.Web.UI.ManagePage
         {
             try
             {
-                Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+                Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
                 string id = Request.Form["NewsID"];
                 if (Request.Form["Option"].Equals("DeleteNews"))
                 {
@@ -74,7 +74,7 @@ public partial class manage_collect_Collect_News : Foosun.Web.UI.ManagePage
     private void ListDataBind(int PageIndex)
     {
         int nRCount, nPCount;
-        Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+        Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
         this.RptNews.DataSource = cl.GetNewsPage(PageIndex, PAGESIZE, out nRCount, out nPCount);
         this.RptNews.DataBind();
         this.PageNavigator1.PageCount = nPCount;
@@ -112,11 +112,11 @@ public partial class manage_collect_Collect_News : Foosun.Web.UI.ManagePage
     /// <returns></returns>
     private bool deleteNews(string delID)
     {
-        Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+        Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
         //得到要删除的新闻ID
         string[] strDelID = delID.Split(',');
 
-        Foosun.Model.CollectNewsInfo collectNews = null;
+        Hg.Model.CollectNewsInfo collectNews = null;
         ArrayList arr = new ArrayList();
         foreach (string s in strDelID)
         {
@@ -154,7 +154,7 @@ public partial class manage_collect_Collect_News : Foosun.Web.UI.ManagePage
             foreach (string s in arr)
             {
                 string imageFileSrc = s.Substring(s.IndexOf("/files"),s.Length - s.IndexOf("/files"));
-                Foosun.Common.Public.DelFile(null, Server.MapPath(imageFileSrc));
+                Hg.Common.Public.DelFile(null, Server.MapPath(imageFileSrc));
             }
             return true;
         }

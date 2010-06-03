@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
-namespace Foosun.AccessDAL
+using Hg.DALProfile;
+using Hg.Config;
+namespace Hg.AccessDAL
 {
     public class Survey : DbBase, ISurvey
     {
@@ -18,7 +18,7 @@ namespace Foosun.AccessDAL
         {
             try
             {
-                SiteID = Foosun.Global.Current.SiteID;
+                SiteID = Hg.Global.Current.SiteID;
             }
             catch
             {
@@ -551,7 +551,7 @@ namespace Foosun.AccessDAL
         {
             int PageError = 0;
             string IPLIST = "";
-            string LoginIP = Foosun.Global.Current.ClientIP;
+            string LoginIP = Hg.Global.Current.ClientIP;
             string IPSQL = "select IpLimit from " + Pre + "vote_Param";
             DataTable IPDT = (DataTable)DbHelper.ExecuteTable(CommandType.Text, IPSQL, null);
             if (IPDT != null)

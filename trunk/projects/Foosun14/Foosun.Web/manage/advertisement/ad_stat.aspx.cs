@@ -13,7 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.OleDb;
 
-public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
+public partial class manage_advertisement_ad_stat : Hg.Web.UI.ManagePage
 {
     public manage_advertisement_ad_stat()
     {
@@ -26,7 +26,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
         {
             
         }
-        str_adsID = Foosun.Common.Input.checkID(Request.QueryString["adsID"]);
+        str_adsID = Hg.Common.Input.checkID(Request.QueryString["adsID"]);
         string type=Request.QueryString["st"];
         switch (type)
         {
@@ -74,10 +74,10 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
             str_VCount = str_VCount + "0" + ",";
         }
         
-        str_VCount = Foosun.Common.Input.CutComma(str_VCount);
+        str_VCount = Hg.Common.Input.CutComma(str_VCount);
         string [] arr_VCount = str_VCount.Split(',');
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.get24HourStat(type, str_adsID);
 
         if (dt != null)
@@ -111,7 +111,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
             else
                 str_Vsize = str_Vsize + "0" + ",";
         }
-        str_Vsize = Foosun.Common.Input.CutComma(str_Vsize);
+        str_Vsize = Hg.Common.Input.CutComma(str_Vsize);
         string [] arr_Vsize = str_Vsize.Split(',');
 
         string strhour1 = "100%";
@@ -215,10 +215,10 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
         {
             str_VCount = str_VCount + "0" + ",";
         }
-        str_VCount = Foosun.Common.Input.CutComma(str_VCount);
+        str_VCount = Hg.Common.Input.CutComma(str_VCount);
         string[] arr_VCount = str_VCount.Split(',');
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getDayStat(type, str_adsID, str_tempMD);
 
 
@@ -254,7 +254,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
             else
                 str_Vsize = str_Vsize + "1" + ",";
         }
-        str_Vsize = Foosun.Common.Input.CutComma(str_Vsize);
+        str_Vsize = Hg.Common.Input.CutComma(str_Vsize);
         string[] arr_Vsize = str_Vsize.Split(',');
 
         string strhour1 = "100%";
@@ -407,10 +407,10 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
         {
             str_VCount = str_VCount + "0" + ",";
         }
-        str_VCount = Foosun.Common.Input.CutComma(str_VCount);
+        str_VCount = Hg.Common.Input.CutComma(str_VCount);
         string[] arr_VCount = str_VCount.Split(',');
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getMonthStat(type, str_adsID);
 
         if (dt != null)
@@ -445,7 +445,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
             else
                 str_Vsize = str_Vsize + "0" + ",";
         }
-        str_Vsize = Foosun.Common.Input.CutComma(str_Vsize);
+        str_Vsize = Hg.Common.Input.CutComma(str_Vsize);
         string[] arr_Vsize = str_Vsize.Split(',');
 
         string strhour1 = "100%";
@@ -534,7 +534,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
         int int_MaxVCount = 0;
         int int_CMonth = int.Parse(Convert.ToDateTime(System.DateTime.Now).ToString("MM"));
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getYearStat(str_adsID);
 
         if (dt != null)
@@ -588,10 +588,10 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
         {
             str_VCount = str_VCount + "0" + ",";
         }
-        str_VCount = Foosun.Common.Input.CutComma(str_VCount);
+        str_VCount = Hg.Common.Input.CutComma(str_VCount);
         string[] arr_VCount = str_VCount.Split(',');
 
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getWeekStat(type, str_adsID);
 
         if (dt != null)
@@ -629,7 +629,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
             else
                 str_Vsize = str_Vsize + "0" + ",";
         }
-        str_Vsize = Foosun.Common.Input.CutComma(str_Vsize);
+        str_Vsize = Hg.Common.Input.CutComma(str_Vsize);
         string[] arr_Vsize = str_Vsize.Split(',');
 
         string strhour1 = "100%";
@@ -744,7 +744,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
     protected string getSourceStat()
     {
         updb();
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getSourceStat(str_adsID);
 
         string str_Tempstr = "";
@@ -862,7 +862,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
     protected DataTable CipDb(string sql)
     {
         OleDbConnection conn = new OleDbConnection();
-        string str_dirMana = Foosun.Config.UIConfig.dirDumm;//获取用户虚拟路径
+        string str_dirMana = Hg.Config.UIConfig.dirDumm;//获取用户虚拟路径
         if (str_dirMana != "" && str_dirMana != null && str_dirMana != string.Empty)
         {
             str_dirMana = "//" + str_dirMana;
@@ -905,7 +905,7 @@ public partial class manage_advertisement_ad_stat : Foosun.Web.UI.ManagePage
 
     protected void updb()
     {
-        Foosun.CMS.Ads.Ads ac = new Foosun.CMS.Ads.Ads();
+        Hg.CMS.Ads.Ads ac = new Hg.CMS.Ads.Ads();
         DataTable dt = ac.getDbNull() ;
         if (dt != null)
         {

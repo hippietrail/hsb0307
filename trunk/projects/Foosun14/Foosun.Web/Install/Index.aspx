@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Foosun.Web.Install.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Hg.Web.Install.Index" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-    <title><%=Foosun.Install.Config.title%></title>
-           <%=Foosun.Install.Config.style%>
+    <title><%=Hg.Install.Config.title%></title>
+           <%=Hg.Install.Config.style%>
 </head>
 <body>
     <table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#666666">
@@ -18,7 +18,7 @@
                                 <tr>
                                     <td background="image/01.jpg">
                                         <font color="#ffffff">欢迎安装
-                                            <%=Foosun.Install.Config.producename%>
+                                            <%=Hg.Install.Config.producename%>
                                         </font>
                                     </td>
                                 </tr>
@@ -27,7 +27,7 @@
                     </tr>
                     <tr>
                         <td width="180" valign="top">
-                            <%=Foosun.Install.Config.logo%>
+                            <%=Hg.Install.Config.logo%>
                         </td>
                         <td width="520" valign="top">
                             <br>
@@ -36,7 +36,7 @@
                                 <tr>
                                     <td>
                                         <p>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 欢迎您选择安装<%=Foosun.Install.Config.producename%></p>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 欢迎您选择安装<%=Hg.Install.Config.producename%></p>
                                         <p>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 本向导将协助您一步步的安装和初始化系统.</p>
                                         <p>
@@ -64,6 +64,6 @@
             </td>
         </tr>
     </table>
-    <%=Foosun.Install.Config.corpRight%>
+    <%=Hg.Install.Config.corpRight%>
 </body>
 </html>

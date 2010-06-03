@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../../sysImages/<%Response.Write(Foosun.Config.UIConfig.CssPath());%>/css/css.css"
+    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
         rel="stylesheet" type="text/css" />
     <style type="text/css">
 .sav {border: 1px dotted #FFCC66;background-color: #FFFFCC;clear: both;float: none;height: 60px;width: 60px;line-height: 18px;padding-left:3px;padding-top:3px;	padding-right:3px;	padding-bottom:3px;	}
@@ -1490,7 +1490,7 @@ function ShowLink(NewsType)
     
     function insertHTMLEdit(url)
     {
-        var urls = url.replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+        var urls = url.replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
         var oEditor = FCKeditorAPI.GetInstance("FileContent");
         if (oEditor.EditMode==FCK_EDITMODE_WYSIWYG)
         {
@@ -1592,7 +1592,7 @@ function ShowLink(NewsType)
         {
             if(gvalur.indexOf(".")>-1)
             {
-                gvalur=gvalur.toLowerCase().replace('{@dirfile}','<% Response.Write(Foosun.Config.UIConfig.dirFile); %>')
+                gvalur=gvalur.toLowerCase().replace('{@dirfile}','<% Response.Write(Hg.Config.UIConfig.dirFile); %>')
                 var fileExstarpostion = gvalur.lastIndexOf(".");
                 var fileExName = gvalur.substring(fileExstarpostion,(gvalur.length))
                 var content="";

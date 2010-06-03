@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALProfile;
-using Foosun.DALFactory;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.DALFactory;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Psframe : DbBase, IPsframe
     {
@@ -17,7 +17,7 @@ namespace Foosun.AccessDAL
         /// <param name="TableName"></param>
         public void Del_PSF(string Psfid)
         {
-            string Sql = "Update " + Pre + "sys_PSF Set isRecyle=1 where psfID='" + Psfid.ToString() + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "sys_PSF Set isRecyle=1 where psfID='" + Psfid.ToString() + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -27,7 +27,7 @@ namespace Foosun.AccessDAL
         /// <param name="TableName"></param>
         public void DelAll_PSF()
         {
-            string Sql = "Update " + Pre + "sys_PSF Set isRecyle=1 where 1=1 and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "sys_PSF Set isRecyle=1 where 1=1 and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, null);
         }
 
@@ -35,7 +35,7 @@ namespace Foosun.AccessDAL
         /// 插入psf
         /// </summary>
         /// <param name="uc2"></param>
-        public void InsertPSF(Foosun.Model.PSF uc)
+        public void InsertPSF(Hg.Model.PSF uc)
         {
             OleDbParameter[] parm = InsertPSFParameters(uc); 
             string Sql = "insert into " + Pre + "sys_PSF (";
@@ -50,10 +50,10 @@ namespace Foosun.AccessDAL
         /// 更新psf
         /// </summary>
         /// <param name="uc2"></param>
-        public int UpdatePSF(Foosun.Model.PSF uc)
+        public int UpdatePSF(Hg.Model.PSF uc)
         {
             OleDbParameter[] parm = InsertPSFParameters1(uc);
-            string Sql = "Update " + Pre + "sys_PSF set " + Database.getParam(parm) + " where psfID='" + uc.psfID.ToString() + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "sys_PSF set " + Database.getParam(parm) + " where psfID='" + uc.psfID.ToString() + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             
             return DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -63,7 +63,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertPSFParameters(Foosun.Model.PSF uc)
+        private OleDbParameter[] InsertPSFParameters(Hg.Model.PSF uc)
         {
             OleDbParameter[] param = new OleDbParameter[9];
             param[0] = new OleDbParameter("@psfID", OleDbType.VarWChar, 12);
@@ -93,7 +93,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] InsertPSFParameters1(Foosun.Model.PSF uc)
+        private OleDbParameter[] InsertPSFParameters1(Hg.Model.PSF uc)
         {
             OleDbParameter[] param = new OleDbParameter[7];
             param[0] = new OleDbParameter("@psfName", OleDbType.VarWChar, 30);
@@ -115,20 +115,20 @@ namespace Foosun.AccessDAL
 
         public DataTable getTitleRecord(string psfName)
         {
-            string Sql = "Select psfName From " + Pre + "sys_PSF Where psfName='" + psfName.ToString() + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select psfName From " + Pre + "sys_PSF Where psfName='" + psfName.ToString() + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             return rdr;
         }
 
         public int IsExitPSFID(string PSFID)
         {
-            string Str = "Select psfID From " + Pre + "sys_PSF where psfID = '" + PSFID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str = "Select psfID From " + Pre + "sys_PSF where psfID = '" + PSFID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return (int)DbHelper.ExecuteScalar(CommandType.Text, Str, null);
         }
 
         public DataTable getPSFParam(string psfID)
         {
-            string Sql = "Select Id,psfID,psfName,LocalDir,RemoteDir,isSub,isAll,CreatTime,isRecyle,SiteID From " + Pre + "sys_PSF where psfID = '" + psfID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select Id,psfID,psfName,LocalDir,RemoteDir,isSub,isAll,CreatTime,isRecyle,SiteID From " + Pre + "sys_PSF where psfID = '" + psfID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
 
@@ -142,7 +142,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public DataTable getTaskParam(string TaskID)
         {
-            string Sql = "Select Id,taskID From " + Pre + "sys_SiteTask where taskID = '" + TaskID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select Id,taskID From " + Pre + "sys_SiteTask where taskID = '" + TaskID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
         /// <summary>
@@ -152,24 +152,24 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public DataTable getTaskName(string TaskName)
         {
-            string Sql = "Select TaskName From " + Pre + "sys_SiteTask Where TaskName='" + TaskName + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select TaskName From " + Pre + "sys_SiteTask Where TaskName='" + TaskName + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
 
         public int DelOneTask(string taskid)
         {
-            string Str_DelOne_Sql = "Delete From " + Pre + "sys_SiteTask where taskID = '" + taskid + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_DelOne_Sql = "Delete From " + Pre + "sys_SiteTask where taskID = '" + taskid + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_DelOne_Sql, null);
         }
 
         public void DelPTask(string boxs)
         {
-            string str_sql = "Delete From " + Pre + "sys_SiteTask  where taskID in('" + boxs + "') and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string str_sql = "Delete From " + Pre + "sys_SiteTask  where taskID in('" + boxs + "') and SiteID='" + Hg.Global.Current.SiteID + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, str_sql, null);
         }
         public int DelAllTask()
         {
-            string Str_DelAll_Sql = "Delete From " + Pre + "sys_SiteTask where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Str_DelAll_Sql = "Delete From " + Pre + "sys_SiteTask where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteNonQuery(CommandType.Text, Str_DelAll_Sql, null);
         }
 
@@ -180,7 +180,7 @@ namespace Foosun.AccessDAL
         /// <returns></returns>
         public DataTable getTaskIDInfo(string TaskID)
         {
-            string Sql = "Select Id,taskID,TaskName,isIndex,ClassID,News,Special,TimeSet,CreatTime,SiteID From " + Pre + "sys_SiteTask where taskID='" + TaskID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select Id,taskID,TaskName,isIndex,ClassID,News,Special,TimeSet,CreatTime,SiteID From " + Pre + "sys_SiteTask where taskID='" + TaskID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
 
@@ -188,7 +188,7 @@ namespace Foosun.AccessDAL
         /// 插入Task
         /// </summary>
         /// <param name="uc2"></param>
-        public void insertTask(Foosun.Model.Task uc)
+        public void insertTask(Hg.Model.Task uc)
         {
             string Sql = "insert into " + Pre + "sys_SiteTask (";
             Sql += "taskID,TaskName,isIndex,ClassID,News,Special,TimeSet,CreatTime,SiteID";
@@ -202,9 +202,9 @@ namespace Foosun.AccessDAL
         /// 插入Task
         /// </summary>
         /// <param name="uc2"></param>
-        public void UpdateTask(Foosun.Model.Task uc)
+        public void UpdateTask(Hg.Model.Task uc)
         {
-            string Sql = "Update " + Pre + "sys_SiteTask set taskID=@taskID,TaskName=@TaskName,isIndex=@isIndex,ClassID=@ClassID,News=@News,Special=@Special,TimeSet=@TimeSet,CreatTime=@CreatTime,SiteID=@SiteID where taskID='" + uc.taskID + "' and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Update " + Pre + "sys_SiteTask set taskID=@taskID,TaskName=@TaskName,isIndex=@isIndex,ClassID=@ClassID,News=@News,Special=@Special,TimeSet=@TimeSet,CreatTime=@CreatTime,SiteID=@SiteID where taskID='" + uc.taskID + "' and SiteID='" + Hg.Global.Current.SiteID + "'";
             OleDbParameter[] parm = Database.getNewParam(insertTaskParameters(uc),"taskID,TaskName,isIndex,ClassID,News,Special,TimeSet,CreatTime,SiteID");
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
@@ -214,7 +214,7 @@ namespace Foosun.AccessDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private OleDbParameter[] insertTaskParameters(Foosun.Model.Task uc)
+        private OleDbParameter[] insertTaskParameters(Hg.Model.Task uc)
         {
             OleDbParameter[] param = new OleDbParameter[10];
             param[0] = new OleDbParameter("@taskID", OleDbType.VarWChar, 12);

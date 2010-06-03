@@ -10,12 +10,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
+using Hg.CMS;
+using Hg.Model;
 
-namespace Foosun.Web.customform
+namespace Hg.Web.customform
 {
-    public partial class CustomFormSubmit : Foosun.Web.UI.BasePage
+    public partial class CustomFormSubmit : Hg.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace Foosun.Web.customform
                 SQLConditionInfo[] Param = new SQLConditionInfo[n];
                 if (FormInfo.isdelpoint != 0)
                 {
-                    if(Foosun.Global.Current.IsTimeout())
+                    if(Hg.Global.Current.IsTimeout())
                         PageError("只有会员才能提交,请先登录系统。", "/user/login.aspx");
                 }
                 if (FormInfo.showvalidatecode)
@@ -88,7 +88,7 @@ namespace Foosun.Web.customform
                             string flnm = upfl.FileName;
                             int tmpFEXint = flnm.LastIndexOf('.');
                             string TmpFEX = flnm.Substring((tmpFEXint));
-                            string FileNames = Foosun.Common.Rand.Number(6);
+                            string FileNames = Hg.Common.Rand.Number(6);
                             int i = 1;
                             while (File.Exists(phpath + "\\" + FileNames + TmpFEX))
                             {

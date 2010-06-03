@@ -12,7 +12,7 @@ using System.IO;
 using System.Net;
 
 
-public partial class Manage_statserver_Cnzz : Foosun.Web.UI.ManagePage
+public partial class Manage_statserver_Cnzz : Hg.Web.UI.ManagePage
 {
     public string s_OpenTF = "";
     protected void Page_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ public partial class Manage_statserver_Cnzz : Foosun.Web.UI.ManagePage
             if (OpenTF.Text == "1")
             {
                 string s_Url = "http://intf.cnzz.com/user/companion/foosun.php?domain=" + Domain.Text.Trim() + "&" +
-                               "key=" + Foosun.Common.Input.MD5(Domain.Text.Trim() + "CdfW9gQa", false) + "";
+                               "key=" + Hg.Common.Input.MD5(Domain.Text.Trim() + "CdfW9gQa", false) + "";
                 string s_result = Request(s_Url);
 
                 switch (s_result)
@@ -58,19 +58,19 @@ public partial class Manage_statserver_Cnzz : Foosun.Web.UI.ManagePage
                         break;
                     default:
                         string[] arr_result = s_result.Split('@');
-                        Foosun.Common.Public.SaveXmlConfig("Open", "1", s_XMLPath);
-                        Foosun.Common.Public.SaveXmlConfig("Domain", Domain.Text.Trim(), s_XMLPath);
-                        Foosun.Common.Public.SaveXmlConfig("SiteID", arr_result[0].ToString(), s_XMLPath);
-                        Foosun.Common.Public.SaveXmlConfig("Password", arr_result[1].ToString(), s_XMLPath);
+                        Hg.Common.Public.SaveXmlConfig("Open", "1", s_XMLPath);
+                        Hg.Common.Public.SaveXmlConfig("Domain", Domain.Text.Trim(), s_XMLPath);
+                        Hg.Common.Public.SaveXmlConfig("SiteID", arr_result[0].ToString(), s_XMLPath);
+                        Hg.Common.Public.SaveXmlConfig("Password", arr_result[1].ToString(), s_XMLPath);
                         break;
                 }
             }
             else
             {
-                Foosun.Common.Public.SaveXmlConfig("Open", "0", s_XMLPath);
-                Foosun.Common.Public.SaveXmlConfig("Domain", "", s_XMLPath);
-                Foosun.Common.Public.SaveXmlConfig("SiteID", "0", s_XMLPath);
-                Foosun.Common.Public.SaveXmlConfig("Password", "0", s_XMLPath);
+                Hg.Common.Public.SaveXmlConfig("Open", "0", s_XMLPath);
+                Hg.Common.Public.SaveXmlConfig("Domain", "", s_XMLPath);
+                Hg.Common.Public.SaveXmlConfig("SiteID", "0", s_XMLPath);
+                Hg.Common.Public.SaveXmlConfig("Password", "0", s_XMLPath);
             }
             PageRight("修改成功", "Cnzz.aspx");
         }
@@ -78,8 +78,8 @@ public partial class Manage_statserver_Cnzz : Foosun.Web.UI.ManagePage
 
     protected void getTF()
     {
-        s_OpenTF = Foosun.Common.Public.readparamConfig("Open", "Cnzz");
-        string s_Domain = Foosun.Common.Public.readparamConfig("Domain", "Cnzz");
+        s_OpenTF = Hg.Common.Public.readparamConfig("Open", "Cnzz");
+        string s_Domain = Hg.Common.Public.readparamConfig("Domain", "Cnzz");
         OpenTF.Text = s_OpenTF;
         Domain.Text = s_Domain;
     }
@@ -106,8 +106,8 @@ public partial class Manage_statserver_Cnzz : Foosun.Web.UI.ManagePage
 
     protected void Login_Click(object sender, EventArgs e)
     {
-        string s_SiteID = Foosun.Common.Public.readparamConfig("SiteID", "Cnzz");
-        string s_Password = Foosun.Common.Public.readparamConfig("Password", "Cnzz");
+        string s_SiteID = Hg.Common.Public.readparamConfig("SiteID", "Cnzz");
+        string s_Password = Hg.Common.Public.readparamConfig("Password", "Cnzz");
         string s_Url = "http://intf.cnzz.com/user/companion/foosun_login.php?site_id=" + s_SiteID + "&password=" + s_Password + "";
         string s_result = Request(s_Url);
 

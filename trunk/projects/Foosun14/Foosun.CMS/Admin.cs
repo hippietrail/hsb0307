@@ -10,10 +10,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Foosun.Model;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.DALFactory;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Admin
     {
@@ -44,12 +44,12 @@ namespace Foosun.CMS
             DataTable dt = ac.GetSiteList();
             return dt;
         }
-        public int Add(Foosun.Model.AdminInfo aci)
+        public int Add(Hg.Model.AdminInfo aci)
         {
             int result = ac.Add(aci);
             return result;
         }
-        public int Edit(Foosun.Model.AdminInfo aci)
+        public int Edit(Hg.Model.AdminInfo aci)
         {
             return ac.Edit(aci);
         }

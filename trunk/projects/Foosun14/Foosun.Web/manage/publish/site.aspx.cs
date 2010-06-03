@@ -18,14 +18,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
-using Foosun.Publish;
+using Hg.CMS;
+using Hg.CMS.Common;
+using Hg.Publish;
 using System.IO;
 
-namespace Foosun.Web
+namespace Hg.Web
 {
-    public partial class manage_publish_site : Foosun.Web.UI.ManagePage
+    public partial class manage_publish_site : Hg.Web.UI.ManagePage
     {
         rootPublic rd = new rootPublic();
         DataTable dataClassTable = null;
@@ -36,7 +36,7 @@ namespace Foosun.Web
             Response.CacheControl = "no-cache";
             if (!IsPostBack)
             {
-                string ReadType = Foosun.Common.Public.readparamConfig("ReviewType");
+                string ReadType = Hg.Common.Public.readparamConfig("ReviewType");
                 if (ReadType == "1")
                 {
                     PageError("整站动态调用，不需要生成 如果要开启静态生成，请在[控制面板--参数设置]里设置", "javascript:history.back();", true);
@@ -46,10 +46,10 @@ namespace Foosun.Web
 
                 copyright.InnerHtml = CopyRight;            //获取版权信息
                 //Response.CacheControl = "no-cache";                        //设置页面无缓存    
-                Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
-                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", Foosun.Global.Current.SiteID));
-                dataSpecialTable = ac.getClassList("SpecialID,SpecialCName,ParentID", "news_special", string.Format("Where  isRecyle<>1 and SiteID='{0}'", Foosun.Global.Current.SiteID));
-                dataIspageTable = ac.getClassList("ClassID,ClassCName", "News_Class", string.Format("Where isRecyle<>1 and isPage={0} and SiteID='{1}'", 1, Foosun.Global.Current.SiteID));
+                Hg.CMS.AdminGroup ac = new Hg.CMS.AdminGroup();
+                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", Hg.Global.Current.SiteID));
+                dataSpecialTable = ac.getClassList("SpecialID,SpecialCName,ParentID", "news_special", string.Format("Where  isRecyle<>1 and SiteID='{0}'", Hg.Global.Current.SiteID));
+                dataIspageTable = ac.getClassList("ClassID,ClassCName", "News_Class", string.Format("Where isRecyle<>1 and isPage={0} and SiteID='{1}'", 1, Hg.Global.Current.SiteID));
                 InitialDivClass(divClassClass);
                 InitialDivClass(divClassNews);
                 InitialDivSpecial(DivSpecial);
@@ -60,7 +60,7 @@ namespace Foosun.Web
                 dataSpecialTable.Dispose();
                 dataIspageTable.Clear();
                 dataIspageTable.Dispose();
-                if (Foosun.Config.verConfig.PublicType == "0")
+                if (Hg.Config.verConfig.PublicType == "0")
                 {
                     indexPublic.Visible = false;
                     pIndex.Visible = false;
@@ -162,7 +162,7 @@ namespace Foosun.Web
                     {
                         newsFlag = 1;
                         strNewsParams = NewNum.Text;
-                        if (Foosun.Common.Input.IsInteger(strNewsParams) == false)
+                        if (Hg.Common.Input.IsInteger(strNewsParams) == false)
                         {
                             PageError("发布最新的新闻请填写正确数字", "site.aspx");
                         }
@@ -174,7 +174,7 @@ namespace Foosun.Web
                         {
                             newsFlag = 2;
                             strNewsParams = unhtmlNum.Text;
-                            if (Foosun.Common.Input.IsInteger(strNewsParams) == false)
+                            if (Hg.Common.Input.IsInteger(strNewsParams) == false)
                             {
                                 PageError("发布未生成的新闻请填写正确数字", "site.aspx");
                             }
@@ -201,7 +201,7 @@ namespace Foosun.Web
                                 if (newsdate.Checked)
                                 {
                                     newsFlag = 4;
-                                    if (Foosun.Common.Input.IsDate(startTime.Text) == false && Foosun.Common.Input.IsDate(endTime.Text) == false)
+                                    if (Hg.Common.Input.IsDate(startTime.Text) == false && Hg.Common.Input.IsDate(endTime.Text) == false)
                                     {
                                         PageError("请正确填写开始时间和结束时间", "site.aspx");
                                     }
@@ -213,7 +213,7 @@ namespace Foosun.Web
                                     if (newsid.Checked)
                                     {
                                         newsFlag = 5;
-                                        if ((Foosun.Common.Input.IsInteger(startID.Text) == false) || (Foosun.Common.Input.IsInteger(EndID.Text) == false))
+                                        if ((Hg.Common.Input.IsInteger(startID.Text) == false) || (Hg.Common.Input.IsInteger(EndID.Text) == false))
                                         {
                                             PageError("请正确ID开始及ID结束", "site.aspx");
                                         }
@@ -328,8 +328,8 @@ namespace Foosun.Web
                     #region 备份首页文件
                     if (getbak)
                     {
-                        string sourceFile = "~/" + Foosun.Common.Public.readparamConfig("IndexFileName");
-                        string str_dirPige = Foosun.Config.UIConfig.dirPige;
+                        string sourceFile = "~/" + Hg.Common.Public.readparamConfig("IndexFileName");
+                        string str_dirPige = Hg.Config.UIConfig.dirPige;
                         if (File.Exists(Server.MapPath(sourceFile)))
                         {
                             string TagetFile = "~/" + str_dirPige + "/index/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + ".shtml";

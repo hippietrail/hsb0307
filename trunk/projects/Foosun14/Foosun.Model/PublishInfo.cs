@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foosun.Model
+namespace Hg.Model
 {
     /// <summary>
     /// 新闻栏目常用信息类

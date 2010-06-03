@@ -11,27 +11,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
+public partial class manage_news_Special_add : Hg.Web.UI.ManagePage
 {
     public manage_news_Special_add()
     {
         Authority_Code = "C099";
     }
     rootPublic pd = new rootPublic();
-    public string DirHtml = Foosun.Config.UIConfig.dirHtml;
+    public string DirHtml = Hg.Config.UIConfig.dirHtml;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             
             copyright.InnerHtml = CopyRight;    //获取版权信息
-            if (SiteID != "0"){DirHtml = Foosun.Config.UIConfig.dirSite;}
+            if (SiteID != "0"){DirHtml = Hg.Config.UIConfig.dirSite;}
             string parentID = Request.QueryString["parentID"];
             //-----------------获取会员组信息
-            Foosun.CMS.Common.rootPublic rpc = new Foosun.CMS.Common.rootPublic();
+            Hg.CMS.Common.rootPublic rpc = new Hg.CMS.Common.rootPublic();
             IDataReader dr = rpc.GetGroupList();
             while (dr.Read())
             {
@@ -50,7 +50,7 @@ public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
             if (parentID != null && parentID != "")
             {
                 this.S_Parent.Text = parentID.ToString();
-                Foosun.CMS.Special parentSpecial = new Foosun.CMS.Special();
+                Hg.CMS.Special parentSpecial = new Hg.CMS.Special();
                 DataTable psc = parentSpecial.getSpeacilInfo(parentID);
                 this.S_ParentName.Text=psc.Rows[0]["SpecialCName"].ToString();
             }
@@ -62,7 +62,7 @@ public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
             this.S_Templet.Text = pd.allTemplet().Split(new Char[] { '|' })[2];
             this.S_DirRule.Text = "{@year04}-{@month}";
             this.S_FileRule.Text = "{@EName}/index";
-            this.S_SavePath.Text = "/" + Foosun.Config.UIConfig.dirHtml + "/special";
+            this.S_SavePath.Text = "/" + Hg.Config.UIConfig.dirHtml + "/special";
         }
     }
 
@@ -78,7 +78,7 @@ public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
         if (Page.IsValid == true)
         {
             //-----------------取得表单内容
-            Foosun.Model.Special sci = new Foosun.Model.Special();
+            Hg.Model.Special sci = new Hg.Model.Special();
             sci.SpecialCName = Request.Form["S_Cname"];             //中文名
             sci.specialEName = Request.Form["S_Ename"];             //英文名
             sci.ParentID = Request.Form["S_Parent"];                //父栏目
@@ -100,9 +100,9 @@ public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
                 sci.iPoint = 0;        
                 sci.Gpoint = 0;
             }
-            string DirPath =Foosun.CMS.Common.CommStr.FileRandName(Request.Form["S_DirRule"]);
-            string SaveTP=Request.Form["S_SavePath"].Replace("{@dirHtml}",Foosun.Config.UIConfig.dirHtml);
-            string fName=Foosun.CMS.Common.CommStr.FileRandName(Request.Form["S_FileRule"]).Replace("{@EName}", Request.Form["S_Ename"]);
+            string DirPath =Hg.CMS.Common.CommStr.FileRandName(Request.Form["S_DirRule"]);
+            string SaveTP=Request.Form["S_SavePath"].Replace("{@dirHtml}",Hg.Config.UIConfig.dirHtml);
+            string fName=Hg.CMS.Common.CommStr.FileRandName(Request.Form["S_FileRule"]).Replace("{@EName}", Request.Form["S_Ename"]);
             sci.saveDirPath = DirPath;    //目录生成规则
             sci.FileName = fName;      //文件名生成规则
             sci.SavePath = SaveTP;                                             //保存路径
@@ -116,21 +116,21 @@ public partial class manage_news_Special_add : Foosun.Web.UI.ManagePage
             sci.NaviPosition = NPosion;              //页面导航条
             sci.isLock = int.Parse(Request.Form["S_Lock"]);         //是否锁定
 
-            sci.SpecialID = Foosun.Common.Rand.Number(12);
+            sci.SpecialID = Hg.Common.Rand.Number(12);
             sci.SiteID = SiteID;
             sci.CreatTime = DateTime.Now;
             sci.isRecyle = 0;
 
-            Foosun.CMS.Special sc = new Foosun.CMS.Special();
+            Hg.CMS.Special sc = new Hg.CMS.Special();
             string result = sc.Add(sci);
             string[] arr_result = result.Split('|');
 
             //清除缓存
-            Foosun.Publish.CommonData.NewsSpecial.Clear();
-            Foosun.Publish.CommonData.CHSpecial.Clear();
+            Hg.Publish.CommonData.NewsSpecial.Clear();
+            Hg.Publish.CommonData.CHSpecial.Clear();
             if (arr_result[0].ToString() == "1")
             {
-                Foosun.Publish.General PG = new Foosun.Publish.General();
+                Hg.Publish.General PG = new Hg.Publish.General();
                 if (PG.publishSingleSpecial(arr_result[1].ToString()))
                     PageRight("添加专题成功!生成专题成功!", "Special_List.aspx");
                 else

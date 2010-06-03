@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class Discuss
     {
         private IDiscuss dal;
         public Discuss()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateDiscuss();
+            dal = Hg.DALFactory.DataAccess.CreateDiscuss();
         }
         #region message_discussacti.aspx
         public DataTable sel(string UserNum)
@@ -427,7 +427,7 @@ namespace Foosun.CMS
             return dal.sel_37(Dtd);
         }
 
-        public void Add_9(Foosun.Model.STADDDiscuss uc)
+        public void Add_9(Hg.Model.STADDDiscuss uc)
         {
             dal.Add_9(uc);
         }

@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
 
-namespace Foosun.Web.manage
+namespace Hg.Web.manage
 {
-    public partial class top : Foosun.Web.UI.ManagePage
+    public partial class top : Hg.Web.UI.ManagePage
     {
         public string apilist1 = "";
         public string URL = "main.aspx";
@@ -53,7 +53,7 @@ namespace Foosun.Web.manage
         protected string getMenu()
         {
             IDataReader dr = rd.Navilist(UserNum);
-            string liststr = "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" background=\"../sysImages/" + Foosun.Config.UIConfig.CssPath() + "/admin/menu_bg.jpg\">\r";
+            string liststr = "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" background=\"../sysImages/" + Hg.Config.UIConfig.CssPath() + "/admin/menu_bg.jpg\">\r";
             liststr += "<tr><td width=\"6\" height=\"38\"></td>";
             liststr += "<td id=\"IDC_DownedBUtton\" class=\"button_down\" onClick=\"CheckBTN1(this,'menu.aspx?type=000000','news/news_list.aspx');\" style=\"width:82px;padding-left:14px;background-repeat:no-repeat;text-align:left;cursor:pointer;\">¿ì½Ý·½Ê½</td>";
             while (dr.Read())

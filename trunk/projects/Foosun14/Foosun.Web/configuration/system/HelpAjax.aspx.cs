@@ -11,15 +11,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class HelpAjax : Foosun.Web.UI.DialogPage
+public partial class HelpAjax : Hg.Web.UI.DialogPage
 {
     public HelpAjax()
     {
         BrowserAuthor = EnumDialogAuthority.ForAdmin;
     }
-    Foosun.CMS.Common.rootPublic pd = new Foosun.CMS.Common.rootPublic();
+    Hg.CMS.Common.rootPublic pd = new Hg.CMS.Common.rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache";             //设置页面无缓存

@@ -4,7 +4,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 
-namespace Foosun.Install
+namespace Hg.Install
 {
 	public class Config
 	{
@@ -153,9 +153,9 @@ namespace Foosun.Install
 			string result = "";
 			try
 			{
-				string[] assemblylist = new string[] { "Foosun.CMS.dll", "Foosun.Common.dll", "Foosun.Config.dll", "Foosun.Control.dll" ,
-                                                    "Foosun.DALFactory.dll","Foosun.DALProfile.dll","Foosun.Global.dll","Foosun.Model.dll",
-                                                    "Foosun.Publish.dll","Foosun.SQLServerDAL.dll","Foosun.Web.dll","Foosun.Web.UI.dll",
+				string[] assemblylist = new string[] { "Hg.CMS.dll", "Hg.Common.dll", "Hg.Config.dll", "Hg.Control.dll" ,
+                                                    "Hg.DALFactory.dll","Hg.DALProfile.dll","Hg.Global.dll","Hg.Model.dll",
+                                                    "Hg.Publish.dll","Hg.SQLServerDAL.dll","Hg.Web.dll","Hg.Web.UI.dll",
                                                     "Intelligencia.UrlRewriter.dll","Interop.ADODB.dll","Interop.JRO.dll",
                                                     "Ajax.dll","CBMD5.dll"};
 				foreach (string assembly in assemblylist)

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
-using Foosun.Common;
+using Hg.DALFactory;
+using Hg.Model;
+using Hg.Common;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Message : DbBase, IMessage
     {
@@ -65,13 +65,13 @@ namespace Foosun.AccessDAL
         public void Delete_1(string ID)
         {
             OleDbParameter param = new OleDbParameter("@Mid", ID);
-            string Sql = "update " + Pre + "user_Message set issDel=1 where Mid=@Mid and UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql = "update " + Pre + "user_Message set issDel=1 where Mid=@Mid and UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
 
-            string Sql1 = "update " + Pre + "user_Message set isRdel=1 where Mid=@Mid and Rec_UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql1 = "update " + Pre + "user_Message set isRdel=1 where Mid=@Mid and Rec_UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql1, param);
 
-            string Sql2 = "update " + Pre + "user_Message set isRdel=1,issDel=1 where SortType=0 and Mid=@Mid and Rec_UserNum='" + Foosun.Global.Current.UserNum + "'";
+            string Sql2 = "update " + Pre + "user_Message set isRdel=1,issDel=1 where SortType=0 and Mid=@Mid and Rec_UserNum='" + Hg.Global.Current.UserNum + "'";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql2, param);
         }
 
@@ -187,7 +187,7 @@ namespace Foosun.AccessDAL
             return DbHelper.ExecuteTable(CommandType.Text, Sql, param);
         }
 
-        public void Add(Foosun.Model.message uc)
+        public void Add(Hg.Model.message uc)
         {
             OleDbParameter[] param = addParam(uc); 
             string Sql = "insert into " + Pre + "User_Message(" + Database.getParam(param) + ",isRead,issDel,isRdel,isRecyle,issRecyle) values(" + Database.getAParam(param) + ",'0','0','0','0','0')";
@@ -195,7 +195,7 @@ namespace Foosun.AccessDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private OleDbParameter[] addParam(Foosun.Model.message uc)
+        private OleDbParameter[] addParam(Hg.Model.message uc)
         {
             OleDbParameter[] param = new OleDbParameter[10];
             param[0] = new OleDbParameter("@Mid", OleDbType.VarWChar, 12);

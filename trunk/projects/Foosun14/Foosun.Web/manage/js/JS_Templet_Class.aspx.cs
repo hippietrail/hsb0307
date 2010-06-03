@@ -9,18 +9,18 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_js_JS_Templet_Class : Foosun.Web.UI.ManagePage
+public partial class manage_js_JS_Templet_Class : Hg.Web.UI.ManagePage
 {
     public manage_js_JS_Templet_Class()
     {
         Authority_Code = "C056";
     }
-    private Foosun.CMS.JSTemplet jt;
+    private Hg.CMS.JSTemplet jt;
     private int id;
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.CacheControl = "no-cache"; //清除缓存
-        jt = new Foosun.CMS.JSTemplet();
+        jt = new Hg.CMS.JSTemplet();
         if (!IsPostBack)
         {
             id = 0;

@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
-    public partial class CustomForm_HtmlCode : Foosun.Web.UI.ManagePage
+    public partial class CustomForm_HtmlCode : Hg.Web.UI.ManagePage
     {
         protected int flag = 0;
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace Foosun.Web.manage.Sys
                 if (Request.QueryString["id"] != null && Request.QueryString["id"].Trim() != string.Empty)
                 {
                     int id = int.Parse(Request.QueryString["id"]);
-                    Foosun.CMS.CustomForm cf = new Foosun.CMS.CustomForm();
+                    Hg.CMS.CustomForm cf = new Hg.CMS.CustomForm();
                     string s = cf.GetHtmlCode(id);
                     this.TxtCode.Text = s;
                     string ps = s.Replace("<input type=\"submit\" value=\" 提交 \" />","");

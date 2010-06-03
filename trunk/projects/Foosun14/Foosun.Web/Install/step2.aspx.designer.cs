@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Foosun.Web.Install {
+namespace Hg.Web.Install {
     
     
     public partial class step2 {

@@ -18,13 +18,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.Drawing;
 using System.Drawing.Imaging;
-using Foosun.CMS.Common;
+using Hg.CMS.Common;
 using System.IO;
 
-public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
+public partial class manage_Templet_Upload : Hg.Web.UI.DialogPage
 {
 	public manage_Templet_Upload()
 	{
@@ -38,7 +38,7 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 		string upfiletype = Request.QueryString["upfiletype"];
 		//if (upfiletype == "templets") { this.isWater.Visible = false; }//lsd change
 
-		Foosun.CMS.sys Sys = new Foosun.CMS.sys();
+		Hg.CMS.sys Sys = new Hg.CMS.sys();
 		DataTable dt_sys = Sys.WaterStart();
 		if (!Page.IsPostBack)
 		{
@@ -67,7 +67,7 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 				this.isDelineation.Checked = false;
 			}
 			string Path = Server.UrlDecode(Request.QueryString["Path"]);                          //取得上传文件所要保存的路径
-			string localSavedir = Foosun.Config.UIConfig.dirFile;
+			string localSavedir = Hg.Config.UIConfig.dirFile;
 			if (string.IsNullOrEmpty(localSavedir))
 			{
 				localSavedir = "files";
@@ -79,8 +79,8 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 					localSavedir = "files/" + localSavedir;
 				}
 			}
-			string localtemplet = Foosun.Config.UIConfig.dirTemplet;
-			string dimmdir = Foosun.Config.UIConfig.dirDumm;
+			string localtemplet = Hg.Config.UIConfig.dirTemplet;
+			string dimmdir = Hg.Config.UIConfig.dirDumm;
 			string _Tmpdimmdir = "";
 			string UDir = "";
 			if (dimmdir.Trim() != "") { _Tmpdimmdir = "/" + dimmdir; }
@@ -91,17 +91,17 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 				case "templets":
 					//Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
                     //lsd change 20100524
-                    if (Foosun.Global.Current.SiteID == "0")
+                    if (Hg.Global.Current.SiteID == "0")
                     {
                         Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
 
                     }
                     else
                     {
-                        Path = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localtemplet + "/" + Path;
+                        Path = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localtemplet + "/" + Path;
                         if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
                         Path = Server.MapPath(Path);
-                        str_returnpath = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localtemplet + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                        str_returnpath = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localtemplet + "/" + Server.UrlDecode(Request.QueryString["Path"]);
                     }
 					break;
 				case "templet":
@@ -112,24 +112,24 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 					break;
 				default:
                     //lsd change 20100524
-                    if (Foosun.Global.Current.SiteID == "0")
+                    if (Hg.Global.Current.SiteID == "0")
                     {
                         Path = Server.MapPath(_Tmpdimmdir + "/" + localSavedir + "/" + Path);
                         
                     }
                     else
                     {
-                        Path = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Path;
+                        Path = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localSavedir + "/" + Path;
                         if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
                         Path = Server.MapPath(Path);
-                        str_returnpath = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                        str_returnpath = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
                     }
 					break;
 			}
 			if (Path != "" && Path != null && Path != string.Empty)             //判断路径是否正确
 			{
-				Foosun.CMS.Common.UpLoad tt = new Foosun.CMS.Common.UpLoad();   //实例化上传类
-				Foosun.CMS.Upload up = new Foosun.CMS.Upload();
+				Hg.CMS.Common.UpLoad tt = new Hg.CMS.Common.UpLoad();   //实例化上传类
+				Hg.CMS.Upload up = new Hg.CMS.Upload();
 				DataTable dt = up.getUploadInfo();
 				string utype = "jpg,gif,bmp,png,swf";
 				int usize = 500;
@@ -172,9 +172,9 @@ public partial class manage_Templet_Upload : Foosun.Web.UI.DialogPage
 					{
 						//if (this.isWater.Checked)
 						//{
-						if (Foosun.Global.Current.SiteID != "0")
+						if (Hg.Global.Current.SiteID != "0")
 						{
-							UDir = _Tmpdimmdir + "/" + Foosun.Config.UIConfig.dirSite + "/" + Foosun.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+							UDir = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
 						}
 						else
 						{

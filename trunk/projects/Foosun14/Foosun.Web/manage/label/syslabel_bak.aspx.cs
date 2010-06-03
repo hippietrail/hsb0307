@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_syslabel_bak : Foosun.Web.UI.ManagePage
+public partial class manage_label_syslabel_bak : Hg.Web.UI.ManagePage
 {
     public manage_label_syslabel_bak()
     {
@@ -30,7 +30,7 @@ public partial class manage_label_syslabel_bak : Foosun.Web.UI.ManagePage
         if (str_Op != "" && str_Op != null && str_Op != string.Empty)
         {
             string str_ID = Request.QueryString["LabelID"];
-            Rec(Foosun.Common.Input.checkID(str_ID));
+            Rec(Hg.Common.Input.checkID(str_ID));
         }
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChange);
         StartLoad(1);
@@ -51,9 +51,9 @@ public partial class manage_label_syslabel_bak : Foosun.Web.UI.ManagePage
     {
         int i, j;
 
-        Foosun.Model.SQLConditionInfo st = new Foosun.Model.SQLConditionInfo("@SiteID", SiteID);
+        Hg.Model.SQLConditionInfo st = new Hg.Model.SQLConditionInfo("@SiteID", SiteID);
 
-        DataTable dt = Foosun.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
+        DataTable dt = Hg.CMS.Pagination.GetPage(this.GetType().Name, PageIndex, 20, out i, out j, st);
 
         this.PageNavigator1.PageCount = j;
         this.PageNavigator1.PageIndex = PageIndex;
@@ -86,7 +86,7 @@ public partial class manage_label_syslabel_bak : Foosun.Web.UI.ManagePage
 
     protected void Rec(string ID)
     {
-        Foosun.CMS.Label lc = new Foosun.CMS.Label();
+        Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelToResume(ID);
         PageRight("从备份库中恢复标签成功!", "SysLabel_List.aspx");
     }

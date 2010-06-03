@@ -12,17 +12,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class FrindLink
     {
         private IFrindLink dal;
         public FrindLink()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateFrindLink();
+            dal = Hg.DALFactory.DataAccess.CreateFrindLink();
         }
         public DataTable GetClass()//∑÷¿‡—°‘Ò
         {

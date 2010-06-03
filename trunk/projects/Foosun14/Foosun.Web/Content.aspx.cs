@@ -9,13 +9,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
-using Foosun.CMS;
-using Foosun.Publish;
+using Hg.CMS;
+using Hg.Publish;
 
-public partial class news : Foosun.Web.UI.BasePage
+public partial class news : Hg.Web.UI.BasePage
 {
-    protected string dimm = Foosun.Config.UIConfig.dirDumm;
-    protected string TempletDir = Foosun.Config.UIConfig.dirTemplet;
+    protected string dimm = Hg.Config.UIConfig.dirDumm;
+    protected string TempletDir = Hg.Config.UIConfig.dirTemplet;
     public static string gInstallDir = "{$InstallDir}";
     public static string gTempletDir = "{$TempletDir}";
     protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ public partial class news : Foosun.Web.UI.BasePage
         if (NewsID != null && NewsID != string.Empty)
         {
             if (dimm.Trim() != string.Empty) { dimm = "/" + dimm; }
-            if (gPage != string.Empty && gPage != null && Foosun.Common.Input.IsInteger(gPage))
+            if (gPage != string.Empty && gPage != null && Hg.Common.Input.IsInteger(gPage))
             {
                 strPage = int.Parse(gPage);
             }
@@ -35,7 +35,7 @@ public partial class news : Foosun.Web.UI.BasePage
             string DTable = string.Empty;
             if (gChID != null && gChID != string.Empty)
             {
-                if (Foosun.Common.Input.IsInteger(gChID.ToString()))
+                if (Hg.Common.Input.IsInteger(gChID.ToString()))
                 {
                     ChID = int.Parse(gChID.ToString());
                 }
@@ -51,7 +51,7 @@ public partial class news : Foosun.Web.UI.BasePage
             IDataReader rd = dyNews.GetNewsInfo(NewsID, 0, ChID, DTable);
             if (rd.Read())
             {
-                Foosun.Publish.CommonData.Initialize();
+                Hg.Publish.CommonData.Initialize();
                 string TempletPath = rd["Templet"].ToString();
                 TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", TempletDir);
                 TempletPath = dimm + "/" + TempletPath;
@@ -67,14 +67,14 @@ public partial class news : Foosun.Web.UI.BasePage
                     #region 判断是否扣点
                     //开始扣点
                     //检查用户是否登陆
-                    if (Foosun.Global.Current.IsTimeout())
+                    if (Hg.Global.Current.IsTimeout())
                     {
-                        string Url = Foosun.Common.Input.URLEncode(Request.Url.ToString());
-                        Response.Redirect(Foosun.Config.UIConfig.dirUser + "/login.aspx?reurl=1&urls=" + Url + "", true);
+                        string Url = Hg.Common.Input.URLEncode(Request.Url.ToString());
+                        Response.Redirect(Hg.Config.UIConfig.dirUser + "/login.aspx?reurl=1&urls=" + Url + "", true);
                     }
                     else
                     {
-                        string UserNum = Foosun.Global.Current.UserNum;
+                        string UserNum = Hg.Global.Current.UserNum;
                         string IP = Request.ServerVariables["REMOTE_ADDR"];
                         int PointType = int.Parse(rd["isDelPoint"].ToString());
                         //新闻的参数
@@ -207,7 +207,7 @@ public partial class news : Foosun.Web.UI.BasePage
                 FilyContent = getjs() + FilyContent;
             }
 
-            FilyContent = (FilyContent.Replace(gInstallDir, Foosun.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
+            FilyContent = (FilyContent.Replace(gInstallDir, Hg.Publish.CommonData.getUrl())).Replace(gTempletDir, TempletDir);
             Response.Write(FilyContent);
         }
         else
@@ -218,7 +218,7 @@ public partial class news : Foosun.Web.UI.BasePage
 
     protected bool getGroup(string uGroup, string nGroup)
     {
-        return Foosun.Common.Public.CommgetGroup(uGroup, nGroup);
+        return Hg.Common.Public.CommgetGroup(uGroup, nGroup);
     }
 
     /// <summary>
@@ -284,8 +284,8 @@ public partial class news : Foosun.Web.UI.BasePage
 
     protected string getjs()
     {
-        string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
-        getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Foosun.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
+        string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
+        getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
         getajaxJS += "<!--Created by dotNETCMS v1.0 For Foosun Inc. at " + DateTime.Now + "-->\r\n";
         return getajaxJS;
     }

@@ -5,18 +5,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Foosun.Model;
-using Foosun.DALFactory;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Model;
+using Hg.DALFactory;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Pagination : DbBase, IPagination
     {
         //分页查询列表，第一个字段必须是不重复的索引字段，必须有order by 索引字段语句
         //频道管理列表
-        protected string[] manage_news_site_list = { "Id", "Id,ChannelID,CName,EName,ChannCName,IsURL,isLock,[Domain],ContrTF,ShowNaviTF", "News_site where isRecyle=0 and (ParentID='" + Foosun.Global.Current.SiteID + "' or ChannelID='" + Foosun.Global.Current.SiteID + "')", "order by Id desc" };
+        protected string[] manage_news_site_list = { "Id", "Id,ChannelID,CName,EName,ChannCName,IsURL,isLock,[Domain],ContrTF,ShowNaviTF", "News_site where isRecyle=0 and (ParentID='" + Hg.Global.Current.SiteID + "' or ChannelID='" + Hg.Global.Current.SiteID + "')", "order by Id desc" };
 
         protected string[] user_constr_constraccount ={ "id", "id,ConID,bankName,bankaccount,bankcard,bankRealName", "sys_userother where UserNum=@UserNum", "order by id desc" };
 
@@ -38,7 +38,7 @@ namespace Foosun.AccessDAL
 
         protected string[] user_friend_friendlist_2 ={ "id", "id,FriendUserNum,UserNum,bUserNum,UserName,CreatTime", "User_Friend  where UserNum=@UserNum", "order by Id desc" };
 
-        //protected string[] user_friend_friendmanage ={ "id", "id,HailFellow,FriendName,CreatTime,(select count(*) from " + Foosun.Config.UIConfig.dataRe + "User_friend where busernum=" + Foosun.Config.UIConfig.dataRe + "User_FriendClass.usernum) as CNT", "User_FriendClass where UserNum=@UserNum or gdfz=1", "order by Id desc" };
+        //protected string[] user_friend_friendmanage ={ "id", "id,HailFellow,FriendName,CreatTime,(select count(*) from " + Hg.Config.UIConfig.dataRe + "User_friend where busernum=" + Hg.Config.UIConfig.dataRe + "User_FriendClass.usernum) as CNT", "User_FriendClass where UserNum=@UserNum or gdfz=1", "order by Id desc" };
         protected string[] user_friend_friendmanage ={ "id", "id,UserNum,HailFellow,FriendName,CreatTime", "User_FriendClass where UserNum=@UserNum or gdfz=1", "order by Id desc" };
 
         protected string[] user_info_announce ={ "id", "id,title,Content,creatTime,islock,getPoint,GroupNumber", "user_news  where SiteID=@SiteID and islock=0", "order by Id desc" };
@@ -67,7 +67,7 @@ namespace Foosun.AccessDAL
 
         protected string[] user_Rss_RssFeed_2 ={ "id", "id,ClassID,ClassCName,ClassEName,ParentID", "news_Class where ParentID=@ParentID and isURL=0 and isRecyle=0 and isLock=0 and isPage=0 and SiteID=@SiteID", "order by Id desc" };
 
-        protected string[] manage_Sys_admin_list = { "a.Id", "a.Id,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Foosun.Global.Current.SiteID + "'", "order by a.Id desc" };
+        protected string[] manage_Sys_admin_list = { "a.Id", "a.Id,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Hg.Global.Current.SiteID + "'", "order by a.Id desc" };
 
         protected string[] manage_Sys_admin_list_1 = { "a.Id", "a.Id,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID=@SiteID", "order by a.Id desc" };
 
@@ -79,49 +79,49 @@ namespace Foosun.AccessDAL
 
         protected string[] manage_Sys_admin_group ={ "id", "id,adminGroupNumber,GroupName,CreatTime", "sys_AdminGroup Where SiteID=@SiteID", "order by Id desc" };
         //地区管理
-        protected string[] manage_user_arealist ={ "id", "id,Cid,cityName,creatTime", "Sys_City where Pid='0' and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by OrderId desc,ID desc" };
+        protected string[] manage_user_arealist ={ "id", "id,Cid,cityName,creatTime", "Sys_City where Pid='0' and SiteID='" + Hg.Global.Current.SiteID + "'", "order by OrderId desc,ID desc" };
 
-        protected string[] manage_user_arealist_City ={ "id", "id,Cid,cityName,creatTime", "Sys_City where Pid=@Cid and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] manage_user_arealist_City ={ "id", "id,Cid,cityName,creatTime", "Sys_City where Pid=@Cid and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
 
         protected string[] manage_user_discussacti_list_1 ={ "id", "id,AId,Activesubject,UserName,CreaTime,ActiveExpense", "user_DiscussActive where 1=1 and Activesubject like cstr(@titlem) and siteID = @RequestSiteId", "order by Id desc" };
 
         protected string[] manage_user_discussacti_list_2 ={ "id", "id,AId,Activesubject,UserName,CreaTime,ActiveExpense", "user_DiscussActive where 1=1 and Activesubject like cstr(@titlem)", "order by Id desc" };
         //投稿后台
-        protected string[] manage_Contribution_Constr_chicklist ={ "id", "id,ConID,Title,creatTime,UserNum,Source,Tags,Author,ispass,Contrflg", "User_Constr where Mid(Contrflg,3,1) = '1' and isadmidel=0 and isCheck=1 and ispass=0 and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] manage_Contribution_Constr_chicklist ={ "id", "id,ConID,Title,creatTime,UserNum,Source,Tags,Author,ispass,Contrflg", "User_Constr where Mid(Contrflg,3,1) = '1' and isadmidel=0 and isCheck=1 and ispass=0 and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
 
-        protected string[] manage_Contribution_Constr_List ={ "id", "id,ConID,Title,creatTime,Source,Tags,Contrflg,Author,ispass", "User_Constr where Mid(Contrflg,3,1) = '1' and isadmidel=0 and isCheck=0 and ispass=0 and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] manage_Contribution_Constr_List ={ "id", "id,ConID,Title,creatTime,Source,Tags,Contrflg,Author,ispass", "User_Constr where Mid(Contrflg,3,1) = '1' and isadmidel=0 and isCheck=0 and ispass=0 and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
 
         protected string[] manage_news_Special_List ={ "id", "id,SpecialID,SpecialCName,isLock,CreatTime", "news_special Where SiteID=@SiteID  and isRecyle=0 and ParentID='0'", "order by Id Desc" };
         //公告
-        protected string[] manage_user_announce ={ "id", "id,title,Content,creatTime,islock,getPoint,GroupNumber,SiteID", "user_news where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id Desc" };
+        protected string[] manage_user_announce ={ "id", "id,title,Content,creatTime,islock,getPoint,GroupNumber,SiteID", "user_news where SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id Desc" };
 
         //好友验证
-        protected string[] user_Requestinformation ={ "id", "id,qUsername,bUsername,datatime,Content,ischick", "user_Requestinformation where bUsername='" + Foosun.Global.Current.UserName + "' and ischick=1", "order by Id Desc" };
+        protected string[] user_Requestinformation ={ "id", "id,qUsername,bUsername,datatime,Content,ischick", "user_Requestinformation where bUsername='" + Hg.Global.Current.UserName + "' and ischick=1", "order by Id Desc" };
 
         protected string[] manage_user_announce_1 ={ "id", "id,title,Content,creatTime,islock,getPoint,GroupNumber,SiteID", "user_news where SiteID=@SiteID", "order by Id Desc" };
         //稿酬级别
-        protected string[] manage_Contribution_Constr_SetParamlist ={ "id", "id,PCId,ConstrPayName,gPoint,iPoint,money,Gunit", "sys_ParmConstr where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id Desc" };
+        protected string[] manage_Contribution_Constr_SetParamlist ={ "id", "id,PCId,ConstrPayName,gPoint,iPoint,money,Gunit", "sys_ParmConstr where SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id Desc" };
 
         //稿酬
-        protected string[] manage_Contribution_paymentannals ={ "id", "id,constrPayID,userNum,Money,payTime,PayAdmin", "user_constrPay where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by id Desc" };
+        protected string[] manage_Contribution_paymentannals ={ "id", "id,constrPayID,userNum,Money,payTime,PayAdmin", "user_constrPay where SiteID='" + Hg.Global.Current.SiteID + "'", "order by id Desc" };
 
         //logs 
-        protected string[] user_manage_logs_1 = { "id", "id,logID,Title,Content,creatTime,dateNum,LogDateTime,UserNum,SiteID", "user_userlogs Where UserNum='" + Foosun.Global.Current.UserNum + "'", "order by creatTime desc,id desc" };
+        protected string[] user_manage_logs_1 = { "id", "id,logID,Title,Content,creatTime,dateNum,LogDateTime,UserNum,SiteID", "user_userlogs Where UserNum='" + Hg.Global.Current.UserNum + "'", "order by creatTime desc,id desc" };
 
         //网址收藏
-        protected string[] user_info_url = { "id", "id,ClassID,URLName,URL,URLColor,CreatTime,Content", "user_URL where UserNum='" + Foosun.Global.Current.UserNum + "'", "order by id desc" };
+        protected string[] user_info_url = { "id", "id,ClassID,URLName,URL,URLColor,CreatTime,Content", "user_URL where UserNum='" + Hg.Global.Current.UserNum + "'", "order by id desc" };
 
-        protected string[] user_info_url_1 = { "id", "id,ClassID,URLName,URL,URLColor,CreatTime,Content", "user_URL where ClassID=@ClassID and UserNum='" + Foosun.Global.Current.UserNum + "'", "order by id desc" };
+        protected string[] user_info_url_1 = { "id", "id,ClassID,URLName,URL,URLColor,CreatTime,Content", "user_URL where ClassID=@ClassID and UserNum='" + Hg.Global.Current.UserNum + "'", "order by id desc" };
 
         protected string[] manage_user_discussclass_1 ={ "id", "id,DcID,Cname,Content", "User_DiscussClass where indexnumber='0' and Cname like cstr(titlem) and siteID = @RequestSiteId", "order by Id desc" };
 
         protected string[] manage_user_discussclass_2 ={ "id", "id,DcID,Cname,Content", "User_DiscussClass where indexnumber='0' and Cname like cstr(titlem)", "order by Id desc" };
 
-        protected string[] manage_user_discussclass_3 ={ "id", "id,DcID,Cname,Content", "User_DiscussClass where indexnumber='0' and Cname like cstr(titlem) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] manage_user_discussclass_3 ={ "id", "id,DcID,Cname,Content", "User_DiscussClass where indexnumber='0' and Cname like cstr(titlem) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
 
         protected string[] manage_user_discuss_1 ={ "id", "id,DisID,Cname,UserName,Creatime,Authoritymoney", "user_Discuss where siteID = @RequestSiteId and Cname like cstr(titlem)", "order by Id desc" };
 
-        protected string[] manage_user_discuss_2 ={ "id", "id,DisID,Cname,UserName,Creatime,Authoritymoney", "user_Discuss where Cname like cstr(titlem) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] manage_user_discuss_2 ={ "id", "id,DisID,Cname,UserName,Creatime,Authoritymoney", "user_Discuss where Cname like cstr(titlem) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
 
         protected string[] user_message_Message_box_1 ={ "Id", "Id,Mid,Title,content,UserNum,Send_DateTime,LevelFlag,FileTF,isRead", "user_Message where Rec_UserNum=@UserNum and isRdel=0 and isRecyle=0", "order by Id desc" };
 
@@ -145,7 +145,7 @@ namespace Foosun.AccessDAL
 
         protected string[] user_discuss_discussPhotoalbumlist ={ "id", "id,PhotoalbumName,PhotoalbumID,UserName,Creatime,pwd", "User_Photoalbum where isDisPhotoalbum=1 and DisID=@DisID", "order by ID desc" };
         //新闻栏目
-        protected string[] manage_news_class_list ={ "id", "id,ClassID,ClassCName,ClassEname,ParentID,OrderID,IsURL,IsLock,[Domain],NaviShowtf,isPage,classtemplet,ReadNewsTemplet", "News_Class where isRecyle<>1 and ParentID='0' " + Foosun.Common.Public.getSessionStr() + "", "order by OrderID Desc,id desc" };
+        protected string[] manage_news_class_list ={ "id", "id,ClassID,ClassCName,ClassEname,ParentID,OrderID,IsURL,IsLock,[Domain],NaviShowtf,isPage,classtemplet,ReadNewsTemplet", "News_Class where isRecyle<>1 and ParentID='0' " + Hg.Common.Public.getSessionStr() + "", "order by OrderID Desc,id desc" };
 
         protected string[] manage_news_class_list_1 ={ "id", "id,ClassID,ClassCName,ClassEname,ParentID,OrderID,IsURL,IsLock,[Domain],NaviShowtf,isPage,classtemplet,ReadNewsTemplet", "News_Class where isRecyle<>1 and ParentID='0' and SiteID=@SiteID", "order by OrderID Desc,id desc" };
         //讨论组
@@ -157,85 +157,85 @@ namespace Foosun.AccessDAL
 
         protected string[] user_info_applyads = { "AdID", "AdID,adName,adType,ClickNum,ShowNum,creatTime,isLock,TimeOutDay", "ads Where CusID=@CusID ", "order by ID" };
 
-        protected string[] General_manage_1 ={ "id", "id,Cname,gType,URL,EmailURL,isLock,SiteID", "news_Gen where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] General_manage_1 ={ "id", "id,Cname,gType,URL,EmailURL,isLock,SiteID", "news_Gen where SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
 
-        protected string[] General_manage_2 ={ "id", "id,Cname,gType,URL,EmailURL,isLock,SiteID", "news_Gen where SiteID='" + Foosun.Global.Current.SiteID + "' and gType=@gType", "order by ID desc" };
+        protected string[] General_manage_2 ={ "id", "id,Cname,gType,URL,EmailURL,isLock,SiteID", "news_Gen where SiteID='" + Hg.Global.Current.SiteID + "' and gType=@gType", "order by ID desc" };
 
         protected string[] user_discuss_discussphoto ={ "id", "id,PhotoID,PhotoName,PhotoTime,UserNum,PhotoContent,PhotoalbumID,PhotoUrl", "user_photo where PhotoalbumID=@PhotoalbumID", "order by ID desc" };
 
         protected string[] manage_news_SortPage ={ "id", "id,ClassID,ClassCName,ClassEname,ParentID,OrderID", "News_Class where isRecyle<>1 and ParentID='0' and ModelID='0'", "order by OrderID desc" };
         //自由标签
-        protected string[] manage_label_FreeLabel_List ={ "id", "id,LabelID,LabelName,LabelSQL,StyleContent,Description,CreatTime,SiteID", "sys_LabelFree where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] manage_label_FreeLabel_List ={ "id", "id,LabelID,LabelName,LabelSQL,StyleContent,Description,CreatTime,SiteID", "sys_LabelFree where SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
         //PSF
-        protected string[] manage_publish_psf ={ "id", "id,psfID,psfName,LocalDir,RemoteDir,isSub,CreatTime,isRecyle,SiteID", "sys_PSF where isRecyle=0 and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] manage_publish_psf ={ "id", "id,psfID,psfName,LocalDir,RemoteDir,isSub,CreatTime,isRecyle,SiteID", "sys_PSF where isRecyle=0 and SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
         //计划任务
-        protected string[] manage_publish_siteTask ={ "id", "id,taskID,TaskName,isIndex,ClassID,News,TimeSet,CreatTime,SiteID", "sys_SiteTask where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] manage_publish_siteTask ={ "id", "id,taskID,TaskName,isIndex,ClassID,News,TimeSet,CreatTime,SiteID", "sys_SiteTask where SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
 
-        protected string[] Manage_Stat_View_1 ={ "id", "id,statid,classname", "stat_class where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] Manage_Stat_View_1 ={ "id", "id,statid,classname", "stat_class where SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
 
         protected string[] Manage_Stat_View_2 ={ "id", "id,vtime,vwhere,vwidth,vOS,vsoft,vpage", "stat_Info where classid=@viewid and SiteID=@SiteID ", "order by ID desc" };
         //常规列表 
-        protected string[] configuration_system_Genlist_1 ={ "id", "Cname", "News_Gen where gType=@gType and isLock=0 and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by Id desc" };
+        protected string[] configuration_system_Genlist_1 ={ "id", "Cname", "News_Gen where gType=@gType and isLock=0 and SiteID='" + Hg.Global.Current.SiteID + "'", "order by Id desc" };
         //友情连接------------------后台分类
-        protected string[] manage_Friend_Friend_List_1 ={ "id", "id,ClassID,ClassCName,Content", "friend_class where ParentID='0' and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] manage_Friend_Friend_List_1 ={ "id", "id,ClassID,ClassCName,Content", "friend_class where ParentID='0' and SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
 
-        protected string[] manage_Friend_Friend_List_2 ={ "id", "id,Name,ClassID,Type,Author,Url,Lock,isAdmin", "friend_link where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by ID desc" };
+        protected string[] manage_Friend_Friend_List_2 ={ "id", "id,Name,ClassID,Type,Author,Url,Lock,isAdmin", "friend_link where SiteID='" + Hg.Global.Current.SiteID + "'", "order by ID desc" };
         //友情连接------------------前台
-        protected string[] user_friend_friend ={ "id", "id,Name,ClassID,Type,Author,Url,Lock,isAdmin", "friend_link where Author='" + Foosun.Global.Current.UserNum + "'", "order by ID desc" };
+        protected string[] user_friend_friend ={ "id", "id,Name,ClassID,Type,Author,Url,Lock,isAdmin", "friend_link where Author='" + Hg.Global.Current.UserNum + "'", "order by ID desc" };
         //归档
         protected string[] manage_news_History_Manage ={ "id", "id,NewsTitle,NewsType,Author,Souce,oldTime,CheckStat,isLock,DataLib", "old_News", "order by ID desc" };
         //调查
-        protected string[] manage_survey_ManageVote ={ "Rid", "Rid,IID,TID,OtherContent,VoteIp,VoteTime,UserNumber,SiteID", "vote_Manage where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by RID desc" };
+        protected string[] manage_survey_ManageVote ={ "Rid", "Rid,IID,TID,OtherContent,VoteIp,VoteTime,UserNumber,SiteID", "vote_Manage where SiteID='" + Hg.Global.Current.SiteID + "'", "order by RID desc" };
 
-        protected string[] manage_survey_setClass_1 ={ "vid", "vid,ClassName,Description", "vote_Class WHERE SiteID='" + Foosun.Global.Current.SiteID + "'", "order by vid desc" };
+        protected string[] manage_survey_setClass_1 ={ "vid", "vid,ClassName,Description", "vote_Class WHERE SiteID='" + Hg.Global.Current.SiteID + "'", "order by vid desc" };
 
-        protected string[] manage_survey_setClass_2 ={ "vid", "vid,ClassName,Description", "vote_Class where VID like cstr(@VID) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by vid desc" };
+        protected string[] manage_survey_setClass_2 ={ "vid", "vid,ClassName,Description", "vote_Class where VID like cstr(@VID) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by vid desc" };
 
-        protected string[] manage_survey_setClass_3 ={ "vid", "vid,ClassName,Description", "vote_Class where ClassName like cstr(@ClassName) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by vid desc" };
+        protected string[] manage_survey_setClass_3 ={ "vid", "vid,ClassName,Description", "vote_Class where ClassName like cstr(@ClassName) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by vid desc" };
 
-        protected string[] manage_survey_setClass_4 ={ "vid", "vid,ClassName,Description", "vote_Class where Description like cstr(@Description) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by vid desc" };
+        protected string[] manage_survey_setClass_4 ={ "vid", "vid,ClassName,Description", "vote_Class where Description like cstr(@Description) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by vid desc" };
         //调查选项
-        protected string[] manage_survey_setItem_1 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where TID like cstr(@TID) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_1 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where TID like cstr(@TID) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_2 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_2 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_3 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemName like cstr(@ItemName) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_3 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemName like cstr(@ItemName) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_4 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemValue like cstr(@ItemValue) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_4 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemValue like cstr(@ItemValue) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_5 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where PicSrc like cstr(@PicSrc) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_5 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where PicSrc like cstr(@PicSrc) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_6 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where DisColor like cstr(@DisColor) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_6 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where DisColor like cstr(@DisColor) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_7 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where VoteCount like cstr(@VoteCount) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_7 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where VoteCount like cstr(@VoteCount) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setItem_8 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemDetail like cstr(@ItemDetail) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setItem_8 ={ "TID", "TID,IID,ItemName,ItemValue,ItemMode,PicSrc,DisColor,VoteCount,ItemDetail", "vote_Item where ItemDetail like cstr(@ItemDetail) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
         //多步投票管理
-        protected string[] manage_survey_setSteps_1 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by sid desc" };
+        protected string[] manage_survey_setSteps_1 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where SiteID='" + Hg.Global.Current.SiteID + "'", "order by sid desc" };
 
-        protected string[] manage_survey_setSteps_2 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where SID like cstr(@SID) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by sid desc" };
+        protected string[] manage_survey_setSteps_2 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where SID like cstr(@SID) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by sid desc" };
 
-        protected string[] manage_survey_setSteps_3 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where TIDS like cstr(@TIDS) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by sid desc" };
+        protected string[] manage_survey_setSteps_3 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where TIDS like cstr(@TIDS) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by sid desc" };
 
-        protected string[] manage_survey_setSteps_4 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where Steps like cstr(@Steps) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by sid desc" };
+        protected string[] manage_survey_setSteps_4 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where Steps like cstr(@Steps) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by sid desc" };
 
-        protected string[] manage_survey_setSteps_5 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where TIDU like cstr(@TIDU) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by sid desc" };
+        protected string[] manage_survey_setSteps_5 ={ "SID", "SID,TIDS,Steps,TIDU", "vote_Steps where TIDU like cstr(@TIDU) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by sid desc" };
         //投票主题
-        protected string[] manage_survey_setTitle_1 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_1 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_2 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where Title like cstr(@Title) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_2 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where Title like cstr(@Title) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_3 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where VID like cstr(@VID) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_3 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where VID like cstr(@VID) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_4 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where MaxNum like cstr(@MaxNum) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_4 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where MaxNum like cstr(@MaxNum) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_5 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where StartDate like cstr(@StartDate) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_5 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where StartDate like cstr(@StartDate) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_6 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where EndDate like cstr(@EndDate) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_6 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where EndDate like cstr(@EndDate) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
 
-        protected string[] manage_survey_setTitle_7 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where ItemMode like cstr(@ItemMode) and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by TID desc" };
+        protected string[] manage_survey_setTitle_7 ={ "TID", "TID,VID,Title,Type,MaxNum,DisMode,StartDate,EndDate,ItemMode", "vote_Title where ItemMode like cstr(@ItemMode) and SiteID='" + Hg.Global.Current.SiteID + "'", "order by TID desc" };
         //自定义字段
-        protected string[] manage_Sys_DefineTable_Manage = { "DefineId", "DefineId,DefineInfoId,DefineName,ParentInfoId", "define_class where ParentInfoId='0' and SiteID='" + Foosun.Global.Current.SiteID + "'", "order by DefineId desc" };
+        protected string[] manage_Sys_DefineTable_Manage = { "DefineId", "DefineId,DefineInfoId,DefineName,ParentInfoId", "define_class where ParentInfoId='0' and SiteID='" + Hg.Global.Current.SiteID + "'", "order by DefineId desc" };
         //前台显示文章
         protected string[] user_ShowUser_1 = { "id", "ConID,id,Title,creatTime,ClassID", "user_Constr where UserNum=@UserNum and ClassID=@ClassID and isuserdel=0", "order by Id desc" };
 
@@ -262,7 +262,7 @@ namespace Foosun.AccessDAL
         {
             string PageType = PageName.Substring(0, PageName.Length - 5);
 
-            string _dirName = Foosun.Config.UIConfig.dirMana.ToLower();
+            string _dirName = Hg.Config.UIConfig.dirMana.ToLower();
 
             if (!_dirName.Equals("manage"))
             {

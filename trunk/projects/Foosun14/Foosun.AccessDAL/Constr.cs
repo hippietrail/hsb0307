@@ -4,16 +4,16 @@
 using System;
 using System.Data;
 using System.Data.OleDb;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.Common;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.Common;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class Constr : DbBase, IConstr
     {
@@ -217,7 +217,7 @@ namespace Foosun.AccessDAL
         }
         public string ConstrTF()
         {
-            string Sql = "select ConstrTF from " + Pre + "sys_PramUser where SiteID = '" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select ConstrTF from " + Pre + "sys_PramUser where SiteID = '" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteScalar(CommandType.Text, Sql, null).ToString();
         }
         #region ConstrClass_up.aspx
@@ -302,7 +302,7 @@ namespace Foosun.AccessDAL
         public DataTable GetPage1(int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
         {
             string AllFields = "UserNum";
-            string Condition = "(select DISTINCT UserNum from " + Pre + "user_Constr where Mid(Contrflg,3,1) = '1' and SiteID='" + Foosun.Global.Current.SiteID + "') UserNum1";
+            string Condition = "(select DISTINCT UserNum from " + Pre + "user_Constr where Mid(Contrflg,3,1) = '1' and SiteID='" + Hg.Global.Current.SiteID + "') UserNum1";
             string IndexField = "UserNum";
             string OrderFields = "order by UserNum desc";
             return DbHelper.ExecutePage(AllFields, Condition, IndexField, OrderFields, PageIndex, PageSize, out RecordCount, out PageCount, null);
@@ -374,7 +374,7 @@ namespace Foosun.AccessDAL
         }
         public DataTable sel12()
         {
-            string Sql = "Select ConstrPayName,PCId From " + Pre + "sys_ParmConstr where SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "Select ConstrPayName,PCId From " + Pre + "sys_ParmConstr where SiteID='" + Hg.Global.Current.SiteID + "'";
             return DbHelper.ExecuteTable(CommandType.Text, Sql, null);
         }
         public DataTable sel13(string ConIDp)
@@ -520,8 +520,8 @@ namespace Foosun.AccessDAL
             param[5].Value = UserNum;
             param[6] = new OleDbParameter("@content4",OleDbType.VarWChar);
             param[6].Value = content4;
-            string Sql = "insert into " + Pre + "User_Ghistory(GhID,ghtype,Gpoint,iPoint,[Money],CreatTime,UserNUM,gtype,content,siteID) values(@NewsID,1,@gPoint,@iPoint,@Money1,@CreatTime1,@UserNum,4,@content4,'" + Foosun.Global.Current.SiteID + "')";
-            //string Sql = "insert into " + Pre + "User_Ghistory(GhID,ghtype,Gpoint,iPoint,Money,CreatTime,UserNUM,gtype,content,siteID) values('" + NewsID + "',1," + gPoint + "," + iPoint + "," + Money1 + ",'" + CreatTime1 + "','" + UserNum + "',4,'" + content4 + "','" + Foosun.Global.Current.SiteID + "')";
+            string Sql = "insert into " + Pre + "User_Ghistory(GhID,ghtype,Gpoint,iPoint,[Money],CreatTime,UserNUM,gtype,content,siteID) values(@NewsID,1,@gPoint,@iPoint,@Money1,@CreatTime1,@UserNum,4,@content4,'" + Hg.Global.Current.SiteID + "')";
+            //string Sql = "insert into " + Pre + "User_Ghistory(GhID,ghtype,Gpoint,iPoint,Money,CreatTime,UserNUM,gtype,content,siteID) values('" + NewsID + "',1," + gPoint + "," + iPoint + "," + Money1 + ",'" + CreatTime1 + "','" + UserNum + "',4,'" + content4 + "','" + Hg.Global.Current.SiteID + "')";
             // return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, Database.getNewParam(param, "NewsID,gPoint,iPoint,Money1,CreatTime1,UserNum,content4")));
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param));
         }
@@ -565,13 +565,13 @@ namespace Foosun.AccessDAL
         {
             OleDbParameter param = new OleDbParameter("@UserNum", UserNum);
             int intflg = 0;
-            string Sql = "select ParmConstrNum from " + Pre + "sys_user where UserNum=@UserNum and SiteID='" + Foosun.Global.Current.SiteID + "'";
+            string Sql = "select ParmConstrNum from " + Pre + "sys_user where UserNum=@UserNum and SiteID='" + Hg.Global.Current.SiteID + "'";
             DataTable dt = DbHelper.ExecuteTable(CommandType.Text, Sql, param);
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
                 {
-                    if (Foosun.Common.Input.IsInteger(dt.Rows[0]["ParmConstrNum"].ToString()))
+                    if (Hg.Common.Input.IsInteger(dt.Rows[0]["ParmConstrNum"].ToString()))
                     {
                         intflg = int.Parse(dt.Rows[0]["ParmConstrNum"].ToString());
                     }
@@ -612,7 +612,7 @@ namespace Foosun.AccessDAL
             param[3] = new OleDbParameter("@constrPayID",OleDbType.VarWChar,12);
             param[3].Value = constrPayID;
 
-            string Sql = "insert into " + Pre + "user_constrPay(userNum,Money,payTime,constrPayID,SiteID,PayAdmin) values(@userNum,@ParmConstrNums,@payTime,@constrPayID,'" + Foosun.Global.Current.SiteID + "','" + Foosun.Global.Current.UserName + "')";
+            string Sql = "insert into " + Pre + "user_constrPay(userNum,Money,payTime,constrPayID,SiteID,PayAdmin) values(@userNum,@ParmConstrNums,@payTime,@constrPayID,'" + Hg.Global.Current.SiteID + "','" + Hg.Global.Current.UserName + "')";
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, Database.getNewParam(param, "userNum,Money,payTime,constrPayID")));
         }
         public int Update5(string UserNum1)
@@ -664,7 +664,7 @@ namespace Foosun.AccessDAL
             param[4].Value = moneys1;
             param[5] = new OleDbParameter("@Gunit", OleDbType.VarWChar, 10);
             param[5].Value = Gunit;
-            string Sql = "insert into " + Pre + "sys_ParmConstr(PCId,ConstrPayName,gPoint,iPoint,money,Gunit,SiteID) values(@PCId,@ConstrPayName,@gpoint,@ipoint,@moneys1,@Gunit,'" + Foosun.Global.Current.SiteID + "')";
+            string Sql = "insert into " + Pre + "sys_ParmConstr(PCId,ConstrPayName,gPoint,iPoint,money,Gunit,SiteID) values(@PCId,@ConstrPayName,@gpoint,@ipoint,@moneys1,@Gunit,'" + Hg.Global.Current.SiteID + "')";
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, Sql, Database.getNewParam(param, "PCId,ConstrPayName,gPoint,iPoint,money,Gunit")));
         }
 

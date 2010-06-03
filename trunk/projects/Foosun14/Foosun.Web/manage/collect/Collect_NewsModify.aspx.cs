@@ -20,9 +20,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Net;
 using System.Text.RegularExpressions;
-using Foosun.Model;
+using Hg.Model;
 
-public partial class manage_collect_Collect_NewsModify : Foosun.Web.UI.ManagePage
+public partial class manage_collect_Collect_NewsModify : Hg.Web.UI.ManagePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -36,7 +36,7 @@ public partial class manage_collect_Collect_NewsModify : Foosun.Web.UI.ManagePag
             }
             this.TxtClassName.Attributes.Add("readonly", "true");
             int id = int.Parse(Request.QueryString["ID"].Trim());
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             this.HidNewsID.Value = id.ToString();
             DataTable tb = cl.SiteList();
             if (tb != null)
@@ -57,7 +57,7 @@ public partial class manage_collect_Collect_NewsModify : Foosun.Web.UI.ManagePag
             this.EdtContent.Value = info.Content;
             this.LblClTime.Text = info.CollectTime.ToString();
             this.HidClassID.Value = info.ClassID;
-            Foosun.CMS.ContentManage cm = new Foosun.CMS.ContentManage();
+            Hg.CMS.ContentManage cm = new Hg.CMS.ContentManage();
             string ClassName = cm.getClassCName(this.HidClassID.Value);
             this.TxtClassName.Text = ClassName;
         }
@@ -107,7 +107,7 @@ public partial class manage_collect_Collect_NewsModify : Foosun.Web.UI.ManagePag
             info.Content = this.EdtContent.Value;
             info.Links = this.TxtLink.Text.Trim();
             info.ClassID = this.HidClassID.Value;
-            Foosun.CMS.Collect.Collect cl = new Foosun.CMS.Collect.Collect();
+            Hg.CMS.Collect.Collect cl = new Hg.CMS.Collect.Collect();
             cl.NewsUpdate(id, info);
             PageRight("修改新闻成功!", "Collect_News.aspx");
         }

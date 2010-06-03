@@ -10,15 +10,15 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Foosun.DALFactory;
-using Foosun.Model;
+using Hg.DALFactory;
+using Hg.Model;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Reflection;
-using Foosun.DALProfile;
-using Foosun.Config;
+using Hg.DALProfile;
+using Hg.Config;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class Model : DbBase, IModel
     {
@@ -133,7 +133,7 @@ namespace Foosun.SQLServerDAL
         public void creatModeltable(string DataTable, int channelType, int isConstr)
         {
             //根据模型标志读取默认配置
-            string getModelContentField = Foosun.Common.Public.getModelContentField(channelType.ToString());
+            string getModelContentField = Hg.Common.Public.getModelContentField(channelType.ToString());
             //string[] getDefaultValue = null;
             //string[] getDefaultItemValue = null;
             //string CreatField = "";
@@ -197,7 +197,7 @@ namespace Foosun.SQLServerDAL
         /// 插入记录
         /// </summary>
         /// <param name="uc"></param>
-        public void updateDate(Foosun.Model.ChannelInfo uc)
+        public void updateDate(Hg.Model.ChannelInfo uc)
         {
             string Sql = "insert into " + Pre + "sys_channel (";
             Sql += "channelType,channelName,channelItem,channelDescript,DataLib,islock,channelunit,htmldir,indexFileName,upfilessize,upfiletype,ischeck,indextemplet,classtemplet,specialtemplet,newstemplet,isHTML,SiteID,issys,isConstr,channelEItem,ClassSave,ClassFileName,SavePath,FileName,binddomain,TempletPath,isDelPoint,Gpoint,iPoint,GroupNumber";
@@ -211,14 +211,14 @@ namespace Foosun.SQLServerDAL
         /// 更新记录记录
         /// </summary>
         /// <param name="uc"></param>
-        public void updateDate1(Foosun.Model.ChannelInfo uc)
+        public void updateDate1(Hg.Model.ChannelInfo uc)
         {
             string Sql = "Update " + Pre + "sys_channel set channelName=@channelName,channelItem=@channelItem,channelDescript=@channelDescript,channelunit=@channelunit,htmldir=@htmldir,indexFileName=@indexFileName,upfilessize=@upfilessize,upfiletype=@upfiletype,ischeck=@ischeck,indextemplet=@indextemplet,classtemplet=@classtemplet,specialtemplet=@specialtemplet,newstemplet=@newstemplet,isHTML=@isHTML,isConstr=@isConstr,ClassSave=@ClassSave,ClassFileName=@ClassFileName,SavePath=@SavePath,FileName=@FileName,issys=@issys,binddomain=@binddomain,TempletPath=@TempletPath,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber where ID=" + uc.Id + "";
             SqlParameter[] parm = InsertParameters(uc);
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
         }
 
-        private SqlParameter[] InsertParameters(Foosun.Model.ChannelInfo uc1)
+        private SqlParameter[] InsertParameters(Hg.Model.ChannelInfo uc1)
         {
             SqlParameter[] param = new SqlParameter[31];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -395,7 +395,7 @@ namespace Foosun.SQLServerDAL
         /// 插入字段入数据库进行保存
         /// </summary>
         /// <param name="uc"></param>
-        public void insertFields(Foosun.Model.ChannelValue uc, string TableSTR)
+        public void insertFields(Hg.Model.ChannelValue uc, string TableSTR)
         {
             string Sql = "insert into " + Pre + "sys_channelvalue (";
             Sql += "ChID,OrderID,CName,EName,vDescript,vType,vLength,vValue,isNulls,isUser,vitem,isLock,SiteID,fieldLength,HTMLedit,isSearch,vHeight";
@@ -413,7 +413,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="uc"></param>
         /// <param name="TableSTR"></param>
-        public void UpdateFields(Foosun.Model.ChannelValue uc, string TableSTR)
+        public void UpdateFields(Hg.Model.ChannelValue uc, string TableSTR)
         {
             string Sql = "update " + Pre + "sys_channelvalue set ";
             Sql += "OrderID=@OrderID,CName=@CName,vDescript=@vDescript,vLength=@vLength,vValue=@vValue,isNulls=@isNulls,isUser=@isUser,vitem=@vitem,isLock=@isLock,isSearch=@isSearch,vHeight=@vHeight,HTMLedit=@HTMLedit where ID=@Id and SiteID=@SiteID";
@@ -498,7 +498,7 @@ namespace Foosun.SQLServerDAL
         /// </summary>
         /// <param name="uc1"></param>
         /// <returns></returns>
-        private SqlParameter[] ValueParameters(Foosun.Model.ChannelValue uc1)
+        private SqlParameter[] ValueParameters(Hg.Model.ChannelValue uc1)
         {
             SqlParameter[] param = new SqlParameter[18];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -621,7 +621,7 @@ namespace Foosun.SQLServerDAL
         /// 插入栏目数据
         /// </summary>
         /// <param name="uc"></param>
-        public void insertClassInfo(Foosun.Model.ChannelClassInfo uc)
+        public void insertClassInfo(Hg.Model.ChannelClassInfo uc)
         {
             SqlParameter[] param = ClassInfoParameter(uc);
             string Sql = "insert into " + Pre + "sys_channelclass (";
@@ -631,7 +631,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        public void updateClassInfo(Foosun.Model.ChannelClassInfo uc)
+        public void updateClassInfo(Hg.Model.ChannelClassInfo uc)
         {
             SqlParameter[] param = ClassInfoParameter(uc);
             string Sql = "update " + Pre + "sys_channelclass set ";
@@ -639,7 +639,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private SqlParameter[] ClassInfoParameter(Foosun.Model.ChannelClassInfo uc1)
+        private SqlParameter[] ClassInfoParameter(Hg.Model.ChannelClassInfo uc1)
         {
             SqlParameter[] param = new SqlParameter[27];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -940,7 +940,7 @@ namespace Foosun.SQLServerDAL
             return Convert.ToInt32(DbHelper.ExecuteNonQuery(CommandType.Text, sql, param));
         }
 
-        public int inserContentInfo(Foosun.Model.ChInfoContent uc,string DTable)
+        public int inserContentInfo(Hg.Model.ChInfoContent uc,string DTable)
         {
             SqlParameter[] param = GetChInfoParams(uc);
             string Sql = "insert into " + DTable + " (";
@@ -954,7 +954,7 @@ namespace Foosun.SQLServerDAL
             return Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, sqlid, param));
         }
 
-        public void updateContentInfo(Foosun.Model.ChInfoContent uc, string DTable)
+        public void updateContentInfo(Hg.Model.ChInfoContent uc, string DTable)
         {
             SqlParameter[] param = GetChInfoParams(uc);
             string Sql = "update " + DTable + " set ";
@@ -962,7 +962,7 @@ namespace Foosun.SQLServerDAL
             Sql += "Templet=@Templet,SavePath=@SavePath,FileName=@FileName,isDelPoint=@isDelPoint,Gpoint=@Gpoint,iPoint=@iPoint,GroupNumber=@GroupNumber,Metakeywords=@Metakeywords,Metadesc=@Metadesc,Click=@Click,isHTML=@isHTML,isConstr=@isConstr,islock=@islock,ContentProperty=@ContentProperty,Editor=@Editor where ID=@Id";
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
-        public void updateUserContentInfo(Foosun.Model.ChInfoContent uc, string DTable)
+        public void updateUserContentInfo(Hg.Model.ChInfoContent uc, string DTable)
         {
             SqlParameter[] param = GetChInfoParams1(uc);
             string Sql = "update " + DTable + " set ";
@@ -978,7 +978,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, sql, param);
         }
 
-        private SqlParameter[] GetChInfoParams(Foosun.Model.ChInfoContent uc1)
+        private SqlParameter[] GetChInfoParams(Hg.Model.ChInfoContent uc1)
         {
             SqlParameter[] param = new SqlParameter[30];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -1044,7 +1044,7 @@ namespace Foosun.SQLServerDAL
             return param;
         }
 
-        private SqlParameter[] GetChInfoParams1(Foosun.Model.ChInfoContent uc1)
+        private SqlParameter[] GetChInfoParams1(Hg.Model.ChInfoContent uc1)
         {
             SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -1144,7 +1144,7 @@ namespace Foosun.SQLServerDAL
             return Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, sql, param));
         }
 
-        public void insertSpecialInfo(Foosun.Model.ChannelSpecialInfo uc)
+        public void insertSpecialInfo(Hg.Model.ChannelSpecialInfo uc)
         {
             SqlParameter[] param = SpecialInfoParameter(uc);
             string Sql = "insert into " + Pre + "sys_channelspecial (";
@@ -1154,7 +1154,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        public void updateSpecialInfo(Foosun.Model.ChannelSpecialInfo uc)
+        public void updateSpecialInfo(Hg.Model.ChannelSpecialInfo uc)
         {
             SqlParameter[] param = SpecialInfoParameter(uc);
             string Sql = "update " + Pre + "sys_channelspecial set ";
@@ -1163,7 +1163,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private SqlParameter[] SpecialInfoParameter(Foosun.Model.ChannelSpecialInfo uc1)
+        private SqlParameter[] SpecialInfoParameter(Hg.Model.ChannelSpecialInfo uc1)
         {
             SqlParameter[] param = new SqlParameter[14];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -1376,7 +1376,7 @@ namespace Foosun.SQLServerDAL
         }
 
 
-        public void InsertStyleContent(Foosun.Model.styleChContent uc)
+        public void InsertStyleContent(Hg.Model.styleChContent uc)
         {
             SqlParameter[] param = StyleChInfoParameter(uc);
             string Sql = "insert into " + Pre + "sys_channelstyle (";
@@ -1386,7 +1386,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        public void UpdateStyleContent(Foosun.Model.styleChContent uc)
+        public void UpdateStyleContent(Hg.Model.styleChContent uc)
         {
             SqlParameter[] param = StyleChInfoParameter(uc);
             string Sql = "update " + Pre + "sys_channelstyle set ";
@@ -1394,7 +1394,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private SqlParameter[] StyleChInfoParameter(Foosun.Model.styleChContent uc1)
+        private SqlParameter[] StyleChInfoParameter(Hg.Model.styleChContent uc1)
         {
             SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -1550,7 +1550,7 @@ namespace Foosun.SQLServerDAL
             return Convert.ToInt32(DbHelper.ExecuteScalar(CommandType.Text, sql, param));
         }
 
-        public void InsertLabelContent(Foosun.Model.LabelChContent uc)
+        public void InsertLabelContent(Hg.Model.LabelChContent uc)
         {
             SqlParameter[] param = LabelChInfoParameter(uc);
             string Sql = "insert into " + Pre + "sys_channellabel (";
@@ -1560,7 +1560,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        public void UpdateLabelContent(Foosun.Model.LabelChContent uc)
+        public void UpdateLabelContent(Hg.Model.LabelChContent uc)
         {
             SqlParameter[] param = LabelChInfoParameter(uc);
             string Sql = "update " + Pre + "sys_channellabel set ";
@@ -1568,7 +1568,7 @@ namespace Foosun.SQLServerDAL
             DbHelper.ExecuteNonQuery(CommandType.Text, Sql, param);
         }
 
-        private SqlParameter[] LabelChInfoParameter(Foosun.Model.LabelChContent uc1)
+        private SqlParameter[] LabelChInfoParameter(Hg.Model.LabelChContent uc1)
         {
             SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@Id", SqlDbType.Int, 4);
@@ -1852,9 +1852,9 @@ namespace Foosun.SQLServerDAL
             string UrlStr = string.Empty;
             SqlParameter param = new SqlParameter("@ID", ID);
             string sql = "select * from " + DTable + " where ID=@ID";
-            string dirHTML = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-            dirHTML = dirHTML.Replace("{@dirHTML}", Foosun.Config.UIConfig.dirHtml);
-            string dimm = Foosun.Config.UIConfig.dirDumm;
+            string dirHTML = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+            dirHTML = dirHTML.Replace("{@dirHTML}", Hg.Config.UIConfig.dirHtml);
+            string dimm = Hg.Config.UIConfig.dirDumm;
             if (dimm.Trim() != string.Empty)
             {
                 dimm = "/" + dimm;

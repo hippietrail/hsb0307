@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class manage_label_styleclass_edit : Foosun.Web.UI.ManagePage
+public partial class manage_label_styleclass_edit : Hg.Web.UI.ManagePage
 {
     public manage_label_styleclass_edit()
     {
@@ -38,11 +38,11 @@ public partial class manage_label_styleclass_edit : Foosun.Web.UI.ManagePage
 
     protected void getClassInfo()
     {
-        string str_ClassID = Foosun.Common.Input.checkID(Request.QueryString["ClassID"]);
+        string str_ClassID = Hg.Common.Input.checkID(Request.QueryString["ClassID"]);
         ClassID.Value = str_ClassID;
         string str_ClassName = "";
 
-        Foosun.CMS.Style.Style stClass = new Foosun.CMS.Style.Style();
+        Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         DataTable dt = stClass.getstyleClassInfo(str_ClassID);
         
         if (dt != null)
@@ -69,14 +69,14 @@ public partial class manage_label_styleclass_edit : Foosun.Web.UI.ManagePage
         {
             int result = 0;
             string str_Name = Request.Form["styleClassName"];
-            string str_ClassID = Foosun.Common.Input.checkID(Request.Form["ClassID"]);
+            string str_ClassID = Hg.Common.Input.checkID(Request.Form["ClassID"]);
 
-            Foosun.Model.StyleClassInfo stClass=new Foosun.Model.StyleClassInfo();
+            Hg.Model.StyleClassInfo stClass=new Hg.Model.StyleClassInfo();
             stClass.Sname = str_Name;
             stClass.ClassID = str_ClassID;
             stClass.CreatTime = DateTime.Now;
 
-            Foosun.CMS.Style.Style stcClass = new Foosun.CMS.Style.Style();
+            Hg.CMS.Style.Style stcClass = new Hg.CMS.Style.Style();
             result = stcClass.styleClassEdit(stClass);
             
             if (result == 1)

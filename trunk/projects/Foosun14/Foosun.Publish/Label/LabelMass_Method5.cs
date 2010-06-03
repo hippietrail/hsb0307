@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Text.RegularExpressions;
-using Foosun.Config;
-using Foosun.Model;
+using Hg.Config;
+using Hg.Model;
 //模型，频道生成
-namespace Foosun.Publish
+namespace Hg.Publish
 {
     public partial class LabelMass
     {
@@ -69,7 +69,7 @@ namespace Foosun.Publish
             //-------判断显示最近多少天内信息
             if (str_ShowDateNumer != null && str_ShowDateNumer != "")
             {
-                if (Foosun.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
+                if (Hg.Config.UIConfig.WebDAL.ToLower() == "foosun.accessdal")
                 {
                     SqlCondition += " And DateDiff('d',[CreatTime] ,now()) < " + int.Parse(str_ShowDateNumer);
                 }
@@ -197,7 +197,7 @@ namespace Foosun.Publish
             string str_newslist = string.Empty;
             int i;
             int nTitleNum = 30;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
             {
                 nTitleNum = int.Parse(str_TitleNumer);
             }
@@ -412,7 +412,7 @@ namespace Foosun.Publish
             string str_newslist = string.Empty;
             int i;
             int nTitleNum = 30;
-            if (str_TitleNumer != null && Foosun.Common.Input.IsInteger(str_TitleNumer))
+            if (str_TitleNumer != null && Hg.Common.Input.IsInteger(str_TitleNumer))
             {
                 nTitleNum = int.Parse(str_TitleNumer);
             }
@@ -513,7 +513,7 @@ namespace Foosun.Publish
             string str_Search = "<div><form id=\"SearchCH_Form_" + ChID + "\" name=\"SearchCH_Form_" + ChID + "\" method=\"get\" action=\"search.html\">";
             string str_Type = this.GetParamValue("FS:Type");
             string str_Cols = this.GetParamValue("FS:Cols");
-            string str_RnadNum = Foosun.Common.Rand.Number(3);
+            string str_RnadNum = Hg.Common.Rand.Number(3);
             string divPreStr = string.Empty;
             string divReStr = "&nbsp;";
             if (str_Cols == "single")
@@ -528,7 +528,7 @@ namespace Foosun.Publish
             }
             else
             {
-                str_RnadNum = Foosun.Common.Rand.Number(4);
+                str_RnadNum = Hg.Common.Rand.Number(4);
                 str_Search += divPreStr + "<input id=\"tags\" name=\"tags\" type=\"text\"  size=\"10\" maxlength=\"20\" onkeydown=\"javascript:if(event.keyCode==13){SearchCHGo_" + str_RnadNum + "(this.form);}\" />" + divReStr;
                 str_Search += divPreStr + "<select name=\"fieldname\"  id=\"fieldname\">";
                 str_Search += "<option value=\"title\">标题</option>" + newLine;
@@ -551,7 +551,7 @@ namespace Foosun.Publish
             str_Search += "{" + newLine;
             int minlen = 0;
             int maxlen = 20;
-            string LenSearch = Foosun.Common.Public.readparamConfig("LenSearch");
+            string LenSearch = Hg.Common.Public.readparamConfig("LenSearch");
             minlen = int.Parse(LenSearch.Split('|')[0]);
             maxlen = int.Parse(LenSearch.Split('|')[1]);
             str_Search += "if(obj.tags.value.length<" + minlen + "||obj.tags.value.length>" + maxlen + ")" + newLine;
@@ -618,15 +618,15 @@ namespace Foosun.Publish
             string str_ShowTitle = this.GetParamValue("FS:ShowTitle");
             string str_Number = this.GetParamValue("FS:Number");
             int IntNumber=5;
-            if (str_Number != null && Foosun.Common.Input.IsInteger(str_Number))
+            if (str_Number != null && Hg.Common.Input.IsInteger(str_Number))
             {
                 IntNumber = int.Parse(str_Number);
             }
-            if (str_Flashweight == null && Foosun.Common.Input.IsInteger(str_Flashweight)==false)
+            if (str_Flashweight == null && Hg.Common.Input.IsInteger(str_Flashweight)==false)
             {
                 str_Flashweight = "200";
             }
-            if (str_Flashheight == null && Foosun.Common.Input.IsInteger(str_Flashheight) == false)
+            if (str_Flashheight == null && Hg.Common.Input.IsInteger(str_Flashheight) == false)
             {
                 str_Flashheight = "150";
             }
@@ -654,7 +654,7 @@ namespace Foosun.Publish
                         Sql = "select top " + IntNumber + " * from [" + ChTable + "]" + SqlCondition + SqlOrderBy;
                         break;
                     default:
-                        if (Foosun.Common.Input.IsInteger(str_ClassID))
+                        if (Hg.Common.Input.IsInteger(str_ClassID))
                         {
                             Sql = "select top " + IntNumber + " * from [" + ChTable + "] and ClassID=" + int.Parse(str_ClassID) + "" + SqlCondition + SqlOrderBy;
                         }
@@ -686,10 +686,10 @@ namespace Foosun.Publish
                 }
             }
             dt.Clear(); dt.Dispose();
-            Pics_Path = Foosun.Common.Input.CutComma(Pics_Path, "|");
+            Pics_Path = Hg.Common.Input.CutComma(Pics_Path, "|");
             Pics_Path = RelpacePicPath(Pics_Path);
-            Link_Str = Foosun.Common.Input.CutComma(Link_Str, "|");
-            Title_Str = Foosun.Common.Input.CutComma(Title_Str, "|");
+            Link_Str = Hg.Common.Input.CutComma(Link_Str, "|");
+            Title_Str = Hg.Common.Input.CutComma(Title_Str, "|");
 
             if (Pics_Path != string.Empty && Link_Str != string.Empty && Title_Str != string.Empty)
             {
@@ -734,7 +734,7 @@ namespace Foosun.Publish
 
         public string Analyse_ChRead(int ID, int TitleNumer, string str_Style, string styleid, int NewsTF, string DTable, int ChID)
         {
-            Foosun.Model.ChContentParam Nci = new Foosun.Model.ChContentParam();
+            Hg.Model.ChContentParam Nci = new Hg.Model.ChContentParam();
             if (NewsTF == 1)
             {
                 Nci = this.GetCHInfo(this.Param_CurrentCHNewsID, DTable);
@@ -783,7 +783,7 @@ namespace Foosun.Publish
                     string str_title = Nci.Title;
                     if (NewsTF == 0)
                     {
-                        str_title = getStyle(Foosun.Common.Input.GetSubString(str_title, TitleNumer), Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
+                        str_title = getStyle(Hg.Common.Input.GetSubString(str_title, TitleNumer), Nci.TitleColor, Nci.TitleITF, Nci.TitleBTF);
                     }
                     str_Style = str_Style.Replace("{CH#Title}", str_title);
                 }
@@ -817,21 +817,21 @@ namespace Foosun.Publish
                     {
                         ContentNumber = mc.Groups["p"].Value;
                     }
-                    if (Foosun.Common.Input.IsInteger(ContentNumber) && ContentNumber.Trim() != "0")
+                    if (Hg.Common.Input.IsInteger(ContentNumber) && ContentNumber.Trim() != "0")
                     {
                         CHNumber = int.Parse(ContentNumber);
                     }
                     if (NewsTF == 0)
                     {
-                        string LostResultStr = Foosun.Common.Input.LostHTML(str_content);
-                        LostResultStr = Foosun.Common.Input.LostPage(LostResultStr);
+                        string LostResultStr = Hg.Common.Input.LostHTML(str_content);
+                        LostResultStr = Hg.Common.Input.LostPage(LostResultStr);
                         if (CHNumber == 0)
                         {
-                            str_content = Foosun.Common.Input.GetSubString(LostResultStr, 200) + "...";
+                            str_content = Hg.Common.Input.GetSubString(LostResultStr, 200) + "...";
                         }
                         else
                         {
-                            str_content = Foosun.Common.Input.GetSubString(LostResultStr, CHNumber) + "...";
+                            str_content = Hg.Common.Input.GetSubString(LostResultStr, CHNumber) + "...";
                         }
                         str_Style = str_Style.Replace("{CH#Content$" + ContentNumber + "}", str_content.Replace("[FS:PAGE]", "").Replace("[FS:PAGE", "").Replace("$]", ""));
                     }
@@ -890,9 +890,9 @@ namespace Foosun.Publish
                             str_Style = str_Style.Replace("{CH#PageTitle_textcols}", "");
                         }
                     }
-                    if (Foosun.Common.Public.readparamConfig("collectTF") == "1")
+                    if (Hg.Common.Public.readparamConfig("collectTF") == "1")
                     {
-                        tmpcontent = tmpcontent.Replace("<div", "<!--source from " + Foosun.Common.Public.readparamConfig("siteDomain") + "--><div");
+                        tmpcontent = tmpcontent.Replace("<div", "<!--source from " + Hg.Common.Public.readparamConfig("siteDomain") + "--><div");
                     }
                     str_Style = str_Style.Replace("{CH#Content$" + ContentNumber + "}", "<!-FS:STAR=" + tmpcontent + "FS:END->");
                 }
@@ -962,7 +962,7 @@ namespace Foosun.Publish
                 if (str_Style.IndexOf("{CH#Editor}") > -1)
                 {
                     if (Nci.Editor != "")
-                        str_Style = str_Style.Replace("{CH#Editor}", "<a href=\"" + CommonData.SiteDomain + "/search.html?type=edit&tags=" + Foosun.Common.Input.URLEncode(Nci.Editor) + "&ChID=" + ChID + "\" title=\"查看此编辑的所有新闻\" target=\"_blank\">" + Nci.Editor + "</a>");
+                        str_Style = str_Style.Replace("{CH#Editor}", "<a href=\"" + CommonData.SiteDomain + "/search.html?type=edit&tags=" + Hg.Common.Input.URLEncode(Nci.Editor) + "&ChID=" + ChID + "\" title=\"查看此编辑的所有新闻\" target=\"_blank\">" + Nci.Editor + "</a>");
                     else
                         str_Style = str_Style.Replace("{CH#Editor}", "");
                 }
@@ -974,7 +974,7 @@ namespace Foosun.Publish
                     {
                         if (Nci.isConstr == 1)
                         {
-                            str_Style = str_Style.Replace("{CH#Author}", "<a href=\"" + CommonData.SiteDomain + "/" + Foosun.Config.UIConfig.dirUser + "/showuser-" + Nci.Author + ".aspx\" title=\"查看他的资料\">" + Nci.Author + "</a> <a href=\"" + CommonData.SiteDomain + "/search.html?type=author&tags=" + Nci.Author + "\" title=\"此看此作者所有的文章\" target=\"_blank\">发表的文章</a>");
+                            str_Style = str_Style.Replace("{CH#Author}", "<a href=\"" + CommonData.SiteDomain + "/" + Hg.Config.UIConfig.dirUser + "/showuser-" + Nci.Author + ".aspx\" title=\"查看他的资料\">" + Nci.Author + "</a> <a href=\"" + CommonData.SiteDomain + "/search.html?type=author&tags=" + Nci.Author + "\" title=\"此看此作者所有的文章\" target=\"_blank\">发表的文章</a>");
                         }
                         else
                         {
@@ -1026,7 +1026,7 @@ namespace Foosun.Publish
                     {
                         NaviNumber = mn.Groups["p"].Value;
                     }
-                    if (Foosun.Common.Input.IsInteger(NaviNumber) && NaviNumber.Trim() != "0")
+                    if (Hg.Common.Input.IsInteger(NaviNumber) && NaviNumber.Trim() != "0")
                     {
                         CHNaviNumber = int.Parse(NaviNumber);
                     }
@@ -1041,11 +1041,11 @@ namespace Foosun.Publish
                         {
                             if (CHNaviNumber == 0)
                             {
-                                str_Style = str_Style.Replace("{CH#NaviContent$" + NaviNumber + "}", Foosun.Common.Input.GetSubString(Nci.naviContent, 200));
+                                str_Style = str_Style.Replace("{CH#NaviContent$" + NaviNumber + "}", Hg.Common.Input.GetSubString(Nci.naviContent, 200));
                             }
                             else
                             {
-                                str_Style = str_Style.Replace("{CH#NaviContent$" + NaviNumber + "}", Foosun.Common.Input.GetSubString(Nci.naviContent, CHNaviNumber));
+                                str_Style = str_Style.Replace("{CH#NaviContent$" + NaviNumber + "}", Hg.Common.Input.GetSubString(Nci.naviContent, CHNaviNumber));
                             }
                         }
                         else
@@ -1254,10 +1254,10 @@ namespace Foosun.Publish
         /// <summary>
         /// 得到频道信息参数
         /// </summary>
-        protected  Foosun.Model.ChContentParam GetCHInfo(int ID, string DTable)
+        protected  Hg.Model.ChContentParam GetCHInfo(int ID, string DTable)
         {
 
-            Foosun.Model.ChContentParam cci = new Foosun.Model.ChContentParam();
+            Hg.Model.ChContentParam cci = new Hg.Model.ChContentParam();
             IDataReader rd = CommonData.DalPublish.GetCHDetail(ID, DTable);
             if (rd.Read())
             {
@@ -1303,11 +1303,11 @@ namespace Foosun.Publish
         public string getCHInfoURL(int ChID, int isDelPoint, int id, string ClassSavePath, string SavePath, string FileName)
         {
             string urls = string.Empty;
-            int ishtml = int.Parse(Foosun.Common.Public.readCHparamConfig("isHTML", ChID));
-            string Domain = Foosun.Common.Public.readCHparamConfig("bdomain", ChID);
-            string linkType = Foosun.Common.Public.readparamConfig("linkTypeConfig");
-            string htmldir = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-            string dirdumm = Foosun.Config.UIConfig.dirDumm;
+            int ishtml = int.Parse(Hg.Common.Public.readCHparamConfig("isHTML", ChID));
+            string Domain = Hg.Common.Public.readCHparamConfig("bdomain", ChID);
+            string linkType = Hg.Common.Public.readparamConfig("linkTypeConfig");
+            string htmldir = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+            string dirdumm = Hg.Config.UIConfig.dirDumm;
             if (dirdumm.Trim() != string.Empty){ dirdumm = "/" + dirdumm;}
             if (ishtml != 0 && isDelPoint == 0)
             {
@@ -1336,7 +1336,7 @@ namespace Foosun.Publish
             {
                 urls = CommonData.SiteDomain + "/Content.aspx?Id=" + id.ToString() + "&ChID=" + ChID.ToString() + "";
             }
-            return urls.ToLower().Replace("{@dirhtml}", Foosun.Config.UIConfig.dirHtml);
+            return urls.ToLower().Replace("{@dirhtml}", Hg.Config.UIConfig.dirHtml);
         }
         /// <summary>
         /// 频道栏目地址
@@ -1344,11 +1344,11 @@ namespace Foosun.Publish
         public string getCHClassURL(int ChID, int isDelPoint, int id, string ClassSavePath, string FileName)
         {
             string urls = string.Empty;
-            int ishtml = int.Parse(Foosun.Common.Public.readCHparamConfig("isHTML", ChID));
-            string Domain = Foosun.Common.Public.readCHparamConfig("bdomain", ChID);
-            string linkType = Foosun.Common.Public.readparamConfig("linkTypeConfig");
-            string htmldir = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-            string dirdumm = Foosun.Config.UIConfig.dirDumm;
+            int ishtml = int.Parse(Hg.Common.Public.readCHparamConfig("isHTML", ChID));
+            string Domain = Hg.Common.Public.readCHparamConfig("bdomain", ChID);
+            string linkType = Hg.Common.Public.readparamConfig("linkTypeConfig");
+            string htmldir = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+            string dirdumm = Hg.Config.UIConfig.dirDumm;
             if (dirdumm.Trim() != string.Empty)
             {
                 dirdumm = "/" + dirdumm;
@@ -1380,7 +1380,7 @@ namespace Foosun.Publish
             {
                 urls = CommonData.SiteDomain + "/list.aspx?Id=" + id.ToString() + "&ChID=" + ChID.ToString() + "";
             }
-            return urls.ToLower().Replace("{@dirhtml}", Foosun.Config.UIConfig.dirHtml);
+            return urls.ToLower().Replace("{@dirhtml}", Hg.Config.UIConfig.dirHtml);
         }
 
         /// <summary>
@@ -1389,11 +1389,11 @@ namespace Foosun.Publish
         public string getCHSpecialURL(int ChID, int isDelPoint, int id, string SpecialSavePath, string FileName)
         {
             string urls = string.Empty;
-            int ishtml = int.Parse(Foosun.Common.Public.readCHparamConfig("isHTML", ChID));
-            string Domain = Foosun.Common.Public.readCHparamConfig("bdomain", ChID);
-            string linkType = Foosun.Common.Public.readparamConfig("linkTypeConfig");
-            string htmldir = Foosun.Common.Public.readCHparamConfig("htmldir", ChID);
-            string dirdumm = Foosun.Config.UIConfig.dirDumm;
+            int ishtml = int.Parse(Hg.Common.Public.readCHparamConfig("isHTML", ChID));
+            string Domain = Hg.Common.Public.readCHparamConfig("bdomain", ChID);
+            string linkType = Hg.Common.Public.readparamConfig("linkTypeConfig");
+            string htmldir = Hg.Common.Public.readCHparamConfig("htmldir", ChID);
+            string dirdumm = Hg.Config.UIConfig.dirDumm;
             if (dirdumm.Trim() != string.Empty)
             {
                 dirdumm = "/" + dirdumm;
@@ -1425,7 +1425,7 @@ namespace Foosun.Publish
             {
                 urls = CommonData.SiteDomain + "/special.aspx?Id=" + id.ToString() + "&ChID=" + ChID.ToString() + "";
             }
-            return urls.ToLower().Replace("{@dirhtml}", Foosun.Config.UIConfig.dirHtml);
+            return urls.ToLower().Replace("{@dirhtml}", Hg.Config.UIConfig.dirHtml);
         }
     }
 }

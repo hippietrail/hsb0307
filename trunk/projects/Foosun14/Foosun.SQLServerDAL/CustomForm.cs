@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
-using Foosun.Model;
-using Foosun.Config;
-using Foosun.DALProfile;
-using Foosun.DALFactory;
+using Hg.Model;
+using Hg.Config;
+using Hg.DALProfile;
+using Hg.DALFactory;
 
-namespace Foosun.SQLServerDAL
+namespace Hg.SQLServerDAL
 {
     public class CustomForm : DbBase, ICustomForm
     {
@@ -620,7 +620,7 @@ namespace Foosun.SQLServerDAL
                 Param[1] = new SqlParameter("@username", SqlDbType.NVarChar, 50);
                 Param[1].Value = DBNull.Value;
                 Param[2] = new SqlParameter("@submit_ip", SqlDbType.NVarChar, 15);
-                Param[2].Value = Foosun.Common.Public.getUserIP();
+                Param[2].Value = Hg.Common.Public.getUserIP();
                 Param[3] = new SqlParameter("@submit_time", SqlDbType.DateTime);
                 Param[3].Value = DateTime.Now;
                 #endregion

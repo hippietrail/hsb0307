@@ -18,10 +18,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 
-public partial class manage_Contribution_Constr_Pay : Foosun.Web.UI.ManagePage
+public partial class manage_Contribution_Constr_Pay : Hg.Web.UI.ManagePage
 {
     Constr con = new Constr();
     rootPublic pd = new rootPublic();
@@ -31,7 +31,7 @@ public partial class manage_Contribution_Constr_Pay : Foosun.Web.UI.ManagePage
         if (!IsPostBack)
         {
 
-            string GetUnum = Foosun.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
+            string GetUnum = Hg.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
             if (GetUnum == UserNum)
             {
                 PageError("不能给自己支付稿酬！", "");
@@ -78,19 +78,19 @@ public partial class manage_Contribution_Constr_Pay : Foosun.Web.UI.ManagePage
 
     string Show_no()
     {
-        string GetUNum = Foosun.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
-        string nos = "(<a href=\"../../" + Foosun.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + pd.getUserName(GetUNum) + "\" class=\"list_link\" target=\"_blank\">查看他的用户信息</a>)";
+        string GetUNum = Hg.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
+        string nos = "(<a href=\"../../" + Hg.Config.UIConfig.dirUser + "/showUser.aspx?uid=" + pd.getUserName(GetUNum) + "\" class=\"list_link\" target=\"_blank\">查看他的用户信息</a>)";
         return nos;
     }
     protected void Button1_Click1(object sender, EventArgs e)
     {
         rootPublic rd = new rootPublic();
-        string GetUNum = Foosun.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
+        string GetUNum = Hg.Common.Input.Filter(Request.QueryString["UserNum"].ToString());
         DataTable dt = con.sel20(GetUNum);
         int ParmConstrNums = int.Parse(dt.Rows[0]["ParmConstrNum"].ToString());
         DateTime payTime = DateTime.Now;
 
-        string constrPayID = Foosun.Common.Rand.Number(12);
+        string constrPayID = Hg.Common.Rand.Number(12);
         DataTable dt_CP = con.sel22();
         int cuts = dt_CP.Rows.Count;
         string constrPayIDs = "";

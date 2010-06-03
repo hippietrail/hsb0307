@@ -8,9 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 
-public partial class manage_Sys_DefineTable : Foosun.Web.UI.ManagePage
+public partial class manage_Sys_DefineTable : Hg.Web.UI.ManagePage
 {
     public manage_Sys_DefineTable()
     {

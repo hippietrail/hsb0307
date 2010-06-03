@@ -9,16 +9,16 @@
 //===========================================================
 using System;
 using System.Data;
-using Foosun.Model;
+using Hg.Model;
 
-namespace Foosun.CMS
+namespace Hg.CMS
 {
     public class News
     {
-        private Foosun.DALFactory.INews dal;
+        private Hg.DALFactory.INews dal;
         public News()
         {
-            dal = Foosun.DALFactory.DataAccess.CreateNews();
+            dal = Hg.DALFactory.DataAccess.CreateNews();
         }
         public DataTable GetTables()
         {
@@ -59,7 +59,7 @@ namespace Foosun.CMS
         /// </summary>
         /// <param name="ci">实体类</param>
         /// <returns>如果添加成功返回1</returns>
-        public int AddComment(Foosun.Model.Comment ci)
+        public int AddComment(Hg.Model.Comment ci)
         {
             return dal.AddComment(ci);
         }

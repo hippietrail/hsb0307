@@ -8,17 +8,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
+using Hg.CMS;
 using System.Xml;
 using System.IO;
 
-public partial class manage_label_sysLabel_out : Foosun.Web.UI.ManagePage
+public partial class manage_label_sysLabel_out : Hg.Web.UI.ManagePage
 {
     public manage_label_sysLabel_out()
     {
         Authority_Code = "T015";
     }
-    Foosun.CMS.Label rd = new Foosun.CMS.Label();
+    Hg.CMS.Label rd = new Hg.CMS.Label();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -63,7 +63,7 @@ public partial class manage_label_sysLabel_out : Foosun.Web.UI.ManagePage
     protected void label_out_Click(object sender, EventArgs e)
     {
             ////开始生成xml
-            string RandNumber = Foosun.Common.Rand.Number(5);
+            string RandNumber = Hg.Common.Rand.Number(5);
             string _tmpDir = DateTime.Now.Year + "-" + DateTime.Now.Month;
             string fileName = DateTime.Now.Month + "-" + DateTime.Now.Day + "-" + RandNumber;
             if (this.classID.Value == "alllabel")

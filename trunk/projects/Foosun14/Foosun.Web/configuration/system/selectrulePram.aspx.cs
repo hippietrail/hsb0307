@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class configuration_system_selectrulePram : Foosun.Web.UI.DialogPage
+public partial class configuration_system_selectrulePram : Hg.Web.UI.DialogPage
 {
     public configuration_system_selectrulePram()
     {

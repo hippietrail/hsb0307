@@ -10,11 +10,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.Model;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.Model;
+using Hg.CMS.Common;
 
-namespace Foosun.Web.manage.Sys
+namespace Hg.Web.manage.Sys
 {
     public partial class CreateCheckfile : System.Web.UI.Page
     {

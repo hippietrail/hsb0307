@@ -4,10 +4,10 @@ using System.Text;
 using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
-using Foosun.Config;
-using Foosun.DALProfile;
+using Hg.Config;
+using Hg.DALProfile;
 
-namespace Foosun.AccessDAL
+namespace Hg.AccessDAL
 {
     public class DbBase : IDbBase
     {

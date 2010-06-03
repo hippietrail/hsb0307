@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Foosun.CMS;
-using Foosun.CMS.Common;
+using Hg.CMS;
+using Hg.CMS.Common;
 using System.IO;
 using System.Xml;
 using System.Net;
 
-public partial class Manage_main : Foosun.Web.UI.ManagePage
+public partial class Manage_main : Hg.Web.UI.ManagePage
 {
     UserMisc rd = new UserMisc();
     rootPublic rdr = new rootPublic();
@@ -25,7 +25,7 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
         Response.CacheControl = "no-cache";
         if (!IsPostBack)
         {
-            welcome.InnerHtml = "欢迎您：" + rdr.getUserName(UserNum) + "!&nbsp;&nbsp;<a class=\"list_link\" href=\"../" + Foosun.Config.UIConfig.dirUser + "/showuser-" + UserName + ".aspx\" target=\"_blank\"><img src=\"../sysImages/folder/myinfo.gif\" border=\"0\" alt=\"查看我的资料\" /></a>";
+            welcome.InnerHtml = "欢迎您：" + rdr.getUserName(UserNum) + "!&nbsp;&nbsp;<a class=\"list_link\" href=\"../" + Hg.Config.UIConfig.dirUser + "/showuser-" + UserName + ".aspx\" target=\"_blank\"><img src=\"../sysImages/folder/myinfo.gif\" border=\"0\" alt=\"查看我的资料\" /></a>";
             copyright.InnerHtml = CopyRight;
             Todaydate.InnerHtml = calendar();
             div_product_1.InnerHtml = productlist();
@@ -75,7 +75,7 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
     {
         #region 链接官方升级页面
 
-        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Foosun.Config.verConfig.getfoosunURL);
+        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Hg.Config.verConfig.getfoosunURL);
 
         try
         {
@@ -92,7 +92,7 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
             }
             else
             {
-                checkveriframe.Text = "<iframe style=\"width:98%;height:20px;\" frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" src=\"" + Foosun.Config.verConfig.getfoosunURL + "\"></iframe>";
+                checkveriframe.Text = "<iframe style=\"width:98%;height:20px;\" frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" src=\"" + Hg.Config.verConfig.getfoosunURL + "\"></iframe>";
             }
         }
         catch
@@ -168,11 +168,11 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
         DataTable dt = rd.messageChar(UserNum);
         if (dt != null)
         {
-            if (dt.Rows.Count > 0) { liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"_self\">[新短消息(" + dt.Rows.Count + ")]</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />"; }
-            else { liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"list_link\" target=\"_self\">[短消息(0)]</a>"; }
+            if (dt.Rows.Count > 0) { liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"tbie\" target=\"_self\">[新短消息(" + dt.Rows.Count + ")]</a><bgsound src=\"../sysImages/sound/newmessage.wav\" />"; }
+            else { liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\"  class=\"list_link\" target=\"_self\">[短消息(0)]</a>"; }
             dt.Clear(); dt.Dispose();
         }
-        else { liststr += "<a href=\"../" + Foosun.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"list_link\" target=\"_self\">[短消息(0)]</a>"; }
+        else { liststr += "<a href=\"../" + Hg.Config.UIConfig.dirUser + "/message/Message_box.aspx?Id=1\" class=\"list_link\" target=\"_self\">[短消息(0)]</a>"; }
         dt.Dispose(); dt.Clear();
         return liststr;
     }
@@ -345,11 +345,11 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
     /// <param name="e"></param>
     protected void changePass_Click(object sender, EventArgs e)
     {
-        Response.Redirect("../" + Foosun.Config.UIConfig.dirUser + "/info/ChangePassword.aspx");
+        Response.Redirect("../" + Hg.Config.UIConfig.dirUser + "/info/ChangePassword.aspx");
     }
 
     protected void Calendar2_SelectionChanged(object sender, EventArgs e)
     {
-        Response.Redirect("../" + Foosun.Config.UIConfig.dirUser + "/info/Logscreat.aspx",true);
+        Response.Redirect("../" + Hg.Config.UIConfig.dirUser + "/info/Logscreat.aspx",true);
     }
 }
