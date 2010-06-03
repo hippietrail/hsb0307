@@ -47,9 +47,9 @@ namespace Foosun.Web
                 copyright.InnerHtml = CopyRight;            //获取版权信息
                 //Response.CacheControl = "no-cache";                        //设置页面无缓存    
                 Foosun.CMS.AdminGroup ac = new Foosun.CMS.AdminGroup();
-                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", 0));
-                dataSpecialTable = ac.getClassList("SpecialID,SpecialCName,ParentID", "news_special", string.Format("Where  isRecyle<>1 and SiteID='{0}'", 0));
-                dataIspageTable = ac.getClassList("ClassID,ClassCName", "News_Class", string.Format("Where isRecyle<>1 and isPage={0}", 1));
+                dataClassTable = ac.getClassList("ClassID,ClassCName,ParentID", "news_Class", string.Format("Where  isRecyle<>1 and isPage = 0 and SiteID='{0}'", Foosun.Global.Current.SiteID));
+                dataSpecialTable = ac.getClassList("SpecialID,SpecialCName,ParentID", "news_special", string.Format("Where  isRecyle<>1 and SiteID='{0}'", Foosun.Global.Current.SiteID));
+                dataIspageTable = ac.getClassList("ClassID,ClassCName", "News_Class", string.Format("Where isRecyle<>1 and isPage={0} and SiteID='{1}'", 1, Foosun.Global.Current.SiteID));
                 InitialDivClass(divClassClass);
                 InitialDivClass(divClassNews);
                 InitialDivSpecial(DivSpecial);

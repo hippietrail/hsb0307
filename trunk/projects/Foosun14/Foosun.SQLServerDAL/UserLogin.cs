@@ -263,7 +263,7 @@ namespace Foosun.SQLServerDAL
                 if (state != EnumLoginState.Succeed)
                     return state;
                 //if (info.isSuper == 0X01)
-                //超级管理员或者频道超级管理员都可以直接登录 lsd change 20100521
+                //超级管理员或者频道超级管理员直接返回Succeed lsd change 20100521
                 if ( info.isSuper == 0X01 || info.isChannel==0X01 && info.isChSupper == 0X01)
                     return EnumLoginState.Succeed;
                 string PopList = GetAdminPopList(cn, info.ID);

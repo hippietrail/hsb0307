@@ -35,20 +35,33 @@ public partial class manage_news_class_site_ajax : Foosun.Web.UI.ManagePage
         if (ParentId == "" || ParentId == null) { ParentId = "0"; }
         int flag = 0;
         IDataReader sRd = sd.siteList();
-
+        int siteCount = 0;//lsd changed 20100529
         while (sRd.Read())
         {
+            siteCount++;
             if (ParentId == "0")
             {
                 liststr += "<div><img src=\"../../sysImages/normal/site.gif\" /><span style=\"cursor:pointer;\" title=\"此频道有" + sd.getsiteClassCount(sRd["ChannelID"].ToString()) + "个栏目\" onclick=\"hsite('gsite" + sRd["ChannelID"].ToString() + "');\">&nbsp;" + sRd["CName"].ToString() + "<span style=\"font-size:9px;\">(" + sd.getsiteClassCount(sRd["ChannelID"].ToString()) + ")</span></span></div>\r";
             }
-            if (sRd["ChannelID"].ToString() != "0")
+            //if (sRd["ChannelID"].ToString() != "0")
+            //{
+            //    liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\" style=\"display:none;\">";
+                
+            //}
+            //else
+            //{
+            //    liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\">";
+            //}
+            //lsd changed 20100529 第一个站点的栏目展开，其它站点栏目部展开
+            if (siteCount == 1)
             {
-                liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\" style=\"display:none;\">";
+                liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\">";
+
             }
             else
             {
-                liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\">";
+                liststr += "<div id=\"gsite" + sRd["ChannelID"].ToString() + "\" style=\"display:none;\">";
+
             }
             int i = 0;
             IDataReader dt = rd.GetClassSitenewsstr(ParentId.ToString(), sRd["ChannelID"].ToString());
@@ -86,7 +99,7 @@ public partial class manage_news_class_site_ajax : Foosun.Web.UI.ManagePage
         }
         sRd.Close();
         liststr = "Succee|||" + ParentId + "|||" + liststr;
-        if (flag == 0)
+        if (flag == 0) 
         {
             liststr += "Fail|||" + ParentId + "|||";
         }

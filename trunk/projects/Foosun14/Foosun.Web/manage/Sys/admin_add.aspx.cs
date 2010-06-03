@@ -109,7 +109,7 @@ public partial class Manage_System_admin_add : Foosun.Web.UI.ManagePage
 
         string str_SiteIDTempstr="";
         str_SiteIDTempstr = "<select name=\"SiteID\" style=\"width:206px;\" >";
-        str_SiteIDTempstr += "<option value=\"0\">请选择频道</option>";
+        str_SiteIDTempstr += "<option value=\""+SiteID+"\">请选择频道</option>";
         if (Ds != null)
         {
             int Cnt = Ds.Rows.Count;
