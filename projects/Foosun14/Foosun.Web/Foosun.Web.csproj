@@ -2,14 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9883C8B0-6C65-4096-826E-F12FBDA20F11}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hg.Web</RootNamespace>
-    <AssemblyName>Hg.Web</AssemblyName>
+    <RootNamespace>Foosun.Web</RootNamespace>
+    <AssemblyName>Foosun.Web</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -223,36 +223,42 @@
     <Content Include="user\UserLoginajax.aspx" />
     <Compile Include="Click.aspx.cs">
       <DependentUpon>Click.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Click.aspx.designer.cs">
       <DependentUpon>Click.aspx</DependentUpon>
     </Compile>
     <Compile Include="comment.aspx.cs">
       <DependentUpon>comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
     </Compile>
     <Compile Include="comm\Image.aspx.cs">
       <DependentUpon>Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="comm\Image.aspx.designer.cs">
       <DependentUpon>Image.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\dateTime.aspx.cs">
       <DependentUpon>dateTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\dateTime.aspx.designer.cs">
       <DependentUpon>dateTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\Genlist.aspx.cs">
       <DependentUpon>Genlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\Genlist.aspx.designer.cs">
       <DependentUpon>Genlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\getClassCname.aspx.cs">
       <DependentUpon>getClassCname.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\getClassCname.aspx.designer.cs">
       <DependentUpon>getClassCname.aspx</DependentUpon>
@@ -266,108 +272,126 @@
     </Compile>
     <Compile Include="configuration\system\HelpAjax.aspx.cs">
       <DependentUpon>HelpAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\HelpAjax.aspx.designer.cs">
       <DependentUpon>HelpAjax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\history.page.aspx.cs">
       <DependentUpon>history.page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\history.page.aspx.designer.cs">
       <DependentUpon>history.page.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\iframe.aspx.cs">
       <DependentUpon>iframe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\iframe.aspx.designer.cs">
       <DependentUpon>iframe.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\public.aspx.cs">
       <DependentUpon>public.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\public.aspx.designer.cs">
       <DependentUpon>public.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\reviewUnNews.aspx.cs">
       <DependentUpon>reviewUnNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\reviewUnNews.aspx.designer.cs">
       <DependentUpon>reviewUnNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectChannel.aspx.cs">
       <DependentUpon>selectChannel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectChannel.aspx.designer.cs">
       <DependentUpon>selectChannel.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectFiles.aspx.cs">
       <DependentUpon>selectFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectFiles.aspx.designer.cs">
       <DependentUpon>selectFiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectLabelStyle.aspx.cs">
       <DependentUpon>selectLabelStyle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectLabelStyle.aspx.designer.cs">
       <DependentUpon>selectLabelStyle.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectNewsClass.aspx.cs">
       <DependentUpon>selectNewsClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectNewsClass.aspx.designer.cs">
       <DependentUpon>selectNewsClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectnewsclass_ajax.aspx.cs">
       <DependentUpon>selectnewsclass_ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectnewsclass_ajax.aspx.designer.cs">
       <DependentUpon>selectnewsclass_ajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectNewsspecial.aspx.cs">
       <DependentUpon>selectNewsspecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectNewsspecial.aspx.designer.cs">
       <DependentUpon>selectNewsspecial.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\SelectNewsspecial_ajax.aspx.cs">
       <DependentUpon>SelectNewsspecial_ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\SelectNewsspecial_ajax.aspx.designer.cs">
       <DependentUpon>SelectNewsspecial_ajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectPath.aspx.cs">
       <DependentUpon>selectPath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectPath.aspx.designer.cs">
       <DependentUpon>selectPath.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectrulePram.aspx.cs">
       <DependentUpon>selectrulePram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectrulePram.aspx.designer.cs">
       <DependentUpon>selectrulePram.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectspecial.aspx.cs">
       <DependentUpon>selectspecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectspecial.aspx.designer.cs">
       <DependentUpon>selectspecial.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectuserdiscuss.aspx.cs">
       <DependentUpon>selectuserdiscuss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectuserdiscuss.aspx.designer.cs">
       <DependentUpon>selectuserdiscuss.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\selectuserpic.aspx.cs">
       <DependentUpon>selectuserpic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\selectuserpic.aspx.designer.cs">
       <DependentUpon>selectuserpic.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuration\system\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="configuration\system\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
@@ -1886,238 +1910,204 @@
     </Compile>
     <Compile Include="manage\user\arealist_add.aspx.cs">
       <DependentUpon>arealist_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\arealist_add.aspx.designer.cs">
       <DependentUpon>arealist_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\arealist_cadd.aspx.cs">
       <DependentUpon>arealist_cadd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\arealist_cadd.aspx.designer.cs">
       <DependentUpon>arealist_cadd.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\arealist_City.aspx.cs">
       <DependentUpon>arealist_City.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\arealist_City.aspx.designer.cs">
       <DependentUpon>arealist_City.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\arealist_upc.aspx.cs">
       <DependentUpon>arealist_upc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\arealist_upc.aspx.designer.cs">
       <DependentUpon>arealist_upc.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\arealist_upp.aspx.cs">
       <DependentUpon>arealist_upp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\arealist_upp.aspx.designer.cs">
       <DependentUpon>arealist_upp.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussacti.aspx.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussacti.aspx.designer.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussacti_list.aspx.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussacti_list.aspx.designer.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussacti_up.aspx.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussacti_up.aspx.designer.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussclass.aspx.cs">
       <DependentUpon>discussclass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussclass.aspx.designer.cs">
       <DependentUpon>discussclass.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussclass_add.aspx.cs">
       <DependentUpon>discussclass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussclass_add.aspx.designer.cs">
       <DependentUpon>discussclass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discussManage_add.aspx.cs">
       <DependentUpon>discussManage_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discussManage_add.aspx.designer.cs">
       <DependentUpon>discussManage_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\discusssubclass_add.aspx.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\discusssubclass_add.aspx.designer.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\icard.aspx.cs">
       <DependentUpon>icard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\icard.aspx.designer.cs">
       <DependentUpon>icard.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\iCardEdit.aspx.cs">
       <DependentUpon>iCardEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\iCardEdit.aspx.designer.cs">
       <DependentUpon>iCardEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\icard_add.aspx.cs">
       <DependentUpon>icard_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\icard_add.aspx.designer.cs">
       <DependentUpon>icard_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\icard_adds.aspx.cs">
       <DependentUpon>icard_adds.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\icard_adds.aspx.designer.cs">
       <DependentUpon>icard_adds.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\message.aspx.cs">
       <DependentUpon>message.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\message.aspx.designer.cs">
       <DependentUpon>message.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\onlinepay.aspx.cs">
       <DependentUpon>onlinepay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\onlinepay.aspx.designer.cs">
       <DependentUpon>onlinepay.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\pointhistory.aspx.cs">
       <DependentUpon>pointhistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\pointhistory.aspx.designer.cs">
       <DependentUpon>pointhistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\useraction.aspx.cs">
       <DependentUpon>useraction.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\useraction.aspx.designer.cs">
       <DependentUpon>useraction.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userdiscuss_list.aspx.cs">
       <DependentUpon>userdiscuss_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userdiscuss_list.aspx.designer.cs">
       <DependentUpon>userdiscuss_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\usergroup.aspx.cs">
       <DependentUpon>usergroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\usergroup.aspx.designer.cs">
       <DependentUpon>usergroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\usergroupadd.aspx.cs">
       <DependentUpon>usergroupadd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\usergroupadd.aspx.designer.cs">
       <DependentUpon>usergroupadd.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\UserGroupEdit.aspx.cs">
       <DependentUpon>UserGroupEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\UserGroupEdit.aspx.designer.cs">
       <DependentUpon>UserGroupEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userIDCard.aspx.cs">
       <DependentUpon>userIDCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userIDCard.aspx.designer.cs">
       <DependentUpon>userIDCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userinfo.aspx.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userinfo.aspx.designer.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userinfo_base.aspx.cs">
       <DependentUpon>userinfo_base.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userinfo_base.aspx.designer.cs">
       <DependentUpon>userinfo_base.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userinfo_contact.aspx.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userinfo_contact.aspx.designer.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userinfo_safe.aspx.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userinfo_safe.aspx.designer.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\userlist.aspx.cs">
       <DependentUpon>userlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\userlist.aspx.designer.cs">
       <DependentUpon>userlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\usermycom.aspx.cs">
       <DependentUpon>usermycom.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\usermycom.aspx.designer.cs">
       <DependentUpon>usermycom.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\usermycom_Look.aspx.cs">
       <DependentUpon>usermycom_Look.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\usermycom_Look.aspx.designer.cs">
       <DependentUpon>usermycom_Look.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\user\usermycom_up.aspx.cs">
       <DependentUpon>usermycom_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\user\usermycom_up.aspx.designer.cs">
       <DependentUpon>usermycom_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\ver\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="manage\ver\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
@@ -2138,63 +2128,54 @@
     </Compile>
     <Compile Include="Page.aspx.cs">
       <DependentUpon>Page.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page.aspx.designer.cs">
       <DependentUpon>Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
     <Compile Include="SendMail.aspx.cs">
       <DependentUpon>SendMail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SendMail.aspx.designer.cs">
       <DependentUpon>SendMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="special.aspx.cs">
       <DependentUpon>special.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="special.aspx.designer.cs">
       <DependentUpon>special.aspx</DependentUpon>
     </Compile>
     <Compile Include="stat\stat.aspx.cs">
       <DependentUpon>stat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="stat\stat.aspx.designer.cs">
       <DependentUpon>stat.aspx</DependentUpon>
     </Compile>
     <Compile Include="survey\view.aspx.cs">
       <DependentUpon>view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="survey\view.aspx.designer.cs">
       <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="survey\VoteJs.aspx.cs">
       <DependentUpon>VoteJs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="survey\VoteJs.aspx.designer.cs">
       <DependentUpon>VoteJs.aspx</DependentUpon>
     </Compile>
     <Compile Include="survey\Vote_Ajax.aspx.cs">
       <DependentUpon>Vote_Ajax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="survey\Vote_Ajax.aspx.designer.cs">
       <DependentUpon>Vote_Ajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="survey\Vote_Show.aspx.cs">
       <DependentUpon>Vote_Show.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="survey\Vote_Show.aspx.designer.cs">
       <DependentUpon>Vote_Show.aspx</DependentUpon>
@@ -2208,28 +2189,24 @@
     </Compile>
     <Compile Include="TopNews.aspx.cs">
       <DependentUpon>TopNews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TopNews.aspx.designer.cs">
       <DependentUpon>TopNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="userlogs.aspx.cs">
       <DependentUpon>userlogs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="userlogs.aspx.designer.cs">
       <DependentUpon>userlogs.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\channel\content.aspx.cs">
       <DependentUpon>content.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\channel\content.aspx.designer.cs">
       <DependentUpon>content.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\channel\list.aspx.cs">
       <DependentUpon>list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\channel\list.aspx.designer.cs">
       <DependentUpon>list.aspx</DependentUpon>
@@ -2250,908 +2227,787 @@
     </Compile>
     <Compile Include="user\constr\Constr.aspx.cs">
       <DependentUpon>Constr.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constr.aspx.designer.cs">
       <DependentUpon>Constr.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constraccount.aspx.cs">
       <DependentUpon>Constraccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constraccount.aspx.designer.cs">
       <DependentUpon>Constraccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constraccount_add.aspx.cs">
       <DependentUpon>Constraccount_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constraccount_add.aspx.designer.cs">
       <DependentUpon>Constraccount_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constraccount_up.aspx.cs">
       <DependentUpon>Constraccount_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constraccount_up.aspx.designer.cs">
       <DependentUpon>Constraccount_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\ConstrClass.aspx.cs">
       <DependentUpon>ConstrClass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\ConstrClass.aspx.designer.cs">
       <DependentUpon>ConstrClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\ConstrClass_add.aspx.cs">
       <DependentUpon>ConstrClass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\ConstrClass_add.aspx.designer.cs">
       <DependentUpon>ConstrClass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\ConstrClass_up.aspx.cs">
       <DependentUpon>ConstrClass_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\ConstrClass_up.aspx.designer.cs">
       <DependentUpon>ConstrClass_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constrlist.aspx.cs">
       <DependentUpon>Constrlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constrlist.aspx.designer.cs">
       <DependentUpon>Constrlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constrlistpass.aspx.cs">
       <DependentUpon>Constrlistpass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constrlistpass.aspx.designer.cs">
       <DependentUpon>Constrlistpass.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constrlistpass_DC.aspx.cs">
       <DependentUpon>Constrlistpass_DC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constrlistpass_DC.aspx.designer.cs">
       <DependentUpon>Constrlistpass_DC.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\ConstrMoney.aspx.cs">
       <DependentUpon>ConstrMoney.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\ConstrMoney.aspx.designer.cs">
       <DependentUpon>ConstrMoney.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\constr\Constr_up.aspx.cs">
       <DependentUpon>Constr_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\constr\Constr_up.aspx.designer.cs">
       <DependentUpon>Constr_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\add_discussManage.aspx.cs">
       <DependentUpon>add_discussManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\add_discussManage.aspx.designer.cs">
       <DependentUpon>add_discussManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussacti.aspx.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussacti.aspx.designer.cs">
       <DependentUpon>discussacti.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussactiestablish_list.aspx.cs">
       <DependentUpon>discussactiestablish_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussactiestablish_list.aspx.designer.cs">
       <DependentUpon>discussactiestablish_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussactijoin_list.aspx.cs">
       <DependentUpon>discussactijoin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussactijoin_list.aspx.designer.cs">
       <DependentUpon>discussactijoin_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussacti_add.aspx.cs">
       <DependentUpon>discussacti_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussacti_add.aspx.designer.cs">
       <DependentUpon>discussacti_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussacti_DC.aspx.cs">
       <DependentUpon>discussacti_DC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussacti_DC.aspx.designer.cs">
       <DependentUpon>discussacti_DC.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussacti_list.aspx.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussacti_list.aspx.designer.cs">
       <DependentUpon>discussacti_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussacti_up.aspx.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussacti_up.aspx.designer.cs">
       <DependentUpon>discussacti_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussManageestablish_list.aspx.cs">
       <DependentUpon>discussManageestablish_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussManageestablish_list.aspx.designer.cs">
       <DependentUpon>discussManageestablish_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussManagejoin_list.aspx.cs">
       <DependentUpon>discussManagejoin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussManagejoin_list.aspx.designer.cs">
       <DependentUpon>discussManagejoin_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussManage_DC.aspx.cs">
       <DependentUpon>discussManage_DC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussManage_DC.aspx.designer.cs">
       <DependentUpon>discussManage_DC.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussManage_list.aspx.cs">
       <DependentUpon>discussManage_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussManage_list.aspx.designer.cs">
       <DependentUpon>discussManage_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphoto.aspx.cs">
       <DependentUpon>discussphoto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphoto.aspx.designer.cs">
       <DependentUpon>discussphoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbum.aspx.cs">
       <DependentUpon>discussPhotoalbum.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbum.aspx.designer.cs">
       <DependentUpon>discussPhotoalbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbumlist.aspx.cs">
       <DependentUpon>discussPhotoalbumlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbumlist.aspx.designer.cs">
       <DependentUpon>discussPhotoalbumlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbum_up.aspx.cs">
       <DependentUpon>discussPhotoalbum_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussPhotoalbum_up.aspx.designer.cs">
       <DependentUpon>discussPhotoalbum_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass.aspx.cs">
       <DependentUpon>discussphotoclass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass.aspx.designer.cs">
       <DependentUpon>discussphotoclass.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass_add.aspx.cs">
       <DependentUpon>discussphotoclass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass_add.aspx.designer.cs">
       <DependentUpon>discussphotoclass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass_up.aspx.cs">
       <DependentUpon>discussphotoclass_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphotoclass_up.aspx.designer.cs">
       <DependentUpon>discussphotoclass_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphotofilt.aspx.cs">
       <DependentUpon>discussphotofilt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphotofilt.aspx.designer.cs">
       <DependentUpon>discussphotofilt.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphoto_add.aspx.cs">
       <DependentUpon>discussphoto_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphoto_add.aspx.designer.cs">
       <DependentUpon>discussphoto_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphoto_del.aspx.cs">
       <DependentUpon>discussphoto_del.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphoto_del.aspx.designer.cs">
       <DependentUpon>discussphoto_del.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussphoto_up.aspx.cs">
       <DependentUpon>discussphoto_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussphoto_up.aspx.designer.cs">
       <DependentUpon>discussphoto_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discusssubclass_add.aspx.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discusssubclass_add.aspx.designer.cs">
       <DependentUpon>discusssubclass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discusssubsclass.aspx.cs">
       <DependentUpon>discusssubsclass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discusssubsclass.aspx.designer.cs">
       <DependentUpon>discusssubsclass.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_add.aspx.cs">
       <DependentUpon>discussTopi_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_add.aspx.designer.cs">
       <DependentUpon>discussTopi_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_ballot.aspx.cs">
       <DependentUpon>discussTopi_ballot.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_ballot.aspx.designer.cs">
       <DependentUpon>discussTopi_ballot.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_commentary.aspx.cs">
       <DependentUpon>discussTopi_commentary.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_commentary.aspx.designer.cs">
       <DependentUpon>discussTopi_commentary.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_commentaryEdit.aspx.cs">
       <DependentUpon>discussTopi_commentaryEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_commentaryEdit.aspx.designer.cs">
       <DependentUpon>discussTopi_commentaryEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_del.aspx.cs">
       <DependentUpon>discussTopi_del.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_del.aspx.designer.cs">
       <DependentUpon>discussTopi_del.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_list.aspx.cs">
       <DependentUpon>discussTopi_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_list.aspx.designer.cs">
       <DependentUpon>discussTopi_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discussTopi_view.aspx.cs">
       <DependentUpon>discussTopi_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discussTopi_view.aspx.designer.cs">
       <DependentUpon>discussTopi_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\discuss_Manageadd.aspx.cs">
       <DependentUpon>discuss_Manageadd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\discuss_Manageadd.aspx.designer.cs">
       <DependentUpon>discuss_Manageadd.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\disFundwarehouse.aspx.cs">
       <DependentUpon>disFundwarehouse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\disFundwarehouse.aspx.designer.cs">
       <DependentUpon>disFundwarehouse.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\discuss\up_discussManage.aspx.cs">
       <DependentUpon>up_discussManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\discuss\up_discussManage.aspx.designer.cs">
       <DependentUpon>up_discussManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\friend\friendList.aspx.cs">
       <DependentUpon>friendList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\friend\friendList.aspx.designer.cs">
       <DependentUpon>friendList.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\friend\friendmanage.aspx.cs">
       <DependentUpon>friendmanage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\friend\friendmanage.aspx.designer.cs">
       <DependentUpon>friendmanage.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\friend\friendmanage_add.aspx.cs">
       <DependentUpon>friendmanage_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\friend\friendmanage_add.aspx.designer.cs">
       <DependentUpon>friendmanage_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\friend\friend_add.aspx.cs">
       <DependentUpon>friend_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\friend\friend_add.aspx.designer.cs">
       <DependentUpon>friend_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\friend\friend_Establishment.aspx.cs">
       <DependentUpon>friend_Establishment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\friend\friend_Establishment.aspx.designer.cs">
       <DependentUpon>friend_Establishment.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\announce.aspx.cs">
       <DependentUpon>announce.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\announce.aspx.designer.cs">
       <DependentUpon>announce.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\applyads.aspx.cs">
       <DependentUpon>applyads.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\applyads.aspx.designer.cs">
       <DependentUpon>applyads.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\applyads_add.aspx.cs">
       <DependentUpon>applyads_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\applyads_add.aspx.designer.cs">
       <DependentUpon>applyads_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\buyCard.aspx.cs">
       <DependentUpon>buyCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\buyCard.aspx.designer.cs">
       <DependentUpon>buyCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\collection.aspx.cs">
       <DependentUpon>collection.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\collection.aspx.designer.cs">
       <DependentUpon>collection.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\Exchange.aspx.cs">
       <DependentUpon>Exchange.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\Exchange.aspx.designer.cs">
       <DependentUpon>Exchange.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\friend.aspx.cs">
       <DependentUpon>friend.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\friend.aspx.designer.cs">
       <DependentUpon>friend.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\getMobile.aspx.cs">
       <DependentUpon>getMobile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\getMobile.aspx.designer.cs">
       <DependentUpon>getMobile.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\getPassword.aspx.cs">
       <DependentUpon>getPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\getPassword.aspx.designer.cs">
       <DependentUpon>getPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\getPoint.aspx.cs">
       <DependentUpon>getPoint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\getPoint.aspx.designer.cs">
       <DependentUpon>getPoint.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\history.aspx.cs">
       <DependentUpon>history.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\history.aspx.designer.cs">
       <DependentUpon>history.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\logs.aspx.cs">
       <DependentUpon>logs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\logs.aspx.designer.cs">
       <DependentUpon>logs.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\Logscreat.aspx.cs">
       <DependentUpon>Logscreat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\Logscreat.aspx.designer.cs">
       <DependentUpon>Logscreat.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\MobileValidate.aspx.cs">
       <DependentUpon>MobileValidate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\MobileValidate.aspx.designer.cs">
       <DependentUpon>MobileValidate.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\mycom.aspx.cs">
       <DependentUpon>mycom.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\mycom.aspx.designer.cs">
       <DependentUpon>mycom.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\mycom_Look.aspx.cs">
       <DependentUpon>mycom_Look.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\mycom_Look.aspx.designer.cs">
       <DependentUpon>mycom_Look.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\mycom_up.aspx.cs">
       <DependentUpon>mycom_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\mycom_up.aspx.designer.cs">
       <DependentUpon>mycom_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\onlinePoint.aspx.cs">
       <DependentUpon>onlinePoint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\onlinePoint.aspx.designer.cs">
       <DependentUpon>onlinePoint.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\Receive.aspx.cs">
       <DependentUpon>Receive.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\Receive.aspx.designer.cs">
       <DependentUpon>Receive.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\reviewGroup.aspx.cs">
       <DependentUpon>reviewGroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\reviewGroup.aspx.designer.cs">
       <DependentUpon>reviewGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\shortcut.aspx.cs">
       <DependentUpon>shortcut.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\shortcut.aspx.designer.cs">
       <DependentUpon>shortcut.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\shortcut_list.aspx.cs">
       <DependentUpon>shortcut_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\shortcut_list.aspx.designer.cs">
       <DependentUpon>shortcut_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\Showuser.aspx.cs">
       <DependentUpon>Showuser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\Showuser.aspx.designer.cs">
       <DependentUpon>Showuser.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\UpdateGroup.aspx.cs">
       <DependentUpon>UpdateGroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\UpdateGroup.aspx.designer.cs">
       <DependentUpon>UpdateGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\url.aspx.cs">
       <DependentUpon>url.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\url.aspx.designer.cs">
       <DependentUpon>url.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\url_add.aspx.cs">
       <DependentUpon>url_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\url_add.aspx.designer.cs">
       <DependentUpon>url_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\url_class.aspx.cs">
       <DependentUpon>url_class.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\url_class.aspx.designer.cs">
       <DependentUpon>url_class.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\userinfo.aspx.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\userinfo.aspx.designer.cs">
       <DependentUpon>userinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\userinfo_contact.aspx.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\userinfo_contact.aspx.designer.cs">
       <DependentUpon>userinfo_contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\userinfo_idcard.aspx.cs">
       <DependentUpon>userinfo_idcard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\userinfo_idcard.aspx.designer.cs">
       <DependentUpon>userinfo_idcard.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\userinfo_safe.aspx.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\userinfo_safe.aspx.designer.cs">
       <DependentUpon>userinfo_safe.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\userinfo_update.aspx.cs">
       <DependentUpon>userinfo_update.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\userinfo_update.aspx.designer.cs">
       <DependentUpon>userinfo_update.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\User_ChangePassword.aspx.cs">
       <DependentUpon>User_ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\User_ChangePassword.aspx.designer.cs">
       <DependentUpon>User_ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\info\wap.aspx.cs">
       <DependentUpon>wap.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\info\wap.aspx.designer.cs">
       <DependentUpon>wap.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\menu.aspx.cs">
       <DependentUpon>menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\menu.aspx.designer.cs">
       <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\message\Message_box.aspx.cs">
       <DependentUpon>Message_box.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\message\Message_box.aspx.designer.cs">
       <DependentUpon>Message_box.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\message\Message_file.aspx.cs">
       <DependentUpon>Message_file.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\message\Message_file.aspx.designer.cs">
       <DependentUpon>Message_file.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\message\Message_read.aspx.cs">
       <DependentUpon>Message_read.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\message\Message_read.aspx.designer.cs">
       <DependentUpon>Message_read.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\message\Message_write.aspx.cs">
       <DependentUpon>Message_write.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\message\Message_write.aspx.designer.cs">
       <DependentUpon>Message_write.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photo.aspx.cs">
       <DependentUpon>photo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photo.aspx.designer.cs">
       <DependentUpon>photo.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\Photoalbum.aspx.cs">
       <DependentUpon>Photoalbum.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\Photoalbum.aspx.designer.cs">
       <DependentUpon>Photoalbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\Photoalbumlist.aspx.cs">
       <DependentUpon>Photoalbumlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\Photoalbumlist.aspx.designer.cs">
       <DependentUpon>Photoalbumlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\Photoalbum_up.aspx.cs">
       <DependentUpon>Photoalbum_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\Photoalbum_up.aspx.designer.cs">
       <DependentUpon>Photoalbum_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photoclass.aspx.cs">
       <DependentUpon>photoclass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photoclass.aspx.designer.cs">
       <DependentUpon>photoclass.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photoclass_add.aspx.cs">
       <DependentUpon>photoclass_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photoclass_add.aspx.designer.cs">
       <DependentUpon>photoclass_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photoclass_up.aspx.cs">
       <DependentUpon>photoclass_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photoclass_up.aspx.designer.cs">
       <DependentUpon>photoclass_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photofilt.aspx.cs">
       <DependentUpon>photofilt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photofilt.aspx.designer.cs">
       <DependentUpon>photofilt.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photo_add.aspx.cs">
       <DependentUpon>photo_add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photo_add.aspx.designer.cs">
       <DependentUpon>photo_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\photo\photo_up.aspx.cs">
       <DependentUpon>photo_up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\photo\photo_up.aspx.designer.cs">
       <DependentUpon>photo_up.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Reg_Result.aspx.cs">
       <DependentUpon>Reg_Result.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Reg_Result.aspx.designer.cs">
       <DependentUpon>Reg_Result.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Requestinformation.aspx.cs">
       <DependentUpon>Requestinformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Requestinformation.aspx.designer.cs">
       <DependentUpon>Requestinformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\RequestinformationResult.aspx.cs">
       <DependentUpon>RequestinformationResult.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\RequestinformationResult.aspx.designer.cs">
       <DependentUpon>RequestinformationResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Rss\RSS.aspx.cs">
       <DependentUpon>RSS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Rss\RSS.aspx.designer.cs">
       <DependentUpon>RSS.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Rss\RssFeed.aspx.cs">
       <DependentUpon>RssFeed.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\Rss\RssFeed.aspx.designer.cs">
       <DependentUpon>RssFeed.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\ShowUser.aspx.cs">
       <DependentUpon>ShowUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\ShowUser.aspx.designer.cs">
       <DependentUpon>ShowUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\show\info.aspx.cs">
       <DependentUpon>info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\show\info.aspx.designer.cs">
       <DependentUpon>info.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\show\showcontent.aspx.cs">
       <DependentUpon>showcontent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\show\showcontent.aspx.designer.cs">
       <DependentUpon>showcontent.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\show\showphoto.aspx.cs">
       <DependentUpon>showphoto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\show\showphoto.aspx.designer.cs">
       <DependentUpon>showphoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\show\showphotofilt.aspx.cs">
       <DependentUpon>showphotofilt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\show\showphotofilt.aspx.designer.cs">
       <DependentUpon>showphotofilt.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\url.aspx.cs">
       <DependentUpon>url.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\url.aspx.designer.cs">
       <DependentUpon>url.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\UserLoginajax.aspx.cs">
       <DependentUpon>UserLoginajax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\UserLoginajax.aspx.designer.cs">
       <DependentUpon>UserLoginajax.aspx</DependentUpon>
     </Compile>
     <Compile Include="vote.aspx.cs">
       <DependentUpon>vote.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vote.aspx.designer.cs">
       <DependentUpon>vote.aspx</DependentUpon>
     </Compile>
     <Compile Include="vplay.aspx.cs">
       <DependentUpon>vplay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vplay.aspx.designer.cs">
       <DependentUpon>vplay.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hg.AccessDAL\Hg.AccessDAL.csproj">
+    <ProjectReference Include="..\Foosun.AccessDAL\Foosun.AccessDAL.csproj">
       <Project>{B9DE552A-D7EB-4D57-A017-EA25FC047B5C}</Project>
-      <Name>Hg.AccessDAL</Name>
+      <Name>Foosun.AccessDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.CMS\Hg.CMS.csproj">
+    <ProjectReference Include="..\Foosun.CMS\Foosun.CMS.csproj">
       <Project>{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}</Project>
-      <Name>Hg.CMS</Name>
+      <Name>Foosun.CMS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Common\Hg.Common.csproj">
+    <ProjectReference Include="..\Foosun.Common\Foosun.Common.csproj">
       <Project>{F7309C46-B015-425B-B929-338F90A5B682}</Project>
-      <Name>Hg.Common</Name>
+      <Name>Foosun.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Config\Hg.Config.csproj">
+    <ProjectReference Include="..\Foosun.Config\Foosun.Config.csproj">
       <Project>{1327A138-9082-4480-B612-94A1FB4521FE}</Project>
-      <Name>Hg.Config</Name>
+      <Name>Foosun.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Control\Hg.Control.csproj">
+    <ProjectReference Include="..\Foosun.Control\Foosun.Control.csproj">
       <Project>{AFE6BB30-E0BD-4744-B0F4-23BC8EFCBFD8}</Project>
-      <Name>Hg.Control</Name>
+      <Name>Foosun.Control</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.DALFactory\Hg.DALFactory.csproj">
+    <ProjectReference Include="..\Foosun.DALFactory\Foosun.DALFactory.csproj">
       <Project>{63D5B865-C045-4FBC-86AC-18E082006408}</Project>
-      <Name>Hg.DALFactory</Name>
+      <Name>Foosun.DALFactory</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.DALProfile\Hg.DALProfile.csproj">
+    <ProjectReference Include="..\Foosun.DALProfile\Foosun.DALProfile.csproj">
       <Project>{A5B7599F-F0F5-44BF-8C8F-2E964B04C6BD}</Project>
-      <Name>Hg.DALProfile</Name>
+      <Name>Foosun.DALProfile</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Global\Hg.Global.csproj">
+    <ProjectReference Include="..\Foosun.Global\Foosun.Global.csproj">
       <Project>{A48884A0-3E9C-466C-BB5C-39E68AA884A9}</Project>
-      <Name>Hg.Global</Name>
+      <Name>Foosun.Global</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Install\Hg.Install.csproj">
+    <ProjectReference Include="..\Foosun.Install\Foosun.Install.csproj">
       <Project>{452962D5-8118-488B-AF7E-C02575017D31}</Project>
-      <Name>Hg.Install</Name>
+      <Name>Foosun.Install</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Model\Hg.Model.csproj">
+    <ProjectReference Include="..\Foosun.Model\Foosun.Model.csproj">
       <Project>{5A4717F3-8A33-46E4-B14A-EF382425C64D}</Project>
-      <Name>Hg.Model</Name>
+      <Name>Foosun.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.PlugIn\Hg.PlugIn.csproj">
+    <ProjectReference Include="..\Foosun.PlugIn\Foosun.PlugIn.csproj">
       <Project>{7988E626-1FB5-460D-87AE-CA61625CFAFB}</Project>
-      <Name>Hg.PlugIn</Name>
+      <Name>Foosun.PlugIn</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Publish\Hg.Publish.csproj">
+    <ProjectReference Include="..\Foosun.Publish\Foosun.Publish.csproj">
       <Project>{6612F705-1EAE-401B-A530-75EFFF5A93D9}</Project>
-      <Name>Hg.Publish</Name>
+      <Name>Foosun.Publish</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.SQLServerDAL\Hg.SQLServerDAL.csproj">
+    <ProjectReference Include="..\Foosun.SQLServerDAL\Foosun.SQLServerDAL.csproj">
       <Project>{783B233A-2516-44BE-9457-0A23949DB407}</Project>
-      <Name>Hg.SQLServerDAL</Name>
+      <Name>Foosun.SQLServerDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hg.Web.UI\Hg.Web.UI.csproj">
+    <ProjectReference Include="..\Foosun.Web.UI\Foosun.Web.UI.csproj">
       <Project>{B976AA98-7B72-453B-8D9E-BA2D0003AB8C}</Project>
-      <Name>Hg.Web.UI</Name>
+      <Name>Foosun.Web.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿//=====================================================================
-//==                  (C)2007 Foosun Inc.By doNetCMS1.0              ==
+//==                  (C)2007 Hg Inc.By doNetCMS1.0              ==
 //==                     Forum:bbs.hg.net                        ==
 //==                     WebSite:www.hg.net                      ==
 //==                 Address:No.109 HuiMin ST,.ChengDu,China         ==

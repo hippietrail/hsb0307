@@ -1,5 +1,5 @@
 ﻿//===========================================================
-//==     (c)2007 Foosun Inc. by dotNETCMS 1.0              ==
+//==     (c)2007 Hg Inc. by dotNETCMS 1.0              ==
 //==             Forum:bbs.hg.net                      ==
 //==            website:www.hg.net                     ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
@@ -316,7 +316,7 @@ namespace Hg.AccessDAL
         /// <returns></returns>
         public string siteCopyRight()
         {
-			string gflg = "(c)2007 Foosun Inc. by dotNETCMS 1.0 Build 100331";
+			string gflg = "(c)2007 Hg Inc. by dotNETCMS 1.0 Build 100331";
             string Sql = "Select CopyRight From " + Pre + "sys_param";
             DataTable rdr = DbHelper.ExecuteTable(CommandType.Text, Sql, null);
             if (rdr != null)

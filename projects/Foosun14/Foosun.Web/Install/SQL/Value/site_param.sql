@@ -3,7 +3,7 @@ insert into [fs_sys_param] ([SiteName],[SiteDomain],[IndexTemplet],[IndexFileNam
 
 insert into [fs_sys_parmConstr] ([PCId],[ConstrPayName],[gPoint],[iPoint],[money],[Gunit],[SiteID]) values ('000000000001','A级',0,0,0,'人民币','0');
 
-insert into [fs_sys_parmPrint] ([PrintTF],[PrintPicTF],[PrintWord],[Printfontsize],[Printfontfamily],[Printfontcolor],[PrintBTF],[PintPicURL],[PrintPicsize],[PintPictrans],[PrintPosition],[PrintSmallTF],[PrintSmallSize],[PrintSmallinv],[PrintSmallSizeStyle]) values (0,8,'Foosun Inc.',10,'1','FFFFFF',1,'/{@dirfile}/2.gif','0.8|0.8','0.8',0,10,'100|10','0.5',12);
+insert into [fs_sys_parmPrint] ([PrintTF],[PrintPicTF],[PrintWord],[Printfontsize],[Printfontfamily],[Printfontcolor],[PrintBTF],[PintPicURL],[PrintPicsize],[PintPictrans],[PrintPosition],[PrintSmallTF],[PrintSmallSize],[PrintSmallinv],[PrintSmallSizeStyle]) values (0,8,'Hg Inc.',10,'1','FFFFFF',1,'/{@dirfile}/2.gif','0.8|0.8','0.8',0,10,'100|10','0.5',12);
 
 insert into [fs_sys_Pramother] ([FtpTF],[FTPIP],[Ftpport],[FtpUserName],[FTPPASSword],[RssNum],[RssContentNum],[RssTitle],[RssPicURL],[WapTF],[WapPath],[WapDomain],[WapLastNum]) values (1,'192.168.1.50','21','FoosunCms','222222',100,1000,'四川风讯','1.gif',1,'/XML/WAP','http://wap.hg.net',10);
 

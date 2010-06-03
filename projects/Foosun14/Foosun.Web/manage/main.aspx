@@ -118,7 +118,7 @@
 <table width="98%" border="0" cellpadding="6" cellspacing="0" align="center" class="table">
     <tr class="TR_BG_list">
       <td align="left" class="Lion_7"><span class="Lion_6">关于产品：</span><br />
-        生产商：Foosun Inc.&nbsp;&nbsp;&nbsp;&nbsp;生产版本：<%Response.Write(Hg.Config.verConfig.Productversion); %><br />
+        生产商：Hg Inc.&nbsp;&nbsp;&nbsp;&nbsp;生产版本：<%Response.Write(Hg.Config.verConfig.Productversion); %><br />
         咨询电话：(+86)028-85336900-600/601&nbsp;&nbsp;&nbsp;&nbsp;咨询QQ：542159324&nbsp;&nbsp;532311018&nbsp;&nbsp;394226379&nbsp;&nbsp;&nbsp;&nbsp;Mail：yujs888@126.com<br />
        </td>
     </tr>

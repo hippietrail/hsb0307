@@ -14,7 +14,7 @@ namespace Hg.Web.manage.news
 {
 	public partial class News_Site_Admin : Hg.Web.UI.ManagePage
 	{
-		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Foosun Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
+		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Hg Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)
