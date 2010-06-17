@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ReferenceNews.WebClient.Shared.Site" %>
+
+<%@ Register src="../Include/Header.ascx" tagname="Header" tagprefix="uc1" %>
+<%@ Register src="../Include/Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <asp:literal id="js" runat="server" ></asp:literal>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<div id="main">
+<div id="main-top"></div>
+<div class="main-inner">
+<uc1:Header ID="Header1" runat="server" />
+
+<asp:ContentPlaceHolder ID="mainContent" runat="server">
+        
+</asp:ContentPlaceHolder>
+ <uc2:Footer ID="Footer1" runat="server" />
+ <%--
+ 
+    <form id="form1" runat="server">
+    <div>
+        
+    </div>
+    </form>--%>
+</div>
+</div>
+    
+   
+    
+</body>
+</html>

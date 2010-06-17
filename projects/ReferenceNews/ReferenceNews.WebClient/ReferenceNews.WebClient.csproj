@@ -1,0 +1,548 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA47BE55-9DA9-4495-8E8F-C0096CA729E8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReferenceNews.WebClient</RootNamespace>
+    <AssemblyName>ReferenceNews.WebClient</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default1.aspx" />
+    <Content Include="js\ajax.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="channels.aspx.cs">
+      <DependentUpon>channels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="channels.aspx.designer.cs">
+      <DependentUpon>channels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonServices\CaptchaHandler.ashx.cs">
+      <DependentUpon>CaptchaHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonServices\LogoinHandler.ashx.cs">
+      <DependentUpon>LogoinHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonServices\MembershipHandler.ashx.cs">
+      <DependentUpon>MembershipHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Defaule.aspx.cs">
+      <DependentUpon>Defaule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Defaule.aspx.designer.cs">
+      <DependentUpon>Defaule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default1.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default1.aspx.designer.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Include\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Include\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Include\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Include\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\MembershipServices.asmx.cs">
+      <DependentUpon>MembershipServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="mobileapp.aspx.cs">
+      <DependentUpon>mobileapp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mobileapp.aspx.designer.cs">
+      <DependentUpon>mobileapp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ranking.aspx.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ranking.aspx.designer.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterSuccess.aspx.cs">
+      <DependentUpon>RegisterSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterSuccess.aspx.designer.cs">
+      <DependentUpon>RegisterSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommonServices\LogoinHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Defaule.aspx" />
+    <Content Include="HTMLPage1.htm" />
+    <Content Include="Include\Footer.ascx" />
+    <Content Include="Include\Header.ascx" />
+    <Content Include="index.htm" />
+    <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="Shared\blue\button-001.png" />
+    <Content Include="Shared\blue\button-learnMore.png" />
+    <Content Include="Shared\blue\button-login.png" />
+    <Content Include="Shared\blue\icon-comment.png" />
+    <Content Include="Shared\blue\icon-down-gray.png" />
+    <Content Include="Shared\blue\icon-down.png" />
+    <Content Include="Shared\blue\icon-favorite.png" />
+    <Content Include="Shared\blue\icon-favorite2.png" />
+    <Content Include="Shared\blue\icon-up-gray.png" />
+    <Content Include="Shared\blue\icon-up.png" />
+    <Content Include="Shared\blue\indexAdsList.png" />
+    <Content Include="Shared\blue\mod-a-bottom.png" />
+    <Content Include="Shared\blue\mod-a-tagsLinks.png" />
+    <Content Include="Shared\blue\mod-a.png" />
+    <Content Include="Shared\blue\mod-ads.png" />
+    <Content Include="Shared\blue\mod-lightBlue.png" />
+    <Content Include="Shared\blue\mod-loginbox-body.png" />
+    <Content Include="Shared\blue\mod-loginbox.png" />
+    <Content Include="Shared\blue\no-1.png" />
+    <Content Include="Shared\blue\rank-bg.png" />
+    <Content Include="Shared\css\ext_main.css" />
+    <Content Include="Shared\css\layout.css" />
+    <Content Include="Shared\css\public.css" />
+    <Content Include="Shared\css\user.css" />
+    <Content Include="Shared\data\files\ads\authorbanner.png" />
+    <Content Include="Shared\data\files\ads\baner-344231.png" />
+    <Content Include="Shared\data\files\ads\baner-345321231-1.jpg" />
+    <Content Include="Shared\data\files\ads\baner-345321231-1.png" />
+    <Content Include="Shared\data\files\ads\baner-345321231-2.jpg" />
+    <Content Include="Shared\data\files\ads\downloadfile.png" />
+    <Content Include="Shared\data\files\ads\images-85373184921421.png" />
+    <Content Include="Shared\data\files\ads\readerbanner.png" />
+    <Content Include="Shared\data\files\mall\portrait\1.jpg" />
+    <Content Include="Shared\data\files\mall\portrait\1920.jpg" />
+    <Content Include="Shared\data\files\mall\portrait\mid_20100527151743428.jpg" />
+    <Content Include="Shared\data\system\book_default_mid_20100402.jpg" />
+    <Content Include="Shared\data\system\mid_2010042302353630.jpg" />
+    <Content Include="Shared\data\system\mid_20100426071253383.jpg" />
+    <Content Include="Shared\icons\add-book.png" />
+    <Content Include="Shared\icons\button-green.png" />
+    <Content Include="Shared\icons\favorite.png" />
+    <Content Include="Shared\icons\favorites.png" />
+    <Content Include="Shared\icons\manage-book.png" />
+    <Content Include="Shared\images\article-001.png" />
+    <Content Include="Shared\images\article-002.png" />
+    <Content Include="Shared\images\bargain_on.gif" />
+    <Content Include="Shared\images\best_item.gif" />
+    <Content Include="Shared\images\bg-024145.png" />
+    <Content Include="Shared\images\bg-843761271.png" />
+    <Content Include="Shared\images\bg-8437612716.png" />
+    <Content Include="Shared\images\bg-9875298.png" />
+    <Content Include="Shared\images\blog.jpg" />
+    <Content Include="Shared\images\bookmark.gif" />
+    <Content Include="Shared\images\bookmark2.gif" />
+    <Content Include="Shared\images\border-dotted.png" />
+    <Content Include="Shared\images\box032-footer.png" />
+    <Content Include="Shared\images\box032-header.png" />
+    <Content Include="Shared\images\brands.gif" />
+    <Content Include="Shared\images\brands_list.gif" />
+    <Content Include="Shared\images\btn.gif" />
+    <Content Include="Shared\images\btn1.gif" />
+    <Content Include="Shared\images\btn2.gif" />
+    <Content Include="Shared\images\button-38652.png" />
+    <Content Include="Shared\images\button-bg.png" />
+    <Content Include="Shared\images\button-h32.png" />
+    <Content Include="Shared\images\button-yellow.png" />
+    <Content Include="Shared\images\buytable_th.gif" />
+    <Content Include="Shared\images\categories-update-header-bg.png" />
+    <Content Include="Shared\images\category.gif" />
+    <Content Include="Shared\images\category_brand.gif" />
+    <Content Include="Shared\images\chart.gif" />
+    <Content Include="Shared\images\checking.gif" />
+    <Content Include="Shared\images\clue_on.gif" />
+    <Content Include="Shared\images\collection.gif" />
+    <Content Include="Shared\images\coupon.gif" />
+    <Content Include="Shared\images\do-not.png" />
+    <Content Include="Shared\images\download.png" />
+    <Content Include="Shared\images\face-bored.png" />
+    <Content Include="Shared\images\face-good.png" />
+    <Content Include="Shared\images\face-iloveit.png" />
+    <Content Include="Shared\images\face-nogood.png" />
+    <Content Include="Shared\images\face-verygood.png" />
+    <Content Include="Shared\images\flow_chart.gif" />
+    <Content Include="Shared\images\gategory.gif" />
+    <Content Include="Shared\images\group_buy.gif" />
+    <Content Include="Shared\images\hover_span.gif" />
+    <Content Include="Shared\images\ico.gif" />
+    <Content Include="Shared\images\icon.gif" />
+    <Content Include="Shared\images\icon1.gif" />
+    <Content Include="Shared\images\information.gif" />
+    <Content Include="Shared\images\initial.gif" />
+    <Content Include="Shared\images\input-bg.png" />
+    <Content Include="Shared\images\iwjLogo.png" />
+    <Content Include="Shared\images\keyword.gif" />
+    <Content Include="Shared\images\keyword_bg.gif" />
+    <Content Include="Shared\images\line-dotted.png" />
+    <Content Include="Shared\images\linebox_dt.gif" />
+    <Content Include="Shared\images\linebox_h1_span.gif" />
+    <Content Include="Shared\images\link.gif" />
+    <Content Include="Shared\images\links.gif" />
+    <Content Include="Shared\images\link_span.gif" />
+    <Content Include="Shared\images\login.gif" />
+    <Content Include="Shared\images\login_con.gif" />
+    <Content Include="Shared\images\login_h1.gif" />
+    <Content Include="Shared\images\login_left.gif" />
+    <Content Include="Shared\images\member\adorn_bottom.gif" />
+    <Content Include="Shared\images\member\adorn_right.gif" />
+    <Content Include="Shared\images\member\author.png" />
+    <Content Include="Shared\images\member\awoke.gif" />
+    <Content Include="Shared\images\member\btn.gif" />
+    <Content Include="Shared\images\member\checking.gif" />
+    <Content Include="Shared\images\member\detail_knob.gif" />
+    <Content Include="Shared\images\member\editor.gif" />
+    <Content Include="Shared\images\member\ico.gif" />
+    <Content Include="Shared\images\member\initialize_pic.gif" />
+    <Content Include="Shared\images\member\input.gif" />
+    <Content Include="Shared\images\member\left.gif" />
+    <Content Include="Shared\images\member\left_dt.gif" />
+    <Content Include="Shared\images\member\left_h2.gif" />
+    <Content Include="Shared\images\member\left_strong.gif" />
+    <Content Include="Shared\images\member\line_bold.gif" />
+    <Content Include="Shared\images\member\line_head.gif" />
+    <Content Include="Shared\images\member\lookup_con.gif" />
+    <Content Include="Shared\images\member\particular.gif" />
+    <Content Include="Shared\images\member\right.gif" />
+    <Content Include="Shared\images\member\shade.gif" />
+    <Content Include="Shared\images\member\sort_asc.gif" />
+    <Content Include="Shared\images\member\sort_desc.gif" />
+    <Content Include="Shared\images\member\tab.gif" />
+    <Content Include="Shared\images\member\table_line.gif" />
+    <Content Include="Shared\images\member\title.gif" />
+    <Content Include="Shared\images\member\topbtn.gif" />
+    <Content Include="Shared\images\member\upload_con.gif" />
+    <Content Include="Shared\images\mod-a-title.png" />
+    <Content Include="Shared\images\mod-a.png" />
+    <Content Include="Shared\images\mod-b-tag.png" />
+    <Content Include="Shared\images\mod-cat-base.png" />
+    <Content Include="Shared\images\mod-cat-bg.png" />
+    <Content Include="Shared\images\mod-cat-home-base.png" />
+    <Content Include="Shared\images\mod-cat.png" />
+    <Content Include="Shared\images\mod-orange.png" />
+    <Content Include="Shared\images\module-angle.png" />
+    <Content Include="Shared\images\module-footer.png" />
+    <Content Include="Shared\images\module-header.png" />
+    <Content Include="Shared\images\module-tag.png" />
+    <Content Include="Shared\images\module-title.png" />
+    <Content Include="Shared\images\module_common_h2.gif" />
+    <Content Include="Shared\images\module_filter_line.gif" />
+    <Content Include="Shared\images\nav.gif" />
+    <Content Include="Shared\images\nav1.gif" />
+    <Content Include="Shared\images\nav2.gif" />
+    <Content Include="Shared\images\news.gif" />
+    <Content Include="Shared\images\nonce.gif" />
+    <Content Include="Shared\images\nothing.gif" />
+    <Content Include="Shared\images\null_shopping.gif" />
+    <Content Include="Shared\images\num.gif" />
+    <Content Include="Shared\images\onCorrect.gif" />
+    <Content Include="Shared\images\onError.gif" />
+    <Content Include="Shared\images\onFocus.gif" />
+    <Content Include="Shared\images\onLoad.gif" />
+    <Content Include="Shared\images\onShow.gif" />
+    <Content Include="Shared\images\ornament.gif" />
+    <Content Include="Shared\images\pages-bg.png" />
+    <Content Include="Shared\images\pages-links-angle.png" />
+    <Content Include="Shared\images\pages-links-bg.png" />
+    <Content Include="Shared\images\pathway-bg.png" />
+    <Content Include="Shared\images\pecent.png" />
+    <Content Include="Shared\images\person-center-logo.png" />
+    <Content Include="Shared\images\product-list-title.png" />
+    <Content Include="Shared\images\rating-pecent-bg.png" />
+    <Content Include="Shared\images\rating-silver.png" />
+    <Content Include="Shared\images\rating-yellow.png" />
+    <Content Include="Shared\images\register.gif" />
+    <Content Include="Shared\images\right.gif" />
+    <Content Include="Shared\images\sales.gif" />
+    <Content Include="Shared\images\search.gif" />
+    <Content Include="Shared\images\search1.gif" />
+    <Content Include="Shared\images\search2.gif" />
+    <Content Include="Shared\images\search_nav.gif" />
+    <Content Include="Shared\images\search_nav1.gif" />
+    <Content Include="Shared\images\search_nav2.gif" />
+    <Content Include="Shared\images\set_up_shop.gif" />
+    <Content Include="Shared\images\shops.gif" />
+    <Content Include="Shared\images\sidelist.gif" />
+    <Content Include="Shared\images\sprite80.png" />
+    <Content Include="Shared\images\sprite83.png" />
+    <Content Include="Shared\images\styleb-module-title.png" />
+    <Content Include="Shared\images\stylee-module-base.png" />
+    <Content Include="Shared\images\stylee-module-bd.png" />
+    <Content Include="Shared\images\stylee-module-header.png" />
+    <Content Include="Shared\images\succeed.gif" />
+    <Content Include="Shared\images\tags-bg.png" />
+    <Content Include="Shared\images\text.gif" />
+    <Content Include="Shared\images\top10.gif" />
+    <Content Include="Shared\images\unusable.gif" />
+    <Content Include="Shared\images\usable.gif" />
+    <Content Include="Shared\images\user-path-bg.png" />
+    <Content Include="Shared\iximo\actionsBg.png" />
+    <Content Include="Shared\iximo\add-in-booknoom.png" />
+    <Content Include="Shared\iximo\allcatagory.png" />
+    <Content Include="Shared\iximo\allcatagoryBg.png" />
+    <Content Include="Shared\iximo\android4.png" />
+    <Content Include="Shared\iximo\angleMod.png" />
+    <Content Include="Shared\iximo\bar36.png" />
+    <Content Include="Shared\iximo\bd-83675919123.png" />
+    <Content Include="Shared\iximo\be-author.png" />
+    <Content Include="Shared\iximo\be-reader.png" />
+    <Content Include="Shared\iximo\bm-83675919123.png" />
+    <Content Include="Shared\iximo\book-download.png" />
+    <Content Include="Shared\iximo\btm-activity.png" />
+    <Content Include="Shared\iximo\but-0093.png" />
+    <Content Include="Shared\iximo\but-newreader.png" />
+    <Content Include="Shared\iximo\button-001-lAng.png" />
+    <Content Include="Shared\iximo\button-001-rAng.png" />
+    <Content Include="Shared\iximo\button-38571948723.png" />
+    <Content Include="Shared\iximo\button-395353225.png" />
+    <Content Include="Shared\iximo\button-buy.png" />
+    <Content Include="Shared\iximo\categorie-bg.png" />
+    <Content Include="Shared\iximo\category-footer.png" />
+    <Content Include="Shared\iximo\category-header.png" />
+    <Content Include="Shared\iximo\chanel-1.png" />
+    <Content Include="Shared\iximo\chanel-2.png" />
+    <Content Include="Shared\iximo\chanel-3.png" />
+    <Content Include="Shared\iximo\chanel-4.png" />
+    <Content Include="Shared\iximo\chanel-5.png" />
+    <Content Include="Shared\iximo\chanel-6.png" />
+    <Content Include="Shared\iximo\chanel-7.png" />
+    <Content Include="Shared\iximo\chanel-8.png" />
+    <Content Include="Shared\iximo\ico-3481653251.gif" />
+    <Content Include="Shared\iximo\ico-357129481.png" />
+    <Content Include="Shared\iximo\ico-38461.png" />
+    <Content Include="Shared\iximo\ico-385671214.png" />
+    <Content Include="Shared\iximo\icon-00312.png" />
+    <Content Include="Shared\iximo\icon-03312.png" />
+    <Content Include="Shared\iximo\icon-03313.png" />
+    <Content Include="Shared\iximo\icon-catagory.png" />
+    <Content Include="Shared\iximo\icon-download.png" />
+    <Content Include="Shared\iximo\icon-free-big.png" />
+    <Content Include="Shared\iximo\icon-free-small.png" />
+    <Content Include="Shared\iximo\icon-free.gif" />
+    <Content Include="Shared\iximo\icon-gridlist.png" />
+    <Content Include="Shared\iximo\icon-lineList.png" />
+    <Content Include="Shared\iximo\image-3957124532532.png" />
+    <Content Include="Shared\iximo\image-3957209421.png" />
+    <Content Include="Shared\iximo\image-597804217421.png" />
+    <Content Include="Shared\iximo\indexAds.png" />
+    <Content Include="Shared\iximo\indexslideBanerButton.png" />
+    <Content Include="Shared\iximo\iphone531211.png" />
+    <Content Include="Shared\iximo\iximo-app.png" />
+    <Content Include="Shared\iximo\iximo-btm-3857198724.png" />
+    <Content Include="Shared\iximo\iximo-main-menu-bg.png" />
+    <Content Include="Shared\iximo\iximo-main-menu.png" />
+    <Content Include="Shared\iximo\joinus.png" />
+    <Content Include="Shared\iximo\logo.png" />
+    <Content Include="Shared\iximo\messageAreabody.png" />
+    <Content Include="Shared\iximo\messageAreabottom.png" />
+    <Content Include="Shared\iximo\messageAreaMan.png" />
+    <Content Include="Shared\iximo\messageAreaRight.png" />
+    <Content Include="Shared\iximo\messageAreatop.png" />
+    <Content Include="Shared\iximo\messageAreawrong.png" />
+    <Content Include="Shared\iximo\mobileUi.png" />
+    <Content Include="Shared\iximo\mobileUiwap.png" />
+    <Content Include="Shared\iximo\model-word.png" />
+    <Content Include="Shared\iximo\new.gif" />
+    <Content Include="Shared\iximo\rating-icons.png" />
+    <Content Include="Shared\iximo\readernauthor.png" />
+    <Content Include="Shared\iximo\searchBar-bar.png" />
+    <Content Include="Shared\iximo\searchBar.png" />
+    <Content Include="Shared\iximo\sitemap.png" />
+    <Content Include="Shared\iximo\slideAreaButton.png" />
+    <Content Include="Shared\iximo\stars.png" />
+    <Content Include="Shared\iximo\starsBig.png" />
+    <Content Include="Shared\iximo\treeStep.png" />
+    <Content Include="Shared\iximo\userCenterButton.png" />
+    <Content Include="Shared\iximo\userCenterButton28.png" />
+    <Content Include="Shared\iximo\who-i-am.png" />
+    <Content Include="Shared\js\ext_main.js" />
+    <Content Include="Shared\js\jquery.validate.min.js" />
+    <Content Include="Shared\js\lang.js" />
+    <Content Include="Shared\js\member.js" />
+    <Content Include="Shared\js\pngbd.js" />
+    <Content Include="Shared\js\swfobject2.js" />
+    <Content Include="Shared\js\tagcloud.swf" />
+    <Content Include="Shared\Site.Master" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="channels.aspx" />
+    <Content Include="CommonServices\CaptchaHandler.ashx" />
+    <Content Include="Default.aspx" />
+    <Content Include="mobileapp.aspx" />
+    <Content Include="Ranking.aspx" />
+    <Content Include="RegisterSuccess.aspx" />
+    <Content Include="Shared\adminimg\anglebg.png" />
+    <Content Include="Shared\adminimg\angleBox.gif" />
+    <Content Include="Shared\adminimg\author_bottom1.png" />
+    <Content Include="Shared\adminimg\author_top1.png" />
+    <Content Include="Shared\adminimg\botton_img2.gif" />
+    <Content Include="Shared\adminimg\botton_img3.gif" />
+    <Content Include="Shared\adminimg\button_backimg.png" />
+    <Content Include="Shared\adminimg\footer_top1.png" />
+    <Content Include="Shared\adminimg\footer_top2.png" />
+    <Content Include="Shared\adminimg\manage_top.png" />
+    <Content Include="Shared\adminimg\publish_book1.png" />
+    <Content Include="Shared\adminimg\r1_content.png" />
+    <Content Include="Shared\adminimg\rank_val_img.png" />
+    <Content Include="Shared\adminimg\stars.png" />
+    <Content Include="Shared\adminimg\textArea.png" />
+    <Content Include="Shared\adminimg\userCenterLogo.png" />
+    <Content Include="Shared\adminimg\usermenu-button.png" />
+    <Content Include="Shared\adminimg\usermenu-foot.png" />
+    <Content Include="Shared\adminimg\usermenu-head.png" />
+    <Content Include="Shared\data\files\ads\img11.png" />
+    <Content Include="Shared\data\files\ads\img12.png" />
+    <Content Include="Shared\data\files\ads\img13.png" />
+    <Content Include="Shared\js\jquery.formValidator.js" />
+    <Content Include="Shared\js\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Shared\js\jquery-1.4.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Husb\Husb.Common.Web\Husb.Common.Web.csproj">
+      <Project>{F670CDE0-85D9-4130-911D-BB24D6B541A6}</Project>
+      <Name>Husb.Common.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommonServices\MembershipHandler.ashx" />
+    <Content Include="Membership\MembershipServices.asmx" />
+    <Content Include="Shared\data\files\ads\image-channel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQL\0_CreateDB.sql" />
+    <None Include="SQL\1_MembershipDB.sql" />
+    <None Include="SQL\2_CreateSchemas.sql" />
+    <None Include="SQL\3_Production.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Payment\" />
+    <Folder Include="Shared\css\png\" />
+    <Folder Include="Shared\data\files\store_\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9558</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
