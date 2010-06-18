@@ -60,7 +60,7 @@ namespace ReferenceNews.Product
 
         protected override string GetByIdStatement
         {
-            get { throw new NotImplementedException(); }
+            get { return "Production.Product_SelectProduct"; }
         }
 
         protected override string GetByNameStatement
