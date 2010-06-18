@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="Csla, Version=3.8.3.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\ThirdParty\Csla.dll</HintPath>
+      <HintPath>..\..\Lib\ThirdParty\Csla.dll</HintPath>
     </Reference>
     <Reference Include="Csla.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\ThirdParty\Csla.Extensions.dll</HintPath>
+      <HintPath>..\..\Lib\ThirdParty\Csla.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

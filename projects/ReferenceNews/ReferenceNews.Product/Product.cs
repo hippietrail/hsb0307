@@ -167,6 +167,7 @@ namespace ReferenceNews.Product
 
         #endregion
 
+
         public override void LoadProperty(System.Data.IDataReader dr)
         {
             //throw new NotImplementedException();
