@@ -62,7 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Product.cs" />
+    <Compile Include="Product.dao.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductCategory.cs" />
+    <Compile Include="ProductCategory.dao.cs" >
+		<DependentUpon>ProductCategory.cs</DependentUpon>
+	</Compile>
     <Compile Include="ProductCategoryList.cs" />
     <Compile Include="ProductInfo.cs" />
     <Compile Include="ProductList.cs" />

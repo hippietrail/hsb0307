@@ -6,7 +6,7 @@ using Csla;
 
 namespace ReferenceNews.Product
 {
-    public class ProductList : EntityListBase<ProductList, Product>
+    public class ProductCategoryList : EntityListBase<ProductCategoryList, ProductCategory>
     {
         #region Common StoredProcedure or SQL  List
 
@@ -22,7 +22,7 @@ namespace ReferenceNews.Product
 
         protected override string GetAllStatement
         {
-            get { return "Production.Product_SelectProductsAll"; }
+            get { throw new NotImplementedException(); }
         }
 
         protected override string GetByMasterIdStatement
@@ -37,12 +37,12 @@ namespace ReferenceNews.Product
 
         protected override string GetPagedStatement
         {
-            get { return "Production.Product_SelectProductsPaged"; }
+            get { throw new NotImplementedException(); }
         }
 
         protected override string GetRowCountStatement
         {
-            get { return "Production.Product_SelectProductsRowCount"; }
+            get { throw new NotImplementedException(); }
         }
 
         protected override string GetStatement
