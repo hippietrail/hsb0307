@@ -6,7 +6,7 @@ using System.Data;
 
 namespace ReferenceNews.Product
 {
-    class ProductCategory
+    public partial class ProductCategory
     {
         #region Common StoredProcedure or SQL  List
 
@@ -82,7 +82,6 @@ namespace ReferenceNews.Product
 
         #endregion
 
-
         public override void LoadProperty(System.Data.IDataReader dr)
         {
             Id = (System.Int32)dr[IdProperty.Name];
@@ -94,7 +93,6 @@ namespace ReferenceNews.Product
             ModifiedBy = dr[ModifiedByProperty.Name] == DBNull.Value ? -1 : (System.Int32)dr[ProductCategory.ModifiedByProperty.Name];
             DeletedFlag = (System.Boolean)dr[DeletedFlagProperty.Name];
             Description = dr[DescriptionProperty.Name] == DBNull.Value ? "" : (System.String)dr[ProductCategory.DescriptionProperty.Name];
-
         }
 
         public override void PopulateParamters(ProductCategory entity, Microsoft.Practices.EnterpriseLibrary.Data.Database db, System.Data.Common.DbCommand cmd)
@@ -109,7 +107,5 @@ namespace ReferenceNews.Product
             db.AddInParameter(cmd, DeletedFlagProperty.Name, DbType.Boolean, entity.DeletedFlag);
             db.AddInParameter(cmd, DescriptionProperty.Name, DbType.String, entity.Description);
         }
-
-        
     }
 }

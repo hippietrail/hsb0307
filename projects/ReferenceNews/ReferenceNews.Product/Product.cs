@@ -15,13 +15,9 @@ namespace ReferenceNews.Product
         private Product()
         { 
             /* require use of factory methods */
-            //this.InsertStatement = "Production.Product_InsertProduct";
-            //this.GetByIdStatement = "SELECT CategoryID, CategoryName, Description FROM Categories WHERE CategoryID = @CategoryID";
         }
 
         #endregion
-
-        
 
         #region 注册属性
 
@@ -94,8 +90,6 @@ namespace ReferenceNews.Product
         }
 
         #endregion
-
-
         
     }
 }
