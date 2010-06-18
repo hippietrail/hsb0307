@@ -495,12 +495,6 @@
     <Content Include="Shared\js\jquery-1.4.2.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Husb\Husb.Common.Web\Husb.Common.Web.csproj">
-      <Project>{F670CDE0-85D9-4130-911D-BB24D6B541A6}</Project>
-      <Name>Husb.Common.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="CommonServices\MembershipHandler.ashx" />
     <Content Include="Membership\MembershipServices.asmx" />
     <Content Include="Shared\data\files\ads\image-channel.png" />
@@ -510,6 +504,12 @@
     <None Include="SQL\1_MembershipDB.sql" />
     <None Include="SQL\2_CreateSchemas.sql" />
     <None Include="SQL\3_Production.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Husb.Common.Web\Husb.Common.Web.csproj">
+      <Project>{F670CDE0-85D9-4130-911D-BB24D6B541A6}</Project>
+      <Name>Husb.Common.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

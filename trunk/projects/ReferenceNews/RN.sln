@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Doc\数字商品管理.doc = Doc\数字商品管理.doc
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Husb.Common.Web", "..\Husb\Husb.Common.Web\Husb.Common.Web.csproj", "{F670CDE0-85D9-4130-911D-BB24D6B541A6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceNews.WebClient", "ReferenceNews.WebClient\ReferenceNews.WebClient.csproj", "{FA47BE55-9DA9-4495-8E8F-C0096CA729E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceNews.ControlConsole", "ReferenceNews.ControlConsole\ReferenceNews.ControlConsole.csproj", "{56849033-B7EE-434F-91F2-355C9F9E2779}"
@@ -29,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AFE0C0D0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceNews.ProductTests", "Tests\ReferenceNews.ProductTests\ReferenceNews.ProductTests.csproj", "{75F41ADB-46C3-4CE4-A794-B2ABEA738C50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Husb.Common.Web", "Husb.Common.Web\Husb.Common.Web.csproj", "{F670CDE0-85D9-4130-911D-BB24D6B541A6}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ReferenceNews.vsmdi
@@ -39,11 +39,6 @@ Global
 		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Testing|Any CPU.ActiveCfg = Release|Any CPU
-		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Testing|Any CPU.Build.0 = Release|Any CPU
 		{FA47BE55-9DA9-4495-8E8F-C0096CA729E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA47BE55-9DA9-4495-8E8F-C0096CA729E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA47BE55-9DA9-4495-8E8F-C0096CA729E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,6 +81,12 @@ Global
 		{75F41ADB-46C3-4CE4-A794-B2ABEA738C50}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75F41ADB-46C3-4CE4-A794-B2ABEA738C50}.Testing|Any CPU.ActiveCfg = Release|Any CPU
 		{75F41ADB-46C3-4CE4-A794-B2ABEA738C50}.Testing|Any CPU.Build.0 = Release|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Testing|Any CPU.ActiveCfg = Release|Any CPU
+		{F670CDE0-85D9-4130-911D-BB24D6B541A6}.Testing|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
