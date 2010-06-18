@@ -8,11 +8,9 @@ using System.Data;
 namespace ReferenceNews.Product
 {
     [Serializable()]
-    public class ProductCategory : EntityBase<ProductCategory>
+    public partial class ProductCategory : EntityBase<ProductCategory>
     {
         private ProductCategory() { }
-
-        
         
         private static PropertyInfo<System.String> NameProperty = RegisterProperty<System.String>(p => p.Name);
         
