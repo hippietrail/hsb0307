@@ -513,7 +513,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Payment\" />
+    <Folder Include="Order\" />
+    <Folder Include="Payments\" />
+    <Folder Include="Products\" />
+    <Folder Include="Repositories\" />
     <Folder Include="Shared\css\png\" />
     <Folder Include="Shared\data\files\store_\" />
   </ItemGroup>

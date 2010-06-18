@@ -194,7 +194,7 @@ namespace ReferenceNews.Product
         {
             //throw new NotImplementedException();
 
-            db.AddInParameter(cmd, IdProperty.Name, DbType.Int32, entity.Id);
+            //db.AddInParameter(cmd, IdProperty.Name, DbType.Int32, entity.Id);
             db.AddInParameter(cmd, RowIdProperty.Name, DbType.Guid, entity.RowId);
             db.AddInParameter(cmd, ProductIdProperty.Name, DbType.AnsiString, entity.ProductId);
             db.AddInParameter(cmd, CategoryProperty.Name, DbType.Int32, entity.Category);
@@ -212,11 +212,5 @@ namespace ReferenceNews.Product
             db.AddInParameter(cmd, DeletedFlagProperty.Name, DbType.Boolean, entity.DeletedFlag);
             db.AddInParameter(cmd, DescriptionProperty.Name, DbType.String, entity.Description);
         }
-
-
-
-
-
-        
     }
 }
