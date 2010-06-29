@@ -105,10 +105,36 @@ public partial class manage_Templet_Upload : Hg.Web.UI.DialogPage
                     }
 					break;
 				case "templet":
-					Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+					//Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+                    //lsd change 20100524
+                    if (Hg.Global.Current.SiteID == "0")
+                    {
+                        Path = Server.MapPath(_Tmpdimmdir + "/" + localtemplet + "/" + Path);
+
+                    }
+                    else
+                    {
+                        Path = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localtemplet + "/" + Path;
+                        if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
+                        Path = Server.MapPath(Path);
+                        str_returnpath = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localtemplet + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                    }
 					break;
 				case "files":
-					Path = Server.MapPath(_Tmpdimmdir + "/" + localSavedir + "/" + Path);
+					//Path = Server.MapPath(_Tmpdimmdir + "/" + localSavedir + "/" + Path);
+                    //lsd change 20100524
+                    if (Hg.Global.Current.SiteID == "0")
+                    {
+                        Path = Server.MapPath(_Tmpdimmdir + "/" + localSavedir + "/" + Path);
+
+                    }
+                    else
+                    {
+                        Path = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localSavedir + "/" + Path;
+                        if (!Directory.Exists(Server.MapPath(Path))) { Directory.CreateDirectory(Server.MapPath(Path)); }
+                        Path = Server.MapPath(Path);
+                        str_returnpath = _Tmpdimmdir + "/" + Hg.Config.UIConfig.dirSite + "/" + Hg.Global.Current.SiteEName + "/" + localSavedir + "/" + Server.UrlDecode(Request.QueryString["Path"]);
+                    }
 					break;
 				default:
                     //lsd change 20100524

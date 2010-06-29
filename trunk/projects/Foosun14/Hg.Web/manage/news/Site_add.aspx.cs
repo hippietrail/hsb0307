@@ -35,7 +35,7 @@ public partial class manage_news_Site_add : Hg.Web.UI.ManagePage
             {
                 N_13.Visible = false;
             }
-            if (SiteID != "0") { PageError("您没有创建站群的权限!", ""); }
+            //if (SiteID != "0") { PageError("您没有创建站群的权限!", ""); }
             this.LblID.Text = "";
             this.LblCID.Text = "";
             this.RadStatus.Items[0].Selected = true;
@@ -52,6 +52,8 @@ public partial class manage_news_Site_add : Hg.Web.UI.ManagePage
             if (Request.QueryString["ID"] != null && !Request.QueryString["ID"].Trim().Equals(string.Empty))
             {
                 #region
+                this.Authority_Code = "C059";
+                this.CheckAdminAuthority();
                 int id = int.Parse(Request.QueryString["ID"]);
                 this.TxtEnName.Enabled = false;
                 this.LblID.Text = id.ToString();
@@ -170,6 +172,8 @@ public partial class manage_news_Site_add : Hg.Web.UI.ManagePage
             else
             {
                 #region
+                this.Authority_Code = "C058";
+                this.CheckAdminAuthority();
                // PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
                 string _tmpSite = "";
                 string _dirSite ="";

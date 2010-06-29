@@ -44,7 +44,7 @@
 						<tr>
 							<td>
 								<div align="right" class="STYLE1">
-									dotNETCMS&amp;NewsCMS v1.0.0</div>
+									WebFastCMS&amp;SiteBuilderCMS v1.0.0</div>
 							</td>
 						</tr>
 						<tr>

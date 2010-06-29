@@ -246,28 +246,55 @@ namespace Hg.Publish
         /// </summary>
         private void ultiPublishIndex()
         {
-            // try
-            //{
-            HProgressBar.Roll("正在发布主页", 0);
-            string indexname = "index.html";
-            TempletPath = Hg.Common.Public.readparamConfig("IndexTemplet"); //rd["IndexTemplet"].ToString();
-            TempletPath = TempletPath.Replace("/", "\\");
-            TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
-            indexname = Hg.Common.Public.readparamConfig("IndexFileName");//rd["IndexFileName"].ToString();
-            Template indexTemp = new Template(SiteRootPath.Trim('\\') + TempletPath, TempType.Index);
-            indexTemp.GetHTML();
-            indexTemp.ReplaceLabels();
-            General.WriteHtml(indexTemp.FinallyContent, SiteRootPath.TrimEnd('\\') + "\\" + indexname);
-            General.publishXML("0");
-            //发布今日历史文档
-            General.publishHistryIndex(0);
-            HProgressBar.Roll("发布主页成功。&nbsp;<a class=\"list_link\" href=\"javascript:history.back();\">返 回</a> &nbsp; <a class=\"list_link\" href=\"../../" + indexname + "\" target=\"_blank\">浏览首页</a>", 100);
-            //  }
-            // catch (Exception ex)
-            // {
-            //    Hg.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(), "");
-            // HProgressBar.Roll("发布主页失败。<a href=\"error/geterror.aspx?\">查看日志</a>", 0);
-            // }
+
+            try
+            {
+                DataTable siteInfo = CommonData.DalSite.GetSiteInfo(Hg.Global.Current.SiteID);
+
+                string indexUrl = "index.html";
+
+                HProgressBar.Roll("正在发布主页", 0);
+                string indexname = "index.html";
+                if (Hg.Global.Current.SiteID == "0")
+                {
+                    TempletPath = Hg.Common.Public.readparamConfig("IndexTemplet"); //rd["IndexTemplet"].ToString();
+                    indexname = Hg.Common.Public.readparamConfig("IndexFileName");//rd["IndexFileName"].ToString();
+                    indexUrl = indexname;
+                    TempletPath = TempletPath.Replace("/", "\\");
+                    TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
+                    Template indexTemp = new Template(SiteRootPath.Trim('\\') + TempletPath, TempType.Index);
+                    indexTemp.GetHTML();
+                    indexTemp.ReplaceLabels();
+                    General.WriteHtml(indexTemp.FinallyContent, SiteRootPath.TrimEnd('\\') + "\\" + indexname);
+                    General.publishXML("0");
+                    //发布今日历史文档
+                    General.publishHistryIndex(0);
+                }
+                else
+                {
+
+                    TempletPath = siteInfo.Rows[0]["IndexTemplet"].ToString();
+                    indexname = "index." + siteInfo.Rows[0]["IndexEXName"].ToString();
+                    indexUrl = siteInfo.Rows[0]["SaveDirPath"].ToString().Trim('/') + "/" + Hg.Global.Current.SiteEName + "/" + indexname;
+                    TempletPath = TempletPath.Replace("/", "\\");
+                    TempletPath = TempletPath.ToLower().Replace("{@dirtemplet}", strTempletDir);
+                    Template indexTemp = new Template(SiteRootPath.Trim('\\') + TempletPath, TempType.Index);
+                    indexTemp.GetHTML();
+                    indexTemp.ReplaceLabels();
+                    General.WriteHtml(indexTemp.FinallyContent, SiteRootPath.TrimEnd('\\') + "\\" + siteInfo.Rows[0]["SaveDirPath"].ToString().Trim('/')+ "\\" + Hg.Global.Current.SiteEName + "\\" + indexname);
+                    General.publishXML("0");
+                    //发布今日历史文档
+                    General.publishHistryIndex(0);
+                }
+
+
+                HProgressBar.Roll("发布主页成功。&nbsp;<a class=\"list_link\" href=\"javascript:history.back();\">返 回</a> &nbsp; <a class=\"list_link\" href=\"../../" + indexUrl + "\" target=\"_blank\">浏览首页</a>", 100);
+            }
+            catch (Exception ex)
+            {
+                Hg.Common.Public.savePublicLogFiles("□□□发布主页", "【错误描述：】\r\n" + ex.ToString(), "");
+                HProgressBar.Roll("发布主页失败。<a href=\"error/geterror.aspx?\">查看日志</a>", 0);
+            }
         }
 
         /// <summary>

@@ -11,6 +11,7 @@ namespace Hg.Publish
 {
     public class CommonData
     {
+        public static Hg.DALFactory.ISite DalSite = DataAccess.CreateSite();
         public static Hg.DALFactory.IPublish DalPublish = DataAccess.CreatePublish();
         public static IList<PubClassInfo> NewsClass = new List<PubClassInfo>();
         public static IList<PubSpecialInfo> NewsSpecial = new List<PubSpecialInfo>();

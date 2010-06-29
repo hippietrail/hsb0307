@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosun.Web</RootNamespace>
-    <AssemblyName>Foosun.Web</AssemblyName>
+    <RootNamespace>hg.Web</RootNamespace>
+    <AssemblyName>hg.Web</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -3798,7 +3798,6 @@
     <Content Include="Templets\Content\comment.html" />
     <Content Include="Templets\Content\CommentList.html" />
     <Content Include="Templets\Content\CommentPage.html" />
-    <Content Include="Templets\Content\HTMLPage1.htm" />
     <Content Include="Templets\Content\index.html" />
     <Content Include="Templets\Content\indexPage.html" />
     <Content Include="Templets\Content\news.html" />
@@ -3821,6 +3820,7 @@
     <Content Include="Templets\images\white.jpg" />
     <Content Include="Templets\index.html" />
     <Content Include="Templets\Content\T_index.htm" />
+    <Content Include="Templets\test.htm" />
     <Content Include="testseries.aspx" />
     <Content Include="TopNews.aspx" />
     <Content Include="user\ConformityInterface.aspx" />

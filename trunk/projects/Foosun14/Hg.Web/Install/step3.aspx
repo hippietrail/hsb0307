@@ -63,7 +63,7 @@
 										数据库名称:
 									</td>
 									<td style="background-color: #f5f5f5; width: 352px;">
-										<asp:TextBox ID="initialcatalog" runat="server" Text="dotNETCMS" Width="150" Enabled="true"></asp:TextBox>*<span id="msg2"></span>
+										<asp:TextBox ID="initialcatalog" runat="server" Text="WebFastCMS" Width="150" Enabled="true"></asp:TextBox>*<span id="msg2"></span>
 									</td>
 								</tr>
 								<tr id="tr3" style="display: none">

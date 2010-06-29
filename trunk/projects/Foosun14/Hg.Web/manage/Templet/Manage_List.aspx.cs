@@ -1,5 +1,5 @@
 ///************************************************************************************************************
-///**********模板管理Code By DengXi****************************************************************************
+///**********模板管理Code By lsd****************************************************************************
 ///************************************************************************************************************
 using System;
 using System.Data;
@@ -21,8 +21,11 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 	}
 	private string str_dirMana = Hg.Config.UIConfig.dirDumm;
 	private string str_Templet = Hg.Config.UIConfig.dirTemplet;  //获取模板路径
-	private string str_FilePath = "";
+	//private string str_FilePath = "";
 	private string s_url = "";
+    private string RootServerPath = string.Empty;//物理根路径
+    private string RootPath = string.Empty;//相对根路径
+    private string CurrentPath = string.Empty;//当前路径
 	protected void Page_Load(object sender, EventArgs e)
 	{
 		Response.CacheControl = "no-cache";
@@ -37,20 +40,29 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 		string type = Request.QueryString["Type"];
         if (SiteID == "0")
         {
-            str_FilePath = Server.MapPath(str_dirMana + "\\" + str_Templet);
+            RootServerPath = Server.MapPath(str_dirMana + "\\" + str_Templet);
+            RootPath = str_dirMana + "\\" + str_Templet;
+            
         }
         else
         {
             string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + str_Templet;
             if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
-            str_FilePath = Server.MapPath(_sitePath);
+            RootServerPath = Server.MapPath(_sitePath);
+            RootPath = _sitePath;
         }
+        
 
-		string Path = str_FilePath + Request.QueryString["Path"];
-		string ParentPath = str_FilePath + Request.QueryString["ParentPath"]; //父级
+        string Path = RootServerPath + Request.QueryString["Path"];
+        string ParentPath = RootServerPath + Request.QueryString["ParentPath"]; //父级
+        string currentServerPath = RootServerPath + Request.QueryString["Path"];
+        string ParentServerPath = RootServerPath + Request.QueryString["ParentPath"]; //父级
+        CurrentPath = RootPath + Request.QueryString["Path"];
+
+
 		try
 		{
-			if (Path.IndexOf(str_FilePath, 0) == -1 || ParentPath.IndexOf(str_FilePath, 0) == -1)
+            if (currentServerPath.IndexOf(RootServerPath, 0) == -1 || ParentServerPath.IndexOf(RootServerPath, 0) == -1)
 				Response.End();
 		}
 		catch { }
@@ -60,32 +72,32 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 			case "EidtDirName":     //修改文件夹名称
 				this.Authority_Code = "T003";
 				this.CheckAdminAuthority();
-				EidtDirName(Path);
+                EidtDirName(currentServerPath);
 				break;
 			case "EidtFileName":    //修改文件名称
 				this.Authority_Code = "T007";
 				this.CheckAdminAuthority();
-				EidtFileName(Path);
+                EidtFileName(currentServerPath);
 				break;
 			case "DelDir":          //删除文件夹
 				this.Authority_Code = "T004";
 				this.CheckAdminAuthority();
-				DelDir(Path);
+                DelDir(currentServerPath);
 				break;
 			case "DelFile":          //删除文件
 				this.Authority_Code = "T004";
 				this.CheckAdminAuthority();
-				DelFile(Path);
+                DelFile(currentServerPath);
 				break;
 			case "AddDir":
 				this.Authority_Code = "T003";
 				this.CheckAdminAuthority();
-				AddDir(Path);        //添加文件夹
+                AddDir(currentServerPath);        //添加文件夹
 				break;
 			default:
 				break;
 		}
-		ShowFile(str_FilePath, Path, ParentPath);
+        ShowFile(RootServerPath, currentServerPath, ParentServerPath );
 		s_url = "Manage_List.aspx?Path=" + Request.QueryString["Path"] + "&ch=" + Request.QueryString["ch"] + "&ParentPath=" + Request.QueryString["ParentPath"];
 	}
 
@@ -97,12 +109,12 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 	/// <param name="parentPath">父目录路径</param>
 	/// <returns>显示文件列表</returns>
 	/// Code By DengXi
-	protected void ShowFile(string defaultpath, string path, string parentPath)
+	protected void ShowFile(string defaultpath, string currentPath, string parentPath)
 	{
 
-		if (path != "" && path != null && path != string.Empty)
+        if (currentPath != "" && currentPath != null && currentPath != string.Empty)
 		{
-			defaultpath = path;
+            defaultpath = currentPath;
 		}
 		if (Directory.Exists(defaultpath) == false)            //判断模板目录是否存在
 		{
@@ -118,7 +130,7 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 	/// <param name="ParPath">父目录路径</param>
 	/// <returns>显示文件列表</returns>
 	/// Code By DengXi
-	protected string GetDirFile(string dir, string ParPath)
+    protected string GetDirFile(string currentServerPath, string ParentServerPath)//currentServerPath, ParentServerPath
 	{
 		//bug修改,预览带端口不能正常显示， arjun 2008.2.17
 		string DomainAndPort = Request.ServerVariables["Server_Name"];
@@ -130,7 +142,7 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 		DirectoryInfo[] ChildDirectory;                         //子目录集
 		FileInfo[] NewFileInfo;                                 //当前所有文件
 
-		DirectoryInfo FatherDirectory = new DirectoryInfo(dir); //当前目录
+        DirectoryInfo FatherDirectory = new DirectoryInfo(currentServerPath); //当前目录
 
 		ChildDirectory = FatherDirectory.GetDirectories("*.*"); //得到子目录集
 
@@ -141,29 +153,24 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 		string str_TrEnd = "</tr>";
 		string str_TdStart = "<td class=\"list_link\" align=\"left\">";
 		string str_TdEnd = "</td>";
-		string Str_TempParentstr;
-		string TempParentPath = dir.Replace("\\", "\\\\");      //路径转意
+		//string Str_TempParentstr;
+        string str_tempCurrentServerPath;
+        //string TempParentPath = currentServerPath.Replace("\\", "\\\\");      //路径转意
+        string tempCurrentServerPath = currentServerPath.Replace("\\", "\\\\");      //路径转意
+        
 
 
 		//------------取得当前所在目录
-		if (ParPath == "" || ParPath == null || ParPath == string.Empty || ParPath == "undefined")
+        if (ParentServerPath == "" || ParentServerPath == null || ParentServerPath == string.Empty || ParentServerPath == "undefined")
 		{
-			Str_TempParentstr = "当前目录:" + dir;
+            str_tempCurrentServerPath = "当前目录:" + currentServerPath;
 		}
 		else
 		{
-			string _str_TempletTF = "";
-			if (SiteID == "0")
+
+            if (currentServerPath == Server.MapPath(RootPath))      //判断是否是模板目录,如果是则不显示返回上级目录
 			{
-				_str_TempletTF = str_dirMana + "\\" + str_Templet;
-			}
-			else
-			{
-				_str_TempletTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + str_Templet;
-			}
-			if (dir == Server.MapPath(_str_TempletTF))      //判断是否是模板目录,如果是则不显示返回上级目录
-			{
-				Str_TempParentstr = "当前目录:" + _str_TempletTF.Replace("\\", "/");
+                str_tempCurrentServerPath = "当前目录:" + RootPath.Replace("\\", "/");
 			}
 			else
 			{
@@ -173,15 +180,16 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 				else
 					str_thispath = Server.MapPath("/");
 
-				ParPath = ParPath.Replace("\\", "\\\\");
-				string Str_strpath = TempParentPath.Remove(TempParentPath.LastIndexOf("\\") - 1).Replace(str_FilePath.Replace("\\", "\\\\"), "");//获取当前目录的上级目录
-				Str_TempParentstr = "<a href=\"javascript:ListGo('" + Str_strpath.Replace(str_FilePath.Replace("\\", "\\\\"), "") + "','" + TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "") + "');\" class=\"list_link\" title=\"点击回到上级目录\">返回上级目录</a>   |   当前目录:/" + dir.Replace(str_thispath, "").Replace("\\", "/");
+                ParentServerPath = ParentServerPath.Replace("\\", "\\\\");
+                //获取当前目录的上级目录
+                string Str_strpath = tempCurrentServerPath.Remove(tempCurrentServerPath.LastIndexOf("\\") - 1).Replace(RootServerPath.Replace("\\", "\\\\"), "");//获取当前目录的上级目录
+                str_tempCurrentServerPath = "<a href=\"javascript:ListGo('" + Str_strpath.Replace(RootServerPath.Replace("\\", "\\\\"), "") + "','" + tempCurrentServerPath.Replace(RootServerPath.Replace("\\", "\\\\"), "") + "');\" class=\"list_link\" title=\"点击回到上级目录\">返回上级目录</a>   |   当前目录:/" + currentServerPath.Replace(str_thispath, "").Replace("\\", "/");
 			}
 		}
-		ShowAddfiledir(TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "")); //调用显示创建目录,导入文件函数
+        ShowAddfiledir(tempCurrentServerPath.Replace(RootServerPath.Replace("\\", "\\\\"), "")); //调用显示创建目录,导入文件函数
 
 		str_TempFileStr = "<table border=\"0\" class=\"table\" width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
-		str_TempFileStr += str_TrStart + "<td class=\"list_link\" align=\"left\"colspan=\"5\">" + Str_TempParentstr + str_TrEnd;
+        str_TempFileStr += str_TrStart + "<td class=\"list_link\" align=\"left\"colspan=\"5\">" + str_tempCurrentServerPath + str_TrEnd;
 		str_TempFileStr += "</table>";
 		str_TempFileStr += "<table border=\"0\" class=\"table\" width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
 		str_TempFileStr += "<tr class=\"TR_BG\">";
@@ -193,20 +201,21 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 		str_TempFileStr += str_TdStart + "操作" + str_TdEnd;
 		str_TempFileStr += str_TrEnd;
 		//---------------获取目录信息
-		TempParentPath = TempParentPath.Replace(str_FilePath.Replace("\\", "\\\\"), "");
+        //tempCurrentServerPath:当前目录
+        tempCurrentServerPath = tempCurrentServerPath.Replace(RootServerPath.Replace("\\", "\\\\"), "");
 
 		foreach (DirectoryInfo dirInfo in ChildDirectory)       //获取此级目录下的一级目录
 		{
 			str_TempFileStr += str_TrStart;
 			string TempPath = dirInfo.FullName.Replace("\\", "\\\\");
 
-			TempPath = TempPath.Replace(str_FilePath.Replace("\\", "\\\\"), "");
+            TempPath = TempPath.Replace(RootServerPath.Replace("\\", "\\\\"), "");
 
-			str_TempFileStr += "<td class=\"list_link\" align=\"left\"><img src=\"../../sysImages/FileIcon/folder.gif\" alt=\"点击进入下级目录\"><a href=\"javascript:ListGo('" + TempPath + "','" + TempParentPath + "');\" class=\"list_link\" title=\"点击进入下级目录\">" + dirInfo.Name.ToString() + "</a></td>";
+            str_TempFileStr += "<td class=\"list_link\" align=\"left\"><img src=\"../../sysImages/FileIcon/folder.gif\" alt=\"点击进入下级目录\"><a href=\"javascript:ListGo('" + TempPath + "','" + tempCurrentServerPath + "');\" class=\"list_link\" title=\"点击进入下级目录\">" + dirInfo.Name.ToString() + "</a></td>";
 			str_TempFileStr += str_TdStart + "文件夹</td>";
 			str_TempFileStr += str_TdStart + "-" + str_TdEnd;
 			str_TempFileStr += str_TdStart + "<span style=\"font-size:10px\">" + dirInfo.LastWriteTime.ToString() + "</span>" + str_TdEnd;
-			str_TempFileStr += str_TdStart + "<a href=\"javascript:EditFolder('" + TempParentPath + "','" + dirInfo.Name + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelDir('" + TempPath + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" />" + str_TdEnd;
+            str_TempFileStr += str_TdStart + "<a href=\"javascript:EditFolder('" + tempCurrentServerPath + "','" + dirInfo.Name + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelDir('" + TempPath + "');\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" />" + str_TdEnd;
 			str_TempFileStr += str_TrEnd;
 		}
 
@@ -220,9 +229,19 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 				str_TempFileStr += str_TdStart + DirFile.Extension.ToString() + "文件" + str_TdEnd;
 				str_TempFileStr += str_TdStart + DirFile.Length.ToString() + str_TdEnd;
 				str_TempFileStr += str_TdStart + "<span style=\"font-size:10px\">" + DirFile.LastWriteTime.ToString() + "</span>" + str_TdEnd;
+                if (DirFile.Extension.ToString().ToLower() == ".jpg" || DirFile.Extension.ToString().ToLower() == ".gif")
+                {
+                    //str_TempFileStr += str_TdStart + "<a href=\"javascript:MoveFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"移动此文件\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/remove1.gif\" border=\"0\" alt=\"转移此项\" /></a><a href='http://" + Request.ServerVariables["Server_Name"] + _paths + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" title=\"点击预览此文件\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览该文件\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击为此文件更名\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"为此项改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\" title=\"点击删除此文件\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除此项\" /></a>" + Str_help1 + Str_TdEnd;
+                    str_TempFileStr += str_TdStart + "<a href='http://" + DomainAndPort + CurrentPath + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + tempCurrentServerPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + tempCurrentServerPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
+                }
+                else
+                {
+                    //str_TempFileStr += str_TdStart + "<a href=\"editor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editonline.gif\" border=\"0\" alt=\"可视编辑\" /></a><a href=\"Txteditor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edittxt.gif\" border=\"0\" alt=\"文本编辑\" /></a><a href='http://" + DomainAndPort + str_dirMana + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
+                    str_TempFileStr += str_TdStart + "<a href=\"editor.aspx?dir=" + Server.UrlEncode(tempCurrentServerPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editonline.gif\" border=\"0\" alt=\"可视编辑\" /></a><a href=\"Txteditor.aspx?dir=" + Server.UrlEncode(tempCurrentServerPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edittxt.gif\" border=\"0\" alt=\"文本编辑\" /></a><a href='http://" + DomainAndPort + CurrentPath + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + tempCurrentServerPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + tempCurrentServerPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
 
-				str_TempFileStr += str_TdStart + "<a href=\"editor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editonline.gif\" border=\"0\" alt=\"可视编辑\" /></a><a href=\"Txteditor.aspx?dir=" + Server.UrlEncode(TempParentPath) + "&ch=" + Request.QueryString["ch"] + "&filename=" + Server.UrlEncode(DirFile.Name) + "\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/edittxt.gif\" border=\"0\" alt=\"文本编辑\" /></a><a href='http://" + DomainAndPort + str_dirMana + "\\" + PathPre() + "\\" + DirFile.Name + "' class=\"list_link\" target=\"_blank\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/review.gif\" border=\"0\" alt=\"预览\" /></a><a href=\"javascript:EditFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/editname.gif\" border=\"0\" alt=\"改名\" /></a><a href=\"javascript:DelFile('" + TempParentPath + "','" + DirFile.Name + "')\" class=\"list_link\"><img src=\"../../sysImages/" + Hg.Config.UIConfig.CssPath() + "/sysico/del.gif\" border=\"0\" alt=\"删除\" /></a>" + str_TdEnd;
-				str_TempFileStr += str_TrEnd;
+                }
+                
+                str_TempFileStr += str_TrEnd;
 			}
 		}
 
@@ -238,7 +257,7 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 	string PathPre()
 	{
 		Hg.CMS.Templet.Templet tpClass = new Hg.CMS.Templet.Templet();
-		string str_path = tpClass.PathPre(str_FilePath + Request.QueryString["Path"], str_Templet);
+        string str_path = tpClass.PathPre(RootServerPath + Request.QueryString["Path"], str_Templet);
 		return str_path;
 	}
 
@@ -280,6 +299,10 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
 			case ".aspx":
 				value = true;
 				break;
+            case ".jpg":
+            case ".gif":
+                value = true;
+                break;
 			default:
 				value = false;
 				break;

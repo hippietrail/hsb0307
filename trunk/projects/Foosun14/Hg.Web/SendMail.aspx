@@ -54,6 +54,6 @@ body {
   </table>
 </div>
 </form>
-<div style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;height:50px;text-align:center;"> Powered by dotNETCMS v1.0 for Hg Inc. website:www.hg.net </div>
+<div style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;height:50px;text-align:center;"> Powered by WebFastCMS v1.0 for Hg Inc. website:www.hg.net </div>
 </body>
 </html>
