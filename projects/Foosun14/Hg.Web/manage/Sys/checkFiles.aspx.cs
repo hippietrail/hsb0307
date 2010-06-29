@@ -29,7 +29,7 @@ public partial class manage_Sys_checkFiles : Hg.Web.UI.ManagePage
             this.PnlResult.Visible = false;
             this.PnlStart.Visible = true;
             copyright.InnerHtml = CopyRight;            //获取版权信息
-            ReloadURL = "http://passport.hg.net/libary/dotnetcms/loadcheck/down.aspx?type=download";
+            ReloadURL = "http://passport.hg.net/libary/WebFastCMS/loadcheck/down.aspx?type=download";
         }
     }
     /// <summary>

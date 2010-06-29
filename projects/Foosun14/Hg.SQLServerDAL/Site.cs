@@ -159,12 +159,18 @@ namespace Hg.SQLServerDAL
                     cn.Close();
                 throw;
             }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
         }
         public void Recyle(string id)
         {
             SqlConnection cn = new SqlConnection(DBConfig.CmsConString);
             cn.Open();
             ArrayList NewsTable = this.GetNewsTables(cn);
+            cn.Open();
             SqlTransaction tran = cn.BeginTransaction();
             try
             {
@@ -187,6 +193,11 @@ namespace Hg.SQLServerDAL
                 tran.Rollback();
                 cn.Close();
                 throw e;
+            }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open)
+                    cn.Close();
             }
         }
         public DataTable List(SiteType sttype)

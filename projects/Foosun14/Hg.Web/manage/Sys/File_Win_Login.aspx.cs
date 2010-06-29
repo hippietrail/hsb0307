@@ -21,7 +21,7 @@ public partial class manage_Sys_File_Win_Login : Hg.Web.UI.ManagePage
         if (!IsPostBack) //判断页面是否重载
         {
              //判断用户是否登录
-            if (SiteID != "0") { PageError("您没有管理文件的权限", ""); }
+            //if (SiteID != "0") { PageError("您没有管理文件的权限", ""); }
             //LoginInfo.CheckPop("权限代码", "0", "1", "9"); //权限代码
             copyright.InnerHtml = CopyRight;  //获取版权信息
             Response.CacheControl = "no-cache"; //清除缓存

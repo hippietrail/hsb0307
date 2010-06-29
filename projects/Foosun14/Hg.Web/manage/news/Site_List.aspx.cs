@@ -18,6 +18,10 @@ using System.Web.UI.HtmlControls;
 public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
 {
     private Hg.CMS.Site site;
+    public manage_news_Site_List()
+    {
+        Authority_Code = "C057";
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         this.PageNavigator1.OnPageChange += new PageChangeHandler(PageNavigator1_PageChage);
@@ -39,6 +43,8 @@ public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
                 string id = Hg.Common.Input.Filter(Request.Form["SiteID"].Trim());
                 try
                 {
+                    this.Authority_Code = "C060";
+                    this.CheckAdminAuthority();
                     if (id.ToString() == "0")
                     {
                         Response.Write("0%总站站群不允许删除!\n");

@@ -188,7 +188,7 @@ namespace Hg.Publish
                         xmlTemp += "<title>" + dt.Rows[0]["ClassCName"].ToString() + "</title>\r\n";
                         xmlTemp += "<link>" + getDNSUrl() + ClassSTR.Replace("//", "/") + "</link>\r\n";
                     }
-                    xmlTemp += "<description>RSS¶©ÔÄ_by dotNETCMS for Hg Inc.</description>\r\n";
+                    xmlTemp += "<description>RSS¶©ÔÄ_by webfastcms for Hg Inc.</description>\r\n";
                     ClassEname = dt.Rows[0]["ClassEName"].ToString();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {

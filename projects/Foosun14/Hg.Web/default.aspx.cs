@@ -70,7 +70,7 @@ namespace Hg.Web
         {
             string getajaxJS = "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/Prototype.js\"></script>\r\n";
             getajaxJS += "<script language=\"javascript\" type=\"text/javascript\" src=\"" + Hg.Publish.CommonData.getUrl() + "/configuration/js/jspublic.js\"></script>\r\n";
-            getajaxJS += "<!--Created by dotNETCMS v1.0 For Hg Inc. at " + DateTime.Now + "-->\r\n";
+            getajaxJS += "<!--Created by WebFastCMS v1.0 For Hg Inc. at " + DateTime.Now + "-->\r\n";
             return getajaxJS;
         }
 

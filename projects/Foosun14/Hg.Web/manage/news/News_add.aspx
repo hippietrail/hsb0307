@@ -1,25 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_news_News_add" Codebehind="News_add.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="manage_news_News_add" CodeBehind="News_add.aspx.cs" %>
 
 <%@ Register Src="../../controls/UserPop.ascx" TagName="UserPop" TagPrefix="uc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
-        rel="stylesheet" type="text/css" />
-    <style type="text/css">
-.sav {border: 1px dotted #FFCC66;background-color: #FFFFCC;clear: both;float: none;height: 60px;width: 60px;line-height: 18px;padding-left:3px;padding-top:3px;	padding-right:3px;	padding-bottom:3px;	}
-.reshows{height:28px;background-color: #FFFFB5;TEXT-DECORATION: none;COLOR: #FF0000;}
-</style>
-
-    <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
-
-    <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
-
-    <script type="text/javascript" src="../../editor/fckeditor.js"></script>
-
-    <script language="javascript" type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title><link href="../../sysImages/<%Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css"
+        rel="stylesheet" type="text/css" /><style type="text/css">
+        .sav
+        {
+            border: 1px dotted #FFCC66;
+            background-color: #FFFFCC;
+            clear: both;
+            float: none;
+            height: 60px;
+            width: 60px;
+            line-height: 18px;
+            padding-left: 3px;
+            padding-top: 3px;
+            padding-right: 3px;
+            padding-bottom: 3px;
+        }
+        .reshows
+        {
+            height: 28px;
+            background-color: #FFFFB5;
+            text-decoration: none;
+            color: #FF0000;
+            
+        }
+    </style><script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script><script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script><script type="text/javascript" src="../../editor/fckeditor.js"></script><script language="javascript" type="text/javascript">
     <!--
 
 //不规则新闻JS
@@ -434,9 +440,7 @@ function getNewsInfo(obj)
     }
 }
 //-->
-    </script>
-    
-    <script language="javascript" type="text/javascript">
+    </script><script language="javascript" type="text/javascript">
     function ShowLink(NewsType)
 {
     switch (NewsType)
@@ -497,273 +501,284 @@ function getNewsInfo(obj)
         document.getElementById('div_vURL').style.display = "none";
     }
 }
-    </script>
-
-</head>
-<%----%>
+    </script></head><%----%>
 <body onload="loadStat();DisplayUnNews();//<%Response.Write(loadTime); %>">
     <form id="Form1" runat="server">
-        <iframe width="260" height="165" id="colorPalette" src="../../configuration/system/selcolor.htm"
-            style="visibility: hidden; position: absolute; border: 1px gray solid; left: 297px;
-            top: -20px;" frameborder="0" scrolling="no"></iframe>
-        <table id="top1" width="100%" border="0" cellpadding="0" cellspacing="0" class="toptable">
-            <tr>
-                <td style="height: 1px;" colspan="2">
-                </td>
-            </tr>
-            <tr>
-                <td class="sysmain_navi" style="width: 30%; padding-left: 14px">
-                    新闻管理</td>
-                <td class="topnavichar" style="width: 70%; padding-left: 14px">
-                    <div align="left">
-                        <a href="../main.aspx" class="topnavichar" target="sys_main">首页</a><img alt="" src="../../sysImages/folder/navidot.gif"
-                            border="0" /><a href="news_list.aspx" class="topnavichar" target="sys_main">新闻管理</a><span
-                                id="naviClassName" runat="server" /><img alt="" src="../../sysImages/folder/navidot.gif"
-                                    border="0" /><label id="m_NewsChar" runat="server" /></div>
-                </td>
-            </tr>
-        </table>
-        <table width="98%" align="center" border="0" cellpadding="3" cellspacing="0" class="table">
-            <tr>
-                <td style="width: 30%;" class="TR_BG_list">
-                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
-                        <tr>
-                            <td style="width: 70%; height: 22px;">
-                                <span style="cursor: pointer;" id="A1" class="reshows" onclick="getNewsInfo('baseinfo');">
-                                    基本信息</span>&nbsp;&nbsp;&nbsp;&nbsp; <span style="cursor: pointer;" id="A2" class="list_link"
-                                        onclick="getNewsInfo('adinfo');//document.getElementById('definefield').style.display='block';">
-                                        高级属性</span>&nbsp;&nbsp;&nbsp;&nbsp; <span style="cursor: pointer;" id="A3" class="list_link"
-                                            onclick="getNewsInfo('definefield');//document.getElementById('definefield').style.display='block';">
-                                            自定义内容</span>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-        <!-- 这里开始自定义字段-->
-        <table width="98%" id="definefield" style="display: none;" align="center" border="0"
-            cellpadding="5" cellspacing="1" class="table">
+    <iframe width="260" height="165" id="colorPalette" src="../../configuration/system/selcolor.htm"
+        style="visibility: hidden; position: absolute; border: 1px gray solid; left: 297px;
+        top: -20px;" frameborder="0" scrolling="no"></iframe>
+    <table id="top1" width="100%" border="0" cellpadding="0" cellspacing="0" class="toptable">
+        <tr>
+            <td style="height: 1px;" colspan="2">
+            </td>
+        </tr>
+        <tr>
+            <td class="sysmain_navi" style="width: 30%; padding-left: 14px">
+                新闻管理
+            </td>
+            <td class="topnavichar" style="width: 70%; padding-left: 14px">
+                <div align="left">
+                    <a href="../main.aspx" class="topnavichar" target="sys_main">首页</a><img alt="" src="../../sysImages/folder/navidot.gif"
+                        border="0" /><a href="news_list.aspx" class="topnavichar" target="sys_main">新闻管理</a><span
+                            id="naviClassName" runat="server" /><img alt="" src="../../sysImages/folder/navidot.gif"
+                                border="0" /><label id="m_NewsChar" runat="server" /></div>
+            </td>
+        </tr>
+    </table>
+    <table width="98%" align="center" border="0" cellpadding="3" cellspacing="0" class="table">
+        <tr>
+            <td style="width: 30%;" class="TR_BG_list">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td style="width: 70%; height: 22px;">
+                            <span style="cursor: pointer;" id="A1" class="reshows" onclick="getNewsInfo('baseinfo');">
+                                基本信息</span>&nbsp;&nbsp;&nbsp;&nbsp; <span style="cursor: pointer;" id="A2" class="list_link"
+                                    onclick="getNewsInfo('adinfo');//document.getElementById('definefield').style.display='block';">
+                                    高级属性</span>&nbsp;&nbsp;&nbsp;&nbsp; <span style="cursor: pointer;" id="A3" class="list_link"
+                                        onclick="getNewsInfo('definefield');//document.getElementById('definefield').style.display='block';">
+                                        自定义内容</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!-- 这里开始自定义字段-->
+    <table width="98%" id="definefield" style="display: none;" align="center" border="0"
+        cellpadding="5" cellspacing="1" class="table">
+        <tr class="TR_BG_list">
+            <td>
+                <label id="getdefined" runat="server" />
+            </td>
+        </tr>
+    </table>
+    <!-- 这里开始自定义结束-->
+    <div id="baseinfo">
+        <div id="style_Pro" runat="server" style="display: none;">
+            <asp:CheckBox ID="style_hidden" runat="server" /></div>
+        <table width="98%" align="center" border="0" cellpadding="5" cellspacing="1" class="table">
             <tr class="TR_BG_list">
-                <td>
-                    <label id="getdefined" runat="server" />
+                <td style="width: 10%;">
+                    类型
+                </td>
+                <td style="width: 90%;">
+                    <asp:RadioButton ID="atRadioButton" runat="server" Text="普通" GroupName="NewsType"
+                        onclick="ShowLink('word')" Checked="True" /><asp:RadioButton ID="at1RandButton" runat="server"
+                            Text="图片" GroupName="NewsType" onclick="ShowLink('pic')" /><span style="width: 100%;"
+                                id="SubNewsContentFlag" /><asp:RadioButton ID="at2RandButton" runat="server" Text="标题"
+                                    GroupName="NewsType" onclick="ShowLink('url')" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;权重
+                    <asp:TextBox ID="OrderIDText" runat="server" Text="0" Width="33px"></asp:TextBox>&nbsp;
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_004',this)">
+                        帮助<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="OrderIDText"
+                            ErrorMessage="*"></asp:RequiredFieldValidator></span><asp:RangeValidator ID="RangeValidator1"
+                                runat="server" ControlToValidate="OrderIDText" ErrorMessage="请输入1-200的数字" MaximumValue="200"
+                                MinimumValue="0" Type="Integer"></asp:RangeValidator>
                 </td>
             </tr>
-        </table>
-        <!-- 这里开始自定义结束-->
-        <div id="baseinfo">
-            <div id="style_Pro" runat="server" style="display: none;">
-                <asp:CheckBox ID="style_hidden" runat="server" /></div>
-            <table width="98%" align="center" border="0" cellpadding="5" cellspacing="1" class="table">
-                <tr class="TR_BG_list">
-                    <td style="width: 10%;">
-                        类型</td>
-                    <td style="width: 90%;">
-                        <asp:RadioButton ID="atRadioButton" runat="server" Text="普通" GroupName="NewsType"
-                            onclick="ShowLink('word')" Checked="True" /><asp:RadioButton ID="at1RandButton" runat="server"
-                                Text="图片" GroupName="NewsType" onclick="ShowLink('pic')" /><span style="width: 100%;"
-                                    id="SubNewsContentFlag" /><asp:RadioButton ID="at2RandButton" runat="server" Text="标题"
-                                        GroupName="NewsType" onclick="ShowLink('url')" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;权重
-                        <asp:TextBox ID="OrderIDText" runat="server" Text="0" Width="33px"></asp:TextBox>&nbsp;
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_004',this)">
-                            帮助<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="OrderIDText"
-                                ErrorMessage="*"></asp:RequiredFieldValidator></span><asp:RangeValidator ID="RangeValidator1"
-                                    runat="server" ControlToValidate="OrderIDText" ErrorMessage="请输入1-200的数字" MaximumValue="200"
-                                    MinimumValue="0" Type="Integer"></asp:RangeValidator></td>
-                </tr>
-                <tr class="TR_BG_list">
-                    <td style="width: 10%;">
-                        标题<asp:RequiredFieldValidator ID="f_NewsTitle" runat="server" ControlToValidate="NewsTitle"
-                            Display="Dynamic" ErrorMessage="<span class='reshow'>*</span>"></asp:RequiredFieldValidator></td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="NewsTitle" runat="server" Width="50%" CssClass="titlerule" MaxLength="100"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:CheckBox Checked="true" ID="isHTML" runat="server" Text="立刻发布" />
-                        <asp:DropDownList ID="DropDownList1" CssClass="form" onchange="javascript:titleFlag(this.value);"
-                            runat="server">
-                            <asp:ListItem>类型</asp:ListItem>
-                            <asp:ListItem Value="[图文]">[图文]</asp:ListItem>
-                            <asp:ListItem Value="[原创]">[原创]</asp:ListItem>
-                            <asp:ListItem Value="[转载]">[转载]</asp:ListItem>
-                            <asp:ListItem Value="【荐】">【荐】</asp:ListItem>
-                            <asp:ListItem Value="【HOT】">【HOT】</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:HiddenField ID="TitleColor" runat="server" />
-                        <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
-                            width="18" height="17" border="0" align="middle" id="MarkFontColor_Show" style="cursor: pointer;
-                            background-color: #<%= TitleColor.Value%>;" title="标题颜色选取" onclick="GetColor(this,'TitleColor');" />
-                        <asp:CheckBox ID="TitleBTF" runat="server" title="是否粗体" /><strong>B</strong>
-                        <asp:CheckBox ID="TitleITF" runat="server" title="是否斜体" /><i>I</i>
-                        <asp:CheckBox ID="CommLinkTF" runat="server" Text="评论连接" />
-                    </td>
-                </tr>
-                <tr class="TR_BG_list">
-                    <td style="width: 10%;">
-                        副标题</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="sNewsTitle" runat="server" Width="50%" MaxLength="100" CssClass="titlerule" /><span
-                            class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_sNewsTitle',this)">帮助</span>
-                        <asp:CheckBox ID="SubTF" onclick="AddSubTF(this);" runat="server" title="添加子新闻" Text="添加子新闻" />&nbsp;&nbsp;<span
-                            id="shDivs" style="cursor: pointer;" onclick="javascript:showDivs(this);"><font color="#FF0000">(显示子类选择)</font></span><span
-                                class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_008',this)">帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list">
-                    <td style="width: 10%;">
-                        栏目</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="ClassName" runat="server" MaxLength="100" Width="98" CssClass="form"></asp:TextBox>&nbsp;<asp:HiddenField
-                            runat="server" ID="ClassID" />
-                        &nbsp;<label id="showClassTF" runat="server"><img src="../../sysImages/folder/s.gif"
-                            alt="选择栏目" border="0" style="cursor: pointer;" onclick="selectFile('newsclass',new Array(document.Form1.ClassID,document.Form1.ClassName),250,500);document.Form1.ClassName.focus();" /></label><span
-                                class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_006',this)">帮助</span>
-                        &nbsp;&nbsp; 专题
-                        <asp:TextBox ID="SpecialName" runat="server" Width="98" CssClass="form" />&nbsp;<asp:HiddenField
-                            runat="server" ID="SpecialID" />
-                        &nbsp;<img src="../../sysImages/folder/s.gif" alt="选择专题" border="0" style="cursor: pointer;"
-                            onclick="selectFile('newsspecial',new Array(document.Form1.SpecialID,document.Form1.SpecialName),250,300);document.Form1.SpecialName.focus();" />
-                        <span onclick="javascript:document.Form1.SpecialID.value='';document.Form1.SpecialName.value='';"
-                            title="清除已选择的专题" style="cursor: pointer;">清除</span> <span class="helpstyle" style="cursor: help;"
-                                title="点击显示帮助" onclick="Help('H_News_add_007',this)">帮助</span>
-                        <input id="Button1" type="button" visible="false" value="查看子新闻标题" language="javascript" onclick="return Button1_onclick()" runat="server" /></td>
-                </tr>
-                <tr class="TR_BG_list" id="div_SubList" style="display: none;">
-                    <td style="width: 100%;" valign="top" colspan="2">
-                        <div id="preview" style="display: none; width: 600px;">
-                            <table style="width: 700px;" border="0" align="center" cellpadding="4" cellspacing="1"
-                                class="table">
-                                <tr class="TR_BG" onmousedown="drag(event,$('preview'));">
-                                    <td align="center" style="cursor: move; width: 680px;">
-                                        <strong>预览不规则新闻(点此拖动)</strong></td>
-                                    <td style="cursor: move; text-align: right; width: 40px;">
-                                        <span onclick="$('preview').style.display='none';" style="cursor: pointer;">关闭</span></td>
-                                </tr>
-                                <tr class="TR_BG_list">
-                                    <td colspan="2" style="width: 700px;">
-                                        <div id="PreviewContent">
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
-                            <tr class="TR_BG">
-                                <td>
-                                    <span onclick="if(UnNewcheck())UnNewPreview();" style="cursor: pointer;">预览效果</span>
-                                    <input name="UnID" type="hidden" id="UnID" value="<%=unNewsid %>" />
+            <tr class="TR_BG_list">
+                <td style="width: 10%;">
+                    标题<asp:RequiredFieldValidator ID="f_NewsTitle" runat="server" ControlToValidate="NewsTitle"
+                        Display="Dynamic" ErrorMessage="<span class='reshow'>*</span>"></asp:RequiredFieldValidator>
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="NewsTitle" runat="server" Width="50%" CssClass="titlerule" MaxLength="100"></asp:TextBox>
+                    &nbsp;&nbsp;<asp:CheckBox Checked="true" ID="isHTML" runat="server" Text="立刻发布" />
+                    <asp:DropDownList ID="DropDownList1" CssClass="form" onchange="javascript:titleFlag(this.value);"
+                        runat="server">
+                        <asp:ListItem>类型</asp:ListItem>
+                        <asp:ListItem Value="[图文]">[图文]</asp:ListItem>
+                        <asp:ListItem Value="[原创]">[原创]</asp:ListItem>
+                        <asp:ListItem Value="[转载]">[转载]</asp:ListItem>
+                        <asp:ListItem Value="【荐】">【荐】</asp:ListItem>
+                        <asp:ListItem Value="【HOT】">【HOT】</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:HiddenField ID="TitleColor" runat="server" />
+                    <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
+                        width="18" height="17" border="0" align="middle" id="MarkFontColor_Show" style="cursor: pointer;
+                        background-color: #<%= TitleColor.Value%>;" title="标题颜色选取" onclick="GetColor(this,'TitleColor');" />
+                    <asp:CheckBox ID="TitleBTF" runat="server" title="是否粗体" /><strong>B</strong>
+                    <asp:CheckBox ID="TitleITF" runat="server" title="是否斜体" /><i>I</i>
+                    <asp:CheckBox ID="CommLinkTF" runat="server" Text="评论连接" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list">
+                <td style="width: 10%;">
+                    副标题
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="sNewsTitle" runat="server" Width="50%" MaxLength="100" CssClass="titlerule" /><span
+                        class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_sNewsTitle',this)">帮助</span>
+                    <asp:CheckBox ID="SubTF" onclick="AddSubTF(this);" runat="server" title="添加子新闻" Text="添加子新闻" />&nbsp;&nbsp;<span
+                        id="shDivs" style="cursor: pointer;" onclick="javascript:showDivs(this);"><font color="#FF0000">(显示子类选择)</font></span><span
+                            class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_008',this)">帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list">
+                <td style="width: 10%;">
+                    栏目
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="ClassName" runat="server" MaxLength="100" Width="98" CssClass="form"></asp:TextBox>&nbsp;<asp:HiddenField
+                        runat="server" ID="ClassID" />
+                    &nbsp;<label id="showClassTF" runat="server"><img src="../../sysImages/folder/s.gif"
+                        alt="选择栏目" border="0" style="cursor: pointer;" onclick="selectFile('newsclass',new Array(document.Form1.ClassID,document.Form1.ClassName),250,500);document.Form1.ClassName.focus();" /></label><span
+                            class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_006',this)">帮助</span>
+                    &nbsp;&nbsp; 专题
+                    <asp:TextBox ID="SpecialName" runat="server" Width="98" CssClass="form" />&nbsp;<asp:HiddenField
+                        runat="server" ID="SpecialID" />
+                    &nbsp;<img src="../../sysImages/folder/s.gif" alt="选择专题" border="0" style="cursor: pointer;"
+                        onclick="selectFile('newsspecial',new Array(document.Form1.SpecialID,document.Form1.SpecialName),250,300);document.Form1.SpecialName.focus();" />
+                    <span onclick="javascript:document.Form1.SpecialID.value='';document.Form1.SpecialName.value='';"
+                        title="清除已选择的专题" style="cursor: pointer;">清除</span> <span class="helpstyle" style="cursor: help;"
+                            title="点击显示帮助" onclick="Help('H_News_add_007',this)">帮助</span>
+                    <input id="Button1" type="button" visible="false" value="查看子新闻标题" language="javascript"
+                        onclick="return Button1_onclick()" runat="server" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_SubList" style="display: none;">
+                <td style="width: 100%;" valign="top" colspan="2">
+                    <div id="preview" style="display: none; width: 600px;">
+                        <table style="width: 700px;" border="0" align="center" cellpadding="4" cellspacing="1"
+                            class="table">
+                            <tr class="TR_BG" onmousedown="drag(event,$('preview'));">
+                                <td align="center" style="cursor: move; width: 680px;">
+                                    <strong>预览不规则新闻(点此拖动)</strong>
+                                </td>
+                                <td style="cursor: move; text-align: right; width: 40px;">
+                                    <span onclick="$('preview').style.display='none';" style="cursor: pointer;">关闭</span>
                                 </td>
                             </tr>
                             <tr class="TR_BG_list">
-                                <td id="UnNewsList">
+                                <td colspan="2" style="width: 700px;">
+                                    <div id="PreviewContent">
+                                    </div>
                                 </td>
                             </tr>
                         </table>
-                        <div id="div_UnnewsIframe">
-                        </div>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_URLaddress" style="display: none;">
-                    <td style="width: 10%;">
-                        外部地址</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="URLaddress" runat="server" MaxLength="200" Width="50%" CssClass="form"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_URLaddress',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_PicURL" runat="server" style="display: none;">
-                    <td style="width: 10%;">
-                        图片地址</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="PicURL" runat="server" Width="50%" MaxLength="200" CssClass="form"
-                            onmouseover="javascript:ShowDivPic(this,document.Form1.PicURL.value.toLowerCase().replace('{@dirfile}','files').replace('{@userdirfile}','userfiles'),'.jpg',1);"
-                            onmouseout="javascript:hiddDivPic();"></asp:TextBox>
-                        <img src="../../sysImages/folder/s.gif" alt="选择已有图片" border="0" style="cursor: pointer;"
-                            onclick="selectFile('pic',document.Form1.PicURL,480,600);document.Form1.PicURL.focus();" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_PicURL',this)">
-                            帮助</span>
-                        <asp:CheckBox ID="SPicURLTF" runat="server" title="是否生成小图" onclick="showHw(this);"
-                            Text="自动生成小图" />
-                        <asp:HiddenField ID="SPicURL" runat="server" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLTF',this)">
-                            如何生成小图?</span>
+                    </div>
+                    <table width="98%" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
+                        <tr class="TR_BG">
+                            <td>
+                                <span onclick="if(UnNewcheck())UnNewPreview();" style="cursor: pointer;">预览效果</span>
+                                <input name="UnID" type="hidden" id="UnID" value="<%=unNewsid %>" />
+                            </td>
+                        </tr>
+                        <tr class="TR_BG_list">
+                            <td id="UnNewsList">
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="div_UnnewsIframe">
+                    </div>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_URLaddress" style="display: none;">
+                <td style="width: 10%;">
+                    外部地址
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="URLaddress" runat="server" MaxLength="200" Width="50%" CssClass="form"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_URLaddress',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_PicURL" runat="server" style="display: none;">
+                <td style="width: 10%;">
+                    图片地址
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="PicURL" runat="server" Width="50%" MaxLength="200" CssClass="form"
+                        onmouseover="javascript:ShowDivPic(this,document.Form1.PicURL.value.toLowerCase().replace('{@dirfile}','files').replace('{@userdirfile}','userfiles'),'.jpg',1);"
+                        onmouseout="javascript:hiddDivPic();"></asp:TextBox>
+                    <img src="../../sysImages/folder/s.gif" alt="选择已有图片" border="0" style="cursor: pointer;"
+                        onclick="selectFile('pic',document.Form1.PicURL,480,600);document.Form1.PicURL.focus();" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_PicURL',this)">
+                        帮助</span>
+                    <asp:CheckBox ID="SPicURLTF" runat="server" title="是否生成小图" onclick="showHw(this);"
+                        Text="自动生成小图" />
+                    <asp:HiddenField ID="SPicURL" runat="server" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLTF',this)">
+                        如何生成小图?</span>
+                    <br />
+                    <label id="Div_hw" style="display: none;">
+                        &nbsp;缩图高：<asp:TextBox CssClass="form" Width="40px" ID="stHeight" runat="server"></asp:TextBox>&nbsp;
+                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLHeight',this)">
+                            高度?</span> &nbsp;缩图宽：<asp:TextBox CssClass="form" Width="40px" ID="stWidth" runat="server"></asp:TextBox>&nbsp;
+                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLWidth',this)">
+                            宽度?</span>
+                    </label>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_naviContent" style="display: none;">
+                <td style="width: 10%;">
+                    导读
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="naviContent" runat="server" Width="80%" MaxLength="500" CssClass="form"
+                        Height="50px" TextMode="MultiLine"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_NaviContent',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_Content">
+                <td style="width: 10%;" valign="top">
+                    <br />
+                    <asp:CheckBox ID="naviContentTF" runat="server" title="为内容设置导读" onclick="NaviClick(this);"
+                        Text="设置导读" /><br />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_naviContentTF',this)">
+                        帮助</span>
+                    <br />
+                    <br />
+                    <div>
+                        缩放编辑区
                         <br />
-                        <label id="Div_hw" style="display: none;">
-                            &nbsp;缩图高：<asp:TextBox CssClass="form" Width="40px" ID="stHeight" runat="server"></asp:TextBox>&nbsp;
-                            <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLHeight',this)">
-                                高度?</span> &nbsp;缩图宽：<asp:TextBox CssClass="form" Width="40px" ID="stWidth" runat="server"></asp:TextBox>&nbsp;
-                            <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SPicURLWidth',this)">
-                                宽度?</span>
-                        </label>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_naviContent" style="display: none;">
-                    <td style="width: 10%;">
-                        导读</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="naviContent" runat="server" Width="80%" MaxLength="500" CssClass="form"
-                            Height="50px" TextMode="MultiLine"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_NaviContent',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_Content">
-                    <td style="width: 10%;" valign="top">
-                        内容
-                        <br />
-                        <asp:CheckBox ID="naviContentTF" runat="server" title="为内容设置导读" onclick="NaviClick(this);"
-                            Text="设置导读" /><span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_naviContentTF',this)">帮助</span>
-                        <br />
-                        <br />
-                        <div align="center">
-                            缩放编辑区
-                            <br />
-                            <a href="javascript:ZoonEdit('300')" class="list_link" style="text-decoration: underline;">
-                                原始</a>&nbsp;&nbsp;<a class="list_link" style="text-decoration: underline;" href="javascript:ZoonEdit('500')">中</a>&nbsp;&nbsp;<a
-                                    class="list_link" style="text-decoration: underline;" href="javascript:ZoonEdit('700')">大</a></div>
-                        <div style="padding-top: 2px; padding-bottom: 2px; position: relative; width: 100%;
-                            height: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
-                            border-left-width: 1px; border-top-style: dashed; border-right-style: none; border-bottom-style: none;
-                            border-left-style: none; border-top-color: #CCCCCC;">
-                        </div>
-                        <div style="padding-bottom: 3px;">
-                            <a style="cursor: pointer;" onclick="UpFile('<% Response.Write(UDir); %>');" title="在上传的时候，请在编辑区鼠标点击，设置要上传图片的位置。">
-                                <font color="red">上传图片</font></a></div>
-                        <div style="padding-top: 2px; padding-bottom: 2px; position: relative; width: 100%;
-                            height: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
-                            border-left-width: 1px; border-top-style: dashed; border-right-style: none; border-bottom-style: none;
-                            border-left-style: none; border-top-color: #CCCCCC;">
-                        </div>
-                        <div>
-                            <a style="cursor: pointer;" onclick="selectFile('picEdit',document.getElementById('picContentTF'),320,500);"
-                                title="在上传的时候，请在编辑区鼠标点击，设置要上传图片的位置。"><font color="blue">选择图片</font></a></div>
-                    </td>
-                    <td style="width: 90%; height: 300px;" id="EditSizeID">
-                        <div style="height: 30px;">
-                            <asp:CheckBox ID="RemoteTF" runat="server" title="保存图片(文件)到本地" Text="远程存图" /><span
-                                class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_downfiles',this)">帮助</span>
-                            &nbsp;&nbsp;<asp:CheckBox ID="sPicFromContent" Text="提取图片地址" runat="server" onclick="getDivsPicFromContent();" />&nbsp;<span
-                                id="getContentNum" style="display: none;"> 提取第
-                                <asp:TextBox Width="25px" ID="btngetContentNum" runat="server" Text="1" MaxLength="2"></asp:TextBox>张</span>
-                            <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_getContentPic',this)">
-                                帮助</span>&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="sNaviContentFromContent" Text="获取导读"
-                                    runat="server" /><span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_getNaviContent',this)">帮助</span>
-                        </div>
-                            插入投票
-                            <asp:DropDownList ID="surveyJSID" runat="server" Width="200px" CssClass="form" onchange="javascript:vote(this.value);">
-                            </asp:DropDownList>
-                            &nbsp; 插入分页符：<span style="cursor: pointer; color: red;">分页标题</span>
-                            <asp:TextBox ID="PageTitle" Text="" runat="server" Width="200px"></asp:TextBox>
-                            <a href="###" onclick="insertPageStr();">插入</a> <br />
-                            <asp:CheckBox ID="CheckBox1" runat="server" Checked="True" Text="自动分页" />
-                            每页字数：<asp:TextBox ID="TxtPageCount" runat="server" Height="11px"
-                                Width="28px">20</asp:TextBox>
-                                <br />
-                        <label id="picContentTF">
-                        </label>
-                        <!--编辑器开始-->
+                        <a href="javascript:ZoonEdit('300')" class="list_link" style="text-decoration: underline;">
+                            原始</a>&nbsp;&nbsp;<a class="list_link" style="text-decoration: underline;" href="javascript:ZoonEdit('500')">中</a>&nbsp;&nbsp;<a
+                                class="list_link" style="text-decoration: underline;" href="javascript:ZoonEdit('700')">大</a></div>
+                    <div style="padding-top: 2px; padding-bottom: 2px; position: relative; width: 100%;
+                        height: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                        border-left-width: 1px; border-top-style: dashed; border-right-style: none; border-bottom-style: none;
+                        border-left-style: none; border-top-color: #CCCCCC;">
+                    </div>
+                    <div style="padding-bottom: 3px;">
+                        <a style="cursor: pointer;" onclick="UpFile('<% Response.Write(UDir); %>');" title="在上传的时候，请在编辑区鼠标点击，设置要上传图片的位置。">
+                            <font color="red">上传图片</font></a></div>
+                    <div style="padding-top: 2px; padding-bottom: 2px; position: relative; width: 100%;
+                        height: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                        border-left-width: 1px; border-top-style: dashed; border-right-style: none; border-bottom-style: none;
+                        border-left-style: none; border-top-color: #CCCCCC;">
+                    </div>
+                    <div>
+                        <a style="cursor: pointer;" onclick="selectFile('picEdit',document.getElementById('picContentTF'),320,500);"
+                            title="在上传的时候，请在编辑区鼠标点击，设置要上传图片的位置。"><font color="blue">选择图片</font></a></div>
+                </td>
+                <td style="width: 90%; height: 300px;" id="EditSizeID">
+                    <div style="height: 30px;">
+                        <asp:CheckBox ID="RemoteTF" runat="server" title="保存图片(文件)到本地" Text="远程存图" /><span
+                            class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_downfiles',this)">帮助</span>
+                        &nbsp;&nbsp;<asp:CheckBox ID="sPicFromContent" Text="提取图片地址" runat="server" onclick="getDivsPicFromContent();" />&nbsp;<span
+                            id="getContentNum" style="display: none;"> 提取第
+                            <asp:TextBox Width="25px" ID="btngetContentNum" runat="server" Text="1" MaxLength="2"></asp:TextBox>张</span>
+                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_getContentPic',this)">
+                            帮助</span>&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="sNaviContentFromContent" Text="获取导读"
+                                runat="server" /><span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_getNaviContent',this)">帮助</span>
+                    </div>
+                    插入投票
+                    <asp:DropDownList ID="surveyJSID" runat="server" Width="200px" CssClass="form" onchange="javascript:vote(this.value);">
+                    </asp:DropDownList>
+                    &nbsp; 插入分页符：<span style="cursor: pointer; color: red;">分页标题</span>
+                    <asp:TextBox ID="PageTitle" Text="" runat="server" Width="200px"></asp:TextBox>
+                    <a href="###" onclick="insertPageStr();">插入</a>
+                    <br />
+                    <asp:CheckBox ID="CheckBox1" runat="server" Checked="True" Text="自动分页" />
+                    每页字数：<asp:TextBox ID="TxtPageCount" runat="server" Height="11px" Width="28px">20</asp:TextBox>
+                    <br />
+                    <label id="picContentTF">
+                    </label>
+                    <!--编辑器开始-->
 
-                        <script type="text/javascript" language="JavaScript">
+                    <script type="text/javascript" language="JavaScript">
 			window.onload = function()
 				{
 				var sBasePath = "../../editor/"
@@ -773,338 +788,366 @@ function getNewsInfo(obj)
                 oFCKeditor.Height = '100%' ;	
                 oFCKeditor.ReplaceTextarea() ;
                 }
-                        </script>
+                    </script>
 
-                        <textarea name="FileContent" rows="1" cols="1" style="display: none" id="FileContent"
-                            runat="server"></textarea>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_vURL">
-                    <td style="width: 10%;">
-                        视频地址</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="vURL" runat="server" Width="50%" MaxLength="200" CssClass="form"></asp:TextBox>&nbsp;<img
-                            src="../../sysImages/folder/s.gif" alt="选择视频" border="0" style="cursor: pointer;"
-                            onclick="selectFile('file',document.Form1.vURL,380,500);document.Form1.vURL.focus();" />&nbsp;<a
-                                href="javascript:void(0);" onclick="ivurl();" style="color: Blue;">把视频添加入编辑器中</a>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="isFiles_div">
-                    <td style="width: 10%; height: 30px;">
-                        是否有附件</td>
-                    <td style="width: 90%; height: 30px;">
-                        <asp:CheckBox ID="isFiles" onclick="showfiles(this);" runat="server" /></td>
-                </tr>
-                <tr class="TR_BG_list" id="isFiles_div1" style="display: none;">
-                    <td style="width: 10%;">
-                        附件列表</td>
-                    <td style="width: 90%;">
-                        <div id="dlFileURL" runat="server" />
-                    </td>
-                </tr>
+                    <textarea name="FileContent" rows="1" cols="1" style="display: none" id="FileContent"
+                        runat="server"></textarea>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_vURL">
+                <td style="width: 10%;">
+                    视频地址
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="vURL" runat="server" Width="50%" MaxLength="200" CssClass="form"></asp:TextBox>&nbsp;<img
+                        src="../../sysImages/folder/s.gif" alt="选择视频" border="0" style="cursor: pointer;"
+                        onclick="selectFile('file',document.Form1.vURL,380,500);document.Form1.vURL.focus();" />&nbsp;<a
+                            href="javascript:void(0);" onclick="ivurl();" style="color: Blue;">把视频添加入编辑器中</a>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="isFiles_div">
+                <td style="width: 10%; height: 30px;">
+                    是否有附件
+                </td>
+                <td style="width: 90%; height: 30px;">
+                    <asp:CheckBox ID="isFiles" onclick="showfiles(this);" runat="server" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="isFiles_div1" style="display: none;">
+                <td style="width: 10%;">
+                    附件列表
+                </td>
+                <td style="width: 90%;">
+                    <div id="dlFileURL" runat="server" />
+                </td>
+            </tr>
 
-                <script language="javascript" type="text/javascript">
+            <script language="javascript" type="text/javascript">
             if(document.getElementById("isFiles").checked)
             {
                 document.getElementById("isFiles_div1").style.display="block";
             }
-                </script>
+            </script>
 
-                <tr class="TR_BG_list">
-                    <td style="width: 10%;">
-                        属性</td>
-                    <td style="width: 90%;">
-                        <span id="NewsProperty_CommTF">
-                            <asp:CheckBox ID="NewsProperty_CommTF1" Checked="true" runat="server" />允许评论</span>&nbsp;
-                        <span id="NewsProperty_DiscussTF">
-                            <asp:CheckBox ID="NewsProperty_DiscussTF1" Checked="true" runat="server" />允许创建讨论组</span>&nbsp;
-                        <span id="NewsProperty_RECTF">
-                            <asp:CheckBox ID="NewsProperty_RECTF1" runat="server" />推荐</span>&nbsp; <span id="NewsProperty_MARTF">
-                                <asp:CheckBox ID="NewsProperty_MARTF1" runat="server" />滚动</span>&nbsp;
-                        <span id="NewsProperty_HOTTF">
-                            <asp:CheckBox ID="NewsProperty_HOTTF1" runat="server" />热点</span>&nbsp; <span id="NewsProperty_FILTTF">
-                                <asp:CheckBox ID="NewsProperty_FILTTF1" runat="server" />幻灯</span>&nbsp;
-                        <span id="NewsProperty_TTTF">
-                            <asp:CheckBox ID="NewsProperty_TTTF1" onclick="TTClick1(this);" runat="server" />头条</span>&nbsp;
-                        <span id="NewsProperty_ANNTF">
-                            <asp:CheckBox ID="NewsProperty_ANNTF1" runat="server" />公告</span>&nbsp; <span id="NewsProperty_JCTF">
-                                <asp:CheckBox ID="NewsProperty_JCTF1" runat="server" />精彩</span>&nbsp; <span id="NewsProperty_WAPTF">
-                                    <asp:CheckBox ID="NewsProperty_WAPTF1" runat="server" />WAP</span>&nbsp;
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_TTSE" style="display: none;">
-                    <td style="width: 10%;">
-                        头条参数</td>
-                    <td style="width: 90%;">
-                        <asp:CheckBox ID="PicTTTF" runat="server" onclick="TTClick(this);" Text="图片头条" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle0',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_TT" style="display: none;">
-                    <td style="width: 10%;">
-                        图片头条</td>
-                    <td style="width: 90%;">
-                        字体:
-                        <asp:DropDownList ID="PageFontFamily" Width="120px" runat="server" CssClass="form">
-                        </asp:DropDownList>&nbsp; 样式:
-                        <asp:DropDownList ID="PageFontStyle" runat="server" CssClass="form">
-                        </asp:DropDownList>
-                        字体颜色:
-                        <asp:HiddenField ID="fontColor" Value="000000" runat="server" />
-                        <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
-                            width="18" height="17" border="0" align="middle" id="Img1" style="cursor: pointer;
-                            background-color: #<%= fontColor.Value%>;" title="选取字体颜色" onclick="GetColor(this,'fontColor');" />
-                        <label style="display: none;">
-                            字体间距:
-                            <asp:TextBox ID="fontCellpadding" MaxLength="2" runat="server" Width="20px">20</asp:TextBox>px
-                            &nbsp;</label>
-                        字号:
-                        <asp:TextBox ID="PagefontSize" runat="server" MaxLength="2" CssClass="form" Width="30px">20</asp:TextBox>px&nbsp;
-                        图片宽度：<asp:TextBox ID="PagePicwidth" runat="server" MaxLength="3" Width="30px" CssClass="form">200</asp:TextBox>px
-                        图片背景色:
-                        <asp:HiddenField ID="Imagesbgcolor" Value="ffffff" runat="server" />
-                        <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
-                            width="18" height="17" border="0" align="middle" id="Img2" style="cursor: pointer;
-                            background-color: #<%= Imagesbgcolor.Value%>;" title="选取图片前景色" onclick="GetColor(this,'Imagesbgcolor');" />
-                        <br />
-                        自定义标题:
-                        <asp:TextBox ID="topFontInfo" runat="server" Width="40%" CssClass="form"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle',this)">
-                            帮助</span>
-                        <asp:HiddenField ID="tl_SavePath" runat="server" />
-                        &nbsp;<a href="javascript:getReview();"><font color="blue">预览图片效果</font></a>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_Templet">
-                    <td style="width: 10%;">
-                        模板</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Templet" runat="server" MaxLength="200" Width="40%" CssClass="form"></asp:TextBox><img
-                            src="../../sysImages/folder/s.gif" alt="" border="0" style="cursor: pointer;"
-                            onclick="selectFile('templet',document.Form1.Templet,250,500);document.Form1.Templet.focus();" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_Templet',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_Souce">
-                    <td style="width: 10%;">
-                        来源</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Souce" runat="server" Width="16%" MaxLength="100" CssClass="form"></asp:TextBox><img
-                            src="../../sysImages/folder/s.gif" alt="选择已有来源" border="0" style="cursor: pointer;"
-                            onclick="selectFile('Souce',document.Form1.Souce,220,450);document.Form1.Souce.focus();" />
-                        &nbsp;<a href="javascript:addSource('本站');" class="helpstyle">本站</a>&nbsp;&nbsp;<a
-                            class="helpstyle" href="javascript:addSource('未知');">未知</a>&nbsp;&nbsp;<a class="helpstyle"
-                                href="javascript:addSource('网络来源');">网络来源</a>
-                        <asp:CheckBox ID="SouceTF" runat="server" title="记忆" Text="记忆" />
-                        &nbsp;&nbsp;&nbsp;作者：
-                        <asp:TextBox ID="Author" MaxLength="100" runat="server" Width="16%" CssClass="form"></asp:TextBox><img
-                            src="../../sysImages/folder/s.gif" alt="选择已有作者" border="0" style="cursor: pointer;"
-                            onclick="selectFile('Author',document.Form1.Author,220,420);document.Form1.Author.focus();" />
-                        &nbsp;<a href="javascript:addAuthor('本站');" class="helpstyle">本站</a>&nbsp;&nbsp;<a
-                            class="helpstyle" href="javascript:addAuthor('未知');">未知</a>&nbsp;&nbsp;<a class="helpstyle"
-                                href="javascript:addAuthor('网络来源');">网络来源</a>
-                        <asp:CheckBox ID="AuthorTF" runat="server" title="记忆" Text="记忆" />
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_Tags">
-                    <td style="width: 10%;">
-                        标签(Tag)</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Tags" runat="server" MaxLength="100" Width="28%" CssClass="form"
-                            onblur="javascript:document.Form1.Metakeywords.value=document.Form1.Tags.value;"></asp:TextBox><img
-                                src="../../sysImages/folder/s.gif" alt="选择已有标签" border="0" style="cursor: pointer;"
-                                onclick="selectFile('Tag',document.Form1.Tags,220,480);document.Form1.Tags.focus();" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_tags',this)">
-                            什么是标签</span>
-                        <asp:CheckBox ID="TagsTF" runat="server" title="记忆" Text="记忆" />
-                        <div id="lastTags" runat="server">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div id="adinfo" style="display: none;">
-            <table width="98%" align="center" border="0" cellpadding="5" cellspacing="1" class="table">
-                <tr class="TR_BG_list" id="div_showad">
-                    <td style="width: 10%;" colspan="2">
-                        <asp:CheckBox ID="ShowAdance" Checked="true" onclick="ShowAdanceTF(this)" runat="server" />
-                        <img alt="" src="../../sysImages/folder/showad.gif" border="0" id="captionadv" /></td>
-                </tr>
-                <tr class="TR_BG_list" id="div_metakey" style="display: block">
-                    <td style="width: 10%;">
-                        Meta关键字</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Metakeywords" runat="server" Height="50px" Width="60%" TextMode="MultiLine"
-                            CssClass="form"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_metadesc" style="display: block">
-                    <td style="width: 10%;">
-                        Meta描述</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Metadesc" runat="server" Height="50px" Width="60%" TextMode="MultiLine"
-                            CssClass="form"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_Click" style="display: block">
-                    <td style="width: 10%;">
-                        点击</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="Click" runat="server" MaxLength="8" Width="40%" CssClass="form">0</asp:TextBox>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_SavePath" style="display: block">
-                    <td style="width: 10%;">
-                        保存路径</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="SavePath" Width="40%" runat="server" CssClass="form" onclick="selectFile('rulesmallPram',this,100,450);document.Form1.SavePath.focus();"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SavePath',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_FileName" style="display: block">
-                    <td style="width: 10%;">
-                        文件名</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="FileName" Width="40%" MaxLength="100" runat="server" onclick="selectFile('rulePram',this,100,650);document.Form1.FileName.focus();"
-                            CssClass="form"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileName',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" style="display: block">
-                    <td style="width: 10%">
-                        创建时间</td>
-                    <td style="width: 90%">
-                        <asp:TextBox ID="txtCreateTimes" runat="server" Width="40%"></asp:TextBox>
-                        </td>
-                </tr>
-                <tr class="TR_BG_list" style="display: block" id="tr_editorTime" visible="false" runat="server">
-                    <td style="width: 10%">
-                        修改时间</td>
-                    <td style="width: 90%">
-                        <asp:TextBox ID="txtEditorTime" runat="server" Width="40%"></asp:TextBox>
-                        <asp:HiddenField ID="HiddenField_editTime" runat="server" />
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_FileEXName" style="display: block">
-                    <td style="width: 10%;">
-                        扩展名</td>
-                    <td style="width: 90%;">
-                        <asp:DropDownList ID="FileEXName" runat="server" Height="21px" Width="92px" CssClass="form">
-                            <asp:ListItem>.html</asp:ListItem>
-                            <asp:ListItem>.htm</asp:ListItem>
-                            <asp:ListItem>.shtml</asp:ListItem>
-                            <asp:ListItem>.shtm</asp:ListItem>
-                            <asp:ListItem>.aspx</asp:ListItem>
-                        </asp:DropDownList>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileEXName_2',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_CheckStat" style="display: block">
-                    <td style="width: 10%;">
-                        审核状态</td>
-                    <td style="width: 90%;">
-                        <asp:DropDownList ID="CheckStat" runat="server" Height="21px" Width="92px" CssClass="form">
-                            <asp:ListItem Value="0">不审核</asp:ListItem>
-                            <asp:ListItem Value="1">一级审核</asp:ListItem>
-                            <asp:ListItem Value="2">二级审核</asp:ListItem>
-                            <asp:ListItem Value="3">三级审核</asp:ListItem>
-                        </asp:DropDownList>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileEXName',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_UserPop1" style="display: block">
-                    <td style="width: 10%;">
-                        浏览权限</td>
-                    <td style="width: 90%;">
-                        <uc1:UserPop ID="UserPop1" runat="server" />
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_VoteTF" style="display: block">
-                    <td style="width: 10%;">
-                        允许投票</td>
-                    <td style="width: 90%;">
-                        <asp:CheckBox ID="VoteTF" runat="server" onclick="IsVoteTF(this);" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_VoteTF',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_VoteContent" style="display: none;">
-                    <td style="width: 10%;">
-                        投票参数</td>
-                    <td style="width: 90%;">
-                        <asp:CheckBox ID="ismTF" runat="server" Text="允许多选" /><asp:CheckBox ID="isMember"
-                            runat="server" Text="会员才能投票" />
-                        &nbsp;&nbsp;&nbsp;过期日期：<asp:TextBox ID="isTimeOutTime" MaxLength="20" Width="20%"
-                            runat="server" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif"
-                                alt="选择日期" border="0" style="cursor: pointer;" onclick="selectFile('date',document.Form1.isTimeOutTime,180,400);document.Form1.isTimeOutTime.focus();" />
-                        <br />
-                        <asp:TextBox ID="VoteContent" runat="server" Width="60%" Height="100px" TextMode="MultiLine"></asp:TextBox>
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_VoteContent',this)">
-                            如何设置投票项?</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_ContentPicTF" style="display: block">
-                    <td style="width: 10%;">
-                        画中画广告</td>
-                    <td style="width: 90%;">
-                        <asp:CheckBox ID="ContentPicTF" runat="server" onclick="ContentPicURLTF(this);" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicTF',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_ContentPicURL" style="display: none;">
-                    <td style="width: 10%;">
-                        地址或代码</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="ContentPicURL" MaxLength="200" TextMode="MultiLine" Width="50%"
-                            runat="server" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif"
-                                alt="选择图片地址" border="0" style="cursor: pointer;" onclick="selectFile('pic',document.Form1.ContentPicURL,280,500);document.Form1.ContentPicURL.focus();" />
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicURL',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list" id="div_tHight" style="display: none;">
-                    <td style="width: 10%;">
-                        参数</td>
-                    <td style="width: 90%;">
-                        <asp:TextBox ID="tHight" runat="server" MaxLength="3" Width="20%" CssClass="form">200</asp:TextBox>&nbsp;px(高)
-                        &nbsp;&nbsp;┊&nbsp;&nbsp;
-                        <asp:TextBox ID="tWidth" runat="server" Width="20%" MaxLength="3" CssClass="form">200</asp:TextBox>&nbsp;px(宽)
-                        <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicSize',this)">
-                            帮助</span>
-                    </td>
-                </tr>
-                <tr class="TR_BG_list">
-                    <td align="center" colspan="2">
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <table width="98%" align="center" border="0" cellpadding="3" cellspacing="0" class="table">
-            <tr>
-                <td style="width: 30%; padding-left: 14px; text-align: center;" class="TR_BG_list">
-                    <asp:HiddenField ID="EditAction" runat="server" />
-                    <asp:HiddenField ID="NewsID" runat="server" />
-                    <asp:Button ID="Button2" runat="server" Text="保存新闻" OnClick="Buttonsave_Click" OnClientClick="DisplayUnNews()" />
+            <tr class="TR_BG_list">
+                <td style="width: 10%;">
+                    属性
+                </td>
+                <td style="width: 90%;">
+                    <span id="NewsProperty_CommTF">
+                        <asp:CheckBox ID="NewsProperty_CommTF1" Checked="true" runat="server" />允许评论</span>&nbsp;
+                    <span id="NewsProperty_DiscussTF">
+                        <asp:CheckBox ID="NewsProperty_DiscussTF1" Checked="true" runat="server" />允许创建讨论组</span>&nbsp;
+                    <span id="NewsProperty_RECTF">
+                        <asp:CheckBox ID="NewsProperty_RECTF1" runat="server" />推荐</span>&nbsp; <span id="NewsProperty_MARTF">
+                            <asp:CheckBox ID="NewsProperty_MARTF1" runat="server" />滚动</span>&nbsp;
+                    <span id="NewsProperty_HOTTF">
+                        <asp:CheckBox ID="NewsProperty_HOTTF1" runat="server" />热点</span>&nbsp; <span id="NewsProperty_FILTTF">
+                            <asp:CheckBox ID="NewsProperty_FILTTF1" runat="server" />幻灯</span>&nbsp;
+                    <span id="NewsProperty_TTTF">
+                        <asp:CheckBox ID="NewsProperty_TTTF1" onclick="TTClick1(this);" runat="server" />头条</span>&nbsp;
+                    <span id="NewsProperty_ANNTF">
+                        <asp:CheckBox ID="NewsProperty_ANNTF1" runat="server" />公告</span>&nbsp; <span id="NewsProperty_JCTF">
+                            <asp:CheckBox ID="NewsProperty_JCTF1" runat="server" />精彩</span>&nbsp; <span id="NewsProperty_WAPTF">
+                                <asp:CheckBox ID="NewsProperty_WAPTF1" runat="server" />WAP</span>&nbsp;
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_TTSE" style="display: none;">
+                <td style="width: 10%;">
+                    头条参数
+                </td>
+                <td style="width: 90%;">
+                    <asp:CheckBox ID="PicTTTF" runat="server" onclick="TTClick(this);" Text="图片头条" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle0',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_TT" style="display: none;">
+                <td style="width: 10%;">
+                    图片头条
+                </td>
+                <td style="width: 90%;">
+                    字体:
+                    <asp:DropDownList ID="PageFontFamily" Width="120px" runat="server" CssClass="form">
+                    </asp:DropDownList>
+                    &nbsp; 样式:
+                    <asp:DropDownList ID="PageFontStyle" runat="server" CssClass="form">
+                    </asp:DropDownList>
+                    字体颜色:
+                    <asp:HiddenField ID="fontColor" Value="000000" runat="server" />
+                    <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
+                        width="18" height="17" border="0" align="middle" id="Img1" style="cursor: pointer;
+                        background-color: #<%= fontColor.Value%>;" title="选取字体颜色" onclick="GetColor(this,'fontColor');" />
+                    <label style="display: none;">
+                        字体间距:
+                        <asp:TextBox ID="fontCellpadding" MaxLength="2" runat="server" Width="20px">20</asp:TextBox>px
+                        &nbsp;</label>
+                    字号:
+                    <asp:TextBox ID="PagefontSize" runat="server" MaxLength="2" CssClass="form" Width="30px">20</asp:TextBox>px&nbsp;
+                    图片宽度：<asp:TextBox ID="PagePicwidth" runat="server" MaxLength="3" Width="30px" CssClass="form">200</asp:TextBox>px
+                    图片背景色:
+                    <asp:HiddenField ID="Imagesbgcolor" Value="ffffff" runat="server" />
+                    <img src="../../sysImages/blue/admin/Rect.gif" alt="-" name="MarkFontColor_Show"
+                        width="18" height="17" border="0" align="middle" id="Img2" style="cursor: pointer;
+                        background-color: #<%= Imagesbgcolor.Value%>;" title="选取图片前景色" onclick="GetColor(this,'Imagesbgcolor');" />
+                    <br />
+                    自定义标题:
+                    <asp:TextBox ID="topFontInfo" runat="server" Width="40%" CssClass="form"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_TTTitle',this)">
+                        帮助</span>
+                    <asp:HiddenField ID="tl_SavePath" runat="server" />
+                    &nbsp;<a href="javascript:getReview();"><font color="blue">预览图片效果</font></a>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_Templet">
+                <td style="width: 10%;">
+                    模板
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Templet" runat="server" MaxLength="200" Width="40%" CssClass="form"></asp:TextBox><img
+                        src="../../sysImages/folder/s.gif" alt="" border="0" style="cursor: pointer;"
+                        onclick="selectFile('templet',document.Form1.Templet,250,500);document.Form1.Templet.focus();" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_Templet',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_Souce">
+                <td style="width: 10%;">
+                    来源
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Souce" runat="server" Width="16%" MaxLength="100" CssClass="form"></asp:TextBox><img
+                        src="../../sysImages/folder/s.gif" alt="选择已有来源" border="0" style="cursor: pointer;"
+                        onclick="selectFile('Souce',document.Form1.Souce,220,450);document.Form1.Souce.focus();" />
+                    &nbsp;<a href="javascript:addSource('本站');" class="helpstyle">本站</a>&nbsp;&nbsp;<a
+                        class="helpstyle" href="javascript:addSource('未知');">未知</a>&nbsp;&nbsp;<a class="helpstyle"
+                            href="javascript:addSource('网络来源');">网络来源</a>
+                    <asp:CheckBox ID="SouceTF" runat="server" title="记忆" Text="记忆" />
+                    &nbsp;&nbsp;&nbsp;作者：
+                    <asp:TextBox ID="Author" MaxLength="100" runat="server" Width="16%" CssClass="form"></asp:TextBox><img
+                        src="../../sysImages/folder/s.gif" alt="选择已有作者" border="0" style="cursor: pointer;"
+                        onclick="selectFile('Author',document.Form1.Author,220,420);document.Form1.Author.focus();" />
+                    &nbsp;<a href="javascript:addAuthor('本站');" class="helpstyle">本站</a>&nbsp;&nbsp;<a
+                        class="helpstyle" href="javascript:addAuthor('未知');">未知</a>&nbsp;&nbsp;<a class="helpstyle"
+                            href="javascript:addAuthor('网络来源');">网络来源</a>
+                    <asp:CheckBox ID="AuthorTF" runat="server" title="记忆" Text="记忆" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_Tags">
+                <td style="width: 10%;">
+                    标签(Tag)
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Tags" runat="server" MaxLength="100" Width="28%" CssClass="form"
+                        onblur="javascript:document.Form1.Metakeywords.value=document.Form1.Tags.value;"></asp:TextBox><img
+                            src="../../sysImages/folder/s.gif" alt="选择已有标签" border="0" style="cursor: pointer;"
+                            onclick="selectFile('Tag',document.Form1.Tags,220,480);document.Form1.Tags.focus();" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_tags',this)">
+                        什么是标签</span>
+                    <asp:CheckBox ID="TagsTF" runat="server" title="记忆" Text="记忆" />
+                    <div id="lastTags" runat="server">
+                    </div>
                 </td>
             </tr>
         </table>
-        <br />
-        <br />
-        <table width="100%" border="0" cellpadding="8" cellspacing="0" class="copyright_bg"
-            style="height: 76px">
-            <tr>
-                <td class="list_link" align="center">
-                    <%Response.Write(CopyRight);%>
+    </div>
+    <div id="adinfo" style="display: none;">
+        <table width="98%" align="center" border="0" cellpadding="5" cellspacing="1" class="table">
+            <tr class="TR_BG_list" id="div_showad">
+                <td style="width: 10%;" colspan="2">
+                    <asp:CheckBox ID="ShowAdance" Checked="true" onclick="ShowAdanceTF(this)" runat="server" />
+                    <img alt="" src="../../sysImages/folder/showad.gif" border="0" id="captionadv" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_metakey" style="display: block">
+                <td style="width: 10%;">
+                    Meta关键字
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Metakeywords" runat="server" Height="50px" Width="60%" TextMode="MultiLine"
+                        CssClass="form"></asp:TextBox>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_metadesc" style="display: block">
+                <td style="width: 10%;">
+                    Meta描述
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Metadesc" runat="server" Height="50px" Width="60%" TextMode="MultiLine"
+                        CssClass="form"></asp:TextBox>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_Click" style="display: block">
+                <td style="width: 10%;">
+                    点击
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="Click" runat="server" MaxLength="8" Width="40%" CssClass="form">0</asp:TextBox>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_SavePath" style="display: block">
+                <td style="width: 10%;">
+                    保存路径
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="SavePath" Width="40%" runat="server" CssClass="form" onclick="selectFile('rulesmallPram',this,100,450);document.Form1.SavePath.focus();"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_SavePath',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_FileName" style="display: block">
+                <td style="width: 10%;">
+                    文件名
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="FileName" Width="40%" MaxLength="100" runat="server" onclick="selectFile('rulePram',this,100,650);document.Form1.FileName.focus();"
+                        CssClass="form"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileName',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" style="display: block">
+                <td style="width: 10%">
+                    创建时间
+                </td>
+                <td style="width: 90%">
+                    <asp:TextBox ID="txtCreateTimes" runat="server" Width="40%"></asp:TextBox>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" style="display: block" id="tr_editorTime" visible="false"
+                runat="server">
+                <td style="width: 10%">
+                    修改时间
+                </td>
+                <td style="width: 90%">
+                    <asp:TextBox ID="txtEditorTime" runat="server" Width="40%"></asp:TextBox>
+                    <asp:HiddenField ID="HiddenField_editTime" runat="server" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_FileEXName" style="display: block">
+                <td style="width: 10%;">
+                    扩展名
+                </td>
+                <td style="width: 90%;">
+                    <asp:DropDownList ID="FileEXName" runat="server" Height="21px" Width="92px" CssClass="form">
+                        <asp:ListItem>.html</asp:ListItem>
+                        <asp:ListItem>.htm</asp:ListItem>
+                        <asp:ListItem>.shtml</asp:ListItem>
+                        <asp:ListItem>.shtm</asp:ListItem>
+                        <asp:ListItem>.aspx</asp:ListItem>
+                    </asp:DropDownList>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileEXName_2',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_CheckStat" style="display: block">
+                <td style="width: 10%;">
+                    审核状态
+                </td>
+                <td style="width: 90%;">
+                    <asp:DropDownList ID="CheckStat" runat="server" Height="21px" Width="92px" CssClass="form">
+                        <asp:ListItem Value="0">不审核</asp:ListItem>
+                        <asp:ListItem Value="1">一级审核</asp:ListItem>
+                        <asp:ListItem Value="2">二级审核</asp:ListItem>
+                        <asp:ListItem Value="3">三级审核</asp:ListItem>
+                    </asp:DropDownList>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_FileEXName',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_UserPop1" style="display: block">
+                <td style="width: 10%;">
+                    浏览权限
+                </td>
+                <td style="width: 90%;">
+                    <uc1:UserPop ID="UserPop1" runat="server" />
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_VoteTF" style="display: block">
+                <td style="width: 10%;">
+                    允许投票
+                </td>
+                <td style="width: 90%;">
+                    <asp:CheckBox ID="VoteTF" runat="server" onclick="IsVoteTF(this);" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_VoteTF',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_VoteContent" style="display: none;">
+                <td style="width: 10%;">
+                    投票参数
+                </td>
+                <td style="width: 90%;">
+                    <asp:CheckBox ID="ismTF" runat="server" Text="允许多选" /><asp:CheckBox ID="isMember"
+                        runat="server" Text="会员才能投票" />
+                    &nbsp;&nbsp;&nbsp;过期日期：<asp:TextBox ID="isTimeOutTime" MaxLength="20" Width="20%"
+                        runat="server" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif"
+                            alt="选择日期" border="0" style="cursor: pointer;" onclick="selectFile('date',document.Form1.isTimeOutTime,180,400);document.Form1.isTimeOutTime.focus();" />
+                    <br />
+                    <asp:TextBox ID="VoteContent" runat="server" Width="60%" Height="100px" TextMode="MultiLine"></asp:TextBox>
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_VoteContent',this)">
+                        如何设置投票项?</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_ContentPicTF" style="display: block">
+                <td style="width: 10%;">
+                    画中画广告
+                </td>
+                <td style="width: 90%;">
+                    <asp:CheckBox ID="ContentPicTF" runat="server" onclick="ContentPicURLTF(this);" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicTF',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_ContentPicURL" style="display: none;">
+                <td style="width: 10%;">
+                    地址或代码
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="ContentPicURL" MaxLength="200" TextMode="MultiLine" Width="50%"
+                        runat="server" CssClass="form"></asp:TextBox><img src="../../sysImages/folder/s.gif"
+                            alt="选择图片地址" border="0" style="cursor: pointer;" onclick="selectFile('pic',document.Form1.ContentPicURL,280,500);document.Form1.ContentPicURL.focus();" />
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicURL',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list" id="div_tHight" style="display: none;">
+                <td style="width: 10%;">
+                    参数
+                </td>
+                <td style="width: 90%;">
+                    <asp:TextBox ID="tHight" runat="server" MaxLength="3" Width="20%" CssClass="form">200</asp:TextBox>&nbsp;px(高)
+                    &nbsp;&nbsp;┊&nbsp;&nbsp;
+                    <asp:TextBox ID="tWidth" runat="server" Width="20%" MaxLength="3" CssClass="form">200</asp:TextBox>&nbsp;px(宽)
+                    <span class="helpstyle" style="cursor: help;" title="点击显示帮助" onclick="Help('H_News_add_ContentPicSize',this)">
+                        帮助</span>
+                </td>
+            </tr>
+            <tr class="TR_BG_list">
+                <td align="center" colspan="2">
                 </td>
             </tr>
         </table>
+    </div>
+    <table width="98%" align="center" border="0" cellpadding="3" cellspacing="0" class="table">
+        <tr>
+            <td style="width: 30%; padding-left: 14px; text-align: center;" class="TR_BG_list">
+                <asp:HiddenField ID="EditAction" runat="server" />
+                <asp:HiddenField ID="NewsID" runat="server" />
+                <asp:Button ID="Button2" runat="server" Text="保存新闻" OnClick="Buttonsave_Click" OnClientClick="DisplayUnNews()" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="copyright_bg"
+        style="height: 76px">
+        <tr>
+            <td class="list_link" align="center">
+                <%Response.Write(CopyRight);%>
+            </td>
+        </tr>
+    </table>
     </form>
 </body>
 </html>

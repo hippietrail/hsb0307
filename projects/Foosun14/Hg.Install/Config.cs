@@ -17,7 +17,7 @@ namespace Hg.Install
 
 		static Config()
 		{
-			title = "Hg dotNETCMS v1.0sp4 Build 100331 安装程序";
+            title = "Hg WebFastCMS v1.0sp4 Build 100331 安装程序";
 			corpRight = "<div align=\"center\" style=\"position:relative ; padding-top:20px;font-size:14px; font-family: Arial\">" +
 						"<hr style=\"height:1; width:600; height:1; color:#CCCCCC\" />Powered by Hg dotNETCMS 1.0_sp4 Build 100331 (.net Framework 2.x/3.x)" +
 						" <br />© 2002-2010 <a href=\"http://www.foosu.net\" target=\"_blank\"><b>Hg Inc.</b></a></div>";

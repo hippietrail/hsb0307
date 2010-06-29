@@ -63,7 +63,7 @@ namespace Hg.Web.manage.Sys
             }
             else
             {
-                string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + SiteID;
+                string _sitePath = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + fpath1;
                 if (!Directory.Exists(Server.MapPath(_sitePath))) { Directory.CreateDirectory(Server.MapPath(_sitePath)); }
                 str_FilePath = Server.MapPath(_sitePath);
             }
@@ -185,7 +185,7 @@ namespace Hg.Web.manage.Sys
                 }
                 else
                 {
-                    _str_TempletTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + SiteID + "\\" + fpath1;
+                    _str_TempletTF = str_dirMana + "\\" + Hg.Config.UIConfig.dirSite + "\\" + Hg.Global.Current.SiteEName + "\\" + fpath1;
                 }
 
                 if (dir == Server.MapPath(_str_TempletTF))  //判断是否是文件根目录,如果是则不显示返回上级目录

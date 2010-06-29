@@ -15,7 +15,7 @@
     <tr>
       <td style="height: 55px;width:10%;"></td>
       <td style="height: 55px;width:40%;">&nbsp;</td>
-      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hg.net" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.hg.net" target="_blank">技术论坛</a>&nbsp;┊&nbsp;<a href="http://www.newsCMS.com" target="_blank">NewsCMS</a>&nbsp;┊&nbsp;<a href="http://www.NewsIDC.com" title="专用虚拟主机" target="_blank">资讯数据(IDC)</a>&nbsp;┊&nbsp;<a href="http://help.hg.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.hg.net" target="_blank">开发者中心</a></div></td>
+      <td style="height: 55px;width:50%;padding-right:10px;"><div align="right"><a href="http://www.hg.net" target="_blank" class="JH">官方站</a>&nbsp;┊&nbsp; <a href="http://bbs.hg.net" target="_blank">技术论坛</a>&nbsp;┊&nbsp;<a href="http://help.hg.net" target="_blank">在线帮助</a>&nbsp;┊&nbsp;<a href="http://doc.hg.net" target="_blank">开发者中心</a></div></td>
     </tr>
   </table>
 
@@ -30,7 +30,7 @@
             <td><div align="right"><img src="../sysImages/Login/Logo.gif" width="194" height="44" /></div></td>
           </tr>
           <tr>
-            <td><div align="right" class="STYLE1">dotNETCMS&amp;NewsCMS v1.0.0</div></td>
+            <td><div align="right" class="STYLE1" style="font-size:14px;">WebFastCMS v1.0.0 sp4</div></td>
           </tr>
           
           <tr>

@@ -328,21 +328,28 @@ namespace Hg.Web
                     #region 备份首页文件
                     if (getbak)
                     {
-                        string sourceFile = "~/" + Hg.Common.Public.readparamConfig("IndexFileName");
-                        string str_dirPige = Hg.Config.UIConfig.dirPige;
-                        if (File.Exists(Server.MapPath(sourceFile)))
+                        if (SiteID == "0")
                         {
-                            string TagetFile = "~/" + str_dirPige + "/index/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + ".shtml";
-                            string hfile = "~/" + str_dirPige;
-                            string TagetDir = "~/" + str_dirPige + "/index";
-                            sourceFile = sourceFile.Replace("//", "/").Replace(@"\\", @"\");
-                            TagetFile = TagetFile.Replace("//", "/").Replace(@"\\", @"\");
-                            TagetDir = TagetDir.Replace("//", "/").Replace(@"\\", @"\");
-                            hfile = hfile.Replace("//", "/").Replace(@"\\", @"\");
-                            if (!Directory.Exists(Server.MapPath(hfile))) { Directory.CreateDirectory(Server.MapPath(hfile)); }
-                            if (!Directory.Exists(Server.MapPath(TagetDir))) { Directory.CreateDirectory(Server.MapPath(TagetDir)); }
-                            if (File.Exists(Server.MapPath(TagetFile))) { File.Delete(Server.MapPath(TagetFile)); }
-                            File.Move(Server.MapPath(sourceFile), Server.MapPath(TagetFile));
+                            string sourceFile = "~/" + Hg.Common.Public.readparamConfig("IndexFileName");
+                            string str_dirPige = Hg.Config.UIConfig.dirPige;
+                            if (File.Exists(Server.MapPath(sourceFile)))
+                            {
+                                string TagetFile = "~/" + str_dirPige + "/index/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + ".shtml";
+                                string hfile = "~/" + str_dirPige;
+                                string TagetDir = "~/" + str_dirPige + "/index";
+                                sourceFile = sourceFile.Replace("//", "/").Replace(@"\\", @"\");
+                                TagetFile = TagetFile.Replace("//", "/").Replace(@"\\", @"\");
+                                TagetDir = TagetDir.Replace("//", "/").Replace(@"\\", @"\");
+                                hfile = hfile.Replace("//", "/").Replace(@"\\", @"\");
+                                if (!Directory.Exists(Server.MapPath(hfile))) { Directory.CreateDirectory(Server.MapPath(hfile)); }
+                                if (!Directory.Exists(Server.MapPath(TagetDir))) { Directory.CreateDirectory(Server.MapPath(TagetDir)); }
+                                if (File.Exists(Server.MapPath(TagetFile))) { File.Delete(Server.MapPath(TagetFile)); }
+                                File.Move(Server.MapPath(sourceFile), Server.MapPath(TagetFile));
+                            }
+                        }
+                        else
+                        {
+ 
                         }
                     }
                     #endregion 备份首页文件

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <foosunpop>
     <item>
@@ -150,8 +150,19 @@
         <br />
       </popname>
       <popnumber>C055</popnumber>
-      <popname>JS模型操作</popname>
+      <popname>JS模型操作<br /></popname>
       <popnumber>C056</popnumber>
+      <popname>
+        <span class="reshow">站群管理</span>
+        <br />
+      </popname>
+      <popnumber>C057</popnumber>
+      <popname>创建站点</popname>
+      <popnumber>C058</popnumber>
+      <popname>修改站点</popname>
+      <popnumber>C059</popnumber>
+      <popname>删除站点<br /></popname>
+      <popnumber>C060</popnumber>
     </item>
   </foosunpop>
 </rss>
