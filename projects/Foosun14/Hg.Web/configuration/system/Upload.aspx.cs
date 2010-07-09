@@ -163,11 +163,27 @@ public partial class manage_Templet_Upload : Hg.Web.UI.DialogPage
 				{
 					if (dt.Rows.Count > 0)
 					{
-						utype = dt.Rows[0]["UpfilesType"].ToString();
+						utype = dt.Rows[0]["UpfilesType"].ToString();//这个上传的格式是控制面板里参数设置的。
 						usize = int.Parse(dt.Rows[0]["UpFilesSize"].ToString());
 					}
 					dt.Clear(); dt.Dispose();
 				}
+                Site site = new Site();
+                try
+                {
+                    DataTable tSiteInfo = site.GetSiteInfo(Hg.Global.Current.SiteID);
+                    if (tSiteInfo != null && tSiteInfo.Rows[0]["UpfileType"].ToString() != string.Empty && tSiteInfo.Rows[0]["UpfileType"].ToString() != utype)
+                    {
+                        utype = tSiteInfo.Rows[0]["UpfileType"].ToString();
+                    }
+                    if (tSiteInfo != null && tSiteInfo.Rows[0]["UpfileSize"].ToString() != string.Empty && tSiteInfo.Rows[0]["UpfileSize"].ToString() != usize.ToString())
+                    {
+                        usize =int.Parse( tSiteInfo.Rows[0]["UpfileSize"].ToString());
+                    }
+                }
+                catch(Exception err)
+                {}
+                
 				tt.FileLength = usize;                   //为类参数赋值,此为上传文件允许的大小值,单位kb
 				tt.Extension = utype;                    //为类参数赋值,此为上传文件允许上传的类型,以","号分隔
 				string _Ytmp = DateTime.Now.Year + "-" + DateTime.Now.Month;

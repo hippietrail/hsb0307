@@ -258,6 +258,7 @@ namespace Hg.SQLServerDAL
         protected string[] manage_sys_customform ={ "id", "id,formname,formtablename,memo", "customform", "order by id DESC" };
         //自定义表单字段
         protected string[] manage_sys_customform_item ={ "id", "id,formid,seriesnumber,fieldname,itemname,itemtype,case isnotnull when 1 then '是' else '否' end as notnull", "customform_item where formid=@formid", "order by seriesnumber" };
+        
         public DataTable GetPage(string PageName, int PageIndex, int PageSize, out int RecordCount, out int PageCount, params SQLConditionInfo[] SqlCondition)
         {
             string PageType = PageName.Substring(0, PageName.Length - 5);
