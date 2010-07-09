@@ -18,7 +18,7 @@
       <td width="43%"  class="topnavichar"  style="PADDING-LEFT: 14px" ><div align="left">位置导航：<a href="../main.aspx" target="sys_main" class="list_link">首页</a><img alt="" src="../../sysImages/folder/navidot.gif" border="0" />管理员组管理</div></td>
     </tr>
     </table> 
-   <table width="100%" border="0" cellpadding="3" cellspacing="1" class="Navitable" align="center">
+    <table width="100%" border="0" cellpadding="3" cellspacing="1" class="Navitable" align="center">
       <tr>
         <td style="padding-left:15px;"><a href="admin_Groupadd.aspx" class="topnavichar">添加管理员组</a></td>
       </tr>

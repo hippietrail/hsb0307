@@ -31,5 +31,42 @@ namespace Hg.AccessDAL
             
             return DbHelper.ExecuteNonQuery(CommandType.Text, SQL, parm);
         }
+        public DataTable GetPage(string user, DateTime? startDate, DateTime? endDate, string siteId, int PageIndex, int PageSize, out int RecordCount, out int PageCount)
+        {
+            string sFilter = " where 1=1 ";
+            if (!string.IsNullOrEmpty(user))
+            {
+                sFilter += " and usernum ='" + user + "' ";
+            }
+            if (startDate != null)
+            {
+                sFilter += " AND creatTime >= '" + startDate.Value.ToString("yyyy-MM-dd") + " 00:00:00.000' ";
+            }
+            if (endDate != null)
+            {
+                sFilter += " AND creatTime < '" + endDate.Value.AddDays(1).ToString("yyyy-MM-dd") + " 00:00:00.000' ";
+            }
+            if (siteId != "0")
+            {
+                sFilter += " AND SiteID ='" + siteId + "'";
+
+
+            }
+            string AllFields = " id,usernum,title,content,creatTime,SiteID,IP,ismanage ";
+            string Condition = Pre + "sys_logs " + sFilter;
+            string IndexField = "id";
+            string OrderFields = "order by id desc";
+            return DbHelper.ExecutePage(AllFields, Condition, IndexField, OrderFields, PageIndex, PageSize, out RecordCount, out PageCount, null);
+        }
+
+        public void Delete(DateTime logTime)
+        {
+            string sql = "Delete From " + Pre + "sys_logs Where creatTime<@creatTime";
+            OleDbParameter[] parm = new OleDbParameter[1];
+            parm[0] = new OleDbParameter("@creatTime", OleDbType.Date);
+            parm[0].Value = logTime;
+            DbHelper.ExecuteNonQuery(CommandType.Text, sql, parm);
+        }
+
     }
 }

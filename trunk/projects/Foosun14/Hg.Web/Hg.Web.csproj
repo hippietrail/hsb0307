@@ -1761,6 +1761,13 @@
     <Compile Include="manage\Sys\General_manage.aspx.designer.cs">
       <DependentUpon>General_manage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="manage\Sys\LogList.aspx.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\Sys\LogList.aspx.designer.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="manage\Sys\navimenu.aspx.cs">
       <DependentUpon>navimenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3738,6 +3745,7 @@
     <Content Include="api\dz\ADAPT.config" />
     <Content Include="api\api.aspx" />
     <Content Include="configuration\config\api.config" />
+    <Content Include="configuration\js\RiQi.js" />
     <Content Include="configuration\system\getManageForder.aspx" />
     <None Include="editor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="editor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
@@ -3778,6 +3786,7 @@
     <Content Include="manage\publish\AjaxSiteParam.aspx" />
     <Content Include="manage\Sys\CustomFormData_Info.aspx" />
     <Content Include="manage\Sys\File_GetIn.aspx" />
+    <Content Include="manage\Sys\LogList.aspx" />
     <Content Include="manage\top.aspx" />
     <Content Include="new.gif" />
     <Content Include="robots.txt" />
@@ -3821,6 +3830,7 @@
     <Content Include="Templets\index.html" />
     <Content Include="Templets\Content\T_index.htm" />
     <Content Include="Templets\test.htm" />
+    <Content Include="Templets\zx\test1.htm" />
     <Content Include="testseries.aspx" />
     <Content Include="TopNews.aspx" />
     <Content Include="user\ConformityInterface.aspx" />

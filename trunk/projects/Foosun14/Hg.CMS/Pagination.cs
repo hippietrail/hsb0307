@@ -1,7 +1,7 @@
 ﻿//===========================================================
-//==     (c)2007 Hg Inc. by WebFastCMS 1.0              ==
-//==             Forum:bbs.hg.net                      ==
-//==            website:www.hg.net                     ==
+//==     (c)2007 Hg Inc. by WebFastCMS 1.0                 ==
+//==             Forum:bbs.hg.net                          ==
+//==            website:www.hg.net                         ==
 //==     Address:NO.109 HuiMin ST.,Chengdu ,China          ==
 //==         TEL:86-28-85098980/66026180                   ==
 //==         qq:655071,MSN:ikoolls@gmail.com               ==

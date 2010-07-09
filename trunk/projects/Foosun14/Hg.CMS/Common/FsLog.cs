@@ -12,11 +12,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Text;
-
+using System.Data;
 namespace Hg.CMS.Common
 {
     public class FsLog
     {
+        private static Hg.DALFactory.IFsLog dal;
         /// <summary>
         /// 系统日志处理
         /// </summary>
@@ -137,6 +138,20 @@ namespace Hg.CMS.Common
                     }
                 }
             }
+        }
+
+
+        public static DataTable GetPage(string user, DateTime? startDate, DateTime? endDate, string siteId, int PageIndex, int PageSize, out int RecordCount, out int PageCount)
+        {
+            dal = Hg.DALFactory.DataAccess.CreateFsLog();
+            return dal.GetPage(user, startDate, endDate, siteId, PageIndex, PageSize, out RecordCount, out PageCount); 
+
+        }
+        public static void Delete(DateTime logTime)
+        {
+            dal = Hg.DALFactory.DataAccess.CreateFsLog();
+            dal.Delete(logTime);
+ 
         }
     }
 }
