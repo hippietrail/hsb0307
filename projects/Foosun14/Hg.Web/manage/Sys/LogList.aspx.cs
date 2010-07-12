@@ -13,7 +13,7 @@ public partial class manage_Sys_LogList : Hg.Web.UI.ManagePage
 {
     public manage_Sys_LogList()
     {
-        Authority_Code = "Q016";
+        Authority_Code = "Q037";
     }
     protected void Page_Load(object sender, EventArgs e)
     {
