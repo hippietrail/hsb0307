@@ -73,9 +73,9 @@ function logout()
                     <td>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="indexq">
                             <tr>
-                                <td style="width: 142px; height: 38px;"><img id="Img1" src="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/logo.jpg" /></td>
-                                <td style="width: 420px; height: 38px; text-align: center;"></td>
-                                <td align="right">
+                                <td style="width: 142px; height: 25px;"><%--<img id="Img1" src="../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath()); %>/admin/logo.JPG" />--%></td>
+                                <td style="width: 360px; height: 25px; text-align: center;"></td>
+                                <td align="right" style="line-height:25px; height:25px; vertical-align:middle;">
                                     <a href="#" onclick="logout();" class="Lion_1">退出</a>&nbsp;┊&nbsp;
                                     <a href="../<% Response.Write(Hg.Config.UIConfig.dirUser); %>/index.aspx" target="_blank" class="Lion_1" title="进入会员中心">用户</a>&nbsp;┊&nbsp;
                                     <a href="../<% Response.Write(Hg.Config.UIConfig.dirUser); %>/info/ChangePassword.aspx" target="sys_main" class="Lion_1" title="修改密码">密码</a>&nbsp;┊&nbsp;

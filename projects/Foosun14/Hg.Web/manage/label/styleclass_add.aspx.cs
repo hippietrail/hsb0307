@@ -11,9 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class manage_label_styleclass_add : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_styleclass_add()
     {
         Authority_Code = "T019";
@@ -46,8 +47,11 @@ public partial class manage_label_styleclass_add : Hg.Web.UI.ManagePage
 
             Hg.CMS.Style.Style stcClass = new Hg.CMS.Style.Style();
             result = stcClass.sytleClassAdd(stClass);
-            if (result==1)
+            if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "添加分类" + stClass.Sname + " 成功!");
                 PageRight("添加分类成功!", "style.aspx");
+            }
             else
                 PageError("添加分类失败!", "");
         }

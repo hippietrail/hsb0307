@@ -593,7 +593,7 @@ function closediv()
           <td align="center"><%#((DataRowView)Container.DataItem)["op"]%></td>
       </tr>  
        <tr class="TR_BG_list" style="display:none">
-        <td class="list_link" colspan="7" style="height:30px;">所属栏目:<%#((DataRowView)Container.DataItem)["ClassCName"]%> &nbsp;┊ &nbsp;作者:<%#((DataRowView)Container.DataItem)["Author"]%>&nbsp;┊  &nbsp;新闻属性:<asp:Label runat="server" ID="LblProperty" Text='<%#((DataRowView)Container.DataItem)["NewsProperty"]%>' /> &nbsp;┊ &nbsp;点击：<%#((DataRowView)Container.DataItem)["Click"]%></td>
+        <td class="list_link" colspan="7" style="height:30px;">所属栏目:<%#((DataRowView)Container.DataItem)["ClassCName"]%> &nbsp;┊ &nbsp;作者:<%#((DataRowView)Container.DataItem)["Author"]%>&nbsp;┊  &nbsp;新闻属性:<asp:Label runat="server" ID="LblProperty" Text='<%#((DataRowView)Container.DataItem)["NewsProperty"]%>' /> &nbsp;┊ &nbsp;点击：<%#((DataRowView)Container.DataItem)["Click"]%>┊ &nbsp;tag：<%#((DataRowView)Container.DataItem)["Tags"]%>┊ &nbsp;NewId：<%#((DataRowView)Container.DataItem)["NewsID"]%></td>
        </tr>
      </ItemTemplate>
      <FooterTemplate>

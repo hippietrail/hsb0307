@@ -339,12 +339,14 @@ public partial class manage_news_Site_add : Hg.Web.UI.ManagePage
                 //PageError("此版本不具备创建站群管理功能。", "javascript:history.back()", true);
                 int nsite = site.Add(stsite);
                 this.LblID.Text = nsite.ToString();
+                pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "站群添加" + stsite.CName + " 成功!");
                 PageRight("站群添加成功!", "site_list.aspx");
             }
             else
             {
                 int id = int.Parse(this.LblID.Text);
                 site.Update(id, stsite);
+                pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "站群修改" + stsite.CName + " 成功!");
                 PageRight("站群修改成功", "site_list.aspx");
             }
         }

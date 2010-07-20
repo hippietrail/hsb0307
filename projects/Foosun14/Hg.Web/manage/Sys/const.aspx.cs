@@ -7,9 +7,11 @@ using System.Web.UI.HtmlControls;
 using System.Xml;
 using Hg.Common;
 using System.IO;
+using Hg.CMS.Common;
 
 public partial class manage_Sys_const : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     protected void Page_Load(object sender, EventArgs e)
     {
         
@@ -147,7 +149,10 @@ public partial class manage_Sys_const : Hg.Web.UI.ManagePage
         StartPage();
         //刷新
         Hg.Config.UIConfig.RefurbishCatch();
+        pd.SaveUserAdminLogs(0, 1, UserName, "配置文件修改", "配置文件更新成功!");
         PageRight("配置文件更新成功！", "const.aspx?ID=" + Hg.CMS.FSSecurity.FDESEncrypt(this.constPass.Text,1) + "");
+        
+       
         
     }
 

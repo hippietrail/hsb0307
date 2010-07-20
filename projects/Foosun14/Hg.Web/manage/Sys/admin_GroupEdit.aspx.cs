@@ -11,10 +11,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 
 public partial class manage_Sys_admin_GroupEdit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_admin_GroupEdit()
     {
         Authority_Code = "Q017";
@@ -227,8 +228,11 @@ public partial class manage_Sys_admin_GroupEdit : Hg.Web.UI.ManagePage
         Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         result = agc.Edit(agci);
 
-        if(result==1)
+        if (result == 1)
+        {
+            pd.SaveUserAdminLogs(0, 1, UserName, "修改管理员组", "修改管理员组:" + agci.GroupName + " 成功!");
             PageRight("修改管理员组信息成功!", "admin_group.aspx");
+        }
         else
             PageError("修改管理员组信息失败!", "");        
     }

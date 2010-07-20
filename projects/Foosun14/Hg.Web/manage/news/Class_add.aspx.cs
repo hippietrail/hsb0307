@@ -578,6 +578,7 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
             {
                 rd.insertClassContent(uc);
                 rd.updateReplaceNavi(ClassID);
+                pd.SaveUserAdminLogs(0, 1, UserName, "添加栏目", "添加栏目" + uc.ClassCName + " 成功！");
                 //更新导航
                 PageRight("添加栏目成功!<li><a class=\"list_link\" href=\"Class_Add.aspx?Acation=Add," + ClassID + "&SiteID=" + Request.QueryString["SiteID"] + "\"><font color=\"red\">修改此栏目</font></a></li>", "class_list.aspx");
             }
@@ -586,6 +587,7 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
                 rd.UpdateClassContent(uc);
                 //更新导航
                 rd.updateReplaceNavi(ClassID);
+                pd.SaveUserAdminLogs(0, 1, UserName, "修改栏目", "修改栏目" + uc.ClassCName + " 成功！");
                 PageRight("修改栏目成功!<li><a class=\"list_link\" href=\"Class_Add.aspx?Acation=Add," + ClassID + "&SiteID="+Request.QueryString["SiteID"]+"\"><font color=\"red\">继续修改此栏目</font></a></li>", "class_list.aspx");
             }
             #endregion 得到表单值

@@ -13,9 +13,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.CMS;
 using Hg.Model;
-
+using Hg.CMS.Common;
 public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_SysLabel_List()
     {
         Authority_Code="T010";
@@ -248,6 +249,7 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
         this.CheckAdminAuthority();
         Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelDel(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "将标签放入回收站成功!");
         PageRight("将标签放入回收站成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }
 
@@ -264,6 +266,7 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
         this.CheckAdminAuthority();
         Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelDels(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "彻底删除标签成功!");
         PageRight("彻底删除标签成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }
 
@@ -278,7 +281,8 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelClassDels(ID);
-        PageRight("彻底删除栏目成功!", "SysLabel_List.aspx");
+        pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "彻底删除标签分类成功!");
+        PageRight("彻底删除标签分类成功!", "SysLabel_List.aspx");
     }
 
     /// <summary>
@@ -292,7 +296,8 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelClassDel(ID);
-        PageRight("将栏目放入回收站成功!", "SysLabel_List.aspx");
+        pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "将标签分类放入回收站成功!");
+        PageRight("将标签分类放入回收站成功!", "SysLabel_List.aspx");
     }
 
     /// <summary>
@@ -306,6 +311,7 @@ public partial class manage_label_SysLabel_List : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Label lc = new Hg.CMS.Label();
         lc.LabelBackUp(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "将标签放入备份库成功!");
         PageRight("将标签放入备份库成功!", "SysLabel_List.aspx?ClassID=" + Request.QueryString["ClassID"]);
     }
     

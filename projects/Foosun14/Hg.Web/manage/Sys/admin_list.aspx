@@ -59,19 +59,19 @@
 </form>
 </body>
 <script language="javascript" type="text/javascript">
-function Lock(ID)
+function Lock(ID,UserName)
 {
-    self.location="?Type=Lock&ID="+ID;
+    self.location="?Type=Lock&ID="+ID+"&UserName="+UserName;
 }
-function UnLock(ID)
+function UnLock(ID,UserName)
 {
-    self.location="?Type=UnLock&ID="+ID;
+    self.location="?Type=UnLock&ID="+ID+"&UserName="+UserName;
 }
-function Del(ID)
+function Del(ID,UserName)
 {
     if (confirm('你确认删除此管理员吗?'))
     {
-        self.location="?Type=Del&ID="+ID;
+        self.location="?Type=Del&ID="+ID+"&UserName="+UserName;
     }
 }
 function Update(ID)

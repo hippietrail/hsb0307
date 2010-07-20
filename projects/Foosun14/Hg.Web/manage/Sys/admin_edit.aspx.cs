@@ -11,9 +11,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using Hg.CMS.Common;
 
 public partial class manage_Sys_admin_edit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_admin_edit()
     {
         Authority_Code = "Q012";
@@ -192,8 +194,12 @@ public partial class manage_Sys_admin_edit : Hg.Web.UI.ManagePage
             Hg.CMS.Admin ac = new Hg.CMS.Admin();
             result = ac.Edit(aci);
 
-            if(result==1)
+            if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "更新管理员", "更新管理员:" + aci.UserName + " 信息成功!");
                 PageRight("更新管理员信息成功!", "");
+               
+            }
             else
                 PageError("更新管理员信息失败!", "");
         }

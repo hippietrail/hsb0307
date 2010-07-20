@@ -12,7 +12,8 @@ using Hg.CMS;
 using Hg.CMS.Common;
 using Hg.Model;
 
-public partial class Manage_Login : Hg.Web.UI.BasePage
+
+public partial class Manage_Login1 : Hg.Web.UI.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -30,15 +31,30 @@ public partial class Manage_Login : Hg.Web.UI.BasePage
                 if ((TmUrl.ToString().ToLower()).IndexOf(tmDir.ToLower()) == -1 && (TmUrl.ToString().ToLower()).IndexOf(tmDir1.ToLower()) == -1) { this.HidUrl.Value = TmUrl.ToString(); }
             }
             string[] _protPass = Hg.Config.UIConfig.protPass.Split(',');
-            if (_protPass[0] == "1") 
+            if (_protPass[0] == "1")
             { safeCodeVerify_1.Visible = true; }
-            else 
+            else
             { safeCodeVerify_1.Visible = false; }
         }
     }
 
+    /// <summary>
+    /// 用户退出清除cookie
+    /// </summary>
+    private void userExit()
+    {
+        //得到用户数据
+        HttpCookie cook = HttpContext.Current.Request.Cookies["SITEINFO"];
+        if (cook != null)
+        {
+            //设置用户的cookie为过期
+            cook.Expires = DateTime.Now.AddDays(-1);
+            cook.Value = null;
+            Response.Cookies.Add(cook);
+        }
+    }
 
-    protected void login_Click(object sender, ImageClickEventArgs e)
+    protected void login_Click(object sender, EventArgs e)
     {
         if (Page.IsValid)
         {
@@ -97,7 +113,7 @@ public partial class Manage_Login : Hg.Web.UI.BasePage
             if (state == EnumLoginState.Succeed)
             {
                 Hg.Global.Current.Set(info);
-                Session["islogin"]="1";
+                Session["islogin"] = "1";
                 if (Urls != null && Urls.Trim() != string.Empty)
                 {
                     string MangeStr = Hg.Config.UIConfig.dirMana + "/index.aspx".ToLower();
@@ -123,21 +139,7 @@ public partial class Manage_Login : Hg.Web.UI.BasePage
                 LoginResultShow(state);
             }
         }
-    }
 
-    /// <summary>
-    /// 用户退出清除cookie
-    /// </summary>
-    private void userExit()
-    {
-        //得到用户数据
-        HttpCookie cook = HttpContext.Current.Request.Cookies["SITEINFO"];
-        if (cook != null)
-        {
-            //设置用户的cookie为过期
-            cook.Expires = DateTime.Now.AddDays(-1);
-            cook.Value = null;
-            Response.Cookies.Add(cook);
-        }
     }
 }
+

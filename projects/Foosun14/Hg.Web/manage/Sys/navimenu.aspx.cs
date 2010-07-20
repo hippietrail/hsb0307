@@ -9,9 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.CMS;
-
+using Hg.CMS.Common;
 public partial class manage_System_navimenu : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_System_navimenu()
     {
         Authority_Code = "Q025";
@@ -120,7 +121,8 @@ public partial class manage_System_navimenu : Hg.Web.UI.ManagePage
                     uc.isSys = am_isSys;
                     uc.siteID = SiteID;
                     uc.userNum = UserNum;
-                    rd.InsertManageMenu(uc); 
+                    rd.InsertManageMenu(uc);
+                    pd.SaveUserAdminLogs(0, 1, UserName, "添加菜单", "添加菜单:" + uc.am_Name+ " 成功!");
                     PageRight("添加菜单成功。", "navimenu_list.aspx");
                 }
             }

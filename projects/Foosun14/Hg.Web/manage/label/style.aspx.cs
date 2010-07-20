@@ -13,9 +13,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.Model;
 using System.Text.RegularExpressions;
-
+using Hg.CMS.Common;
 public partial class manage_label_style : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_style()
     {
         Authority_Code = "T017";
@@ -212,7 +213,8 @@ public partial class manage_label_style : Hg.Web.UI.ManagePage
         this.CheckAdminAuthority();
         Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleClassDel(ID);
-        PageRight("彻底删除栏目成功!", "style.aspx");
+        pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "彻底删除样式分类成功!");
+        PageRight("彻底删除样式分类成功!", "style.aspx");
     }
 
     /// <summary>
@@ -228,7 +230,8 @@ public partial class manage_label_style : Hg.Web.UI.ManagePage
         this.CheckAdminAuthority();
         Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleClassRDel(ID);
-        PageRight("将栏目放入回收站成功!", "style.aspx");
+        pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "将样式分类放入回收站成功!");
+        PageRight("将样式分类放入回收站成功!", "style.aspx");
     }
 
     /// <summary>
@@ -242,6 +245,7 @@ public partial class manage_label_style : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleRdel(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "将样式放入回收站成功!");
         PageRight("将样式放入回收站成功!", "style.aspx");
     }
 
@@ -256,6 +260,7 @@ public partial class manage_label_style : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Style.Style stClass = new Hg.CMS.Style.Style();
         stClass.styleDel(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "彻底删除样式成功!");
         PageRight("彻底删除样式成功!", "style.aspx");
     }
 }

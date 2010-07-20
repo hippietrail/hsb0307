@@ -12,9 +12,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.Model;
-
+using Hg.CMS.Common;
 public partial class manage_Sys_admin_group : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_admin_group()
     {
         Authority_Code = "Q016";
@@ -71,7 +72,7 @@ public partial class manage_Sys_admin_group : Hg.Web.UI.ManagePage
                 //----------------------------------------添加列结束--------------------------------------------
                 for (int k = 0; dt.Rows.Count > k; k++)
                 {
-                    dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["adminGroupNumber"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/re.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('" + dt.Rows[k]["adminGroupNumber"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/del.gif\" border=\"0\" alt=\"删除\" /></a>";
+                    dt.Rows[k]["Op"] = "<a href=\"javascript:Update('" + dt.Rows[k]["adminGroupNumber"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/re.gif\" border=\"0\" alt=\"修改\" /></a><a href=\"javascript:Del('" + dt.Rows[k]["adminGroupNumber"].ToString() + "','" + dt.Rows[k]["GroupName"].ToString() + "');\" class='list_link'><img src=\"../../sysImages/folder/del.gif\" border=\"0\" alt=\"删除\" /></a>";
                 }
             }
             DataList1.DataSource = dt;                              //设置datalist数据源
@@ -93,6 +94,7 @@ public partial class manage_Sys_admin_group : Hg.Web.UI.ManagePage
     {
         Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         agc.Del(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "删除管理员组", "删除管理员组:" + Request.QueryString["GroupName"] + " 成功!");
         PageRight("删除管理员组成功!", "");
     }
 }

@@ -1592,12 +1592,14 @@ public partial class manage_news_News_add : Hg.Web.UI.ManagePage
 			{
 				uc.NewsID = NewsID;
 				rd.UpdateNewsContent(uc);
+                pd.SaveUserAdminLogs(0, 1, UserName, "新闻修改", "修改" + uc.NewsTitle + " 成功!");
 				resultstr = "新闻：<font color=\"red\">[" + NewsTitle + "]</font>&nbsp;&nbsp;修改成功!<li><a href=\"News_Add.aspx?ClassID=" + ClassID + "&EditAction=Edit&NewsID=" + NewsID + "\" class=\"list_link\"><b><font color=\"red\">继续修改</font></b></a>&nbsp;┊&nbsp;<a href=\"News_add.aspx?ClassID=" + ClassID + "&EditAction=Add\" class=\"list_link\"><b><font color=\"red\">添加新闻</font></b></a>&nbsp;┊&nbsp;<a href=\"News_list.aspx?ClassID=" + ClassID + "\" class=\"list_link\"><b><font color=\"blue\">返回本栏目列表</font></b></a></li>" + iNewsTF + "";
 			}
 			else
 			{
 				uc.NewsID = NewsID;
 				rd.insertNewsContent(uc);
+                pd.SaveUserAdminLogs(0, 1, UserName, "新闻添加", "添加" + uc.NewsTitle + " 成功!");
 				resultstr = "新闻：<font color=\"red\">[" + NewsTitle + "]</font>&nbsp;&nbsp;添加成功!<li><a href=\"News_Add.aspx?ClassID=" + ClassID + "&EditAction=Add\" class=\"list_link\"><b><font color=\"red\">继续添加</font></b></a>&nbsp;┊&nbsp;<a href=\"News_add.aspx?ClassID=" + ClassID + "&NewsID=" + NewsID + "&EditAction=Edit\" class=\"list_link\"><b><font color=\"red\">修改本条新闻</font></b></a>&nbsp;┊&nbsp;<a href=\"News_list.aspx?ClassID=" + ClassID + "\" class=\"list_link\"><b><font color=\"blue\">返回本栏目列表</font></b></a></li>" + iNewsTF + "";
 			}
 			string ReadType = Hg.Common.Public.readparamConfig("ReviewType");

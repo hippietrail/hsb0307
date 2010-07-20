@@ -11,9 +11,10 @@ using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Xml;
 using Hg.CMS;
-
+using Hg.CMS.Common;
 public partial class manage_Sys_admin_POPSet : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_admin_POPSet()
     {
         Authority_Code = "Q015";
@@ -152,6 +153,7 @@ public partial class manage_Sys_admin_POPSet : Hg.Web.UI.ManagePage
             string ID = Request.QueryString["id"];
             string PopList = Request.Form["PopList"];
             rd.UpdatePOPlist(Hg.Common.Input.checkID(ReqUNum), int.Parse(Hg.Common.Input.checkID(ID)), PopList);
+            pd.SaveUserAdminLogs(0, 1, UserName, "更新权限", "更新权限成功!");
             PageRight("更新权限成功", "admin_list.aspx");
         }
     }

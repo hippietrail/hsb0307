@@ -12,9 +12,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.Model;
-
+using Hg.CMS.Common;
 public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_news_Special_List()
     {
         Authority_Code = "C038";
@@ -259,6 +260,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.Lock(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "锁定专题成功！");
         PageRight("锁定专题成功!", "");
     }
 
@@ -273,6 +275,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
     {
         Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.UnLock(ID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "解锁专题成功！");
         PageRight("解锁专题成功!", "");
     }
 
@@ -297,6 +300,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
         if (Mode == "Re")
         {
             sc.PDel(str_SID);
+            pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "将专题删除到回收站成功！");
             PageRight("将专题删除到回收站成功!", "special_list.aspx");
         }
         else
@@ -304,6 +308,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
             this.Authority_Code = "C0401";
             this.CheckAdminAuthority();
             sc.PDels(str_SID);
+            pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "将专题彻底删除成功！");
             PageRight("彻底删除成功!", "special_list.aspx");
         }
     }
@@ -323,6 +328,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
         
         Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.PLock(str_SID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "批量锁定成功！");
         PageRight("批量锁定成功!", "special_list.aspx");
     }
 
@@ -341,6 +347,7 @@ public partial class manage_news_Special_List : Hg.Web.UI.ManagePage
 
         Hg.CMS.Special sc = new Hg.CMS.Special();
         sc.PUnLock(str_SID);
+        pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "批量解锁成功！");
         PageRight("批量解锁成功!<br />如果批量选中的专题还有未解锁的,请先解锁此专题的父专题!", "special_list.aspx");
     }
 

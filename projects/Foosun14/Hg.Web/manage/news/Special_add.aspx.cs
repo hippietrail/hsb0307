@@ -132,7 +132,10 @@ public partial class manage_news_Special_add : Hg.Web.UI.ManagePage
             {
                 Hg.Publish.General PG = new Hg.Publish.General();
                 if (PG.publishSingleSpecial(arr_result[1].ToString()))
+                {
+                    pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "成功将专题" + sci.SpecialCName + "添加成功！");
                     PageRight("添加专题成功!生成专题成功!", "Special_List.aspx");
+                }
                 else
                     PageRight("添加专题成功!但是生成专题失败!", "Special_List.aspx");
             }

@@ -12,9 +12,10 @@ using Hg.CMS;
 using Hg.CMS.Common;
 using System.IO;
 using System.Xml;
-
+using Hg.CMS.Common;
 public partial class manage_news_news_page : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
 	/// <summary>
 	/// 权限设置
 	/// </summary>
@@ -297,6 +298,7 @@ public partial class manage_news_news_page : Hg.Web.UI.ManagePage
 			{
 				ishtml = "<li>生成静态文件发生了错误。请查看日志。</li>";
 			}
+            pd.SaveUserAdminLogs(0, 1, UserName, "单页管理", "保存" + uc.ClassCName + "成功！");
 			PageRight("保存数据成功" + ishtml + "", "class_list.aspx");
 		}
 	}
