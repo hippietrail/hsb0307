@@ -55,11 +55,11 @@
     </form>
 </body>
 <script language="javascript" type="text/javascript">
-function Del(ID)
+function Del(ID,groupName)
 {
     if (confirm('你确认删除此管理员组吗?'))
     {
-        self.location="?Type=Del&ID="+ID;
+        self.location="?Type=Del&ID="+ID+"&GroupName="+groupName;
     }
 }
 function Update(ID)

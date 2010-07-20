@@ -13,9 +13,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Xml;
-
+using Hg.CMS.Common;
 public partial class manage_label_style_add : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_style_add()
     {
         Authority_Code = "T018";
@@ -159,6 +160,7 @@ public partial class manage_label_style_add : Hg.Web.UI.ManagePage
             Hg.Publish.LabelStyle.CatchClear();
             if (result == 1)
             {
+                pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "添加样式" + stClass.StyleName + " 成功!");
                 PageRight("添加样式成功!", "style.aspx");
             }
             else

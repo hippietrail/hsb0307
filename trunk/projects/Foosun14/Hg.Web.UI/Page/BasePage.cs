@@ -16,7 +16,7 @@ namespace Hg.Web.UI
 	{
 		protected readonly int PAGESIZE = Config.UIConfig.GetPageSize();
 		protected internal UserLogin _UserLogin;
-		protected internal string CopyRight = "<span style=\"font-size:10px;\">(c)2002-2010 Hg Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
+		protected internal string CopyRight = "<span style=\"font-size:12px;\">(c)2002-2010 Hg Inc. By " + Hg.Config.verConfig.Productversion + "</span>";
 		protected void AddStyleSheet(Page page, string cssPath)
 		{
 			HtmlLink link = new HtmlLink();

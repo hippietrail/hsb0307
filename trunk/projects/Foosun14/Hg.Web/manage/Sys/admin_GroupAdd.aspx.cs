@@ -11,9 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class manage_Sys_admin_GroupAdd : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_admin_GroupAdd()
     {
         Authority_Code = "Q017";
@@ -104,8 +105,11 @@ public partial class manage_Sys_admin_GroupAdd : Hg.Web.UI.ManagePage
         Hg.CMS.AdminGroup agc = new Hg.CMS.AdminGroup();
         result = agc.add(agci);
 
-        if(result ==1)
+        if (result == 1)
+        {
+            pd.SaveUserAdminLogs(0, 1, UserName, "添加管理员组", "添加管理员组:" + agci.GroupName + " 成功!");
             PageRight("添加管理员组成功!", "admin_group.aspx");
+        }
         else
             PageError("添加管理员组失败!", "");
     }

@@ -12,9 +12,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Text.RegularExpressions;
-
+using Hg.CMS.Common;
 public partial class manage_news_Special_edit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_news_Special_edit()
     {
         Authority_Code = "C039";
@@ -177,7 +178,10 @@ public partial class manage_news_Special_edit : Hg.Web.UI.ManagePage
         {
             Hg.Publish.General PG = new Hg.Publish.General();
             if (PG.publishSingleSpecial(sci.SpecialID))
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "专题管理", "成功将专题" + sci.SpecialCName + "修改成功！");
                 PageRight("修改专题信息成功!生成专题成功!", "special_list.aspx");
+            }
             else
                 PageRight("修改专题信息成功!生成专题失败!", "special_list.aspx");
         }

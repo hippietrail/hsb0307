@@ -11,9 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class Manage_System_admin_add : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public Manage_System_admin_add()
     {
         Authority_Code = "Q011";
@@ -89,8 +90,12 @@ public partial class Manage_System_admin_add : Hg.Web.UI.ManagePage
             int result = 0;
             Hg.CMS.Admin ac = new Hg.CMS.Admin();
             result = ac.Add(aci);
-            if(result==1)
+            if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "添加管理员", "添加管理员:" + aci.UserName + " 成功!");
                 PageRight("添加管理员成功!", "admin_list.aspx");
+                
+            }
             else
                 PageError("添加管理员失败!", "");
         }

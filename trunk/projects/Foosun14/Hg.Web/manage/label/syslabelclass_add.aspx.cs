@@ -11,9 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class manage_label_syslabelclass_add : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_syslabelclass_add()
     {
         Authority_Code = "T016";
@@ -54,7 +55,10 @@ public partial class manage_label_syslabelclass_add : Hg.Web.UI.ManagePage
             result = lbc.LabelClassAdd(lbcc);
 
             if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "添加分类" + lbcc.ClassName + " 成功!");
                 PageRight("添加分类成功!", "SysLabel_List.aspx");
+            }
             else
                 PageError("添加分类失败!", "");
         }

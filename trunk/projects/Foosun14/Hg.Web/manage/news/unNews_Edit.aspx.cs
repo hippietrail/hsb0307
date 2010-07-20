@@ -10,9 +10,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 using Hg.CMS;
-
+using Hg.CMS.Common;
 public partial class manage_news_unNews_Edit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_news_unNews_Edit()
     {
         Authority_Code = "C050";
@@ -195,6 +196,7 @@ public partial class manage_news_unNews_Edit : Hg.Web.UI.ManagePage
                 PageError("保存不规则新闻失败!", "unNews.aspx");
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "不规则新闻", "保存不规则新闻成功！");
         PageRight("保存不规则新闻成功!", "unNews.aspx");
         #endregion
         return true;

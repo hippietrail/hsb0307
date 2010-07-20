@@ -14,9 +14,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     private Hg.CMS.Site site;
     public manage_news_Site_List()
     {
@@ -47,7 +48,7 @@ public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
                     this.CheckAdminAuthority();
                     if (id.ToString() == "0")
                     {
-                        Response.Write("0%总站站群不允许删除!\n");
+                        Response.Write("总站站群不允许删除!\n");
                     }
                     if (id.ToString().ToUpper() != SiteID)
                     {
@@ -55,22 +56,24 @@ public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
                         {
                             case "RecyleSite":
                                 site.Recyle(id);
-                                Response.Write("1%成功将选中站群及其所属栏目、专题、新闻放入回收站中！");
+                                pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "成功将选中站群及其所属栏目、专题、新闻放入回收站中！");
+                                Response.Write("成功将选中站群及其所属栏目、专题、新闻放入回收站中！");
                                 break;
                             case "DeleteSite":
                                 site.Delete(id);
-                                Response.Write("1%操作成功!");
+                                pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "成功将选中站群及其所属栏目、专题、新闻删除！");
+                                Response.Write("成功将选中站群及其所属栏目、专题、新闻删除!");
                                 break;
                         }
                     }
                     else
                     {
-                        Response.Write("0%不能删除自己站群,请与系统管理员联系!\n");
+                        Response.Write("不能删除自己站群,请与系统管理员联系!\n");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Response.Write("0%操作失败:" + ex.Message);
+                    Response.Write("操作失败:" + ex.Message);
                 }
                 Response.End();
             }

@@ -11,10 +11,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 
 public partial class manage_label_style_edit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_style_edit()
     {
         Authority_Code = "T018";
@@ -153,8 +154,11 @@ public partial class manage_label_style_edit : Hg.Web.UI.ManagePage
             result = styleClass.styleEdit(stClass);
             //清除样式缓存
             Hg.Publish.LabelStyle.CatchClear();
-            if (result==1)
+            if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "样式管理", "修改样式" + stClass.StyleName + " 成功!");
                 PageRight("修改样式成功!", "style.aspx?ClassID=" + Request.Form["styleClass"]);
+            }
             else
                 PageError("修改样式失败!", "");
         }

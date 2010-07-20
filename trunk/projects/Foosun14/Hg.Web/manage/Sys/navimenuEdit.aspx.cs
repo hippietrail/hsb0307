@@ -9,9 +9,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Hg.CMS;
-
+using Hg.CMS.Common;
 public partial class manage_Sys_navimenuEdit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_Sys_navimenuEdit()
     {
         Authority_Code = "Q026";
@@ -154,6 +155,7 @@ public partial class manage_Sys_navimenuEdit : Hg.Web.UI.ManagePage
     {
         if (Page.IsValid)                       //判断是否验证成功
         {
+           
             string issys = this.Hiddenissys.Value;
             string am_Name = this.menuName.Text;;
             int orderID = int.Parse(this.orderID.Text);
@@ -195,6 +197,7 @@ public partial class manage_Sys_navimenuEdit : Hg.Web.UI.ManagePage
                 uc.am_ID = am_id;
                 rd.EditManageMenu(uc);
             }
+            pd.SaveUserAdminLogs(0, 1, UserName, "修改菜单", "修改菜单:" + am_Name + " 成功!");
             PageRight("修改菜单成功。", "navimenu_list.aspx");
         }
     }

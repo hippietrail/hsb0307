@@ -21,9 +21,10 @@ using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using Hg.CMS;
-
+using Hg.CMS.Common;
 public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     ContentManage td = new ContentManage();
     private DataTable TbClass;
     private string OriginalType;
@@ -276,7 +277,8 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
             string _FileName = td.getFileNameInfo(sNews[i], sTb);
             td.Copy_news(sclassid, DataLib, sNews[i], sTb, NewsID, _FileName);
         }
-        PageRight("成功将条新闻复制到&nbsp;<font color=red>" + sclasstext + "</font>&nbsp;栏目中!", "News_List.aspx");
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将新闻复制到" + sclasstext + "栏目中!");
+        PageRight("成功将新闻复制到&nbsp;<font color=red>" + sclasstext + "</font>&nbsp;栏目中!", "News_List.aspx");
     }
     #endregion
     /// <summary>
@@ -321,6 +323,7 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
                 td.Copy_ClassNews(stclass, DataLibs, dts6.Rows[i]["NewsID"].ToString(), DataLib, NewsID, _FileName);
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将新闻复制到" + sclasstext + "栏目中!");
         PageRight("成功将新闻复制到&nbsp;<font color=red>" + sclasstext + "</font>&nbsp;栏目中!", "");
     }
     #endregion
@@ -353,6 +356,7 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
                 PageError("新闻转移到目标栏目失败", "News_List.aspx");
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将新闻转移到" + sclasstext + "栏目中!");
         PageRight("成功将新闻转移到<font color=red>" + sclasstext + "</font>栏目中!", "News_List.aspx");
     }
     #endregion
@@ -401,6 +405,7 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
                 }
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将新闻转移到" + sclasstext + "栏目中!");
         PageRight("成功将新闻转移到<font color=red>" + sclasstext + "</font>栏目中!", "");
     }
     #endregion
@@ -443,6 +448,7 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
             NewsProperty = Newsty();
             if (td.Up_news1(CommTF, DiscussTF, NewsProperty, Templet, OrderID, CommLinkTF, Click, FileEXName, sTb, sOrgNews) != 0)
             {
+                pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "设置新闻属性成功!");
                 PageRight("设置新闻属性成功!", "News_List.aspx");
             }
             else
@@ -482,6 +488,7 @@ public partial class manage_news_News_Manage : Hg.Web.UI.ManagePage
             }
             if (td.Up_news2(CommTF, DiscussTF, NewsProperty, Templet, OrderID, CommLinkTF, Click, FileEXName, sTb, sOrgNews) != 0)
             {
+                pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "设置新闻属性成功!");
                 PageRight("设置新闻属性成功!", "News_List.aspx");
             }
             else

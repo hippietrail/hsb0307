@@ -567,6 +567,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
         //rd.delTBDateNumber(SearchEngine.datenumber());
         //rd.delTBTypeNumber(SearchEngine.conditionnumbers());
         Response.Clear();
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将" + n + "条内容放入回收站中！");
         Response.Write(n + "%成功将" + n + "条内容放入回收站中！");
     }
 
@@ -597,6 +598,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
             }
         }
         Response.Clear();
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将" + n + "条内容移出此专题！");
         Response.Write(n + "%成功将" + n + "条内容移出此专题！");
     }
 
@@ -639,6 +641,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
                 }
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功删除" + n + "条新闻！");
         Response.Write(n + "%成功删除" + n + "条新闻！");
     }
 
@@ -648,7 +651,8 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
         string id = "'" + sid.Replace(",", "','") + "'";
         int n = rd.Update_Lock(id, NUMS);
         Response.Clear();
-        Response.Write(n + "%成功操作" + n + "条新闻！");
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功锁定" + n + "条新闻！");
+        Response.Write(n + "%成功锁定" + n + "条新闻！");
     }
     //重置权重
     private void Option_ResetOrder(string sid)
@@ -656,6 +660,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
         string id = "'" + sid.Replace(",", "','") + "'";
         int n = rd.Update_ResetOrde(id);
         Response.Clear();
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "重置权重" + n + "条新闻！");
         Response.Write(n + "%成功操作" + n + "条新闻！");
     }
 
@@ -849,7 +854,10 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
     {
         Response.Clear();
         if (rd.settop(sid) != 0)
+        {
+            pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将所选新闻固顶！");
             Response.Write("成功将所选新闻固顶!");
+        }
         else
             Response.Write("固顶错误");
     }
@@ -858,7 +866,10 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
     {
         Response.Clear();
         if (rd.unsettop(sid) != 0)
+        {
+            pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功将所选新闻解固！");
             Response.Write("成功将所选新闻解固!");
+        }
         else
             Response.Write("解固错误");
     }
@@ -868,7 +879,10 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
     {
         Response.Clear();
         if (rd.delNumber(ClassID) != 0)
+        {
+            pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "栏目数据已经被清空！");
             Response.Write("栏目数据已经被清空!");
+        }
         else
             Response.Write("清除数据错误。\n或者此栏目无数据!");
     }
@@ -887,6 +901,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
                 rd.deleteFilesurl(0, sID[i]);
             }
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "附件清理成功！");
         Response.Write("1%附件清理成功!");
     }
 
@@ -915,6 +930,7 @@ public partial class manage_news_News_list : Hg.Web.UI.ManagePage
                 rd.upCheckStat(getID, 3);
                 break;
         }
+        pd.SaveUserAdminLogs(0, 1, UserName, "新闻管理", "成功审核您选择的新闻！");
         Response.Write("1%成功审核您选择的新闻！");
     }
 

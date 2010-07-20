@@ -11,9 +11,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 public partial class manage_label_syslable_add : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_syslable_add()
     {
         Authority_Code = "T011";
@@ -102,8 +103,11 @@ public partial class manage_label_syslable_add : Hg.Web.UI.ManagePage
             result = labelc.LabelAdd(lbc);
             //清除标签缓存
             Hg.Publish.CustomLabel._lableTableInfo.Clear();
-            if (result==1)
+            if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "添加标签" + lbc.Label_Name + " 成功!");
                 PageRight("添加标签成功!", "SysLabel_List.aspx?ClassID=" + LabelClass.Text);
+            }
             else
                 PageError("添加标签失败!", "");
         }

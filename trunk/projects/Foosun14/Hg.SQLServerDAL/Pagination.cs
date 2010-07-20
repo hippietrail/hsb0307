@@ -67,9 +67,9 @@ namespace Hg.SQLServerDAL
 
         protected string[] user_Rss_RssFeed_2 ={ "id", "id,ClassID,ClassCName,ClassEName,ParentID", "news_Class where ParentID=@ParentID and isURL=0 and isRecyle=0 and isLock=0 and isPage=0 and SiteID=@SiteID", "order by Id desc" };
 
-        protected string[] manage_Sys_admin_list = { "a.Id", "a.Id,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Hg.Global.Current.SiteID + "'", "order by a.Id desc" };
+        protected string[] manage_Sys_admin_list = { "a.Id", "a.Id,a.UserName, a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID='" + Hg.Global.Current.SiteID + "'", "order by a.Id desc" };
 
-        protected string[] manage_Sys_admin_list_1 = { "a.Id", "a.Id,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID=@SiteID", "order by a.Id desc" };
+        protected string[] manage_Sys_admin_list_1 = { "a.Id", "a.Id,a.UserName,a.UserNum,b.RealName,b.Email,a.isSuper,a.isLock", "sys_admin a left join sys_User b  on a.UserNum=b.UserNum Where b.isAdmin=1 and a.SiteID=@SiteID", "order by a.Id desc" };
 
         protected string[] user_photo_photo ={ "id", "id,PhotoID,PhotoName,PhotoTime,UserNum,PhotoContent,PhotoalbumID,PhotoUrl", "user_photo where PhotoalbumID=@PhotoalbumID", "order by ID desc" };
 

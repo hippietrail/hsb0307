@@ -11,10 +11,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
+using Hg.CMS.Common;
 
 public partial class manage_label_syslabel_edit : Hg.Web.UI.ManagePage
 {
+    rootPublic pd = new rootPublic();
     public manage_label_syslabel_edit()
     {
         Authority_Code = "T012";
@@ -141,7 +142,10 @@ public partial class manage_label_syslabel_edit : Hg.Web.UI.ManagePage
             Hg.CMS.Label labelc = new Hg.CMS.Label();
             result = labelc.LabelEdit(lbc);
             if (result == 1)
+            {
+                pd.SaveUserAdminLogs(0, 1, UserName, "标签管理", "修改标签" + lbc.Label_Name + " 成功!");
                 PageRight("修改标签成功!", "SysLabel_List.aspx?ClassID=" + Request.Form["LabelClass"]);
+            }
             else
                 PageError("修改标签失败!", "");
         }

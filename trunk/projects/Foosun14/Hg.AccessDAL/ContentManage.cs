@@ -1748,7 +1748,7 @@ namespace Hg.AccessDAL
 			{
 				sFilter += " and a.Editor='" + Editor + "'";
 			}
-			string AllFields = "a.Id,a.NewsID,a.NewsType,a.TitleColor,a.TitleITF,a.TitleBTF,a.Author,a.DataLib,a.OrderID,a.NewsTitle,a.ishtml,a.Editor,a.Click,a.isConstr,a.ClassID,a.isLock,a.NewsProperty,a.CheckStat,a.URLaddress,b.UserName,c.ClassCName";
+            string AllFields = "a.Id,a.NewsID,a.NewsType,a.TitleColor,a.TitleITF,a.TitleBTF,a.Author,a.DataLib,a.OrderID,a.NewsTitle,a.ishtml,a.Editor,a.Click,a.isConstr,a.ClassID,a.isLock,a.NewsProperty,a.CheckStat,a.URLaddress,a.Tags,b.UserName,c.ClassCName";
 			string Condition = "(" + Pre + "News a left join " + Pre + "sys_User b on a.Editor=b.UserName) left join " + Pre + "News_Class c  on a.ClassID=c.ClassID where " + sFilter;
 			string IndexField = "a.Id";
 			string OrderFields = "order by a.OrderID desc,a.Id desc";
