@@ -101,7 +101,7 @@
     <Content Include="manage\collect\Default.aspx" />
     <Content Include="manage\collect\Store.aspx" />
     <Content Include="manage\index.aspx" />
-    <Content Include="manage\Login.aspx" />
+    <Content Include="manage\Login2.aspx" />
     <Content Include="manage\main.aspx" />
     <Content Include="manage\menu.aspx" />
     <Content Include="user\constr\Constr.aspx" />
@@ -1152,12 +1152,19 @@
     <Compile Include="manage\label\syslable_add.aspx.designer.cs">
       <DependentUpon>syslable_add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manage\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="manage\Login2.aspx.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manage\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="manage\Login2.aspx.designer.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
@@ -3782,6 +3789,7 @@
     <Content Include="manage\channel\channel_add.aspx" />
     <Content Include="manage\channel\list.aspx" />
     <Content Include="manage\label\createLabel_Class.aspx" />
+    <Content Include="manage\login.aspx" />
     <Content Include="manage\news\News_Site_Admin.aspx" />
     <Content Include="manage\publish\AjaxSiteParam.aspx" />
     <Content Include="manage\Sys\CustomFormData_Info.aspx" />
@@ -3800,6 +3808,16 @@
     <Content Include="sysImages\FileIcon\xls.gif" />
     <Content Include="sysImages\green\admin\menu_dot_user_21.gif" />
     <Content Include="sysImages\Label\preview\CopyRight.gif" />
+    <Content Include="sysImages\Login\index_conn_left.gif" />
+    <Content Include="sysImages\Login\index_conn_left_bottom.gif" />
+    <Content Include="sysImages\Login\index_login_bg.gif" />
+    <Content Include="sysImages\Login\login.gif" />
+    <Content Include="sysImages\Login\login_bottom_bg.gif" />
+    <Content Include="sysImages\Login\login_conn_left.gif" />
+    <Content Include="sysImages\Login\login_conn_left_b.gif" />
+    <Content Include="sysImages\Login\login_conn_right.gif" />
+    <Content Include="sysImages\Login\login_conn_right_b.gif" />
+    <Content Include="sysImages\Login\login_top_bg.gif" />
     <Content Include="sysImages\normal\menu_dot_user_21.gif" />
     <Content Include="sysImages\red\admin\menu_dot_user_21.gif" />
     <Content Include="sysImages\sblue\admin\menu_dot_user_21.gif" />

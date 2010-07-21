@@ -2,11 +2,10 @@
 <%@ Register Src="../../controls/PageNavigator.ascx" TagName="PageNavigator" TagPrefix="uc1" %>
 <%@ Import NameSpace="System.Data"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>无标题页</title>
-    <link href="../../sysImages/default/css/css.css" rel="stylesheet" type="text/css" />
+<head >
+    <title>日志管理</title>
+    <link href="../../sysImages/<% Response.Write(Hg.Config.UIConfig.CssPath());%>/css/css.css" rel="stylesheet" type="text/css" />
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Prototype.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/Public.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../configuration/js/RiQi.js"></script>
@@ -29,7 +28,7 @@
     <form id="form1" runat="server">
     <table style="width: 100%;" cellpadding="0" cellspacing="0" border="0" class="toptable">
         <tr>
-            <td class="style2" style="padding-left: 15px;">
+            <td class="sysmain_navi" style="padding-left: 15px;">
                 日志管理
             </td>
             <td class="topnavichar">
