@@ -58,11 +58,13 @@ public partial class manage_news_Site_List : Hg.Web.UI.ManagePage
                                 site.Recyle(id);
                                 pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "成功将选中站群及其所属栏目、专题、新闻放入回收站中！");
                                 Response.Write("成功将选中站群及其所属栏目、专题、新闻放入回收站中！");
+                                DataListBind(1);
                                 break;
                             case "DeleteSite":
                                 site.Delete(id);
                                 pd.SaveUserAdminLogs(0, 1, UserName, "站群管理", "成功将选中站群及其所属栏目、专题、新闻删除！");
                                 Response.Write("成功将选中站群及其所属栏目、专题、新闻删除!");
+                                DataListBind(1);
                                 break;
                         }
                     }

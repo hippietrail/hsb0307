@@ -1525,47 +1525,7 @@ public partial class manage_news_News_add : Hg.Web.UI.ManagePage
 			uc.SubNewsTF = 0;
 			if (SubTF.Checked)
 			{
-				String OldNewsId = Hg.Common.Input.Filter(Request.Form["NewsIDs"]);
-				String[] Arr_OldNewsId;
-				String getNewsTitle, NewsRow, NewsTable, titleCSS;
-				#region 判断数据是否合法
-				if (OldNewsId == null)
-				{
-					PageError("不规则新闻为空", "");
-				}
-				#endregion 判断数据是否合法
-
-				#region 获取普通新闻数据
-				if (OldNewsId != null)
-				{
-					OldNewsId = OldNewsId.Replace(" ", "");
-					Arr_OldNewsId = OldNewsId.Split(',');
-				}
-				else
-				{
-					OldNewsId = "";
-					Arr_OldNewsId = OldNewsId.Split(new char[] { ',' });
-				}
-				string unNewsids = NewsID;
-				if (EditAction == "Edit")
-				{
-					rd.delSubID(unNewsids);
-				}
-				iNewsTF = "<li>同时添加子新闻成功</li>";
-				uc.SubNewsTF = 1;
-				for (int For_Num = 0; For_Num < Arr_OldNewsId.Length; For_Num++)
-				{
-					getNewsTitle = Request.Form["getNewsTitle" + Arr_OldNewsId[For_Num]];
-					NewsRow = Request.Form["Row" + Arr_OldNewsId[For_Num]];
-					NewsTable = Request.Form["NewsTable" + Arr_OldNewsId[For_Num]];
-					titleCSS = Request.Form["titleCSS" + Arr_OldNewsId[For_Num]];
-					if (rd.Add_SubNews(unNewsids, Arr_OldNewsId[For_Num], NewsRow, getNewsTitle, NewsTable, SiteID, titleCSS) == 0)
-					{
-						iNewsTF = "<li>子新闻添加因为某个原因操作失败</li>";
-						uc.SubNewsTF = 0;
-					}
-				}
-				#endregion 获取普通新闻数据结束
+                iNewsTF= ProcessSubNews(uc);
 			}
 			uc.SavePath = pd.getResultPage(SavePath, getDateTime, ClassID, "");
 			string tmID = "{@自动编号ID}";
@@ -1673,7 +1633,67 @@ public partial class manage_news_News_add : Hg.Web.UI.ManagePage
 		}
 
 	}
+    /// <summary>
+    /// 处理子新闻
+    /// </summary>
+    public string ProcessSubNews(Hg.Model.NewsContent uc)
+    {
+        uc.SubNewsTF = 0;
+        String OldNewsId = Hg.Common.Input.Filter(Request.Form["NewsIDs"]);
+        String[] Arr_OldNewsId;
+        String getNewsTitle, NewsRow, NewsTable, titleCSS;
+        #region 判断数据是否合法
+        if (OldNewsId == null)
+        {
+            //PageError("不规则新闻为空", "");
+            //数据库中该新闻的子新闻删除掉
+            try
+            {
+                if (EditAction.Value == "Edit")
+                {
+                    rd.delSubID(NewsID.Value);
+                }
+                return "<li>不规则新闻为空</li>";
+            }
+            catch
+            {}
+        }
+        #endregion 判断数据是否合法
 
+        #region 获取普通新闻数据
+        if (OldNewsId != null)
+        {
+            OldNewsId = OldNewsId.Replace(" ", "");
+            Arr_OldNewsId = OldNewsId.Split(',');
+        }
+        else
+        {
+            OldNewsId = "";
+            Arr_OldNewsId = OldNewsId.Split(new char[] { ',' });
+        }
+        string unNewsids = NewsID.Value;
+        if (EditAction.Value == "Edit")
+        {
+            rd.delSubID(unNewsids);
+        }
+        string iNewsTF = "<li>同时添加子新闻成功</li>";
+        uc.SubNewsTF = 1;
+        for (int For_Num = 0; For_Num < Arr_OldNewsId.Length; For_Num++)
+        {
+            getNewsTitle = Request.Form["getNewsTitle" + Arr_OldNewsId[For_Num]];
+            NewsRow = Request.Form["Row" + Arr_OldNewsId[For_Num]];
+            NewsTable = Request.Form["NewsTable" + Arr_OldNewsId[For_Num]];
+            titleCSS = Request.Form["titleCSS" + Arr_OldNewsId[For_Num]];
+            if (rd.Add_SubNews(unNewsids, Arr_OldNewsId[For_Num], NewsRow, getNewsTitle, NewsTable, SiteID, titleCSS) == 0)
+            {
+                iNewsTF = "<li>子新闻添加因为某个原因操作失败</li>";
+                uc.SubNewsTF = 0;
+            }
+        }
+        #endregion 获取普通新闻数据结束
+        return iNewsTF;
+ 
+    }
 	/// <summary>
 	/// 远程存图
 	/// </summary>

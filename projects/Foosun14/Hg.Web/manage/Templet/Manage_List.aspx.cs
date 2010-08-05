@@ -303,6 +303,9 @@ public partial class manage_Templet_Manage_List : Hg.Web.UI.ManagePage
             case ".gif":
                 value = true;
                 break;
+            case ".js":
+                value = true;
+                break;
 			default:
 				value = false;
 				break;

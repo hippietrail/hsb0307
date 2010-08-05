@@ -1000,17 +1000,17 @@ namespace Hg.Publish
                         {
                             if (i == 0)
                             {
-                                str_unRule += naviStr + "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">" + dt.Rows[i]["NewsTitle"].ToString() + "</a>&nbsp;\r";
+                                str_unRule += naviStr + "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">[" + dt.Rows[i]["NewsTitle"].ToString() + "]</a>&nbsp;\r";
                             }
                             else
                             {
-                                str_unRule += "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">" + dt.Rows[i]["NewsTitle"].ToString() + "</a>&nbsp;\r";
+                                str_unRule += "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">[" + dt.Rows[i]["NewsTitle"].ToString() + "]</a>&nbsp;\r";
                             }
                         }
                         else
                         {
                             int_rows1 = int_rows1 + 1;
-                            str_unRule += "<br />" + naviStr + "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">" + dt.Rows[i]["NewsTitle"].ToString() + "</a>&nbsp;\r";
+                            str_unRule += "<br />" + naviStr + "<a href=\"" + str_NewsUrl + "\" target=\"_blank\" " + str_titleCss + ">[" + dt.Rows[i]["NewsTitle"].ToString() + "]</a>&nbsp;\r";
                         }
                     }
                     rd.Close();

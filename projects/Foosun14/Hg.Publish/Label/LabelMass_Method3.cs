@@ -937,22 +937,41 @@ namespace Hg.Publish
             IList<PubSpecialInfo> list = CommonData.NewsSpecial;
             if (list != null)
             {
+                int listCount = 0;
                 foreach (PubSpecialInfo info in list)
                 {
+                    listCount++;
                     if (Specialid == "-1" && info.SiteID == this.Param_SiteID)//显示所有
                     {
                         string str_url = getSpeacilURL(info.isDelPoint.ToString(), info.SpecialID, info.SavePath, info.saveDirPath, info.FileName, info.FileEXName);
-                        str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        if (listCount == 1)
+                        {
+                            str_Navi += "   <li>" + "" + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        }
+                        else
+                        {
+                            str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+ 
+                        }
                         str_Navi += "   " + info.SpecialCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
                     else if (info.ParentID == Specialid && info.SiteID == this.Param_SiteID)
                     {
                         string str_url = getSpeacilURL(info.isDelPoint.ToString(), info.SpecialID, info.SavePath, info.saveDirPath, info.FileName, info.FileEXName);
-                        str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        if (listCount == 1)
+                        {
+                            str_Navi += "   <li>" + "" + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+                        }
+                        else
+                        {
+                            str_Navi += "   <li>" + str_NaviChar + " <a href=\"" + str_url + "\" " + str_NaviCSS + ">" + newLine;
+ 
+                        }
                         str_Navi += "   " + info.SpecialCName + "</a>";
                         str_Navi += "   </li>" + newLine;
                     }
+                    
                 }
             }
             return str_Navi;

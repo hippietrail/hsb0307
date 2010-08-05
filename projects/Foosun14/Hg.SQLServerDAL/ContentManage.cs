@@ -1090,7 +1090,7 @@ namespace Hg.SQLServerDAL
 			string Sql = "insert into " + Pre + "News_Class(";
             Sql += "ClassID,ClassCName,ClassEName,ClassCNameRefer,URLaddress,ParentID,IsURL,OrderID,NaviShowtf,NaviContent,NaviPIC,MetaKeywords,MetaDescript,SiteID,isLock,isRecyle,NaviPosition,Domain,ClassTemplet,ReadNewsTemplet,SavePath,SaveClassframe,Checkint,ClassSaveRule,ClassIndexRule,NewsSavePath,NewsFileRule,PicDirPath,ContentPicTF,ContentPICurl,ContentPicSize,InHitoryDay,isDelPoint,Gpoint,iPoint,GroupNumber,FileName,isComm,NewsPosition,Defineworkey,CreatTime,isPage,ModelID,isunHTML,DataLib";
 			Sql += ") values (";
-            Sql += "@ClassID,@ClassCName,@ClassEName,@ClassCNameRefer,@URLaddress,@ParentID,@IsURL,@OrderID,@NaviShowtf,@NaviContent,@NaviPIC,@MetaKeywords,@MetaDescript,@SiteID,@isLock,@isRecyle,@NaviPosition,@Domain,@ClassTemplet,@ReadNewsTemplet,@SavePath,@SaveClassframe,@Checkint,@ClassSaveRule,@ClassIndexRule,@NewsSavePath,@NewsFileRule,@PicDirPath,@ContentPicTF,@ContentPICurl,@ContentPicSize,@InHitoryDay,@isDelPoint,@Gpoint,@iPoint,@GroupNumber,@FileName,@isComm,@NewsPosition,@Defineworkey,@CreatTime,0,'0',0,'" + Pre + "News')";
+            Sql += "@ClassID,@ClassCName,@ClassEName,@ClassCNameRefer,@URLaddress,@ParentID,@IsURL,@OrderID,@NaviShowtf,@NaviContent,@NaviPIC,@MetaKeywords,@MetaDescript,@SiteID,@isLock,@isRecyle,@NaviPosition,@Domain,@ClassTemplet,@ReadNewsTemplet,@SavePath,@SaveClassframe,@Checkint,@ClassSaveRule,@ClassIndexRule,@NewsSavePath,@NewsFileRule,@PicDirPath,@ContentPicTF,@ContentPICurl,@ContentPicSize,@InHitoryDay,@isDelPoint,@Gpoint,@iPoint,@GroupNumber,@FileName,@isComm,@NewsPosition,@Defineworkey,@CreatTime,0,'0',0,@DataLib)";
 			SqlParameter[] parm = insertClassContentParameters(uc);
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
 		}
@@ -1115,7 +1115,7 @@ namespace Hg.SQLServerDAL
 		/// <returns></returns>
 		private SqlParameter[] insertClassContentParameters(Hg.Model.ClassContent uc)
 		{
-			SqlParameter[] param = new SqlParameter[42];
+			SqlParameter[] param = new SqlParameter[43];
 			param[0] = new SqlParameter("@Defineworkey", SqlDbType.NVarChar, 255);
 			param[0].Value = uc.Defineworkey;
 			param[1] = new SqlParameter("@ClassID", SqlDbType.NVarChar, 12);
@@ -1199,6 +1199,9 @@ namespace Hg.SQLServerDAL
 
             param[41] = new SqlParameter("@ClassCNameRefer", SqlDbType.NVarChar, 150);
             param[41].Value = uc.ClassCNameRefer;
+            param[42] = new SqlParameter("@DataLib", SqlDbType.NVarChar, 150);
+            param[42].Value = uc.DataLib;
+
 
 			return param;
 		}

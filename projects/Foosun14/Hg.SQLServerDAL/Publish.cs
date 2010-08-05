@@ -25,7 +25,7 @@ namespace Hg.SQLServerDAL
             string Sql = "select Id,ClassID,ClassCName,ClassEName,ParentID,[Domain],IsURL,URLaddress,ClassTemplet,SavePath,SaveClassframe,ClassSaveRule";
             Sql += ",ClassIndexRule,SiteID,NaviPIC,NaviContent,MetaKeywords,MetaDescript,isDelPoint,Gpoint,iPoint,GroupNumber,NaviShowtf,NaviPosition,NewsPosition,isPage, ClassCNameRefer";
             //wjl 2008-07-23 栏目导航问题
-            Sql += " from " + Pre + "news_Class where isRecyle=0 and isLock=0 order by OrderID desc,id desc";
+            Sql += " from " + Pre + "news_Class where isRecyle=0 and isLock=0 and SiteID='" + Hg.Global.Current.SiteID + "' order by OrderID desc,id desc";
             //--wjl>
             IDataReader rd = DbHelper.ExecuteReader(CommandType.Text, Sql, null);
             while (rd.Read())

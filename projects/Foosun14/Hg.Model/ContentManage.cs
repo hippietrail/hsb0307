@@ -50,6 +50,7 @@ namespace Hg.Model
         public int isComm;
         public string Defineworkey;
         public DateTime CreatTime;
+        public string DataLib;
     }
 
     public class PageContent

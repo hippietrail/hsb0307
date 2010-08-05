@@ -20,8 +20,8 @@
             <table border="0" cellpadding="2" class="2" style="width: 100%;">
                 <tr>
                     <td style="width: 30%;">
-                        <a href="http://www.hg.net" target="_blank">
-                            <img src="../sysImages/user/userlogo.gif" border="0" /></a></td>
+                        <%--<a href="http://www.hg.net" target="_blank">
+                            <img src="../sysImages/user/userlogo.gif" border="0" /></a>--%></td>
                     <td style="width: 70%;">
                         此处插入您的广告</td>
                 </tr>
