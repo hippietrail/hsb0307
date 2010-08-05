@@ -129,6 +129,8 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
     protected void UserNewsTable(string Str)
     {
         string _Str = Str;
+        _Str = Hg.Config.DBConfig.TableNamePrefix + "news";
+
         if (SiteID != "0")
         {
             DataTable DtSite = rd.getSiteParam(SiteID);
@@ -136,11 +138,14 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
             {
                 if (DtSite.Rows.Count > 0)
                 {
-                    _Str = DtSite.Rows[0]["DataLib"].ToString().ToUpper();
+                    _Str = DtSite.Rows[0]["DataLib"].ToString();
+                    
+
                 }
                 DtSite.Clear(); DtSite.Dispose();
             }
         }
+        this.DataLib.Value = _Str;
     }
 
     //修改初始化
@@ -443,6 +448,7 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
             }
             int OrderID = int.Parse(this.TOrder.Text);
             string URLaddress = this.TAddress.Text;
+           
             if (IsURL == 1)
             {
                 if (URLaddress.Length < 5)
@@ -573,6 +579,7 @@ public partial class manage_news_Class_add : Hg.Web.UI.ManagePage
             uc.Defineworkey = Defineworkey;
             uc.ClassID = ClassID;
             uc.CreatTime = _Temp_date;
+            uc.DataLib = this.DataLib.Value;
             Hg.Common.Public.saveClassXML(ClassEName);
             if (InterChar == 0)
             {

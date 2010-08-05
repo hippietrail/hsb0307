@@ -1084,7 +1084,7 @@ namespace Hg.AccessDAL
 			string Sql = "insert into " + Pre + "News_Class(";
 			Sql += Database.getParam(parm) + ",isPage,ModelID,isunHTML,DataLib";
 			Sql += ") values (";
-			Sql += "" + Database.getAParam(parm) + ",0,'0',0,'" + Pre + "News')";
+            Sql += "" + Database.getAParam(parm) + ",0,'0',0"+uc.DataLib+")";
 			DbHelper.ExecuteNonQuery(CommandType.Text, Sql, parm);
 		}
 
@@ -1109,7 +1109,7 @@ namespace Hg.AccessDAL
 		/// <returns></returns>
 		private OleDbParameter[] insertClassContentParameters(Hg.Model.ClassContent uc)
 		{
-			OleDbParameter[] param = new OleDbParameter[40];
+			OleDbParameter[] param = new OleDbParameter[41];
 			param[0] = new OleDbParameter("@Defineworkey", OleDbType.VarWChar, 255);
 			param[0].Value = uc.Defineworkey;
 			param[1] = new OleDbParameter("@ClassID", OleDbType.VarWChar, 12);
@@ -1191,6 +1191,10 @@ namespace Hg.AccessDAL
 			param[39] = new OleDbParameter("@CreatTime", OleDbType.Date, 8);
 			param[39].Value = uc.CreatTime;
 
+            param[40] = new OleDbParameter("@ClassCNameRefer", OleDbType.VarChar, 150);
+            param[40].Value = uc.ClassCNameRefer;
+            //param[41] = new OleDbParameter("@DataLib", SqlDbType.VarChar, 150);
+            //param[41].Value = uc.DataLib;
 			return param;
 		}
 

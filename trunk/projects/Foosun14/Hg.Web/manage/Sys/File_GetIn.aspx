@@ -23,7 +23,7 @@
 <table width="98%" border="0" cellspacing="0" cellpadding="5" align="center">
   <tr>
     <td class="reshow">提示：点击目录进入下一级目录<br />
-      注意：同级目录之间的转移请直接填写目的文件夹名称,如(foosun),同级到其下级或是同级间其他文件夹的下级目录之间的转移,填写方式如(foosun\netcms),转移到上级文件夹目录时,填写方式如(..\foosun\netcms)</td>
+      注意：同级目录之间的转移请直接填写目的文件夹名称,如(content),同级到其下级或是同级间其他文件夹的下级目录之间的转移,填写方式如(content\css),转移到上级文件夹目录时,填写方式如(..\content\css)</td>
   </tr>
 </table>
 <br />

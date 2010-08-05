@@ -249,6 +249,7 @@
                  <asp:HiddenField ID="Hidden" runat="server" Value="0" />
                  <asp:HiddenField ID="ClassID" runat="server"/>
                  <asp:HiddenField ID="csHiden" runat="server" />
+                 <asp:HiddenField ID="DataLib" runat="server" />
                  <asp:Button ID="btnClick" runat="server" Text="提交数据" OnClick="btnClick_Click" CssClass="form" />
                  <input type="reset" class="form" value="重新填写" />
              </td>
