@@ -221,3 +221,39 @@ UPDATE fs_api_navi SET
 isActive = 1
 WHERE     (isActive = 0)
 GO
+
+
+
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] ON
+
+INSERT INTO [dbo].[fs_sys_LabelStyle] (
+	[Id],
+	[styleID],
+	[ClassID],
+	[StyleName],
+	[Content],
+	[Description],
+	[CreatTime],
+	[isRecyle],
+	[SiteID]
+)
+	SELECT 60, '709111686266', '793747591275', '音频栏目链接', N'<a target="_blank" href="{#class_Path}">ᦃ ᦊᦻ ᦵᦉᧂ ᦅᧄ ᦺᦑ</a>', '', '08-2-2010 13:26:48.843', 0, '0' UNION
+	SELECT 61, '074208104373', '793747591275', '视频栏目链接', N'<a target="_blank" href="{#class_Path}">ᦃᦱᧁᧈ ᦉᦱᧃ ᦺᦖᧈ ᦅᧄ ᦺᦑ</a>', '', '08-11-2010 13:30:45.250', 0, '0'
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] OFF
+GO
+
+
+UPDATE fs_sys_Label SET Label_Content = '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=442378444275,FS:ClassUrl=1][#FS:StyleID=709111686266][/FS:unLoop]'
+WHERE Id = 145
+GO
+
+
+UPDATE fs_sys_Label SET Label_Content = '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=169134870432,FS:ClassUrl=1][#FS:StyleID=074208104373][/FS:unLoop]'
+WHERE Id = 142
+GO

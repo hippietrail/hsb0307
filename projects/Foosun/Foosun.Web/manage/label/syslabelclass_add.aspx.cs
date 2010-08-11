@@ -59,4 +59,10 @@ public partial class manage_label_syslabelclass_add : Foosun.Web.UI.ManagePage
                 PageError("添加分类失败!", "");
         }
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        string classID = Foosun.Common.Rand.Number(12);
+        ClassContent.Text = classID;
+    }
 }

@@ -884,7 +884,6 @@ A.end:hover {
 {
     display:block;
     height:18px;
-    
     line-height:18px;
     _height:18px;
 }
@@ -892,10 +891,10 @@ A.end:hover {
 .homeVideoLink a
 {
     margin-right:8px; 
-    font-family:ËÎÌו,Verdana,Tahoma; 
-    font-size:9pt; 
+    /*font-family:HGTAIWH,Verdana,Tahoma; */
+    font-size:16pt; 
     position:relative;
-    left:190px;
+    left:6px;
     top:-8px;
     height:18px;
     _height:18px;
@@ -910,11 +909,11 @@ A.end:hover {
 }
 .homeAudioLink a
 {
-    font-family:ËÎÌו,Verdana,Tahoma; 
-    font-size:9pt; 
+    /*font-family:HGTAIWH,Verdana,Tahoma; */
+    font-size:16pt; 
     bottom:2px;
     position:relative;
-    left:90px;
+    left:6px;
     top:2px;
 }
 

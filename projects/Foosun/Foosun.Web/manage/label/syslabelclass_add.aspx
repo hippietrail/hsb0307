@@ -34,8 +34,9 @@
             <asp:Button ID="Button1" runat="server" Text=" ±£ ´æ " CssClass="form" OnClick="Button1_Click" />
             </label>
             <label>
-            <input type="reset" name="UnDo" value=" ÖØ Ìî " class="form" />
-            </label></td>
+            <input type="reset" name="UnDo" value=" ÖØ Ìî " class="form" /></label>
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+                </td>
         </tr>
         </table>      
 
