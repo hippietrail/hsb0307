@@ -39,7 +39,7 @@ sd : function(menus,divs,openClass,closeClass){
 	var _this = this;
 	if(menus.length != divs.length)
 	{
-		//alert("菜单层数量和内容层数量不一�?");
+		//alert("");
 		return false;
 	}				
 	for(var i = 0 ; i < menus.length ; i++)

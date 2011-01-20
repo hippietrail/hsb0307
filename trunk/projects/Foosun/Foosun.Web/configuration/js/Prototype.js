@@ -397,65 +397,69 @@ Object.extend(Array.prototype, Enumerable);
 Array.prototype._reverse = Array.prototype.reverse;
 
 Object.extend(Array.prototype, {
-  _each: function(iterator) {
-    for (var i = 0; i < this.length; i++)
-      iterator(this[i]);
-  },
+    _each: function(iterator) {
+        for (var i = 0; i < this.length; i++)
+            iterator(this[i]);
+    },
 
-  clear: function() {
-    this.length = 0;
-    return this;
-  },
+    clear: function() {
+        this.length = 0;
+        return this;
+    },
 
-  first: function() {
-    return this[0];
-  },
+    first: function() {
+        return this[0];
+    },
 
-  last: function() {
-    return this[this.length - 1];
-  },
+    last: function() {
+        return this[this.length - 1];
+    },
 
-  compact: function() {
-    return this.select(function(value) {
-      return value != undefined || value != null;
-    });
-  },
+    compact: function() {
+        return this.select(function(value) {
+            return value != undefined || value != null;
+        });
+    },
 
-  flatten: function() {
-    return this.inject([], function(array, value) {
-      return array.concat(value.constructor == Array ?
+    flatten: function() {
+        return this.inject([], function(array, value) {
+            return array.concat(value.constructor == Array ?
         value.flatten() : [value]);
-    });
-  },
+        });
+    },
 
-  without: function() {
-    var values = $A(arguments);
-    return this.select(function(value) {
-      return !values.include(value);
-    });
-  },
+    without: function() {
+        var values = $A(arguments);
+        return this.select(function(value) {
+            return !values.include(value);
+        });
+    },
 
-  indexOf: function(object) {
-    for (var i = 0; i < this.length; i++)
-      if (this[i] == object) return i;
-    return -1;
-  },
+    indexOf: function(object) {
+        for (var i = 0; i < this.length; i++)
+            if (this[i] == object) return i;
+        return -1;
+    },
 
-  reverse: function(inline) {
-    return (inline !== false ? this : this.toArray())._reverse();
-  },
+    reverse: function(inline) {
+        return (inline !== false ? this : this.toArray())._reverse();
+    },
 
-  shift: function() {
-    var result = this[0];
-    for (var i = 0; i < this.length - 1; i++)
-      this[i] = this[i + 1];
-    this.length--;
-    return result;
-  },
+    shift: function() {
+        if (this.length == 0)
+            return null;
+        var result = this[0];
+        if (this.length < 2)
+            return result;
+        for (var i = 0; i < this.length - 1; i++)
+            this[i] = this[i + 1];
+        this.length--;
+        return result;
+    },
 
-  inspect: function() {
-    return '[' + this.map(Object.inspect).join(', ') + ']';
-  }
+    inspect: function() {
+        return '[' + this.map(Object.inspect).join(', ') + ']';
+    }
 });
 var Hash = {
   _each: function(iterator) {

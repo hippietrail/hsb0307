@@ -1,122 +1,38 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.DALFactory", "Foosun.DALFactory\Foosun.DALFactory.csproj", "{63D5B865-C045-4FBC-86AC-18E082006408}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.SQLServerDAL", "Foosun.SQLServerDAL\Foosun.SQLServerDAL.csproj", "{783B233A-2516-44BE-9457-0A23949DB407}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{F7309C46-B015-425B-B929-338F90A5B682} = {F7309C46-B015-425B-B929-338F90A5B682}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Common", "Foosun.Common\Foosun.Common.csproj", "{F7309C46-B015-425B-B929-338F90A5B682}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Model", "Foosun.Model\Foosun.Model.csproj", "{5A4717F3-8A33-46E4-B14A-EF382425C64D}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Global", "Foosun.Global\Foosun.Global.csproj", "{A48884A0-3E9C-466C-BB5C-39E68AA884A9}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Publish", "Foosun.Publish\Foosun.Publish.csproj", "{6612F705-1EAE-401B-A530-75EFFF5A93D9}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Web.UI", "Foosun.Web.UI\Foosun.Web.UI.csproj", "{15FBBE5E-FCF5-4A38-9077-FAD9F60F18F7}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Config", "Foosun.Config\Foosun.Config.csproj", "{1327A138-9082-4480-B612-94A1FB4521FE}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Control", "Foosun.Control\Foosun.Control.csproj", "{AFE6BB30-E0BD-4744-B0F4-23BC8EFCBFD8}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.DALProfile", "Foosun.DALProfile\Foosun.DALProfile.csproj", "{A5B7599F-F0F5-44BF-8C8F-2E964B04C6BD}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.PlugIn", "Foosun.PlugIn\Foosun.PlugIn.csproj", "{7988E626-1FB5-460D-87AE-CA61625CFAFB}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Install", "Foosun.Install\Foosun.Install.csproj", "{452962D5-8118-488B-AF7E-C02575017D31}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.Web", "Foosun.Web\Foosun.Web.csproj", "{9883C8B0-6C65-4096-826E-F12FBDA20F11}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.AccessDAL", "Foosun.AccessDAL\Foosun.AccessDAL.csproj", "{B9DE552A-D7EB-4D57-A017-EA25FC047B5C}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosun.CMS", "Foosun.CMS\Foosun.CMS.csproj", "{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WebFastCMSSetup", "WebFastCMSSetup\WebFastCMSSetup.vdproj", "{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{8606D8A5-0155-4595-8066-32913851B1CC}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupClassLibrary", "SetupClassLibrary\SetupClassLibrary.csproj", "{06F1269C-B290-47BD-A4DE-920135DC6B20}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HGCMSSetup", "HGCMSSetup\HGCMSSetup.vdproj", "{8598025B-BB83-4A9D-AA1D-150259C7CC0C}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -266,32 +182,6 @@ Global
 		{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EC6D37DD-CEF4-4E7E-A4E2-E90829A1B3F5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Debug|.NET.ActiveCfg = Debug
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Debug|Any CPU.ActiveCfg = Debug
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Release|.NET.ActiveCfg = Release
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Release|Any CPU.ActiveCfg = Release
-		{4C0FB882-CD15-4FEB-A7AD-79ABDE4FDE84}.Release|Mixed Platforms.ActiveCfg = Release
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Debug|.NET.ActiveCfg = Debug
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Debug|Any CPU.ActiveCfg = Debug
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Release|.NET.ActiveCfg = Release
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Release|Any CPU.ActiveCfg = Release
-		{8606D8A5-0155-4595-8066-32913851B1CC}.Release|Mixed Platforms.ActiveCfg = Release
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Debug|.NET.ActiveCfg = Debug|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|.NET.ActiveCfg = Release|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06F1269C-B290-47BD-A4DE-920135DC6B20}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|.NET.ActiveCfg = Debug
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|Any CPU.ActiveCfg = Debug
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Release|.NET.ActiveCfg = Release
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Release|Any CPU.ActiveCfg = Release
-		{8598025B-BB83-4A9D-AA1D-150259C7CC0C}.Release|Mixed Platforms.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

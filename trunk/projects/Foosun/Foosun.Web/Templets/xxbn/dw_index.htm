@@ -9,244 +9,233 @@
     <meta name="description" content="傣文网，我国第一个傣文网站，是西双版纳报社建设的以新闻和傣族文化为主的大型网上信息发布平台，是宣传西双版纳地区风土人情、民族文化的主力媒体之一。" />
     <meta name="keywords" content="西双版纳,西双版纳傣文网,傣文网,傣文,西傣文,傣族,泼水节,泼水,西双版纳新闻,西双版纳风景,翡翠,赌石,原始森林,新闻中心,时政,社会,地方,地方领导,经济,能源环保,跨国公司,新农村,教育,科技,文化,饮食,娱乐,旅游,资料,图片" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <link href="/Templets/xxbn/css/nav.css" type="text/css" rel="stylesheet" />
-    <link href="/Templets/xxbn/css/green.css" type="text/css" rel="stylesheet" />
+    <link href="/Templets/xxbn/css/nav20101107.css" type="text/css" rel="stylesheet" />
+    <link href="/Templets/xxbn/css/green20101107.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" language="javascript" src="/Templets/xxbn/css/main.js"></script>
      <style type="text/css">
         .ui-widget-content {	border: #dddddd 1px solid;		background:  #eeeeee repeat-x 50% top;		color: #333333;	}
         .ui-widget-header {	border: #e78f08 1px solid; width:20px;		FONT-WEIGHT: bold;	BACKGROUND:  #f6a828 repeat-x 50% 50%;	COLOR: #ffffff;	}
-		@font-face 
-{
-	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot");
-}
+		@font-face { 	font-family:HGTAIWH; src:url("/fonts/HG_Tai_WB_IE.eot"); }
     </style>
 
     <script type="text/javascript">
-                window.onload = function() {
-                var SDmodel = new scrollDoor();
-                   // SDmodel.sd(["m01"], ["c01"], "active", "normal");
-                    //SDmodel.sd(["m01", "m02", "m03", "m04"], ["c01", "c02", "c03", "c04"], "active", "normal");
-                    SDmodel.sd(["mm01", "mm02"], ["cc01", "cc02"], "active", "normal");
-                    SDmodel.sd(["mmm01", "mmm02"], ["ccc01", "ccc02"], "active", "normal");
-                   // SDmodel.sd(["mmmm01"],["cccc01"], "active", "normal");
-                   
-                   BodyOnLoad();
-               }
+        window.onload = function() {
+            var SDmodel = new scrollDoor();
+            // SDmodel.sd(["m01"], ["c01"], "active", "normal");
+            //SDmodel.sd(["m01", "m02", "m03", "m04"], ["c01", "c02", "c03", "c04"], "active", "normal");
+            //SDmodel.sd(["mm01", "mm02"], ["cc01", "cc02"], "active", "normal");
+            SDmodel.sd(["mmm01", "mmm02"], ["ccc01", "ccc02"], "active", "normal");
+            // SDmodel.sd(["mmmm01"],["cccc01"], "active", "normal");
+            SDmodel.sd(["c01", "c02", "c03", "c04", "c05"], ["col1", "col2", "col3", "col4", "col5"], "odd", "even");
+
+            BodyOnLoad();
+        }
     </script>
-    <script type="text/javascript" src="/Templets/xxbn/css/jquery.js"></script>
+    <script type="text/javascript" src="/Templets/xxbn/css/jquery.min.js"></script>
     <script type="text/javascript" src="/Templets/xxbn/css/newdai.js"></script>
     <script type="text/javascript" src="/Templets/xxbn/css/olddai.js"></script>
     <script type="text/javascript" src="/Templets/xxbn/css/imedai.js"></script>
     <script type="text/javascript">
-    function isArabicNumerals(el) {
-        if (el.style.backgroundPosition == '0px 15px') {
-            el.style.backgroundPosition = '0px 30px';
-            IME.arabicNumerals = false;
+        function isArabicNumerals(el) {
+            if (el.style.backgroundPosition == '0px 15px') {
+                el.style.backgroundPosition = '0px 30px';
+                IME.arabicNumerals = false;
+            }
+            else {
+                el.style.backgroundPosition = '0px 15px';
+                IME.arabicNumerals = true;
+            }
         }
-        else {
-            el.style.backgroundPosition = '0px 15px';
-            IME.arabicNumerals = true;
+
+        function isNewDai(el) {
+            if (el.style.backgroundPosition == '0px 45px') {
+                el.style.backgroundPosition = '0px 60px';
+                CodeList = CodeListNew;
+                CodeList = CodeList.split(',');
+            }
+            else {
+                el.style.backgroundPosition = '0px 45px';
+                CodeList = CodeListOld;
+                CodeList = CodeList.split(',');
+            }
         }
-    }
 
-    function isNewDai(el) {
-        if (el.style.backgroundPosition == '0px 45px') {
-            el.style.backgroundPosition = '0px 60px';
-            CodeList = CodeListNew;
-            CodeList = CodeList.split(',');
-        }
-        else {
-            el.style.backgroundPosition = '0px 45px';
-            CodeList = CodeListOld;
-            CodeList = CodeList.split(',');
-        }
-    }
+        jQuery(document).ready(function() {
+            jQuery(document).click(function() {
+                jQuery("#ime").css("display", "none");
+                jQuery("#imeFrame").css("display", "none");
+            });
+            jQuery.each(jQuery("input[type=text]", jQuery("#searchRegion")), function() {
+                jQuery(this).css("font-family", "HGTAIWH");
+                jQuery(this).css("font-size", "12pt");
+                jQuery(this).keydown(function() {
+                    var e = window.event || e;
+                    var srcElement = e.srcElement || e.target;
+                    e.element = srcElement;
 
-    jQuery(document).ready(function() {
-        jQuery(document).click(function() { 
-            jQuery("#ime").css("display", "none"); 
-            jQuery("#imeFrame").css("display", "none"); 
-        });
-        jQuery.each(jQuery("input[type=text]", jQuery("#searchRegion")), function() {
-            jQuery(this).css("font-family", "HGTAIWH");
-            jQuery(this).css("font-size", "12pt");
-            jQuery(this).keydown(function() {
-                var e = window.event || e;
-                var srcElement = e.srcElement || e.target;
-                e.element = srcElement;
-
-                if (e.keyCode == 8) {
-                    this.focus();
-                }
-                var obj = ImeKeyDown(e);
-
-                jQuery("#inputChar").html(IME.Comp.value);
-                jQuery("#candicated").html(IME.Cand.value);
-
-                if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
-                    jQuery("#ime").css("display", "none");
-                    jQuery("#imeFrame").css("display", "none");
-                    IME.arabicNumerals = true;
-                }
-                this.value = IME.InputArea.value; //IME.InputArea.value;
-
-                return obj;
-            }).keypress(function() {
-                var obj = ImeKeyPress(event);
-
-                jQuery("#inputChar").html(IME.Comp.value);
-                jQuery("#candicated").html(IME.Cand.value);
-
-                if (IME.Cand.value.length > 0) {
-                    jQuery("#ime").css("display", "block");
-                    jQuery("#ime").css("top", (jQuery(this).offset().top + 20) + "px");
-                    jQuery("#ime").css("left", jQuery(this).offset().left);
-                    
-                    var imePosition = jQuery("#ime").position();
-                    jQuery("#imeFrame").css("top", imePosition.top);
-                    jQuery("#imeFrame").css("left", imePosition.left);
-                    jQuery("#imeFrame").css("height", jQuery("#ime").height());
-                    jQuery("#imeFrame").css("width", jQuery("#ime").width());
-
-                    appendTrace(IME.Cand.value.length);
-                    appendTrace(jQuery("#candicated").height() + " w:" + jQuery("#candicated").width());
-
-                    if (IME.Cand.value.length > 55) {
-                        jQuery("#draggable").css("height", "96px");
+                    if (e.keyCode == 8) {
+                        this.focus();
                     }
-                    else {
-                        jQuery("#draggable").css("height", "70px");
-                    }
-                    IME.arabicNumerals = false;
-                }
-                else {
+                    var obj = ImeKeyDown(e);
+
+                    jQuery("#inputChar").html(IME.Comp.value);
+                    jQuery("#candicated").html(IME.Cand.value);
+
                     if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
                         jQuery("#ime").css("display", "none");
-                        
                         jQuery("#imeFrame").css("display", "none");
-                        
                         IME.arabicNumerals = true;
                     }
-                }
+                    this.value = IME.InputArea.value; //IME.InputArea.value;
 
-                return obj;
-            }).keyup(function() {
-                var obj = ImeKeyUp(event);
-                return obj;
-            }).blur(function() {
-                IME.InputArea.value = "";
-                IME.Comp.value = "";
-                IME.Cand.value = "";
+                    return obj;
+                }).keypress(function() {
+                    var obj = ImeKeyPress(event);
 
-                jQuery("#inputChar").html("");
-                jQuery("#candicated").html("");
-            }).focus(function() {
-                IME.InputArea.value = this.value;
+                    jQuery("#inputChar").html(IME.Comp.value);
+                    jQuery("#candicated").html(IME.Cand.value);
+
+                    if (IME.Cand.value.length > 0) {
+                        jQuery("#ime").css("display", "block");
+                        jQuery("#ime").css("top", (jQuery(this).offset().top + 20) + "px");
+                        jQuery("#ime").css("left", jQuery(this).offset().left);
+
+                        var imePosition = jQuery("#ime").position();
+                        jQuery("#imeFrame").css("top", imePosition.top);
+                        jQuery("#imeFrame").css("left", imePosition.left);
+                        jQuery("#imeFrame").css("height", jQuery("#ime").height());
+                        jQuery("#imeFrame").css("width", jQuery("#ime").width());
+
+                        appendTrace(IME.Cand.value.length);
+                        appendTrace(jQuery("#candicated").height() + " w:" + jQuery("#candicated").width());
+
+                        if (IME.Cand.value.length > 55) {
+                            jQuery("#draggable").css("height", "96px");
+                        }
+                        else {
+                            jQuery("#draggable").css("height", "70px");
+                        }
+                        IME.arabicNumerals = false;
+                    }
+                    else {
+                        if (IME.Cand.value.length == 0 && IME.Comp.value.length == 0) {
+                            jQuery("#ime").css("display", "none");
+
+                            jQuery("#imeFrame").css("display", "none");
+
+                            IME.arabicNumerals = true;
+                        }
+                    }
+
+                    return obj;
+                }).keyup(function() {
+                    var obj = ImeKeyUp(event);
+                    return obj;
+                }).blur(function() {
+                    IME.InputArea.value = "";
+                    IME.Comp.value = "";
+                    IME.Cand.value = "";
+
+                    jQuery("#inputChar").html("");
+                    jQuery("#candicated").html("");
+                }).focus(function() {
+                    IME.InputArea.value = this.value;
+                });
             });
         });
-    });
 </script>
 </head>
 <body>
     <div class="wrap">
-        <!--<div class="top">
-            <img src="/files/siteFiles/topbar.jpg" style="width:980px;" alt="" />
-        </div>-->
+
         <img src="/files/siteFiles/topbar.jpg" style=" display:block; width:980px;" alt="" />
         <div class="menu">
-           <div class="menu_border"></div>
+           <!--<div class="menu_border"></div>-->
            <div class="logobn">
-           <img src="/files/siteFiles/logo.gif" style="width:230px; height:122px; margin:2px; border:0px; color:White;" alt="" usemap="#Map1" />
-           <map id="Map1" > 
-                <area shape="rect" coords="0,0,230,61"  href="http://www.dw12.com"  alt="新傣文网站"/> 
-                <area shape="rect" coords="0,61,230,122" href="http://www.tai12.com" target="_blank" alt="老傣文网站"/><!-- http://www.tai12.com -->
+               <div class="fl"><a href="/"><img src="/files/siteFiles/logo_newdai.jpg" style="margin:2px; border:0px;" alt=""  /></a></div>
+               <div class="fl">
+                   <img src="/files/siteFiles/logo_olddai.jpg" style="border:0px; color:White; " alt="" usemap="#Map1" />
+                   <map id="Map1" > 
+                <area shape="rect" coords="0,0,200,40"  href="http://www.bndaily.com"  alt="西双版纳新闻网"/> 
+                <area shape="rect" coords="0,40,200,80" href="http://www.xsbnnews.com" target="_blank" alt="西双版纳英文网"/><!-- http://www.tai12.com -->
            </map> 
-
+               </div>
            </div>
-           <div class="columns">
+           
+           
+           <div class="homecolumns">
             <ul >
-                 {FS_xxbn_栏目导航}
+            
+   <li> <a href="/html/xxbn/bywh/index.html"  target="_blank">   ᦩᦱᧄ ᦣᦴᧉ ᦞᧆ ᦒ ᦓ ᦒᧄ</a>   </li>
+   <li> <a href="/html/xxbn/mzzj/index.html"  target="_blank">   ᦉᦱ ᦉ ᦓᦱ ᦘᦱ ᦉᦱ</a>   </li>
+   <li> <a href="/html/xxbn/whsh/index.html"  target="_blank">    ᦩᦱᧄ ᦣᦴᧉ ᦃᦱᧁᧉ ᦊᦴᧈ ᦣᦱᧁ ᦂᦲᧃ</a>   </li>
             </ul>
            </div>
-           <div class="menu_border"></div>
+           
+           <div class="right">
+           <div class="sitelink"><a href="http://www.xsbnnews.com">www.dw12.com</a></div>
+        <div id="currentDay" class="day"></div>
+           </div>
+           
+           <!--<div class="menu_border"></div>-->
            <div class="clear"></div>
         </div>  
     </div>
     
     <div class="wrap">
-        <div class="gonggao"><marquee scrollamount="6" width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();">{FS_xxbn_滚动新闻}</marquee></div>
-       <!-- <li><span class="time">{#DateShort}</span><a title="{#uTitle}" target="_blank" href="{#URL}">{#Title}</a></li> <ul>{FS_xxbn_滚动新闻}</ul>        -->
-        <div class="area">
+    
+       <!-- <div class="gonggao"><marquee scrollamount="6" width="940px"  height="32px"  onmousemove="this.stop();" onmouseout="this.start();">{FS_xxbn_滚动新闻}</marquee></div>-->
+        
+        
+<!--site list-->
+<div class="sitenav">
+    <div class="left">
+        <span><a href="http://www.dw12.com/"><img  src="/files/images/newdai.jpg" alt="new tai" height="30" /></a></span><span>|</span>
+        <span><a href="http://www.tai12.com/"><img  src="/files/images/olddai.jpg" alt="old tai" height="30"/></a></span><span>|</span>
+        <span><a href="http://www.bndaily.com/" style="color:#fff; margin-bottom:3px;">Chinese</a></span><span>|</span>    
+        <span><a href="http://www.xsbnnews.com/" style="color:#fff;">English</a></span><span>|</span>
+        
+        <span><a href="#">Thai</a></span><span>|</span><!--Thai-->
+    </div>
+    <div class="right searchBox" id="searchRegion">
+    
+      <input id="idQuickSearch" type="text" class="text" name="q" size="30" maxlength="30" /><input type="image" class="imageBtn" alt="" title="" value="" src="/files/images/search.gif" onclick="javascript:SearchGo85310(this.previousSibling);" />
+
+    </div>
+    <!--<div class="clear"></div>-->
+</div>
+
+
+<div id="ime" style="z-index:9999; display:none; position:absolute; left:1px; top:1px; width:260px; background-color:#81F781;">
+      <div class="ui-widget-content" id="draggable">
+          <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
+          <span id="inputChar" style="font-size:12pt;"></span>
+          <div id="candicated" style="font-family:HGTAIWH; font-size:16pt;background-color:#81F781;"></div>
+      </div>
+  </div>
+  
+<div style="display:none;">
+	<input id="Comp" name="Comp" type="text"  />
+	<textarea id="Cand"  name="Cand" cols="20" rows="11"  style="font-family:HGTAIWH; font-size:16pt;" ></textarea>
+	<textarea id="InputArea"  name="InputArea" cols="20" rows="11" style="font-family:HGTAIWH; font-size:16pt;"></textarea>
+	<input id="EnglishMode" name="EnglishMode" type="checkbox"  />
+    <input id="FullShape" name="FullShape" type="checkbox"  />
+    <input id="AutoUp" name="AutoUp" type="checkbox" checked="checked"  />
+    <textarea id="TraceConsole"  name="TraceConsole" cols="20" rows="11" ></textarea>
+</div>
+
+<div class="area">
               <div class="area_left">
                     <div class="myflash">
                         {FS_xxbn_幻灯新闻}
                     </div>
                      <div class="daohang" style="margin-top:8px;">
-                         <div class="lightRedTitle">
-                                <div class="title_left">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ</div>
-                          </div>
-                         <div class="search">
-                         
-  <div id="ime" style="z-index:9999; display:none; position:absolute; left:1px; top:1px;">
-      <div class="ui-widget-content" id="draggable">
-          <span class="ui-widget-header" id="dragAnchor" >&nbsp;&nbsp;</span>
-          <span id="inputChar" style="font-size:12pt;"></span>
-          <div id="candicated" style="font-family:HGTAIWH; font-size:16pt;"></div>
-      </div>
-  </div>
-                               <div class="search_menu" id="searchRegion">
-                                    <div  style="margin-top:6px; padding:0px;">
-                                    <form id="Search_Form" name="Search_Form" method="get" action="/search.html" style="margin:0px; padding:0px;">
-                                       <span style="font-size:18px; color:Black;">ᦵᦟᦲᧅ ᦠᦱ ᦃᦱᧁᧈ ᦉᦱᧃ:</span>
-                                    <input name="tags" type="text" maxlength="20" class="search_text" onkeydown="javascript:if(event.keyCode==13){SearchGo85310(this.form);}" style="width: 180px ; height:18px;" /> 
-                                    <input name="buttongo" type="button" value="ᦌᦸᦰ ᦠᦱ" onclick="javascript:SearchGo85310(this.form);" style="width: 66px; font-family:HGTAIWH;" />
-                                    
-<div style=" display:none;">
-	<input id="Comp" name="Comp" type="text"  />
-	<textarea id="Cand"  name="Cand" cols="20" rows="11"  style="font-family:HGTAIWH; font-size:16pt;" ></textarea>
-	<textarea id="InputArea"  name="InputArea" cols="20" rows="11" style="font-family:HGTAIWH; font-size:16pt;"></textarea>
-	<input id="EnglishMode" name="EnglishMode" type="checkbox"  />英文(Ctrl)OnFocus="IME.InputArea.focus()"
-    <input id="FullShape" name="FullShape" type="checkbox"  />全形字符(F12)OnFocus="IME.InputArea.focus()"
-    <input id="AutoUp" name="AutoUp" type="checkbox" checked="checked"  />自动上字OnFocus="IME.InputArea.focus()"　翻页 PageUp/PageDown  
-    <textarea id="TraceConsole"  name="TraceConsole" cols="20" rows="11" ></textarea>
-</div>
-                                    
-                                    </form> 
-                                    </div>
-                                    <!-- Search   Google   --> 
-                                    <!--
-                                    <div  style="margin:0px; padding:0px;">
-                                      <form   method="GET"   action="http://www.google.com/search" style="margin:0px; padding:0px;"> 
-                                      <input type="text"   name="q" id="q"   style="width: 176px"   maxlength="20"  class="search_text"  value="" />     
-                                      <input type="submit"   name="btnG"   value="Google" style="width:66px" /> 
-                                      <input type="hidden"   name="hl"   value="zh-CN" />
-                                      <input type="hidden"   name="ie"   value="utf-8" /> 
-                                      <input type="hidden" name="oe" value="utf-8" />
-                                      <input type="hidden" name="domains" value="www.dw123.com" />
-                                      <input type="hidden" name="sitesearch" value="www.dw123.com" />
-                                      </form>
-                                    </div>   
-                                    -->   
-                                    <script language="javascript" type="text/javascript">
-                                    function SearchGo85310(obj)
-                                    {
-                                    if(obj.tags.value.length<1||obj.tags.value.length>20)
-                                    {
-                                     alert('搜索最小长度1字符，最大长度20字符。');return false;
-                                    }
-                                    if(obj.tags.value=='')
-                                    {
-                                     alert('请填写关键字');return false;
-                                    }
-                                    
-                                     window.open('/Search.html?type=news&tags='+escape(obj.tags.value)+'','','');
-                                    }
-                                    </script>
-                                    <!--<div><a href="http://www.bndaily.com/" target="_blank" style="font-family:宋体,Verdana,Tahoma; font-size:9pt; position:relative; left:260px; ">进入西双版纳新闻网</a></div>-->
-                               </div>
-                           </div>
+                         <div><a href="/files/fonts/HuaGuangDaiFont.msi"><img src="/files/images/new_font.jpg" alt="傣文字库下载" /> </a></div>
+                         <div><a href="/files/fonts/HUaGuangModern-TraditionDaiIME_Keyboard_beta.exe"><img src="/files/images/new_ime.jpg" alt="傣文输入法下载" /> </a></div>
+                         <div><a href="/files/fonts/HUaGuangModern-TraditionDaiIME_Voice_beta.exe">ᦞᦲᧉ ᦌᦱ ᦵᦎᧅ ᦷᦎ ᦺᦑ</a></div>
                      </div>   
               </div>
+              
               <div class="area_center">
                     <div class="today">
                          <div class="today1">
@@ -267,48 +256,81 @@
         </div>
      </div>
      
-    <div class="wrap">
-        <div class="centerPicture floatLeft" style="width:130px;  _height:207px;" >
-           <a href="{FS_栏目Url}" style="border:none 0px white;"><img src="/files/siteFiles/audio2.gif" alt="" style="border:none 0px white; margin-left:2px; margin-top:2px;"  /></a><span class="homeAudioLink">{FS_首页音频链接}</span>
-        </div>
-        <div class="centerPicture floatLeft" style=" margin-left:6px; width:588px; _height:207px;" >
-           {FS_中部flash}
-        </div>
-        <div class="centerPicture floatLeft" style="margin-left:4px; width:243px;_height:200px;" >
-           {FS_视频新闻栏目头条}<span class="homeVideoLink" style=" margin:0px;">{FS_首页视频链接}</span>
-        </div>
-    </div>
+    <div  id="columns" class="wrap">
+        <div class="colnav left bs">
     
-    <div class="wrap">
-         <div class="area">
-            <div class="area_left1">
-                <div class="title">
-                    <div class="title_left"> ᦆᧇ ᦵᦵᦋᧃ ᦂᦱᧃᧉ ᦀᦱᧃᧈ</div><!--阅读排行-->
-                </div>
-                <div class="paihang"><ul>
-                    {FS_xxbn_首页点击排行}</ul></div>
-            </div>
-           
-            <div class="area_main">
-                <div class="title">
-                    <div class="title2">
-                        <ul>
-                            <li class="active" id="mm01">ᦆᦱᧁᧈ ᦂᦱᧃ ᦵᦵᦀᧁᧈ ᦟᦸᧈ</li>
-                            <li id="mm02"> ᦩᦱᧄ ᦣᦴᧉ ᦞᧆ ᦒ ᦓ ᦒᧄ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tupian" id="cc01">
-                   <ul>{FS_旅游资讯图文}</ul>
-                </div>
-                <div class="tupian" id="cc02" style="display: none">
-                   <ul>{FS_贝叶文化图文}</ul>
-                </div>
-            </div>
-            
-            <div class="clear"></div>
+         <div style="text-align:center; margin-top:5px;" ><a id="A4"  href="{FS_音频栏目Url}"><img src="/files/images/audio.jpg" alt="" /></a></div>
+         <div class="nav-link c-inv clearfix">
+         <a id="c01"  href="{FS_社会新闻Url}" style="color:#fff;" class="even">ᦃᦱᧁᧈ ᦉᦱᧃ ᦂᦱ ᦟᦰ ᦢᦱᧃᧉ ᦵᦙᦲᧂ</a>      <!--society-->
+         <a id="c02"  href="{FS_东盟瞭望Url} " style="color:#fff;" class="odd" >ᦆᦱᧁᧈ ᦑᦸᧂᦰ ᦷᦑᧂᧈ ᦙᦳᧂᧉ</a>  <!--ASEAN-->
+         <a id="c03"  href="{FS_贝叶文化Url}" style="color:#fff;"  class="even">ᦩᦱᧄ ᦣᦴᧉ ᦞᧆ ᦒ ᦓ ᦒᧄ</a>        <!--Pattra-->
+         <a id="c04"  href="{FS_旅游资讯Url}" style="color:#fff;" class="odd" >ᦆᦱᧁᧈ ᦂᦱᧃ ᦵᦵᦀᧁᧈ ᦟᦸᧈ</a>    <!--Travel-->
+         <a id="c05"  href="{FS_科技动态Url}" style="color:#fff;" class="even">ᦃᦱᧁᧈ ᦉᦱᧃ ᦞᦲᧉ ᦌᦱ</a> <!--technique-->
+         </div>
+    </div>
+    <div class="colnews ml6px left bs">
+    
+        <div id="col1" class="newslist">
+        <div class="tit ml5px">{FS_社会新闻最新1条}</div>
+        <ul id="ul1">
+            {FS_社会新闻列表9条长标题}
+        </ul>
+        </div>
+        
+        <div id="col2" class="newslist" style="display:none;">
+        <div class="tit ml5px">{FS_东盟瞭望最新1条}</div>
+        <ul id="ul2">
+            {FS_东盟瞭望列表9条长标题}
+        </ul>
+        </div>
+        
+        <div id="col3" class="newslist" style="display:none;">
+        <div class="tit ml5px">{FS_贝叶文化最新1条}</div>
+        <ul id="ul3">
+            {FS_贝叶文化列表9条长标题} 
+        </ul>
+        </div>
+        
+        <div id="col4" class="newslist" style="display:none;">
+        <div class="tit ml5px">{FS_旅游资讯最新1条}</div>
+        <ul id="ul4">
+            {FS_旅游资讯列表9条长标题} 
+        </ul>
+        </div>
+        
+        <div id="col5" class="newslist" style="display:none;">
+        <div class="tit ml5px">{FS_科技动态最新1条}</div>
+        <ul id="ul5">
+            {FS_科技动态列表9条长标题} 
+        </ul>
+        </div>
+    
+    </div>
+    <div class="video ml6px right bs">
+        <div class="pic" style=" text-align:center;" ><a id="aVideo"  href="{FS_视频栏目Url}"><img src="/files/images/video.jpg" alt="" /></a></div>
+        <div class="list">
+            <ul>
+            {FS_视频列表2条}
+            <!--
+                <li><a title='台风"鲇鱼"先发威 大梅沙现彩虹' href="http://www.xsbnnews.com/9/99/9996535e07258a7b/Blog/03e/761c72.html" target="_blank">Windows Phone Radio Episode 5 Let’s ring in the</A> </LI>
+                <li><A title="这一年，他们感动了南方" href="http://www.xsbnnews.com/d/ba/dba132f6ab6a3e3d/Blog/0aa/cce9fe.html?t=1287672122" target="_blank">Worldwide Excitement for Windows Phone Over the</A></LI>
+                -->
+            </ul>
         </div>
     </div>
+    </div>
+   
+    
+<div class="wrap photo">
+    <ul id="photoList">
+    {FS_固定图片报道最新1条}
+    {FS_固定专题报道最新1条}
+    {FS_固定企业展示最新1条}
+    {FS_固定摄影天地最新1条}
+    {FS_固定文化生活最新1条}
+    </ul>
+</div>
+   
     
     <div class="wrap">
         <div class="area">
@@ -392,15 +414,15 @@
         </div>
     </div>
 <script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
        </script>
        <script type="text/javascript">
-	try {
-	var pageTracker = _gat._getTracker("UA-8272227-1");
-	pageTracker._initData();
-	pageTracker._trackPageview();
-	} catch(err) {}
+           try {
+               var pageTracker = _gat._getTracker("UA-8272227-1");
+               pageTracker._initData();
+               pageTracker._trackPageview();
+           } catch (err) { }
 </script>
 <iframe
     id="imeFrame"
@@ -409,5 +431,35 @@
     frameborder="0"
     style="z-index:999; position:absolute; top:0px; left:0px; display:none;">
 </iframe>
+
+<script src="/files/js/tabs.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function() {
+        //var focuspic_tab = new NTES.ui.Slide(NTES("#fimgmenu > li"), NTES("#fimgcnt > li"), "on", "mouseover", 6000); //
+        var SDmodel = new scrollDoor();
+        SDmodel.sd(["c01", "c02", "c03", "c04", "c05"], ["col1", "col2", "col3", "col4", "col5"], "odd", "even");
+
+        jQuery("#photoList li:nth-child(1)").css("margin-left", "0px");
+    });
+
+
+
+
+    //<![CDATA[
+    function SearchGo85310(obj) {
+        if (obj.value.length < 1 || obj.value.length > 20) {
+            alert('搜索最小长度1字符，最大长度20字符。'); return false;
+        }
+        if (obj.value == '') {
+            alert('请填写关键字'); return false;
+        }
+
+        window.open('/Search.html?type=news&tags=' + escape(obj.value) + '', '', '');
+    }
+    //]]>
+</script> 
+
 </body>
 </html>

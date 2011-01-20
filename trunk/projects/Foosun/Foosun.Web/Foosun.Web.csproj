@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9883C8B0-6C65-4096-826E-F12FBDA20F11}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -21,6 +21,11 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -4574,13 +4579,169 @@
     <Content Include="Templets\xxbn\Images\green\redtitle.gif" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\js\imedai.js" />
+    <Content Include="files\js\imgslider.js" />
+    <Content Include="files\js\jquery\jquery.easing.1.3.js" />
+    <Content Include="files\js\jquery\jquery.galleryview-1.1.js" />
+    <Content Include="files\js\jquery\jquery.jcarousel.min.js" />
+    <Content Include="files\js\jquery\jquery.timers-1.1.2.js" />
+    <Content Include="files\js\jquery\skins\tango\next-horizontal.png" />
+    <Content Include="files\js\jquery\skins\tango\prev-horizontal.png" />
+    <Content Include="files\js\jquery\skins\tango\skin.css" />
+    <Content Include="files\js\jquery\themes\dark\next.gif" />
+    <Content Include="files\js\jquery\themes\dark\panel-nav-next.gif" />
+    <Content Include="files\js\jquery\themes\dark\panel-nav-prev.gif" />
+    <Content Include="files\js\jquery\themes\dark\prev.gif" />
+    <Content Include="files\js\jquery\themes\light\next.gif" />
+    <Content Include="files\js\jquery\themes\light\next.png" />
+    <Content Include="files\js\jquery\themes\light\panel-nav-next.gif" />
+    <Content Include="files\js\jquery\themes\light\panel-nav-prev.gif" />
+    <Content Include="files\js\jquery\themes\light\pointer.gif" />
+    <Content Include="files\js\jquery\themes\light\pointer.png" />
+    <Content Include="files\js\jquery\themes\light\prev.gif" />
+    <Content Include="files\js\jquery\themes\light\prev.png" />
+    <Content Include="files\js\newdai.js" />
+    <Content Include="files\js\olddai.js" />
+    <Content Include="files\js\scrolldoor.js" />
+    <Content Include="files\theme\20101115\common.css" />
+    <Content Include="files\theme\20101115\content.css" />
+    <Content Include="files\theme\20101115\images\bg_show_bar.gif" />
+    <Content Include="files\theme\20101115\images\browntitle.gif" />
+    <Content Include="files\theme\20101115\images\col1.jpg" />
+    <Content Include="files\theme\20101115\images\col2.jpg" />
+    <Content Include="files\theme\20101115\images\dot-line.gif" />
+    <Content Include="files\theme\20101115\images\i5.gif" />
+    <Content Include="files\theme\20101115\images\ico_num.gif" />
+    <Content Include="files\theme\20101115\images\music.gif" />
+    <Content Include="files\theme\20101115\images\point_show.gif" />
+    <Content Include="files\theme\20101115\images\rank.gif" />
+    <Content Include="files\theme\20101115\images\search_bg.gif" />
+    <Content Include="files\theme\20101115\images\sitenav_bg.gif" />
+    <Content Include="files\theme\20101115\main.css" />
+    <Content Include="files\js\imgrotation.js" />
+    <Content Include="files\js\jquery\jquery.min.js" />
+    <Content Include="files\js\slider.js" />
+    <Content Include="files\js\tabs.js" />
     <Content Include="files\siteFiles\audio2.gif" />
+    <Content Include="files\siteFiles\logo.jpg" />
+    <Content Include="files\siteFiles\logo_newdai.jpg" />
+    <Content Include="files\siteFiles\logo_olddai.jpg" />
     <Content Include="files\TempletPictures\middle.swf" />
+    <Content Include="files\theme\1\en20101020.css" />
+    <Content Include="files\theme\1\images\0001.jpg" />
+    <Content Include="files\theme\1\images\arr.gif" />
+    <Content Include="files\theme\1\images\arr_ocity.gif" />
+    <Content Include="files\theme\1\images\arr_sub.gif" />
+    <Content Include="files\theme\1\images\bg.jpg" />
+    <Content Include="files\theme\1\images\bg_clumb_bottom.gif" />
+    <Content Include="files\theme\1\images\bg_clumb_bottom300.gif" />
+    <Content Include="files\theme\1\images\bg_clumb_main.gif" />
+    <Content Include="files\theme\1\images\bg_clumb_main300.gif" />
+    <Content Include="files\theme\1\images\bg_clumb_other.gif" />
+    <Content Include="files\theme\1\images\bg_content05.gif" />
+    <Content Include="files\theme\1\images\bg_cur_border.gif" />
+    <Content Include="files\theme\1\images\bg_foot.gif" />
+    <Content Include="files\theme\1\images\bg_hader_time.gif" />
+    <Content Include="files\theme\1\images\bg_n.png" />
+    <Content Include="files\theme\1\images\bg_search_input.gif" />
+    <Content Include="files\theme\1\images\bg_show_bar.gif" />
+    <Content Include="files\theme\1\images\bnnews.jpg" />
+    <Content Include="files\theme\1\images\btn_free_send.gif" />
+    <Content Include="files\theme\1\images\button_search.gif" />
+    <Content Include="files\theme\1\images\clumb_bottom.gif" />
+    <Content Include="files\theme\1\images\clumb_top_red.gif" />
+    <Content Include="files\theme\1\images\col-even.gif" />
+    <Content Include="files\theme\1\images\col-odd.gif" />
+    <Content Include="files\theme\1\images\col-odd1.gif" />
+    <Content Include="files\theme\1\images\col1.jpg" />
+    <Content Include="files\theme\1\images\col2.jpg" />
+    <Content Include="files\theme\1\images\coner-b.gif" />
+    <Content Include="files\theme\1\images\coner_bg.gif" />
+    <Content Include="files\theme\1\images\corner.gif" />
+    <Content Include="files\theme\1\images\cur_tf_bg_btn.gif" />
+    <Content Include="files\theme\1\images\cur_tf_bg_top.gif" />
+    <Content Include="files\theme\1\images\cur_tf_ico_user.gif" />
+    <Content Include="files\theme\1\images\dot-line.gif" />
+    <Content Include="files\theme\1\images\flv_num.png" />
+    <Content Include="files\theme\1\images\Fmnd.gif" />
+    <Content Include="files\theme\1\images\Fmnd_btn.gif" />
+    <Content Include="files\theme\1\images\funqie.gif" />
+    <Content Include="files\theme\1\images\gsprite_20101018.png" />
+    <Content Include="files\theme\1\images\hot.gif" />
+    <Content Include="files\theme\1\images\i5.gif" />
+    <Content Include="files\theme\1\images\ico_action.gif" />
+    <Content Include="files\theme\1\images\ico_arr.gif" />
+    <Content Include="files\theme\1\images\ico_info.gif" />
+    <Content Include="files\theme\1\images\ico_num.gif" />
+    <Content Include="files\theme\1\images\ico_type.gif" />
+    <Content Include="files\theme\1\images\ico_user.gif" />
+    <Content Include="files\theme\1\images\ico_video.jpg" />
+    <Content Include="files\theme\1\images\ico_video_list.png" />
+    <Content Include="files\theme\1\images\left_clumb.gif" />
+    <Content Include="files\theme\1\images\left_clumb01.gif" />
+    <Content Include="files\theme\1\images\left_clumb02.gif" />
+    <Content Include="files\theme\1\images\left_clumb03.gif" />
+    <Content Include="files\theme\1\images\left_clumb_ad.gif" />
+    <Content Include="files\theme\1\images\left_info.gif" />
+    <Content Include="files\theme\1\images\left_nav.gif" />
+    <Content Include="files\theme\1\images\line_dash.gif" />
+    <Content Include="files\theme\1\images\line_dashed.gif" />
+    <Content Include="files\theme\1\images\line_dash_gr.gif" />
+    <Content Include="files\theme\1\images\line_dash_gray.gif" />
+    <Content Include="files\theme\1\images\line_dash_red.gif" />
+    <Content Include="files\theme\1\images\line_left_duble.gif" />
+    <Content Include="files\theme\1\images\logo.png" />
+    <Content Include="files\theme\1\images\logo_foot.gif" />
+    <Content Include="files\theme\1\images\map_nav.gif" />
+    <Content Include="files\theme\1\images\map_nav.png" />
+    <Content Include="files\theme\1\images\music.gif" />
+    <Content Include="files\theme\1\images\nav_line.png" />
+    <Content Include="files\theme\1\images\point.gif" />
+    <Content Include="files\theme\1\images\point_show.gif" />
+    <Content Include="files\theme\1\images\point_topad.gif" />
+    <Content Include="files\theme\1\images\scramble_site.gif" />
+    <Content Include="files\theme\1\images\search_bg.gif" />
+    <Content Include="files\theme\1\images\sitenav_bg.gif" />
+    <Content Include="files\theme\1\images\sitenav_bg.png" />
+    <Content Include="files\theme\1\images\sitenav_bg2.gif" />
+    <Content Include="files\theme\1\images\site_topten.gif" />
+    <Content Include="files\theme\1\images\switcher.gif" />
+    <Content Include="files\theme\1\images\tabs.gif" />
+    <Content Include="files\theme\1\images\tabs3.gif" />
+    <Content Include="files\theme\1\images\tabs_bg.gif" />
+    <Content Include="files\theme\1\images\tabs_bg_b.gif" />
+    <Content Include="files\theme\1\images\tabs_left.gif" />
+    <Content Include="files\theme\1\images\tabs_left2010.gif" />
+    <Content Include="files\theme\1\images\tabs_red.gif" />
+    <Content Include="files\theme\1\images\topten_site.gif" />
+    <Content Include="files\theme\1\images\topten_tab.gif" />
+    <Content Include="files\theme\1\images\video_icon.gif" />
+    <Content Include="files\theme\1\page20101022.css" />
+    <Content Include="HTMLPage2.htm" />
+    <Content Include="Templets\20101115\T_about.htm" />
+    <Content Include="Templets\20101115\T_audio.htm" />
+    <Content Include="focus.swf" />
+    <Content Include="HTMLPage1.htm" />
+    <Content Include="log.txt" />
     <Content Include="manage\index.aspx" />
+    <Content Include="rmb_05.jpg" />
+    <Content Include="swfobjectopt.js" />
+    <Content Include="Templets\20101115\T_column.htm" />
+    <Content Include="Templets\20101115\T_Content.htm" />
+    <Content Include="Templets\20101115\T_game.htm" />
+    <Content Include="Templets\20101115\T_index.htm" />
+    <Content Include="Templets\20101115\T_nationality.htm" />
+    <Content Include="Templets\20101115\T_video.htm" />
     <Content Include="Templets\js\imedai.js" />
     <Content Include="Templets\js\jquery.js" />
     <Content Include="Templets\js\newdai.js" />
     <Content Include="Templets\js\olddai.js" />
+    <Content Include="Templets\newdai1\T_About.htm" />
+    <Content Include="Templets\newdai1\T_Audio.htm" />
+    <Content Include="Templets\newdai1\T_Column.htm" />
+    <Content Include="Templets\newdai1\T_Content.htm" />
+    <Content Include="Templets\newdai1\T_index.htm" />
+    <Content Include="Templets\newdai1\T_Video.htm" />
     <Content Include="Templets\people_xxbn\about.htm" />
     <Content Include="Templets\people_xxbn\aticle.htm" />
     <Content Include="Templets\people_xxbn\audio.htm" />
@@ -4620,14 +4781,27 @@
     <Content Include="Templets\people_xxbn\js\swfobject.js" />
     <Content Include="Templets\people_xxbn\list.htm" />
     <Content Include="Templets\people_xxbn\video.htm" />
+    <Content Include="Templets\T_game.htm" />
+    <Content Include="Templets\xxbn\css\green20101107.css" />
+    <Content Include="Templets\xxbn\css\images\bg_show_bar.gif" />
+    <Content Include="Templets\xxbn\css\images\col1.jpg" />
+    <Content Include="Templets\xxbn\css\images\col2.jpg" />
+    <Content Include="Templets\xxbn\css\images\i5.gif" />
+    <Content Include="Templets\xxbn\css\images\search_bg.gif" />
+    <Content Include="Templets\xxbn\css\images\sitenav_bg.gif" />
+    <Content Include="Templets\xxbn\css\jquery.min.js" />
+    <Content Include="Templets\xxbn\css\nav20101107.css" />
     <Content Include="Templets\xxbn\dw_VideoContent.htm" />
     <Content Include="Templets\xxbn\Images\green\bodyBg.jpg" />
     <Content Include="Templets\xxbn\Images\green\LightRedTitle.gif" />
     <Content Include="Templets\xxbn\Images\marqueePink.gif" />
+    <Content Include="Templets\xxbn\T_game.htm" />
+    <Content Include="Templets\xxbn\T_index.htm" />
     <Content Include="user\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="database\update.sql" />
+    <None Include="files\theme\1\images\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalNewspaper\" />
@@ -4711,7 +4885,7 @@
     <Folder Include="xml\wap\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -4725,10 +4899,14 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5295</DevelopmentServerPort>
+          <DevelopmentServerPort>7621</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/Foosun.Web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

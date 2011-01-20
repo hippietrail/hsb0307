@@ -12,7 +12,7 @@ A.navbar:link {
    margin:0px; padding:0px;   MARGIN: 0px  auto; WIDTH: 980px; height:1px;  overflow:hidden;
    /* BACKGROUND: url(/Templets/xxbn/Images/menu_bg_border.gif) repeat-x 0px 0px; */
 }
-.menu ul { margin:0px; padding:0px; width:740px;}
+.menu ul { margin:0px; padding:0px; }
 
 .menu ul  LI {
 	 FLOAT: left; WIDTH: 246px;  HEIGHT: 32px; BACKGROUND: url(/Templets/xxbn/Images/listPre.gif) no-repeat 10px 5px; list-style-type:none; line-height:32px;}

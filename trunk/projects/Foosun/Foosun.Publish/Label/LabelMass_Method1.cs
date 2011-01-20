@@ -32,6 +32,9 @@ namespace Foosun.Publish
             string str_SubNews = this.GetParamValue("FS:SubNews");
             string str_ClassID = this.GetParamValue("FS:ClassID");
             string str_SpecialID = this.GetParamValue("FS:SpecialID");
+
+            string str_StartIndex = this.GetParamValue("FS:StartIndex");
+
             int n_Cols;
             if (!int.TryParse(this.GetParamValue("FS:Cols"), out n_Cols))
                 n_Cols = 1;
@@ -59,6 +62,7 @@ namespace Foosun.Publish
             string str_HashNaviContent = this.GetParamValue("FS:HashNaviContent");
             string str_More = this.GetParamValue("FS:More");
             string SqlFields = " [ID],ClassID";
+
             string SqlCondition = DBConfig.TableNamePrefix + "News Where [isRecyle]=0 And [isLock]=0 And [SiteID]='" + this.Param_SiteID + "'";
             if (str_HashNaviContent != null)
             {
@@ -71,7 +75,9 @@ namespace Foosun.Publish
                     SqlCondition += " and NaviContent<>''";
                 }
             }
-            ///判断新闻类型
+
+            #region 判断新闻类型
+
             switch (str_NewsType)
             {
                 case "Last":
@@ -79,18 +85,26 @@ namespace Foosun.Publish
                 case "Rec":
                     SqlCondition += " And NewsProperty like '1%'";
                     break;
+                case "MarQuee":
+                    SqlCondition += " And NewsProperty like '__1%'";
+                    break;
                 case "Hot":
                     SqlCondition += " And NewsProperty like '____1%'";
                     break;
+                case "Slide":
+                    SqlCondition += " And NewsProperty LIKE '______1%'";
+                    break;
                 case "Tnews":
+                case "Headline":
                     SqlCondition += " And NewsProperty like '________1%'";
                     break;
                 case "ANN":
                     SqlCondition += " And NewsProperty like '__________1%'";
                     break;
-                case "MarQuee":
-                    SqlCondition += " And NewsProperty like '__1%'";
+                case "Splendid":
+                    SqlCondition += " And NewsProperty like '______________1'";
                     break;
+                
                 case "Special":
                     if (str_SpecialID != null)
                     {
@@ -124,7 +138,7 @@ namespace Foosun.Publish
                     break;
             }
 
-            
+            #endregion
 
             //-------判断是否调用图片
             if (str_isPic == "true")
@@ -365,7 +379,11 @@ namespace Foosun.Publish
             //}
             #endregion
             string ClassURLs = string.Empty;
-            for (i = 0; i < dtcount; i++)
+
+            int startIndex = String.IsNullOrEmpty(str_StartIndex) ? 0 : Int32.Parse(str_StartIndex);
+
+
+            for (i = startIndex; i < dtcount; i++)
             {
                 IDataReader dc = CommonData.DalPublish.GetsClassInfo(dt.Rows[i]["ClassID"].ToString());
                 if (dc.Read())
