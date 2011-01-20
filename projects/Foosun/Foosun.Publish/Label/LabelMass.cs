@@ -16,7 +16,8 @@ namespace Foosun.Publish
             List, GroupMember, ConstrNews, NewUser, TopUser, UserLogin, OtherJS, statJS, surveyJS, adJS, sysJS,
             freeJS, LastComm, TopNews, RSS, SpeicalNaviRead, SpecialNavi, ClassNaviRead, ClassNavi, SiteNavi, Metakey, MetaDesc, Frindlink,
             History, CorrNews, Sitemap, NorFilt, FlashFilt, Stat, Search, Position, PageTitle, unRule, ReadNews, ClassList, TodayPic, TodayWord, MultimediaHeadline, HistoryIndex, HotTag, CopyRight,
-            ChannelList, ChannelClassList, ChannelContent, ChannelSearch, ChannelRSS, ChannelFlash
+            ChannelList, ChannelClassList, ChannelContent, ChannelSearch, ChannelRSS, ChannelFlash,
+            ReadClass
         };
         #region ±êÇ©²ÎÊý
         /// <summary>
@@ -260,6 +261,7 @@ namespace Foosun.Publish
                 case EnumLabelType.HistoryIndex: return this.Analyse_HistoryIndex();
                 case EnumLabelType.CopyRight: return this.Analyse_CopyRight();
                 case EnumLabelType.Frindlink: return this.Analyse_FrindList();
+                case EnumLabelType.ReadClass: return this.Analyse_ReadClass();
                 default:
                     return string.Empty;
             }

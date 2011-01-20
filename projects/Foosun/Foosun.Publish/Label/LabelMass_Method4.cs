@@ -1449,7 +1449,7 @@ namespace Foosun.Publish
                                     str_tailAdStr += "<table border=\"0\" cellspacing=\"2\" cellpadding=\"2\" align=\"" + postAlign + "\">" + newLine;
                                     str_tailAdStr += "<tr>" + newLine;
                                     str_tailAdStr += "<td>" + newLine;
-                                    str_tailAdStr += "<embed src=\"" + CommonData.SiteDomain + "/FlvPlayer.swf?id=" + ContentPicURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" height=\"" + heighSTR + "\" width=\"" + widthSTR + "\" autostart=\"true\"></embed>" + newLine;
+                                    str_tailAdStr += "<embed src=\"" + CommonData.SiteDomain + "/FlvPlayer.swf?id=" + ContentPicURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" height=\"" + heighSTR + "\" width=\"" + widthSTR + "\" ></embed>" + newLine; // autostart=\"true\"
                                     str_tailAdStr += "</td>" + newLine;
                                     str_tailAdStr += "</tr>" + newLine;
                                     str_tailAdStr += "</table>" + newLine;
@@ -2162,7 +2162,7 @@ namespace Foosun.Publish
                                 }
                                 if (str_BigCSS != null)
                                     classbigCssstr = " class=\"" + str_BigCSS + "\"";
-                                twstr += "<div style=\"width:100%;text-align:center;\"><a href=\"" + getNewsURL1(dt.Rows[i]) + "\"" + classbigCssstr + ">" + getNewstitleStyle(dt.Rows[i], 1, gstr_TitleNumer_1) + "</a></div>";
+                                twstr += "<div class=\"todayWord\"><a href=\"" + getNewsURL1(dt.Rows[i]) + "\"" + classbigCssstr + ">" + getNewstitleStyle(dt.Rows[i], 1, gstr_TitleNumer_1) + "</a></div>";
                             }
                         }
                         else
@@ -2799,5 +2799,158 @@ namespace Foosun.Publish
             rd.Close();
             return Nci;
         }
+
+
+        /// <summary>
+        /// 读取栏目信息,陈仕欣于2008-4-1添加此方法
+        /// </summary>
+        /// <returns></returns>
+        public string Analyse_ReadClass()
+        {
+            string str_ClassID = this.GetParamValue("FS:ClassID");
+
+
+            string classid = "";
+            if (str_ClassID != null)
+            {
+                classid = str_ClassID;
+            }
+            else if (this.Param_CurrentClassID != null)
+            {
+                classid = this.Param_CurrentClassID;
+            }
+
+            string str_Style = string.Empty;
+            // 为什么是 classID为空就什么也不处理？
+            if (classid != "")
+            {
+                str_Style = this.Mass_Inserted;
+
+                string styleids = Regex.Match(str_Style, @"\[\#FS:StyleID=(?<sid>[^\]]+)]", RegexOptions.Compiled).Groups["sid"].Value.Trim();
+                if (styleids != string.Empty)
+                {
+                    str_Style = LabelStyle.GetStyleByID(styleids);
+                }
+                if (str_Style.Trim() == string.Empty)
+                    return string.Empty;
+
+                PubClassInfo info = CommonData.GetClassById(classid);
+
+                if (info != null)
+                {
+
+                    //栏目中文名称--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_Name}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#class_Name}", info.ClassCName);
+                        else
+                            str_Style = str_Style.Replace("{#class_Name}", "");
+                    }
+                    //栏目英文名称--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_EName}") > -1)
+                    {
+                        if (info != null)
+                        {
+                            str_Style = str_Style.Replace("{#class_EName}", info.ClassEName);
+                        }
+                        else
+                        {
+                            str_Style = str_Style.Replace("{#class_EName}", "");
+                        }
+                    }
+                    //栏目编号 陈仕欣于2008-4-1添加对栏目编号的处理
+                    if (str_Style.IndexOf("{#class_ID}") > -1)
+                    {
+                        if (info != null)
+                        {
+                            str_Style = str_Style.Replace("{#class_ID}", info.ClassID);
+                        }
+                        else
+                        {
+                            str_Style = str_Style.Replace("{#class_ID}", "");
+                        }
+                    }
+                    //栏目访问路径--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_Path}") > -1)
+                    {
+                        if (info != null)
+                        {
+                            str_Style = str_Style.Replace("{#class_Path}", getClassURL(info.Domain, info.isDelPoint, info.ClassID, info.SavePath, info.SaveClassframe, info.ClassSaveRule, info.IsURL, info.URLaddress));
+                            //getClassURL(ci.Domain,ci.isDelPoint, ci.ClassID, ci.SavePath, ci.SaveClassframe, ci.ClassSaveRule));
+                        }
+                        else
+                            str_Style = str_Style.Replace("{#class_Path}", "");
+                    }
+                    //栏目信息:导读--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_Navi}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#class_Navi}", info.NaviContent);
+                        else
+                            str_Style = str_Style.Replace("{#class_Navi}", "");
+                    }
+                    //栏目信息:导读图片地址--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_NaviPic}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#class_NaviPic}", info.NaviPIC);
+                        else
+                            str_Style = str_Style.Replace("{#class_NaviPic}", "");
+                    }
+                    //栏目信息:meta关键字--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_Keywords}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#class_Keywords}", info.MetaKeywords);
+                        else
+                            str_Style = str_Style.Replace("{#class_Keywords}", "");
+                    }
+                    //栏目信息:meta描述--------------------------------------------------------------------------------------------------------
+                    if (str_Style.IndexOf("{#class_Descript}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#class_Descript}", info.MetaDescript);
+                        else
+                            str_Style = str_Style.Replace("{#class_Descript}", "");
+                    }
+
+                    //栏目页面导航-------------------------------------
+                    if (str_Style.IndexOf("{#NaviPosition}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#NaviPosition}", info.NaviPosition);
+                        else
+                            str_Style = str_Style.Replace("{#NaviPosition}", "");
+                    }
+
+                    //新闻页面导航-------------------------------------
+                    if (str_Style.IndexOf("{#NewsPosition}") > -1)
+                    {
+                        if (info != null)
+                            str_Style = str_Style.Replace("{#NewsPosition}", info.NewsPosition);
+                        else
+                            str_Style = str_Style.Replace("{#NewsPosition}", "");
+                    }
+
+                    //父栏目-------------------------------------
+                    if (str_Style.IndexOf("{#parentClass_Name}") > -1)
+                    {
+                        if (info != null)
+                        {
+                            PubClassInfo parentInfo = CommonData.GetClassById(info.ParentID);
+                            if (parentInfo != null)
+                                str_Style = str_Style.Replace("{#parentClass_Name}", parentInfo.ClassCName);
+                            else
+                                str_Style = str_Style.Replace("{#parentClass_Name}", "");
+                        }
+                        else
+                            str_Style = str_Style.Replace("{#parentClass_Name}", "");
+                    }
+                }
+            }
+            return str_Style;
+        }
+
     }
 }

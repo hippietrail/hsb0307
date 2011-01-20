@@ -647,7 +647,7 @@ namespace Foosun.Publish
                 }
                 else if (vtype == 2)
                 {
-                    str = "<embed src=\"" + CommonData.SiteDomain +  "/FlvPlayer.swf?id=" + vURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" height=\"" + heightstr + "\" width=\"" + widthstr + "\" autostart=\"true\"></embed>" + newLine;
+                    str = "<embed src=\"" + CommonData.SiteDomain + "/FlvPlayer.swf?id=" + vURL + "\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" height=\"" + heightstr + "\" width=\"" + widthstr + "\" ></embed>" + newLine;//autostart=\"true\"
                 }
                 else if (vtype == 3)
                 {
@@ -1072,5 +1072,65 @@ namespace Foosun.Publish
                 }
             }
         }
+
+        /// <summary>
+        /// 取得栏目访问地址
+        /// </summary>
+        /// <param name="SavePath">栏目保存路径</param>
+        /// <param name="ClassSaveRule">栏目保存规则</param>
+        /// <returns>返回访问地址</returns>
+        protected string getClassURL(string Domain, int isDelPoint, string ClassID, string SavePath, string SaveClassframe, string ClassSaveRule, int IsURL, string URLaddress)
+        {
+            if (IsURL == 1) return URLaddress;
+            string tmstr = "";
+            if (Domain.Length > 5)
+            {
+                if (Common.Public.readparamConfig("ReviewType") == "1")
+                {
+                    tmstr = "/list.aspx?id=" + ClassID;
+                    return CommonData.SiteDomain + tmstr.Replace("//", "/").Replace("//", "/");
+                }
+                else
+                {
+                    if (isDelPoint != 0)
+                    {
+                        tmstr = "/list.aspx?id=" + ClassID;
+                        return CommonData.SiteDomain + tmstr.Replace("//", "/").Replace("//", "/");
+                    }
+                    else
+                    {
+                        tmstr = "/" + ClassSaveRule;
+                        return Domain + tmstr.Replace("//", "/").Replace("//", "/");
+                    }
+                }
+            }
+            else
+            {
+                if (Common.Public.readparamConfig("ReviewType") == "1")
+                {
+                    tmstr = "/list.aspx?id=" + ClassID;
+                }
+                else
+                {
+                    if (isDelPoint != 0)
+                    {
+                        tmstr = "/list.aspx?id=" + ClassID;
+                    }
+                    else
+                    {
+                        //bug修改 周峻平 2008-6-5
+                        if (SavePath != null && !SavePath.Equals(""))
+                            tmstr = "/" + SavePath;
+                        if (SaveClassframe != null && !SaveClassframe.Equals(""))
+                            tmstr += "/" + SaveClassframe;
+                        if (ClassSaveRule != null && !ClassSaveRule.Equals(""))
+                            tmstr += "/" + ClassSaveRule;
+                    }
+                }
+                return CommonData.SiteDomain + tmstr.Replace("//", "/").Replace("//", "/");
+            }
+        }
+
+
     }
 }

@@ -257,3 +257,356 @@ GO
 UPDATE fs_sys_Label SET Label_Content = '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:ClassID=169134870432,FS:ClassUrl=1][#FS:StyleID=074208104373][/FS:unLoop]'
 WHERE Id = 142
 GO
+
+
+
+
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] ON
+
+INSERT INTO [dbo].[fs_sys_LabelStyle] (
+	[Id],
+	[styleID],
+	[ClassID],
+	[StyleName],
+	[Content],
+	[Description],
+	[CreatTime],
+	[isRecyle],
+	[SiteID]
+)
+	
+	SELECT 62, '052375420350', '793747591275', '文字新闻列表中的单条新闻li', '<li><a target="_blank" href="{#URL}">{#Title}</a></li>', '', '11-06-2010 17:22:14.750', 0, '0' UNION
+	SELECT 63, '669377768571', '793747591275', '单条文字新闻', '<a target="_blank" href="{#URL}">{#Title}</a>', '', '11-06-2010 17:24:43.983', 0, '0' UNION
+	SELECT 64, '939152689248', '793747591275', '单条图片新闻', '<li>' + CHAR(13) + CHAR(10) + '<div class="phototitle">{#class_Name}</div>' + CHAR(13) + CHAR(10) + '<div><a target="_blank" href="{#URL}"><img title="{#Title}" alt="{#Title}" src="{#Picture}" /></a></div>' + CHAR(13) + CHAR(10) + '<div class="photodesc"><a target="_blank" href="{#URL}">{#Title}</a></div>' + CHAR(13) + CHAR(10) + '</li>', '', '11-06-2010 21:18:04.627', 0, '0'
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] OFF
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_news_Class] ON
+
+INSERT INTO [dbo].[fs_news_Class] (
+	[Id],
+	[ClassID],
+	[ClassCName],
+	[ClassEName],
+	[ParentID],
+	[IsURL],
+	[OrderID],
+	[URLaddress],
+	[Domain],
+	[ClassTemplet],
+	[ReadNewsTemplet],
+	[SavePath],
+	[SaveClassframe],
+	[Checkint],
+	[ClassSaveRule],
+	[ClassIndexRule],
+	[NewsSavePath],
+	[NewsFileRule],
+	[PicDirPath],
+	[ContentPicTF],
+	[ContentPICurl],
+	[ContentPicSize],
+	[InHitoryDay],
+	[DataLib],
+	[SiteID],
+	[NaviShowtf],
+	[NaviPIC],
+	[NaviContent],
+	[MetaKeywords],
+	[MetaDescript],
+	[isDelPoint],
+	[Gpoint],
+	[iPoint],
+	[GroupNumber],
+	[FileName],
+	[isLock],
+	[isRecyle],
+	[NaviPosition],
+	[NewsPosition],
+	[isComm],
+	[Defineworkey],
+	[CreatTime],
+	[isPage],
+	[PageContent],
+	[ModelID],
+	[isunHTML],
+	[ClassCNameRefer]
+)
+	
+	SELECT 78, '877371801667', N'图片新闻', 'photo', '0', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'photo/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">首页</a> >>  图片新闻 ', '<a href="/">首页</a> >>  <a href="/html/xxbn/photo/index.html">图片新闻</a> >> 正文', 0, '', '11-06-2010 20:56:06.203', 0, NULL, '0', 1, '图片新闻' UNION
+	SELECT 79, '506685532107', N'ᦔᦳᧂᧈ ᦷᦣᧇ ᦵᦵᦕᧈ ᦃᦱᧁᧈ ᦉᦱᧃ', 'Newsphoto', '877371801667', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'newsphoto/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a>  >>  ᦔᦳᧂᧈ ᦷᦣᧇ ᦵᦵᦕᧈ ᦃᦱᧁᧈ ᦉᦱᧃ ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a>  >>  <a href="/html/xxbn/Newsphoto/index.html"> ᦔᦳᧂᧈ ᦷᦣᧇ ᦵᦵᦕᧈ ᦃᦱᧁᧈ ᦉᦱᧃ </a> >> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-06-2010 20:57:42.860', 0, NULL, '0', 0, '图片报道' UNION
+	SELECT 80, '313300675453', N'ᦃᦱᧁᧈ ᦉᦱᧃ ᦋᦸᧂᧈ ᦂᦱᧃ', 'specialreports', '877371801667', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'specialreports/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  ᦃᦱᧁᧈ ᦉᦱᧃ ᦋᦸᧂᧈ ᦂᦱᧃ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>   <a href="/html/xxbn/specialreports/index.html"> ᦃᦱᧁᧈ ᦉᦱᧃ ᦋᦸᧂᧈ ᦂᦱᧃ</a> >> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-06-2010 20:58:37.390', 0, NULL, '0', 0, '专题报道' UNION
+	SELECT 81, '909471200613', N'ᦵᦵᦕᧈ ᦂᦱᧃ ᦌᦲᧈ ᦵᦵᦓᧉ', 'enterprise', '877371801667', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'enterprise/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a>  >>  ᦵᦵᦕᧈ ᦂᦱᧃ ᦌᦲᧈ ᦵᦵᦓᧉ  ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  <a href="/html/xxbn/enterprise/index.html"> ᦵᦵᦕᧈ ᦂᦱᧃ ᦌᦲᧈ ᦵᦵᦓᧉ </a> >> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-06-2010 20:59:21.203', 0, NULL, '0', 0, '企业展示' UNION
+	SELECT 82, '632235781915', N'ᦂᦱᧃ ᦷᦎᧇ ᦔᦳᧂᧈ ᦷᦣᧇ', 'photocircle', '877371801667', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'photocircle/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  ᦂᦱᧃ ᦷᦎᧇ ᦔᦳᧂᧈ ᦷᦣᧇ ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  <a href="/html/xxbn/photocircle/index.html"> ᦂᦱᧃ ᦷᦎᧇ ᦔᦳᧂᧈ ᦷᦣᧇ </a> >> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-06-2010 21:01:22.530', 0, NULL, '0', 0, '摄影天地' UNION
+	SELECT 83, '541449285473', N'ᦩᦱᧄ ᦣᦴᧉ ᦃᦸᧉ ᦊᦴᧈ ᦣᦱᧁ ᦂᦲᧃ', 'culture', '877371801667', 0, 10, '', '', '/Templets/xxbn/dw_list.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'culture/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  ᦩᦱᧄ ᦣᦴᧉ ᦃᦸᧉ ᦊᦴᧈ ᦣᦱᧁ ᦂᦲᧃ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> >>  <a href="/html/xxbn/culture/index.html">   ᦩᦱᧄ ᦣᦴᧉ ᦃᦸᧉ ᦊᦴᧈ ᦣᦱᧁ ᦂᦲᧃ </a> >> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-06-2010 21:02:07.030', 0, NULL, '0', 0, '文化生活'
+
+SET IDENTITY_INSERT [dbo].[fs_news_Class] OFF
+
+
+
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] ON
+
+INSERT INTO [dbo].[fs_sys_Label] (
+	[Id],
+	[LabelID],
+	[ClassID],
+	[Label_Name],
+	[Label_Content],
+	[Description],
+	[CreatTime],
+	[isBack],
+	[isRecyle],
+	[isSys],
+	[SiteID],
+	[isShare]
+)
+	
+	SELECT 216, '370000793310', '882324941476', '{FS_要闻报道最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=803851363923,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-06-2010 18:09:42.470', 0, 0, 0, '0', NULL UNION
+	SELECT 217, '530995926653', '882324941476', '{FS_社会新闻最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=922157719584,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-06-2010 18:10:16.517', 0, 0, 0, '0', NULL UNION
+	SELECT 218, '410731892527', '882324941476', '{FS_东盟瞭望最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=532001601801,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-06-2010 18:10:37.360', 0, 0, 0, '0', NULL UNION
+	SELECT 219, '584790144899', '882324941476', '{FS_科技动态最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=878924867746,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-06-2010 18:10:57.877', 0, 0, 0, '0', NULL UNION
+	SELECT 220, '087247430740', '882324941476', '{FS_农业之窗最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=665030062151,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-06-2010 18:11:20.377', 0, 0, 0, '0', NULL UNION
+	SELECT 221, '199539218513', '882324941476', '{FS_要闻报道列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=803851363923,FS:isDiv=true,FS:TitleNumer=63][#FS:StyleID=052375420350][/FS:Loop]', '', '11-06-2010 18:15:38.187', 0, 0, 0, '0', NULL UNION
+	SELECT 222, '730526346212', '882324941476', '{FS_社会新闻列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=922157719584,FS:isDiv=true,FS:TitleNumer=64][#FS:StyleID=052375420350][/FS:Loop]', '', '11-06-2010 18:16:00.627', 0, 0, 0, '0', NULL UNION
+	SELECT 223, '182185405366', '882324941476', '{FS_东盟瞭望列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=532001601801,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=052375420350][/FS:Loop]', '', '11-06-2010 18:17:27.063', 0, 0, 0, '0', NULL UNION
+	SELECT 224, '655901437567', '882324941476', '{FS_科技动态列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=878924867746,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=052375420350][/FS:Loop]', '', '11-06-2010 18:17:51.030', 0, 0, 0, '0', NULL UNION
+	SELECT 225, '385825963195', '882324941476', '{FS_农业之窗列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=665030062151,FS:isDiv=true,FS:TitleNumer=70][#FS:StyleID=052375420350][/FS:Loop]', '', '11-06-2010 18:18:12.843', 0, 0, 0, '0', NULL UNION
+	SELECT 226, '243549783472', '882324941476', '{FS_固定图片报道最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=506685532107,FS:IsAdver=1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=939152689248][/FS:Loop]', '', '11-06-2010 21:21:52.640', 0, 0, 0, '0', NULL UNION
+	SELECT 227, '781428956434', '882324941476', '{FS_固定专题报道最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=313300675453,FS:IsAdver=1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=939152689248][/FS:Loop]', '', '11-06-2010 21:22:12.640', 0, 0, 0, '0', NULL UNION
+	SELECT 228, '973015180426', '882324941476', '{FS_固定企业展示最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=909471200613,FS:IsAdver=1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=939152689248][/FS:Loop]', '', '11-06-2010 21:22:33.563', 0, 0, 0, '0', NULL UNION
+	SELECT 229, '990222394137', '882324941476', '{FS_固定摄影天地最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=632235781915,FS:IsAdver=1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=939152689248][/FS:Loop]', '', '11-06-2010 21:23:01.233', 0, 0, 0, '0', NULL UNION
+	SELECT 230, '517309567825', '882324941476', '{FS_固定文化生活最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=541449285473,FS:IsAdver=1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=939152689248][/FS:Loop]', '', '11-06-2010 21:23:20.077', 0, 0, 0, '0', NULL UNION
+	SELECT 231, '144498391847', '882324941476', '{FS_音频栏目Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=442378444275]{#class_Path}[/FS:unLoop]', '', '11-07-2010 11:04:06.250', 0, 0, 0, '0', NULL UNION
+	SELECT 232, '594322482355', '882324941476', '{FS_视频栏目Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=169134870432]{#class_Path}[/FS:unLoop]', '', '11-07-2010 11:04:27.000', 0, 0, 0, '0', NULL UNION
+	SELECT 233, '124285567864', '882324941476', '{FS_视频列表2条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=2,FS:NewsType=Last,FS:ClassID=169134870432,FS:IsAdver=1,FS:isSub=true,FS:isDiv=true,FS:TitleNumer=46][#FS:StyleID=052375420350][/FS:Loop]', '', '11-07-2010 11:07:43.703', 0, 0, 0, '0', NULL UNION
+	SELECT 234, '277568996878', '882324941476', '{FS_贝叶文化列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=939459291685,FS:isDiv=true,FS:TitleNumer=64][#FS:StyleID=052375420350][/FS:Loop]', '', '11-07-2010 18:45:45.953', 0, 0, 0, '0', NULL UNION
+	SELECT 235, '915253910144', '882324941476', '{FS_旅游资讯列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=398090726902,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=052375420350][/FS:Loop]', '', '11-07-2010 18:46:44.270', 0, 0, 0, '0', NULL UNION
+	SELECT 236, '364311286996', '882324941476', '{FS_贝叶文化最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=939459291685,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-07-2010 18:47:15.547', 0, 0, 0, '0', NULL UNION
+	SELECT 237, '921371147832', '882324941476', '{FS_旅游资讯最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=398090726902,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-07-2010 18:47:43.170', 0, 0, 0, '0', NULL UNION
+	SELECT 238, '888764639701', '882324941476', '{FS_社会新闻Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=922157719584]{#class_Path}[/FS:unLoop]', '', '11-07-2010 21:20:02.650', 0, 0, 0, '0', NULL UNION
+	SELECT 239, '209976232633', '882324941476', '{FS_东盟瞭望Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=532001601801]{#class_Path}[/FS:unLoop]', '', '11-07-2010 21:20:25.530', 0, 0, 0, '0', NULL UNION
+	SELECT 240, '395644007921', '882324941476', '{FS_贝叶文化Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=939459291685]{#class_Path}[/FS:unLoop]', '', '11-07-2010 21:20:53.513', 0, 0, 0, '0', NULL UNION
+	SELECT 241, '380207689835', '882324941476', '{FS_旅游资讯Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=398090726902]{#class_Path}[/FS:unLoop]', '', '11-07-2010 21:21:15.063', 0, 0, 0, '0', NULL UNION
+	SELECT 242, '443026726496', '882324941476', '{FS_科技动态Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=878924867746]{#class_Path}[/FS:unLoop]', '', '11-07-2010 21:21:37.863', 0, 0, 0, '0', NULL
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
+
+
+
+
+-- 2010-11-22
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] ON
+
+INSERT INTO [dbo].[fs_sys_LabelStyle] (
+	[Id],
+	[styleID],
+	[ClassID],
+	[StyleName],
+	[Content],
+	[Description],
+	[CreatTime],
+	[isRecyle],
+	[SiteID]
+)
+	
+
+
+	SELECT 66, '655936854624', '793747591275', '栏目新闻列表', '<div class="list">' + CHAR(13) + CHAR(10) + '<h4><a target="_blank" href="{#URL}">{#Title}</a></h4>' + CHAR(13) + CHAR(10) + '<span>{#Content}</span></div>', '', '11-17-2010 16:35:43.280', 0, '0' UNION
+	SELECT 67, '706141415769', '793747591275', 'js幻灯之二', '{url:''{#Picture}'',link:''{#URL}'',time:6000,title:''{#Title}'',target:''_blank''},', '', '11-18-2010 18:25:25.843', 0, '0' UNION
+	SELECT 68, '588909948029', '793747591275', '单条图片新闻li', '<li><a target="_blank" href="{#URL}"><img alt="" src="{#Picture}" /></a><br />' + CHAR(13) + CHAR(10) + '<a target="_blank" href="{#URL}">{#Title}</a> </li>', '', '11-22-2010 17:48:45.680', 0, '0'
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_LabelStyle] OFF
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] ON
+
+INSERT INTO [dbo].[fs_sys_Label] (
+	[Id],
+	[LabelID],
+	[ClassID],
+	[Label_Name],
+	[Label_Content],
+	[Description],
+	[CreatTime],
+	[isBack],
+	[isRecyle],
+	[isSys],
+	[SiteID],
+	[isShare]
+)
+	
+		
+	SELECT 243, '773799426185', '882324941476', '{FS_JS幻灯新闻}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=5,FS:NewsType=Slide,FS:ClassID=-1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=599860800470][/FS:Loop]', '', '11-09-2010 11:28:20.563', 0, 0, 0, '0', NULL UNION
+	SELECT 244, '690656385929', '882324941476', '{FS_民族宗教图文8条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=8,FS:NewsType=Last,FS:ClassID=074880008639,FS:Cols=1,FS:Desc=desc,FS:DescType=date,FS:isPic=true,FS:TitleNumer=14][#FS:StyleID=038265472400][/FS:Loop]', '', '11-16-2010 17:07:16.923', 0, 0, 0, '0', NULL UNION
+
+	SELECT 245, '619250842704', '882324941476', '{FS_新闻标题}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews]{#uTitle}[/FS:unLoop]', '', '11-17-2010 11:14:20.093', 0, 0, 0, '0', NULL UNION
+	SELECT 246, '098220862832', '882324941476', N'{FS_新闻来源作者与日期}', N'[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadNews]<span>ᦑᦲᧈ ᦀᦸᧅᧈ ：</span>{#Source} <span>ᦕᦴᧉ ᦵᦵᦎᧄᧉ ：</span>{#Author}<span> ᦔᦲ ᦵᦡᦲᧃ ᦞᧃ ᦍᦱᧄ：</span><span class="normalText">{#DateShort}</span> [/FS:unLoop]', '', '11-17-2010 11:15:48.110', 0, 0, 0, '0', NULL UNION
+	SELECT 247, '944325190313', '882324941476', '{FS_本栏目最新的热点新闻10条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Hot,FS:ClassID=0,FS:isDiv=true,FS:TitleNumer=28][#FS:StyleID=052375420350][/FS:Loop]', '', '11-17-2010 11:30:48.877', 0, 0, 0, '0', NULL UNION
+	SELECT 248, '885688613519', '882324941476', '{FS_本栏目最新的新闻10条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=0,FS:isDiv=true,FS:TitleNumer=33][#FS:StyleID=052375420350][/FS:Loop]', '', '11-17-2010 11:31:15.423', 0, 0, 0, '0', NULL UNION
+	SELECT 249, '549067697025', '882324941476', '{FS_内容页图片列表}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=2,FS:NewsType=list,FS:ClassID=0,FS:isDiv=true,FS:isPic=true][#FS:StyleID=599860800470][/FS:Loop]', '', '11-17-2010 11:42:07.173', 0, 0, 0, '0', NULL UNION
+	SELECT 251, '221727974043', '882324941476', '{FS_栏目导航dai}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ClassNavi,FS:isDiv=true][/FS:unLoop]', '', '11-17-2010 15:38:32.500', 0, 0, 0, '0', NULL UNION
+	SELECT 252, '320370630964', '882324941476', '{FS_栏目新闻导读列表}', '[FS:Loop,FS:SiteID=0,FS:LabelType=ClassList,FS:ListType=News,FS:isSub=false,FS:SubNews=false,FS:Desc=desc,FS:DescType=date,FS:TitleNumer=60,FS:ContentNumber=260,FS:isDiv=true,FS:PageStyle=3$$12$listpager][#FS:StyleID=655936854624][/FS:Loop]', '', '11-17-2010 16:45:08.343', 0, 0, 0, '0', NULL UNION
+	SELECT 253, '485431312088', '882324941476', '{FS_JS幻灯新闻之二}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=5,FS:NewsType=Slide,FS:ClassID=-1,FS:isDiv=true,FS:TitleNumer=30][#FS:StyleID=706141415769][/FS:Loop]', '', '11-18-2010 18:26:50.673', 0, 0, 0, '0', NULL UNION
+	SELECT 254, '524071111021', '882324941476', '{FS_视频列表1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=169134870432,FS:IsAdver=1,FS:isSub=true,FS:isDiv=true,FS:TitleNumer=46][#FS:StyleID=052375420350][/FS:Loop]', '', '11-22-2010 10:02:46.297', 0, 0, 0, '0', NULL UNION
+	SELECT 255, '984540175222', '882324941476', '{FS_新闻视频图文列表2}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:IsAdver=1,FS:NewsType=Last,FS:TitleNumer=16,FS:ClassID=918316733085][#FS:StyleID=588909948029][/FS:Loop]', '', '11-22-2010 17:50:53.190', 0, 0, 0, '0', NULL UNION
+	SELECT 256, '757111984559', '882324941476', '{FS_专题视频图文列表2}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=8,FS:NewsType=Last,FS:TitleNumer=16,FS:IsAdver=1,FS:ClassID=628950861675][#FS:StyleID=588909948029][/FS:Loop]', '', '11-22-2010 17:51:20.853', 0, 0, 0, '0', NULL UNION
+	SELECT 257, '195076214566', '882324941476', '{FS_民族传习馆Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=205641735708]{#class_Path}[/FS:unLoop]', '', '11-23-2010 10:11:14.773', 0, 0, 0, '0', NULL UNION
+	SELECT 258, '726847624846', '882324941476', '{FS_最新新闻列表10条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Last,FS:ClassID=-1,FS:Desc=desc,FS:isDiv=true,FS:TitleNumer=32][#FS:StyleID=052375420350][/FS:Loop]', '', '11-23-2010 10:21:59.853', 0, 0, 0, '0', NULL UNION
+	SELECT 259, '809550637387', '882324941476', '{FS_民族传习馆最新文章}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:NewsType=Last,FS:ClassID=205641735708,FS:Desc=desc,FS:isDiv=true,FS:TitleNumer=32][#FS:StyleID=052375420350][/FS:Loop]', '', '11-23-2010 10:24:46.430', 0, 0, 0, '0', NULL UNION
+	SELECT 261, '310040227426', '882324941476', '{FS_民族传习馆图文12条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=12,FS:IsAdver=1,FS:NewsType=Last,FS:TitleNumer=16,FS:ClassID=205641735708][#FS:StyleID=588909948029][/FS:Loop]', '', '11-23-2010 10:29:39.013', 0, 0, 0, '0', NULL UNION
+	SELECT 262, '756284610380', '882324941476', '{FS_商业贸易Url}', '[FS:unLoop,FS:SiteID=0,FS:LabelType=ReadClass,FS:ClassID=263099963046]{#class_Path}[/FS:unLoop]', '', '11-23-2010 16:38:12.363', 0, 0, 0, '0', NULL UNION
+	SELECT 263, '868431593562', '882324941476', '{FS_商业贸易最新1条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=1,FS:NewsType=Last,FS:ClassID=263099963046,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=669377768571][/FS:Loop]', '', '11-23-2010 16:38:45.493', 0, 0, 0, '0', NULL UNION
+	SELECT 264, '062485766918', '882324941476', '{FS_商业贸易列表9条长标题}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=9,FS:NewsType=Last,FS:StartIndex=1,FS:ClassID=263099963046,FS:isDiv=true,FS:TitleNumer=60][#FS:StyleID=052375420350][/FS:Loop]', '', '11-23-2010 16:39:17.060', 0, 0, 0, '0', NULL
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
+
+
+
+
+-- 2010-11-23
+
+
+SET IDENTITY_INSERT [dbo].[fs_news_Class] ON
+
+INSERT INTO [dbo].[fs_news_Class] (
+	[Id],
+	[ClassID],
+	[ClassCName],
+	[ClassEName],
+	[ParentID],
+	[IsURL],
+	[OrderID],
+	[URLaddress],
+	[Domain],
+	[ClassTemplet],
+	[ReadNewsTemplet],
+	[SavePath],
+	[SaveClassframe],
+	[Checkint],
+	[ClassSaveRule],
+	[ClassIndexRule],
+	[NewsSavePath],
+	[NewsFileRule],
+	[PicDirPath],
+	[ContentPicTF],
+	[ContentPICurl],
+	[ContentPicSize],
+	[InHitoryDay],
+	[DataLib],
+	[SiteID],
+	[NaviShowtf],
+	[NaviPIC],
+	[NaviContent],
+	[MetaKeywords],
+	[MetaDescript],
+	[isDelPoint],
+	[Gpoint],
+	[iPoint],
+	[GroupNumber],
+	[FileName],
+	[isLock],
+	[isRecyle],
+	[NaviPosition],
+	[NewsPosition],
+	[isComm],
+	[Defineworkey],
+	[CreatTime],
+	[isPage],
+	[PageContent],
+	[ModelID],
+	[isunHTML],
+	[ClassCNameRefer]
+)
+
+	SELECT 85, '205641735708', N'ᦉᦹᧇ ᦉᦸᧃ ᦣᧄᧈ ᦵᦣᧃ  ᦷᦞ ᦠᦱᧃ ᦘᦱ ᦉᦱ', 'nationality', '0', 0, 10, '', '', '/Templets/20101115/T_nationality.htm', '/Templets/xxbn/dw_content.html', '/html/xxbn', '', 0, 'nationality/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 0, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, N'<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> <span class="normalText">>></span>  ᦉᦹᧇ ᦉᦸᧃ ᦣᧄᧈ ᦵᦣᧃ  ᦷᦞ ᦠᦱᧃ ᦘᦱ ᦉᦱ ', '<a href="/">ᦐᦱᧉ ᦷᦠ ᦒᦲ</a> <span class="normalText">>></span>  <a href="/html/xxbn/nationality/index.html">ᦉᦹᧇ ᦉᦸᧃ ᦣᧄᧈ ᦵᦣᧃ  ᦷᦞ ᦠᦱᧃ ᦘᦱ ᦉᦱ</a> <span class="normalText">>></span> ᦆᦱᧁᧈ ᦺᦓ', 0, '', '11-23-2010 09:36:36.247', 0, NULL, '0', 1, '民族传习馆' UNION
+	SELECT 86, '263099963046', '商业贸易', 'biz', '0', 0, 10, '', '', '/Templets/20101115/T_column.htm', '/Templets/20101115/T_Content.htm', '/html/xxbn', '', 0, 'biz/index.html', '{@year04}{@month}{@day}', '{@year04}{@month}{@day}', '{@自动编号ID}', '/{@dirFile}', 0, '', '|', 180, 'fs_News', '0', 1, '', '', '', '', 0, 0, 0, '', '.html', 0, 0, N'<a href="/">首页</a> >>  商业贸易 ', '<a href="/">首页</a> >>  <a href="/html/xxbn/biz/index.html">商业贸易</a> >> 正文', 0, '', '11-23-2010 16:25:26.237', 0, NULL, '0', 0, '商业贸易'
+
+SET IDENTITY_INSERT [dbo].[fs_news_Class] OFF
+
+
+
+UPDATE fs_news
+SET Templet = '/Templets/20101115/T_Content.htm'
+WHERE ID > 1900 AND Templet = '/Templets/xxbn/dw_content.html'
+
+
+
+
+SELECT     Id, ClassID, ClassCName, ClassEName, ClassTemplet, ReadNewsTemplet, SavePath, SaveClassframe, ClassCNameRefer
+FROM         fs_news_Class
+
+
+SELECT     Id, NewsID, NewsType, OrderID, NewsTitle, ClassID, Templet, [Content], CreatTime, NewsTitleRefer
+FROM         fs_news
+WHERE ID > 1900
+
+-- /Templets/people_xxbn/list.htm
+-- /Templets/xxbn/dw_list.htm
+-- /Templets/20101115/T_column.htm
+
+UPDATE fs_news_Class
+SET ClassTemplet = '/Templets/20101115/T_column.htm'
+WHERE  ClassTemplet = '/Templets/xxbn/dw_list.htm'
+
+
+UPDATE fs_news_Class
+SET ReadNewsTemplet = '/Templets/20101115/T_Content.htm'
+WHERE  ReadNewsTemplet = '/Templets/people_xxbn/aticle.htm'
+
+
+UPDATE fs_news_Class
+SET ReadNewsTemplet = '/Templets/20101115/T_Content.htm'
+WHERE  ReadNewsTemplet = '/Templets/xxbn/dw_content.html'
+
+
+
+
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] ON
+
+INSERT INTO [dbo].[fs_sys_Label] (
+	[Id],
+	[LabelID],
+	[ClassID],
+	[Label_Name],
+	[Label_Content],
+	[Description],
+	[CreatTime],
+	[isBack],
+	[isRecyle],
+	[isSys],
+	[SiteID],
+	[isShare]
+)
+	
+	SELECT 267, '927729419597', '882324941476', '{FS_最新的热点新闻10条}', '[FS:Loop,FS:SiteID=0,FS:LabelType=List,FS:Number=10,FS:NewsType=Hot,FS:ClassID=-1,FS:isDiv=true,FS:TitleNumer=28][#FS:StyleID=052375420350][/FS:Loop]', '', '11-25-2010 09:52:05.197', 0, 0, 0, '0', NULL
+
+SET IDENTITY_INSERT [dbo].[fs_sys_Label] OFF
+

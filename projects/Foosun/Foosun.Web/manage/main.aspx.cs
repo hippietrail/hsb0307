@@ -356,6 +356,6 @@ public partial class Manage_main : Foosun.Web.UI.ManagePage
 
     protected void OnNumberClick(object sender, EventArgs e)
     {
-        Literal1.Text = Foosun.Common.Rand.Number(12);
+        //Literal1.Text = Foosun.Common.Rand.Number(12);
     }
 }

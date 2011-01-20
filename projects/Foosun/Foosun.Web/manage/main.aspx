@@ -138,8 +138,8 @@
 <div><a href="javascript:;" onclick="closediv('ClistID')">¹Ø±Õ</a></div>
     loading...
 </div> 
-<asp:Button ID="Button1" runat="server" Text="Button" OnClick="OnNumberClick" />
-    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+<%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="OnNumberClick" />
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>--%>
 </form>
 </body>
 <script type="text/javascript" language="javascript">

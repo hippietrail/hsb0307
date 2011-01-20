@@ -68,6 +68,7 @@ A:visited
 	height: 32px;
 	text-align: left;
 }
+
 .gonggao
 {
 	margin: 0px auto; line-height:28px;
@@ -81,6 +82,28 @@ A:visited
 	color: Black;
 	font-size: 20px;
 }
+
+
+.sitenav{ width:980px; margin:2px auto 0 auto; text-align:left; }
+    .sitenav{ border-top:solid 1px #4c7f99; border-bottom:solid 1px #4c7f99;}
+    .sitenav{  height:33px;}
+    .sitenav span{  font-family:Î¢ÈíÑÅºÚ; font-size:14pt; font-weight:normal; margin-left:10px; margin-right:10px;}
+    .sitenav span a {  vertical-align:top; }
+    .sitenav span img{  margin:0;}
+    
+.colnav{ height:20px; float:left; margin-top:5px; padding:5px 0 0 0;  }
+	.colnav ul li{  list-style: none; display:inline; float:left;  padding: 0 10px 0 6px; font-size:16px;  font-weight:bold; }
+	.colnav a:link,
+	.colnav a:visited{text-decoration:none; padding:1px 2px 2px 3px; *padding:3px 2px 1px 3px;}
+	.colnav a:hover{color:#FFF; background:#1b99b3;text-decoration:none;}
+	
+    
+.search {border: #bcbcbc 1px solid;    margin:0 0 0 1px; padding:3px 2px 3px 0; }   
+    .search input.text { margin-top:0px;  border-width:0; outline: none; padding:2px 3px 0 0; height:18px; }
+    .search input.image {  margin:0px 0 0; }
+    
+
+
 .mar_em
 {
 	height: 20px;
